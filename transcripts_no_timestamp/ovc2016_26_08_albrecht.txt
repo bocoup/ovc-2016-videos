@@ -1,0 +1,490 @@
+>> Hi.  Can you hear me?  Okay.
+Thanks for having me.  Yeah.
+I'm a designer.  So I've got a
+background in graphic design and
+interface design.  The last
+couple of years, specializing in
+data visualization.  And, yeah,
+since one and a half years I'm
+here in Boston.  I'm working
+with a lab, and my colleagues
+there are pretty much all
+physicists and we are dealing
+with complex systems and
+networks and data science
+issues.
+And we're about 30 people.  And
+I'm the designer.  I'm like the
+odd guy in the group.  So
+everybody else is like a hard
+scientist.  And I'm more like
+doing the graphics for them for
+different topics.
+One topic in the lab currently
+is success.  And how can we
+understand success.  What is
+success?  How can we measure it?
+And we think of success as
+having two main ingredients.
+The one ingredient is
+performance, so you need to be
+good at something to be
+successful.  You need to be a
+good writer, you need to be a
+good programmer and good
+musician or good artist to be
+successful.  But on the other
+side, this needs to be reflected
+by society.  So if you are
+writing this amazing poems, but
+nobody ever read them, like it's
+not really success.
+So what we study is like this
+interplay between those two
+things and how they actually
+create success together and how
+it works.  So this is like a
+triangle that we're studying.
+And you can think of many
+examples in like contemporary
+culture where the triangle is
+not 100% in sync.  So most
+probably pretty much all of you
+know these two people.  Paris
+Hilton and the Kardashians.  And
+they're extremely popular, but
+they're not really performing
+specifically well in anything in
+particular.
+
+So -- and you can also think
+about like other examples in the
+sport world.  Where David
+Beckham, he is performing very
+good, and he is at the top of
+what he's doing, but maybe his
+popularity is a bit higher than
+that.
+And same for Tiger Woods, the
+discussion at the moment goes in
+very different directions than
+what he actually does when he
+plays golf.
+So there's a saying that the
+celebrity is a person who is
+known for his well-known-ness.
+There's a disconnect between
+performance and popularity.  And
+we were interested if this also
+exists in sport.  So how are
+performance and popularity
+related to each other?
+To study this, we looked at
+tennis.  We looked at tennis
+because it's an individual
+sport.  Team sports are complex
+with the players interacting
+with each other.  And we wanted
+to have a sport that's well
+known.  That's how we got to
+tennis.  And we looked at the
+performance data from the ATP
+Website.  That's the world cup
+of tennis.  And looked at with
+Wikipedia updates from 2009 to
+2015
+Our final data set consists of
+the 500 male players and two
+data sources.  And my colleague,
+she's a physicists, they have a
+special relationship to data.
+They want to understand data and
+they want to model and predict
+things.  What her goal was to
+predict page had views based on
+the performance of a player.
+When I interested the project,
+my first initial idea was to
+visually compare this.  So how
+can we compare?  How can we make
+visualizations to compare page
+views and the model predictions
+that she came up with?
+And this is like the first chart
+that I did.  Each line
+represents one player.  And then
+we have on the Y axis the number
+of page views and the predicted
+page views.  So each player is
+like two points.  So we've got
+the page views and then the
+model prediction.  So the bigger
+this bar, the worse the
+prediction actually was.  And if
+it's red, that means it's turned
+around.  So like that, we had an
+overview of everybody and could
+see how -- when the model works
+and when it's not working.  And
+that's like a little interface
+where you can have like -- it
+should work.
+This should be running.  Okay.
+Let's see how it goes along.  So
+you can have other people and
+you can sort it in different
+directions.  I'm not sure why
+it's not doing it.
+So but one question that came up
+was what about time?  It's a
+highly aggregated view if we
+only have like two points for
+one person.  And I got back to
+like the difference chart from
+1786.  So like super modern data
+science and like this 200 --
+300-year-old chart.  And this
+shows you the difference between
+the model and the actual
+Wikipedia data over time for
+each person.
+And this is like a visualization
+that I came up with where we can
+compare every player in one
+chart.  And I hope this is
+working now.  Okay.  So need to
+get out of this and I need to
+show it to you.  Maybe I can go
+to the Website.
+So -- it's not showing.  Okay.
+Okay.  This works.  Better.
+Okay.  So we have for each
+person one of these icons and we
+can sort them by different
+things.  So we can sort them by
+name, which is not really
+helpful, but we can find like
+other arrangements.  Sort them
+by the ranking they have and see
+actually -- like find the
+patterns in this data set.  Or
+we can arrange them by the page
+views they have.  And each
+person is like this little icon.
+And we can see what creates a
+model and how -- what's going
+on.  And also like on a scale
+and see each person.
+And then for each player we have
+two data points now for each
+year, which is still very
+aggregated.  So what I made was
+like you can click this person.
+And you actually get this
+close-up view where you can see
+on the one side the predictive
+page views and then what is
+actually the real data.
+And down here the Wikipedia
+article.  It was helpful for the
+scientists, because they can
+read up about the players.  And
+then we can also search for
+somebody.
+Okay.  Maybe not.  And -- yeah.
+We can go through this and sort
+this for all kinds of things and
+see how they're doing.
+So -- maybe my -- maybe it --
+up.  So now even the video is
+working.  So we can go on.  So
+one question that I had was like
+from this, what is actually
+creating these models?  I mean,
+it's this completely black box.
+Just showing me numbers and
+didn't know what it is.  So what
+is making up this model that I'm
+talking about?  And this is a
+formula.  I'm not sure -- I'm a
+designer.  So I don't know -- I
+wasn't able to handle this.  But
+I was able to talk to my
+colleagues and ask her and
+bother her with questions.  And
+try to understand what's going
+on here.  And after a while it
+became quite understandable.  So
+what we see here, that's a rank
+of a player over time.  So when
+the player, and which ranking.
+That was important to come up
+with this prediction of page
+views.  And then also the number
+of active years.  How long did
+they play in tournaments?  And
+then the number of matches.  So
+how far did they get in the
+tournament?  If you play seven
+rounds during the final, and the
+tournament value.  It's quite
+different than if you play in a
+grand slam versus playing
+against your neighbor.  And the
+best rival in the tournament,
+who was the best person you
+played against?  So those five
+variables made up the model and
+created it.  What I had to do
+was take what we know about
+graphical perception and map it
+against this five dissensions.
+So I can show you now what I
+came up with.  Okay.  Cool.
+It's working.  So one of the
+first decisions I made was like
+the one linear time scale.  So
+like the wider the gaps, the
+more tournaments a player had in
+that year.  So you can see in
+the beginning of the career,
+like he played more tournaments
+and then it got less
+tournaments.  And also the
+height of the axis indicates the
+best ranking of that year.  So
+I'm already encoding some
+information within the chart.
+And then -- yeah.  So I'm adding
+in points for each tournament he
+played over his career.  So
+we've got to complete
+description of all the
+tournaments he ever played.  And
+on the Y axis I point at the
+rankings, they're very important
+for the model.  I'm using a log
+rhythmic scale, high ranks are
+more valuable than lower ranks.
+If you move from 200 to 190,
+it's not as important as you
+move from rank ten to rank one.
+So -- and then I'm adding in the
+number of matches.  And so the
+lengths -- if you play seven
+rounds, you're in the final, so
+it's like seven different steps
+that you can make.  And then I'm
+adding in the score points as
+colors.  So grand slams are the
+darkest colors, and then the
+less points you get, the lighter
+the colors are.
+And then if there was a strong
+opponent in that game, I added
+in these blue dots for when he
+had to play -- in the beginning
+of the career, this is really
+happening a lot.  And that
+became this final interface.
+Where we, again, had the
+Wikipedia article down there,
+and then just selections on the
+side.  And, yeah.  You can
+actually like see the data
+points.  So just small
+adjustments that I made.
+
+15:11:42
+So the next step.  I thought
+about how could I make something
+where I have all this
+information of all these players
+in one chart and not only like
+in separate charts?
+And I turned to an idea which is
+actually perceptually very bad.
+So turning something linear into
+something radial.  It's much
+harder to read for us.  But what
+it's good at, it create this is
+unity.  It creates like this
+iconic symbol for each player.
+Which I then could use and --
+yeah -- plot all of them
+together in one chart.  And
+create this -- so you can see
+the entire career of a player
+within this.
+And, again, we can -- this is
+now the final tool.  So we can
+do like exactly the same thing
+as before.  We can sort them.
+Put them on different axis.
+Click on them and get a detailed
+view with the Wikipedia article.
+So this is something I haven't
+talked about.  This is like the
+in-between stage.  So all we see
+here is only the Wikipedia page
+views over time without the
+model.  Without the prediction.
+And then, yeah, we can click.
+Do the same thing.  That became
+like the final interface.
+That's also online so you can
+play around with it.
+So here is just a close-up of the
+circles and how they look in a
+larger space.
+So some findings that we came up
+with.  First of all there's
+hope.  Generally there's a trend
+that if you are playing well,
+you also get recognition of that
+from society.  But there are
+some tricks so you can cheat in
+some ways.  One thing is, have a
+very good brother.  So if your
+brother is first in the world,
+your page views will also go up.
+And then we found this.  Like we
+made this interface, and we
+found a lot of these plots.  And
+we didn't know what was going
+on.  And they all looked very
+strange.  So what's actually
+happening is is that the model
+already predicts that there
+should be page views.  They
+should have a certain number of
+page views.
+And there are no page views.
+And then after some time, the
+model and the actual page views
+synchronize and they go like
+along the same way.  And it
+turns out that this Wikipedia
+pages were not finished.  Just a
+name or a sentence.  They were
+not done.  So as soon as
+somebody sat down and wrote an
+article about that person, like
+the page views and the model got
+synchronized.  So the model is
+actually predicting something
+that's not happening at that
+point.
+So that was quite an interesting
+finding.  And then we found a
+lot of people that looked like
+this.  So this like one hit
+wonder who had like this
+extraordinary spike.  This was
+Lukas Rosol.  He defeated Rafael
+Nadal in 2011 in the second
+round.  That brought him the 15
+minutes of fame that then
+diminished again.  And then
+there's this.  Ryan-Sweeting.
+So he actually never had a
+really good tennis career until
+mid-2013.  And then his tennis
+career didn't take off.  But his
+page views went all crazy.  So
+what happened?
+He actually got married to a
+famous actress.  So if you are
+bad at tennis, like marry
+someone famous.  And you're
+sorted out.
+
+So -- yeah.  So something more
+like in the background, what I'm
+thinking about at the moment, is
+like seeing visualizations as
+this trading zone.  This word
+trading zone comes from a
+science historian at Harvard,
+Peter Garrison, and it's in
+between different groups which
+then connect different groups
+and thoughts and knowledge
+domains.  And what a very
+obvious example for with this,
+this connection between data and
+scientists so that visualization
+can be a bridge.  In that sense.
+But it can also be a bridge
+between scientists.  So a lot of
+the things happening in the lab
+that a biologist is working with
+a physicist, and they speak
+different languages, and they
+can talk about and understand
+each other better with the
+visualizations.  And in the
+third step, used to open up
+science and make it public.  I
+mean, it's the same data set
+that is used within the lab
+that's now open to the public
+through this interface and you
+can explore and people can play
+around with.
+And if I look at this, I will
+say visualizations are loopy by
+themselves.  So before the end
+of this talk, now, we have got a
+new project that I launched like
+a week ago.
+And we make like a little
+trailer for this.  And while I
+was cutting this video ahead of
+myself, because I was cutting it
+in 4K, and I was like, why do I
+need it in such a high
+resolution.  Well, now I know.
+
+And I'm very happy to show you.
+>> To look up at a starry night
+sky is to look up at a fast
+network.  A cosmic web where
+discreet is held together by
+gravity.  So little is known
+about the network, it's
+difficult to know about the
+architecture of the universe or
+how it's built.  Why are some
+similar and others have no
+relation?  Our research created
+three models.  By controlling
+different parameters between
+galaxies in each model, we can
+see the network shift from
+separate galaxy clusters to a
+fully interconnected network.
+In each model, they form links
+based on certain parameters.  In
+the first, we connected galaxies
+based on distance.  The second
+and most complex model connected
+galaxies based on size.  The
+third model connected galaxies
+to their nearest neighbor.  When
+we compared our models to the
+actual universe, we discovered
+something surprising.  Despite
+its simplicity, the third model
+offered the best correlations.
+While this research is
+uncovering the blueprints of the
+universe, these new mathematical
+tools can be applied to a whole
+range of cosmological concerns.
+From validating cosmic inflation
+to improving halo finders.
+>> Cool.  Thank you very much.
+
+It's an online tool.  You can
+check it out.

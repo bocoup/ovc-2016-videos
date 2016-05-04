@@ -1,0 +1,805 @@
+>> What an awesome day we're
+having.  Thank you so much for
+the organizers for bringing us
+together today and for you for
+coming.  I'm Zan Armstrong, and
+excited to talk about why
+Everything is Seasonal.  And
+when I say everything is
+seasonal, I mean, not quite
+everything.  Everything related
+to change over time.  But that's
+a lot of things.  Consider so
+many of the dash boards you have
+made, seen, or been recruited to
+make.  Consider all of the times
+that you want to know if metric
+is going up or down, or if some
+event had an impact.
+My main point today, if your
+data includes any sort of change
+over time, you should take
+seasonality into account.
+I want to start by telling a
+story.  Imagine that it's summer
+and you just got a new job.
+You're so psyched.  The only
+down side, there's a commute.
+But it really doesn't seem so
+bad.  And at first, it's not.
+Fast forward a few months to
+early move, and this is your
+life.  A world filled with red
+taillights, misery, road rage.
+How could traffic have gotten so
+much worse so quickly?
+Is it going to go on like this
+forever?  Maybe.  Maybe.  Or
+maybe it's just November.
+Consider that the number of
+commuters influences the amount
+of traffic there is.  So if
+everybody takes a one week
+summer vacation during the ten
+weeks of summer, and almost
+nobody takes a vacation early
+November, right before the
+holidays, 10% fewer commuters
+per week on the road.  So the
+goal of the story is to put you
+in the mind set of seasonality,
+and to cover this fact, that the
+seasonality of causal factors
+could matter.  And six ways to
+think about seasonality and
+different ways it could trip you
+up.  Not just about traffic, but
+the factors that contribute to
+the traffic, the number of
+commuters, and the percent of
+people on vacation at any given
+time.
+But first, talk about what is
+seasonality?  Seasonality are
+patterns that repeat over known
+fixed periods of time.  And the
+most obvious of these of course
+are the seasons.  And of course
+also the time of day.
+In San Francisco other people
+say don't have seasons.  Looking
+at this the two years of data, we
+actually do.  Look at that.  Two
+years of repeated patterns.  We
+have seasons.
+But perhaps the more obvious
+type of season that we have is
+our famous fog.  Zoom in to look
+at our weather data at a three
+month interval, you can see the
+hourly data peaks and see the
+years, sorry, the days, standing
+out.  You get a good portion of
+our annual temperature variation
+every single day.
+But it's not just about weather
+or seasonality and time series
+that aren't growing and
+shrinking.
+While we're familiar with the
+temperature seasonalities in our
+hometown, there are more factors
+that have even more predictable
+patterns.  In Hawaii, they have
+been measuring parts per million
+in fact atmosphere since the
+early 1970s.  Here is that
+data.  Along the F-axis, every
+day from late 1974 to the end of
+the 2014.  And we have the CO2
+parts per million.  Two things
+jump out, of course the increase
+over time that we have been
+seeing throughout this time
+period, and the repeating annual
+increase and decrease we have
+had year in and year out.
+There's a strong seasonality to
+the CO2 in our atmosphere.
+Let's talk about a third type of
+data, births.  Something that we
+don't of as having seasonality.
+Babies come in the middle of the
+night, come after two hours of
+labor and come after 20.  Right?
+In fact, baby data actually
+illustrates three type of
+seasonality, day of the week,
+week of year, and hour of day.
+So let's take a look at the
+data.
+Here we have the number of
+babies born in the United States
+from 1969 to 1988.  Every single
+day.  And it's kind of a mess.
+So let's zoom in and see what we
+can find.  We will look at 1985,
+some of you might be represented
+in this data set.  But we start
+to see there's some sort of
+repeating pattern here.  Zoom
+into the summer.  And we start
+to see every -- there's these
+weekend dips, and in between is
+higher.  Weekend, weekend,
+weekend.
+And you might notice that one of
+these weeks was a little bit
+different than the rest.  This
+one right here.  The first week
+of July.  July 4th.  That's a
+lot more like a weekend than a
+weekday.  So now we can zoom
+back out to our full data set of
+this period.  And you we've
+aggregated by week.  We
+recognize the day of the week
+and aggregate by week.  And a
+second pattern starts to emerge.
+We can zoom in on the last four
+years of this time period and
+see a repeating pattern over a
+fixed period.  Up from the early
+part of the year to December,
+and then a decline.  Up,
+decline.  And that repeats.  So
+in addition to having a strong
+day of the week seasonality, we
+see a week of the year pattern
+as well.
+Now let's look at the minutes of
+the day.  This is a different
+data set.  This is babies born
+in 2014.  Based on what minute
+they were born.  So everybody
+single point on this data set is
+the number of babies born at a
+maritime on a Saturday.  So
+there were 384 babies born in
+2014 at 9:31 a.m. on Saturdays.
+And we go to the Saturday data,
+see the partner, there's an
+increase in the morning.
+There's some pattern there.
+Let's look at another day, just
+for fun.  How about Mondays?
+Same, right?  Totally the same.
+Let's look at all seven days.
+We have Monday, Tuesday,
+Wednesday, Thursday, Friday in
+the brown, and Saturday and
+Sunday in the blue.  This is
+babies being born.  Totally a
+natural process.  What peaks at
+8:00 in the morning on weekdays,
+12:41 a.m., and right before the
+end of the workday.  I was going
+to stop here.  But I thought you
+might want to explore a little
+bit more.  Let's look at two of
+the ways we can influence when a
+baby is born.  C-sections and
+inductions.  Babies born by
+C-section.  Not that many in the
+middle of the night.  A lot of 8
+p.m.
+Babies born that were induced.
+Not that many in the morning, a
+lot more in that noon to 6 p.m.
+period.  And neither C-section
+nor induced.  So we still have a
+hour, minute of day, a subtle
+pattern here that doesn't vary
+by day of week.
+So this baby data set
+illustrate -- these baby data
+sets illustrated three types of
+seasonality I wanted to discuss
+today.  Day of the week, week of
+the year, and minute and hour of
+day.
+And, of course, two of these are
+very much natural cycles that
+our human behavior is closely
+tied to.  And day of the week is
+a human construct we have made
+up, but it drives so much of our
+collective behavior.
+You might be wondering what
+about monthly?  It's super
+common to see data aggregated to
+the month.  So many of the data
+sets are published at that
+level.  And I want to talk about
+why that not be such a good
+idea.  So let's say that I own a
+restaurant.  It's a great little
+neighborhood place.  People love
+it when I open up the outdoor
+seating in the summer.  Friday
+and Saturday nights are popular,
+and my famous weekend brunch
+with mimosas.  And I'm closed on
+Mondays, got to do data
+visualization sometime.  So
+let's make up data for the
+hypothetical awesome restaurant.
+$4,000, a day, it's a boring
+line chart.  All the way across
+from 2014 to now.  And build on
+the growth.  Inflation to deal
+with.  Maybe a little bit more
+popular.  So we'll bring in 1.6%
+year over year growth.  So I add
+a little bit of slant to that
+line.  Bring in some real
+numbers here.  Might be
+interested to see me compare
+January 10th so January
+11th, I want to compare
+Fridays and Fridays.  It is not
+so much important now, but more
+important with more patterns.
+And now growth chart, daily,
+year, growth.  And 1.6% every
+single day.  Very nice and
+steady bar chart.
+So let's bring in some week of
+the year seasonality.  I opened
+up my patio in the summer.  When
+I have more seating, more money,
+less seating, less money.  A
+little under 4,000 in the winter
+days, a little more than 4,000
+when I open the patio.  It's
+still boring, it's 1.6%.  We're
+comparing summer to summer and
+winter to winter.  And assuming
+I open up my patio on the same
+appropriate day.
+And let's bring in some day of
+the week seasonality.  And here
+we go, it's kind of a mess.  So
+let's drill in to see what's
+there.  As I mentioned on
+Mondays, I'm closed due to my
+data visualizations.  And I have
+the big weekends, a big Friday
+dinner.  Saturday brunch,
+Saturday dinner, and a big
+Sunday brunch with mimosas.
+Zoom out to daily revenue, still
+boring, apples to apples.  And I
+have baseline revenue, the
+growth, two types of seasonal
+patterns that seem quite
+plausible.  Aggregate by week.
+What does this look like?
+Almost the same.  A little bit
+of an angle.  Sometimes before
+and after I open up the patio.
+Weekly growth, boring.
+Comparing to the previous year.
+And back week to week.
+And if I add a 5% bump in March
+and April, see that in the
+chart, stands out clearly.
+Let's aggregate now by month.
+Here's our nice, clean data set.
+We can still see some of the
+signal.  The summer is a little
+bit bigger.  And the winter's a
+little bit smaller.  But it
+looks like there's so much going
+on here.  And especially when we
+bring in those growth metrics,
+it looks like there's a lot
+happening.  A lot of variation
+in the data set from
+month-to-month.  Some months,
+negative 5% growth.  Other
+months, almost 10% positive
+growth.  There's a lot going on.
+If we wanted to find a real
+signal, it looks like -- how
+could we even see it?  Could we
+see a 5% change?  Point to these
+and say that's a weird change.
+Something happens with the
+business, we need to be worried
+or excited?
+>> So what's going on.  Of
+course we have a factor, months
+have a different number of days.
+But a different set number of
+days per year.  In 2016, four
+weeks, and two bonus days to get
+to April.  And those were a
+Tuesday and a Wednesday in 2014.
+2015, we have 365 days in a
+year, one more than a factor of
+seven.  We shift the month one
+day forward in the week.  Now
+two bonus days that don't fall
+into a happy week are a
+Wednesday and a Thursday.
+Effectively we have a Wednesday
+and Thursday, the previous year
+we had a Tuesday and a
+Wednesday.
+April 2016 is particularly
+interesting.  Now we're on a
+leap year.  We move forward two
+days and it just so happens when
+we move forward two days we fall
+into the weekend.  Okay?  Those
+big extra revenue days.  So in
+April 2016, it's going to have
+more money in it just because
+the days of the week that are
+bonus are making more money.
+Doesn't mean I did better in
+April 2016 than in April 2015.
+I just get five weekends to
+count instead of four.
+And I think it's easy, that's
+true.  How much of an effect
+could that?  Changed the data
+from one that's easy to read,
+easily see the change, to one
+where there's so much more
+happening and nothing really is.
+This is a really simple time
+series.  Growth, consistent day
+of the week pattern, consistent
+week of year.  No random
+variation.  No variation due to
+weather.
+No holidays, no decreases due to
+a bad review, no short or
+long-term variation due to
+marketing campaigns, good press,
+or a new chef.  No change in
+trend, day or week of year
+seasonality.  And yet we look
+like there was so much going on
+in the monthly data.  It would
+have hidden if there was a true
+signal that we needed to make
+decisions about, would have been
+hidden unless we're doing more
+than a 2% change to get a signal
+that you could see is huge.
+So monthly aggregation is
+inherently a bad idea unless the
+data is monthly.  If I was
+analyzing rent checks, a land
+owner with a lot of rent.  I
+don't care if they pay on the
+29th, 30th, 31st.  I might
+care if they pay me or not in
+that month.  In that case, a
+month is appropriate.  But our
+behavior is so much more tied to
+day of week than to month of
+year.
+That in most cases I would look
+to day of week first and
+aggregating by weeks instead of
+months.  But the main point,
+aggregate time periods that make
+sense for your data.  We saw
+that daily data can be hard to
+interpret, and year over year
+growth of minus 364 days, that's
+only there.  But then 365 or
+366, that compares weekends to
+weekdays and an impossible chart
+to read.  But major tools,
+Google analytics compare
+previous years by comparing the
+calendar year.  Presumably
+that's what people expect.
+The good news is you can change
+it right in the tool in this
+case.
+So in general, compare apples to
+apples.  Can compare 364 back.
+Seasonality is the story we
+sometimes actually want to tell,
+where the most important insight
+is, the seed, the kernel you're
+looking for is.  To save lives.
+That's with the baby data set.
+Looking at the minute of the day
+by day of the week was
+informative.  We learned
+something and saw something new
+that we wouldn't have seen if we
+looked at the total number of
+babies per day.  This is true on
+a 1985 study on deaths by
+tractor accident that a nursing
+friend told me.  It's still told
+today to tell about the
+potential impact of seasonality
+data and you can actually save
+lives if you put the data at
+this granularity.  And the study
+was looking at tractor accidents
+in Georgia, fatalities, month,
+location, hour, and age.  And in
+month you can see there's two
+main peaks, during the planting
+and harvesting season, there's
+more tractor usage.  And the
+deaths per hour.  A few stand
+out.  The 11 a.m. to noon, right
+before lunch.  Higher values in
+the afternoon than in the
+morning, and that 4 p.m. to 5
+p.m. peak.  And knowing this can
+change the recommendation that
+people made about when you use
+your tractors and various safety
+recommendations and actually
+save lives.
+The point I want to talk about
+next is to the duality by
+looking at the impact, or trying
+to do causal analysis as close
+as you can.  Things that are
+expected, holidays, sales,
+events.  Things unexpected, but
+common, weather.  Natural
+disasters, death of a CEO,
+mergers.  And we often want to
+know what the effect is, short
+or long-term.
+Let's look at some data.  In
+September 2011 the month of
+9/11, gun sales increased by 28%
+compared to the previous -- to
+the August, the month before.
+And I told you not to use
+monthly data, I'm using monthly
+data.  Sometimes it's the best
+you have available.  Hopefully
+you can check and see if day of
+the week is important.  The
+restaurant business typically
+exacerbates that.  But we'll do
+months because it's what we've
+got.
+January 2015, Obama's second
+inauguration, the month after
+Sandy Hook, dropped by 10%.  And
+nothing special happened, they
+increased by 21% from the
+previous month.  See the time
+series.  Here are the three
+points plotted on the time
+series.  And we can there is
+annual pattern we can recognize.
+We don't know, just by looking
+at the previous month, hard to
+tell if it's a true impact or
+based on seasonality, a
+variation.  Look at this, and we
+know we should deal with
+seasonality, what can we do?
+What we can do is what New York
+times did.  And this came from
+Josh Keller, and this amazing
+analysis, they created the data
+set on federal background
+checks.  They started with this
+view which is what we were just
+look at with a lot more
+annotation.
+And then they showed you the
+de-sensationalization of it.
+Here's the seasonality, and
+after you calculate and remove
+the seasonality from the data
+set.  It's so much more clear
+you can see the overall trend or
+time and these big points of
+unusual gun sales.
+One of the best parts was not
+only did they do an amazing,
+fantastic article.  And I
+encourage you to read this, the
+rest of the article is also
+great.  But they also have a
+blog driven by data, he posted
+his analysis, and including the
+link to GitHub, I could see what
+he was using, he was using the
+arena method, a great method in
+the seasonal package.  Yay.  Go
+check it out.
+But -- so they used that method.
+If you're reacting for
+seasonality, it's year and year
+growth.  It's great to see is
+this year different than last
+year?  If you want to isolate
+it, you can use decomposing with
+STL, or de-seasonallizing with
+census X.  And then you can
+mimic an A/B test that never
+existed, and there's
+documentation that I'll post at
+the end of the talk.
+So what we're going to talk
+about today is decomposing with
+STL.  A three-part
+decomposition.  It's additive.
+If you want to do an analysis,
+look at both methods and decide
+what makes most sense.  There's
+a lot of parameter choices with
+these methods as well.  So
+there's three parts.  Here's our
+time series, and the other
+three, the long-term trend, the
+annual seasonality and the
+remainder.  So this is an
+additive method, you can add
+them together, and add the
+values in a column, you get the
+original time series.  Don't
+necessarily want additive
+series, but it's a nice place to
+start.
+And long-term trend, eyeball it,
+decline, increase, and steeper
+increase, and we can do it with
+math.  And we can see the purple
+long-term trend overlaid on the
+original graph as well as
+removing the trend and seeing
+what's left.  And looking at a
+long-term trend, it lets us ask
+questions.  How have gun sales
+changed over the last 15 years
+in general?
+And look at month seasonality,
+and to isolate this, I block out
+the charts.  You can focus on
+the even years so you can see --
+sorry.  See what's going on.
+And overlaid all 15 year on a
+single chart.  The lighter green
+is older, and the darker green
+is newer.  So it's been a little
+bit of seasonal drift.  We can
+see it higher February, March,
+lower June, July, and increasing
+into the end of the year.
+And increasing at the top, this
+allows some drift in the
+seasonality over time and we can
+see there's actually the
+component is changing.  A second
+peak.  That might be an
+interesting question to ask.
+Why is the seasonality of gun
+sales changing?  Are there
+different types of sales at
+different types of year?  What's
+going on?  And see it without
+seasonality, Akin to what they
+did in the New York Times and
+lets you see the trend without
+the extra layer.  Both with the
+seasonality and without the
+seasonality are interesting.
+And asks questions, during the
+months the most were sold and
+the changes.
+We can eyeball these, this looks
+funny, so does that, that was
+funny.  And again in the end of
+2016, that looks pretty funny.
+But it helps when we can isolate
+it mathematically and see the
+time series without the
+remainder and see the entitles
+isolated and see how big they
+were.
+And if you're doing forecasting,
+you want to forecast without the
+remainder, without the long-term
+trend and the seasonality.
+These are unpredictable events,
+presumably.  So you want to see
+them on a baseline.
+And this is to ask questions,
+when did gun sales spike and by
+how much?  Never dipping, all of
+the one-off events are spikes.
+You can see it overlaid in the
+original and see that January is
+part of a two month spike, three
+month.  And the other was a
+smaller spike.  It's much
+smaller compared to more recent
+disruptions.  And February 2011
+was just life as usual.
+Here's those decomposed time
+series one more time.  So the
+next point I want to discuss,
+the seasonality that matters
+most might be a subset of your
+data.  And this is going to be
+left as a challenge for the
+audience.  So over beers tonight
+I challenge you to describe a
+scenario in which ignoring the
+seasonality of a subset of the
+data will lead to
+misinterpreting the aggregate
+data.  But I will give you a
+hint or two.
+So consider what if your subsets
+had different seasonalities?
+What if they had different
+growth rates?  Hint number two
+for those of you interested in
+principal component analysis,
+what if there's different
+seasonality in the components?
+How does that affect your
+analysis?
+Last but not least, people and
+places are different, so are
+their seasonal ties.  So many of
+these patterns are
+super-ingrained, it's easy to
+take them for granted or assume
+our seasonality patterns are
+shared by everybody around us.
+But people are in different
+places, ages, cultures,
+different interests.  And all of
+these things might affect their
+behavior or the behavior in
+their data.  Are they the same
+as you or using the product in a
+different way?  The people that
+you're analyzing, trying to
+understand, or the nature that
+you're analyzing?  Trying to
+understand them.  You have to
+look at the data in the
+granularity.
+And fortunately that's
+wonderful.
+Our lives are so full of the
+patterns.  I get to show eye
+candy and a call of action to
+you.  I ask you to look although
+the data, dive deeper, don't
+aggregate it away, see what the
+data weeks look like, the
+minutes of the hour, the weeks
+of the year?  Are there patterns
+that make you connect better
+with the data that you're
+looking at?  Things that you can
+show and reveal and share?
+And these -- so there's a lot of
+obviously really pretty things
+done throughout the web.  One is
+why people visit the emergency
+room by Nathan Yau.  He took an
+amazing data set of number of ER
+visits associated with common
+products.  Like footballs.
+There's more during football
+season in the fall.  And nails,
+screws, tacks, and bolts.  More
+in the summer.  Presumably
+people are doing more house work
+then.
+But ask you what's the
+seasonality of nails, screws,
+tacks and bolts, would you have
+known?  These things don't have
+to be line charts.  I have used
+them as a good place to start
+and an illustration.  But
+there's a lot of ways to explore
+and engage with and play with
+seasonal data.
+Flickr flow by Martin Wattenberg
+and Fernanda Viegas, opened up
+the conference this morning.
+The beautiful Flickr flow.  I
+have a project, weather circles,
+plays with animating weather at
+different hours of day,
+different months of the year for
+different cities.  This is
+looking at cloud data in San
+Diego.  Percent cloudiness
+during the day.
+Based in Boston, the MBTA data,
+the Boston subway system.  It's
+a wonderful project.  Just one
+of many charts they have made
+looking at the various
+seasonalities and patterns
+around how people get around
+Boston.
+A similar project in Ville
+Vivante, a similar data set, how
+people are moving think Geneva
+and when they do, kind of how
+active the city is.  Traffic
+accidents data by Nadieh who
+spoke earlier today, looking at
+the patterns there.  And it
+doesn't even have to be a chart
+at all.  From Giorgia and
+Stephanie's postcard project you
+might have seen, these are all
+the doors that Giorgia opened in
+a week.
+The first three she opens into
+work on Monday, Tuesday,
+Wednesday, Thursday, and Friday.
+So in summation, as you go home,
+my real hope is you're going to
+spend the next week looking and
+you and all the time think that
+the world is seasonal.  Number
+one, consider the seasonality of
+common factors.  Number two,
+aggregate the time period that
+makes sense for the data.  If
+you don't know, look at it.
+Number three, sometimes
+seasonality is the story.  Don't
+always aggregate it away or
+de-seasonallize it.  Sometimes
+it's the crux of the story,
+might be the most beautiful
+rendering or insight.  Number
+four, adjust for seasonality
+when adjusting impact for an
+event with cause analysis.
+Number five, the seasonality
+that matters might be in a
+subset of your data.  I'm
+looking forward to talking about
+this tonight for anybody with a
+scenario.  And number six,
+seasonal patterns vary by place,
+culture, and lifestyle.  It's an
+amazing way to understand the
+people and culture and nature
+around us.  So go and enjoy and
+explore and send your
+visualizations.  If you would
+like more info, I have my GitHub
+repo.  Things here that didn't
+make it into the final cut.
+This is just the tip of the
+iceberg.  So much more.  So if
+your data increase any sort of
+change over time, take
+seasonality into account.
+

@@ -1,0 +1,823 @@
+>> Hello.  Yeah.  Hello,
+everybody.  Thank you so much
+for having me.  It's been a
+great pleasure to be here.
+Absolutely great pleasure.  I
+need to see if I can get my --
+ah, yes, wonderful.  I can get
+my curser over here.  This is
+really sophisticated.  Thank you
+so much.  My topic is Our Planet
+Seen from Space.  And I'm a
+Ph.D. candidate at the
+University of Alaska favor
+banks, and I moved to consider
+Fairbanks in 2011.  I worked
+with a company with marketing
+software, and someone or
+something attracted me to
+Alaska.  Really, either they
+stick there or don't.  And I
+really fell in love with the
+north.  There's so much going on
+and people don't know about it.
+I monitor wildfires with
+satellite imagery.  A few people
+give me money to do that.  Give
+a shoutout to NASA and several
+organizations.
+there was very much seen from
+space in the title slide
+earlier.  So I put -- we see a
+lot of pictures from space.
+This is from the international
+space station, shows the aurora
+borealis, the lights that we
+have a lot of where I live in
+the winter.  And the preparation
+of my talk, the question is,
+there's so much mapping there,
+no one in the audience won't say
+projection or something like
+that, but even if you work in a
+different field.  But hardly
+anyone uses satellite imagery.
+There's a lot of it there.  We
+send students out all the time
+to get like GIS vector data
+from, for example, the local
+government and then put it on a
+map as an exercise.  This is
+very common to do.  But we
+rarely give them some satellite
+imagery and put it on a map and
+do something with it.
+For those who are unfamiliar,
+the differences are quite stark.
+So for vector data, you have
+files that could be proprietary
+like the geo, that's open, a
+flat file.  It's basically a
+database table where each record
+has a geometry associated with
+it.  Point, polygon, or some
+variations of it.
+And the image that comes out of
+your digital camera, it's an
+array where each cell has a
+value.  And I have been
+wondering why is everybody going
+to the vector and no one -- few
+work with raster.  It's
+something to do with vector data
+being an abstraction, and then
+you do something concrete, make
+a concrete presentation of it,
+and for raster, and the other
+way around, you already started
+with the representation, and you
+analyze and extract something
+from it.  I'm not sure.  Maybe
+this is just a speculation.
+This is, however, a data
+visualization conference.  Not
+an image analysis conference.
+This is one in one direction,
+the other in the other
+direction.  Maybe.  Who knows.
+But both are just data.  We can
+deal with data.  If you're a
+developer or can program, I'm
+self-taught.  To one gave me a
+stamp.  I can deal with data.  I
+can deal with data.  Vector-type
+tables, geolocation data
+associated with it, and meta
+data.  Meta data is extremely
+important, it tells you what's
+in the data.  Plus the data is
+to the arrays, stacked, and
+sometimes you have these things
+that have time and height and
+all sorts of dimensions
+associated with it with
+geolocation data and meta data.
+So we can deal with this.  But
+should we?  The question is
+should we care that there are
+oodles of free satellite data
+available?  Well, obviously I
+wouldn't be here if I didn't
+think we should care.  But I
+think we should give it some
+thought.  And, for example, here
+let me just start with
+something.  You will recognize
+this as a satellite image of
+some sort.  I actually
+downloaded it from scratch.  I
+got it from the archive and made
+this to show you.  What is this?
+Oh, see if that actually works
+from this.  So you can see it's
+something -- huh.  Yes, it does.
+It does not work.  So I have to
+change this over, I'm sorry.  I
+apologize for this.  All right.
+And this -- ha.  This will work.
+If I find this -- there's a
+market here.  And this is where
+I live, Fairbanks.  So I can
+zoom into this.  And I can zoom
+in like this.  Right.  So I can
+zoom into it, move around in
+it I can see there is a river.
+There is something weird going
+on over here.  And this is --
+there was a fire.  This image
+was from 2013, July.  We had a
+huge fire here.  I don't live in
+Fairbanks, I live here, 30 miles
+outside Fairbanks, we had to
+evacuate.  I want to know these
+things, and go from the south.
+Something interesting happens, I
+will see glaciers.  There are
+big glaciers here.  And you see
+that these glaciers, once went
+up to all the way here, now
+they're here.  And I can do even
+more.  I can go over here and I
+can switch the imagery over.
+And suddenly this is a bit dark.
+We saw this earlier, I'm sorry.
+But this glacier actually -- and
+this is an image from 1987.  I
+also got this one, put it all
+together.  And the glacier is a
+little bit further ahead in 1987
+than it is now.  Glaciers
+retreat really fast.  So this
+sort of thing is not unfamiliar
+to people who live where I live.
+And we want to work with it.
+And you might want to too, you
+know?  You -- where's my mouse?
+You might have a mine outside
+your town that might have a
+problem somewhere.  For example,
+this mine in 2014, it's in
+Canada.  On the left it was July
+29th and there is a tailing
+pond, on the south.  And August,
+the tailing pond is gone, it
+rained, and the creek then
+became a huge mud bath.  So you
+might want to have images of
+this and follow what's going on
+in your environment.
+And some people have now started
+to do this professionally.  One
+of the motivations I had for
+giving a talk about it was
+seeing this journalistic
+investigation.  It's a piece by
+Pro Publica, published a year
+ago about the disappearing coast
+of Louisiana, losing ground.  I
+heard from the developers that
+worked with the team, he had
+never learned to deal with
+satellites.  They went and got
+the data and made the
+visualization.  They are
+wonderful.  Google, you can find
+it.
+That tells me that as a science
+educator and communicators, of
+course, we use science imagery.
+But not just us, maybe citizen
+scientists, people who want to
+monitor their town or state.
+Industrial development.
+Agricultural development, does
+my city get more parks?  They
+disappear?  What's going on?  Is
+it growing or shrinking?  And of
+course some of us help planning
+for disasters.  I happen to work
+with the fire service and they
+also need to understand this
+better.
+So this brings me to my third
+question.  What data and
+toolkits do we have to do this?
+And if you think of the image I
+had from the Louisiana
+investigation in the bottom
+right corner, there was this
+little thing here, this little
+map telling you where you are,
+and it says source: NASA, USGS
+Landsat.  And that's where you
+can go.  I thought we should
+know a little bit more about
+satellite imagery.  What
+satellites are we talking about.
+We talk about something called
+polar orbiting satellites.
+There are others.
+We heard early tracking
+satellites, communication
+satellites.  They have different
+orbits.  And you have heard of
+geostationary satellites.  They
+just look at the same part of
+the earth all the time and they
+are very far away from the earth
+because they orbit with the
+earth.  They are about 10% all
+the way to the moon.  Which is
+really far.  Whereas the polar
+orbiting satellites are just
+about 800, 700 kilometers above
+us.  The international space
+station is even lower.
+So they actually get a pretty
+good image of the earth.  And as
+you can see, well, one here has
+orbited itself out.  Start it
+again.  Oh.  Well, I don't
+know -- anyhow, you can see here
+that it will acquire the image
+in a band that goes around.  And
+at the poles those bands overlap
+more.  Which is why at the poles
+you put down -- or close in the
+poles in the high latitudes,
+putdown receiving stations.  We
+have two operate, one operated
+for NASA, and the other one uses
+their software which is open
+source.  If you have a thing
+like that, you don't need any
+permission for it.  But, yes,
+institutions can actually do
+that, you know, and some do it
+commercially.  We have stations
+by NOAA, that's the National
+atmospheric and oceanographic
+organization that does the
+weather service.  So they have
+satellites there.  And then we
+also sometimes do a dish like
+this in the woods.  Dig a little
+deeper, it's a private company
+that runs that satellite.
+So as I said, the easiest
+satellites to use actually is
+Landsat.  The nice thing is it's
+all free.  Spatial resolution is
+30 meters, each pixel is pretty
+much a square 30 by 30 meters.
+It's good enough.  The images I
+showed were -- not good enough
+for monitoring your house.  But
+anything a little bit bigger,
+yeah.
+It has a data archive.  It goes
+back to the '70s, which is
+great.  And the data is
+published in the GeoTIFF.
+Basically a TIFF with your
+information.  We will come to
+that.  If you want satellite
+data, you need to work with data
+portals.
+And this is I think one of the
+biggest portals.  They are
+written by scientists for
+scientists.  And that's not
+always a good thing.  But the
+people who run these data
+portals have become a lot more
+aware of questions of usability.
+There are now organizations who
+talk about data usability,
+discoverability, meta data
+standardization, thing like
+that.  I think this is a great
+development.  And some of the
+easier to use portals are
+actually not hard to use.  This
+one has a lot of public data,
+not just from Landsat, but other
+satellites, including
+non-satellite data, aerial
+imagery, historical aerial
+imagery from the '50s, really
+interesting stuff.  And it's
+really, get an account, simple
+registration.  Don't have to
+belong to any particular -- you
+just have to have an e-mail
+address.  You do a selection by
+location.  You have a relatively
+easy to use -- well, it's clear,
+right?  And, well, just leave
+open everything you don't
+understand and this one actually
+still works.  Others don't.
+This one is really good.  When
+you go there you can make your
+selection and here the images
+for some reason they have
+disappeared.  But when you want
+to download it, you get some
+offers.  You see Landsat look
+images, they are a few
+megabytes.  If you want to
+illustrate something, good.  If
+you want to view spatial mapping
+you need something slightly
+better.
+Well, the lens that look with a
+geographic reference comes with
+a little file that's called a
+are row file.  Better than
+nothing.  Many applications work
+with that.  If you want the full
+thing, you get the level one
+product.  And for the older
+data, the older Landsat had a
+lower pixel, 150 megabyte for
+one.  The new one is about 900
+megabytes.  2 gigabytes.  So you
+have to deal with this amount of
+data.
+Alternatives, there is a similar
+satellite.  And I will go with
+what they are from the European
+space agency.  The sentinel
+missions.  And the Europeans,
+until recently, had like the
+Japanese and others had more of
+a philosophy it that, yes, the
+data should be available, but
+for registered users in a
+well-recognized institution.
+But I think it was a good
+influence of the United States
+whereas always this idea that
+public produced data should be
+public.  I think this is one of
+the good principles here.
+They had really -- they have
+made some headway.  And the
+sentinel data is available, ESA.
+It's in JPEG2000.  I have less
+experience with it, but it's
+workable.
+And then if you want to map the
+whole world, if you wanted to
+climate mapping, you need
+something like MODIS or VIIRS,
+search for them.  Maybe more
+arduous data formats.  But your
+tools work with them.
+If you sign up, sentinel data,
+it's open and free to all.  It's
+wonderful.  Used to not be like
+this.  And sentinel data is
+going to be ten to 20 meters
+resolution, which is very nice.
+There are a few more, one called
+Spot is a French one.  These are
+not free.  But the state of
+Alaska has bought this data they
+have for my state.  That might
+be the case for your state or
+country.  Just check and look.
+A good source is also NASA
+worldview.  It's a very rich
+interface.  You can overlay all
+sorts of layers and download
+directly from there.
+But as you can see, the download
+names are really complicated,
+and the performance, HTS, so
+there's learning here.
+What is a satellite image?  It's
+actually, as I said, not very
+different than any other image
+that you have, except there's a
+lot of channels.  The current
+Landsat has 11 channels, the old
+one had 7, MODIS, 36.  Some
+satellite sources that have 120
+channels.  You do look at those,
+but some have just four.  Then
+you select some and make a full
+color from them.  And depending
+on what you select, you will get
+a different result.  Here's what
+you get from Landsat.
+Currently, it's unzipped, and
+the TIF files, it sorts it in
+this order, of course.  And down
+to band nine.  And then a
+quality band.  You can forget
+about that, and the MTL has the
+meta data.  And the library I
+will talk about.  We will read
+the meta data, it's not even
+XML.  Well, it's not -- but it's
+okay to read.  So depending on
+which channels you combine, here
+is a fire, I worked on
+wildfires, this was last year, I
+had a lot of them.  Having a lot
+of them this year.  In a town
+called willow, under the smoke.
+There's a beautiful river to the
+left.  And you can see this is a
+color combination that is most
+close to the eyes.  So this is
+the natural color image.  It's a
+glacial river, has a lot of
+silt, looks gray.  And you can't
+see the fire, there is smoke
+there.  There is a road, we
+don't have many in Alaska.  But
+if you take the bands in the
+near and short-wave infrared, if
+you know micrometers, one to two
+micrometers and combine with the
+visible bands.  If you don't
+know, infrared is good for
+smoke, you get an image of where
+the fire is, and most of the
+smoke disappeared because it has
+it looking through the smoke.
+This has a thermal band that
+works at a higher wavelength.
+It's raid ration emitted by the
+fire.  And you can plot this
+too.  I opened this in a free
+image processing software and
+added a color.  You could do it
+with a command too.  That's what
+I did here.
+So the question is now what can
+we do with this?  How do we get
+that have anyway?  And what is
+our infrastructure here?  So I'm
+a Python person.  You can have
+similar things in R, and many of
+the underlying libraries that
+approach in GEOS and GDAL, they
+have findings in Python and
+other languages.  NUMPY is
+Python specific.  And you have
+special libraries to plot or
+read the files if you need them.
+You don't need those for
+Landsat.  And Pygaarst, my
+library, making opening them
+easier and Sean contributed with
+his tools shapely, fee owe that
+and rasterio, or rasterio, I
+never know.  And these are built
+on the underlying libraries.
+They need them installed, but
+you don't have to deal with the
+pretty awkward interface in the
+API.
+So to come together to get the
+images I showed you, you need
+the GDAL, it's a big library.
+It comes with command utilities.
+And you can just take what I
+showed you earlier, cut them to
+the size you want.  You will
+need the library to figure out
+where your coordinates may be.
+You may know the latitude and
+longitude.  But it doesn't come
+in a latitude/longitude, it's a
+projection.  And if you want all
+together, you can use merge.py
+to mosaicking stuff together.
+And shell scripting is your best
+guess here.  It's a good skill.
+You don't need more than
+associated commands.  But basic
+knowledge of scripting is a good
+their here.
+And now you downloaded the data
+and you have RGB come positive
+its and the combinations you
+want.  And sometimes you see
+something really interesting by
+using a combination that no one
+told you to do.  There is a lot
+of pretty artistic stuff that
+comes out of this.  Vegetation
+is different color from sand,
+forest is different colors from
+pasture or grass.
+You will see a lot of things
+there.  But now we want to put
+stuff towards an audience.  You
+want to make it usable.  You
+want to make something -- I
+have -- I have two approaches
+here.  One is more like you want
+to put stuff on the web.
+Well, you have HTML, you have
+modern HTML, and all these
+things that you probably know a
+lot better than I do.  But what
+you can do is, for example, I
+have pictures of my fire that I
+had earlier.  Now I have a
+before, a during, and an after
+picture.  I did what I did
+before here, I took this.  This
+is the during picture.  And I
+have a before and an after.  And
+I combined them using nothing
+more fancy than -- well, I
+formed them into PNGs and then
+I combined them into one using
+image magic.  And then with HTML
+five I can do a key frame
+animation to show the before,
+during, and after.  Just to make
+change visible.
+So change depiction is a really
+great thing.  And one way of
+very simply doing this is this.
+There are more complex ones.
+Obviously.  You have a very
+large number of libraries that
+use before/after sliders.  And
+here I do have -- try to get it.
+So this was a situation where we
+had a flood.  The Yukon River
+changes, it's cold.  And we have
+a time that's called the iceout
+or snow melt.  The iceout leads
+to horrible ice jams and can
+lead to horrible flooding.  And
+here in 2012, the town of
+Galena, a completely normal
+situation in 2012 was the victim
+of a flood because of an ice
+jam.  You can slide over and
+make visible how much flooding
+there was a year later.  That
+was 2013.  Yes, 2013 happened.
+So as you can see, this scale
+here, these were made by the
+observatory.  So this is 10
+kilometers, six miles of water.
+It was pretty much wiped out,
+it's a small town.  And people
+were flown out.  One thing you
+don't see are roads.  You travel
+by the river or by train here.
+So this is an example of what
+you want to use.
+Or, of course, the example I had
+earlier.  Go a little bit
+back -- my leaflet map.  As you
+see, this is nothing more than a
+regular map made with leaflet.
+The library, I could use open as
+well.  And GDAL has a helper
+that will make tiles.
+It's one command line, one line,
+GL to tiles.  I get tiles.  And
+I just have to figure out how to
+get them into leaflet and I can
+use all the tools I have from
+leaflet.  Including the thing
+here -- I could make the roads
+visible.  So as you can see, you
+can make a normal web map like
+this with the before and the
+after slide like earlier.  So
+this is one thing I would like
+to put towards you today with
+satellite maps.
+But not everybody wants to do
+all that much -- well, this is
+the recalculation.  Satellite
+mapping with HTML5/CSS,
+JavaScript, use tiles to
+generate tiles, leaflet or
+OpenLayer, ImageMagic to
+manipulate, or the plugins to
+make sliders.  And the images
+there.  And as long as you have
+preserved the projection and the
+geoinformation before you ended
+up going through the PNG images,
+you have perfectly aligned
+images.
+And even over the processing of
+these agencies is so good, that
+even if you compare something in
+the 1970s to now, they
+overlap.  '87, and 2015, 2013,
+25 years in between.  And I had
+the perfect overlap.  So this
+was really easy and not -- and
+quite gratifying.
+So things that I, however, do
+more often is to analyze the
+data a little bit more.  To get
+them inside some software.
+Inside a script.  Manipulate
+them.  And then use libraries in
+the script to plot them on maps
+or not on maps or whenever I
+want them.  Maybe to animate
+them.  Maybe movies out of them.
+So the toolkit for this one, I
+call it toolkit 2B, is a little
+bit ready.  And you can do it in
+Python, R, whatever you like.
+You use Numpy, because then you
+have rasters, Matplotlib for
+plotting, Basemap, GDAL, and to
+make movies -- I want to show an
+example of what I did.  Some
+example of what I do.  And the
+example has a little bit of
+code.
+So an example of what I do with
+the code right now is something
+called the burn index, or
+actually the differential
+normalized index.  You take a
+before and after image and look
+what is on freshly burned soil.
+So you maybe need an intern who
+knows a little bit about that.
+But we teach the introductory
+for that.  The burn index,
+before and after, if I compare
+it.  In brown, the fire earlier,
+the most severely burned places.
+Then I also have low-resolution
+data that I personally
+transformed into a GIS polygon
+data set.  But you could get
+this from somewhere else, or
+fire detections, where was fire
+detected by satellites that fly
+over more often but with a lower
+resolution.
+So I can overlay those with
+Python.  And plot them.  And the
+more red things are more
+defection texts, and where is
+there more burning.  And this is
+an example.  Maybe something
+entirely different.  Maybe you
+have demographic data to overlay
+over a map and see, for example,
+how does a demographic makeup of
+my city coincide with green
+spaces?  To detect the green
+spaces, they have demographic
+data in polygon.
+And now for my other -- my work
+example.  There is something I
+really have a very fondness for.
+It's the National Snow and Ice
+Datacenter.  They are doing the
+best job I have seen for
+distributing data.  They have
+good documentation that's
+readable that tells you in words
+you can understand, you know,
+what does a pixel mean?
+So they deal with many data
+sets.  This is the one I have
+the page here, sea ice
+concentration from some
+satellite or another.  Which
+happens to be someone that looks
+at microwave radiation coming up
+from the earth.  And microwave
+radiation shows you about cold
+things.  Microwave radiation is
+relatively cold compared to
+light and the infrared.
+So we have ice in the north.
+And it's shrinking.  So they
+have the best data set about the
+ice concentration around the
+north pole.  And if I take one
+of these images I have this.  So
+the concentration goes up to
+100%.  I don't have anything
+right at the pole, which is
+typical for a polar orbiting
+satellite.  Because it actually
+orbits slightly next to the
+pole, or around the pole.
+And we have sea ice all the way
+along Greenland, the Canadian
+coast, and to Alaska.  And this
+is some that I forgot.  So if I
+want to combine a lot of
+visualizations, what do I need
+to do?  I need to open this in
+Python.  I need to put in numpy,
+manipulating, and I showed with
+pygaarst, you can do the same,
+maybe with a few more lines.  I
+have to say raster, GeoTIFF of
+my finding.  And I have the data
+property that has the data in
+it.  In this case, I have to
+divide it by 2.5.  250 data
+value is 100%.  I have to
+normalize it 2%.  And then I can
+do a little bit about where is
+my -- where should my center be?
+I don't want to see the whole
+north pole.  I have a particular
+area I'm interested in.  This is
+north of the Aleutian Islands.
+I get the latitude and
+longitude.  And I can transfer
+them within the coordinate
+system of my data.  And I come
+to a few tests about which I, J
+coordinate of my raster
+corresponds to my X, Y,
+coordinate of my projected data.
+And then -- there we go.
+I can use the base map tool kit.
+And you may not be familiar with
+this syntax, but you have
+probably seen similar things.
+Even if you never used this one,
+you define a map with some
+variables in there.  You give it
+a latitude and longitude of the
+center.  And okay, maybe there's
+a scatterplot in there, see what
+it's for.  Give me coastlines,
+give me rivers.  And then
+putting it all together, you get
+a lot of data for each scene.
+And then I make a movie out of
+it.  And here is the coast of
+Alaska.  I happened to be in the
+interested in the yellow, which
+are the Islands, someone I know
+was doing research on foxes out
+there.  He wanted to know how
+much sea ice was out there.  So
+I made a video for him.  Sea ice
+doesn't usually reach those
+islands.  Saint George and Saint
+Paul.  But you can see how it
+develops and retreats, et
+cetera.  So this was not very
+much lines of code to get to a
+really nice thing.
+And with this observation I'm
+drawing sort of to the end of my
+talk.  I hope I have been giving
+you something to think about.
+And some -- some inspiration,
+maybe, to take the problems that
+you have and people you work
+with have and think about not
+just, is there a government
+agency or a business or a
+citizen science outfit or a
+censor out there that would give
+me some point data?  But maybe
+is there a satellite that was up
+there in space looking down on
+us that would give me some
+images that I could use to do
+something with it?  And then
+combine it and match it up.  I
+think that has become a little
+bit old fashioned.  It just came
+to me, it's kind of a mashup of
+things.  People specialize in
+one or the other, right?  So
+thank you very much for your
+attention.  I believe we have
+some time for questions, right?
+

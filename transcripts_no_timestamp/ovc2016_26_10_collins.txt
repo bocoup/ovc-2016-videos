@@ -1,0 +1,1081 @@
+>> Thank you.  I'm the only
+person here with a Windows
+computer.  I ran over very
+awkwardly.  The battery was
+about to die.  That's why I was
+sitting on the floor at the end
+of the talk.  Okay.  Let's see
+here.  I'm just getting it set
+up.
+So thanks, Irene.  We have
+enjoyed this conference,
+everyone is friendly, and it's a
+different community.  I love how
+everyone is paying attention.
+And I have been to conferences,
+people get a little bit
+distracted with this stuff.  So
+it's refreshing.
+So, yeah, as Irene said, I'm a
+professor of computer science.
+It is a little bit true when you
+get your Ph.D., you get a little
+bit more out of touch with the
+hands on stuff.  But I got to
+tell you today about some of the
+work in my lab with the
+students.  One of them is here.
+And our research area is really
+around linguistic information
+visualization is what I call it.
+So looking at language data and
+how we can interpret documents
+and understand document
+collections.  We also have some
+work in visualization technique
+and interaction design.  And
+thanks, Arvind, for the
+shoutout, that's one example of
+the work we do.  We do some work
+with natural user interfaces.
+I'll talk to you today about the
+visualization research.
+Today I want to skewer some of
+the concepts we see in the media
+about the information overload.
+So in my grant applications I'm
+with this too. there's so much
+linguistic information, what to
+do?  We need to solve it.  Thing
+like this.  Lawrence Perry,
+2010, With the amount of
+information online, it is very
+easy for people to drown in
+useless information that they do
+not need in their business or in
+their lives. If you try to
+absorb all of the information
+you can find online, then you
+will experience social media
+overload.
+This isn't the first comment
+like this.  Go back further.
+Marshall McLuhan, One of the
+effects of living with electric
+information is that we live
+habitually in a state of
+information overload. There's
+always more than you can cope
+with.
+This is a payments quote.  Back
+further.  1755, Denis Diderot,
+As long as the centuries
+continue to unfold, the number
+of books will grow continually,
+and one can predict that a time
+will come when it will be almost
+as difficult to learn anything
+from books as from the direct
+study of the whole universe. It
+will be almost as convenient to
+search for some bit of truth
+concealed in nature as it will
+be to find it hidden away in an
+immense multitude of bound
+volumes.
+Gets even worse.  We have reason
+to fear that the multitude of
+books which grows every day in a
+prodigious fashion will make the
+following centuries fall into a
+state as barbarous as that of
+the centuries that followed the
+fall of the Roman Empire. How is
+that for drama?  I should put
+this in my grant application.
+So I would say don't panic.
+Solutions have also been around
+for a long time.  Öutility of
+lexica comes not from reading it
+from beginning to end, which
+would be more tedious than
+useful, but from consulting it
+from time to time.
+This is an example of an
+encyclopedia you would read.
+And understanding the document
+structure through a personalize
+the system.
+Charles Sorel, 1673, The
+greatest secret is to make
+different marks for different
+kinds of passages: crosses,
+circles, half-circles, numbers,
+letters and other characters
+which had the various meanings
+one had assigned to them.
+This is a personal process of
+annotation to allow somebody to
+understand the document.
+So the real problem is not and
+never has been the wealth of
+information.  The problem is the
+lack of appropriate tools for
+filtering, exploration,
+annotation, and collaboration.
+The pace of information
+dissemination exceeds the pace
+of tool and technique
+development.  We are always
+catching up. That's just me.
+
+So visualization has been used
+for text for a long period of
+time.  So this is a more literal
+sort of drawing of a
+visualization.  But these
+beautiful visualizations of
+bible stories from Clarence
+Larkin really depict the kind of
+possibilities that are out there
+if we really delve into a
+document deeply.  A lot of
+researchers outside of my lab
+have been looking at this,
+including before when I was
+working in this field in 2007.
+So what kind of language data
+are we looking at?  We're
+looking at possibilities for
+things like understanding
+culture and society,
+understanding the history of
+English literature, the history
+of the court system, business
+analytics, analysis, these kind
+of things.  All under the field
+of language data analysis that
+I'm working in.
+However, and thanks for Marty
+Hearst for this example.
+Visualization is not really a
+replacement for reading.  What
+do you think this book is?
+First impressions?
+Goldilocks and the agree bears.
+In fact, it's to be or not to be
+from the nunnery scene in
+Hamlet.  So we have this problem
+of a multitude of books, but I
+don't think visualization is
+going to solve the problem of
+having to read them.  I'm sorry.
+But today I'm going to tell you
+about how visualization can find
+what to read.  This can operate
+on a bunch of different levels.
+We started at the level of text.
+Multiple Websites or collections
+of documents.  We could go into
+a single document or the single
+document letters or topography.
+And might have meta data at each
+level.
+So it's a really challenging
+problem.  So what I want to sort
+of propose today is if we can
+make a visualization at one of
+these levels, we're helping
+people dive into a lower level
+to find out what they want to
+investigate more deeply.  So,
+for example, we might visualize
+a document collection to help
+somebody find a document of
+interest.  And I'll talk you
+about a couple of projects we
+have in that area.  So the first
+one is called flex flow.  This
+was a project led by a student
+in collaboration.  He was at the
+University of Toronto,
+collaboration with my lab and
+others.  What we were interested
+inside project, looking at this
+at detecting rumors on Twitter,
+or things that were unusual.
+Unusual propagation patterns.
+Inspired by events that we were
+seeing where rumors would go
+viral on Twitter.  We saw sharks
+running down the street during
+Hurricane Katrina.  And others
+from the London riots.  So for
+this project it had both a big
+back end piece in terms of the
+linguistic analysis, we had some
+help with that.  As well as the
+front end visualization.
+On the back end, with detecting
+anomalies, a variety of features
+to process the Tweets.  We
+collected millions of Tweets
+from a particular event, and on
+a high level the features were
+about the user.  So, for
+example, is it unusual for this
+person to be Tweeting at this
+time or Retweeting this person
+or using this language that they
+don't normally use.  Tweet
+trajectory features, is the
+Retweeting increasing in a way
+that's unusual.  And the
+semantics of the Tweet itself.
+We were looking at retweeting
+patterns and create the graphs.
+And glyphs.  It represents a few
+different things.  I don't want
+to get into too much detail, I
+have a bunch of projects to tell
+you about.  The time since the
+Tweet was posted.   The overall
+color, or the hue of the circle
+is the anomaly score from an
+orange meaning low anomaly to
+purple, high anomaly.  And then
+the size of it is the volume of
+the Retweeting that is
+happening.  So the pattern
+across from left to right are
+all the Retweets of this week.
+Okay?  So each one of these
+circles is Retweeting the
+original Tweet.  You can see
+here that it change there is
+orange to purple as our
+classifier is saying that over
+time this became more unusual.
+It has a higher anomaly score
+later in the time period.
+Which is why it's becoming
+purple.  The stuff in the
+background is a bit of
+artificial intelligence
+visualization.  Shout out to
+Martin, I don't know if you're
+still here, but it's the hidden
+states in the classifier.
+That's the background.  You can
+see, for example, the lower
+anomaly, and only bottom, higher
+anomaly, higher volume.  You can
+play around with this at this
+FluxFlow address if you want.
+The data set you'll find there
+is the Hurricane Katrina.  Yeah,
+Hurricane Katrina data set.  If
+we look -- I just have a vector
+of it here.  See if we can --
+So in this version we can see
+I've loaded in a few Tweets, and
+this is one that was given a
+higher anomaly score.  It was
+actually -- they were talking
+about the people still standing
+at the Tomb of the Unknown
+Soldier in New Orleans during
+the hurricane, which was a rumor
+of course.
+So the way we evaluated this was
+to look at whether or not humans
+could do classifications of
+Tweets better using this tool
+than if they were just reading
+them.  And against a couple of
+different classifiers.  And we
+pulled out the top 500
+abnormally ranked Tweets and put
+them into the interface.  And
+allowed people to manually
+triage them.  And found the
+success rates were sort of low.
+You can see here we were able --
+ours is the blue bars.  For the
+Hurricane Sandy example, our
+top-ranked anomalous Tweet was
+ranked at being an anomaly or
+rumor.  But when we started
+getting down into the top 20,
+only about a 40%.  So only 40%
+were rumors.  However, take this
+in the context of random chance,
+one out of 500 to try to get
+whether it was anomalous or not.
+We're a lot better than random,
+but still a bit of a problem.
+So the message to take away here
+is we were able to create a
+system that allowed people to
+find Tweets that had to read to
+decide if they were rumors or
+not.  It was accurate to 100 to
+40% depending on the list, but
+not enough that you have full
+confidence.  With that said,
+nobody wanted to read all 3,000
+Tweets, or 5 million.  Too much
+information.
+So we're looking at here, then,
+can we make a system where
+somebody can speed up the access
+to the information of interest?
+So another project along the
+same lines that we were working
+on a few years ago was published
+in 2013.  Was looking at car
+accident reports.
+So in this project we looked at
+600,000 car accident reports.
+And these are car accidents that
+were reported to the national
+highway traffic safety
+administration in the United
+States and each of them
+contained a report of an injury
+or a death related to the
+accident.  So what we were
+interested in this project,
+could we take those car accident
+reports and do a different kind
+of twist on text visualization
+by turning it back into the
+original object being discussed?
+So we made our own ontology
+keywords relating to car parts.
+And to do that we used Wikipedia
+and a few other resources to
+gather car part words with some
+manual creation, we created this
+ontology.  We also processed the
+text to find synonyms and things
+like that.  And then we had to
+do a bit of manual tweaking to
+pick out problems.  First,
+second, third, are gears.  But
+used a lot in a description of
+an accident.  First and second
+this happened.  So we had to
+take those out.  You're used to
+this.  The theme with the data.
+And you'll see this coming up
+now and then, and processed it
+into a database.  The
+visualization works so that we
+get -- if something doesn't
+occur at all, we show it as a
+ghosted image to provide context
+about the shape of the vehicle.
+And then if it does occur, then
+we play around with some
+rendering using a hue-varying.
+We really struggled here about
+whether or not to use lighting
+effects.  Because of course the
+lighting effects modify the
+color, but were necessary to
+distinguish the parts from one
+other.  Definitely a design
+tradeoff.  This is what it look
+like.
+We can drill down into different
+years and makes and
+manufacturers.  It's based on
+the rendering of a vehicle.  And
+we also have a lens that allows
+tows look at more details about
+a particular part of the
+vehicle.  Anything in that lens,
+a time trajectory, a matrix plot
+or heat map about the car part
+in the accident reports over
+time.  And finally, going along
+with the theme of the talk, you
+can drill down to the part of
+the car you selected as well as
+the make and model and model
+year of the car that you have
+chosen.  This is intended to be
+used on a touch screen display,
+but also used in an environment
+where you are using a mouse.
+And here is just a video of how
+it works.  So just looking
+around this car, you can see the
+various different details.
+There are too many car parts to
+show them all at once.  And you
+can also use the little handle
+that you can see happening on
+the lens allows you to spin it
+around and drill down into the
+car itself.
+I think that's going to happen.
+No.  Yeah.  So you can sort of
+cut away the car to see the
+internal parts and isolate those
+parts.
+So what were we able to find?
+Just as a proof of concept we
+were able to see, for example,
+that the Toyota accelerator
+pedal issue coming up with the
+Toyota's uncontrolled
+acceleration, very highly -- you
+can see here just the power.
+Just to go back to the stuff
+yesterday about humanizing and
+the power of visualization.  The
+power of reading this example,
+the actual text of this is more
+viscerally impactful than just
+the visualization.  I advocate
+for providing access to the
+underlying data.  It sounds
+scary, the way the car took off
+and had no control.  That's
+isolating the brake pedal.  You
+can see the huge jump between
+January and February.  It's
+interesting, actually.  The
+biggest increase in complaints
+about Toyota cars in this
+database happened after Toyota
+announced that there was a
+problem with the cars.  So then
+people started just jumping on
+board and complaining about this
+problem.  But we can see before
+that there are some issues being
+reported.
+So what could we use this for?
+So things like an am --
+visualization in a car
+manufacturer, what's happening
+with the current incoming
+accident reports.  Maybe
+something with hotel or product
+reviews.  Highlight the
+information being discussed on
+social media.  Okay.  Whirlwind
+tour.  Here's another project.
+So in this case we were
+interested in, again, finding
+documents to read.  And this
+actually was a project from
+quite a while ago I did with
+Martin and Fernanda at IBM.  We
+were interested in the U.S.
+court system.  And the
+collaborator was interested in
+the idea of form shopping.  This
+means do people bring a
+particular type of case to a
+specific court district because
+thing they're going to get a
+favorable decision in that
+district?  If you don't know,
+the U.S. court system is broken
+down into circuit courts,
+roughly geographical in the
+number here.  And then we had
+time and the parts of the course
+cases we were interested in.
+We downloaded the history of the
+courts.  I won't bore you with
+the problem of the fact that the
+data was so messy.  Quite a bit
+of my internship was spent
+cleaning up the data.  But it
+was turned into a database we
+were able to work with.
+Detecting and separating the
+text, and typical techniques
+like some stop words.  We had a
+dynamic list on the frequency.
+We didn't want judge and court
+showing up on the visualization.
+And then something called
+expectation statistics which I
+want to talk about.
+So doing anything with relation
+to text, to look at how a text
+is interesting, to look at how a
+text differs from a reference.
+So if we have the collective
+works of William Shakespeare,
+these are the most common.
+Macbeth, these are the same
+words.  And we use an
+expectation measure, what's the
+likelihood that the occurrence
+of this word is going to be this
+high given the reference corpus
+of William Shakespeare, we might
+get the specific words related
+to the play.  We did the same
+thing for the courts.
+We looked at given one court,
+and all the rest of the courts
+as a reference, what are the
+words more distinguishing for
+that court district?  This is
+what we found.  So notice first
+of all that we have words like
+Vermont and names like Pierce
+Kearse.  This was a good thing.
+A sanity check.  We expect the
+names of the judges, the names
+of the states to appear as the
+most distinguishing things for
+that district.
+So that was great.  We knew it
+was working.  So then we took
+those things out.  And looked at
+the more content words we were
+interested in.
+So the visualization is
+basically like a word cloud.
+However, it's organized into
+column, but relating to the
+court districts.  We have the
+hubs that indicate it's
+significant in a court district.
+It's in a light blue, and you
+hover and get the full edge.  So
+in this video, it's the quality,
+it's an old video, sorry about
+the quality.  You can see the
+exploration of the details here.
+So, again, getting into the idea
+of being able to drill down, if
+you hover on any of the words,
+you can actually get details
+about how that word course
+across all of the court
+districts.  Because maybe it
+only course in one of the
+columns.  And you can see those
+connections.  And finally you
+can select terms in order to get
+the list of cases that contain
+that term.
+And you can see here I'm going
+to select a few words relating
+to -- this was coming up a lot.
+It was interesting to me.  These
+words relate to a disease that
+coalminers get.  And they were
+bringing workers compensation
+cases to the court.  So you can
+see here the details of one of
+the cases that contains these
+three terms.
+And then you can click this and
+get down into the full details.
+So what else did we see?  Some
+interesting I think this is,
+like the word ostrich in the
+seventh circuit.  I didn't know
+what was going on.  I'm not a
+legal expert.  I thought it was
+an ostrich farm.  It turns out
+this is a legal term.  Excuse me
+if I get this wrong with the
+legal experts in the room, it's
+an instruction that the judge
+can give to the jury to say
+remember it's no excuse that
+this person didn't know what
+they were doing was wrong,
+right?  Can't put your head in
+the sand.  And this was used in
+a case, a famous Canadian was
+prosecuted here in the United
+States and it was used in that
+case.
+We also found some interesting
+patterns.  So, for example, our
+drug and narcotic-related terms
+have some weird geographic
+differences.  So methamphetamine
+in the west versus -- what do we
+have here?  Narcotics in the
+northeast.  And we don't know,
+of course, if this is meaning
+there's more prosecution
+happening or a higher rate of
+abuse of these drugs.
+Okay.  So that's document
+collections to document.  Let's
+look at another project, which
+is document collections to
+multi-words.  Things like
+phrases, but not actually full
+sentences.  This project was
+really exciting for us.  We were
+looking at passwords.  So
+passwords are things that we
+write every day.  They mean a
+lot to us.  We know that we're
+going to be writing them over
+and over, choose them carefully.
+They're personal, and we found
+they could be evocative.  So
+they have a lot of potential
+emotional content.
+So we had millions of leaks
+passwords from various different
+Websites.  First of all we were
+interested -- I was working with
+my colleague, Julie, a Ph.D.
+student, and we were thinking
+about the implications if we
+could detect the linguistics in
+the passwords.  As soon as we
+started looking at it, I got
+into a in the cultural analytics
+implications, the
+sociolinguistics.  What kinds of
+words do people use?  Do they
+represent security learnability?
+Can we train a model to learn
+the types of patterns that
+people use.  The answer is yes,
+unfortunately.  But it was a
+very good model.  And what do
+the passwords tell us about
+society and culture?  The
+process was to extract 32
+million passwords and parts to
+extract the most likely word
+sequences.  One of the things
+you'll hear me say is we use
+reference corpus.  And the
+corpus of American English is
+our reference.  It's available,
+it's not free, unfortunately,
+but it's available online.  And
+to do this, categorized the
+words on their meaning, WordNet,
+that is available for free
+online.  And parsed the results
+to create a grammar of
+passwords, basically.  And we
+were able to see that the
+grammar of passwords is
+different from the grammar of
+English.
+So, for example, this is the
+individuals.  I should have put
+the URL, you can find this
+online.  Let me see here.  Oh,
+there you go.  Okay.  So --
+not -- anyway.  So it's my lab
+Website/words in passwords.  So
+on this visualization we can so
+that what you're going to be
+looking at the most is this
+column, the G squared measure.
+The expectation.  Every line is
+a word.  We're looking at the
+ranking of the words based on
+their difference in expectation
+given English as a reference.
+So the most -- the word that's
+most common in passwords against
+English is the letter I, right?
+So people talk about themselves
+a lot in their passwords.  The
+second most common word is love.
+Which was huge.  We saw it
+throughout.  It was very
+unexpected.  It was seriously
+significantly high.  And this is
+hard to do on an IMAX screen
+while turning around.
+And then down here you'll see
+things like a lot of
+affectionate terms like baby and
+sexy and love and those things.
+So we found that people were
+really interested in playing
+with this, and the implications
+were that the language of
+passwords was very different
+than the language of English.
+So you can play with that a
+little bit.  We were able to use
+this to create a password
+cracker, which was best on a
+number of different measures,
+and we were able to find
+interesting phenomenon.  For
+example, animals.  Cute animals
+were way more common than ugly
+animals.  Which we sort of
+expected.  Monkeys, pets.
+Monkey is the number one,
+dolphins, monkeys cats and dogs.
+Emotional words like love,
+extremely common.  And this was
+verified across a couple of data
+sets.  People loved male names
+four times more than female
+names.  Not sure what this
+means, if it's heterosexual
+women with their password, or
+people writing about themselves.
+We tried to normalize for the
+population of users, but don't
+are the information if the data
+sets.  We weren't able to do
+that.  And profanity is
+extremely common, much more than
+predicted in the cannon of
+research, they're told to create
+a password in an experimental
+setting.  Don't worry, won't be
+associated with you, but they
+don't use profanity as much as
+they do in real passwords.
+And this is a preview of another
+visualization.  Looking at
+animal words.  These are the
+animals in the data set.  So
+this got some media coverage.
+It was fun to collaborate with
+the New York times on this
+article.  And we also looked at
+number patterns.  Again, this
+one looking at the things like
+dates.  So on the top here, we
+have the calendar, 365 days.
+And the brightness -- sorry, the
+dark blue is more common.  A
+date, number pattern that
+matches that in the password.
+So 14344, anybody know what that
+is?  What is I love you very
+much -- I love you very much.
+Yeah.  I love you very much.
+It's the number of letters.
+It's not actually a date, it's a
+mistake.  But it's what people
+would write if it they were
+saying I love you very much in
+the password.  The most common
+is I love you, which is nice.
+And 90210, which is interesting.
+And we found interesting date
+patterns.  These dates from
+September 11th, 2001.  And
+NY91105.  And twin towers, TT.
+Okay.  So I parked too much into
+this -- sorry.  I'm getting the
+okay from here, so I'm going to
+keep going.
+let's see here.  This is a
+project looking at the document
+level.  From the document down
+into the particular segments of
+the document.  On this project,
+looked at the WordNet database
+and the book, and two
+directions.  And we are
+extracting an ontology of words
+that is our relationship.  So
+water is a liquid, game is an
+activity, and the furniture, and
+also extracting words from the
+text and sending them and
+bringing the two together to
+create a visualization that
+creates the sun burst diagram,
+the darker the green, the more
+in the text.  It's organized
+secondarily the manically.  And
+this is a preview, not yet
+published.
+We are working on a general
+method for uneven tree cuts.  So
+in this technique, and going to
+publish this open source online
+is a method for automatically
+determining what the initial
+view that you should show of a
+large hierarchy.  And this is
+being done with D3.  So here we
+have a tree, and you can see the
+yellow and the orange lines are
+different depth of a tree cut.
+So if you look at a traditional
+hierarchy on the bottom, you
+would normally get three levels
+of depth.  Our algorithm is
+using information theory and
+entropy to measure the
+characteristics of the data
+underneath the level, and maybe
+open the other levels, maybe
+there's something interesting,
+and collapse the top.  This is
+our initial view.  And we expand
+down, we see that the
+traditional view expands
+everything, and our view expands
+more deeply in some regions and
+shallow in others to show the
+data with higher values.  We're
+excited about this work.
+Submitted it for publication.
+The demo includes some of this.
+You remember this.  This is a
+feminist hacker Barbie, a
+response to the awful book:
+Barbie becomes a computer
+engineer.  We have data from
+hello Barbie, which is a new
+Barbie doll that you can talk
+to, your child can talk to, I
+guess.
+We have the script of all the
+things that hello Barbie can
+say.  Interested in the data,
+great to give to Kyle to put
+into his linguistic generator to
+create Barbie language.  But we
+have put it into docuburst to
+look at patterns.  This is the
+word entity, these are the top
+level things that Barbie might
+say.  This is the general
+version, and I switch over to
+the uneven tree cut version.  So
+just a video because for time
+purposes I didn't want to mess
+up the demo.  So here is all the
+words that Barbie can say.  The
+things you can see, she's
+interested in talking about her
+friends and her parents, mother
+and father.  Asking questions a
+lot too.  The Barbie doll is
+saying how are your parents?
+What else in here?  Food, fun.
+It's a toy.  Maybe give it a
+pass for talking about fun and
+games.  But let's drill down a
+little bit, look at the area of
+cognition in WordNet.  These are
+the cognition-related words that
+hello Barbie will talk about.
+So kind and right here, an
+anomaly, the way they are used.
+It's a mis-characteristic.  She
+talks about fashion.  Changes
+the conference to talk about
+fashion.  I love fashion.  There
+are so many comments about
+fashion.  Let's get a little bit
+deeper, and we have to drill in
+where she talks about science
+and math.  There are some, there
+are three things about physics.
+So I think there's some response
+here to try to bring out some
+diversity in comments.  But the
+fashion is still really big.
+And nothing against fashion.  It
+just -- thought you might find
+it interesting.  Definitely
+Barbie has a different view on
+that than she used to.  So she's
+really into math, which is great
+and fun to see.  Let's see where
+else this goes.
+One more thing I want to show
+you.
+>> Use the word content or
+entity?
+>> They're gray, they're not
+used.  Her favorite color is
+pink and red, green is here
+because of Christmas.  She
+doesn't talk about any other
+colors though.  Just pink and
+red.  The absence here means
+something.  So there's no other
+color.
+Let's see.  Second to last
+example, look at person words.
+So person words.  She's really
+into medicine.  So doctor,
+veterinarian, teacher is great.
+Other related person words, so
+things like princess is huge.
+And in here, talking about
+princess, Halloween costume, and
+better, and lots of
+princess-themed things.  And I
+have to look around to try and
+find this, these are all the
+people-related words.  Go way
+down and you can see that she
+does talk about engineering a
+little bit.
+
+These are the data sets.  So
+that's hello Barbie.  It's been
+fun to work with this data set.
+And thanks to my student, she's
+done this analysis over the past
+day and a half.  I have been
+Slack messaging back and forth
+to get ready for the talk.  So
+we have an online version,
+unfortunately it's broken.  This
+is one of the things I'm getting
+used to.  I have to maintain
+things, hard to do.  And this is
+using a service called open
+Calais, and it recently changed
+and no longer working.  We're
+going to get it fixed.
+Okay.  I'm way over-ish.  Three
+minutes.  Okay.  I got to read
+you a quote.  Once upon a
+midnight dreary, ponders, over
+acquaintance.  I nodded, as
+someone gently rapping at my
+chamber door.  Which one is
+this?  Which bar?  Any
+intuition?  Third one.  Yes.  So
+this is a new project called
+Lexichrome.  That was Edgar
+Allen Poe.  A student here at
+the conference, I invite you to
+check it out, crowd source data
+of how people respond to terms
+with a color reaction.  So what
+kind of colors do words evoke in
+people's minds?  We have 12,000
+readings of colors done by our
+colleague.  And we have been
+turning this into a
+visualization allowing you to
+explore the language based on
+colors that it inspires.  So we
+can look at the agreement levels
+so people really strongly agree
+that cowardly is a yellow word.
+Less agreement, but cowardly is
+the most positive.
+We can look at the language
+structure.  So, for example,
+here you might think this is
+available you can play with it
+yourself, Lexichrome.com.  The
+upper right is -- it's really
+into grass and plants, it's
+green and money.  And the
+bottom -- the bottom left are
+words relating to love and
+affection.  So you can explore
+this and drill down.  We have an
+editor that allow use to type in
+your own document and replace
+the words with other synonyms
+that might evoke a better color.
+Imagine you're an ad executive.
+This is the Coca-Cola manifesto,
+and they're talking about
+refreshing, we think it might be
+invigorating in this case to
+bring out red feeling in the
+reading of the document.
+Other things as I wrap up,
+looking at mapping literature.
+This is 12 years a slave,
+looking at the patterns of
+movement of the characters in a
+book.  Looking at open tools to
+parse the text, geonames and
+open text, disambiguating, it's
+an issue there.  And what do you
+do with the same locations, same
+name.  We have algorithms for
+that, but no time for it.  And
+tools.  Things we use generally
+in the lab.  Thing like tagging
+text, labeling people, cleaning
+the data, stemming.  One is we
+do, inflection.  In the synonym
+example, refresh to invigorate,
+if it said cats, we have to do
+dogs.  We often are doing things
+like partitioning text.  We're
+using some of the same
+technologies you have been
+hearing about, and using a bunch
+of NLP resources that you can
+find out about if you watch the
+video and pause it and read the
+slide.  And I want to give you a
+bit of a caution.  That there's
+also some challenges here.  So,
+for example, we saw the word
+team in the passwords
+investigation.  And we were
+really curious why people were
+talking about teams so much more
+in passwords than in regular
+language.  When we dove into the
+data a little bit more and
+drilled down, getting to reading
+the raw data, we saw this.
+Teamo, it's just teamo.  So this
+was just the I love you, back
+again, but in Spanish.  So we
+were assuming English passwords.
+But not all the users were
+writing in English.
+This one's from Barbie.  But
+this is what she actually says.
+Chelsea would love to see your
+shell collection.  So I'm
+assuming the shell direction
+that the child is telling Barbie
+about is really seashells and
+not -- but -- but the systems
+we're using don't have the
+ability in the small amount of
+data we have to disambiguate the
+meaning of the term.  We have
+things like speech tagging,
+things change a lot.  We have
+open research challenges.  The
+ambiguity of text, volume, and
+legibility.  We are putting
+backgrounds on it, skewing it,
+rotating it, putting links
+between things.  And we don't
+really know how we're affecting
+the legibility.  So some of the
+research we are working on
+lately has been partnering with
+people with perception
+research to try to understand it
+better.  I'll end there.  Thanks
+to the students.  Thanks a lot.
+

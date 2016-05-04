@@ -1,0 +1,486 @@
+>> Thank you for the
+introduction.  Thank you so much
+for having me at this
+conference.  It's been so
+awesome.  And I am intimidated
+as hell to be talking in front
+of all of you brilliant people.
+This is actually the first time
+I've ever spoken at a conference
+too.
+So thanks for having me.  Last
+talk!
+All right.  So right.  Designing
+Virtual Reality Visualizations.
+What's VR?  Cool.  Some people
+know, some don't, some people
+have some big ideas.  Here's a
+2D line chart, a 3D line chart.
+Here is VR or what you would see
+if you were wearing a VR
+headset.  So it's 3D in
+stereoscopic, you get a
+different image in each eye and
+an added dimension to play with,
+time, or motion if you choose to
+use it.  And you have a thing on
+your head that looks like maybe
+one of these things.  Oculus or
+Google Cardboard.  Or -- there's
+a lot of them coming out now.
+If you don't have a Google
+Cardboard, you can go get it.  I
+would really suggest it.  It's
+easy to get.
+I just looked it up before this
+talk, it's $5.  That's like dot
+come, something.  If you have 5
+bucks, I would highly recommend
+getting the Google Cardboard.
+All right.  So why is everyone
+so into VR?  What's the big
+deal?  It hacks your brain, it's
+really nuts.  If you haven't
+tried it before, try it out.
+Your mind is tricked into
+believing that you are present
+in the world that's rendered in
+VR.  Not necessarily not in the
+world that you're currently in,
+but you really just get the
+sense, like if here's just a
+couple of images that are
+examples.  Like this is one
+where you put your arms out in
+front of you, and you have this
+thing on your head, and there's
+a spider on the table.  And then
+it really like feels like that
+spider is about to crawl on your
+arm.  You get chills up your
+arm.  It's crazy.
+This is a visualization someone
+made of the walk on a tight rope
+between the twin towers.  And
+you look down, and you're like,
+oh, man.  That really feels
+scary.
+So it hacks your brain in a way
+that I've never experienced
+before.  It really creates a
+depth of emotion that I think
+people are really excited about.
+Cool.  So there's two kinds of
+VR content being made right now.
+And there's AR, which is
+augmented reality, which is a
+whole other ball game, I'm not
+going to get into, but right now
+the two kinds of VR content are
+360-degree video and rendered 3D
+graphics.  So 360-degree video,
+there's been a lot of journalism
+done.  And I come from a
+journalism background.  So I'm
+going to be sort of focus on
+journalistic applications.
+Harvest of change was one of the
+first ground breaking ones.
+This placed an amazing piece by
+New York.  Times magazine.  The
+Wall Street Journal put out a
+cool piece following a ballerina
+behind the scenes at Lincoln
+Center.  All of these are really
+rad.  And then there's 3D
+rendered.  How do you make it
+happen?
+For the 360 video, you need a
+whole crap ton of GoPros or new
+fancy 360-degree cameras.  And
+the render stuff, 3D rendering
+software, people use unity.  And
+three.js, and it's open source,
+it's JavaScript.  It's a new
+medium.
+In 2012 Nonny de la Pena debuted
+hunger in Los Angeles.  The
+Google Cardboard only came out
+in July of 2014.  And now it's
+now.  It really hasn't been that
+long since July 2014.  That was
+really the turning point in
+accessibility for VR content.
+Like if you make something now
+people can actually see it.  So
+it really hasn't been that long
+since it happened.
+So this is a datavis conference,
+right?  There's been a lot of VR
+journalism that's 360-based.
+It's really cool.  But I want to
+see more of taking advantage of
+the experience of the VR to tell
+data-driven stories.  That
+sounds hard.  Someone that has
+been doing this is this guy,
+Brian, works at POV.  Or had
+worked at POV.  Now has his own
+company.  Dataviz.  Can I make
+this video thing happen?  No.
+>> It was working.
+>> Oh.  Sick.  Try it again.
+All right, cool.  So I'll let
+this play through.  He created
+this visualization and you're
+walking through a city.  This is
+census data, I think.  And this
+goes for a while.  And then the
+next part of this video that you
+see -- I don't know if keynote
+will let me fast forward, so I'm
+going to just keep talking.  The
+next part of this video you'll
+see is -- here we go.  Crime
+rates.  So the areas in red have
+a higher crime rate than the
+surrounding area.  And that, I
+think, really takes advantage of
+your sort of visceral experience
+moving through this space.  It's
+primal.  We understand that red
+is bad or danger or poison,
+don't eat that frog or whatever.
+So as you're walking through it,
+going through it, you're going
+through a red zone, you really
+feel it's dangerous.  So I think
+that's a really successful use
+of it.
+So here at the Wall Street
+Journal -- not here, in New
+York.  We made this thing, VR
+NASDAQ, that was pegged to when
+the NASDAQ broke its previous
+record, its previous high from
+the year 2000.  Which was just
+about one year ago.  Almost one
+year exactly ago.  And I'll show
+you a demo of that.
+We made it in web GL.  So I'm
+not going to show the
+stereoscopic version, you can do
+that in your Google Cardboards
+that I'm assuming you're all
+going to get from Sears.com for
+$5 and look at it that way.  But
+right now I'm going to show it
+to you in the sort of 3D mode.
+In IMAX.
+So you start pre-2000 boom.  You
+can see sort of elements going
+by on the left-hand side.  Like
+a timeline.  And the path that
+you're walking on is mapped to
+the inverse of the price to
+earnings ratio.  So as you are
+approaching the top, that path
+is getting really, really
+skinny.  And you can look down
+and see, man, that is a skinny
+path.  That is dangerous.
+And that happened really fast.
+It this is really steep.  And
+we're about to go down.  And
+here we go.  Oh.  Oh, no.  Oh,
+no.
+I've never had to narrate this
+in realtime before.  Utilize the
+sort of color understanding as
+well with the areas of red being
+times of recession.  So now
+we'll just sort of climb slowly
+back to the present day.  Or one
+year ago when the NASDAQ broke
+its previous high.  And as
+you're sort of coming back up,
+you really get the sense that
+like it's a pretty steady climb.
+That path that you're walking on
+is nice and wide.  Looks pretty
+stable.  It feels very different
+than it felt when you were at
+the part of the visualization
+from the year 2000 in that giant
+bubble.
+And that feeling, that different
+feeling was -- I think we
+utilize that to communicate --
+yeah, to communicate all those
+numbers were the same.  The
+price of the NASDAQ index was
+the same.  Oh, and there's the
+rocket mode -- the price was the
+same, but the feeling is
+different.  And that's it.  Plus
+rocket ships, because -- why
+not?
+Cool.  So like I said, we use D3
+and open js.  Open source
+libraries.  And my partner in
+creating this interactive, Roger
+Kenny, is the man.  I was
+involved in the conceptual and
+design.  And our art director
+was very involved in art
+direction.  The majority of the
+code base was written by Roger
+and he rules.  And you can rule
+too.  Because he wrote a
+tutorial, a brief tutorial for a
+setup.  And you can find here.
+And I have a resources slide at
+the end that I'll just leave up.
+And happy to share with whoever.
+It's actually pretty easy.
+There's a lot of open source
+tools to making sort of basic VR
+environments.
+Yeah.  Depending on time I was
+going to do a demo of that.
+Yeah, maybe after.  After.
+Okay.  So why do we do it?  I
+already talked about that part.
+Why do we do it in the browser?
+So anybody can look at it.  In
+the Google Card boards you are
+getting for $5.  A third party
+player for 360 degree video, and
+wouldn't need to do stitching
+for the GoPros.  It's a huge
+video file and really tedious.
+So browser-based, 3js, VR.
+Awesome.
+Some challenges.  Kind of a lot
+of challenges.  I'll start with
+user intersection.  How do you
+design an interface when your
+user has no hands?  Like over
+here, the hands are over here
+holding the thing on their head.
+How are you supposed to navigate
+an interface like that?  There
+are really two inputs that we
+can take advantage of, the focal
+point in the very center.  And
+there's like one button on the
+side of most headsets.  So we
+use that to do like stop and go.
+And the focal point to kind of
+look at a button.
+But, of course, you can't just
+have people pressing buttons
+willy nilly, whatever they look
+at, so we had sort of a
+countdown.  We had this
+stoplight metaphor of like red,
+yellow, green.  And Google in a
+lot of stuff they make, they
+have a concentric circle thing
+that grows and lets you know
+that you have selected a button.
+Or action item.
+There might be more
+possibilities that open up when
+people start using controllers
+in conjunction with headsets.
+But right now I work at Wall
+Street Journal, I'm thinking
+about making stuff that's kind
+of as accessible as possible to
+the most number of people.
+So I'm not thinking about the
+problem too much of how to make
+the most complicated, intricate
+to navigate visualization
+interactive in VR.  Because it's
+not -- it's not my problem to
+solve right now.  But maybe it's
+yours.  That sounded so corny.
+First talk ever.  There we go.
+Information density has to be
+kind of low because it's hard to
+read in VR.  And that's the real
+thing.  Like the paragraphs we
+had on those sort of bulletin
+things were kind of about as
+much as we could get in there.
+And there was a timeline
+element, but it was hard to
+focus on all the stuff going by.
+It's hard to read text in VR.
+Eyestrain and nausea are real
+things.  And in the VR at
+NASDAQ, we kind of had to find
+this balance -- we had weekly
+data of the NASDAQ, but we
+didn't want the camera to bounce
+along each of those data points,
+because then you get really
+nauseous.  So we had to find
+something in between, like
+staying accurate to the data and
+making something that wouldn't
+make people feel sick.  So Roger
+worked hard on this algorithm
+that sort of followed the curve
+of it without being too bumpy.
+But I'm still not sure if we got
+that quite right or not.  And it
+was difficult.
+There's also a perception
+difficulties with 3D charts.  As
+Kennedy mentioned, I definitely
+made this slide today.  We're
+not that good at reading 3D
+charts.  So it might not be an
+ideal medium for a lot of data
+visualizations.  And
+gimmickiness, people are going
+to yell at you on Twitter if you
+make some VR chart thing just
+for the sake of making a VR
+chart thing and then put it out
+there.  People are going to be
+like, why did you do that?  And
+then you're going to be like,
+stop.  I'm sad.  Don't make fun
+of me.
+I'm like in second grade in my
+head.  Yeah.  People don't
+generally have the cardboards
+yet either.  That's a thing.  Or
+they don't have headsets yet.
+So like designing for cardboard,
+designing for the sort of lowest
+VR denominator is the thing.
+And having a fallback, which you
+can just look at in the browser
+if you go to/3D NASDAQ, that's
+what you see in your browser.
+WSJ/3D NASDAQ.  And
+One more thing, I'm going to
+show you a flowchart.  Ready?
+This was a giant pain in the
+butt.
+Yeah.  So VR chart versus line
+chart.  You get a third
+dimension, a time dimension, the
+magic brain hacking feeling.
+But you lose interactions, lose
+ease of navigation,
+accessibility, legibility, lose
+perceptional accuracy and have a
+heightened risk of people making
+fun of you on Twitter.  So what
+is it good for?  Like why do
+that?  Because that seems like a
+whole lot of bad things.
+It's good for potentially
+multidimensional data that you
+wouldn't be able to explore
+otherwise.  And it's good for
+using people's feelings about
+space to communicate stuff about
+data sets.  What does that mean?
+But how?
+I don't know is the answer.
+Here are some things that I
+thought of that people have
+feelings about that have to do
+with space.  Fear of heights.
+It's hard to walk on small
+things.  Red maybe means danger.
+Moving quickly feels different
+than moving slowly.  Flying is
+cool, point pointy things might
+hurt, large things might be
+heavy.  Et cetera, et cetera.
+Why use this to visualize data?
+I don't know.  We made it at
+NASDAQ a year ago.  And I
+haven't thought of another great
+reason to do it again yet.
+Which is why I haven't.  So you
+guys think of something.
+And then tell me before you tell
+anyone else about it.  Is VR a
+fad?  Is something people are
+thinking.  But I think hell nah.
+Or at least I've had the Kool
+aid.  One of the reasons, kids
+dig it.  Kids really like VR.
+And in ten years people who are
+kids now are going to be like
+the main consumer of tech
+content.  So kids dig it.  So we
+all kind of got to get on board,
+I think.  So now is the part
+where I show you some of the
+coolest shit I have ever seen.
+Ready?  Maybe it's easier to do
+this in the browser.  How do I
+do that?  Let's see.  Coolest
+shit I've ever seen time.
+Is that working?  Sweet.  This
+is called the machine to be
+another.  So these two people
+are wearing that and they are
+seeing the other person's body
+in their eyeballs.  And that is
+crazy.  People talk a lot about
+empathy and empathy being like
+the most important thing for
+journalism right now.  Or being
+able to harvest empathy, make
+people feel something.  Make
+people understand the point of
+view of another person in a
+world of another group of
+people.  That's why we tell
+stories, right?  That's kind of
+it.
+So I think this is an incredible
+tool.  Just an incredible tool
+to be able to do that.  I'm so
+stoked.  You can tell.  I'm
+sure.
+This is tilt brush.  Which is
+the HTC vibe.  Which I haven't
+gotten to try yet.  But I'm
+looking forward to it home boy
+is drawing in 3D.  And that is
+nuts.  And then you can go like
+walk in the middle of the
+drawing.  That's crazy.  That's
+some of the coolest shit seen.
+This is Oculus toy box.  That
+guy is like playing with another
+human being who's not in the
+physical space he's in, but is
+in the virtual space he's in.
+And they're waving at each
+other.  See?  Thumbs up, cool.
+That is some of the coolest shit
+I have ever seen.  Right?  I
+mean, man.  This is a Tribeca
+film institute interactive
+Website.  And they have a lot
+more really awesome stuff.  So
+that is a really good resource
+for checking out more of the
+coolest shit you have ever seen
+in your life.
+I think I might be ready to go
+back.  And we're back.  Oh.  I'm
+done.  Cool.  Thank you.

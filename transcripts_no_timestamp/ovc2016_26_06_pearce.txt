@@ -1,0 +1,646 @@
+>> Is this on?  Hey.  So today
+I'm going to be talking about
+writing reusable D3.  It's sort
+of an intrinsically complicated
+task.  We use D3 because it's
+super-flexible.  Unlike most
+charting libraries, you're not
+stop using whatever sort of
+taxonomy charts, library
+developer originally envisioned.
+You can directly encode data
+into marks on the screen.  But
+that flexibility bites you in
+the back when you finish your
+project and start something new
+and turns out you have a big
+pile of spaghetti code.
+So I'm Adam, start the at the
+New York Times last week.
+Learned very little except how
+the union works.  So I'm going
+to talk about my experience at
+Bloomberg over the last few
+years.  When I started, it was
+an in-house data design studio.
+Chris and Lisa talked about it
+the last two years.  And focused
+on the product that would take a
+slice of Bloomberg's data and
+dig down into it.  This is one
+that's up.  And you can see
+there's all sorts of ways of
+filtering, grouping, sorting.
+And the top has another four
+kinds of graphs.  And there were
+explorative tools that
+journalists and really
+interested people would dig
+into.  And we'd spend months and
+months and months designing and
+prototyping and making these
+things.
+And for making a big project
+like that, there's lots of stuff
+out there that'll help you do
+it.  I did not put React on
+this.  But there's all sorts of
+JavaScript front end frameworks
+that help you manage complexity
+when you're building a large
+app.
+And within a project you re-use
+codes with like your view or
+your control or directive or
+whatever the theme of your
+framework is.  You build the
+domain-specific scatterplot and
+keep using that throughout the
+app.  Between projects you can
+reuse the framework extractions.
+That worked great for a while.
+But then we transitioned to more
+of this traditional graphics
+that was tied more to the news
+cycle.  And instead of working
+on something for a couple of
+months and publishing a couple
+things every year, it was a
+couple of weeks or a couple of
+days or even a couple of hours.
+And I think in 2015 we published
+nearly 100 graphics.  And when
+you start working at that speed,
+frameworks become unwieldy,
+right?  They have a bunch of
+unnecessary abstractions.  So we
+saw earlier that redux is great
+for when you want to manage the
+complex state and the users
+interacting with the graphic
+through three or four entity
+points and stay in sync.  But
+that's overkill when you have
+the toggle and the toolkit, the
+only interaction you need.  And
+build up the layers between you
+and the DOM.  When you're trying
+to do cutting edge, flashy stuff
+so people pay attention, that
+stuff can get in the way.
+And the higher barriers to
+entry, you wanted the
+journalists and others to dig in
+and mess around with the files.
+And asking them to learn all of
+CSS, HTML, JavaScript, along
+with the JavaScript framework of
+the month is kind of a lot.
+And every individual project,
+you know, how do I build it, how
+do I react?  And build this
+template, it generates 20 files
+and you're ready to go and it's
+super-easy.
+And I kind of am a proponent,
+doing the small stuff, publish
+it and move on.  Just code like
+it's 2005 with your index on
+HTML, script out to CSS -- or
+script out js, and the style CSS
+if you are writing something
+with lines of code.  But this
+contributes to challenges.
+Because you can no longer rely
+on your framework do manage your
+code reuse.
+And we would start projects by
+going through and finding the
+block for the margin convention
+and one for axis.  And we would
+forge through the last thing we
+remember that had a toolkit and
+copy and paste that code.
+That's okay.  But every time you
+have to take out the code
+specific to the last project in
+the toolkit, just becomes really
+messy and waste a lot of time
+doing that
+And the thing that really
+starts to slow you down, I love
+D3, but it's pretty verbose.
+And before you even get into the
+like messiness of the callbacks
+that we just saw before lunch,
+managing interaction, just
+drawing a simple scatterplot on
+the screen isn't easy.  This is
+from the canon Cal scatterplot
+example.  And just to plot on
+the X and Y axis with the data
+points, you have to set up your
+margin object, the width and the
+height, make the SVG with all
+these attributes with the group
+element.  I found it has this
+magic transform translate string
+that exactly matches your
+margin, set up your X scale, Y
+scale, set up an X and Y axis,
+link to the data and the scale
+domains and link after you have
+done that.
+Once you have all that stuff
+there, you can finally start
+putting your data on the screen.
+And this takes a while.  So
+last -- I think it was around
+January or February, Gregor
+Aisch published this D3 jet pack
+library.  And it's a bunch of
+small functions that modify the
+functions to the D3 itself or
+monkey patch other functions.
+And really a bunch of stuff that
+condense the API.  This was like
+totally blowing my mind when I
+saw it.  You can play around
+with the D3AP without filing the
+pull requests.  It's hugely
+intimidating.  Just write the
+script and play around and
+experiment with other ways of
+writing D3.
+A couple other things in it.  If
+you ever want to move a whole
+group of things around in SVG,
+you have to translate a group
+element.  You have to remember
+that you have to modify the
+transform attribute and pass the
+translate string, and do the
+awkward, it's transform,
+translate, and not the other
+way, and you have to look at an
+old example and it takes
+forever.  So you just modify the
+selection prototype in D3 itself
+to add this translate function,
+which you just pass and it moves
+it by that much.
+And another thing you do over
+and over again, you set the
+things IDs and classes.  Takes
+a separate line of code every
+time you do it.  But you can go
+in and modify the event function
+so it -- you can just pass it
+like a CSS selector.  And it
+just turns out the sort of extra
+line that would be inside of the
+string.  And this is a thing
+that I think my co-workers
+dislike me the most more.  It's
+a wonky field accessor function,
+and you type it automatic with
+option F.  And over and over in
+D3 you're constantly making
+these unanimous functions that
+take a piece of data and return
+a piece of that data's property,
+maybe transform it with the
+scale.
+And ES5 is pretty verbose, you
+have to type function, curly
+braces, return, semicolon.  And
+this lets you do it in a single
+character.
+And things like word wrapping,
+things for helping you sort
+arrays without needing an
+underscore.  But eventually he
+got fed up with me and stopped
+accepting my pull requests for
+this library.  I realized I
+didn't need Gregor, I started my
+own library.  That's what D3
+startup is.  Another thing you
+do lots of times in D3, if you
+want to make new elements for
+everything, you have an array of
+data, you have to make a phantom
+selection.  And you get the
+thing you want to select, and
+call up the data on that, and
+that makes a bunch of imagery
+things, and enter to bring them
+into existence.  And then you
+have to repeat the thing you're
+selecting against.  I just
+edited the data function, and
+turns what's three lines of code
+into one line of code.
+And all of this stuff isn't big
+on its own, but it starts to add
+up.  And it just -- your code
+gets smaller and smaller and
+smaller and you can work with it
+so much quicker.  The biggest
+thing in the library is this D3
+conventions function.  So
+instead of setting up your
+margin thing and having it copy
+and paste this bit that
+configures an SVG over and over
+again, you have the objects and
+it automatically adds an SVG to
+the page that's configured how
+you like it.
+It also gives you back X and Y
+scales that are linked to the
+width and the height of the --
+of the SVG that you have
+created.  And creates X and Y
+axis that you can add to the
+page with the draw axis.  Which
+is great.  I hated doing it over
+and over again.  Instead of
+packaging this into a separate
+library, and there's a thousand
+of them, creates a short hand
+that you can use in line with
+the rest of the D3.  You have
+the flexibility of D3, but you
+don't have to type 49 lines of
+code to make a scatterplot.
+Instead it comes out being about
+nine lines of code.
+Which doesn't seem big.  And
+it's like, Adam, you're so lazy,
+why is it worth it just so you
+don't have to type this?  It's
+not only saving me eight
+minutes, but it transforms how
+I can work fundamentally.
+Instead of spending an afternoon
+trying to get my plot on the
+page, you can sketch within D3
+itself.  Which is great.  It's
+still not as short as, you know,
+making a plot with ggplot or
+Vega lite, but it's like you
+still have all this flexibility
+and you can do so much.
+And when you -- it lets you
+iterate over the data encoding
+space instead of just getting
+one acceptable plot on the
+screen and immediately starting
+to try to polish the design of
+it.  You get to pick from so
+much more.  So the two previous
+libraries were just about one
+and three and five-line
+functions that sort of work on
+your code to make it sort of
+more reusable as a micro level.
+This next one works on your code
+at a larger level.  It's a set
+of -- it basically does like
+really simple scrolling events.
+So you can make like -- do the
+scroll telling, and another
+callout to Jim.  Previous
+OpenVis talk.  He gave a talk
+last year.
+I'm going to focus just quickly
+on sort of what we -- why we
+built this and what we learned.
+So I was just -- kept making all
+of these steppers.  And every
+time we had a new stepper to
+make, look at the analytics code
+from the last stepper.  Realized
+that no one clicked through it
+all the way, and needed to
+redesign the stepper.  As the
+person making it, I would make
+like five steppers for every one
+before we could pick one that we
+liked.  And I don't like CSS
+that much, so I wanted to do
+something just totally
+different.  But for every one of
+these graphics that we are using
+a stepper for, it's on a
+deadline.  And you have three
+days to make the graphic, it
+makes zero sense to spend an
+unknown number of days trying to
+figure out how to do scrolling
+from scratch.
+So once we had a little bit of
+down time, and slowed down on
+the holidays, and I worked on
+this project on my blog
+explaining D3 color scales and
+mapping.  And had lots of time
+without the constraint of a
+deadline to think about how a
+scrolly sort of API should work.
+So I had that, had something
+rough for it.  It was good.  And
+then work starts up again, and
+we have this visual graphic that
+we want to do.  It's the
+sites -- Bloomberg.com, the
+yearly relaunch.  And so we
+wanted this to be good.  And we
+were working with new people and
+it was coming down to the crunch
+to get it done before it
+happened.
+But because there's a firm tool,
+I didn't have to worry about the
+scrolling, it worked with and it
+was magical and great.  I
+thought it was done.  It was
+scrolling, and shared it with my
+co-workers and use this, great.
+But it wasn't quite that simple.
+I had a couple of comments on
+the code, hadn't documented it.
+Everyone was like, what the hell
+is this?  How does this work?  I
+had to take more time and write
+up documentation and polish to
+put online.  And it helped to
+realize that everyone was having
+trouble and what wasn't working
+and adding that back into the
+library.
+Once that was done, we really
+had a nice little -- I was
+super-proud of all of the stuff
+that we did last year that I
+didn't even really work on.  But
+just the members of my team,
+because they had this new tool,
+didn't have to worry about
+working on steppers, they had
+the things that I didn't think
+was possible.
+And one of the things to
+preserve while making the
+library was keeping it really
+flexible and not too
+prescriptive about how the page
+is laid out.  So you can do all
+sorts of crazy, creative things
+with it like this scrolling.
+And I think we ended up making
+15, 20 of these last year.  Love
+to show them all, but don't want
+to make Robert's head explode.
+So it's open source.  But it
+wasn't as hugely successful as
+other people haven't been able
+to use it as much as I kind of
+hoped.  It's an awkward
+combination of CSS, HTML, and
+JavaScript.  And I really
+emphasize it would be flexible,
+and you can do whatever with it.
+But it might have been better if
+there were firmer guide rails to
+help there.  And the big thing
+that it's missing, it needs more
+work in the documentation.  I
+could sort of tell it was
+lacking when the tickets started
+and I had to talk it over with
+someone.  But it's been harder
+to invest that time.  And I'm
+not sure exactly how to do that.
+And there's a conversation on
+Twitter last week.  And when --
+the time, and experimenting, and
+Adam confessed he had to read
+the source too.  And that's one
+thing I want to encourage
+everybody with this talk.  Don't
+be afraid to roll your own
+tolls.  Think about what doesn't
+work in your workflow.  Or what
+your current tool set doesn't
+allow you to do.  And just
+experiment and try to make
+something.
+The Wall Street Journal just
+published a scrolling library
+that thinks about it in a way,
+and it would be difficult to do
+with the one I published.
+That's interesting to see.
+The last sort of full library
+that I did wasn't really a
+library.  I kind of mentioned in
+my talk proposal that I had this
+tool for how Bloomberg does
+annotations.
+And that didn't really exist.
+So I had to -- I was
+procrastinating on making this
+talk.  And basically it's kind
+of like this victory -- let's
+lay out our annotations by
+interacting directly with the
+thing.  You can drag and swoop
+arrows and get the labels in
+just the right position and also
+responsive.  That solves some
+problems with the other ways we
+were doing it.
+So this is to our like editors
+would come up to us -- it's like
+8:00, something is supposed to
+publish the next day.  They're
+like, could we just label that
+data point.  It would be great
+to have that text on the chart
+instead of in the body copy.
+And after they -- this like
+crazy transitions and 3D
+animations.  They have trouble
+understanding how it can be just
+so hard to put text next to a
+dot on the page.  We tried lots
+of ways of doing this.  One
+thing was use SVG crowbar and
+grab the graphic, and
+JavaScript, mess around in
+illustrator, but lose the data
+encoding, it's no longer
+responsive.  And viewport, and
+transform the scale.  Makes the
+text small.  You run into a
+cascade of problems.  And AI to
+HTML, responsive illustrator
+graphics, but then it was hard
+to -- it makes a pretty messy
+SVG that's hard to remake
+interactive again.
+And this library that kind of
+draws them more
+programmatically.  And you save
+it in the text editor, and save
+and reload the page.  It's nice
+to move it.  Which is what the
+library was for.
+And initially it was a snippet
+on my computer.  I didn't really
+tell anyone about it.  And I
+would just grab the annotations
+on the page and call this drive
+thing and save out their offsets
+into a position.  And I used
+that and it was great.  And no
+one else was using it.  I was
+like you should use my draggy
+thing.  I don't understand at
+all how to do that.
+So it was worth the time to go
+down and write everything and
+make a nice API, and include a
+single script on the page when
+you're ready to go, instead of
+having to muck around with the
+specifics of your project each
+time.
+And just in the last month since
+it's been out, it's been really
+exciting to, you know -- the
+Financial Times went sort of
+crazy with swoop arrows and done
+a bunch of things with it, it's
+been fun to see.  Gabriel did a
+less crazy thing, but nice to
+see it for dogs.  Yeah, you
+should open source your stuff.
+Because then you feel like you
+helped people.
+The last thing I'm going to talk
+about -- it's not actually like
+a full library.  And maybe it
+will be, or maybe it's not worth
+it.  So we were working on this,
+had this idea for a piece about
+the Super Bowl.  And let me load
+it.  It kind of had this, you
+know, it's -- had this idea at
+the last second and David had
+this whole like page mocked up
+in Illustrator.  And we were
+sitting there and finally got
+approval to make it.  And then
+we really wanted to do these fun
+affects.  But we had this page
+in Illustrator, and I'm sitting
+there and it's 5:00 and I'd
+really like to go home.  But I
+start trying to remake this as
+like HTML tables.
+It's like, no, this is so hard
+to do.  And I realize this
+Illustrator page was just a
+bunch of SVG.  So I just grabbed
+that SVG, and I opened it up in
+sublime, and pasted into the
+page.  That worked great.
+Surprisingly well.
+So we did that a couple of times
+for different projects.  It's a
+fun technique.  But one thing
+that gets in the way working
+like that, every time there's a
+copy change or something, you
+have to open up can the SVG in
+Sublime, you have to copy and
+paste over exactly the right
+index in HTML.  It sort of takes
+three minutes.  And if you're
+working with a designer,
+eventually they paste over the
+wrong thing and it's just a
+total mess very quickly.
+So I just made this -- it's
+literally just four lines of
+code that made this technique so
+much easier to do.  It's just a
+little bit of D3 that loads the
+page -- loads the SVG and drops
+it on to a page.  Not as an
+image, so you can interact and
+move it, do whatever you want
+with it.
+And David could just save his
+SVG and refresh the page and it
+would update automatically.
+This isn't huge, four lines of
+code.  But it made it so he
+could tweak things and get
+things to work exactly right.
+That's what you should be
+thinking about.  What are the
+rough edges that you are but
+thing up against and how could
+you fix them?
+There's a wheel like little
+universe of these tiny tools and
+they do so many things that make
+your lives so much better.  From
+loading data to really easy
+tools that don't make you muck
+around with SVG devs that are
+hard to do, drawing legends.
+And you don't have to be afraid
+of making these.  I was talking
+to Zan, she made this
+super-useful -- you type in your
+number, and you type in your
+format specifier, and it show
+use how it's formatting.  So it
+makes it so nice to just figure
+out how you need your number to
+be formatted.  She said this was
+the second thing she made with
+D3.  She was having trouble
+understanding how number formats
+were made.  You don't need to be
+an expert to make these, you
+don't need to be a whole monster
+charting library.  You can do
+this with just a couple of lines
+of code.  And use it to include
+with your workflow.
+And D3 itself, the version 4 is
+sort of moving into this like
+direction of all being broken up
+into a bunch of -- instead of
+being a big model library,
+here's a bunch of things.
+Here's how it loads DSV, here's
+how it formats numbers, here's
+how scales work.  It's just a
+bunch of tiny components.  And
+you can open up any one of
+these.  Some are big and long
+and confusing.
+But a lot of them, like the quad
+stream one is 150 lines of code.
+You can pop it open and see how
+it works and think about making
+your own to make your life
+better.  Thank you.
+

@@ -1,0 +1,604 @@
+>> Yeah, so I pitched a topic
+for this that was pretty big.
+Obviously I learned everything
+about how humans perceive
+graphics, but found it really
+hard to fit it all into 30
+minutes.  Obviously I know
+everything.  So why don't we
+just call it Everything we know
+about how humans interpret
+graphics.  And maybe just take
+some pressure off you guys to
+hear all that information.
+As Irene said, I work at the
+Washington Post, a graphics
+editor, a part editor/part
+journalist.  We rely on
+experience to inform our
+decisions on making graphics.
+And I have been wondering what
+studies are out there.  My role,
+I don't get involved in the
+academic world.  And it just
+seems that that's something I
+should really know.  It's
+collecting little bits and
+pieces here and there.  When I
+started researching this
+project, I became fully aware on
+how huge research is on
+visualization.  It's
+overwhelming.  And not
+everything is here, but it's
+synthesized versions of what I
+read.  But I gave it my best
+shot.
+And the visualization is
+visualization, a science, or
+language, it's perhaps a science
+because it must represent data
+accurately and methodically and
+without flourish so we can see
+trends and patterns.
+And because of this selecting a
+data visualization can be
+prescriptive based on what to
+show.  Many argue it's a
+language, it uses diagrams, and
+data is in symboling and
+semiology.  And the context must
+be learned and are not inherent.
+So throughout this presentation,
+think about what you think it
+is.  A science or language?
+In 1984 William Cleveland and
+Robert McGill had the ark
+typical study for visualization.
+Referenced by many of the
+studies I'm going to talk about.
+When that happens, I put William
+Cleveland's head next to the
+study.  Couldn't find a picture
+of McGill.  It gives us the
+ranking of the most basic visual
+tasks in our perception of
+graphics.  At the top of the
+ranking it's easiest to perceive
+position on the common scale,
+think about a scatterplot.
+Anchored on two common axis, X
+and Y, you are comparing across
+two common scales.  Bar charts
+are the same.  Usually compared
+along a common X axis, but
+Cleveland and McGill stated
+that length and area could be a
+factor in perceiving this as
+well.
+But this study was done over
+three decades ago, how relevant
+today?  Fortunately we have some
+clue.  They revisited some of
+the old experiments in a study
+as more of a proof of concept
+for using a mechanical term.  It
+was similar to Cleveland and
+McGill, at least with the
+tasks they tested for.  That's
+kind of reassuring.
+The studies show we have
+inherent biases with the objects
+and the objects in them.  And
+these biases made us distort the
+information from the graph.  We
+know from Steven's law, when
+seen in the context of other
+objects, it appears larger
+itself.  When seen in context of
+smaller objects, it appears
+smaller.  They found the
+spatial separation of lines
+could produce either effect.  If
+lines are close enough, a line's
+length is more similar to the
+length of line around it.
+Further apart, and long lines
+appear longer, short, shorter.
+And in two others, they found
+that charts were remembered as
+being more symmetrical than they
+were.  They gave them charts and
+told them they were charts or
+maps.  When participants
+encountered the smarts, they
+remembered them closer to the
+imagery 45 degree line.  When
+presented as a map, no
+distortion.  When text appeared
+next to the chart, calling the
+symmetry, they call it as being
+more symmetrical even though it
+was not.  This mean that
+annotations are powerful.  Of in
+a second study, a systemic bias
+toward an imagery 45 degree line
+in line charts.  When the
+diagonal line was there, they
+continually thought it was
+closer to 45 degrees than it
+was.  Meaning they overestimated
+the larger angles and
+underestimated the smaller
+angles.  Thus it's an imagery
+reference point for line charts,
+but not in other contexts.  And
+the works suggest that many
+visual systems promote different
+reference frames.
+Croxton found over eight decades
+ago that bars were more
+effective in communicating
+values than circles, squares, or
+cubes.  Circles and squares were
+as effective, but cubes were the
+worst.
+Much is said about the merits of
+bars and circles.  All of this
+the five studies legitimize pie
+charts and show their
+superiority over bar charts.  I
+did not encounter any studies
+that said we should not show pie
+charts.  He was among the first
+to publish a paper on this topic
+in 1926.  Much like today, pie
+charts were assumed to be
+inadequate.  For example, we're
+told the human eye cannot judge
+arcs, angles or chords
+efficiently.  He wanted to know
+how circles were processed, he
+handed out worksheets and asked
+them to estimate the proportions
+in the pie and bar charts.  They
+were read as quickly and
+accurately as bar charts, but as
+the number of components in the
+chart increases, bar charts
+become less efficient at
+encoding the data.  The opposite
+is true for pie charts.
+He found that 50% of the people
+use the outer arc to make
+proportion judgments.  While 25%
+use the area, and the other 25%
+use it in an arc or angle.
+Furthermore, 71 people in the
+class preferred the pies.  And
+only 25% preferred the bars.  He
+concluded that we ought to use
+pie charts.  Not just for their
+appeal, but for their scientific
+accuracy.
+He also concluded that men were
+superior to women in estimating
+these proportions.  So hats off
+to the men in the room.  You
+have done it again.
+
+A follow-up study in response to
+his work a year later did not
+find pie charts were so
+conclusively better than bar
+charts.  But they made cases, in
+the least, as accurate as bars.
+Six decades later, and three
+more experiments, pie charts
+were hailed for their strength
+in proportional data.
+Participants make proportional
+and segment to segment judgments
+like the dots in the bars.  And
+segment to segment judgments,
+bar charts were best, and then
+divided bar and pie charts.  For
+proportional, pie and bar charts
+were tied with simple bar charts
+at the worse.
+They have found that comparisons
+among multiple segments take
+longer and with lower accuracy.
+And when multiple segments must
+be compared, pie charts are
+best.
+Collins and Spence found that
+when the number of components in
+bar charts increased, the
+effectiveness at creating
+proportions decreases.  For bar
+charts, with each new component,
+1.7 additional seconds to
+process.  Tables were inferior,
+except for values, against what
+they advise.
+In two studies researchers found
+when participants were shown bar
+graphs and asked to describe the
+data, they reference the
+contrast between the variables
+and bars.  For example, A is
+greater than the quantity in B.
+In line charts, described the
+trends, as X increases, Y
+increases.
+And the third variable of data,
+the line chart description
+focused on X by relationships.
+Whereas the bars reach out a
+little bit more to include the
+same variable.  These studies
+show that people have a hard
+time seeing line charts.
+Collins and Spence evaluated the
+performance if the performance
+of the graph depends on the type
+of judgment that needs to be
+done.  They felt that lines were
+superior to other graphs because
+they are integrated systems,
+meaning that you could just tell
+the change just by the line
+alone.
+They tested participant's
+perception of change and
+proportion among bar, line and
+pie charts.  They failed at
+communicating change
+efficiently, but bar charts had
+similar success to line charts.
+They hypothesized that people
+draw imagery lines across the
+bars to create that slope.  So
+he created a new terrible graph
+called a tier bar chart, and
+tested them again.  They found
+that, yes, any chart allowing
+the reader to see a real or
+imagery trend line was the best
+at communication.  For
+proportions, if charts had no
+scales, pie charts were best.
+Line shape can be loaded with
+context.  That fascinates us but
+distorts our perception of data.
+As we know the independent
+variable, the cause, is usually
+plotted on the X axis, and the
+dependent variable, the effect,
+is on the Y axis.
+But we tend to perceive slope
+for quickness, height, or
+amount.  And these two
+conventions can be in conflict.
+They designed an experiment
+where the slope could indicate
+height or altitude.  But that
+meant that independent/dependent
+variables were on the wrong
+axis.  And they presented the
+charts and asked if the dotted
+line indicated a quicker or
+slower rate.  When on the Y
+axis, corresponding with the
+visual, participants were more
+accurate.  We see quickness,
+height, weight, above anything
+else.  And there were slopes
+that facilitate reasoning above
+all others and revealed a
+universal association of more or
+better with the upper direction.
+They found when line graphs
+showed trend reversals, people
+studied them longer.  It was not
+the case when they varied the
+data points or the linearity.
+And studies suggest that we
+evaluate 3D objects more
+accurately than we think.  Two
+studies reject the popular high
+ratio mantra.  They found that
+among bar charts, 2D is sue peer
+your to 3D, but is longer to
+process.  An angle makes a
+difference because it obscures
+the data.
+The co-authors acknowledged that
+the 3D graphics, while sexy,
+don't convey the knowledge.  And
+they do it in extraneous cubes.
+They were given the option to
+select among 2D and 3D charts.
+When they selected with other
+people, they chose the 3D
+charts.  And also when they were
+told the data had to be
+remembered.  Selected 2D bar
+graphs when told they needed to
+convey specific details, and
+line charts when the message was
+communicated quickly.  The
+authors concluded that 3D charts
+might be useful in some cases.
+The final two experiments are
+with the law, an object size
+appears larger when presented
+with larger objects, and smaller
+with smaller objects.  Contrary
+to popular physics, it doesn't
+happen with two shapes of the
+same dimensionality.  Only when
+you vary the dimensionality
+among the shapes does this
+distortion happen.
+Cleveland and co-authors found
+that people come to conclusions
+about the correlation in
+scatterplots partly based on the
+size of the plot cloud.  When
+represented in graphs, but in
+one graph the point cloud
+becomes very small, people
+perceive it as having a higher
+correlation.
+Experimenting with simple type
+and scatterplots they found that
+altering color is most
+discernible to the eye.  When
+varying the color is not the
+option, varying fill or shape or
+non-confusible lettering has no
+great loss in accuracy.  He
+suggests that using letters, and
+for getting the annotation about
+the risk.  And in a crowd
+source, they created it in a
+simple palette to be ordered to
+be most discernible to the eye.
+They found that directing
+participants to navigate maps of
+metaphors made it more accurate.
+For example, directing
+participants to find a data
+point inside a tree map, and the
+cascading tree map worked best.
+They discerned values best when
+they are rectangles with
+disperse aspect ratios and
+somewhat counter intuitively,
+they are not compared to each
+other.  And extreme in the
+angles are not effective.  They
+found the bar charts are better
+at tree maps at representing
+data fewer than 1,000 data
+points.
+In 2001 Barlow and Neville asked
+to compare plots.  This is in
+2001.  They found the
+participants did not like the
+tree map and preferred the plot
+in the org chart.  In 2007 they
+showed that esthetics can be
+linked to an individual's
+engagement with a visualization.
+They found the sun burst was the
+most popular, and participated
+found the 3D looking beam tree
+to be the most hideous.
+Engagement was best with the sun
+burst.  And worst with the beam
+tree and tree map.  And it
+summarizes that beauty can be
+visible.
+They ranked the effectiveness of
+several visualization types for
+depicting correlation.
+Scatterplots and coordination
+are best at this.  Among the
+stacked chart variants, the
+stacked bar significantly
+outperformed boast the stacked
+area and stacked line.  A year
+later they re-evaluated the data
+and split the visualizations
+into two groups.  The top
+ranking remained the same.
+However, they explored how dense
+graphics can be and still be
+sufficient for readers.  They
+had the negative values in a
+time series charts and overlaid
+the extreme values into two,
+three, and four-color bands,
+effectively ruing chart size by
+75%.
+They also manipulated the height
+of the chart so some appeared to
+be only 60 pixels high for
+participants.  The more color
+bands presented in the graphs,
+the more mistakes were made,
+suggesting that not all visual
+markers were helpful.  They
+performed worst at small sizes,
+showing the effect does not
+provide a great loss in
+comprehension.
+Experimenting with using pick to
+graphs to represent data in
+charts.  They found discreet
+shapes, pictographs led to more
+errors.  And found that
+replacing generic shapes was not
+a detriment to changing the data
+in the stack graphs.  People
+were inclined to investigate
+them rather than numeric shapes.
+In one of my favorite studies
+they investigated participants
+understanding computer
+renderings of line drawings as
+compared to an artist.  Some are
+comparable, but some are not
+close.  When they interpreted
+the shapes inaccurately, they
+were similar and concentrated in
+hot spots.  Some of the shapes
+were funky.  No one knows what
+the thing on the right is.  And
+they have got that one really
+wrong.
+A team of researchers evaluated
+how they looked at list-like and
+container-style.  Those are high
+internal LOC, can control
+internal events weren't as good
+with the external.  Those who
+believe they are merely
+controlled by external events
+perform faster and more
+accurately.  Similarly, more
+neurotic participants were best
+with the structure-like, and the
+others had the opposite.
+Introverts were more accurate
+than extroverts.  Another group
+of researchers encountered
+unfamiliar visualizations and
+tried to make sense of them.
+Participants had difficulty
+moving away from the initial
+marks even if incorrect.  Thus
+first impressions are quite
+important.  Harrison and
+co-authors provided participants
+with an article aimed at the
+emotion, positively, or
+negatively, and found how they
+worked at tasks.  And negative
+made more errors, and positive,
+improved performance.  Only one
+in five was successfully primed,
+however, that is harder to
+achieve.
+Pullman and Shaw replicated it
+with the mechanical chart, but a
+major change.  Showed the social
+histogram of the last 50
+responses as a participant
+answered questions.  And
+sometimes queued up or down from
+the values.  And those shown the
+incorrect histogram obviously
+got more wrong.
+They found that latency of a
+half second with interactive
+graphics had profound effects on
+the engagement with the graphic.
+Moved the mouse less, shifted
+the interactions they did and
+lessened some altogether.  They
+were more likely to comment on
+the interface.  This delayed
+subsequent sessions for the
+participant.  He or she was less
+likely to engage in a graphic in
+a session that followed.
+Visually the researchers wanted
+to include a one second delay
+option, but in pilot studies
+users found this unusable.  So
+think about that as you make
+your next graphic.
+in 2007 the they found that
+completing elementary tasks like
+position or angle direction was
+a lot harder if the screen was
+on the table.  The orientation
+of the screen can distort the
+graph.  In 2008 researchers gave
+participants a large data set
+presented three different ways
+in an animated fashion.
+Esthetic and traced, and a small
+multiples version and asked
+questions about the data.  Even
+though the animation version won
+time and time again in a
+preferences survey, for
+helpfulness, ease of use,
+enjoyment and excitement.  The
+small multiple was better for
+large data sets, faster, and led
+to fewer errors.  I wasn't going
+to do one on color, there was a
+great talk on color that I
+really recommend.  But I like
+this study a lot.  A group of
+researchers created an algorithm
+to identify resident colors.  If
+I want to talk about oceans,
+blue, love, I want to use pink
+or red.
+The algorithm searched Google
+images and assigned a particular
+color to a key word.  And then
+how this algorithm did with the
+participants, and some of it was
+humorous.  Like the blue -- the
+right-hand side here, the bleu
+cheese dressing, wanted to call
+that orange, but the
+participants assigned that to
+blue.  And in a later
+experiment, had the tableau
+symbol artist who created the
+one at the lower left here
+design a human-specific palette
+for each symbol that they were
+going to use.  And tested their
+algorithm against that and a
+non-semantic color scheme.  They
+hypothesized that the
+human-picked palette would be
+the most effective, bet against
+the algorithm, but it did just
+as well with the human-generated
+with a subset of the data, at
+least.
+So what can we conclude from
+these studies?  What is left to
+be uncovered?  And how do these
+change as visualization becomes
+more common place and people are
+more visually literate?  Most
+importantly, what do you think
+about the data visualization is
+a science or language?  I don't
+think data visualization or
+story telling is prescriptive.
+I think there are many options
+and an infinite number of
+possible visualizations and even
+those we haven't discovered yet.
+But not purely a language either
+after these studies.  Obviously
+we have biases and distortions
+with graphing frameworks and how
+we perceive objects.  And some
+of that's learned, and some of
+that seems inherent as well.
+And that's all I have.
+

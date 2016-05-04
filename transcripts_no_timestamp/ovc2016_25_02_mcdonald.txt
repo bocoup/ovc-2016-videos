@@ -1,0 +1,826 @@
+>> Hi hey, my name is Kyle
+McDonald.  I'm an artist working
+with code.  And I wanted to say
+thank you to Irene and everyone
+organizing for having me here.
+First it was a chat bot name,
+MegaHAL.  I read this with JSON
+when I was in high school.  Tu
+parles francais.  I guess so.
+In 1793, the French king was
+executed.  Ha ha ha.  Correct.
+Although, executed has multiple
+meanings.  The Revolution
+started on July 14th.  It is
+14 degrees. -- I was in awe.  It
+turns out how it was basically a
+sleight of hand.  And you could
+run it forward and back ward,
+but reading the transcripts had
+a big effect on computers.  I
+decided to study AI in college
+and started a degree in
+philosophy and computer science.
+Halfway through undergrad I
+started researching at an AI
+lab.  I skipped most of my CS
+classes to sit in on art and
+music classes.  In lab meetings,
+we were supposed to be talking
+about natural language, I spent
+most of the time proposing ideas
+about computational creativity
+or online identity and activity.
+After a few too many of the
+introductions, the director sat
+me down and said, Kyle, I think
+it might be an artist.
+It wasn't a complicate.  But I
+took it to heart.  I did an MFA.
+I learned about a new tool,
+field of research, explore it
+conceptually and technically and
+craft new artwork that
+integrates reoccurring things
+from my practice.  And
+previously I focused on tools
+like 3-D scanning or face
+tracking.  And most recently,
+I'm stuck on fission learning.
+But it's not my first time with
+this obsession.  Outside of the
+AI lab I was building my own
+side projects.  Projects that
+tried to understand and
+rhythmize, and finish drawings.
+I did everything from clustering
+to genetic programming.  But my
+favorite tool was neural nets.
+At the time they were small and
+out of fashion.  But in the last
+five to ten years they have
+really returned stronger than
+ever.  Fueled by new research,
+new kinds of data, huge amounts
+of it.  New toolkit.  New
+communities.  And this last
+year, last two years, I guess.
+Back into machine learning and
+AI and rediscovering a lot of
+the things that drew me to it in
+the first place in college and
+high school.  I'm still in that
+getting familiar, making small
+studies of my art that comes
+before making any new artwork.
+But I wanted to share some of
+that process today.
+I'll cover topics, convolutional
+nets, recurrent nets, and
+dimensionality.  I am glad about
+your presentation, I was worried
+this would be too quick.
+On June 16th, 2015, Reddit had
+this image of a puppy slug,
+posted with the image generated
+by a convolutional neural
+network.  Which I'm sure was
+leaked from someone at Google.
+Machine learning researchers and
+hobbyists were quick to argue
+over whether it could possibly
+be the work of a neural net, as
+claimed, or another algorithm or
+hand crafted.  And deleted
+comments, and the deleting of
+the thread added to the mystery
+of the origins.  A week later,
+Google research blog post,
+titled “Inceptionism,” and
+confirming the puppy slug
+origin.  And they released code,
+DeepDream, that anybody could
+use to re-create the images.
+And journalists ascribed it to
+Google's AI as if there was a
+massive digital brain in the
+underground lair feeding photos
+from a few posts from Google
+Plus.  While it may have been
+the first moment a neural net
+captured the public's
+imagination so visibly, it has
+seen plenty of success in daily
+life.
+ConvNets have been used for
+checks since the '90s, and
+powering recent search by image
+systems.  And audio images, and
+demonstrating how homogenous
+research groups are.  A year
+before DeepDream I saw others
+of learning and discovered how
+much it changed since I left it
+in college.  I was looking for a
+toolkit written in a language I
+was familiar with.  I found
+this, CCV, it ships with a
+flexible license and made a
+toolkit for the openFramework to
+try to recognize thing this is
+real time.  I haven't done this
+switch before.  See what
+happens.
+This is going to be -- let's
+see.  Yeah.  There we go.  So
+here's an example of how to
+do -- it's a little rough.  It
+tends to think I'm a band aid a
+lot of the time.
+maybe --
+I pod.
+IPod.  Good job, neural net.
+That'll do it.  That'll do.
+That'll do.
+I've done a lot of confuser
+vision work before, but this was
+beyond what I was familiar with.
+Wasn't color matching or feature
+tracking.  Even if I got things
+totally wrong, the uncanny
+labels were still surely
+inspiring.  And it made me think
+back to the story of AI pioneer
+Mark Kaminski, MIT
+undergraduate, 1966, solved the
+problem of computer vision.  I
+was wondering, what would he
+think about these techniques?
+After watching Jeff Hinton on
+deep learning, I was looking at
+more, and it was daunting due to
+the lack of community and
+examples.  Looking at other
+focus, I learned the big
+contenders were cafe, torch,
+written in C++ now there's
+Spencer flow, of course, which
+is one of the biggest.  And
+there are plenty of
+less-recognized toolkits in
+Python.  Even cafe had a Python
+rapper.  I started investing in
+Python.  It was a great
+investment, the huge ecosystem
+and the tools.
+The first thing I tried tackling
+was a problem I tried before,
+smile detection.  They are great
+to automatically inject
+emoticons into the chat or take
+screen shots of things that make
+you laugh.  Or other interactive
+installation.  And you can get a
+decent metrics with the relative
+distance between the corners of
+the mouth.  I was wondering how
+ConfNet would do.  I found a
+few smiling and faces.  And hand
+wrote for vision recognition,
+and had a smile detector.
+Rather than asking if it's a
+small image, hand drawn, one,
+two, three, zero.  I asked if it
+was a smile or not, zero.
+Besides the input images changes
+and output size, I didn't make
+any other modifications.  Let's
+see what it looks like in
+practice.  I'm going to try
+something incredibly
+irresponsible and try the
+convolutional neural net on
+stage.
+So right now I'm starting up
+this tool which is a wrapper
+for -- it's a wrapper with
+multiple back ends.  You can run
+TensorFlow.  The first thing I
+do normally is download the
+data, but I did that in advance.
+I'd load all the images in, and
+convert them to a slightly
+different format.  So I have
+them in one really big matrix
+for Tensor.  And that can take a
+few seconds.  But once they're
+in that format, and I made sure
+that they're like right for the
+neural net.  A lot of these
+techniques, 32-bit floating
+point, give them something else,
+they get really mad at you.  We
+can take a look.  Cool.  Images
+look good.  I'm going to save
+these to disk.
+And we're going to move on to
+the next step.  Training.  So
+we'll load the data in using
+numpy, and say we want to have
+these two classes.  Like I said
+just a moment ago.  Instead of
+ten, we have two.  We shuffle
+all the data around so we don't
+use, you know -- so we don't
+train on one part of the data
+and try to validate on data we
+have never seen before.  And I
+start up the GPU on my computer.
+Which could go terribly wrong.
+Normally this takes about ten
+seconds, if we're lucky.  And
+then we define the neural net.
+So this is like the sort of
+textural description, or the
+corollary we were seeing in the
+last presentation, and working
+with TensorFlow looks pretty
+similar.  This is just.  And we
+can see it's just got about --
+I'll just start -- crossing my
+fingers.  All right.  Okay.
+We're off to a good start.  So
+it's taking about eight seconds.
+Which means it takes eight
+seconds to go through all the
+data once.  In the first round,
+wasn't that good.  We're at 73%
+accuracy.  But it's going up.
+Now we're at 83% accuracy.  Our
+validation is about the same,
+it's a little better.  And I'm
+going to run it for five epics,
+and then save it and do a quick
+test.  You can see this net's
+got like 800,000 parameters that
+define it.  Most of those are in
+almost the last layer for these
+dense connections.  Cool.  It
+works.
+We're going to save that and
+take a look.  That's the way you
+want things to look.  That's
+great.  Cool.  Accuracy is going
+up, it's going down -- oops.
+All right.  We're coming back.
+Here we go.
+Last step.  Evaluation.  All
+right.  I'm going to load them
+all back in again, start with
+the GPU again, this can also go
+terribly wrong if something
+wasn't like, you know, something
+was not unlocked correctly.  And
+we're going to evaluate this on
+one image.  Okay.  It says that
+this image is like a little more
+towards neutral than smiling.
+Which I'd say that's about
+accurate.  But let's try it on
+something that's a little more
+intense.  I just need this
+little app that feeds my face in
+real-time -- if anyone's used
+this toolkit, used this in
+Jupiter and Python, you would
+realize this is ridiculous.
+Okay.  Here we go.  Hey!
+Yes.  Oh, man.  I don't think my
+heart's been racing that fast
+before.  Cool.  Thanks for
+sticking with that.  So let's
+talk about what's going on here
+in a little more detail.  We got
+a lot of that from the last
+presentation.  But
+simultaneously learning, and
+there's image patches that help
+discern categories, and what
+combination of the patches make
+up a given category?  Net
+detects edges and spots, and
+then a combination of like an
+edge and a dark spot that might
+make up an eyebrow and an eye.
+And finally the net will
+recognize that an eyebrow, an
+eye, and a nose, makes up a face
+and is that sort of thing.
+Sometimes it's hard to
+disentangle where it's detecting
+features and combinations, but
+this is one way that researchers
+conceptualize the otherwise
+murky inner workings of the
+technique.
+And they were working on
+reversing the process.  Say you
+start with the picture of a
+squirrel, like before, and the
+network that's detecting a
+thousand different categories.
+DeepDream runs the squirrel
+image through the net and
+recognizes what's happening on
+the output.  Are there edges?
+Spots?  Eyes?  I'm sorry, what's
+happening inside the network,
+are there edges?  Spots?  Eye?
+The et cetera?  And DeepDream
+modifies the original image to
+amplify that activity.  Just
+like a minute ago, taking
+something and making it look
+more like a frog or more like a
+bird or a plane.  So if you have
+some vaguely eye-like shapes,
+they start looking like eyes.
+If you have a dog-like shape,
+turns into a dog.  This happens
+a lot.
+Because many of the thousand
+categories that researchers are
+training on happen to be
+different.  And through this
+process, you can also ask
+DeepDream to visualize a
+specific category.  Instead of
+just the inside of the net, you
+can look at the output.  That's
+how researchers discovered that
+according to neural nets, a
+dumbbell is only a dumbbell when
+attached to an arm.
+I started to explore this by
+applying it to a large number of
+images from classics,
+Michelangelo, to my personal
+collection of glitches.  Testing
+with different settings or
+networks trained on different
+categories.  Or making
+animations out of a series of
+images.
+And then about two months after
+the inceptionism post,
+researchers from the university
+in Germany posted a neural
+artistic style.  And this paper,
+they show how to imitate an
+artistic style rendering a photo
+using a neural net.  It looks
+impossible.  The sort of thing
+that should require carefully
+trained humans who have
+undergone years of practice.
+But it's taking this and making
+it automatically.
+My first was to try something
+harder, reverse the technique.
+Maybe remove the filter and turn
+it into a photo.  Discover what
+Vincent Van Gogh was looking
+for.  It was mixed and
+uninspiring.  I posted to
+Twitter with a hoax, based on
+another artist's work and moved
+on.  But with DeepDream, I
+learned most by processing
+different images from western
+art history that I was familiar
+with, plus a few carefully-tune
+would portraits.  And I found
+that styles transfer meant
+something like texture transfer.
+There's a lot to explore, from
+animation to improvisation,
+inventing styles, interpolating
+between styles.  And last month
+some researchers just posted a
+new article saying they can do
+it this in real-time.  Normally
+it's five minutes per frame.
+One of my favorite things about
+DeepDream and style transfer,
+they visually work for
+complicated topics.  Not many
+people understand how a neural
+networks from front to back,
+the justifications of the code
+and what's gone into the system,
+but they can look at a puppy
+slug or a fake Van Gogh and know
+what's going on.  DeepDream has
+human intuition for
+intelligence.
+And it's easy to develop a feel
+for manipulating neural nets
+when you have an understanding
+of the basic concepts.  It's
+additional or multiplication or
+weighted sums.  The training
+process is about figuring out
+which weights will give you the
+answers you expected.  And one
+modification is to take the
+current state of the net and
+feed it into the next state.
+It's a recurrent neural net.
+It's usually a fixed size output
+from an input, like a thousand
+from an image, it's modeling
+variable lengths, predicting one
+time set for every prediction.
+Like pen movements from
+handwriting, a series of
+characters and texts, notes in
+music, or temperatures from the
+weather.  And I think the
+DeepDream moment is, an example
+posted in May of last year.  If
+you feed it a -- RNN -- a few
+megabytes, you'll get the novel
+text.  After feeding the
+collective work of Shakespeare,
+drop on your lordship's head,
+your opinion on your honor.  And
+Wikipedia, naturalism and
+decision for the majority of
+Arab countries.  Or Linux code.
+Even with the arcane comments.
+If you're familiar with other
+text generation techniques,
+you'll notice the recurrent net
+has a surprising ability to
+balance correctness.  With
+Markov chains, you have the
+tradeoff between copying source
+material exactly and producing
+incorrect output.  But recounter
+nets find the middle ground,
+capturing the deeper structure
+to the data.  What if you
+combine the nets?  Let's try
+this.
+You combine a ConvNet through a
+recounter net.  Is it cropped at
+the top?  I think it's cropped.
+Yeah.  Try again.  If you
+combine the ConvNet with a
+recurrent net -- even weirder.
+The font is not loaded on that
+screen.  That's the weirdest
+thing I have seen in a while.
+And you give it a bunch of
+examples of images with
+captions, you have an automatic
+caption-generating tool.  A man
+in a suit with a tie is holding
+a wine glass.  Back to the wine
+again.  And now we know -- I
+would be happy if it said video
+feedback.  But that's not it.
+Maybe if I'm like, you know,
+cell phone -- talking on a cell
+phone, glasses is talking on a
+cell phone.  I'm curious.  What
+does it know about everyone
+here?
+Oh, I think I just crashed it.
+yep.  That's a crash.  Are we
+still -- yeah.  Cool.  So I'm --
+so many dangerous demos.  Okay.
+My first experiment with it was
+not the image captioning, but
+feeding in a dictionary,
+generating new words.  RNN
+captures basic structure, part
+of speech following a word,
+numbers coming sequentially.
+Sometimes it's a correct
+inflection or vaguely topical
+definition.  And then inspired
+by MegaHouse to repeat a word
+from the previous line, added a
+constraint of another net
+trained on phrases from a 1917
+book of thousands of useful
+phrases.  And some of these were
+really -- I love how it
+finishes.  Flip in love,
+flipping with every move of the
+acknowledgment.  The moon of the
+stars of the soul.  Then I tried
+a more personal direction,
+feeding it some chat history.
+Lauren says, so, did you Steve
+anymore?  Yeah, we only hear it
+out sense that you were kind of
+because it could be last year.
+So he was quickly saying it
+might be realtime.  I guess it
+would.  Ever to want trash
+support of general.  His once
+weird mids.  Ya.  The GitHub
+link.  The lines are the right
+length.  And Lauren writes Y-A.
+They look like the links we
+would send each other.  The
+output seems to occupy the
+subliminal space between modes
+and awareness, dreaming and
+waking tension.  And has the
+look and the feel of the thing
+without having the content.
+I have been constructed
+hand-crafted artisanal small
+data archive of pickup lines.
+And got this.  How was the into
+the your beautiful getting to
+hand Bibl.  A lost you.  Loomed
+you a love every time I was in
+your daticn.  When your name
+your manage to are a stars with
+a heart because I'm milling in
+on a -- there wasn't quite
+enough text in the database to
+learn English.
+so it sounds kind of drunk.
+Which I guess is appropriate.
+But I wonder how long will it be
+until a machine is more
+seductive than a human?  Next I
+tried around 228,000 lines from
+a huge movie dialogue database.
+But it was nonsensical.  I
+needed a bigger network.  And
+Google published it based on
+movie titles.  And it was
+awesome.  The last was 20,000
+drug experiences.  And with such
+a huge collection of outputs,
+much more grammatically correct
+with proper spelling and
+punctuation.  I wonder what
+happens when it becomes a
+perfect mimic.  And if humans
+are unable to see a generated
+experience from a real one.  Is
+it a philosophical zombie,
+describing an experience so
+perfectly that we can't tell the
+difference?
+It's not just about text in the
+sense of natural language.  But
+anything that can be encoded as
+a sequence is perfect.  So
+another kind of text that's not
+natural language is an SPG file.
+Look like this.  This is an
+example from the emoji library
+from Twitter.  I collected them,
+875 files in 2megs.  And asked
+for new files.  This is titled
+clock face nine.  Here's a
+bigger collection to show you
+the variety in the output.  It's
+amazing to see how the big
+circles with faces consistently
+find their way into the mix, and
+other barely recognizable shapes
+throughout.  And it's the most
+consistent, it's a restricted
+palette and it memorizes it
+exactly.  If you like this,
+check out smiling face with face
+by Allison, or glitch logos by
+Darius.
+All right.  Finishing up here.
+I wanted to mention something
+separate from deep learning, but
+a huge inspiration to me.  It's
+a tool I've always wanted but
+has only made sense to me
+recently.  So one way to think
+about abstractions is to think
+about what's called
+dimensionality obstruction.  You
+have the 10 by 10 pixel image,
+100 colors, 1 dimensions.  But
+each is a handwritten digit,
+maybe it's better to do a 10 --
+strong for the first value, this
+is zero.  Strong for the second
+value.  So on, et cetera.
+Ten dimension might be useful
+for describing the categories of
+the images.  But hard to
+visualize the ten dimensional
+space as we saw with the six or
+32-dimensional space earlier.
+So we can take this farther and
+try to embed the ten dimensional
+space or the higher dimensional
+space into two or three
+dimensions and draw something
+that's easier to interpret.
+Different ones have different
+kinds of abstractions or
+arrangements they create.  One
+of my favorite algorithms is of
+t-SNE.  It has similar data
+points close to each other.
+It's not worry about points too
+far from each other.  It's the
+largest scale, you can see here
+it's placed different digits.
+These are the handwritten digits
+from a database.  It's placed
+the different digits in
+different clusters, one per
+digits, and you can see how
+slanted the handwriting is, and
+gradients in stroke and weight.
+Keep going.  Unfortunately some
+of the most interesting data
+doesn't have numerical
+representation, but we can learn
+that from context a lot of the
+time.  And word2vec looks at
+what context a word course in
+and uses the context to
+determine which words should
+have similar or dissimilar
+representations.  It's usually
+trained on hundreds of thousands
+from millions of unique words,
+scattered throughout hundreds of
+millions of news articles and
+returns 300 numbers for each
+word.
+Each of these numbers does not
+really have a clear
+representation, like a value or
+a category, but you can do basic
+comparisons between them.  Like
+you can look at distances.  So
+words that are similar have
+smaller distance.  In this case,
+Monday through Friday are
+similar to each other.  But
+different from Saturday and
+Sunday.
+Or months of the year are
+roughly divided into March
+through July and August through
+February.  I don't totally get
+this one.  But you can tell that
+the consecutive months are more
+similar than distant months.
+And you can do analogies too.
+The closest vector to Moscow
+minus Russia plus Japan is
+Tokyo.  All these relationships
+were going the same direction.
+Each dimension is not clearly
+interpretable, the general
+location of each vector encodes
+the meaning.
+If we look at a bunch of country
+comparisons, we can see the
+relationship pretty clearly.
+Now you know we can get a vector
+for any word.  Take any list of
+words and run it through t-SNE.
+These are related to moods.  I
+use color to indicate the 3D
+embedding versus the 2D
+embedding used for the
+visualizations.  This groups the
+clusters a little more.
+Some obvious pairings are things
+like happy and glad and green
+right next to each other.  And
+eager and anxious.  Others are
+surprising.  Even though they
+occupy the same general
+category, doubtful and hopeful
+are two examples.  They're next
+to each other, they're kind of
+interchangeable in the middle of
+a sentence.  They just mean the
+exact opposite thing.
+Got me interested in antonym,
+and comparing relationships, is
+the forward/backward, more
+similar to happy/sad, or
+future/past?  Maybe changes in
+languages.  Sometimes they are
+easy to interpret,
+unintelligent/intelligent is
+right next to
+uninteresting/interesting.  And
+others.  But most of the time
+it's very difficult to interpret
+with the antonyms have in
+common.  One is that they might
+have different relationships.
+And there's no single
+relationship encoded in language
+as oppositeness.
+I'm going to keep going.  Well,
+actually -- no.  Instead of
+creating vectors for words, it's
+common to make vectors for
+documents using topic modeling.
+And we can, for example, watch
+the dramatic content of the book
+develop over time.  Or run the
+t-SNE on it after it processes
+the image.  Instead of running
+through a net to generate a
+caption, we can use that as a
+description.  So abstract
+concepts, green sky, eye shapes,
+textures, they get grouped
+together.
+Let me open up this.  Last one,
+I think.  So I worked with some
+researchers from an interactive
+agency in Japan exploring the
+archive, about 800 hours of
+footage from history that's been
+recorded over the last 30 years
+or so.  And we use this
+technique to kind of put similar
+images from the data set next to
+each other.  You can see here
+like all of the psychedelic
+frames.  We took like one frame
+per minute of video.  All the
+psychedelic minutes end up next
+to each other.
+Some of this, like, kind of
+sci-fi-looking blue against
+black ends up next to each
+other.  I like this area over
+here where there's just a bunch
+of spherical things.  Or like at
+the bottom left.  This is where
+all the faces end up.  You can
+see that a little better.  And
+when there's one video that has
+like a bunch of frames that are
+exactly the same, they end up
+right next to each other, and
+you can see like duplicates in
+the archive.  Like these two
+videos are the same video.
+Cool.  But I'll finish up
+with -- so there's one more
+demo.  For me I got into
+interactive art through
+experimental music.  And a lot
+of this exploration with machine
+learning has been about finding
+my way back into making sounds.
+But I guess I just realized, I
+don't know if we have, I guess
+this is a visualization
+conference, huh?  But maybe if
+we're really quiet.  Here's what
+happens when you apply these
+techniques to spectrograms
+instead of images.  Let's see
+here. Oh.
+It works!
+yeah.  Maybe at like half that
+volume.  Is it work?
+On your laptop --
+Line control -- okay.  So --
+there's a nice guitar in here
+somewhere.
+Whoa.  I was not expecting that.
+We can see how the snares end up
+in the same area.  I'll try and
+move slowly.
+And all over here -- we're all
+familiar with.
+I really like the cowbells.
+There's one corner over here.
+T-SNE was saying all of these
+cowbells are basically the same.
+So --
+Let's see.  Thank you,
+everybody.
+Good-bye.

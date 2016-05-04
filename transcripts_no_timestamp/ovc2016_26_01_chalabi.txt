@@ -1,0 +1,777 @@
+>> Hi, everyone.  Thanks so much
+for having me here today.  You
+can see that the subject is
+informing without alienating.  I
+want to talk about why it's so
+important not to alienate
+people.
+When you're in a room like this,
+it's easy to talk a common
+language, and the temptation to
+forget some of the people are
+outside of the room and might
+understand these beautiful and
+technical visualizations.  But
+my talk as a journalist is to
+make sure that what I do makes
+sense to as many people as
+possible.  And the
+information -- but it's
+something I think is very
+important.
+So I wanted to start out with
+the one thing, which is I'm sure
+pretty much everyone here has
+made at least one -- some of you
+have made hundreds and hundreds,
+but how many times have you been
+in the data set you're
+visualizing?  And this is
+something I have thought about
+for a really long time.  In 2010
+I started working for the
+statistics department at the
+organization migration, I was
+working on trying to keep track
+of how many families became
+refugees as a result of the war
+in Iraq, and how many were
+displaced in the country.  But
+more important than simply
+counting how many families there
+were, I was trying to understand
+whether they needed water, an
+education, feed, what they
+needed to stay alive.
+But the statistics served a
+second purpose, we can go and
+say this is the money we need to
+provide for those Iraqis.
+And I have a really, really
+important part of this, I was
+really, really bad at my job.
+That's not me being modest as
+all.  And you can look at this
+chart.  Which proves it.  It
+comes from one of the reports
+that we published.  And I have
+some big issues with it.
+Surprisingly, the thing that
+bothers me is not the fact it's
+an ugly pie chart.  Think about
+the people outside of this room,
+and it's charts like this people
+are producing in classrooms and
+offices.  The fact it's 3D, it's
+not great, it's misleading and
+other things that are
+problematic and explain why it
+was I was so bad at my job.  And
+the first of those is simple
+geography.  So I was based in
+Iraq.  Like so many
+organizations at the time, we
+were based in Jordan because the
+situation in Iraq was so, so
+bad.  And I think the
+geographical separation from the
+data is super important and
+really easy for tows forget
+about it.  It meant I couldn't
+look at some of the results.  I
+noticed there was electricity
+problems in one part of the
+country.  Without being there,
+it's hard to understand whether
+they are because of the
+short-term outage, or systemic
+within the country.  Or whether,
+in fact, actually people just
+misunderstood the question put
+to them.  And we're talking
+about electrical products as
+opposed to electricity.
+So that geography was a big, big
+problem for me.  There's another
+reason I have a big problem with
+this chart.  If you remove the
+labels, I could be depicting
+absolutely anything.  I could be
+showing the types of underwear
+that women wear, murder weapons,
+because the visualization is so
+divorced from the subject
+itself.  And the idea of
+communicating something personal
+about the data might feel
+alien -- this is a cheesy
+transition.  Speaking of aliens,
+this is Lieutenant Commander
+Data from Star Trek.  And I'm a
+Star Trek fan.  Data is smart.
+He can compute just about
+everything.  That's why he was
+such an asset to the captain.
+He don't understand human.  In
+season one, episode 13, his
+identical twin shows up.  And he
+is an upgrade on data, he has
+the emotion chip that Data
+doesn't have.  While Data is
+super virtuous, the other is
+manipulative and self-serving.
+That reflects how a lot of
+people think about data.  It's
+emotional-less and it's good for
+that reason.
+And that's kind of problematic
+for us, very often people
+working with data don't have the
+incentive to correct people.
+It's great thing we're perfect
+humans doing this with no input
+and no biases.  But it's
+important to be honest and
+upfront about what we do.  And
+there's the data individuals,
+any visualization is by a human.
+We must acknowledge that, we
+make decisions about colors and
+scale all the time.
+Reason number three I was bad at
+my job is I think the most
+important reason.  Which is the
+charts I was making were being
+shown to a couple dozen people,
+sometimes a hundred.  Mostly
+donors and colleagues.  And not
+seen by the Iraqis.  The Iraqis
+provided the data, but weren't
+given any kind of mechanism to
+say, hang on a second, you have
+that wrong.  And I think this
+happens all the time.  One
+aspect of this that was report
+was 8 megabytes in side, it was
+huge.  And download speeds are
+not the same around the world.
+And the fact is that some Iraqis
+would have had to have waited
+for ages and ages in front of
+their screens to have simply
+downloaded the thing.  And even
+just the Iraqis that were
+speaking English.  Some of the
+reports were translated into
+Arabic.  Not all were.  I can
+understand that, it was a
+difficult environment, and the
+people seeing it needed the
+money to give to us.  And we
+weren't being transparent about
+the limitations of the data and
+the visualization, or the
+people, us, putting this stuff
+together.
+You can't see my process here,
+can't see if it's collected from
+questionnaires or face-to-face
+interviews.  You can't see how
+many people I'm depicting.  It's
+a failure.  And the simple fact
+this didn't give the Iraqis the
+opportunity to say you got to
+wrong.  And that's super-ironic,
+the people you are visualizing,
+saying they're disempowered, and
+not giving them to the
+opportunity say you're wrong.
+It was an intense experience.
+And I was bad at my job.  And I
+don't like being bad at my job.
+In 2012 I decided to go to Iraq
+to see if I got the numbers
+right.
+And it just -- it was pretty
+intense because I realized how
+little my charts were really,
+really communicating the
+reality.  They were completely
+out of touch.  And so it was a
+way of capturing something that
+felt less abstract.  I started
+to take photographs that felt
+more real to me of what life was
+like there.  And I started to
+take photographs all the time,
+hundreds and hundreds of them.
+And this kind of process of
+repetition meant I started to
+notice patterns in some of these
+photographs and noticing
+patterns makes you want to
+visualize data.
+Eventually I turned these into
+charts in the process.  And I
+turned them into charts and
+produced an exhibition of the
+photographic images in 2013.  So
+I'm just going to talk you
+through a couple of the visuals
+that I made in case they're
+interesting.
+This was a woman just kind of
+walking down the street in
+Baghdad.  And I turned it into a
+bar chart.  And what I'm
+displaying here is the
+proportion of women 18 to 59
+that think a husband has a
+justification for striking his
+wife.  And the terminology is
+bizarre, but that's the way the
+question was worded.  It was
+easy to forget the cultural
+differences.  In Iraq, asking
+people, have you been abused by
+your husband is a massive
+intrusion into the private life.
+The data we're going to get is
+going to be incredibly,
+incredibly fluid.  You have to
+be creative how you understand
+trends.  This comes from the
+Iraqi census.
+And as you can see, one in five
+women think that a husband has
+ha justification for striking
+his wife if she burns the food.
+Like really, really shocking
+data.  But I just wanted to
+remember some of the actual
+people behind the data, and
+using photographs was important
+in order to do that.
+Similarly, this one is just some
+Iraqis in the north of Iraq.  I
+actually -- anyone have a guess
+of what it is I'm visualizing
+here?  See the line at the top?
+Sorry?  No, that would have been
+a better thing to visualize with
+this particular image.  It's
+actually -- it's actually
+depicting foreign aid.  So it's
+quite useful for kind of seeing
+how the country was quickly -- I
+wouldn't say forgotten, but some
+of that financial aid trailed
+off.  And the electricity, it
+was running out of the financial
+aid at that time.
+This one here shows because
+working for the migration
+organization, I was focusing on
+the number of refugees, the
+number of people internally
+displaced in the country, as
+well as refugees who had kind of
+come back to Iraq.  And again,
+the idea of this was to remind
+people that this data is humans
+and fix it in a geographic
+landscape of Iraq.
+This one was -- I actually was
+helping someone who wanted to
+write a will.  And in Iraq you
+kind of -- you go to these
+people out in the street.  This
+was like a guy under an
+umbrella.  You get a form from
+him and go a mile down the road
+to get a stamp from another guy.
+They don't publish in the papers
+anymore, but explains the number
+of steps for a contract.  And I
+want you to visualize it this
+way, it was a bureaucratic
+nightmare to get anything done.
+And each one of these steps
+creates an opportunity for
+corruption.  The corruption in
+the country is relevant to the
+statistics we are looking at and
+so easy to forgot.  Before I
+went there, I was looking at
+education statistics all the
+time.
+Things like the percent of
+Iraqis that graduated from high
+school, literacy rates, thing
+like that.  While I was there, I
+talked to a mother who explained
+her daughter was falling behind
+in school, not because she
+necessarily wasn't doing well,
+but even the teachers accepted
+bribes to give better grades.  I
+could look at the data set of
+the school grades to not
+understand the way that it was
+distorted by facts on the
+ground.
+So it helped me to understand
+the way that I wasn't -- the
+kind of missing gaps in the
+things I was looking at.  This
+was an attempt to do a better
+pie chart.  I'm not claiming
+that any of these are good.  I
+look back with the benefit of
+hindsight and think they're bad
+in lots to of ways.  But this
+showed that nine out of every
+100 Iraqis, the cause of death
+was suspected torture.  And you
+couldn't look at the
+visualization and lose sight of
+the people in it, the human side
+of things.
+And even if you read the labels,
+get a sense of subject, in a
+real time in a real place.  And
+the other purpose of these
+charts is they're supposed to be
+very inclusive.  The process,
+someone selected -- I
+think, and it looks like a real
+color.  So hopefully people
+could see a way they could
+replicate my process.  And I
+think that's really, really
+important.  I do not think that
+data visualization is for geeks,
+I don't describe myself as a
+geek, and I don't like the label
+of a geek, it creates insiders
+that can be exclusionary.  I
+want people to look at my work,
+as many as possible.  That's the
+reason I moved into journalism.
+And I am not ashamed that I seek
+out and want a lot of readers.
+They can check my work and tell
+me whether or not I'm getting
+things right.
+So I started working out with
+the Guardian's data block, and
+this tone FiveThirtyEight in the
+U.S.  And I started writing a
+column called am I normal?  The
+name eventually switched.  It
+sounded like we were placing
+something on the readers by
+providing a response to the
+questions?
+The idea was that, A, I could
+not only get more input
+visualizations, but the
+questions that I should be
+asking, what kind of hypotheses.
+And I wanted to talk about one
+of these for a different site.
+I got a question for Caroline,
+living in Philadelphia at the
+time.  And she wrote to me and
+asked, dear Mona, I read an
+article that said most of the
+prison population is religious.
+There are few atheists in
+prison.  Please tell me if that
+is true for the United States.
+As many journalists do, I found
+the data and visualized it with
+FiveThirtyEight.  What's the
+best way to visualize this?
+Should we be showing more
+numbers and we were really
+interested in ratios.  What was
+underrepresented in prison
+relative to the U.S. prison
+population.  And you can see
+Christians underrepresented,
+more in prison relative to the
+population as a whole, and
+Jewish inmates as well.  So I
+published this data, and as I
+always do at the end of the
+columns, invited readers to get
+in touch.  I did, I had former
+inmates who get in touch that
+explain that part of the reason
+for this data is that if you are
+in prison, as these individuals
+had been, sometimes you get
+access to better meals as
+opposed to standard prison
+meals.  I had it explained that
+you could get extra recreational
+time, gets you out of your cell
+which is important if you're in
+the prison for 23 hours a day.
+So the ability for people to
+explain the why is important.
+The theories, not that I'm not
+going to accept the anecdotes,
+but it's new lines of inquiry.
+My job is not working if I'm not
+relentlessly looking at what
+rather than what is happening.
+My inbox is really, really
+important to me.  I'm going to
+share some of the questions I
+have in the inbox.  They are
+quite interesting.  They reveal,
+again, some of the things the
+general public are thinking --
+is thinking about data.
+So this one which was sent to me
+in 2015, to attractive people
+have more sex than ugly people.
+I could imagine together, they
+did really well and people
+accepting that data on face
+value without any kind of
+interrogation of what is meant
+by attractive and ugly.
+And I think the need to take a
+step back and explain the
+definition of terms and the
+methodology of the way you're
+collecting this stuff is super
+important.
+Here's another one.  Am I the
+only one that doesn't use the
+designed opening in my underwear
+when peeing.  This was
+interesting.  I assume it came
+from a man.  As someone without
+a penis, I didn't think this was
+interesting at all.  But I
+shared it on social media.  And
+a lot of people think this is
+interesting.  Which is quite
+nice.  Because what I find
+interesting isn't necessarily
+the same topics as the people I
+should be serving.  So to be
+able to check that is super
+important.
+And this one is quite dark.  So
+someone asked me asked what the
+auto-erotic asphyxiation success
+rate was, and looking for a good
+answer.  I'm sure it's performed
+successfully a lot of times,
+right?  You are looking for
+reassurance.  But it got me
+thinking critically about your
+responsibilities as a
+journalist.  Let's say I was
+able to collect the data and the
+data showed that 90% of the time
+you're fine.  You're totally
+fine.  How can I put that into a
+chart that communicates risk to
+a reader in a really, really
+responsible manner so people
+don't just see that chart and do
+something that is potentially
+quite dangerous to them.
+And with a health report, these
+questions are critical.  You
+could be shaping kind of
+people's choices.  And then this
+really simple one.  This last
+one leads to me the last of my
+very strange kind of annotated,
+somewhat narcissistic resume,
+the thing I'm describing, but I
+want to talk about the iteration
+in the way I have tried to think
+about data visualization.  As
+you can see from the messages,
+FiveThirtyEight readers are
+special.  This happens around
+most Websites.  The Internet
+doesn't create a perfect flat
+space.  You get clusters and
+community, The Guardian reader,
+not necessarily the same as a
+FiveThirtyEight reader.  I
+wanted to publish on something
+that was a little more flat and
+help give me access to
+audiences.  And I want to resist
+the urge to produce interactives
+all the time.  I was starting to
+do that.  And I wasn't thinking
+critically when I needed to ask
+the reader to get involved and
+when to give them the simple
+image and kind of the more
+simplistic story.
+
+9:30:53
+So I started to basically use
+Instagram.  I thought it was a
+good way as well -- the images
+are really fantastic.  They're
+transparent and gives them an
+opportunity to have a discussion
+and a debate around that
+visualization.  So here's one I
+do, which was a response to a
+particular question.  How much
+pee is a lot of pee?  I tried to
+use everyday objects whenever I
+can in order to have the scale.
+That's super important.  Not
+everyone necessarily uses the
+same units of measurement, they
+are different.  And especially
+with large units, it's really
+hard to understand what we're
+talking about.  Pretty much
+everybody has had a one liter
+bottle in their hands and they
+can understand it.
+This is another one, and kind of
+don't think I need my hand in
+it.  Makes it look like a mini
+basketball.  But it's to show
+the relative size of the
+basketball.  And the hoop, this
+is about scale.  So contrasting
+the average parking space in
+America with the average
+confinement cell.  And I got
+online abuse from both sides of
+the spectrum.  Abuse from people
+who say you are implying they
+have too much space, and abuse
+from those implying they have
+too little space.  Which bodes
+well with the way you visualize
+something.
+And I wanted to use this as a
+way to reach out to the
+community of non-Geeks,
+and say information is
+relevant.  There was a
+journalist in New York that do a
+freedom of information act
+request to find out how much
+decapitated animals there were
+in New York parks.  I was able
+to visualize this and which ones
+were the most commonly found
+animals.  Headless chicks, over
+a ten year time period, but
+interesting.  Not always just
+heads.  But sometimes the bodies
+and not the heads.  It was super
+interesting and I got people
+thinking about why this data is
+the way it is.  And we -- for me
+it was a good thing.  And then
+the benefits of having -- before
+finishing, I want to talk about
+some examples of what I think
+are good data journalism on my
+own.  And good visualizations.
+So, again, I want to come back
+to the idea of conveying what we
+do, the fallibility of what we
+do.  And I want to focus on one
+very, very small data set in a
+way.  So this comes from this
+block that some of you know
+called the quantified breakup.
+And it was written by a woman
+going through a divorce in New
+York.  And she visualized all
+kinds of aspects of the breakup.
+Visualized the messages, the
+frequency, the time of day, and
+how the relationship fizzled
+out.  Visualized how much sleep,
+and times she just started
+crying in public and couldn't
+control herself.  People loved
+it, not just because it told a
+story, but because it was
+really, really honest in terms
+of the limitations.  This wasn't
+one woman trying to claim she
+was trying to represent divorce
+in America or New York or women
+in general.  She was saying here
+is the story, my data.  And the
+transparency is very great.
+This is a very different
+example.  This was from the New
+York Times.  Done by Gregor
+Aisch, Kevin Quealy, and Amanda
+Cox.  And this chart -- the
+parent's income versus the
+likelihood that their children
+will attend college.  Draw out
+the data and how it compares.
+Tells you a story and inspires
+you in a way that feels super,
+super inclusive.  And you can
+see how you compare to other
+people.
+Again, it's just really, really
+friendly and it just had great
+design.
+And then the last one I want to
+talk about is early this month
+The Guardian published what I
+thought was a good analysis of
+17 million comments published on
+the Website.  One reason why it
+was really, really good is that
+it didn't overwhelm the viewer
+in terms of too much data.  It
+broke it down into several
+slices to you could see how
+levels of abuse varied by gender
+and subject area.  But what was
+good, I think, it allowed the
+reader to kind of take part in a
+little quiz where you could read
+a real comment that was on the
+site and decide for yourself
+whether you would block it,
+define as abuse or left it up.
+What it did, it was, A, a sense
+of scale, you took a minute or
+two to decide if it was abusive.
+And 17 million have been
+analyzed, that's a lot.  And
+shows you that even though you
+can read in all of this what was
+truly objective data looking at
+the scale of abuse, once you
+read that comment, you realize
+that every one of the data
+points represents a small human
+decision.  Whether or not this
+is abuse.  It's based purely on
+subjectivity.  Even the whole
+appears objective.  And is
+objective in some ways.
+So I thought that was really,
+really smart.  Now I know I
+touched on a lot of disparate
+topics.  So I would like to
+close with some ways we can get
+better at what it is we are
+doing.  Even though data
+visualization has obviously made
+leaps and bounds and has
+progressed hugely, in some ways
+our data literacy hasn't and
+never will.  We're kind of
+flawed human beings.  If I was
+to ask how many people are in
+the auditorium, we would get
+very different response on
+range.  And the bigger -- if
+you're in a huge concert venue,
+it's hard to guesstimate.  You
+have the opportunity to
+community scale to readers in
+much better ways.
+So even something as simple as
+17 million comments, trying to
+help people to understand how
+many that actually represents.
+And there's all the kinds of
+simple and complicated ways of
+doing that.  But I think it's
+important as a goal to kind of
+bear in mind.  The other thing
+that I think is super important,
+if I haven't made it kind of
+clear already is, is the
+conversation.  So I think kind
+of communicating, interacting
+with people makes me so much
+better at what I do.  Gawker
+used to let you leave comments
+on the photograph.  And you
+could see where they clustered
+together to have the
+conversation.  You could see the
+people were more interested in
+the President of the United
+States, or the wealthy
+2-year-old child.  And
+translated into a chart where
+people left comments, it would
+be incredibly powerful.  You
+could see, if everyone is having
+a conversation about one year in
+the data on a line chart, or
+whether everyone is focused on
+one state in America.  Or
+whether everyone is talking
+about one dot, scatterplot,
+maybe a point of inaccuracy in
+your data and you can change it.
+And it's more focused and more
+fruitful as a decision.
+That's all I was going to say
+about Obama and the child.  The
+last thing that's really
+important, question just get
+better at communicating
+uncertainty.  That was the idea
+of doing hand drawings and
+photographs.  It was about
+admitting fallibility better.  I
+think some data visualizations
+communicate in a way that I find
+slightly troubling.  There's
+ways to communicate uncertainty,
+plotting out things around an
+average, or plotting out
+probabilities, we need to think
+more critically about it.
+So the last thing I would say is
+that, you know, yes, data should
+strive for objectivity and
+fairness, and visualizations
+keep trying to do that, but
+shouldn't be alienating people,
+but we may jeopardize the
+quality of what we're doing.  It
+doesn't solve everything, you
+have access to a whole lot of
+people, but reach out and
+publish in the same language as
+them.  That they are available
+to you regardless of Internet
+speeds.  And we, you know, in a
+very, very concrete way we're
+actually unelected officials who
+are kind of representing people
+in our data.  If we're not
+checking in on them to say, have
+we got this right?  I think
+there's something pretty dark
+about that.  Thank you very
+much.  Thank you.

@@ -1,0 +1,706 @@
+>> Yay!  And my computer is
+froze.  So let's give a minute.
+Hi.  It's so nice to be here.
+I'm so excited.  As mentioned,
+thank you very much for the kind
+introduction.  My name is
+Mariko, and that's my Twitter
+handle.  I just tweeted the link
+to the slide.  You may not have
+any problem with the big screen.
+But if you want to have it on
+your lap, I Tweeted on the
+screen.  I work at Scripto, I'm
+a textile engineer.  I don't do
+that for my day job.  My company
+makes a software for TV shows, a
+lot of text, but they give me my
+title based on my side project.
+One of my side projects is
+meetup with BrooklynJS.  Visit,
+we have a lot of meetings in New
+York.  We get to discuss a lot
+of data information as well.
+And my favorite data type is an
+array.  I really, really like
+array.  I like mapping them, I
+deducing them.  I like to do
+that on a physical scale.
+So I like mapping and reducing
+the array that's on the needle.
+And I have a whole bunch of
+research about how knitting is
+coding.  And if you're
+interested, I'm more than happy
+to talk about it.  But I got
+really interested in doing
+physical array.  I wrote a
+program language.  A program
+language to make a textile
+pattern for.  It's basically an
+array.  And I put the array into
+the software to visualize it
+better.  And I put it back into
+the machine and knit something
+like this scarf.  It's --
+visualizing, took it into the
+JavaScript application, and
+array, and then communicating
+into the machines, so it's all
+the way to JavaScript.  If you
+can't tell.
+And sometimes a request comes in
+and I kind of make a scarf out
+of -- this was an API usage.  So
+this is what my weekend desk
+looks like.  Code, visual,
+graphics.  And then the machine
+and yarn.  And that somehow all
+makes sense to me.  And this
+kind of started heavily a year
+and a half ago.
+So I had a problem were or I had
+a journey to take.  I wanted to
+cute cat photo on my jumper or
+sweater, or anything I want.  I
+wanted to make that happen.  And
+I realized that my knitting
+machine only takes -- well,
+first of all, knitting machine
+is only 200 wide, so I have to
+re-size the image, and yarn
+doesn't come in that color.  So
+I have to figure out what kinds
+of image processing,
+essentially.  And I go into
+Google things.  And I'm like,
+you know, find a bee keeping
+page and the research from the
+university, and like I just want
+to take this cat image into
+yarn.
+Please do that.  So it was a lot
+of frustration.  And I, you
+know, discovered that like I can
+do that on Photoshop, but also
+Photoshop is frustrating.  I
+don't understand what those
+buttons and lines do.
+So I had a question that -- can
+I make that all happen in the
+language that I use every day,
+which is JavaScript and HTML?
+And do that in the software I
+use every day, a browser?  And
+that kind of started.
+And, yes, I can.  I can use
+something called Canvas.  It's
+designed for that.  It says on
+headline medical element that
+can be used to draw graphics
+using JavaScript.  So for the
+next 25 minutes or so I'm going
+to talk about how I utilize
+canvas to do processing.  My
+primary interest is printing out
+a blanket.  But I promise that
+you will take away something
+useful hopefully for your data
+visualization for your web
+application.  Something to take
+away.
+If you are image processing
+professional, might be very
+general.  I might be
+generalizing stuff, might be
+basic.  But bear with me.
+So let's talk about canvas.
+Canvas you can create an element
+and give up size within things,
+or create an HTML tag and ID.
+But creating canvas itself is
+like buying a piece of land.
+You don't know where that land
+is located.  You need to give
+something called context in
+order to understand where this
+is located and what kind of
+building you can build on.
+So you cannot give a context
+like with GL, you use a lot of
+3D and heavy computing.  Or
+giving a complex of 2D, you deal
+with a lot of graphics.  But
+getting the context gives the
+canvas a set of language to
+commute.  You might speak 2D,
+you might speak a Boston accent.
+Same thing.  Getting the context
+in a set of language.
+So for entire example I'm going
+to use 2D context.  So once we
+have established a context, you
+can use a language, but then it
+will -- or even get the image
+from the parts of HTML and draw
+the image.  But I like data.  So
+the canvas has a thing for that.
+Canvas can communicate by data
+using image data and put image
+data with it.  Basically get
+image data.  Get out of the
+canvas and you can put it in and
+put the image data back in using
+the image data.
+So for the example that I'm
+going to show, this is the
+process that I'm taking.  You
+have some kind of image.  You
+create a blank canvas.  You
+don't know where it is yet.  The
+context of 2D.  Now you have a
+set of language.  And you load
+that image into that canvas.
+Now you have that image in the
+canvas, you can get the data
+out.  And do some cool things.
+And then put the image back in.
+So what does that data look
+like?  When you call a get image
+data, that data -- or that
+returns an object or image data.
+What does that look like?
+So this is what it looks like.
+Some of them are very
+straightforward.  Width and
+height are the width and height
+of the image.  So I have three
+by three, very small enhanced
+image.  But then there's a thing
+called data.  Has a bunch of
+numbers and I don't understand
+what this is.  How do I
+understand this?
+In order to understand what this
+data is, you need to understand
+what's in each pixel.  So let's
+look at this pink square.
+So -- this image, this is a
+single pixel, may or may not
+have googly eyes, but okay to
+put them.  Underneath a single
+pixel you are four numbers, and
+all between 0 and 255.  The
+first three are lightbulbs
+illuminating a different level.
+This is a red, green, blue
+value.  You may know.  So you
+can change those to change the
+color.
+It's just, you know, what level
+the three lightbulbs are
+illuminating.  And if you have
+equal number for each three, you
+always get gray.  And this is
+how you grayscale an image.  If
+you get the three colors, do
+whatever the math, average, take
+a green, whatever.  Just put the
+same number for three colors,
+you get the grayscaling.  And
+the last number is purely for
+software.  Which is opacity
+value.  So if I had lower
+opacity, transparency.  This is
+for canvas to know the color if
+two elements are overlapping
+each other.
+So if -- with this understanding
+you can see the image data like
+this.  It was four, and each for
+three color lightbulb, and the
+last is opacity.  Change the
+first to 55, which is the max,
+and turn down green and blue
+lightbulb all the way, and
+update it, then the pixel will
+turn red.
+So that's how we are going to
+manipulate the image from now
+on.  So -- but this image is
+one-dimensional already.  And
+you have information about
+widths and height.  How do I
+know the coding of these
+pictures?  I like to think of it
+like writing a letter on paper.
+I'm thinking about writing a
+letter to somebody, the data
+that's coming in my mind in a
+stream, and it's that
+one-dimensional.  But the output
+has a dimension.  Whenever I run
+out of space on the paper, I
+find a blank and go to the next
+one.  That's how this pixel
+works.  In code you might see
+something like this.  The outer
+loop goes through my axis to get
+to the Y axis, and the inner
+loop gets to XY code.
+Each pixel has four numbers, you
+need to know the index of that
+to get to each addressable data.
+Even if you have those numbers,
+you can have a project like
+this.  I created a project of a
+ghost image.  It is a one by one
+pixel that has a whole bunch
+of -- to create that you have an
+image here.  This is not an
+image, but it is a box shuttle
+with one by one pixel.  Not
+really practical.  It's using a
+lot of memory to operate.  But
+certainly fun to kind of prank
+people.
+So I got all the data in.  I
+know how to edit the stuff.  Can
+I do image filters like
+Instagram?  And I kind of, you
+know, like started to research
+about it.  And I researched
+this.  Everybody was talking
+about math and like I don't
+really talk math.  Like I don't
+functions, I like function and
+type -- so I like to think of it
+kind of like a playground.  And
+the shape of the sloping of the
+playground determines what kind
+of folder you get out
+And this was the data
+conference, completed a
+visualization of this slide.
+So this is the original slide.
+If you have an input of 128,
+output is 128.  Let's invert
+this image.  Invert photo.  It's
+quite literally inverting the
+slope.  Now if I have a higher
+value, you get the lower value
+out.  If I have a lower value,
+you get the higher value out.
+And this is how you invert the
+image.
+Brightness is shifting up and
+down the original slide.  So if
+I lighten the image, all of
+these numbers -- that's like 138
+to 55 -- just get fully on all
+the illuminated in the
+lightbulb.  If I move that down,
+then it gets darker.
+The contrast.  I'm the kind of
+person who guesstimates the
+contrast in the Photoshop until
+I'm satisfied.  I understood
+what it does.  Contrast is a
+slope of that slide.  So if I
+change the low slope, that's a
+low contrast.  Meaning the input
+is coming from zero to 255, but
+output is there, so you get a
+low contrast of color, and high
+contrast is the opposite way.
+It doesn't have to be straight
+line slope.  It can be step and
+creating a full-size effect.
+And you can limit the color that
+you use in the image.
+Or you can do something like
+solarize, which is a
+high-contrast on the two sides
+and then inverting on the
+middle.  So creating kind of
+color to photo kind of cool
+effect.
+And if you take a gray-scaled
+image and put the two-step on,
+you can do the threshold image.
+I'm sure a lot of image
+processing and computer vision
+use this as a first step to get
+to a usable data set.  So you
+can kind of locate where things
+are.
+And taking those gray-scale
+data, you can also -- I know
+pseudo color is not recommended.
+But you can see that -- you can
+see why.  It's why I did it this
+way.  So it's not recommended
+because the blues are very
+harsh, but on the green step,
+can't maybe tell the step.  It
+makes sense.  The green is fully
+on longer than any other color.
+And our eyes are more receptive
+to green.  You can change the
+lines to create a difference of
+color to give a color to your
+data set.
+So this technique is not only
+for creating Instagram filters.
+I had this challenge of taking
+old data -- so I don't have any
+coordinates or any data points.
+I just have an image from the
+archive.  And I wanted to create
+an interactive map.  How do I go
+with that?  Well, you can do
+things very basic, like creating
+it in CSS and making a box.  It
+doesn't cover other parts of
+Boston, kind of not accurate.
+You can use HTML 5 map element
+and kind of draw the polygram
+and kind of make it right.  But
+if I do the pixel event, I can
+put it into the editing
+software, draw the line and then
+fill it with white and it took
+me 15 seconds.  I gray-scaled
+it.  Now fully white pixels are
+the target.  So I threshold it.
+Now I have a reference map.  If
+the quick coordinates go there,
+and a pixel is black, that means
+don't trigger the quick event,
+if it's white, trigger the
+event.  So I have basic function
+in the hidden -- canvas has this
+threshold in it.  It doesn't
+have to be overlapping, but for
+the reference, I had it
+overlapping.  It goes in, I call
+it -- is it black?  White?
+Trigger the event.  You can use
+a processing technique not only
+for creating a photo for
+Instagram, but you can utilize
+it for interactivity.  It got me
+interested in now I can control
+cover.  Can I change the shape
+of it, I think?
+And, again, this keyword got
+mentioned today in the two talks
+in the morning.  The colonel
+convolution.  To me that sounds
+like a yummy cereal.  I don't
+know what that is.  But cool.
+Itself it is not too
+complicated, but the explanation
+of very complicated.  So I like
+to think of the colonel
+conversion as a pixel social
+graph.  It's just thinking about
+it with pixels.  Let me explain.
+So you have a single pixel
+you're going to change the color
+of, sometimes called kernel.
+And you have a friend and create
+a convolution.  And this wants
+to blend it into your friend, I
+don't want to be noticed.  So
+you give a number to each of the
+friends.  You combine all the
+color, divide it by some of this
+number.  So in this case, nine.
+And then you get new color for
+this pixel.
+How does that look like in the
+bigger image?  So I have this
+very vivid pink line going on.
+We learned that each pixel are
+has three colors.  So we do that
+for three channels.  Get the
+number for red, get a number for
+green, another for blue, and
+then do that for all of the
+pixel one by one.  And then you
+get a blurred image.  You get
+the kernel conversion, I call it
+the graph.  And the box blur,
+every pixel is equal.  You get
+this image, it's subtle.  But it
+gets the blurred image.
+But in reality, your friends are
+not as equal.  You have a close
+friend and then you have a
+distant friend.  So you can have
+the Gaussian blur, and the
+distant pixel gets a lore number
+to create for of a blur.  This
+makes sense to me.  I always
+wondered, when I make a folder
+in SPG, I have to type Gaussian
+blur, in the just blur?  Turns
+out blur has a different kind.
+Now I know.
+The sharp is the opposite.  Like
+you do not want to blend it in.
+You want to be unique.  And
+almost like opposite.  And so
+you get yourself really high and
+make your friends really low and
+do the same thing to get a
+sharpened effect.  Yeah.
+So I used this technique to
+create a fake tilt shift
+application.  So if I put an
+image in and then specify the
+area of something.  And then
+start processing an image.  Then
+it kind of -- the area gets
+blurred, blur, and then kind of
+making a fake tilt shift effect.
+This was one project.  But this
+taught me another challenge that
+I would encounter if I were to
+use this in the project.
+In the project, the performance
+matters.  And exploring the
+image.  Like I do all the image
+editing there, but it lives in
+the canvas.  And what I want to
+Tweet or share on Facebook or
+export the image?  There are two
+things that need to be
+addressed.  I'm going to go
+through that in a minute.
+So performance.  The performance
+gets really slow.  And because
+JavaScript is -- that slow
+process blocks the UI.  The
+entitle and everything.  You can
+go by UI, using faster
+algorithms, better function that
+you write.  But you are doing a
+lot of calculation and image, if
+you want to use an original
+image, like 10meg, you will have
+problems with blocking UI.  You
+can use a worker.  They are a
+way to run the JavaScript in the
+background threads off of UI.
+What does that mean?
+I like to think of that as a --
+it's like the international
+space station.  If you think of
+the -- the earth.  And then the
+browser and DOM is in the earth.
+All the elements are here.  You
+can talk to it, the
+international space station
+cannot touch the element on the
+earth.  So it does not have the
+access to the window object, or
+you can't use the select inside
+of the win worker.  So how does
+this doing in code look like?
+Quite simple.
+So let's go through it one by
+one.  So the worker is literally
+just taking you, worker, and
+giving a file that you want to
+execute in the worker thread.
+That's like the international
+space station.
+I mentioned that a web worker
+does not have access to window
+or DOM.  So even though you
+might have underscored some
+utility library in your main
+thread, you need to be required
+again to use it.  And use that
+as a postscript.  Once that's
+done, the communication between
+the main and worker thread are
+done by posthumous.  And they
+are taking care of the thread,
+and the UIs that you want the
+user to use, you can push the
+calculation off to the worker
+side.  And once it goes back,
+you don't need a worker anymore,
+and you can send the ISS to the
+worker.
+So I created a demo.  Simple
+demo.  Of a tilt shift that I
+showed just now.  I have a --
+the demo on the main thread, and
+then I have a web worker-ified
+of the stuff.  And I created it
+with JavaScript.  There's a
+color box that's moving, that's
+controlled by JavaScript to kind
+of hijack that event.
+So once I run that, that
+starts -- immediately the main
+one, the UI freezes.  Doesn't
+respond to any click event.  The
+web worker side is responding
+beautifully and doing so.  And
+in a minute, it finishes, like
+nothing happened.  But in the
+main thread one, it finishes and
+then just executes all the of
+the events accumulated and junks
+up the UI.  So you don't want
+that in your digital vision if
+you want to do that.
+So performance is kind of taken
+care of.  Let's think about how
+to export.  Like you might want
+to put it into PDF to send a
+report.  Or you might want to
+tweet.
+There are two ways to get data
+out and save it as an image from
+canvas.  And one is to dataURL
+and to blob.  The easiest one is
+to dataURL.  Calling it on
+canvas, returns the base64 text
+image.  You can direct that to
+CSS, or put that into your
+element and create a download
+button.  However -- so -- let me
+show the example.  So I have
+mentioned that I created this
+programming language for a
+knitting machine.  So I have a
+little partial learning on the
+background.  Every type I do,
+it's learning it, and creating a
+canvas here.  The canvas is just
+a tiny corner.  Every time I
+change the canvas it's going to
+data URI and getting the basics.
+Putting it into CSS.  And
+letting the CSS take care of all
+the background timing and stuff.
+So I don't need to worry about
+it.
+And I can just click the
+download.  I don't know if you
+can see it there.  But that's
+like 64, literally -- so that's
+how I use base64.  However, it's
+expensive if the image is big.
+Lying any web, like basic image
+with the text is expensive.  So
+you want to avoid that.  And
+also the href itself, although I
+couldn't find it in spec, as far
+as I know the spec doesn't
+restrict the length of what's
+going into the href, but the
+browser restricts it.  Seems to
+be around 2,000 characters.
+Dealing with a small image, you
+can get away it.  But doing the
+image with the meg or something,
+you will have a problem.
+And you can use something called
+TOBLOG.  It makes a binary
+object that you can pass into
+window called create object URL.
+And you can use that image for
+your downloading.
+In either case you need to
+specify what kind of image
+format you want.  And this got
+me thinking that I need to
+specifically state I want this
+format and this impression.  And
+I was like I actually don't know
+how image works.  Like I know
+GIF is animation, PNG is like
+everything, and JPEG is what
+comes out of the phone.  Before
+but I don't know -- I don't have
+any like sophisticated knowledge
+to decide on which one is the
+best for my data visualization.
+So I did a little research.
+GIF.  It's color to 256 colors,
+you cannot use more.  PN G and
+JPEG use full colors.  PNG is
+like a GIF.
+The file, so it tends to be
+smaller on GIF and JPEG and
+larger on PNG.  Set a pallet
+mode on PNG, almost always
+smaller than GIF.  And the
+transparency, the GIF is fully
+opaque or transparent.  And then
+it's lossless, so once you show
+it, you can get the original
+state, and JPEG creates
+something called JPEG artifact
+on the way.  And this is a handy
+graphic.  If it's not, is it
+graphics or photo?  You can
+decide on the image.  Of I
+discovered after researching
+this, this is why Twitter
+picture looks so shitty.
+So Twitter used JPEG complexion.
+No matter what your original
+input is.  If the image is fully
+opaque.  However, remember, JPEG
+cannot handle transparency
+pixel.  But you put a
+transparent image in the
+Twitter, then it will use PNG
+and not create a JPEG.  I
+learned that from somebody who
+created a tool to just upload
+your image.
+And it's a fully opaque image.
+You can't even tell.  There is
+like one pixel on the top left
+corner that is turned 99.6%
+transparent.  So that Twitter's
+perspective, it has Transparency
+pixels, it's going to default to
+PNG and preserve your Twitter
+image.  You're welcome.
+[Applause]
+So all of that are open sourced.
+I have a little JavaScript
+utility.  I tried to aim it for
+like underscore, but for image
+data, so you can kind of
+prototype stuff.  It is not
+smart or clever code, it is very
+slow.  But the problem is I had
+so much problem understanding
+those high-level, sophisticated
+systems.  And all I needed was
+the basic concept of how image
+processing works.  So the code
+is very simple, however, it is
+meant to be.  And encouraged to
+look at this.
+All of the examples, links are
+there.  And I have a googly eyes
+if you want to.  This
+conference -- when I started, I
+was learning how to do the data
+visualization.  I came here last
+year in person, that was
+amazing.  Now I get to talk
+here.  So thank you very much.
+[Applause]

@@ -1,0 +1,1130 @@
+>> Let's see.
+>> Any time now.
+>> Any time now.  Yeah --
+meanwhile, talk about how
+intimidated I am to be
+transcribed.  I feel like I need
+to talk like George Will.  In
+complete paragraphs.  Okay.
+Good.  Back to it.  We want to
+talk about Seeing Machines
+Think.  And artificial
+intelligence is an increasingly
+interesting thing to think
+about.  At the same time it's
+been an enduring concern for a
+long time.  In fact, in the old
+days people try to create smart
+machines with hand crafted
+algorithms, connect them to
+different rules, brute force
+calculations.  And even then,
+leads to interesting things.
+One thing that, you know, I have
+been interested in for a long
+time is the game of Chess.  And
+I just want to show you a very,
+very relatively old piece.
+Because it has a point to make.
+So this is a game of Chess.  You
+can play it against the
+computer.
+And as I play, you can see every
+move that the computer is
+thinking.  The computer is not
+playing a great game here, by
+the way.  But it's thinking hard
+and we give it credit for that.
+What it's doing, it's simply
+looking at every possible move
+and figure out what's good, bad,
+according to a pre-made formula
+for good or bad moves.  And this
+really represents, I think, sort
+of an old view of intelligence
+on computers.  That it just sits
+there and calculates, brute
+force.
+However, what's exciting is that
+we're seeing a very different
+role for artificial intelligence
+today.
+>> And so today we're going to
+talk about neural nets.  And one
+of the things that sets that
+apart from the kind of old world
+computing that Martin was
+talking about, is the fact that
+these systems learn over time,
+right?  And they're modeled
+after the human brain and
+nervous system.
+They're also probabilistic.  So
+there are many sort of shades of
+gray there.  No pun intended.
+And they're not predictable.
+They are not completely
+predictable.  And that makes it
+for a really interesting
+opportunity for visualization.
+Because one of the big
+challenges is understanding
+exactly what is being learned by
+these systems.  And experts
+don't always know what these
+systems are learning.
+So this is a very simple sort of
+artistic rendering of what a
+neural net might look like.  You
+put in some data.  So over there
+we're inputting a picture.  And
+this picture will pass through
+all of these sort of layers.
+Each one of those vertical
+things is a layer in the neural
+net.  And each layer is made up
+of a bunch of neurons.  Okay?
+And they are firing up and
+trying to understand things
+about this picture.  So what you
+see at the bottom are sort of
+filters and activations.
+They're trying to sort of take
+the picture apart and understand
+what it is that the machine is
+looking at.
+Eventually, as this goes through
+all these layers, it comes up
+with a prediction.  Oak.  So
+what kind of picture is this?
+Is it a horse?  A deer?  A
+plane?  And the machine will
+come with different -- will come
+up with different problem --
+probabilities for each one of
+these options.  And then
+eventually decides, okay, horse
+
+is the one I'm most sure about.
+So I'm going to go with horse.
+So how does, you know, a deep
+network work.  It's a mystery.
+In fact people go on Twitter to
+make jokes about it.  And if you
+search for things like black box
+neural nets, you get tons of
+answers right away.  And this is
+one of the, again, hooks for us
+in visualization, in sort of
+opening up the black box a
+little bit and try to understand
+what it is that's happening
+inside these systems.
+>> So we want to suggest that
+there are a couple of reasons to
+stay calm about this.  One is
+it's actually normal for
+technology to be kind of
+mysterious.  One of the
+things -- I went and did a
+little bit of reading about all
+kinds of technology.  And think
+about something as simple as
+metal.  For thousands of years,
+people were using iron, and they
+would basically extract it using
+these very complicated,
+dangerous blast furnaces.  And
+you see images on the left from
+the 1600s, and on the right,
+the 1300s of Chinese iron
+blast furnaces.  When these were
+created, it was super high-tech
+nothing and no one knew
+everything involved.  It was
+okay.  It's like the normal
+human condition that the
+technology runs a little ahead
+of our understanding.
+And the other thing is, we don't
+know how brains work either.
+And pretty comfortable with
+them.  That's one reason to stay
+calm.  There's another thing,
+which is that visualization
+really can help.  And in fact
+this is an amazing opportunity.
+Taking an MRI of a human brain
+is very, very difficult,
+obviously.  It's like a big
+honking machine you have to get
+in.  It's horrible.
+When we have artificial neural
+networks, we can actually start
+inspecting them in interesting
+ways.  And it's really a great
+opportunity to understand what's
+going on.  So we want to talk
+about some of that today.
+And I wanted to start with a
+little bit of a warm up,
+actually.  Before we leap to
+neural networks.  I wanted to
+talk a little bit about machine
+learning and how you can sort of
+understand it in general.  And
+so let's start to teach a
+computer to drink wine.
+Let's have a computer tell red
+and white wine apart.  So the
+first step is to get data for
+that.  I found great data,
+there's a nice UCI site with a
+nice archive of data sets.  And
+I found data conveniently on the
+amount of chlorides and total
+sulfur dioxide.  I wish I could
+have gotten it on oaky flavors
+or a cherry note.  But you have
+a data set like this.  There's
+one particular maneuver credit
+Cal to understanding the field.
+You have these numbers, each row
+has two numbers.  And the key
+mental maneuver is to think
+about those pairs of numbers as
+points in space.
+That transition from a data
+table to geometry has a lot of
+power to help you think about
+this.  So, for example, I can
+plot the red wines as points in
+the two dimensional space.  I
+can plot white wines.  And just
+by plotting I can start to see,
+yeah, all right, there is a
+difference there.  And I request
+start to think, how could I
+quantify that difference in a
+way that a computer could
+understand?
+So one of the things I could do,
+look at one of the features, and
+using machine learning jargon.
+The chlorides are a feature, the
+amount of sulfur dioxide.  And
+instead of Y1 -- just getting
+you used to the weird jargon.  I
+could look at one feature.  For
+example, I could say, look at
+just the chlorides and write
+down this little equation here,
+or formula.  And I could say,
+well, that is positive.  Yes,
+but this is a red wine.  And if
+it's negative, I'm going to
+guess it's a white wine.  Since
+this is a visualization crowd, I
+have done a visualization thing
+here and placed a heat map on
+the back, showing you the value
+of this formula.  You can see
+it's not terrible.  Like it kind
+of gets a lot of the white wines
+right, they're in the white
+area, the red wines in the red
+area.
+Maybe.  It's not great, though.
+I could try sulfur dioxide.
+It's much worse if I look at
+just that feature.  Not good at
+all.  You want to combine the
+two of them.  And the simplest
+thing to do is combine these in
+a linear way.
+So I've created a sort of
+diagram on the right, gives you
+an indication what's going on.
+Taken two features, X1 and X2,
+and combined them, putting more
+weight on the X1 feature, the
+one at the top, to get the
+linear classifier here.  And if
+you look, you see most of the
+red dots for the red wine in the
+red area, most of the white in
+the white area.  It's not
+perfect, but better than most
+humans at this task.  A lot of
+people think it's very easy to
+tell these apart.  But studies
+show that people are much worse
+than you would expect.
+There many ways you could find
+this formula, analytically, or
+teach the computer gradually to
+find it.  We won't go into
+details about the exact
+training.  But the formula
+exists and this is a way to tell
+it apart.
+As I said, the formula did
+better than most people, but we
+cannot conclude from that that
+is a hyper intelligence
+computer.  On the contrary --
+get that back.  Yes.  I was
+about to insult it.
+[Laughter]
+it is hyper intelligent.  Okay.
+What would happen, for example,
+if you gave it a glass of pure
+sulfur dioxide.  You look at the
+diagram and plug into the
+formula that will says that
+definitely white wine.  A human
+would say argh.  Because it's
+poison gas.  And that's sort of
+an interesting point to keep in
+mind as you think about it.
+It's designed to tell you stuff
+about the data it's been trained
+on.
+>> Okay.  So now, let's look at
+a demo.  That sort of makes that
+point.  Let me see if I can make
+this a little bit bigger.  So
+this -- this over here is a
+neural net, a very, very small,
+simple and transparent neural
+net that we launched a couple
+weeks ago and that you can play
+with on your browser.  So it
+runs locally on your browser.
+This is part of the flow
+project.  We will talk about it
+in a little bit.  But this is
+all a good source.
+So please play with this.  The
+whole point here is to start to
+do what Martin was walking you
+there.  To play with different
+scenarios and see how tweaking
+the network will give you better
+or worse answers for the
+scenario you have.
+So to mimic what Martin was
+looking at, I have here very
+simple network that's looking at
+these dots over here.  These are
+data points.  And we have two
+sort of rough clusters.  We have
+the blue clusters, which are
+positive points.  And we have
+the orange clusters, which are
+negative points.
+And we're trying to ask the
+machine to separate these in the
+best way it can.  And we have
+different features here, the
+first partitions the space
+vertically.  The next partitions
+the space horizontally.  Okay.
+So this is our simple system.
+It has no hidden layers, it's
+very straight forward.  Now I'm
+going to play it, and very
+quickly it gets the answer,
+right, of this may be the best
+partition for this set of points
+Okay.  So this is all good.
+And straightforward.  So now
+let's give it a slightly more
+challenging data set.  I have
+now two concentric circles with
+different points.   The negative
+points are on the outside, the
+positive points are on the
+inside.  Okay.  If I run the
+same network with the same
+features, what does it do?
+It doesn't.  It doesn't find a
+good answer.  It can't, right?
+Okay.  It's too complicated a
+data set for it to figure out
+with these features.  So what I
+can start to do is I can start
+to add a couple of layers here
+and these are hidden layers.
+And now I'm going it add
+different neurons to these
+layers.  Now let's see if it
+gets it.
+Okay.  It does.  Okay.  So let's
+talk a little bit about what's
+going on here.  So I've made my
+system more complex.  I've added
+neurons to it.  Now each neuron
+here, each little box is telling
+me how it sees the world and how
+it thinks the world should be
+partitioned given the data set
+it's given, right?  And I can
+see over here it starts to form
+these curves and starts to sort
+of follow the shape of the data
+better.
+The other thing it does is that
+now we have these lines that are
+both blue and orange.  And what
+that means is these lines are
+weights.  It's how much weight
+we're giving to each one of
+these neurons, okay?  So the
+thicker the line, the more
+weight that neuron has on the
+output.  Or to the input to the
+next layer.  They're also
+different colors.  So the orange
+weights are negative weights.
+And the little weights are
+positive.
+Positive weights mean this is a
+straight forward weight.  So
+you're going to take whatever I
+give you and you're going to
+move that to the next layer.
+A negative weight means that you
+are going to take exactly the
+opposite of what I give you.
+Okay?  So if we look, all of
+these final neurons here are
+feeding negative weights to the
+output, okay?  If I look at the
+output, everything on the
+outside is orange, and
+everything on the inside is
+blue.  Just like our data set,
+which is great.  But if I look
+at this neuron, it's flipped.
+That's why we get the negative
+weights.  And then we can start
+playing with different things.
+So now I'm putting in a very
+different kind of data input
+where I have sort of a
+checkerboard set up.  And I'm
+going to take the same exact
+network and see what I get.  Not
+bad.  I get a pretty good,
+straightforward answer.  But the
+other game I can play is I can
+just fiddle with these features,
+right?  And sometimes I may
+choose a feature that actually
+is really good at predicting the
+data I have.
+So if I run it now, it's
+slightly better.  And this is
+something -- this is -- this is
+a lot of the art of machine
+learning.  It is choosing your
+features wisely, playing with
+your data, tweaking your network
+so that you can -- you can, you
+know, come to the best outcome.
+And then you start to see things
+like this, this neuron at the
+top here is almost deactivated
+because we don't need it
+anymore.  We don't care about
+that.
+And then there is stuff like
+this.  A much more complicated
+data set.  And let's see if I
+just run this network the same
+way.  It tries.
+>> Trying really hard.
+>> It is.  But it's not getting
+there.
+>> Poor thing.
+>> Let's play with it.  Let's
+give it a full set of things.
+Let's make it --
+>> Make the frame bigger?
+>> Very complicated.  And let's
+see how -- how far we get with
+this.  See if this is any
+better.  It's -- it's trying so
+hard --
+>> Oh, look at that.  It'll
+figure it out.
+>> It will figure it out
+eventually.  And then there's
+all sorts of questions that, you
+know, you want to ask of your
+network if it ever gets to a
+stable state.  Is it
+over-fitting the data?  Really
+looking really hard at the data
+you have?  And that's it?  Or is
+it general in you want something
+that is general.  But anyway,
+the point here -- I'm going to
+stop it for a minute.
+The point here is that this is a
+toy network that you can play
+with and start to develop some
+of the intuition for it.  It was
+really interesting because we
+developed this tool internally
+at first.  And even experts were
+surprised with some of the
+things that they could see on
+this very, very simple network.
+So, again, the role that
+visualization would play here is
+really important.  Because even
+people who deal with these kinds
+of systems every day have
+trouble developing a really deep
+intuition for what's happening
+here.
+So -- so now that we looked at a
+toy network, let's look at real
+networks.  And the point of
+that -- these networks are very
+complex.  They are massive,
+sometimes.  And they have lots
+of high degree nodes.  And this
+is degree nodes.  This is work
+I'm about to show that was done
+with Ham over here in the
+audience.  He was an intern last
+summer and started this amazing
+work.
+So the goal is to turn something
+like that on the left, where you
+have all the low-level nodes and
+all the edges in a network, into
+something that is a lot more
+structured.  That takes into
+account hierarchies.  That takes
+into account high-degree nodes
+and how you should deal with
+that for the topology of the
+network.
+The other point here is that
+it's really important to be able
+to show these systems.  It's
+really hard, but it's very
+important.  So to give you a
+sense, every time a new break
+through comes up in neural nets,
+you will have publications,
+academic papers, and the first
+thing people will do is draw a
+diagram like you are looking at.
+These are high-level diagrams.
+It's the level at which, we as
+humans, want to think about
+these systems.  This is my
+system.  It's made of 20 layers,
+this is layer one, this is layer
+two, that is a fully connected
+layer.  And this is the level at
+which we want to talk and think
+about these things.
+However, the structure of these
+graphs is incredibly low-level.
+Where if you want to add nodes,
+you're literally adding one node
+and another node and that's
+creating edges.  So you can
+imagine the difference between
+the data you have to play with,
+and this kind of manually drawn
+diagram.  Right?
+And yet this is the lingua franca
+this is what everybody will draw
+on papers if they want to talk
+and communicate about their
+networks.  This is the
+challenge.  How to get as close
+as we can get to something like
+this automatically?  Okay.
+So to show you what we have --
+this one here.  Okay.  This is
+something we did -- I want to --
+okay.  This is a visualization
+that has been open sourced
+together with TensorFlow, it's
+Google's open source, machine
+learning platform.  And when it
+launched, we launched this
+visualization of the graphs
+TensorFlow as well.  And what
+this does is it automatically
+reads your graph and visualizes
+it.  And so this is a simple
+network called C-far.  And it
+does a couple of things.  One of
+the things it does is that it
+shows you these big blocks.  And
+these are hierarchical blocks,
+clusters of operations that are
+happening.  So if I open one of
+them, you can see they have a
+lot of stuff inside.  A lot of
+computation that happens.
+Another thing that we're doing
+here is whenever we find blocks
+that have -- that share the same
+structure, we're highlighting
+that to you.  By color.  So
+blocks that share the same color
+are blocks that share the same
+structures.
+So to give you a peek of that,
+this is convolution two,
+convolution of layer two and
+layer one.  And, yep, you can
+see they share the same
+structure.  Okay.
+The different -- the -- oh,
+there's one thing I should have
+said in the beginning.  So let
+me go back.  The way these
+things flow, this is like a data
+flow graph, it flows from bottom
+to top.  So the input to this
+system is at the bottom.  The
+output is at the top.  Okay?
+This is just a convention in
+neural nets.
+And the other thing you see here
+are varying lines.  So whenever
+you have an edge, a lot of times
+these are tensors in these
+systems.  And these are the
+things that are carrying all the
+data.  Remember that artistic
+rendering where you saw the
+beautiful things flowing from
+one layer to another?  These are
+the tensors.  And the tensors
+have different shapes and sizes
+as they go through --
+>> I'm going to say something,
+as the -- when I first heard the
+name Tensor, it was like
+differential geometry.  It's
+turned out it's using it as a
+multi-dimensional array.  But
+it's two syllables.  Better than
+multi-dimensional array.
+Wouldn't want to call it
+multi-dimensional array flow.
+>> The other thing people care
+about when working on the
+systems, what shape, what size
+are the tensors.  We label the
+tensors and tell you what shape
+they are.
+There's other things we're doing
+here.  So we can't show the
+entire graph at once, otherwise
+it would be completely
+impossible to read.  There are
+always nodes in these systems
+that connect to everything else,
+like gradients.  And so you just
+can't read a graph like that.
+So we did a couple of tricks.
+One of the tricks is that -- if
+I go back to the original
+view -- you have the main graph
+on the left.  And this is your
+real -- the core of your system.
+And then you have auxiliary
+nodes on the right.
+And these auxiliary nodes are
+actually part of the graph.
+They are all together.  All this
+exists together.  But we had to
+cut them off and show them
+separately.  Because otherwise
+you couldn't read the graph at
+all.  And this is something that
+was sort of a bold move on our
+end, on our side.  Oh, we're
+going to cut off these high
+degree nodes.  We started
+talking to users and saying this
+would make sense, when you look
+at a graph like this, does it
+match the mental model of what
+you're doing or is it completely
+bust?  They were like, no, this
+is great.  In fact can you give
+us control and can I ask to trim
+out even more nodes out of my
+network if I want to?  We're
+like, okay, this is a good
+feature.  All right.
+So now you can click on any node
+and say add back to main graph.
+Or --
+>> See why we take them out.
+>> Yes.  Exactly.  Or take it
+out.  There are other things,
+other fun things.  So because
+we're trimming things, whenever
+you see these side nodes, these
+are things that have been
+trimmed.  If you click on any of
+them, you're taken there.  You
+can open them up.  And again,
+you get to see -- you get so
+start to see the complexity of
+what's happening in, you know,
+somewhat simple network like
+this one.
+All right.  So let me go back.
+And tell you a couple of things.
+So -- yeah.
+So this is all on TensorFlows.
+Again, open source.  This is
+work done with a lot of people
+including Ham who started the
+project here.  Why is this hard?
+I'll let you take a look at
+this.  But as visualization
+folks, I'm sure you can relate.
+This is what one of the networks
+looked like without any of the
+trimming that we did.  So it's
+impossible to visualize.  And
+then, again, some of the tricks
+that we played here.  High
+degree notes being trimmed, core
+structure on the side.
+The reaction has been incredibly
+positive.  One of the things to
+realize about this community is
+that even though they're dealing
+with tons of data and very
+complex systems, there is a
+dearth of visualization.
+There's no good visualization
+tools that are used across the
+board.  People were always
+building their own little
+systems.  So it was a real -- it
+was a real boon when TensorFlow
+came out and you could just
+visualize your graph like that.
+People have been editing the
+graphs.  The other thing is, if
+your code is a mess, and it's a
+mess, the visualization will
+show that very quickly.  And so
+people have been actively
+editing their graphs to make the
+visualization better so that
+they can understand the systems
+that they are building.  That
+makes sense how useful some of
+this is.
+And again, the whole inspiration
+for doing this was
+communications.  People to want
+talk at high level.  We are
+seeing this sort of
+communication happening in
+screen sharing and so forth.
+Oak.  So so far we have talked
+about visualizing the network
+themselves.  The systems.  There
+are two main ingredients in
+machine learning systems.  One
+is the algorithms and the
+network that you build.  The
+other is the data that you're
+feeding it.  Because it's
+learning, right?  It's only
+going to learn depending on the
+data you feed it.
+And so we are also starting to
+visualize that input data.  So
+one of the things that we did is
+look at, again, a simple system
+CIFAR-10.  What that is, it's an
+image classification network.
+So it sort of like -- it takes a
+bunch of images.  It takes a
+bunch of 32 by 32 images and has
+ten classes.  Classes being, is
+it a car?  Is it an airplane?
+Is it a deer?  A dog?  A cat?
+So it has ten of those.  All it
+is is a bunch of pictures.  It's
+trying to classify the pictures.
+Each picture has been labeled by
+humans.  So we have a ground
+truth to go back to and say is
+this really a dog?  Is this
+really a cat and so forth.
+So now let me show you this demo
+that visualizes, oh, god.  That
+was interesting.
+>> I have -- yeah.
+>> Hang on.  Let me just go
+here.  And what I want to do is
+actually I want to reload this
+thing.  See if it's bigger.
+Okay.
+So this is a visualization of
+the data set, of a sixth or a
+fifth of the data set in CIFAR.
+Each one of those squares is an
+image.  So being able to see
+that all at once is already huge
+for people who are dealing with
+these systems.  You can zoom in
+and actually look at the
+pictures that you're going to be
+working with.
+We are separating these
+systems -- these pictures into
+different classes, like I said,
+so the airplane, the automobile,
+the birds, so forth.  And then
+we can start playing interesting
+tricks on it.  So I'm going to
+look at the same images, but I'm
+going to organize them by hue
+now.  Just because I can.
+And I can see right away that
+there are some classes of images
+that have bunch of blue.  Which
+makes sense, right?  Airplanes
+and ships I would imagine have a
+bunch of blue.  Another thing
+that was interesting to me,
+frogs, almost no blue frogs at
+all.  Which was interesting to
+note.  But the other thing is
+the distribution of things like
+automobile and truck as being
+the only ones where you have a
+really nice distribution across
+the spectrum.
+But now I can start to play --
+so this is only the input data.
+It hasn't even touched the
+machine learning system yet.
+I'm just looking at my data.
+Okay.  Just the small anecdote
+about why input data is so
+important.  We are talking to a
+professor at MIT who was doing
+this sort of thing, trying to
+understand images, and he was
+like, we scrape the lab, look at
+tons of images.  But you can't
+look at millions of images.
+So one of the problems in their
+system is it couldn't recognize
+months very well.  Why months?
+What's the problem?  But it
+turns out the input data for
+some reason on the web tends to
+be mugs with the handle to the
+left.  And not to the right.
+And so when, you know, when it
+got images of the handle on the
+right, it didn't know what to do
+with it, right?  This is why
+input data is so important.
+Dice biasing your data is
+incredibly important.
+Now I'm going to start touching
+the machine learning system and
+try to look at this data through
+the eyes of the system.  So what
+I'm showing you now is a
+confusion matrix.  This is a
+comparison between what the
+system thinks a picture is, and
+what the picture has been
+labeled as.  Okay?
+So it's good news to me that the
+diagonal here is the biggest --
+is the one with the biggest --
+the biggest distribution here.
+Because -- oh, go away.  Because
+this means that the diagonal is
+like what I call are cats are
+really cats.  But now let's do
+one thing.  Let's take away the
+correct predictions.  Let's take
+away everything that's right.
+That diagonal.  And now I have
+everything that's wrong.  That
+my computer -- that my system
+got wrong.  And I can see there
+are two big chunks here, for
+instance, things I'm thinking
+are dogs and are really cats and
+vice versa.  Or things that, you
+know, are birds, for instance,
+that the system thought were
+airplanes.  Okay.
+So this is one here.  Where the
+system was thinking they were
+airplanes.  And, again, this
+will allow you to start tweaking
+your system to understand what's
+happening.  I want to show you
+one more thing here.  This
+distribution is each class and
+how certain the computer is that
+all of these images, which are
+of airplanes, are, indeed,
+airplanes.
+So the computer is very, very
+sure that all of these pictures
+here on the right are truly
+airplanes.  Which is great.  But
+it's very certain these are not
+airplanes.  And they are.  So
+you can see the distribution,
+again, that cats and dogs, it
+does not do very well.
+So these are cats that it's very
+certain are not cats.  Very,
+very certain.
+>> Insulting to the poor cats.
+>> But -- but -- here's the
+other thing.  This is a system
+that has been out for a while.
+It's a proven data set.  It's
+one of those model data sets.
+And by doing this visualization,
+we found a mistake in this data
+set.  So again, I'm going to
+zoom into cats.  Cats that it's
+very certain are not cats.
+Okay.
+So these have all been labeled
+by humans as cats.  Look at this
+guy here.
+[Laughter]
+right?  The machine was right
+once.
+>> Cat --
+>> Right.  So this is exactly
+the kind of exercise we want to
+do when you're training these
+systems.  And just being able to
+look at things and slice and
+dice is incredibly useful.
+So -- oh, god.  Cool.  Images --
+get you to the next point.
+>> Yeah.  So this -- the
+CIFAR-10 classifier that was
+used to create that is actually
+the open source tutorial in the
+TensorFlow.  So you can play
+with this yourself.
+And I want to talk quickly about
+what neural nets are learning.
+Because you have -- you saw that
+input data can be tricky, but
+let's talk about some
+interesting things.  So what
+happens if we give it random
+images?  Okay.  It's mildly
+constant.  We forced it to say
+something.  The left one is a
+bird, the right is a cat.  Can't
+fault it too much so far.  But
+you can actually play a little
+game, you take a random image
+and you say how could I tweak
+that to make it more confident
+about what it's classification
+is?
+And if you keep doing that, you
+can actually come up with what
+are called rubbish examples.  So
+here it is, 100% confident that
+the thing on the left is a frog
+and the thing on the right is a
+bird.  I have had a couple claim
+they can see a frog in the left
+one.  I personally cannot.  You
+know, it's funny, I looked at
+these images when it created
+them, and reminded me of
+something.  It was an art piece
+I have seen.  These are not
+random colors here.  The blacks
+and whites with some other
+colors.
+And it was, oh, it's just like
+that art.  9 million.  And so if
+you click in there, you can see
+these examples are kind of
+halfway in between.  Raises an
+important question which I'm
+sure is in all of your minds
+right now, and just to answer
+it, that's a frog.
+[Laughter]
+in all seriousness, I think this
+is a nice way to appreciate why
+that painting is too good.  If
+you spend a long time looking at
+these, you think, wow, that's a
+very subtle painting.  It is,
+quite.  There's something more
+strange than rubbish examples.
+That's something called
+adversarial examples.
+And the idea here is that you
+take an image that it is correct
+in and confident.  So here's a
+frog.  99% confident it's a
+frog.  It turns out with subtle
+changes you can create an image.
+The image on the right is
+different from the one on the
+left, 99% confident it's a bird.
+You see the difference?  Okay.
+Let me -- we'll work on the
+difference.
+We're going to put them right
+one after the other.  Look very
+carefully at the colors, you'll
+see them shifting.  You see it?
+Yeah.  Subtle.  We can do this
+another way, we can take the
+difference in Photoshop and
+barely see the difference.  You
+say, computer, enhance.
+[Laughter]
+and there's actually a black
+image there.  So making these
+tiny changes makes a difference.
+Here's one, airplane on the
+left, and on the right, 99%
+confident, automobile.  You can
+kind of see a difference in the
+sky.  I don't know.  Here, horse
+on the left, 95% confident,
+99.9% it's a truck.
+So these things are learning
+something.  This is a good
+classifier, and yet it is doing
+something very different from
+what a human is doing.  It's
+hard to understand what could
+possibly be going on.  There's a
+very nice paper, which has a
+really interesting explanation
+of what's happening.  Their
+explanation, and there's more to
+be said about this, this is a
+fact about high-dimensional
+space.  So if I think about
+images as points in a space,
+just as we have turned the data
+into a two dimensional space.
+We use images specialized by
+3,000 numbers, there are points
+in a 300 dimensional space.  And
+tiny pixel changes in the
+coordinates can make a big
+difference.  You can think about
+this, with are geometry, a tiny
+step to the left and up, a tiny
+difference.
+Maybe the factor of the square
+root of two.  But in the end
+dimensions, it's the square of
+the N.  And if N is very high,
+those little tiny steps can
+really add up.  We can think
+about this geometrically, and
+this is a cube.  If we had the
+six dimensional cube, this is
+not, but the diagonals distorted
+to the same degree and length to
+the sides the actual cube would
+have.  And we can dial this up,
+and see a 32 by 32 by 32 has
+corners very far apart.  There's
+something happening in high
+directional space that's very
+mysterious.
+And I'm going to talk about
+that.  We have talked about
+geometry, talked about that.
+There's one other things we
+could do this these things.
+Okay, computers are seeing
+something here.  What are they?
+Let's give it a Rorschach test.
+Treat them like humans.  I'm
+going to give you the results of
+the test.  We found the four
+APIs, refer to as robots one,
+two, three, and four here.  And
+gave them images.  And see if
+you can spot the personalities.
+Robot one here, very literal.
+Robot two, interesting,
+barrette.  Robot three is like
+it's art.  Robot four is like
+that's a Rorschach image.  And
+another one, robot one, jigsaw
+puzzle, and robot two, it's a
+fleur-de-lis.  And robot three,
+that's design.  And robot four,
+that's a black ink splotch.
+Robot one, it's a mask, robot
+two, it's a pin.  It's creative.
+Robot three is showing some
+emotional stuff.  Isolated.  I'm
+an isolated artist.  And robot
+four is like it's a Rorschach
+image.  And another one, robot
+one, hook, claw, and robot two,
+handle-bar mustache.  I feel
+that.  Robot three, it's a
+print.  It's very art-focused.
+Robot four, black face paint
+print.  It's trying to work with
+us a little bit.
+Rorschach, and again, robot one,
+very literal.  You're seeing the
+personality.  Robot two, brass
+knuckles.  Robot three, I'm
+isolated.  Robot four is trying
+to say something smart and it's
+coming close.  And then this is
+the one we ended on.  Robot one,
+literal, robot two, clever, and
+robot three -- it's isolated.
+And robot four is like it's a
+black art splat.
+You can feel it roll its eyes.
+So you know one ending note here
+is maybe these were a Rorschach
+test, maybe treating them as
+humans is a decent way to
+develop I think we'll end there.
+And thank you very much.
+[Applause]

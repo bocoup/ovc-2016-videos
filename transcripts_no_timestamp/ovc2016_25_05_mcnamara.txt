@@ -1,0 +1,613 @@
+>> Thank you.  So the title of
+my talk Do you know Nothing when
+you see it.  When I say nothing,
+not like television static,
+that's not nothing, that's
+something.  That's an image that
+got garbled.  I mean something
+like this, but not this.  This
+was random noise generated with
+the computer.  It's
+pseudo-random, and probably your
+awesome human brain is finding
+patterns like DeepDream already.
+You can see the funnies and
+hearts and clouds in my random
+data.
+So our goal is to be able to
+identify when something that we
+created is nothing.  And to do
+that, I'm going try statistics.
+So I am a statistics professor.
+That means whenever I get in
+front of a group of people, I
+try to sneakily teach them some
+statistics.  The question is,
+what is statistics about?
+It's about many things.  It's
+about variation, which is one of
+the main themes we're going to
+talk about here.  Sometimes
+there's modeling.  I'm going to
+ignore modeling almost
+completely.
+And when you take an intro stat
+class or basic science, you're
+asking are the numbers
+different?  Another way of
+saying is this one number, the
+difference, different than zero?
+Sometimes you want to know, this
+number, what are some other
+reasonable numbers that we could
+have seen if we hadn't seen this
+one?  Okay.
+In order to answer those
+questions, we need context about
+the variation.  The first
+example that came to mind when I
+was preparing this talk was
+ants.  I don't know why.
+Imagine you had some ants.  And
+big-looking ants and
+little-looking ants.  And you
+thought maybe I got unlucky.
+Five big-looking ants and five
+little-looking ants.  But really
+they're both draws from the same
+population.  And overall they
+don't have any difference in
+size.  But you observed
+differences in the group sizes
+of three-quarters of an age.
+You and I know about ant size
+variation.  That sounds very
+large, and we'll see that it
+actually was.
+In another context, imagine you
+had tug of war games set up, men
+and women split into the blue
+and the pink teams.  We mapped
+their heights.  Found the
+average height, found that the
+average high height between the
+group was difference.  And
+observed a difference of about
+three quarters of an inch.  Is
+that significant?  Are the two
+teams really different, or did
+we just observe a difference by
+nature of the selection process?
+The random generation that we're
+summing is happening behind the
+scenes?
+So if you have taken standard
+statistics class, you're
+thinking confidence intervals,
+you're thinking point estimate,
+plus or minus the standard error
+times something that has to do
+with distribution.  And maybe
+thinking about pages in your
+textbook that had standard error
+calculations, square roots,
+fractions.  Okay, so thinking
+about difference of means.  It's
+just that first one, but really
+worse, there's all the different
+groups.  Different group sizes
+and the variances are different.
+Then you have to pick those
+things out.  And then it is
+worse than that, because once
+you have the standard error, you
+have to know the degrees of
+freedom you're going to look at
+in your distribution.
+And even I, I have a Ph.D. in
+statistics, I get the
+heebie-jeebies if you ask me to
+think of the right standard
+computation.  Say you are better
+at statistics than me, and came
+up with the right standard
+error, found the degrees of
+freedom.  Now you're going to
+look at idealized distribution.
+And we call this a sampling
+distribution.  Not a
+distribution of data, it's a
+distribution of statistics.
+Which are numbers computed from
+other numbers.  In this case we
+had the average heights of the
+two tug of war teams and then
+looking at their difference.
+And then you could come up with
+some confidence interval and you
+could see if there was really no
+relationship between the team
+and the height, how often would
+we observe a difference of
+three-quarters of an inch?
+I'm going to argue that's not
+the way that you should do that
+problem solving.  Instead, you
+should use randomization.
+And randomization is just what
+it sounds.  You have two things
+that you think they might have a
+relationship.  You want to come
+up with the sampling
+distribution, and you want it to
+be the null distribution.  The
+distribution of, essentially,
+nothing.  So what you're doing
+to do is you're going to take
+the values, the labels here, and
+you're going to mix them up.
+You're going to compute the
+group height means for those
+different groups in the mix-up
+data and compute the difference
+in the heights.
+So you can see already sometimes
+you're getting a positive
+difference, sometimes you're
+getting a negative difference.
+I think one of those turned out
+to be zero.  We're going to do
+this like a thousand times and
+then we can look at the
+distribution of that statistic.
+This distribution is centered
+around zero because it's a null
+distribution.  And then we can
+calculate where is 95% of the
+data?  What's the middle 95%?
+And then sort of say if there
+really was no difference between
+the heights of these two tug of
+war teams, what sorts of
+differences might we observe?
+And so in the case of the tug of
+war teams, if there was really
+no difference, we could observe
+height differences that were
+negative four inches to positive
+four inches different.  Our
+observed difference of three
+modify quarters of an inch is
+tiny we think that's nothing.
+Even though we saw a difference
+of three-quarters of an inch,
+that was nothing.
+For the ants, same thing, that
+looks different.  Randomization
+distributions are not always
+symmetric.  And they're not
+always smooth.  They can have
+these lumps.  But, again, we can
+compute where the middle 95% of
+the data is.  So for the ants it
+goes from negative 0.5 to 0.5.
+The observed difference of
+three-quarters of an inch, that
+would be pretty weird to see if
+there was no difference between
+my two different ant size
+groups.
+Okay.  I'm a statistician, the
+open source programming language
+of my choice is R.  So if you
+wanted to do this yourself, this
+is the code.  So if I wanted to
+compute one difference in means,
+it's the first piece of code.
+And I wanted to do a thousand of
+them, I could use the second
+chunk.
+But there's another technique
+that we might want to use for
+assessing whether the number
+that we got is sort of
+reasonable or what some other
+possible numbers we could have
+observed could be.  That's
+bootstrapping.  So with
+bootstrapping you take the data
+that you have, kind of like
+pulling yourself up by your
+bootstraps.  Making something
+from nothing.  That's not really
+possible.  We're going to make
+data from our old data.
+We're going to sample with
+replace want.  Pull out data
+points.  Here we're not breaking
+the relationship between the two
+variables.  We're just pulling
+them out directly.  And you can
+see sometimes I get the same
+data point more than once in my
+bootstrap sample.  But now I
+have new data, and I can treat
+that as my -- my current data.
+And compute the mean, heights,
+and then the possible difference
+in heights.
+And so if that observed tug of
+war game that we saw was really
+representative of the world,
+other than 0.75 I might have
+observed o.6637.  Then I can
+come up with bootstrap
+directions, much in the same way
+with randomization, they might
+not be symmetric.  They are
+centered around the estimate
+from the real data.  In this
+case, centered around the 0.75.
+And then it shows us some
+possible numbers that we could
+have observed.
+So, again, if that was our data
+and we were generating bootstrap
+samples, we might have seen
+differences from negative 3 to
+positive 4, and again we think
+that ours is not difference from
+nothing or zero.  And with the
+ants, all the observable values
+we could have seen, they are all
+negative.  We think there is a
+relationship.  One of those
+groups is bigger than the other.
+If you want to know more about
+randomization and the bootstrap,
+you could look at this open
+source textbook.  What?
+It was written by some really
+cool statisticians.  The source
+is all on GitHub.  You can done
+load the PDF for free.  If you
+like physical books, you can buy
+this statistics textbook that I
+used in my class for $9 on
+Amazon.  So it's really cool and
+good.  If you have other
+resources, Jonathan Stray has a
+lighting talk, solve every
+problem with one weird trick,
+that's randomization.  You kind
+of know about that.  And Tim
+Hesterberg, what teachers should
+know about the bootstrap.  I
+think everyone should know about
+the bootstrap.
+What does this have to do with
+visualization?  Try to do the
+same thing as we did with
+numbers.  Try to say is this
+different than nothing?  What
+are other things we could have
+observed.  This is to not make
+visualizations that don't show
+anything.  Not like WTF-biz.
+Like those two.  And I don't
+mean showing nothing in the way
+that Daryl is talking about in
+the 1950s with how to lie with
+statistics.  Instead, using
+techniques like randomization.
+For there's an awesome paper and
+it's called Graphical Inference
+for Info BIS.  You can find the
+link here.  It's worth checking
+out.  One of the techniques they
+suggest in the paper is called
+the lineup.
+The and idea of the lineup is
+that you put your data, that you
+think is real, in a lineup with
+a bunch of innocent plots.  If
+you can pick your plot out of
+the innocent plots, you are
+doing something.
+But I would break the
+relationship between X and Y
+with and look at what other
+plots I could have gotten from
+the same data with that
+relationship broken.
+Instead of looking at them all
+in sequence, I want to look at
+them all together.  So let's
+take an example.  This is some
+data about loans.  And I'm
+plotting the balance of a loan
+against the income.  And I'm
+coloring by whether or not a
+person defaulted on their loan.
+And my human brain sees a
+pattern.  I say, it looks like
+people who default on loans are
+the ones that have really high
+loan balances.  It doesn't
+matter if they're rich or poor,
+it's just those high loan
+balances.
+But is it possible I just sort
+of made that up?  This is what
+it would like for if you use the
+protocol in the graphical
+inference paper and look at the
+plots, there's 20, there's a
+P-value cut off of 1.5, same as
+one out of 20.  If you guessed
+randomly, you get the right one
+right 1 out of 20 times even
+guessing at random.
+So with this one I think you can
+probably identify which is the
+real plot.  Part of it is I
+showed you the real one before.
+You might have recognized it.
+In practice you shouldn't look
+at the accused plot alone before
+you look at it in the lineup.
+So either you should build this
+into your workflow, looking at a
+lineup of plots every time you
+make a visualization, or more
+realistically than that, make a
+plot and think it might sort of
+show nothing, make a lineup and
+show it to someone who hasn't
+seen the regular plot.
+And if you're an R person, this
+is familiar, this is the ggplot
+to make a scatter plot.  And the
+bottom is to randomize the data
+to make null plots.  I'm doing a
+null commute on the label of
+default versus not default and
+wrapping those facets into an
+array of plots.  When you run
+the code, they have done a
+clever thing, it will make a
+plot in your plotting window,
+but also prints this thing in
+the console.
+It says decrypt and then it's a
+bunch of nonsense characters.
+And that's where they hid the
+answer.  So if you were doing
+this on your computer and you
+wanted to not know ahead of time
+which was the real plot, but
+figure it out afterward, this
+is how to do it.  You give the
+piece of code, and run the code,
+tells you where the true data
+was.  So in this case we got it
+right.
+You can use the same code for
+the T-test.  This is the tug of
+war teams again.  I have hidden
+the real heights, they recognize
+the mean heights, the crosses,
+and then if you can pick out the
+real data.  So in your head,
+make your guess.
+It says decrypt, if you're good
+at decrypting quickly, you could
+see what it is.  But the true
+data is -- so I'll show you
+again.  That's not the one I
+picked out.  Certainly not the
+most extreme of the possible
+plots.  What this is telling me
+is the same thing as the
+permutation test that I did with
+the statistics and the
+distribution at the beginning of
+the talk.  There really isn't a
+difference between these two
+groups.
+So these examples are sort of
+the -- there was like a positive
+one and a negative one.  But
+this one, I don't think you
+really needed visualization to
+tell you that answer.  You could
+have used standard statistics.
+The power of the graphical
+inference technique, it's
+generalizable.  You can use it
+for everything.
+One thing, humans are great at
+finding patterns in noise.  Time
+series analysis.  This is about
+the steps that I take.  So it's
+from my FitBit.  And sometimes I
+like to make up stories, like
+the variance is going up.  Or
+the mean seems like it's
+changing.  Or something happened
+in December and I'm really good
+at making up those stories about
+the distributions.
+So this is, you know, again, it
+could be a plot, the real data
+is in there.  Again, look at it
+and try to see if you can guess
+which one it is.  Oh.  Maybe I
+have another one where I made
+the scale a little bit nicer.
+And now we're going to try and
+decrypt.  So there's the string
+again.  It says the true data is
+in position 4.  And I'll show it
+to you again.  Again, that
+wasn't the one that I had really
+picked out.  But if I had just
+shown you the one time series
+plot, you would have believed my
+stories about what was
+interesting about that plot.
+Okay.  So with the statistics
+analog, we've kind of being
+doing the -- is this different
+than zero task?  But then I want
+to switch to the is -- what are
+some other reasonable values
+that we could have gotten for
+this?  So with the numbers, that
+was what are some other
+reasonable values that we could
+have gotten.  And then I'm going
+to talk about that in terms of
+plots.
+So some of this comes from joint
+work with a colleague of mine,
+Aran Lunzer, we worked together.
+This is the highest quality
+image I could find.  Almost life
+size in the theater.  That was
+fine.
+We worked on a tool, a prototype
+tool, and we called it lively
+arm.  So this is something that
+is real in the sense that if you
+go on GitHub and download the
+code you could run it yourself.
+I don't recommend it.  It's very
+buggy.  But it really has R on
+the back end and then it has
+lively web and Java search on
+the front end.  It lets you play
+with the bin offset of a
+histogram.  Many things let you
+do this.  But this also lets you
+overlay a sweep of parameter
+values.  So you can see a
+variety of histograms with bin
+widths and bin offsets.  And
+create a histogram cloud.  Which
+is like a kernel density
+estimate, but easier for people
+to understand.
+There's one more feature that we
+have built into this, which is
+that you could call out the
+individual histograms if you
+wanted to.
+And so instead of just seeing
+them overlaid as a cloud, you
+could do small multiples.  And
+it's actually a two-hand
+interaction here.  There's like
+an iPad and you're controlling
+the one screen with your right
+hand and the other with your
+left hand.  So it's a little bit
+buggy.  But you can see the
+small multiples of the different
+possibilities of histograms that
+you could have seen.
+Again, I think it's really easy
+with histograms to use the
+algorithm, whatever it is in
+your favorite tool, which will
+make the bin widths for you.  If
+you're using ggplot two, it'll
+be a warning, you chose a value,
+but I can do better.  Many
+people don't.  But you do,
+you're visualization
+professionals.
+But it's not always obvious to
+non-professionals that those
+defaults make a huge difference.
+You might use the defaults and
+find what looks like a pattern,
+but it's really a result of the
+parameter values that you chose.
+So giving people the opportunity
+to play with the parameters is
+really powerful.  So after Aran
+and I work on this work,
+one-dimension, looking at the
+histograms.  I started thinking
+how could we do this in two
+dimensions?  Which got me
+thinking about maps.  So the
+modifiable aerial unit problem,
+aggregate different data in
+different polygonal shapes,
+you're going to get different
+patterns.  This can happen with
+gerrymandering.  It can happen
+with the different county and
+zip code data.
+The different levels of polygons
+and a lot of statistic problems
+that go along with that.  So
+Aran and I worked on in next
+tool, no name, it takes point
+data about earthquakes in
+southern California and
+aggregating them into polygons.
+But instead of making just fixed
+polygons, you can scale and
+rotate and move the polygons to
+see some other possible values
+of the visualization that you
+could have gotten.
+So you start with your default
+values and maybe you think that
+there are some very obvious
+trend that everyone should be
+aware of.  And you can tell some
+great story about why there is a
+hot spot of earthquakes in this
+one place.
+But then when you start
+manipulating the polygons, you
+can see that there's many other
+possible patterns that you could
+have created.
+So the takeaway that I want you
+to take from this talk is that
+there are statistically tasks
+and there are very analogous
+visualization tasks.  So in
+statistics we want to know if
+two numbers are different.
+Which is like knowing if one
+number is different than zero.
+And we could use tools like
+randomization to answer that
+question.  In the visualization
+world we can use randomization
+in a different way to answer the
+question, is this plot different
+than nothing?  In statistics we
+might want to ask, what are some
+reasonable, other possible
+values for this number?  So what
+other differences and heights
+could we have observed?  And you
+can use something like the
+bootstrap to show you other
+possible reasonable values.
+And in the visualization space I
+think that using parameter
+manipulation, or giving users
+the ability to see how your
+parameter choices impact the
+visual story that they are
+seeing can be really powerful.
+And so I -- thank you.
+

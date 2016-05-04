@@ -1,0 +1,762 @@
+>> Hey, guys.  Is this working?
+Oh.  I have to turn it on.  Yes.
+Yes.  Okay.  I hope everybody
+had a really nice lunch and
+enjoyed -- did you see the giant
+turtle in the -- that was
+awesome.
+So anyway.  Imagine that you
+spend your days looking at the
+star ands and seeing all of
+these fascinating shapes.  I
+started my career working with
+the infinity space and working
+with the enormous amount of data
+it can produce.  And although I
+graduated as an astronomer, I
+switched to a career as a data
+scientist.  I couldn't say
+good-bye to the visual
+astronomer inside of me, I found
+myself floating the
+visualization more than the
+analysis itself.
+So I switched gears again, and
+now I'm a data visualization
+designer.  At night I work on
+personal projects or experiment
+with new ideas.  Or create
+tutorials for my Website.  And I
+found that in data visualization
+I tend to be a perfectionist.  I
+love spending hours and hours on
+small details, making it exactly
+as I had in mind.
+Being born and raised in
+Holland, I always hoped that
+maybe my craving for
+perfectionism came from the same
+genes as the artists.  Small
+country.  But, you know, they
+managed to put such dedication
+into their artworks.  And
+although data visualization and
+painting isn't exactly the same
+thing, I do always start my
+visuals on plain paper.
+And once I have a mental image
+of how something should look,
+the computer had damn well be
+able to create some semblance
+for it on the screen for me.
+However, what I usually have in
+mind is not the beautiful
+setting what the examples let me
+use.  That forces me to work
+outside of the box from time to
+time.
+But with the results, if you try
+to experiment with the norm, use
+things in an unconventional
+manner, or get inspiration from
+different fields of design to
+create a more effective, or fun,
+visualization.
+Okay.  We're almost ready to go,
+but just to be sure, let me
+explain how SVGs, scalable
+vector graphics fit into this
+world.  When you work with these
+things, you figure out the
+building blocks, shapes, are
+SVGs.  And by combining
+circles and rectangles, you can
+create awesome visualizations.
+And my journey on how I started
+using SVGs beyond shapes.  My
+first step beyond shapes came
+when I was trying to create a
+code legend.  That would go
+smoothly through all the colors
+I was using.  And that's why I
+got into gradients.  The data
+set I was working with, it was
+not necessary to read off the
+exact value that each value
+represented.  It was the trends
+and getting an overall sense of
+the numbers.  Such as this, for
+example.  Here we have the total
+number of traffic accidents that
+occurred in the Netherlands in
+2014 aggregated on the
+horizontal and vertical.  And
+the darker the color, the more
+accidents that occurred on that
+day and hour.
+No surprise that most accidents
+occurred in the morning and
+especially evening rush hours.
+But it's about seeing trends.
+It isn't that important that you
+know that one thing is either
+1420 or 1440 accidents, it's
+seeing more the trends.
+And this legend below, that's
+when I mean by having a smooth
+legend going through your
+colors.  And it's nothing more
+than a rectangle, SVG rectangle
+filled with a gradient.  Because
+I'm going to show you a few more
+gradient examples after this,
+I'm going to explain how you can
+create one.
+There's actually something
+called a linear gradient
+balance.  But you have to nest
+it.  Defs is short for
+definitions and holds the
+special things such as
+gradients, but also filters,
+which we'll see later.  And it's
+also very important that you
+give your gradient a unique ID
+so you can reference is again
+when you set the fill of the
+element that you want to apply
+the gradient to.
+And we have to give it
+information about the direction.
+A way for the gradient to run.
+And you do this in a way, it's
+similar to an SVG, and we create
+a starting point, X1, Y1, and an
+end point, X2, Y2.  And we can
+supply these in percentages and
+exact locations.  But in 90% of
+the locations percentages is way
+easier.
+So as a result the gradient as
+X1 at 0%, X2, 100%.  Both Ys
+can be the same.  And playing
+around with these values you can
+create a vertical gradient or a
+gradient along any angle that
+you may want.  This is not the
+truth that I'm showing here,
+because it's actually the
+building blocks.  So the
+smallest rectangle that can
+define where these end points
+lie.  So in this case the
+starting point of 0.0% is
+outside of what's visible in the
+shape.  And once you start
+seeing it, it's already turned
+slightly more purple.  And maybe
+you don't want that.  That's
+fine.  You don't have to start
+at 0%.  You can start wherever
+you want, and they can be padded
+with whatever was there at the
+end of your gradient.
+But we're just going to use a
+normal gradient.  So now we have
+set the direction, all that's
+left to do is supply it with
+some color information.  And for
+that we have the stop elements.
+And with a stop element you
+supply it with a color, the stop
+color, and the offset.  Which is
+the location along that sort of
+directional arrow that color
+should be.
+And here I have a light blue
+color at the start as it's
+represented, and then another
+color stop, otherwise it
+wouldn't be a gradient, at the
+other end, of 100%, a dark blue.
+Now the gradient is done, it can
+be used.  So we select that
+rectangle and set the style by
+referencing that unique item we
+created for a gradient.  And
+then we get this result.
+If you have many colors in your
+gradient, it might become
+tedious to people with the color
+stops.  But luckily we can use
+the data step to define the
+color stops for us.  In way it's
+similar to adding circles to a
+spatter plot.  And we will set
+the direction of the horizontal
+gradient.  This time we're going
+to append a data set that holds
+the offset location and the
+collar that you have at that
+location.  And create a stop for
+each data point.  Afterwards, it
+only takes two lines to set this
+offset, this stop color, by
+referencing the data.
+And now we have a smooth
+gradient going all through these
+nine colors.
+Well, another example that is in
+essence a heat map is what you
+see here.  And can be combined
+with a legend and a smooth
+coloration.  It is a visual
+output of a machine learning
+with data.  It started my love
+for hexagons.  I wish I could
+say I was using the palette that
+you can see right now, but I was
+working with these before I knew
+that data visualization was a
+thing in itself.  I didn't know
+that for a long.
+I am from the science
+background, so the actual pallet
+I used was -- yes.  So.  Anyway.
+If anybody is interested to know
+how to interpret these, you can
+ask me later today or tomorrow.
+But to stay in the rainbow mood,
+one of my temperature
+visualizations.  I re-created a
+weather radio for Boston last
+year.  And each day is a bar,
+from the minimum temperature to
+the maximum temperature.  And
+it's colored according to the
+average.  And here again, it's
+mostly about seeing trends.
+When was it very hot?  When was
+it cold?
+Being an astronomer, I of course
+wanted to join a club of people
+that made visualizations about
+exoplanets.  It was simple, I
+wanted to do data story telling
+and how weird it was to make it
+work.  By making the circles
+rotating around one generic star
+more than flat circles, I wanted
+it to look like spheres by using
+a gradient.  And I wanted to
+have the colors depends on some
+aspect of the data.
+Well, a radial gradient is the
+second option that you have for
+gradients.  It's, as you expect,
+from a center point outward.
+And creating a gradient based on
+data is also very easy.  You can
+use the data set in a similar
+way.  But this time we
+immediately append our data set
+when we attach it to the defs.
+We create a gradient for each
+data point.  And very important
+you give them two IDs to
+reference again when you combine
+them with your circles.
+And afterwards you can use the
+data that's inside of it to set
+something like a color of your
+gradient.  I can say some
+features of the color scale
+should be used.  And I can make
+it lighter on the inside, darker
+on the outside, move the
+direction of the center, make it
+bigger, and we have something
+that sort of mimics a 3D sphere,
+but just using that one color we
+had to start with.
+If we were to use the def tools,
+we have a gradient for each of
+the end points and each is
+slightly different.  And
+finally, select the circles and
+connect them to the right
+gradient.
+And a visualization about
+exoplanets, which you see, I'll
+show you what I think is one of
+the most important plots in
+astronomy.  It's a diagram.  And
+in this case, they are not
+planets, they are some of the
+nearest stars that we have.  We
+have luminosity on the vertical
+scale, and temperature on the
+horizontal.  But notice the
+warmer on the left side, cooler
+on the right.  There's a reason
+for that.
+And I heard this could be
+actually one of the first
+scatterplots ever made.  Which
+was kind of cool.  Our sun is
+somewhere over there.  And these
+stars in the upper portion, they
+are, indeed, bigger.  But I'm
+not actually being honest.
+Because if I was feeling
+correctly, they would look like
+this.  But then you can't really
+have a useful thing for the rest
+of the plot anymore.  So that's
+why we scale it back.
+Also, of course, things are the
+things that shine.  They are not
+shined upon.  We can tweak the
+gradient and make them look more
+like the glowing orbs that they
+are.  And what I like about this
+plot is that I feel there is
+very little visual encoding
+done.  The stars are roundish,
+round, and they are visible in
+the colors.  It's like you're
+plotting the things that they
+are.  I don't know of a more
+perfect scatterplot than
+visualizing planets and stars.
+But I might be biased.
+Anyway.  Besides using
+data-specific colors with your
+gradient, you can use data for
+setting anything on the
+gradient, such as the
+directions.  And after watching
+the second Avenger's movie, I
+was wondering how they were
+connected, how often they
+appeared in a movie.  And I
+thought the cord would work for
+this.  The thick the cord, the
+more movies they have appeared
+in together.  In a default case,
+the cord is given one color.
+But that doesn't really make a
+lot of sense because the data is
+symmetrical, and Thor and
+Hawkeye, the reverse was true as
+well.  I could make them all
+gray, but that felt boring.
+But instead I wanted to have a
+gradient that runs from the
+Avenger on one side to the
+other.  So to pull that off,
+focus on Black Widow here, and I
+want to create a gradient along
+these directional arrows.  Sort
+of mimic the idea of it running
+across the cord.  So I get
+something that looks a bit like
+this.  But we start out similar
+to the planets case.  So here we
+start by putting can the chord
+to the depths, and it will
+create a gradient for each of
+the chords.  And one thing
+that's different than in
+previous cases, here it's better
+not to use the box on the chord
+to which you want to apply the
+gradient.  But use the chorded
+system you were using with the
+origin right in the center of
+that circle.
+And you can do this by setting
+gradients for uses.  I want you
+to know it can be done.  The
+reason is that we can actually
+find the exact pixel locations
+of these two colors dots by
+using the chord data set
+together with some signs and
+co-signs and trigonometry,
+nothing fancy, but it's way
+easier.  So after setting these
+directional arrows using the
+data, set two color stops.  One
+with the color of the Avenger
+the source, 0%, and one that's
+100%, and the color of the
+Avenger at the other side.  And
+we get this result.  These cords
+are a representation of both of
+the Avengers.  But you can use
+gradients for a smooth color
+change, and come in handy for
+rough color changes as well.
+And many analyses about baby
+names have been done, the most
+trendy name, unisex name.  But I
+wanted to know how the most
+popular rose and fell.  But I
+was interested to find out the
+data set went back to 1880.  But
+a typical screen isn't wide
+enough to do justice to that
+many years of change.  So
+instead I used the focus and
+context in which you have a
+small box below.  You see all of
+the data and select the small
+window.  And this chart here
+will show you sort of the -- the
+more detailed small box that you
+selected.
+But to make the connection
+between this small window and
+the top chart more apparent, I
+wanted to color the bottom
+window -- exactly the same as
+the top chart, but only within
+the window you selected.
+However, you can only have the
+one color.  And I didn't to want
+cut the lines up into three
+sections.  Before, within, and
+after the selected window.
+And instead I just used the
+simple gradient to re-create
+this effect.  Because if you
+append two color stops in
+exactly the same location, the
+color change is very abrupt.
+First we append a gray stop and
+a colored one at 40%, get the
+same result.  It seems like two
+different things.  Then do the
+reverse at some other
+percentage, 60, first the
+colored stop, and then the gray.
+Now it appears as if we have
+these three different sections.
+So if I take one of these
+gradients for these lines and
+apply it to a rectangle, it
+seems as if we have three
+rectangles, but it's only one
+with a gradient applied to it.
+And by changing these
+percentages when somebody is
+dragging this window, and
+therefore some update functions,
+you can make it appear that the
+gradient is moving along with
+your choice.
+But it can also be very handy to
+visualize thresholds, such as
+the value of something is bad or
+good.  Or it changes categories.
+And here is an example of the
+mean body mass index for 50
+randomly chosen countries in the
+last 40 years.  And above 25,
+according to health
+institutions, you're overweight.
+Above 30, obese.  And I pulled
+the lines with all the same
+gradient to show the structure
+of something changing from sort
+of neutral to bad more apparent.
+And this line, I really just
+suddenly becomes from gray to
+orange.  And even if you change
+your data set, you don't have to
+do anything about the colors.
+So if you go from men to women,
+the linear gradient doesn't
+care.  It's still in the same
+location.  So you don't have to
+think about that.
+And I was also very pleasantly
+surprised to find out that
+gradients can easily be
+animated.
+and I was working on a fun
+project, we had access to a data
+set.  We knew what education
+people had studied and then what
+occupation they were doing a
+year and a half after their
+graduation.  And we wanted to
+show this flow from education to
+occupation.  And I could do that
+with a diagram.  So from one
+thing to another.  But I love
+circular things.  So I wanted to
+try something more circular.
+So I went back to a chord
+diagram, which had a lot of
+chords.  And then I started
+tweaking this around adding
+things.  I even went into the
+source code and made some
+changes here and there.  To make
+it look more like these circular
+ones.  Although I have seen the
+term backlog on the Internet as
+well.
+Anyway, this is the end result.
+So we have educations on the
+left and occupations on the
+right.  But to make this flow
+from education to occupation
+more apparent, I wanted to mimic
+that by actually making an
+animated gradient from education
+to occupation.  But not -- just
+going that way.  And gave me an
+excuse, animating gradients, to
+put the famous map in the
+demonstration.  The troop
+movements, the brown is moving
+towards Moscow, and the black,
+away from Moscow.  Never too
+much in your face, but there.
+All right.  So finally leaving
+the realm of SVG gradients and
+moving into filters.
+You might know them from
+Photoshop or Instagram.  And
+we're also sort of leaving the
+realm of effectiveness in
+visualization behind, and moving
+more towards experimenting to
+have fun.  And creating a
+filter, similar to a gradient.
+And now we still have to give it
+a unique ID.  And afterwards
+comes the magic part, a specific
+combination of filters creates
+an effect you might never have
+expected.  But the good thing
+is, once it works, you can copy
+the code and use whatever visual
+you want.  You don't have to
+change everything, usually you
+only change a few things.
+I'm not going to show you the
+code, but focus on the results.
+What can you do with these
+filters?  Afterwards, you set
+the ID.  The first one is very
+subtle.  But can have a nice
+added effect in the right
+circumstances.
+Well, some people love charts, a
+few months ago I made a redesign
+of a chart in D3.  It was fine
+the way it looks.  But I
+remember coming across some code
+for a filter to create a shadow,
+or a glow around text.  And I
+thought maybe that will make
+this more engaging as well.
+I'll show you the glow, it's
+really subtle.  I hope you can
+see it on the screen.  That was
+it.  And this is also really a
+matter of taste.  Some people
+might like it more, some people,
+it's worse.
+I mean, I liked it, so I left it
+in.  What it does, it's simple.
+Say you applied to a circle,
+makes a blur version, pastes the
+normal back on top and then you
+have it.  And you can do that
+with rectangles and pods and
+circles.  But no line.  So no
+glow, with glow.  Although it's
+a bit better.  And one location
+where I found that really sort
+of made it look more special was
+when I was playing around with
+spirographs.  I loved these as a
+kid.  And we have glow, no glow,
+it's really subtle.
+Well, another filter where I
+found that it has sort of a nice
+touch had to do with the motion.
+If things are moving faster or
+closed to us, they appear
+blurred.  And with the right
+filter we can re-create that
+effect as well.  Just these
+circles, the faster they move
+the more blurred they appear to
+mimic the idea of fast movement.
+I first came across this when I
+saw a demo for an image gallery
+where images were sliding across
+the screen.
+And I thought data visualization
+we usually have movement, often
+show movement.  Figuring out if
+I could use that there as well.
+And it's very simple.  Just
+making the element blurred in
+one direction.  That's it.  X or
+Y.  As an example, here we have
+some service moving outward, no
+blur.  And with a bit of an
+exaggerated blur, it looks like
+this.  So no blur, with the
+blur.  And I feel that the blur
+just makes it a bit more human,
+I guess.  A bit more fun.
+So for an appropriate data
+visualization, I thought, well,
+let's visualize the top running
+speeds of animals and the
+fastest human.  When the circles
+are moving outward, the faster,
+the more blurred they appeared.
+Although I have seen there's a
+growth circle sometimes.  Not on
+my screen, but here it is, you
+have the ghost circle.
+When they moved out, they were
+blurred.  You didn't notice it,
+it was a subconscious thing.
+And let me pull back in and show
+the blur.  So the cheetahs move
+fastest, most blur.  And the
+turtle is practically not
+moving.  No blur.  You can do
+this with more than just the SVG
+elements.  Say you wanted to add
+images to your data set, that's
+fine.  They know that the filter
+doesn't mind.
+If I move these outward, they
+will get blurred as well.
+Okay.  So now this is my
+favorite filter.  The gooey
+effect.  I came across this one
+when I saw a really nice loading
+demo somewhere on the web.  And
+I thought, well, that's a good
+one to keep in mind.
+And at some point I was working
+for a golf firm, they could
+swing and see the results on the
+screen.  To visualize how far
+the ball had gotten, I could use
+the points on the screen like
+this.  But that felt a bit
+boring.  So I thought why not
+mimic the golf swing and let the
+circles start out from the
+starting point.  I thought this
+was better, but I wasn't quite
+feeling it yet.
+Then I remembered the gooey
+effect, and by adding that,
+suddenly it felt that the
+visualization was acknowledging
+the effort that the participant
+was doing trying to get the ball
+as far away as possible.  Didn't
+make it more true or false, but
+made it more fun to watch for
+these people.
+And I'm not even going to
+explain how this filter works.
+I only understand about half of
+the steps.  But besides having
+this fun gooey effect, it does
+some nice color blending as
+well.  I think.  That's pretty
+cool.
+Well, I'm trying to think of
+some ideas for data
+visualizations.  One I have, say
+we want to visualize the 150
+largest can cities in the world.
+We just let them blur out of
+this, or instead, if we wanted
+to bring them back together on a
+country level, in the country is
+one thing, so once they come
+together, they form one country
+again.
+And this actually also reminded
+me of my collection.  This is
+fun already, it's working.  But,
+you know, with this -- oh, no.
+Right there.  So I actually find
+this a lot of fun too.  Trying
+to keep that one out.  Still the
+same.  But it was like your
+mother not wanting you to play
+with this -- anyway.  It's time
+for the final example.
+This one has to do with the nice
+color blending techniques you
+have in Photoshop.  One color or
+another can create an entirely
+different color.  I tried to do
+this with SVG filters.  It is
+possible.  Then I saw a blog
+that showed how it could be done
+with this.  So I -- although
+it's no longer a filter, the
+effects are still visible on
+SVG.  That's why I included it.
+So my two favorite modes are
+multiply and screen.  And you
+can create this effect by
+setting the mixed blend mode of
+these circles to either one of
+these two.  And it's also very
+important that you have to group
+these circles and isolate them.
+Otherwise the background color
+will be taken into account when
+the blend mode is doing its
+thing.  And you might end up
+seeing absolutely nothing on
+your screen, having no error
+messages.  And you can't figure
+out what the heck you're doing
+wrong.  I have been there.
+So no data visualization example
+right here.  But just something
+that I can watch indefinitely.
+And the blending really makes
+for a better result.  Because if
+I turn it off, I mean, I would
+say it definitely has less
+magic.
+So I hope that some of these
+examples will be -- assist you
+some day to create even more
+effective visualization.  I hope
+I inspire you to go and
+experiment with the norms so you
+have to say as few concessions
+as possible to re-create the
+image that you have in your
+mind.  And above all, I hope
+you'll go beyond shapes.  You
+can find all of these examples
+you see and way more explanation
+and the code on my blog soon.
+And thank you very much for your
+time and attention.
+
+

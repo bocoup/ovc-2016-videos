@@ -1,0 +1,775 @@
+>> Hello?  Hello?  Cool.  Hi.
+There's some more setup to be
+done.  Oh.  Got it.
+Hi, everyone.  Nope.  Okay.  Not
+hi.  Not yet.  Yes!  All right.
+Hello.  Hi.  Thank you so much
+for having me here.  I'm
+super-excited.  My name is
+Shirley.
+Today I want to be talking to
+you about building data
+visualizations for product.  So
+before we begin, why talk about
+it?  So about two years ago when
+I first started at ILLUMIO, we
+looked out for guidance and
+mentorship to try and find
+people who might be going
+through similar challenges as
+us.  And we found we couldn't
+find any.  We could have been
+living under a rock, but that
+makes a lot of sense.  Because a
+product is hard to talk about.
+A lot of the times it's
+proprietary.  So it might be
+hard to share a screen shot, let
+alone some of the challenges
+somebody might have faced.
+But since I have the benefit of
+being able to talk about it, I
+would like to share with you
+some of the experiences we have
+had, the challenges we faced and
+the lessons that we learned in
+the last two years.  I really
+hope that this might offer some
+guidance or help if you're about
+to go through something similar
+or are going through something
+similar.
+So I work at a company called
+Illumio, we create enterprise
+security software.  My favorite
+analogy for what we do, if the
+traditional data center is a
+hotel, and the firewall is that
+big dead bolt on the front door,
+then if anybody malicious gets
+in through the front door, and
+they have free-for-all access to
+all of your rooms.  What Illumio
+does instead is provide a lock
+for each of those hotel doors as
+well as calculates who should be
+allowed in and out of each of
+those rooms.
+And I work on the part of the
+product called Illumination.
+Which visualizes data center
+traffic.  And this is
+particularly important for us
+because a lot of our customers
+have huge deployments with large
+numbers of rooms.  And what that
+means for them is that they very
+oftentimes don't even know who
+might be going in and out of one
+of the rooms.
+And oftentimes they also need to
+be able to verify that who
+they've given access to go in
+and out of those rooms are
+actually accurate.
+So while thinking about what I
+wanted to talk about with this
+talk, I've figured out some
+technical aspects.  So building
+the actual visualization,
+building the framework around
+that visualization that manages
+the underlying data, and scaling
+the visualization and
+application.  As well as some of
+the more human aspects of
+interfacing with our customers
+and our team.
+So before we begin, I want to
+give some key terms for
+illumination.  So the squares
+that you see are the workflows,
+or the rooms, in my analogy.
+The lines are the traffic or the
+people going in and out of the
+rooms.  And each of those
+squares, the workloads, are
+grouped by their labels.  What
+we call applications,
+environments, and locations.
+So this is the very, very first
+mock that our designer gave us
+when we first started out.  It's
+really quite beautiful.  And
+this is our very first
+implementation.  So some of with
+you, or many of you that might
+be familiar with the force
+layout might recognize that a
+lot of it is being used here.
+In particular, it's being used
+to calculate the positions of
+the workflows in each of the
+groups.  And then once we have
+the positions of those
+workflows, then we calculate the
+dimensions of those groups based
+on the positions of the
+workflows.  And then once we
+have the dimensions of each of
+those groups, we then use a
+force layout again to calculate
+the positions of those groups.
+And alongside the floating
+workloads around it.  For those
+unfamiliar, it is hugely
+computationally intensive.
+Logged in over thousands and
+thousands of iterations.  And we
+were doing this five, six, ten
+times on each render.
+And just to keep life
+interesting, we decided that we
+needed collision detection at
+each of those levels.  So we
+were truly abusing the force.
+And this is like I'm really
+excited about this slide.  I
+hope Jim's in this room
+somewhere.  I have been like
+bragging to him about it.  Yeah,
+I hope we made Jim proud.  His
+talk was some of our
+inspiration.
+But you could probably imagine
+what happened because of this.
+This is what we got for abusing
+the force.  We're really sorry.
+So how do we fix it?  We circled
+back.  We talked to our CTO.
+And we figured out that actually
+the most intuitive way of laying
+out our workflows was actually
+by observing the points and
+protocols running on the traffic
+between those work flows.
+Because surprisingly that
+reflected the mental model our
+dev ops guys had.  So we
+completely stripped out the
+force layout from all of our
+code and implemented a layout
+algorithm that was designed
+specifically for our own needs.
+So this is the before and after.
+The before on your left and the
+after on your right.  And this
+was absolutely awesome.  Because
+the re-factor gave us a layout
+that was much, much more
+performing.  It's over one
+iteration as opposed to over
+thousands and thousands of
+iterations fort force layout.
+And much more orderly because we
+made it so.  And finally because
+the algorithm was deterministic,
+it was able to maintain the same
+layout on each refresh.  And
+that was really integral to our
+customer experience, to our user
+experience.
+So we learned some really
+important lessons.  Which was
+mainly that for building
+visualizations within product,
+we never -- we oftentimes don't
+have an exact data set.  And we
+very rarely know the exact shape
+of all of our customer's
+potential data sets, but we do
+have the advantage oftentimes of
+having a closed feedback loop
+with our customers.  In this
+case it was just us because we
+had our product.  And we were
+able to figure out what are
+users expecting to see and
+what's familiar with them?  We
+were able to customize and
+optimize that based on user
+feedback and expectation.  It
+was not only a lot more
+performance for us, it turns out
+it was a lot easier for our
+customers to adopt from a mental
+model perspective.
+So at the very beginning I
+mentioned that one of the things
+that I love about -- or one of
+the things that we do is not
+only visualize our customer's
+application traffic, but also to
+provide ways to control that --
+the access for that application
+traffic.  And we build a lot of
+workflows and features around
+that.  So one of the main
+workflows we have is this.
+This is one of our earliest
+versions of the workflow for
+adding our rule.  And so what
+this is showing is all of the
+red lines show our traffic that
+are not allowed for our
+customers.  And the green lines
+mean that they are allowed.  And
+this workflow encourages our
+users to take the action to
+write the rule to turn those
+lines green.  To allow that
+traffic.
+Which means that as soon as that
+user clicks save, they expect
+all of the corresponding red
+lines within that visualization
+to turn green right away without
+a refresh.
+Which means that potentially
+each user action could be
+changing the visualizations in
+multiple places, oftentimes
+in -- sorry, changing the
+visualization in multiple
+places.
+And we were like, oh, my god.
+So I really, really love D-3 for
+the fact that it gives us
+fine-grain control of
+intelligently updating.  We
+tried to keep it that way when
+we first started implementing
+Illumination.  So we really
+tried to, you know -- we really
+tried to kind of control how
+much we recalculated the data,
+as well as how -- as well as we
+cherry picked how much and how
+often we touched it on each of
+the user interactions.  And that
+was great when we first started
+out.  Because we had pretty
+simple features then.
+But as we added more and more
+features, we started having more
+and more user actions.  So this
+table that you kind of see
+faintly in the background is
+actually only half of our user
+actions at a certain point in
+time, about a year ago.  It's
+all of the user actions as well
+as their corresponding data
+recalculations as well as their
+corresponding DOM re-renderings.
+And it became so much for us to
+keep track of, to keep track of
+what needs to be entered and
+what needs to be updated and
+exited with D3, that we just
+couldn't keep track of them all
+anymore.
+Which meant that the more the
+user interacted with
+Illumination, the more incorrect
+our visualization became.  And
+that's really not good.
+So we fixed it by first we moved
+most of our rendering
+responsibilities to react as
+opposed to only with pure D3.
+We ended up using a mix of both.
+But this allowed us to aspect
+away of the managing the DOM.
+And we decided to recalculate
+everything.  Everything.  All
+data calculations.  On each user
+action.  You might say, wow,
+that's really counterintuitive,
+that must have been heavily
+unperforming.  But we found that
+because the modern browser, and
+because we have moved to
+reactive flux, and especially
+because of React's virtual DOM
+dip, this was actually
+surprisingly okay.
+So this is what Illumination
+looked like.  The same workflow
+of adding a rule after
+re-factor.  So it was great for
+us because -- because we stopped
+recalculate -- because we now
+recalculate all of the data on
+each user action, we no longer
+needed to keep track of
+anything.
+And because we used flux's
+one-directional data flow,
+everything was really easy to
+reason about from an
+architecture perspective.  And
+because we were no longer using
+all of our brain power to keep
+track of all of our updates, we
+could instead concentrate on
+delivering features.
+So we could do much more than we
+could before and everything just
+kind of worked.  So we learned
+here that managing underlying
+data, especially data that is
+constantly, constantly changing
+with each user action, is one of
+the -- the biggest, hardest
+challenges of building data
+visualizations for a product.
+And for us we made the mistake
+of optimizing prematurely.  And
+from there we learned to start
+with a very stupidly simple
+approach when we're starting.
+And once it has had the time to
+kind of just marinate and soak
+in the code base, then we can
+start figuring out exactly where
+the optimizations are needed.
+So thus far everything I have
+shown you happened for
+relatively a reasonable number.
+But a lot of our customers don't
+have reasonable numbers.  They
+have huge numbers.
+So at one point in time our
+customer's deployments started
+to look like this.  So that's
+kind of fun, but not really
+great for user experience.  And
+so the first thing we did was we
+figured out that the -- probably
+the most straightforward thing
+to do is to just reduce the
+number of data being rendered on
+the screen.  And we did this by
+aggregating each of the
+workflows by their respective
+groups, and then by their
+location labels.  And then we
+filtered down -- filtered away
+anything that wasn't relevant as
+a user was drilling down.  And
+this -- this is actually our dog
+food environment.  And this
+worked really well for us.  This
+isn't that big of a number.  But
+what this meant, and what this
+did was it meant that -- and
+this is when that looked like
+after we factor.  And this was
+much, much more visually
+appealing, one.  And two, it
+significantly lightened the
+cognitive load on our users.
+Because they no longer had to
+dig through those spaghetti
+lines.  And three, it was a lot
+better for our browser.
+But what we started to notice as
+we got bigger and bigger in our
+numbers, with our customers, was
+that even though the pretty
+picture resolved, every user
+action, a drag, a pin, a zoom, a
+click, started.  And that makes
+a lot of sense because we were
+recalculating everything on
+every single user action.
+So this is my favorite --
+absolute favorite part.  We went
+in and we got crazy with the
+Google performance tools.
+So we figured out three main
+things among a bunch of other
+ones.  But the first thing we
+did was we figured out what was
+the biggest current road block
+of what was slowing our
+calculations down?  What was
+slowing Illumination down?  And
+we, surprisingly, hindsight
+20/20, found out that because
+our data stores were using
+arrays, the lookup on those
+arrays were slowing us down
+significantly in larger numbers.
+So we just replaced our arrays
+with objects in the data source.
+And then the second thing that
+we went into figure out was what
+was the next most expensive
+operation?  And we learned that
+it was actually calculating
+whether the lines should be red
+or green.  And so we figured out
+where that could be moved to.
+Which was on each time the data
+was loaded from the back end
+after, you know, some user
+action of adding a rule or
+changing a rule.
+And then we did similar things
+with all of the other places
+where we figured out what was
+least performing, and we stopped
+recalculating those on each user
+action also.
+And finally we took a look at
+what was the most memory --
+which data structures were the
+most memory-intensive.  And we
+figured out how -- we figured
+out how much of the data
+calculations we could move to
+the back end.  We moved as much
+as we could to the back end.
+And only loaded just enough data
+to render what's needed on the
+screen.
+And this meant that everything
+became much smoother, much
+snappier, happier, both us and
+the product.  And -- and we
+could support much larger
+numbers than before.
+So the important lesson we
+learned here is that we very
+rarely know exactly the shape of
+the data our customers are going
+to have.  Which is probably why
+optimizing prematurely fails so
+miserably for us.  But what we
+should do instead is to figure
+out what is slowing us down only
+when it's slowing us down.  And
+do so -- do the optimizations
+based on what we've learned.
+The results we've learned and
+gather from the profile tools
+that we've run.  And we're still
+working on scaling.  It's an
+ongoing process.  We have been
+learning -- learning a lot.  And
+we just keep swimming.  We just
+keep swimming.  I had to add
+that.  It's an aquarium.  Okay.
+
+I just -- I just hope you guys
+really like it.  So thus far
+I've talked a majority about the
+technical -- I've talked about
+the technical challenges that
+we've gone through.  But I think
+it's really also very important
+to talk about the human aspects
+as well.
+So we have been very fortunate
+in that we have been able to
+have very tight feedback loops
+with our customers for the last
+two years.  And we noticed two
+things.  Two primary things.
+Which was that when we first
+started, we were largely selling
+our product.  And so none of our
+customers really were, you know,
+using Illumination that much.
+Which meant that a lot of our
+features, all of our features,
+were put in based on needs of
+the demo.  And feedback that we
+got on those demos.  Which meant
+that we were building for
+customer wants as opposed to
+their needs.
+And in the last two years, as we
+have gotten more and more
+customers installed in using
+Illumination, we have started to
+seat patterns emerge how they're
+using Illumination.  Which means
+we can hone in on their
+workflows and start simplifying
+the features of
+Illumination.  And that's really
+important to us because in
+product with customers there's
+always, always edge cases.
+Because we'll build something,
+illumination, for, you know, a
+data set that we're pretty sure
+that our customers should have
+it shaped like this, hopefully.
+And it works for most of our
+customers, yay.  And then there
+will come a customer that will
+come along and then they have
+data shaped like nothing we ever
+expected and suddenly, boom, we
+have, you know, like support
+tickets and fire drills.
+So at one point in time when we
+first started working on scaling
+our product, we made the
+assumption that we should have
+optimized for the number of
+workflows.  That seems pretty
+reasonable.  And then over a
+period of time we started
+getting all these support
+tickets filed on us about
+Illumination freezing up really,
+really small number of
+workflows.  Ten, 15, 20, things
+we would have been able to
+support reasonably, easily.  And
+we started digging in and
+realized it was just because the
+data wasn't going to just grow
+and sale over the number of
+workflows, there was other
+places of complexity also.  For
+example, the number -- some of
+our customers that, you know,
+froze Illumination had huge,
+huge numbers of ports and
+protocols running between some
+of their workflows.  Or we would
+be tracking a large number of
+H3, addresses for their IP list.
+So as we have scaled and as we
+have gotten bigger and what we
+can handle with Illumination,
+it's increasingly more important
+to be able to really understand
+the needs of our customers.  And
+cut out any unnecessarily --
+unnecessary features.  Or else
+edge cases and everything below
+blowing up over and over.  And
+so the lesson we learned here
+was that when we build for
+product, there's obviously
+different customers that have --
+some customers that have small,
+small data sets.  And some
+customers that have large, huge
+data sets.  And with need to be
+able to accommodate both of them
+for Illumination.
+So we've learned that we need to
+take advantage of that tight
+feedback loop and figure out
+what's important in the use
+cases and work towards a
+visualization and an application
+that can be flexible, that can
+handle all of those situations.
+And the most important to be
+able to do that is to be -- to
+always make sure -- to get and
+use real data as often and as
+early as possible.
+And if we can't get real data
+from our customers, then to
+simulate their data as closely
+as possible.  Because only then
+can we make informed decisions
+about their needs for their use
+cases.
+So when we first started with
+Illumination, we had two front
+end engineers working on it
+full-time.  We are now a
+cross-functional team of front
+and back end QA, design,
+product, project managers, most
+of us working full-time on this
+project.
+And that's really absolutely
+very cool.  But despite all of
+this emphasis and importance
+that's been placed on
+visualization with our product,
+sometimes it's so
+surprisingly -- surprisingly
+difficult to get immediate
+buy-in on new ideas of
+visualization.
+And I think that's because of
+two primary reasons.  That, one,
+no matter how brilliant our team
+is, because they are, sometimes
+a visualizations that we propose
+are absolutely esoteric.  Like
+we might think that parallel
+corners and diagrams make so
+much sense to us.  But when we
+pitch it to our teammates that
+have never seen it before, it's
+hard for them to understand what
+it is, let alone what it's
+supposed to do, or should do.
+Or how that data will look --
+how our data will look within
+that visualization.  Let alone
+what the use case -- or the
+customer need -- is for that
+visualization.
+And second, Illumination is
+quite novel.  I have been told
+oftentimes that the security
+industry, UI -- has never really
+seen something like this before.
+Some of my favorite stories are
+of our customers are seeing
+their networks visualized for
+the first time.  And going, huh.
+That's our dev.  And that's our
+prod.  And there's a line
+between them that shouldn't be
+there.  Let me -- let me talk to
+our dev ops guys.  And that
+interaction is really, really
+cool, that story is really cool.
+But it also means that sometimes
+our team don't know -- doesn't
+know where we should be going
+because our customers don't even
+really know what they want or
+need from us.  Or where we
+should be going.
+So the lesson -- and I think
+that's actually -- and that's
+actually quite exciting.  And
+the way that we've gotten around
+that is by, one, when we don't
+know where we should be going,
+encourage prototyping.  We made
+prototyping really easy for
+ourselves.  Where all we have to
+do is to drop a hidden page into
+our application.  And then it
+has access to all of our
+resources of, you know,
+function -- like our data
+calculation functions, our
+rendering functions.  And it
+means when we have an idea for
+our visualization, it's
+relatively inexpensive to go on
+property for a few days, come
+back to our team and say, hey,
+that idea that I had, this is
+what it looks like with our
+data.  And now our team can use
+that prototype.  And make an
+informed decision of whether or
+not it is important or valuable
+for it to go into our product.
+And sometimes it is.  And
+sometimes it makes it into a
+product.  And sometimes it
+isn't.  But that's also okay.
+Because then we have taken the
+time to explore and -- to
+explore what's out there and our
+options.  That we could
+potentially use in a future use
+case.  And when we didn't know
+where we were to go.
+So in the past 20 minutes or so
+I have kind of just dumped all
+these stories and experiences on
+to you.  And to recap, so first,
+customize and optimize the
+visualization based on user
+expectation and feedback.
+Second, don't pre-optimize, or
+rather, start with a stupidly
+simple approach when it comes to
+the framework, architecture,
+around the visualization.
+Third, only optimize when we hit
+the performance road block, and
+then optimize based on data
+for -- the data we get -- we
+gather.
+And always, always get and use
+real data as often and as early
+as possible.
+And when we don't know what to
+do, always prototype and always
+explore.  So for the past two
+years I have learned so, so much
+from all of these experiences.
+And if I can boil it down to
+just some of the most important
+points for me, it's been to be
+flexible.  Both in the product,
+because we never know what kind
+of data our customers can throw
+at us, and also to be flexible
+in the process.  So that we can
+explore when necessary, but not
+all the time.  And perhaps my --
+the most important tool is be
+willing to throw things out.
+Re-factor and don't -- don't get
+attached to any one prototype or
+iteration.
+And I fully believe that the
+team that can do this is the
+most important.  Because I fully
+believe that is because of our
+team and our beliefs and our
+culture that we built that has
+taken Illumination to where we
+are today.
+So at the very beginning I
+mentioned that there was kind of
+not as many resources that we
+could find in terms of giving us
+guidance on how to build
+visualizations within the
+product.
+So I've compiled a survey.  And
+if you've had these experiences
+of building for a product,
+please help by filling this out.
+Because what I have talked about
+is only one perspective.  And
+I'm really, really hoping to
+compile a multitude of
+perspectives into a write-up of
+sort of like, mistakes made, and
+lessons learned.  And in the
+meanwhile, please join our Slack
+channel, called
+dataviz-in-product.  We're
+trying to foster maybe kind of a
+community support group.
+Because I'm pretty sure that I'm
+not alone in this.  So thank you
+very much.  That's all that I
+can think to say.
+

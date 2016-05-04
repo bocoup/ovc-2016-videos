@@ -1,0 +1,685 @@
+>> Anyone know why Cinderella
+was a bad baseball player?  I
+was at Fenway Park, and a
+3-year-old boy says she's a
+girl, and she's terrible, but
+the real reason is she runs away
+from the ball.
+glad to know this thing is on.
+Okay.  Give me a second to set
+up.  I was surprised I was
+called an engineer.  That's the
+first time in my life I have
+been called that.  I should also
+close my text messages.
+I know you're not all
+journalists, but anything that
+pops up from my text messages,
+let's just assume that's off the
+record.
+Let's see.  Cool.  This is going
+to get very hard if I try to do
+a demo. All right.  The Charting
+Monster that Spawned from the
+Jaws of Defeat.  Hi, I'm David
+Yanofsky.  As mentioned, I'm a
+reporter at Quartz.  I'm based
+in the San Francisco Bay area.
+But I'm originally around here.
+Which makes presenting all the
+more special for me.  When I was
+younger I used to come here with
+my dad.  It was before this
+theater existed, and actually of
+the aquarium existed.  And I
+would go around, and my dad
+showed me things, go over the
+penguin tank and wave your hand,
+make a shadow, the penguins
+follow it around.  Thing it's a
+fish.  Which, yeah, the first
+time in my life I had people
+tell me I shouldn't do that
+yesterday.  That's like putting
+a laser pointer on a dog.
+You don't have to torment them.
+You can, like -- you can -- I
+don't know.
+
+appreciate the wonder of
+penguins.  Anyway.  Another
+thing my dad would point out is
+that the giant ocean tank, or
+the great ocean tank, that big
+tank in the middle, used to have
+these sand tiger sharks in
+there.  And they would get fed
+twice a day.  And they -- they
+started developing these like
+humps and curves in their spine.
+They're actually not in the tank
+anymore.  But my dad would tell
+me how that was a symptom of
+their captivity.
+Anyway.  We're here to talk
+about a different piece.  It's a
+tool I made, Chartbuilder.  It's
+a tool that we use at Quartz to
+make thousands of charts a year.
+All across, you know, the
+editorial staff.
+And here's what it looks like.
+If it opens at all.  Great.  So
+this is inside of our charting
+platform.  Sorry the contrast
+isn't so great on this.  But --
+once again -- so we have a
+preview of the chart here, some
+input area over here, and you
+can do all sorts of changes of,
+you know, stuff.  It live
+updates.  You can drag your
+labels if you want to more
+directly label stuff.  You can
+see that there's a mobile
+preview down below.  You can --
+if you really wanted to, if your
+access was -- you can change
+that.  Make sure that you're
+adding -- that's not how you
+spell millions.  Make sure you
+add your units.  You can adjust
+the axis either by doing that or
+you can just type in numbers.
+You can even use your arrow keys
+and get things to do nicer
+values.  You can set the title.
+And what else -- and also say
+you wanted to have a different
+access on mobile, you can do
+that too.  You could be doing
+something like that.  But
+anyway.  That's Chartbuilder.
+So it's a pretty simple amount
+of data that we're working with
+that you can't see.  Great.
+It's, you know, a chart in
+Chartbuilder has data, title,
+source, has these scales, has
+some annotations.  We track all
+of this stuff using React.
+JavaScript library.  That is
+just -- I mean, it's essential
+to handling the complexity of
+any sort of user interface that
+has constantly changing data
+like this.
+And I think I have something to
+show you -- yeah.  So it varies
+from chart to chart.  Chart type
+to chart type.  But you can see
+there's some basic stuff about
+its sizing and then some basic
+stuff about its scales.  This
+would be populated with, you
+know, computer-understandable
+data objects.  And this is just
+a string of whatever you put
+into that box.
+And then, you know, whether you
+have dragged those labels.
+There's not much to it.
+But, you know, it's all made
+possible by React.  Which you
+have already heard three times I
+think, I counted, at this
+conference.  How great it is.
+If you change like one little
+thing in React, not in React.
+If you change an edit, one of
+those little fields, all you
+have to do is tell React that
+value has changed and it will
+repopulate the whole app as
+appropriate.  And it does that
+very efficiently.  It does that
+super-quickly.  And it does it
+in a way that doesn't melt my
+brain.
+Or it melts my brain if I had to
+think about how I did it, but in
+actually making it work, it
+doesn't melt my brain.
+So as we continue to build
+Chartbuilder, we are going to
+use React more and more and use
+D3 a little less to manipulate
+browser elements.  I'm sorry
+this is a little small.  But all
+this is showing is what you
+would do in D3 to make a line
+chart line.  You would create
+a -- you would use the D3
+path generator and never append
+the path.  You would append the
+path.  So this code wouldn't
+work.  But a code that looks
+very similar to it would.
+Anyway, this is what we're
+moving towards in React.  We're
+a same line generator, but
+instead of using D3 to
+manipulate the data, you would
+let React -- you would directly
+create path elements using the
+path generator to make the D
+attribute.  Which is what you
+would do anyway in D3.  And then
+put that inside of any kind of
+SVG group.
+So Chartbuilder started very
+slowly.  Despite it being pretty
+successful -- or it's very
+successful internally now.  And
+it's been adopted by a whole
+slew of news rooms.  And some
+non-news companies around the
+world.  It like really just
+started as like my -- trying to
+solve my personal frustration
+with kind of the visual quality
+of digital publications.  And
+not just at Quartz.  I have been
+at Quartz at the beginning --
+since the beginning.  The
+picture on the left, one year
+anniversary, the middle, two
+year anniversary, and the
+picture on the right is our
+third anniversary.
+And it's also done as incidental
+visualization of our group at
+the time.  And, you know, it was
+only -- when we were even before
+that picture all the way on the
+left, we were just like a dozen
+people -- maybe a little more --
+in this office in Soho.  And
+only me and my colleague Ritchie
+King were able to make charts
+that met our -- that met kind of
+the style requirements of our
+site.  We also had the same
+shoes at the time.
+Anyway.  Back then we -- neither
+Ritchie or I wanted to make
+other people's charts, it took a
+lot of time.  But nonetheless,
+we didn't want charts like this
+showing up on the site.  And
+they were.  Especially when
+we're focused on mobile-sized
+screens.  You know, this looks
+great on an IMAX, I guess.  It
+looks better than it ever did
+now that it's on an IMAX.
+
+But like, you know, you shrink
+that down into the palm of your
+hand and you can't read anything
+on it other than seeing some
+bars.  This is from a financial
+terminal that we use at Quartz.
+Similarly.  You know -- our
+reporters would have that, or go
+to a government Website and take
+a thing, or they would use, you
+know, a style, something that
+was -- looked like our intended
+tile at the time.  Or, you know,
+just people didn't have -- they
+had no tools.  This was all they
+could do.  This was the best
+that -- they wanted to make
+charts and this is what they had
+to settle for, really.
+But, you know, as much as I
+hated them, I didn't want to
+have to spend my whole day
+turning these charts into charts
+that matched our style.  You
+know, I went to Quartz because
+it wasn't a newspaper that, you
+know -- and many newspapers have
+full desks that just do that
+kind of work.  They are a
+service to other people to make
+prettier versions of the things
+that they want to make.
+But the biggest impediment
+towards me or Ritchie or other
+people on our team in the future
+to making this stuff is the
+terrible workflow that you had
+at the time.  This was how you
+would make a chart in Quartz's
+style.  Which is just like -- it
+would take like an hour.  And it
+only felt like it was taking 20
+minutes.  But you look at your
+watch and you're like, oh, wow.
+After the editor saw it and I
+had to go back and change some
+stuff.  And by the time I got
+this out the door, it took me an
+hour to make a single line
+chart?
+It was insane.  And the idea of
+workflow being this.
+
+So I started making a tool that
+would make a chart in our style
+that I could make these charts
+all the time without feeling
+like I was wasting it.
+The first version was pretty
+basic.  It was -- it's all built
+in the web browser, and it
+was -- it was using D3 as much
+as I could.  And I would drop --
+I would paste some data into the
+field.  Not dissimilar to what
+was up there, but much uglier.
+And the only way to export it
+was you would go and view source
+on the page and copy the SVG
+node.  And I would copy the text
+document and open up in
+illustrator.  Saved time, I
+didn't have to restyle anything,
+I just had to save that.  But
+kept on trying to improve it.
+Eventually the tool was able to
+create the images on its own,
+export the SVG on its own.  If
+we wanted to use that as a
+starting point for something
+more complex.  And it was given
+to some of our reporters most
+dependent on making charts.
+There were people that would
+come to me all the time and ask
+can I make charts.  Or can I
+make them a chart.
+And we were able to give it to
+them as a test.  We were also
+able to give it to people in our
+foreign offices so they could
+make charts when we were asleep.
+Quartz at the time had offices
+in London, Hong Kong, Los
+Angeles, and Bangkok.  Now we
+have many of those places and
+more.  Which is really cool.
+And it caught on really quick,
+you know?  The tool was direct
+enough and it was easy enough to
+train someone on that people
+were willing to use it.  And
+they saw the value in that they
+didn't have to wait.
+If it was taking me an hour to
+make a chart, for them, it was
+probably three or four hours to
+make a chart.  They send me an
+e-mail, I don't see it for an
+hour.  I have to be doing other
+things for another hour, it
+takes an hour to make it, and
+back and forth with them until
+they can publish their story.
+So then being able to directly
+make the charts saved a whole
+bunch of time.  Not just in
+chart creation, but also in
+administration.
+So, you know, we roll this out
+to the whole newsroom and
+leveraging the people who hadn't
+been using it, and getting other
+trainees internally.  And, you
+know, we were making like 100
+charts a month.  And the vast
+majority of our stories started
+having charts in them.  And most
+importantly, our reporters
+started to be able to make the
+chart a story.  And not just a
+side bar to a story.
+But, of course, there were
+unintended consequences.  We
+tried to make this tool, you
+know, I built this tool for me,
+originally.  So it had all sorts
+of flexibility built into it
+that I knew how to not abuse,
+but my colleagues did not.
+We had charts that had
+irrational disparate colors,
+trying to show too much data.
+Lacking a clear sense of point.
+And mostly typified in this.
+Which if you know anything about
+Quartz's color scheme, we have
+never had an orange in it.  If
+you're good at criticizing
+charts like I am, you'll notice
+this is a column chart that
+doesn't start at zero on the Y
+axis.
+We also have this issue with how
+we do the labeling where it says
+million, Microsoft, and the
+parens in millions, and in terms
+of thousands.  So instead of
+just saying billions and
+reducing the data.
+It was bad.  But, you know, the
+biggest -- one of the biggest
+issues that we actually saw was
+we were giving the color pallet
+like this in the first version
+of the tool.  And this was the
+Quartz color palette.  Making
+real custom graphics, this is
+the bucket I would pull from.
+Oh, yeah, give it to everyone
+and only use the top three rows.
+And I guess I shouldn't have
+been surprised when people
+started using the other stuff.
+But it was nonetheless
+surprising.  And frustrating.
+We moved the palette to that.
+And even that turned out to be
+too much.  Because now our
+palette is just that.
+
+And this is more than enough.
+This is 11 colors.  11 colors.
+And these actually work much
+better together than any of the
+other stuff.  I don't get any
+complaints that there aren't
+enough colors.  Which is --
+might be surprising to you.
+So there's a couple other things
+that are more trouble than
+they're worth.  We used to have
+animations in the editor that
+were just -- turned out to be
+like some massive technical debt
+to continue to maintain.  Like
+every now chart type should be
+animated from state to state.
+You know when we were -- as long
+as the chart is changing like
+really quickly, it turns out
+that the animations weren't as
+helpful as we thought in helping
+users understand what they were
+actually manipulating.
+We left -- at the start we had
+lots of options in the code base
+for like other people, for you
+guys, for other news
+organizations, if they wanted to
+implement this at their
+organizations.  We tried to
+guess what our clients wanted
+instead of having our clients
+tell us what they want.  As much
+as you can have a client in an
+open source project.
+But we've actually -- at this
+point we have taken a lot of
+them out and we suggest people
+do those modifications to the
+code base on their own because
+they are so organizationally
+specific.
+And those mobile that I was
+showing you, they sound great,
+hopefully when you saw them, oh,
+that's a great idea.  But no one
+uses them.  And the -- the
+reality is that now that we're
+rendering our charts -- we've
+changed our code so that our
+mobile charts can deal with the
+most common issues of being
+squeezed to a small screen.
+Namely, text wrapping.
+But there have been other things
+that were really valuable.
+Simple export.   The open source
+version of Chartbuilder, the
+default export is saving as an
+image.  You click a button and
+you get a ping.  Which is
+something that I think most
+people in most organizations are
+comfortable slinging around.
+How do I get this chart into my
+power point?  Just put this
+image in there.  How do I get
+this chart on my Website?  Just
+upload this image.  There's no
+fumbling with embed codes.
+There's no missing half of an
+embed code.  There's no breaking
+a whole page because there's a
+character off in your embed
+code.
+In the way that Quartz is using
+it now, still don't have embed
+codes.  Every chart has a unique
+URL that our reporters and
+editors can put in a story as
+plain text.  When that story is
+rendered on you are Website, the
+chart is embedded by our
+Website.  Or the embed code is
+created by our Website instead
+of by our user.
+So automatic axis tick value
+logic.  It's -- we have done
+some things that we think are --
+handle stuff a little better for
+D3 than D3 does.  Just because
+of the way in which we want our
+axis to look.  More importantly
+on this point is being able to
+tell people when they have bad
+values on their ticks.  In their
+axis.  If like they're increment
+is like 2.75 it can happen.
+Because we're defining axis by a
+maximum and a min and a number
+of steps.  You can wind up with
+weird gaps in between them.
+Clear helps with the axis, we
+can warn people things don't
+look good.  In the original
+versions of Chartbuilder, it
+would freeze if you did it
+wrong, and the official line --
+the official support line when
+it breaks back then was just
+rebuild the page.
+And now we can actually tell you
+on an element by element basis,
+each component that you can add,
+we can put a message to tell you
+what may -- what appears to be
+wrong with what you're doing and
+why that's breaking.
+So the future.  We're still
+adding features to try and make
+it easier to add new chart
+types.  Even maps.  We're
+working on being able to have
+more free text annotations on
+top of charts.  And, you know --
+but it's an open source project.
+It's used sporadically or
+consistently, depending, by news
+organizations around the world.
+From local public radio to
+national magazines, newspapers.
+But not all of them -- there's
+other -- there's plenty of other
+publications that aren't using
+Chartbuilder.  And which kind of
+shows -- in recent years it's
+been a development.  Since
+Chartbuilder came out, there's a
+development of other
+organizations building their own
+charting tools.  The New York
+times built one, Washington Post
+built one, The Guardian is in
+the middle, Boston Globe,
+FiveThirtyEight used
+Chartbuilder, just switching to
+one they custom built.
+I'm pretty sure it's because the
+theory of Chartbuilder works.
+Because we have colleagues who
+are wasting their time on
+skill-intensive and
+time-intensive text making
+charts for other people.  Seems
+like it should be simple, but
+it's not.  And if we can give
+them a tool to free up their
+time, they'll be able to have
+more time to make the more
+complex and more interesting
+work that they're better suited
+for.
+We have people, went four years
+of school, got some interactive
+whatever degree, and now we have
+them in some agency as some
+low-level person.  And our
+client needs charts for their
+PowerPoint, so we have them make
+it.  Seems like a waste.  Where
+if we could build a tool for
+that client to help them be able
+to make their own charts, we now
+have this resource this, you
+know, really green, ambitious
+person who's going to spend all
+day in the office coding this
+crazy visualization that now
+doesn't have to be making
+charts.
+At the same time we're
+democratizing the charts, and
+raising the value of the charts
+because we have more people who
+can make better charts.  Like I
+mentioned, you have more people
+that can make more complex
+charts.
+Of course, I mean, this can
+happen in a newsroom.  Of
+course, there's one thing that
+does end up happen, and it's
+this medium complexity chart
+kind of disappears.  Which I'm
+totally fine with.  You start --
+what we found is that if a chart
+now is going to take two to
+three hours to make something
+just, I don't know, needs a
+little extra love, we try and
+just shoe horn it into a
+Chartbuilder chart.  Make it
+simpler.  Make it two charts
+instead of one fancy chart.
+And then, you know, if you
+want -- or make it
+super-complex.  And, you know,
+for better or for worse, that's
+what happens.  And that brings
+us back to the sharks.  As I
+mentioned, the sand shark --
+sand tiger sharks that used to
+be in the tank had some crooked
+spines.  Some had humps, kind of
+like this one.  This is from a
+journal -- or a study that
+looked into the phenomenal.
+There have been a couple studies
+that looked into a the
+phenomenon.  And some say it's
+because of the curve of the
+tank.  Some say it's the tank
+being too small.  Some say that
+it's a result of vitamin
+deficiencies.
+But, you know, experts agree
+that sharks in the wild don't
+regularly develop these
+symptoms.  And sharks in
+captivity do.  Which is not
+dissimilar to these sharks.
+Anything goes, this is my
+colleague here, he's been shown
+to have a vicious beast.  So
+much so he's been on Japanese
+television with a special on his
+brutality.  In my colleague's
+natural habitat they make charts
+using the defaults in Excel,
+reprinting something supplied
+from a third party.  But like a
+shark eats in the wild, they
+would do this sporadically.
+They were thinking charting was
+something to be done
+occasionally.
+And just like the sharks here
+eating frozen fish off a stick,
+we had to train our reporters to
+think differently and change
+their habits.  This is
+important, take a wild shark and
+throw them in the tank with the
+rest of the fish.  There's a lot
+of problems.  When it comes to
+charting, we do our best to help
+our new colleagues get
+acclimated.  Some are more
+willing than others, but in the
+end they're already captive.
+And we also have like this
+massive institutional support
+behind our tool.  If you can gin
+it up, it's invaluable.
+But all this means that our
+ecosystem is healthier, our
+reporters are less vicious.  And
+in an environment where they can
+thrive sustainably.  Sometimes
+my colleagues and I contort
+ourselves due to the limited
+options in Chartbuilder.  But
+I'm better for it, and I think
+everyone on the outside looking
+in interested in learning more
+would think so too.  Thank you.
+

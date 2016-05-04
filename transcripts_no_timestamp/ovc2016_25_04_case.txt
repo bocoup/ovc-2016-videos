@@ -1,0 +1,813 @@
+>> Thank you.  I'm not on.
+>> So.  So correct me if I'm
+wrong, but I heard you like
+graphs.
+>> Yes.
+>> Well, have I got a graph for
+you.  So here's a completely
+made up graph.  Based off an
+unscientific survey of two
+anecdotes.  How informed we are
+versus how much information we
+have.  And obviously the more
+information we have, the less
+informed we are.  Because now
+there's too much noise, not
+enough signal, too much
+haystack, not enough needles.
+What really matters.  And
+another graph, how connected we
+are versus how much information
+we have.  And obviously the more
+information we have, the less
+connected we are.  On the
+Internet and the media, you can
+find the information to confirm
+your biases and beliefs.  More
+information is making us more
+polarized.
+Here's another graph.  How
+empowered we are versus -- let
+me just get to the punchline.
+The more you learn, the more
+it's off-limit and out of your
+control.  You can't do anything
+about it.  That sucks.  So I
+heard you like graphs and
+visualizations.  I think we're
+all here because we want to make
+things and graphics.  And it
+really helps you give
+information.
+We to want make things that help
+people be more informed, more
+connected.  More empowered.
+But if just putting more and
+more information out there
+accomplishes the complete
+opposite of all that, then I
+guess for us media makers and
+journalists in this new age, the
+question is not, can our field
+survive?  But does our field
+deserve to survive?
+And that is the existential
+crisis.
+
+but, yeah, seriously.  It is a
+big problem.  But to be fair,
+database I think solves half of
+that.  Because data
+visualization let's us go from
+the individual stories to the
+larger patterns.  But I think
+now we need to go deeper because
+what's under those stories are
+patterns, what's under those
+patterns are systems.
+Water break one.  So the problem
+is we have too much information
+and not enough understanding.
+Patterns can show us how things
+happen, but not really why
+things happen.  And for a deeper
+understand we need systems.
+So we kind of know already what
+dataviz looks like, what would
+System (VIS) look like?  One
+tool that might be useful, not
+the only tool, is simulation.
+So here's a prototype -- not a
+prototype, a product I
+launched -- for once, simulating
+in emoji.  At the end I will
+have links to the slide and re
+resources and projects.
+So the reader could play with
+the simulations, and the emoji,
+and mess around with the rules
+and create their own
+simulations.  And these
+simulations were used to explain
+systems.  Systems like
+ecosystems.  And why forest
+fires are actually good for the
+forest.
+Or systems of epidemiology, how
+disease spreads, what is heard
+and why is it important?  And
+civil conflict.
+
+and how much like a forest fire,
+or much like disease, how
+violence can spread across a
+population.
+Now -- yes.  This emoji is not
+going to be very complicated.
+They're obviously very
+simplified.  But that's not a
+bug.  That's a feature.  So
+think about this street map.  A
+street map is -- is useful not
+despite being simplified, but
+because it's simplified.  It
+cuts away what doesn't matter to
+just leave what does.
+That's the issue.  A lot of
+things in our media stuff
+doesn't matter.  Or at least it
+gives the false impression.  A
+concrete example, turn on your
+cable news and you'll see some
+gnarly, nasty, gruesome crime
+story.  And you'll probably see
+it like twice a day or more.
+Probably -- yeah, definitely a
+lot more.
+And you might get the
+impression -- and the public
+opinion in the U.S. right now --
+is that the world and the U.S.
+is getting more dangerous.  But
+if you're to look at -- beyond
+the things and look at the
+trends, the U.S. crime rate has
+been actually dropping since the
+1980s across all categories.
+But the trends only tell you
+that it's dropping.  It doesn't
+tell you why.
+And for that you need to go down
+beyond the things and the trends
+to the fear.  Sociology,
+criminology, psychology,
+economics, so on and so forth.
+And only once you have theory,
+can you create a more humanized
+justice system.  Theories let us
+create the future.
+That's why we have to go deeper,
+as the inception person says, go
+deeper.  Can we go even deeper
+than theory?  I think, yes.
+There is something fundamental
+and underlies all theory.  Other
+than you know philosophy and
+math and logic and language and
+the scientific method itself,
+there is also systems.  Systems
+thinking.  What is systems
+thinking?
+Actually to be honest, the
+systems thinking community
+doesn't know what systems
+thinking really is.  It's
+very -- again, I think it might
+be a feature, maybe.  It's very
+interdisciplinary.  It's kind of
+broad and a little bit fuzzy in
+places.  But at its core, this
+is what system thinking is.
+So in our day-to-day lives, we
+think of cause and effect in a
+linear fashion.  A affects B
+affects C and so on.  But the
+world's not linear, it's loopy,
+according to the thinking.
+Where A can affect B and B
+affects A, vicious cycles, arms
+races, escalation of violation,
+and kindness with more kindness,
+a positive example.  And
+stabilizing loops.  The next
+time you think of a cause and
+affect, don't just think of how
+A can affect B, but B can
+directly or indirectly fax A.
+It's not linear, it's loopy.
+That's the thinking.
+So I want to tell a story, start
+with the story, the human story,
+the human elements that really
+matter.  But go beyond the thing
+and go for the system.  Because
+only once we have a deep
+understanding of the underlying
+systems that we can really go
+where we want to go.
+Okay.  Still on.  Just making
+sure.  Water break two.  The
+sequel.
+So -- but even if we're
+informed, we can have polarized
+echo chambers.  How do we
+overcome that?  People have
+contradicting viewpoints, or
+seemingly contradicting
+viewpoints.  I'm going to show a
+simulation I made a year and a
+half ago.  It's a good example
+of how system thinking can
+combine.  It's the one hit
+wonder.  Parable of the polygons
+is an explorable about
+discrimination and diversity.
+Racism and is polarizing,
+especially on the Internet.  To
+say the least.  But there's more
+than two.
+Like one person could say, well,
+look at the racial ratio in our
+incarceration system and
+obviously on the societal level,
+there's a huge discrimination.
+But on an individual level, a
+lot of people say I'm not
+racist, none of my friends are,
+and society has a huge taboo
+against it.  Even if you are a
+little bit biased, how can it be
+that bad?  Parable polygons show
+how a small bias can accumulate
+through a vicious cycle into a
+large societal discrimination.
+So -- and I'll just play through
+it.  And I play through it, I
+mean pre-recorded video.  So you
+can drag around shapes.  And so
+each shape -- so you can only
+move the unhappy shapes.  And
+shapes are unhappy -- fine.
+Just moving without me.  Every
+shape has a rule.  An individual
+rule.  I want to move if less
+than a third of my neighbors are
+like me.  The triangle is
+unhappy, less of the neighbors
+are like it, one out of six, and
+then two out of six, and the
+right most one, it's meh,
+totally full of its own peeps.
+So keep in mind, look at the
+middle section, every shape is
+okay being in the minority in
+their own local neighborhood.
+So it's a very small bias.
+Every one would be okay being a
+minority.  And yet -- and yet in
+a larger society -- so right now
+I'm just moving around the
+unhappy shapes randomly.  Not
+really thinking.  Just moving
+them into a happy spot, not
+really thinking where they're
+going.  But that small,
+individual bias accumulates.  It
+cascades.  Because once someone
+moves out of their neighborhood,
+that neighborhood changes.  And
+so more people move out of that
+neighborhood.  And eventually
+you get something like this.
+Where it started off like
+totally randomly mixed, and now
+there's definitely blue section
+and yellow sections and this is
+a square town, this is triangle
+town.  Wow.
+What is up with that?  So, yeah.
+A vicious cycle.  Or loop.  And
+that's how you can combine that
+contradiction.  Where someone
+could reasonably say there's
+discrimination on a societal
+level, and why someone could
+reasonably say that for
+individuals, it might not be
+that much.  I just want to
+emphasize this is -- I'm not
+saying this is how it always
+works.  Like there are some very
+top-down discriminatory cases.
+But I think for at least
+bottom-up cases, this is how --
+this is a plausible mechanism
+for how this kind of
+discrimination can arise from
+the bottom up.
+Another thing to emphasize is
+that it's not just presenting
+both sides.  Instead of --
+because, you know, just do that,
+and the confirmation bias,
+people pick the side they
+already believe in.  What you do
+instead is to combine those
+sides.  Not just merely -- show
+that they can be both part of
+the same thing.
+Let's talk about conflict.  I
+like this illustration of
+conflict.  It's a good
+illustration.  I worked for days
+on this.  It's my masterpiece.
+So the mediators are actually
+using systems thinking to help
+people resolve conflicts.  So
+here we have like a little toy
+example of a very basic
+conflict.  One person would have
+a linear cause and effect story
+they would have.  Attack us and
+fight back and then the story,
+they attacked us, fighting back.
+The world's not linear, it's
+loopy.  Yeah.  And in this case
+it's a pretty common pattern,
+the vicious cycle, arms race,
+escalation of violence.  So the
+common mediator shows it to all
+the parties involved that the
+system is their common enemy,
+not each other.
+And maybe once they realize that
+the system is their common
+enemy, maybe they can work
+together.  At least that's the
+hope.
+This is the part where I drop
+the word empathy.  And I'm going
+to say it, I really like
+empathy.  I've made stories and
+games for empathy.  Kind of a
+buzz word nowadays.  Not like
+synergy bad.  But kind of
+getting -- where gamification
+is, that's where empathy kind of
+is.
+I can see it now, Nicky hates
+empathy.  Thank you.  But,
+really.  Like -- yeah.  With
+individuals, it's important.
+But here's the thing about
+systems.  Individual -- I mean,
+they matter, but not as much as
+the system itself.
+So the empathy is too
+individual.  You have to start
+with the individual, but you
+have to look at the system.  So
+if information is making us feel
+more polarized, more
+disconnected, then what systems
+thinking tells us, we're all
+connected whether or not we like
+it, even if they're not healthy.
+A lot of time they're not
+healthy.  But in any case, the
+system is our common enemy, not
+the individuals.
+Water break three.  From the
+creators of water break one and
+water break two.
+So even if we're informed and
+connected against those in
+power, you can say, well, now I
+am very informed about the
+system and I know we're all in
+this together.  And we're
+trapped.  This sucked.  What can
+we do?
+And I don't know.  I really
+hoped I would be able to figure
+this out by the time I was
+scheduled to give this talk.
+But given I have been dealing
+with political problems dealing
+with this for millennia, this is
+a thing we have to keep thinking
+about forever.
+How can people like average --
+you know, they're average
+citizens, feel empowered.  Or
+actually make a change?
+Still -- I think I have like
+partial, half-baked ideas that
+I'll show off in this prototype.
+Which is not out.  And also,
+yes, the UI is a little bit
+bad.  But, yes, prototype.  It's
+a presentation using a U.S.
+statistic.  So it's got six
+boxes and people move from box
+to box.  So students at the top,
+employed in the middle and
+incarcerated at the bottom.
+And so they move
+probabilistically, and the
+probabilities are based off
+stats on race, age, education,
+income, employment,
+incarceration, at least for the
+U.S.
+And they move around
+probabilistically based on those
+stats, and you can also ask --
+you can change those stats in
+the side bar to ask what if --
+what if fewer juveniles were
+incarcerated?  What if
+employment prospects were
+better?  And each box is also
+separated.  And each side bar is
+separated by a box.  So you can
+say like, if you're a small
+business owner, you get the
+little box where you control the
+probabilities of who gets
+employed.  Like do you want to
+hire ex-cons?  Or how to
+increase job prospects?  How
+often do you have to fire or lay
+people off?
+So not only do you get to ask
+what if, you can ask what can I,
+or people like me, can do?  And
+how can that affect the entire
+system?
+So here it is just running.
+Simulations, probabilities using
+the real stats from -- using
+real stats.  And you can also
+focus on individual's story.  So
+you can click on someone and you
+can see the individual story and
+the system at the same time.
+And so as it runs, you can also
+think, oh, I'm a teacher.  What
+if I helped people, more people
+go to college.  I'm a small
+business owner, what if I didn't
+discriminate against ex-cons?
+Or I'm a policy maker, get rid
+of mandatory minimums, or at
+least reduce them?  In a pro
+prototype, you can't see how it
+affects the entire system, but
+the idea, hopefully once it's
+done, what small change you can
+do in your field and how that
+ripples out throughout the
+entire system.
+So that's an idea for maybe how
+system thinking can help us.
+Give a thought of why people
+might feel this?  And I'll say
+it's like a pretty legitimate
+reason.  I think it comes from
+having a linear story.
+Believing that power comes from
+one party controlling another,
+and crap runs downhill.  And
+they are -- you know, at the
+very top there's the
+corporations, or the government,
+and they control the media or
+the middlemen, who control a
+very easily-manipulated
+majority.
+And if you're not at the root
+cause, and a linear cause and
+effect story, there's only one
+root cause.  If you're not the
+root cause, if you're not at the
+very top, then you have no power
+and you can't really do
+anything.  That's a very
+disempowering story.  And idea.
+But the world's not linear,
+it's --
+>> Loopy!
+>> Yay, thank you.  And when the
+world is loopy, there is no root
+cause.  And that's great.  That
+means any part of the system
+where you are at -- you can
+affect the feedback loops,
+vicious cycles, stabilizing
+loops -- your affects can ripple
+throughout the system.  Just
+like the polygons showed how
+even a very small bias or effect
+in a local neighborhood can
+ripple out throughout the entire
+world.  Maybe -- maybe that's
+how system thinking can empower
+us.  Maybe.
+As a more concrete example, for
+example, you're a small business
+owner and you want to hire
+ex-cons.  And it turns out that
+it works pretty well, and your
+peers, your network in your
+business community also hires
+ex-cons for themselves.  And --
+but the ex-cons also have their
+own network.  Their own friends.
+Most of the people in poor,
+disadvantaged neighborhoods,
+communities of color.  And so
+they reach out to their network
+and it just keeps spreading and
+public opinion shifts on race
+and criminal justice.  And
+public opinion then turns into
+public pressure on politicians
+to fix their stuff.
+And that is a lot easier said
+than done.  Again, these are
+half-baked ideas.  I'm figuring
+it out.  And I hope you'll join
+me in figuring out systems
+things and stuff like that.
+As the old joke goes, you are
+not stuck in traffic, you are
+traffic.  And what systems
+thinking tells us, we are not
+trapped in the system, we are
+the system.
+Water break four.  Water break
+origins: hydrate harder.
+Anyway.  And that is how we can
+use systems thinking to give us
+a deeper understanding.  To
+overcome polarization.  And
+maybe, just maybe, we can change
+the world.  So wut?  So wut?
+Because I just gave you a whole
+bunch of theory, and not a lot
+is actually practical.
+You might be saying, Nicky, I
+have deadlines, I have to learn
+D3, I'm only up to D2.  What
+have you got for me?  Well, I'm
+glad you asked, said
+hypothetical person.  Here are
+five tools I can give you on how
+to tell stories about systems
+and turn systems into stories.
+And, again, all the links and
+projects I will be referring to
+will be posted at the end of
+this slide talkie thing.
+So five tools.  From least cray
+cray to most cray cray to
+implement.  And the first tool
+is nothing.  Or at least nothing
+new.  So, you know, you don't
+have to change your work flow,
+your tools.
+Because people have been telling
+stories about systems in all
+kinds of media.  So three of my
+favorite examples.  The Wire is
+the quintessential example, the
+cast, multiple perspectives.
+And every season is showing a
+different part of the system.  A
+different part of the Baltimore
+criminal justice system.
+So, yeah.  If you make a video,
+or, you know, film stuff.  Like
+check out The Wire.  That's how
+you look at systems.  And still
+a great way to do story telling
+in a non-linear way.  For those
+who make infographic, I heard
+you like graphs.  Chris Wear.
+Check out the work of Chris Ware
+and specifically the stories.
+12 stories that can be read in
+any order.  And each
+installment, I guess, is so
+non-linear.  Timelines
+intersecting, all which way,
+what.  That's how to do the
+story telling in a visual
+format.  The comics.  And there
+is quote, unquote, post-modern
+literature.  Like one of my
+favorite books by Kurt Vonnegut.
+Creates a character timeline to
+timeline.  And another one I
+read recently, Jennifer Egan's,
+a Visit from the Goon Squad.
+And boast of these post-modern
+literatures are a way of doing
+multiple perspectives and
+non-linear story telling.
+The point is you don't need
+simulations or anything fancy to
+tell stories about systems.
+People have been doing it -- not
+very common, actually pretty
+rare, but it has been done.
+Number two is the causal loop
+diagram.  And I have been doing
+this the entire talk.  So the
+causal loop diagram -- so here
+is my favorite example that I
+found randomly through Google
+image search.  So it's about the
+war on drugs.
+Specifically on focusing on
+heroin.  And so I really like
+this one because with just three
+loops it tells three really deep
+stories.  So the first causal
+loop is about how if we seize
+heroin, yes, it reduces it in
+had the short run, but a
+reduction in inventory, supply
+and demand, reducing inventory,
+drives up the price, drives up
+price drives up profits, and
+driving up the profit creates
+the incentive to create more
+heroin.  Second loop, if the
+price goes up, addicts, they
+demand it, they're addicted to
+it.  They have to resort to
+petty crime to, you know -- to
+petty crime.  Results in
+arrests.  So that's, you know,
+our versioning incarceration
+system.  And with the arresting
+of addicts, the inventory goes
+up.
+And then the third group, there
+is level over inventory, the
+drug dealers have to market it,
+so to speak, and bring in my new
+addicts into the system.  So
+three different stories.  This
+is the content of three
+documentaries captured in one
+diagram.  I really like the
+causal loop diagram.  But if you
+do a Google image search on
+this, they all look this bad.
+Like apparently the systems
+thinking community doesn't
+realize there's more than one
+font than times new Roman, and
+more than one shade of blue, hex
+code zero, zero, zero, XF.  And
+if you want to use the causal
+loop diagrams, make it better.
+It's horrible.  Even though it's
+powerful, oh, my eyes are
+bleeding.
+Tool number three.  Water break
+five: water returns.
+Stock and flow models.  So a
+stock and flow -- imagine a
+stock as a bathtub and, you
+know, things flow in, things
+flow out.  That's a stock and
+flow model.  Kind of similar to
+the causal loop diagram.  So
+this one is the -- here's where
+simulation comes in.  Stock and
+flow models are specifically
+created for simulation.  When I
+was researching on stock and
+flow models, it turns out the
+earliest simulation was not done
+on an electronic computer, it
+was a water computer.  This is a
+computer made of water.  What?
+So instead of electricity
+flowing through wires, we have
+water flowing through pipes.
+This was created in 1949 by a
+New Zealand person to simulate
+the economy.  One tank is the
+treasury, money flows in, money
+flows out.  And worked well
+enough to get a place in a
+museum.  So good for you.  1949
+New Zealand person.
+They use stock and flow models
+today.  Scientists use it to
+model greenhouse gases in the
+atmosphere and more are going in
+than coming out, obviously.  And
+also simulating economies.
+People use stock and flow for
+that.  And also like modeling
+disease.  Basically you can use
+stock and flow simulations to
+simulation anything where you
+have a thing and things go into
+the thing and things come out of
+the thing.
+It's pretty flexible as a tool.
+And tool number four is
+probability simulations.  And
+this one's used already.  And
+these are examples that a lot of
+you might already know.  First
+one is the comma, probably.
+Where using the CDC data he
+simulates people being born and
+dying over and over again.  And
+you get a nice little histogram
+of death over there.  And I can
+tell you how many years you have
+left to live.  Probably.
+The second one is -- the one
+that actually really inspired my
+prototype, the Marshall project,
+FiveThirtyEight, made the
+simulator.  You can choose at
+what risk people get parole or
+don't get parole.  And you can
+make that tradeoff here for
+yourself and see how it works
+probabilistically.
+The third one, with the goat and
+the car, that's an infamous
+mathematical paradox.  Created
+by Victor Powell as an explainer
+of the paradox.  And finally,
+selection season.  Martin made
+rock and pole.  Which -- great
+title -- which shows off why a
+2% chance -- a 2% difference in
+the polling results isn't much
+to analyze about, that is the
+margin of error.  So made a
+simulation explaining margin of
+error.
+And again, I will have a link to
+all the links for all this
+
+12:02:16
+And at the very far theoretical
+end we have agent-based
+modeling.  Also similar.
+Agent-based modeling.  So an
+agent is a thing that makes
+decisions.  And an agent-based
+model is a whole bunch of
+things, a whole bunch of agents
+that make decisions based off of
+others 'decisions.  So that's
+like infinite feedback loops
+there.  It's also loopy.
+So, for example, a concrete
+example, parable of the polygons
+is -- I actually stole a model
+created by Thomas Shelly.  He
+created the original model.  We
+just added cute shapes and
+smiles to it to explain it in
+such a cute way, segregation.
+What a cute topic.
+But you don't have to do just
+grids.  You can also do a
+network.  And -- yeah.  Grids
+and networks, all that.  And the
+CDC also used agent-based models
+to simulate disease spread in
+real time.  Simulations save
+lives.  And now the theory and
+the tools, I have a minute left.
+How to Simulate the Universe, In
+134 Easy Steps.  You need a
+human hook.
+If I go beyond that, and step
+two, the trends, and step three,
+go beyond that and find a
+theory.  You don't need to be an
+expert on everything, but just
+learn enough to get to step
+four.  Find the non-linear loopy
+causes and effects.  The vicious
+and virtuous cycles.  And then
+if I can a tool that works for
+you.  Once you have a prototype,
+step six, it's iterate.  And
+seven iterate, eight, iterate,
+and keep doing this over and
+over again until you have
+something that informs people.
+Something that connects people.
+Something that really empowers
+people.  And once you have
+something that does all that,
+134.  Ship it.  And then fix
+bugs.  Thank you so much.  Link
+is over there.
+

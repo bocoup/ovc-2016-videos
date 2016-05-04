@@ -1,0 +1,907 @@
+>> All right.  Cool.  So --
+microphone.  Okay.  Can you hear
+me?  Yes.  Okay.  Hi, I'm
+Jessica Hullman, an assistant
+professor at the University of
+Washington.  I study research
+visualization.  My talk is the
+visual uncertainty experience.
+When I proposed the talk, I
+wanted to talk about the future,
+new ways that designers are
+using and studying for showing
+uncertainty visually.  But then
+I sat down and started preparing
+the talk, if I'm going to talk
+about uncertainty, I have to
+talk about not so exciting
+things, probability,
+distributions, variants.  Maybe
+I should retitle the talk so
+people know what they have
+coming.  Something like the
+trouble with uncertainty, or
+maybe even more appropriately,
+call it stats 101.  And people
+would know exactly what they
+were getting into it.  Maybe I
+could talk about these sort of
+fundamental aspects of
+uncertainty and the really
+exciting stuff.  And I'll just
+do it through a story.
+So the story I want to start
+with is that of Sir Francis
+Galton, a Victorian
+statistician, and thinking about
+a lot of things.  But one of
+those things was uncertainty.
+Galton became interested in
+height, it was driven by a
+simple observation as he looked
+at the heights of people near
+him.  Everyone has height, but
+we can't exactly predict what it
+will be.  This bugged him a lot.
+How can we predict height?  I
+see heights around me.  He
+starts measuring people's
+heights, measuring families at
+first with children.  He's
+trying to figure out the
+possible heights.
+He starts to make observations
+from the measurements he has
+about a thousand people he
+measures, and figures out when
+you have parents that are
+unusually tall or small, the
+child's height is often closer
+to average.  And this happens on
+both sides of average, whether
+they're very tall or small.  The
+inverse is true, so if you have
+a child who's tall or small, the
+parents are average in height.
+What Galton noticed, we call
+regression to the mean.  And he
+was interested in this and
+started to think what does the
+set of possible heights look
+like?  He started making more
+observations.  And looked at the
+measurements, the number of
+people with heights average plus
+or minus some amount, decreases
+predictably and symmetrically
+towards the extremes of heights.
+And starts to see the vision of
+what height looks like.  So here
+we have the height scale.  And
+to the right of that, you see
+the curve, looks like a bell
+curve.  What he discovered was
+in the normal distribution.  And
+read it as you move further
+right.  That means there's a
+higher probability of having a
+height at that value.  So he was
+excited because he knew this was
+super-powerful.  So suddenly
+without any knowledge about the
+family's heights, other things
+to help him predict, he could
+take the shape and say, for
+instance, given child, a random
+boy, his probability of being
+some height, 61, is 14%.  So
+this was really powerful.  But
+he knew he could really confuse
+people with this.  What does
+this mean?  You have a random
+boy, what's the probability
+he'll be six foot one?  It's
+14%.  He's going to be that or
+not.  What do we do with the
+14%?  What does this mean?
+Maybe if I communicate this as a
+frequency, maybe people will get
+it.  Maybe I could say that like
+a hundred boys, if we took a
+hundred, 14 would be six foot
+one.  This is how I'm going to
+communicate it, and I want to
+visually represent.
+So he draws a chart.  So he
+draws his height scale and next
+to that has a bar.  He decides
+to draw dots about possible
+people.  So he draws a million
+dots and sort of the frequency
+of the dots in a given region
+means that's how many people
+there are with that height.  And
+he annotates.  He is a little
+bit wrong.  Height is not
+normal.  There's not as many
+nine foot tall people as he
+predicted.  But that's okay, he
+discovered something important.
+He created an uncertainty
+visualization, possible heights,
+he's representing it as
+frequency, people understand
+probability in terms of
+frequency easier.  We can say
+that uncertainty is a
+possibility that a quantity
+could take multiple values.  And
+certainly visualization, the
+task of representing what those
+values are.  So the interesting
+thing, and I'm not first person
+to say this, is that most
+visualizations don't represent
+understand certainty.  People
+know, designers know, users
+know, uncertainty is
+complicated.  Even though the
+data are measurements and
+imperfect samples, we don't know
+the uncertainty.  We don't know
+what to do with it.
+And he knew that uncertainty was
+complicated and done the best to
+represent it in the chart.  He
+was not happy with this.  If I
+want to communicate this shape,
+the normal distribution, I have
+to communicate it as a process.
+So it's an abstract thing, any
+probability distribution, but
+maybe will understand what it is
+if I can show how it naturally
+arises from a bunch of events
+that are random, basically.  So
+he makes something else to
+communicate this distribution,
+which is more like a device.
+He make this is thing out of
+wood, has a funnel at the top
+and drops balls into it.  With
+various probabilities they move
+through peg board and bin up in
+the bottom in the bins.  So you
+get back basically a normal
+distribution when you put a
+bunch of balls in it.  It looks
+something like this.  If you
+were to play it out, building
+the normal distribution.  He was
+way happier, and he can
+communicate with his colleagues
+that it arises from sampling
+people from the population, not
+the heights from the
+distribution, and get back the
+same thing.  So he was happy
+with what he made.
+I want to pause here and point
+out that just in Galton's work,
+a dichotomy, two ways to show
+uncertainty.  On the one hand,
+all of the probability
+distribution at once in a single
+static graph.  On the other hand
+we're showing it sort of one
+outcome or one observation at a
+time.  We're building up the
+distribution at the bottom, but
+the focus is on the individual
+samples.
+Fast forward to uncertainty
+visualization today.  What's
+interesting, with uncertainty in
+visualizations today, we see
+these same two approaches.  One
+is way more common.  So on the
+one hand, static plots, error
+bars, violin plots to show
+distributions, a gradient plot,
+map it opacity.  And I like to
+call these static distribution
+plots overall, or sad plots.  On
+the other hand we sometimes see,
+occasionally, not very often,
+what I would call a
+sample-based, or experiencable
+visualizations opinion like the
+board.  We're showing people
+there's a focus on one
+observation or one sample at a
+time.  We can do these so they
+build in the depiction of the
+probabilities distribution
+overall.  But a very different
+technique.
+So one of the things that I want
+to convince you of today, most
+of the time, seeing uncertainty
+visualization, it is using one
+of these static aggregate
+distribution approaches.  And I
+want you to see that there's
+problems with those.  So let's
+take a closer look at them.
+Here's a bunch of the
+techniques.  On the far left,
+error bars, designed to show an
+interval, a mean height, or
+height measurement.  And next to
+that, a box plot, also showing
+through lines basically
+graphical annotations.
+Different properties of a
+distribution, like the tiles
+which are points that break it
+up into four equal-size bins.  I
+call these approaches sort of
+summary marks, because we're
+using lines to summarize
+properties of a distribution.
+On the other hand we see
+approaches that take the
+probability and map it to a
+visual variable.  So things like
+area in this violin plot,
+basically a PDF turned on the
+side and doubled, so it's
+symmetric.  And the gradient
+plot next to that, using
+opacity.  What are the problems
+with these things
+Let's start with the summary
+marks.  In the infovis research,
+we look at how they can be
+successful.  One is
+expressiveness, does it express
+the data in a way that the
+user's natural interpretations
+are accurate.  We don't want to
+put something in front of the
+user that misleads them.  And we
+have them fail sometimes in this
+regard.  One thing they do when
+they get error bars is do --
+they show what's called within
+the bar bias.  And within the
+error bar.  Half is on top of
+the data.  Oh, that part has to
+be more probable.  Actually,
+this is not true.
+And so this is one problem.
+Another problem we have is that
+we know people don't like
+uncertainty.  It's just
+complicated.  When you show it
+as lines on top of the data,
+it's really easy for people to
+just sort of squint and say I
+don't really want to deal with
+that and it just kind of goes
+away.  They don't use it at all.
+Which is a problem because they
+want people to incorporate
+uncertainty into their
+judgments.
+Okay, other problems that tend
+to affect the approaches that
+use visual variables to show the
+probability visuals.  This other
+criteria in visualization,
+effectiveness, how can they read
+the data values back from the
+visualization.  We know that
+things like position are the
+most accurate channels.  So
+scatterplots are great, length
+is good.  Often visualizing
+uncertainty, we're using the
+good channels to show the data
+itself, for instance.  So we're
+left with these less effective
+channels, area, hard for people,
+opacity, hard for people.  They
+can't read the probabilities
+back.
+So these are what I would call
+visual problems with the static
+aggregate distribution plots.
+And the model problems, that
+deal with what we're showing
+people and how conflicted an
+abstract that is.  We call
+uncertainty visualization is
+representing the possible values
+that a quantity can take.  So
+things get complicated because
+what quantity we're talking
+about can differ.  So on the one
+hand, we could be talking about
+the actual measurements. what if
+I measure height from a bunch of
+people?  On the other hand we
+could talk about a quantity
+that's a statistic that we
+calculate given a set of
+measurements.  So what is the
+average height look like?
+What's that set of possible
+values?  Two different things.
+Usually when we're looking at
+uncertainty visualizations, like
+error bars, it's the latter.
+The distribution like average
+height, which is very different
+from the distribution of actual
+height measurements.  It's
+called the sampling distribution
+of the mean.  And it's basically
+related to the data
+distribution, so this red SD is
+the standard deviation of that
+sampling distribution or
+standard error.  We can look at
+the data distribution and the
+standard deviation, decide by
+the square root of N, number of
+samples.  But nobody really
+understands this.  It's not
+broader audiences.  And even
+statisticians struggle with
+this.  People don't understand
+how sample size relates to
+variance.  So this distribution,
+tell them that's what they
+seeing.  Maybe they're seeing
+the data distribution.  You tell
+them it's the sampling
+distribution, it does not
+compute at all.
+Okay.  So if I were going to
+summarize the static aggregate
+distribution plots, they are the
+folk music of uncertainty
+visualization.  I mean this in
+the most scientific kind of way.
+I have some folk music to listen
+to.  Let's see what this means.
+>> How many times -- and pretend
+that he just doesn't see.
+>> The answer my friend is
+blowing in the wind.  The answer
+is blowing in the wind.
+>> Okay.  So why do I say this?
+The folk music of uncertainty.
+For one, folk music has
+complicated abstract lyrics.
+Lots of metaphors.  Nobody
+really knows what the song is
+about.  They argue, about
+politics?  Drugs?  We don't
+know.  And similarly static
+aggregate distribution plots,
+like error bars, represent
+something complicated, abstract.
+People don't know what they're
+looking at.  Folk music is
+unplugged, so they could have
+used technology, amplifiers,
+synthesizers, and chose not to.
+And similarly static aggregate
+distribution plots don't make
+use of animation to help us
+convey uncertainty to people.
+Finally, folk music, the lyrics
+often raise questions and don't
+answer them.  And similarly,
+with error bars on
+visualizations, there are
+questions we want to answer and
+can't.  It's frustrating.  So I
+think this last point is really
+important.  So to me
+visualization is about
+comparisons.  So we want to put
+the data in front of people in a
+way that they can accurately
+compare the values.  In
+visualization research we care
+about graphical perception
+studies.  What is the most
+accurate encoding?  Exposition?
+Et cetera?  We compare about
+comparisons and differences.
+And the problem is that when we
+put a visualization.  A bar
+chart with error bars, they want
+to look at the differences and
+ask themselves if they're
+reliable?  Likely to repeat if
+they do the study again?  But
+they can't make that judgment.
+For instance, I did an
+experiment, looking at blood
+pressure drugs or new drugs.
+And the treatment group, and the
+regular group.  It's uncertain,
+I have a limited number of
+people.  I want my readers to
+say what's the probability that
+this will repeat if I reran the
+study?  Or an effect of 10%
+points?  Nobody can answer that
+easily.
+We might think people are
+rational, right?  So they know
+they can't use the visualization
+to make judgments of liability.
+They're smart, look at other
+statistics, you know,
+significance testing which has
+problems of its own.
+But that's actually not what
+people do.  What they do is use
+the chart anyway.  Because they
+can still make a judgment with
+it.  So this has led Daniel
+Kahneman when called upon to
+judge product probability, they
+judge something else.  What are
+they judging with error bars and
+trying to judge reliability?
+Might be judging how much they
+like the authors of the study.
+How reliable thing it is.  When
+I have done studies to see how
+people interpret error bars,
+they look at the difference in
+the means, or the difference in
+bar heights, regardless of the
+uncertainty.  So they'll say,
+oh, a big difference has to be
+reliable, regardless.  And a
+small difference is always
+reliable.
+So this does not always work.
+But they're using a heuristic,
+it's a mental shortcut, people
+use it when thinking about
+uncertainties and probabilities.
+They don't know how to answer
+the question, so they use other
+information.  And heuristics
+help us reduce complexity, we
+can answer questions more
+easily.  But we use them so
+often and they're too familiar
+that we end up being confident
+even though we're using these
+flawed sort of mental short
+cuts.  And I think to people
+visualizing uncertainty, this is
+scary.  What it means we can put
+a crappy uncertainty
+visualization in front of
+someone, they don't know how to
+interpret it, but they do anyway
+and feel confident.  So that's
+not a good thing.
+So what can help us?  So we see
+there's all these limitations of
+static aggregate distribution
+plots and uncertainty in
+general.  So what's the answer?
+So one thing I have been
+thinking about, which I think is
+one path that could potentially
+help is to sort of step away
+from conventions of modeling
+uncertainty and how we tend to
+think about it and graph it in
+statistics.  And instead think
+about how we experience
+uncertainty and uncertain events
+in our everyday lives.
+So, for instance, maybe I take a
+bus home from work every day.
+And so every day I'm sort of
+waiting for the bus and I get a
+sense of, you know, when it's
+going to arrive.  And how that
+compares to its scheduled
+arrival times.  So maybe five
+out of ten times, within one
+minute of scheduled time.  Maybe
+another three out of ten, two to
+three minutes late, two out of
+ten it's really late, et cetera.
+So I'm building a probability
+distribution in my head.
+But it does not feel like that.
+It's just a sense of expectation
+that I get from observing things
+over time.  And this has led
+Laplace to say the theory of
+probability basically just
+common sense reduced to
+calculus.
+How can we draw on this with
+uncertainty.  How can we show
+uncertainty in a way that
+matches the way people are used
+to experiencing it?  One thing I
+showed briefly earlier, what I
+would call an experience-based
+uncertainty visualization.
+Showing someone what it looks
+like.  This is an example from
+the New York Times.  We wanted
+to communicate to people how the
+jobs report, an interpretation
+of employment and job growth
+rates can be highly sensitive to
+variations in the month cans
+preceding when the report was
+written.  What we care about is
+the overall annual job growth
+rates.  But we can write reports
+that are very sensitive to sort
+of what happened the last two
+months.
+So to shows to the user, they
+have headlines that could occur
+from the exact same annual rate
+depending on local variation.
+And then at bottom, graphs.  We
+see on the far left sort of what
+we might expect if the job
+growth rate was actually
+studied.  But this is sort of
+hypothetical.  We would never
+see this.  This is the case
+where there's no random
+variation.  But next to that, we
+see the steady growth rate, what
+it looks like with random
+variations.  I could have a
+steady growth rate and this is
+what I would see.  There's a lot
+of variation.
+And next to that, showing on the
+right side, what it would be if
+it was accelerating, without
+random variation, and next to
+that, what happens with random
+variation.  People can suddenly
+watch randomness play out in the
+data they have and see, okay,
+these are other possible
+outcomes.
+Another thing I like about these
+types of visualizations is that
+we can, as designers, build in
+or build on people's natural
+associations with randomness.
+People do have experiences with
+randomness through things like
+coin flips and gambling.  And so
+we can sort of build this in and
+give them sort of a fun
+experience with uncertainty.  So
+this is from the New York Times
+also, and they're using roulette
+wheels to show you in a way that
+you can play again and again
+what the outcomes could be for
+states -- for different states
+for the election.
+Finally I think these types of
+visualizations that are showing
+you sort of individual samples,
+possible values, are better at
+showing the process.  And in
+that way better at communicating
+what a probability distribution
+actually is.  So I think
+actually Nicky Case showed this
+from Nathan Yau, but the
+probability of living to the
+next year, disparate outcomes
+based on gender and age and
+building up the histogram as it
+goes, so people have a better
+understanding of what it stands
+for.
+And I think most importantly, if
+we show uncertainty as sort of
+sets of possible values, actual
+possible outcome welcomes people
+can suddenly have a chance at
+answering questions about how
+reliable differences in the data
+are.
+So we know this is hard with
+error bars.  But imagine that
+I'm showing sort of just a set
+of outcomes.  So suddenly
+someone could watch this over
+time and say, oh, I think, you
+know, about, you know, 70% of
+the time the treatment's going
+to have a lower value than the
+control.  And they can get even
+more precise.  Perhaps with
+interactive help, look for
+things like how much there's an
+effect of a given size or more.
+Another cool thing, you can show
+joint probabilities with these
+sample-based plots.  You can not
+show with the static aggregate
+plot.  So imagine in one
+possible world I run my study of
+the blood pressure drug, and
+I've done it as a between
+subject study.  So different
+people in the control and
+treatment.  But then in another
+world I decided I wanted to run
+it as an in-subjects study.
+Suddenly I have the same people
+in the control and the
+treatment, doing both in
+randomized orders.  The sample
+plots will show, you can't see
+from other visualizations, when
+you have or correlations between
+variables.  When the control
+goes up, the treatment goes up
+as well.  Same, vice versa,
+that's the same person.  There's
+correlation there.  And I can
+suddenly see that.
+So what this is leading up to
+really is this thought that I
+have, the experiencable
+uncertainty visualizations that
+show possible values is the
+disco funk of uncertainties.  So
+let's think about what that
+means.
+>> Okay.  So I think you get the
+point.  So why do I say this.
+When you go to a discotheque or
+a rave, you want to feel it on a
+sensory level.  You want your
+organs to vibrate.  And these
+experiencable visualizations are
+showing an uncertainty in the
+way that it becomes a perceptual
+experience.  Frequency over
+time, which is something we can
+relate to.  Disco-funk uses a
+lot of technology, a lot of
+synthesizers, DJs mixing the
+same songs over and over with
+different sound effects.  And
+these allow us to use animation
+and interactivity.  We're just
+beginning, really, to explore
+sort of how we can use
+interactivity to set up the
+conversation between the user
+and the uncertainty in the data.
+Finally, anyone can get into
+disco-funk.  You don't have to
+know the history of that music
+to enjoy it.  There's a low
+barrier to entry, and the same
+is true of the experiencable
+uncertainty visualizations.
+People can understand randomness
+without a statistics background.
+I want to spend the last five
+minutes talking about how we can
+create these things.  There's a
+general formula.  And I want to
+show you really that you could
+do this for different types of
+data.  And for different types
+of visualizations.
+So there's sort of three steps.
+So first step, you want to
+generate from your data these
+hypothetical outcomes or
+samples.  And the goal here is
+we want to generate these
+samples in such a way that they
+are representative.  So if we
+were to rerun our measurement
+process, our data collection
+process, we could have gotten
+these other values.  So they're
+plausible and representative.
+So how do we do that?  Well, we
+can do that in a few ways.
+Imagine we have our data set.
+Where we have our control and
+treatment for the blood pressure
+study.  One thing we could do is
+look at the distributions we
+have in our actual data and
+sample from those distributions.
+So maybe I find that my control
+and treatment are both normally
+distributed.  And they have a
+given mean.  So control has one
+mean and one standard deviation,
+treatment has another.
+And then I just sample over and
+over from distributions that are
+set to those parameters.
+Another way that I can do it
+even better, because I don't
+have to assume what kind of
+distributions I have is to use
+bootstrap, resampling with
+replacement from the original
+data set.  And Amelia talked
+about this as well.  Nice thing
+about bootstrapping, there's
+ways to do it for almost any
+type of data.  There's a lot of
+literature, books online, and
+Google it.  And what type of
+data you have, you can find
+guidance.
+And take the hypothetical
+samples, make a lot.  A thousand
+would be great.  And visualize
+them.  They become separate
+frames in a visualization.  To
+do this, make sure you can
+compare the frames one to
+another pretty easily.  So in
+most cases that's pretty easy.
+In some cases it's trickier,
+depending on what sort of
+visualizations you're using.
+But sort of an example of why we
+need to do this would be to
+imagine that I have these bar
+charts where I'm showing the
+data using height of bar.  But I
+have different Y axis ranges on
+every bar chart.  That's hard
+for people to compare.  It's not
+easy at all.
+So we want to make sure that
+those mappings are the same.  Or
+are functions that set the
+scales, et cetera, are the same.
+Finally, we present them.  And
+you can do this in many ways.
+And we're just starting to
+explore how to do it, you can is
+ring it down, you can show a
+lot.  And animation, and tons of
+possibilities for animation.
+Pure, one sample at a time, you
+can add the summary marks like
+the mean, et cetera.  You can
+have it aggregate in to show the
+distribution.  You can have it
+be interactive.  So you think
+it's too distracting to have the
+animation, maybe people can
+interact and turn that on when
+they need it.  There's so many
+possibilities here.
+So the last example I want to do
+is to show you that you can
+apply this type of technique to
+any data set, really.  And so I
+thought I would walk through
+this example from the New York
+Times.  So what they wanted to
+show is that we can use poll
+data to predict who's going to
+be in the republican debate.
+So they did this before the
+debate happened.  But they want
+to show how poll results are
+uncertain.  And so how we could
+actually run the same poll over
+and over and we might see
+different people predicted as
+debate candidates.  So they want
+to basically show what happens
+when you have sampling errors.
+Because polls are always based
+on, you know, smaller numbers of
+people than the actual
+population.  So there's error
+there.  So how do they do it?
+So they're doing this all in
+JavaScript.  I looked at the
+code.  They're simulating many
+polls and showing different
+rankings that you get based on
+each poll.
+So what they're going to do is
+start at zero and they're going
+to take the most recent poll
+results from the candidates, the
+different republican candidates.
+So maybe in the recent poll
+Trump had 18%, Bush, 14%, et
+cetera.  And then starting at
+zero, they're going to create a
+bin for the percentage for each
+candidate.  And so, for
+instance, Trump would get zero
+to 18.  Then the next one, build
+on top of that, so Bush gets 18
+to 32, Walker gets 32 to 43, et
+cetera.  So we do this for all
+the candidates and it should sum
+to 100.  And then what we're
+going to do is simulate each
+poll.  Simulate a large number
+of polls a thousand times.  And
+for each poll, decide how big, I
+think 2,000 is a common poll
+number.  So for each of 2,000
+people we're going to simulate,
+just draw a random number
+between 0 and 100, and put it in
+the corresponding bin for
+whatever candidate it falls in.
+The first one goes to Walker,
+the second one goes to Trump, et
+cetera.
+So we do this for 2,000 people,
+we have simulated a poll.  We're
+doing this for many, many polls.
+All we have to do, really, for
+each poll after we have put all
+the people in the bins,
+calculate the new percentage for
+each candidate.  Sort those and
+assign rank.  Sometimes the
+ranks are going to change.  So
+people are going to swap.  So
+we're going to predict different
+people in the debate.  And then
+the last step, visualize it.
+Use something like D3, create a
+function that visualizes a set
+of ranked candidates.
+In order to make it easier to
+compare, we're going to animate
+transitions so people don't have
+to keep track of where each
+candidate was.  They can sort of
+follow just from the transition.
+Okay.  So I think I'm about out
+of time.  So thanks for your
+attention.  If you're interested
+in more on this technique of
+experiencable uncertainty
+visualizations, you can check
+out my Website.  I have also
+written some stuff on the
+interactive data lab blog on
+medium.  So thanks.
+

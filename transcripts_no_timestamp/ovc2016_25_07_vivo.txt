@@ -1,0 +1,722 @@
+>> Welcome to a universe of
+procedural random.  Well, the
+buildings, geometry, the roads,
+the water lines, comes from open
+street map.  Carefully created
+and chopped into tiles.  And now
+with Mapzen.  And then extrude
+on timeline GS, a free map
+engine.  And the rest -- the
+grids, the numbers, the
+patterns.  The tiles.  The
+movement of the camera.  All
+that is constructed in realtime.
+Directly in the graphic card of
+this computer.  There's no
+video.
+The language to program directly
+on the graphic cards is called
+Shaders.  I'm Patricio Gonzalez
+Vivo.  I'm an artist interested
+in landscape.  Here's some of my
+previous work.  And almost two
+years ago I have the privilege
+of working with all these great
+engineers and designers.  I have
+been learning so much.  I feel
+very privileged to be working
+there.
+And it's because everything that
+we do -- oh.  Since when does
+that happen?
+
+thank you for pointing that out.
+So all the things that we do are
+open source.  So pay attention
+to our Website.  We would like
+to help your needs.  We have --
+and you can get an API key for
+free.
+So there I have been working in
+some of these experiments.
+Working with -- from the back
+end to the front end.  And
+working on -- not just doing
+implementations on it, but
+pushing the limits of what
+cartography is.  I'm not a
+cartographer, so I do that.  So
+I'm having a lot of fun doing
+this demos for what we do.
+And trying to add more data to
+that.  So I have been finding
+ways to bring animation and data
+to our maps.  And most of the
+samples that we took here use
+what is called GLSL Shaders.
+Which is the two things I love
+the most.  And what I really
+enjoy about my work.  So what
+are shaders?  Who -- let's do a
+test.  Who knows what a shader
+is?  Great.  This is awesome.
+So I was going to go through a
+small instruction today.  I have
+been working in my free time in
+this book, called the book of
+shaders.  And I'm going to bring
+some of the contents of it into
+the presentation.  So if you
+feel lost, or you want to dig
+deeper, I encourage you to take
+a look at it.
+So this is shader code.  And
+we -- we can start thinking --
+if we take a look at it, you
+will notice that it looks like
+C, yes.  It's a blend of C.  So
+you see your main function
+there.  And then -- and then
+there's -- it's very small.  And
+then you will discover there are
+specific firewalls and things
+happening there.
+So I will try to do a small
+interpretation of what is
+happening here.  And it was
+great that Mariko presented
+that.  Because she was
+explaining about the double
+loop, the double loop to do
+pixel to pixel calculations.
+Actually everything that she
+puts inside that double loop
+goes inside this part.
+So I'm going to go back.  And
+start speaking in metaphors.  So
+I like to think of shaders as a
+press.  They are for graphic
+engineers for me what the word
+press was for authors, for
+books.  They let us free from
+the one single threat that --
+again, thank you for explaining
+that.
+And it has, like, put our work
+in the designing of a page.
+Making an algorithm that will --
+once we have it, create a whole
+page one at a time.  So there is
+no need of writing a letter
+after a letter after a letter to
+make a word.  And then like put
+all the words together in order
+to have a line.  And then the
+lines mix up, and we make the
+page.  Here is all the letters,
+all the words.  Everything in a
+single page.  Happens at once.
+So I have a second method to
+explain that.  I like to use
+this with my students.
+So imagine like a single thread
+as a pipe.  Right?  The
+computers this century, we have
+like -- this year we have a very
+robust computer.  So they are
+designed to do very complicated
+tasks.  And I see a lot of new
+computers.  So you have like
+around four of these big pipes.
+Or cores.
+But for small things, for
+example, computing pixel to
+pixel, that slows down.  She was
+like speaking a lot, you make
+pixel to pixel operations, this
+load on your computer.  Why is
+that?  Because you mentioned
+that deciding a quarter of a
+pixel is a tiny task.  If we
+have a box that's a tiny task,
+and it's very small.  We can
+picture it like a Ping-Pong
+ball, right?  So all this
+computer, and the screen, it's
+like half a million pixels to
+compute.  And the screen running
+at 60 frames per second is
+almost 26 million calculations
+per second.
+Imagine now with one of these
+new, like -- this place and it's
+just at 5 million pixels.  And
+60mHz per second, it's insane.
+We try to do that with a CPU, we
+get a sad CPU.  And we mentioned
+we have this industrial pipe,
+trying to put all the string of
+pixels, Ping-Pong balls, the
+small calculations and they are
+stuck, right?  Right in the
+trans.
+So for everybody here, a new
+computer, engineers have solved
+this problem by using parallel
+computation.  And this is --
+this has been for a while.  Like
+15 years ago.  And the idea of
+it is like to -- like you have
+little tiny little pipes.  Very
+small.  Running parallel.  So
+looking back to our -- the big
+industrial pipe.  These are more
+like -- I don't know -- toilet
+paper tubes.
+So the idea is that this is a
+constant flow of Ping-Pong balls
+that our computers all the time
+are generating.  Will pass
+through them like water in a
+strainer.  Each one going
+through a different pipe, right?
+And to illuminate this metaphor
+that I'm insisting on, imagine
+each one of these tubes as
+something that is less powerful
+of a -- I don't know if some
+people have like the chance of
+programming.  But it's simple.
+You give it a C code.  So
+imagine that you have a table,
+and each one of them is
+controlling one line, one light,
+one like L.E.D. light.  L.E.D.
+light to be more precise.  And
+you have the opportunity to
+flash them all at once, at the
+same time.  And I say flash them
+all, I mean like load a
+framework all at once.
+And also imagine that these --
+all these are doing are not
+enough -- imagine that you have
+one per pixel.  They share some
+resources.  And one of the
+resources they share is the
+memory.  And this specific
+memory is what we call the
+memory of the graphic card.  You
+have heard that when you go to
+buy a computer.  It's completely
+separate from memory.  It's
+images and geometry, mostly.
+So this is my -- this is my
+introduction to what a graphic
+GPU unit is versus a CPU is.  So
+let's jump into the coding part
+of this.
+So be patient with me.  I'm
+going to make this bigger.
+Everybody can see?  Right?  So
+this is an online editor that I
+made for the book.  It's where I
+spend most of my time coding
+examples.  And I want to point
+out to some -- some important
+aspects of this code in order to
+explain what this is.  So this
+is the main function where
+everything happens.  This first
+variable over there is the
+precision of the pixel that is
+running the computation.  So
+each one of these pixels on this
+viewport is running this same
+function.  Here is receives the
+information where it is
+located.
+and here is the variable that we
+will write what is the color of
+that?
+So if you have been paying
+attention, you will know that
+these colors are -- as Mariko
+also noted -- it has four
+values.  But here, instead of
+going from zero to one, to 255,
+it goes from zero to one.  So we
+will say all are normalized
+colors.  So we pass here our
+color.  In this case we are
+passing the position -- sorry --
+the position of the pixel.
+Normalize it.  And the blue
+channel we are putting that
+aside -- the various other
+times.
+So let's do -- let's start
+making something more fun.  So
+I'm going to take this line out.
+Boop.  And in order to do that,
+I'm going to put the coordinates
+in it.  So you will see that now
+the pixels in the top -- in
+the -- this side -- in this side
+are serial.  And when they get
+closer to the other side, they
+get one.  They make this nice
+gradient.  If I change the X by
+the Y, this is going to happen
+from bottom to top.  So now if
+we put two things together, we
+know that the top -- the
+zero/zero position, the top,
+right?
+So let's -- I will do a small
+demo of how to make a shape of
+this.  So I'm going to get the
+dot product of st, which is a
+coding system.  And that's like
+a sphere here.  I want a circle.
+So I know to move the whole
+chording system, that holds the
+position, I'm going to move it
+aside.  So I'm going to put
+these -- so this is --
+And then what I love the most
+about shaders is that the API,
+the language is very small.  And
+it's mostly mathematical.  And
+the code looks very atomic.  And
+also the language comes with
+some useful functions.  And one
+of them is essentially a step.
+So we're going to step from the
+nice gradient, we're going to us
+cult it in 0.5.  So if -- so we
+are like -- in the previous
+step, it was like -- like went
+from black to white.  And here
+we're making a slim cut at one
+specific point.  Let's invert
+this.  And then we have a black
+and white dot on a black.
+And this is where the moment
+when I was like, oh, okay.  I
+buy this thing.  Because this is
+calculated in each one of the
+pixels on the screen, there's
+nothing like a circle.  So if
+you have drawn circles before,
+there's a moment where the
+computer is getting angry and
+sad that you are making so many
+circles.
+But here, because everything is
+per pixel, it's the same if you
+put one or a million.  Let me
+show you that.  So I'm going
+grab this space, I'm going to --
+that means you get only that
+part.  And move it by one first.
+And then I'm going to move it by
+two, three, four, five, ten.
+100.  And the computer -- and
+the framework is constant
+because I'm not in any place
+saying draw one circle.  And
+each one of these pixels is
+getting the coordinates to draw
+a circle.
+And they should be drawing
+something black or white.  I
+hope that makes sense.  I'm
+afraid to go to the screen.
+
+so one more -- another example
+of that.  I'm going to make st.
+I'm going to add st to this y.
+I'm going to use this to -- oh,
+sorry.  Entering over black.  So
+basically I'm making it using
+the combined position of X and
+Y.  So that makes a wave in the
+side.  So let's multiply this by
+a big number.  So I'll move
+it -- too big.  Let's do this
+thing again.  And we have a
+stripe pattern.
+So this technology, it's not
+rare.  It's used a lot in the
+gaming industry because it's
+very cheap to make textures.
+Economically.  And that's what I
+love about this.  And this is
+what I do all day.
+So that brings us to the second
+thing.  Thousand apply this.
+Then the data comes from
+OpenStreetMap, right?  And
+that's vector tiles.  We chop
+from open stream lab into
+vectors.  So basically that's
+like SVGs, right?  Position in
+the screen.  And then we extrude
+them.  Some information in Open-
+StreetMap, the buildings, some
+buildings have height.  And so
+the extra geometry to make that
+extrusion.  And this is
+basically the canvas that I work
+with.
+Once we have this I can apply
+using the same techniques that I
+showed before to any part on
+that.  I have an example here.
+So this is basically the same
+simple patterns of dots and
+lines, but applied into lower
+Manhattan.  And all of this is
+running directly in realtime.
+Or with a little more effort you
+can go in the other direction.
+Something more realistic.  So
+here I'm using random to
+generate some -- two lights --
+squares in some parts and not
+another.  To generate the
+illusion that these are windows.
+New York doesn't look like that,
+really.  It's more like a
+Gotham.
+So I have the privilege of
+working on this project, tangram
+play.  I like making these
+things, we are coders.  And we
+are lazy.  And sometimes it
+takes -- when something takes
+you too much to do something,
+you feel like thinking, okay.
+Make this go faster.  So I was
+using it, and I wanted to start
+making an online tool.  So the
+files we use for Tangram.  So I
+put together, and then Lou
+joined the team with Mapzen.
+He's an UI engineer.  He took
+Tangram to the next level.  He
+also referred to it like you
+have this baby.
+So here -- so here we have
+Tangram play.  Encourage you to
+take a look.  You have a lot of
+examples that you can look at.
+But I don't want to overwhelm
+you with a lot of things.
+So I want to explain a little
+bit what's happening here.  So
+most of you have worked with
+maps before.  And this is very
+similar to those.  Specifically
+something that this is how you
+take the data, how to process
+it, and how to display it.  So
+here we defined our source.  Or
+sources.  And Mapzen vector
+tile.
+And then those vectors come --
+that have different layers
+inside them.  And I'm deciding
+which goes where.  So, for
+example, we can change the --
+blue, that's right.
+In this case, for example, in
+the building, which is out of
+stream, because -- in the
+building I'm defining a
+custom -- a custom style called
+buildings.
+And here is where the magic
+starts.  And when I -- and my
+job is so satisfying.  Is that
+Tangram lets you -- gives you
+some space to access the
+pipeline -- the WebGL pipeline.
+Specifically to -- you can
+inject a shader code into the
+pipeline.  So here you can see
+how the buildings, the style, a
+new line inside the shader.
+Which basically adds this nice
+gradient between the bottom of
+the building to the top.
+So I amend these out, you can
+see the solid buildings.  Let's
+make happy buildings.  I feel a
+little Bob Ross today.
+
+so I -- how would we do this?  I
+will mix two colors.  I want to
+go for red.  To blue.  Again,
+crazy art of creativity.  And
+then we see the gradient goes
+from blue to red, right?  And we
+can add some animation to that.
+So let's say -- let's turn the
+animated on.  And then use time
+to move this.  Up.  So it will
+add time.  And because times go
+differently, I'm going to make
+this right now.  Let's make it
+fract.  I have to play around
+with this.  Now we have a happy,
+flashing building.
+I leave the rest for the
+exposition people.  Hope you are
+getting excited right now.
+So -- so now comes the data
+equation.  On the maps.  Not
+hard data, but what to put in
+it.  So this is something that I
+have been working on.  Some work
+I have been doing.
+But first I want to speak about
+sufficiency.  So when you have
+an engine, it's a WebGL and you
+go on, from the engine part of
+you, what you want to avoid, to
+heat the server too much.  The
+driver too much.  Imagine you
+have the CPU.  We describe that.
+And I present this -- the GPU in
+a bottle.  You don't want things
+to be sending constantly.  Like
+making ships in a bottle, you
+want to put all your stuff in
+the bottle and just move things
+around in it.  Because otherwise
+it will not go into -- it will
+not work.
+And also I make reference to how
+the graphic card is really has
+some resources inside it.  So it
+has the ability to store the
+geometry, which is going to be
+the map.  Something else I'm
+going show you.  And images.
+And this is useful in graphs and
+videos.  Right?  You put the
+texture and all that.
+So for this project I was
+working at the end of last year
+called line of sight.  I want to
+visualize in realtime the -- all
+the satellites that were
+present.  This is only a subset,
+right that?  That I made.
+And, yes, it's a lot -- I can
+show what it is -- this takes
+longer to load.  Or -- yes.  So
+now we have all the satellites
+available.  And imagine --
+imagine this.  While I do this.
+And each one of them you have to
+predict where it's going to be.
+This is a prediction of where
+it's going to be -- that
+satellite -- in the next hour.
+So it's around 15,000 satellites
+that has to be visualized with
+precision.  So that's a lot of
+points.  And a lot of things to
+be doing to be passing
+information from one point to
+another one.
+So I was thinking a lot about
+how to solve this problem.  And
+I came back -- I came up with a
+technique that's very well known
+in the gaming industry.  Which
+is encode the data.
+So this is -- so you need 24
+frames per second, right?  To
+make something smooth.  I have
+1500 of the satellites.  That's
+around 36 calls a second.  If
+you want to animate all these
+satellites which, again, is a
+lot.  And this has to run in a
+browser.  It's kind of I think
+too much for a browser.  So the
+decision was to put the
+information, to use the memory
+that the graphic card has.
+Assign it to whole images to
+store all the data.
+So if I parked -- and imagine
+that this image is like a piano
+row, right?  If we put all the
+information of all the
+satellites in an image and we
+pass it inside the bottle.  And
+all the information is right
+there.  So this is how the image
+looks.
+And it's very interesting.  So
+each satellite will look in one
+specific row.  And then you will
+know that the latitude is at the
+beginning and then the -- the
+longitude is the beginning of
+the line, and then the second
+half of the axis is going to
+find the latitude.  Each
+satellite knows, it's reading
+for a moment and moving the
+header away.  Does that make
+sense?  Yeah.  Good.
+And that I was very happy also
+to see that saves a lot of
+memory.  So here the same JSON
+file that holds the same
+information is around 20
+megabytes, while the information
+of that is only 2 megabytes.
+Efficiently.
+So how the satellite knows where
+to see?  Well, I'm using color,
+again, to encode information.
+And I wanted to put some little
+bits of information.  So this is
+some JavaScript that you can put
+in the file.  And here I'm using
+the red channel and the green
+channel to encode -- to encode
+an ID of that satellite.  And
+I'm letting the blue channel to
+see if that is hovered or not.
+If it's selected or not.
+Then in the share part I have
+these nice functions that
+according to the color of the
+satellite, it will search for a
+specific place.  So it's a way
+to trick the graphic card.  To
+pass information through.
+And what I like about this is,
+like, it's kind of -- kind of
+the same way -- when taken this
+way, it's how we know about the
+composition of the stars.  It's
+been done before, like analyzing
+the color of something.
+Analyzing the color.  Getting
+all this extra information about
+this distant thing.  It's a nice
+analogy between a way of, like,
+reconstituting these two units,
+the CPU and the GPU.
+So how about one more example?
+Which is -- I kind of put it
+together for this talk.  So who
+here has a weather map?
+Because -- there's a very famous
+one, and I know that -- yeah.
+Thank you.
+
+so I said, okay.  This is an
+OpenVis Conference, I it to do
+better, make something they
+enjoy.  Don't judge me.  This is
+my first one with the data.  So
+I set up my file in my desktop
+to be going to the servers every
+day and collecting the last 24
+hours of data in wind and
+temperature data.
+So that's around 1700 stations.
+For the last 40 days.  That's
+around 960 hours.  That's almost
+1.5 million samples, right?
+And I'm going to -- I'm storing
+the temperature of each station
+in the red channel.  And the
+green, the wind speed.  Into the
+blue channel the wind direction.
+And in the server this image is
+building up.  So I actually --
+let's get out of the
+presentation mode.  I will pass
+all the information about this.
+But if you come here, you can
+see the image -- actually you
+have access to the image itself.
+And it makes the pull request.
+So this is helping working.  So
+this information -- this image
+is building up.  And now I made
+a small -- what it does is
+visualize the map.  I know what
+you're thinking.  I'm using rain
+bow gradient.  I'm looking
+everybody in the eye.
+
+so what is happening here is we
+have all this weather stations,
+all that information is passed
+directly to the graphic card.
+The graphic card has all the
+information for all these
+weather stations.  So the
+animation can go very smoothly.
+And I only need -- if I want to
+add some interaction to this, I
+only need to pass the offset by
+you from the moments.  So I
+think from a distance you can
+see better.
+I added some features -- some
+cues.  If you click one of the
+stations, it will give you the
+data and how the data looks in
+the image.  So here you can see
+the speed, wind direction, the
+speed of the wind, the
+temperature, changing over time.
+And being interpolated in
+realtime.  So this is -- I think
+this is an important argument of
+how it is different from other
+fields and can be very
+beneficial.  Also I found very
+much interesting this image by
+itself.
+I had the chance to travel the
+last few weeks, and we went in
+Virginia with my wife.  I think
+in this -- here.  No.  In this
+red spot here.  Which means
+there was more red, which was
+kind of nicer days.  There were
+more warm days you can see here,
+the bluish days, bluish/greenish
+days.  And how the last days
+have been better and better.
+Also, it's very interesting to
+see that there are some places
+that never get cold.  I guess
+that's Alaska?
+It's always cold there.  So
+here's the link to this.  Feel
+free to play with it.  Here's
+the link to this presentation.
+Any questions that you want to
+ask, I will be glad to reply.  I
+will be around.  I want to thank
+so much everybody for going to
+this.  Thank you for dealing
+with my accent.  And thank you
+Bocoup for inviting me.  All
+done.
+

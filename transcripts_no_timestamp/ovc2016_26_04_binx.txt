@@ -1,0 +1,746 @@
+>> Hey!  Okay.  Hi, everyone.
+I'm Rachel Binx.  So a little
+bit about myself before I get
+into my talk.  I have been in
+data visualization for a while.
+I got my start in design, and
+then I was doing freelancing for
+a while.  And then up until
+recently.  That brings us to
+JPL.  So JPL is one of the NASA
+centers.  They are responsible
+for most of the sort of -- let's
+see -- out past earth
+spacecrafts.  That sort of
+thing.  So basically you could
+say that what my job was datavis
+for space rockets.  That was
+pitched to me, duh, I have to
+get into that.
+What I was visualizing was
+telemetry, the term for data
+that is transmitted.  Over the
+course of my time there, I
+worked with four different
+missions.  There's SMAP, an
+earth orbiter, dealing with
+climate data, Cassini, around
+Saturn, Dawn, in the asteroid
+belt, and Curiosity, the rover
+on Mars.
+So basically when I was being
+asked to come work there the
+pitch was basically that
+Elasticsearch had just come to
+JPL.  And it was this new
+exciting thing.  And suddenly it
+was fast and we could return
+data fast.  So once they had
+that in place, they needed
+something with D3.  It was like,
+what will you come up with?
+
+And you know I was really
+excited.  Yeah, I'm going to
+NASA, I'm going to make cool
+visualizations.  Everyone loves
+NASA, right?  I was really
+stoked.
+And, you know, it's funny, over
+the period of time that I was
+working there, some friends of
+mine in the visualization work,
+oh, man, what are you working on
+at NASA?  And, you know, the
+answer was like, well, I'm doing
+data, I'm making line charts.
+And you know, their face would
+kind of fall.  Oh, you're doing
+line charts.  And, you know,
+yeah.  That's like time series
+data.  That's what you need to
+look at it.
+But -- here we go.  So the thing
+is that, you know, you can see
+that there's just like this, you
+know, D3 SVG line, but all these
+other things going on in the
+chart, I can't show you, it's
+all controlled.  But all of
+these features that we built
+into this glorious line chart
+that unfortunately to you just
+kind of looks like this.  And so
+I was putting together this
+talk, I was kind of thinking,
+you know, like what to include,
+what to talk about.
+And this sort of gets into the
+same sort of debate about UI
+versus UX.  But it's the debate
+of what is important enough to
+be called like the
+visualization?  What do we
+include?  So I figured I might
+show you the charts in context.
+So this is what it looks like.
+And I bet that most of you sort
+of zoomed in and focused on that
+chart area.  I would do the same
+thing.  You're kind of looking
+at it, she's got bars in there,
+mostly a line chart, SVG axis,
+we're good.  Now, the thing you
+probably didn't look at is this.
+And what you can't possibly know
+is that this took several weeks
+to develop in both research and
+testing, prototypes, and, you
+know, putting it in front of
+users and saying, does this
+actually convey what it needs?
+We have time bookmarks.  And
+this varied by mission.
+Different missions wanted to
+look at different chunks of
+time.  They wanted to look
+either from most recent time or
+from the end time.  You've got
+your start and your end text
+boxes that has UTC day of year
+in the time formatting.  And
+below, this time slider, you can
+be dragging to zoom in on the
+graph.
+What you couldn't possibly see,
+also, is that that little
+calendar icon opens up this date
+picker.  You'll notice that
+there's both the date and the
+day of year in this day picker
+as well as the week number on
+the side.  Now, this seems like
+a small, minor detail, but when
+we were showing this to the
+missions, it's actually opening
+this that really got people's
+attention.  They're like, oh.
+Oh, my god, I should use this.
+Because right now their current
+process is to print out a
+calendar for each year, pin it
+up to the side of the cubicle,
+and to convert, date and day of
+year, even having this, they can
+click on something and quickly
+go to the date-time they
+actually wanted was saving them
+precious seconds.  So People got
+really excited about that.
+And so I wanted to address for a
+bit before I get into the meat
+of my talk kind of what we talk
+about when we talk about
+visualization.  What gets to
+count?  For and to get into this
+I want to talk about the sort of
+design and art spectrum.  And
+there are many different
+definitions for this.  And I
+think, you know, we all have our
+own.  One of my favorites is
+that design solves problems
+while it creates them.  This is
+sort of cute and pithy, and like
+everything pithy, sort of
+generalizes.
+But sort of a more general
+definition that I'd like to
+propose for this talk is that
+art is sort of about taking your
+own experience, or your own
+thoughts, and kind of projecting
+it out into the world.  Hey, you
+should think about this too.
+Design, in contrast, is about
+taking the perspectives of many
+other people and synthesizing
+them.  Okay how can I build
+something that many people
+understand and know how to use.
+And that will be clearly
+communicating my data?
+I think that we like to have
+data visualizations situated
+halfway between.  It's a happy
+medium, take data, this cold,
+sterile thing, and I get to
+apply some creativity to it.
+Voila, data visualization.
+I'd argue, however, that it's
+much more like this.  The data
+visualization is, you know,
+really a subset of design and
+should be treated as such.  Now,
+this isn't to say that, you
+know, art is meaningless or
+something.  And if you're sad
+about that, lucky for you,
+there's a nice little term, data
+art.  This is not to belittle
+any sort of art or side projects
+or anything that you might do
+with data, I do this in my spare
+time.  But for the purposes of
+data visualization in what we
+are being hired to do as data
+visualizers, I would argue that
+it's basically design.
+Data visualization is not your
+creative outlet.  It's not your
+free expression.  It's not your
+time to just, I don't know, put
+stuff on a page.  Data
+visualization is making downtown
+understandable and making an
+interface that people can
+actually use and get value out
+of
+So at this point you might be
+thinking, Rachel, what if you
+just didn't try hard enough?
+What if you were just sad you
+went to JPL, thought you were
+going to do all this stuff and
+just did line charts.  That's a
+valid point, maybe I'm just
+bitter.  So the answer that I
+have to that is that when we
+were building all of these
+tools, we were doing it with
+user-centered design.  And I
+bring this up, it was the first
+time in my data visualization
+career that I was really able to
+take advantage of this.  Both in
+that the entire user base of the
+tool was at the same campus as
+me.  And also I was working
+within a human interfaces design
+group.
+Now, if in contrast, this was my
+process for data visualization.
+Yeah, I get the data, put it on
+the page.  Build the thing to
+show off the cool thing you
+found in the data.  It's done.
+And I bring this up to say that,
+like, I've spent actually most
+of my career kind of in this
+haphazard methodology.  And I
+still remember one of the first
+talks I gave, I was showing
+Twitter visualization, showing
+the animation and all that.  And
+one of the questions afterwards
+was like, oh, how do you know
+that the visualization that you
+have built is understandable?
+And I was like, well -- and I
+think at the time I was like,
+oh, there's no possible way I
+could have done research because
+it was two weeks.  Wrote it off.
+Afterward, I was like what if I
+have been building terrible
+visualizations and no one knows
+and I think they look cool and
+just kind of left it at that?
+So one of the wonderful things
+about working at JPL was being
+able to have -- you know, taking
+advantage of these more
+traditional design processes.
+Which is something that I think
+that data visualization as a
+field could stand to take a page
+out of the design book.  We're
+able to do research, we're able
+to, you know, come up with
+interfaces, draw them on paper,
+put them in front of people.
+Test them.  Does this actually
+so your needs?  Job shadowing,
+how do you actually use your
+data?  What kinds of things
+could we help you with?  Like
+what could we build?
+So for the rest of this talk I
+would like to take you through
+two features that we built,
+without showing what we actually
+made.  But before then I have to
+teach you how spacecrafts work.
+So hope you don't mind.  Wear
+going to do a little telemetry
+101.  So there are three main
+types of data, EHAs, EVRs,
+and data products.  EHAs are a
+stream of numbers.  You might
+have a temperature of a
+component.  So it's sampled
+about every 30 seconds.  For
+some graphs.  And then there's a
+way to encode states of
+information.  So you might have
+like on or off as zero and one.
+And that gets transmitted over
+radio waves and decoded on the
+ground.
+Secondly, there are EVRs,
+event records, basically a print
+statement.  So for EVRs you
+have some logic in how the
+spacecraft is operating.  And
+when certain triggers happen,
+then you get this constant log
+coming out with your statement.
+The third is data products, sort
+of a cop out, everything else.
+Might involve pictures.  More
+highly-sampled bits of data.
+But for the purposes of today,
+focus on EHAs, numbers, and
+EVRs, which are words.
+And that's it.  See?  You have
+learned everything you need to
+know about spacecrafts.
+
+Okay.  So to put this in
+context.  Cassini has a couple
+thousand channels, a couple
+thousand EHA channels.  And they
+are too old to have EVRs.
+Which is a funny thing, Cassini,
+launched in '87, too old to have
+print statements.  They have
+been doing this only with these
+channels and comparing the
+different spaces of the
+spacecraft, they decode, and
+they do that.  It's insane to
+me.  Voyager has about a hundred
+channels, most have not changed
+a value in the last three years.
+Dawn has -- I don't know.  A
+couple thousand channels and
+they get about a hundred EVRs
+a week.  So for Dawn every
+single EVR is a pretty important
+thing they need to know about.
+The start of a maneuver, the
+location of a maneuver.  So they
+take those, you know, there's a
+lot of weight in those.  Dawn
+also gets a down link.  When the
+data comes back.  Once a week.
+So once a week everyone gets all
+the data and then looks at it.
+And then if anything goes wrong,
+you know, they start working on
+a plan and then send on the data
+on the uplink.  SMAP, however,
+an earth orbiter, in
+near-constant communication with
+the earth.
+It has 25,000 channels and they
+get about 25,000 EVRs a day.
+So it's just this stream of
+text.  And I've watched people
+sit there mostly when they're
+like really stressed out in
+crisis mode and just watched
+these EVRs go down the page.
+I don't know.  It's insane to
+watch just that volume of data
+coming through.
+The Curiosity rover has 25,000
+channels and about 30,000
+EVRs.  Curiosity does a down
+link about every seven hours.
+So there's a lot of data coming
+back from these spacecrafts.
+And there's also a different
+cadence on how often people are
+getting data, how often they
+need to look at it, and how much
+time they need to create the
+plan for the next day.
+Curiosity currently has a
+20-hour sort of planning cycle
+where they get the data, they
+analyze it, if anything is
+wrong, go and fix it.  If not,
+make the plan for the next day.
+Plan, for example, in this case
+would be like, okay, we want to
+drive to that rock to drill.
+We're going to make a route
+according to the rocks in the
+middle.  Try to drive.  If we
+complete our drive for the day,
+then do the next little leg.  If
+not, then we're going to
+reroute.  It's very complicated.
+And there's hundreds of people
+around the world working on that
+one specific rover.
+Okay.  So case study number one.
+So there was this concept called
+the gumball that was there when
+I came to JPL.  This was
+pioneered on SMAP and Curiosity
+which are both the more active
+missions, getting the down link
+daily several times a day.
+So what is situational
+awareness?  Basically this.
+You're driving and you have to
+look over, but you're still
+driving, you need to get the
+data, keeping your eyes on the
+road.  It's hard.  You want to
+bubble up information, but not
+overwhelm people by how much
+you're bubbling up.  The gumball
+is basically this renamed
+stoplight idea.  There's green,
+everything is good, yellow
+alarms and red alarms.
+And your data gets situated
+among those.  Most of these
+gumballs were roll-ups for
+different subsystems.  So you
+might have the
+telecommunications subsystem
+would pick a couple different
+channels, maybe ten or so, and
+set thresholds for what the
+value should be.  Sum those up
+together, and they're all good,
+and you get green.  As soon as
+one fails, yellow and red.
+There's yellow and red alarm
+thresholds for every channel.
+So you night be thinking, wow,
+that doesn't seem like that
+would be that useful.  It's just
+that it's roll out that seems
+insufficient.
+So when we came in, we're like,
+okay, we're going to make the
+coolest stoplight ever.  We're
+going to redesign this gumball
+and have so much more
+information.  We did.  We went
+out and did user research.  Do
+you like this, no, I don't.  Why
+don't you like it?  Well, you
+know, it's very simplistic.  You
+know, if everything is okay, you
+know, that's good for right now.
+But is it trending towards
+something more dangerous?  You
+know, if something went wrong,
+how do I quickly find out what
+went wrong.  They called it the
+idiot lights.  Something is
+wrong.  I'm disempowered,
+something is wrong, but I don't
+know what it is.
+So this is the proposed design
+that we came up with.  This is
+for SMAP.  This is the nine
+different subsystems.  And each
+subsystem is this, you know,
+sort of rectangle.  And then
+they have chosen their channels
+and you have your channels that
+are like a value range like
+temperature, you know, has this
+bar slider showing where in the
+range it is.
+And then ones that are
+bullion, that should be like a
+certain value or, you know, a
+certain limited set of values,
+those are the solid colors.  So
+green, everything's all good.
+And you see some yellow --
+mostly the bullions that aren't
+working.  But there's also some
+of the ranges that have been
+exceeded.  The super-dense one
+is thermal.  They keep track of
+lots of things.
+And so we showed this to people
+and we're like, hey, look at
+this.  Now you know where all
+the values are, you know, within
+each range.  Isn't this so much
+better?  And, you know, people
+kept saying like, oh, yeah.  I
+guess that's better.  But really
+what we had built was more like
+this.
+We're suddenly just overwhelming
+people with information.  Okay,
+there's all this stuff going on.
+And you don't know if that's the
+information that you want to be
+looking at that particular
+moment.  At the end of the day
+we realized this is all people
+want.  Like they want to just
+have something quickly saying,
+hey, everything's fine.
+Now, once it's not fine, oh,
+yeah, then they want like all
+that stuff, you know, like top
+of the information on the
+screen, they want to know
+exactly which channels are in
+alarm, the graphs quickly, but
+until that point they just want
+this.
+Case study number two.  Would be
+these event records.  So I
+mentioned the EVRs, those
+console log statements.  And I
+was sort of picking this
+background image to be funny.
+But this is actually what most
+people were doing with these
+event records.  They were
+graphing through some amount of
+time and then trying to find the
+event records that corresponded
+to the subsystem that they
+needed to look at.  Which, you
+know, is very functional but is,
+you know, it's hard to know
+what's there if you don't know
+what you're looking for.
+So just to show you, this is a
+table that we built.  This is
+basically duplicating the
+existing tools that they have
+right now.  So you have your
+different level.  There's seven
+different levels.  There's three
+warnings.  Warning low, warning
+high, fatal, and then four,
+activity high, activity load,
+diagnostic command.  So you can
+see how there's sort of this
+information.  It's very
+text-based, and there's also a
+time.
+SKET is the time component.  Fun
+fact, spacecrafts keep track of
+three time, spacecraft time, and
+spacecraft clock time.  It's an
+incremental number.  And the
+funny thing is the space network
+that processes the data chops
+off the millisecond.  If
+something happens in the same
+second, you have to look at the
+clock time to actually correctly
+order your event records.  Time,
+it's really hard.
+So basically what people are
+doing right now, they have this
+text box, filtering down.  And
+then when they found something
+that they wanted to look at,
+they wanted to examine, okay,
+this is an entitle record that I
+need to look into further, this
+is what they would do.  They
+would write it down.  Write the
+time stamp down on a piece of
+paper and then do to their graph
+program, type in that time stamp
+and pull it up which, wow.  So
+everyone efficient.  That's
+something we wanted to improve
+on.
+Now I know that this just looks
+like a simple histogram to you,
+it is a simple histogram, but
+this is the piece de resistance
+in what we were building.  And
+Elasticsearch gave us the nice
+robots, the buckets in the types
+of EVRs coming down.  We saw
+that, put in a bar chart, sure.
+Pulled that up on the screen and
+showed people.  Hey, is this
+interesting?  And the people
+were like, oh, my god.
+Because they had never seen
+their data like this before.  If
+all you have ever seen is a
+table, you know, actually seeing
+this, like, oh, there's a
+cadence and frequency to my
+event records?  What?
+Which, I mean, it really
+shouldn't be mind-blowing, but
+it is because you're limited by
+the tools that you have access
+to at that time.  And suddenly
+you can see that, oh, daily,
+there's -- when we upload all
+the commands and diagnostics and
+starts the new cycle, yeah,
+there's a spike.  And people
+didn't know that before.
+So we built this -- and I'll
+show you what it looks like in
+context.  And the other part of
+that histogram is that we use
+that as sort of a filtering with
+method.  So you could deselect
+types you didn't want to see.
+It also had, you know, a nice
+brush so you could zoom in on a
+period of time that was
+interesting to you and filter
+down quickly in your table to
+the event records that you
+wanted to see.
+And so a lot of what we wound up
+doing in this project is, you
+know, sort of cross-pollinating
+these different data types that
+had previously been very siloed.
+That people had to look -- graph
+through event records and go to
+another graphing program that
+literally took minutes to create
+a graph.  And then we had a nice
+web interface, these were
+returning in seconds.  The best
+part of working on this project
+was getting people to think of
+the event records as points in
+time.  We built ways to show
+event records on the graph.  You
+could quickly jump gene
+different data types and do
+these analyses faster.
+So some lessons learned.  As we
+were doing this.  So the primary
+thing in building these data
+visualizations is to know thy
+user.  This is a photo of the
+team.  One of the things
+important to note about the
+visualization pieces is that all
+of these missions had been
+running for several years, if
+not decades, by the time that we
+came in.  So there really wasn't
+a lot of innovation, instead of
+you doing your job for several
+years, and how about I make a
+graph and you don't do your job.
+You have to remember that if
+someone screws up, it's on them
+and you can't really fix it.
+You know?  Like this thing is
+hurtling through space.  If you
+can't get the spacecraft back.
+So you have to be very, very
+careful in the analyses that you
+are doing.
+And there's honestly coming down
+to a bit of trust of people
+saying, you know what?  I have
+my own process and it's very
+nice that you have made a little
+web line graph thing.  But I'm
+going to stick to my process.
+Because I know that it keeps the
+spacecraft running.  So what we
+wound up being used for was more
+anomaly times.  When something
+did go wrong.
+Previously people had to do a
+best guess of what data to look
+at because the queries took so
+long and they had limited time
+before having to make a new
+plan.  And one of the things
+that our tool was able to
+accomplish is people were
+looking at more data more
+quickly, cross-reference,
+actually investigate, like, oh,
+have I seen this before?  When
+have I seen this before?  What
+is causing this?  What do I need
+to do to change?  So we were,
+you know, not an everyday tool
+for them, but that's okay.
+Because they had their process.
+We were coming in when they
+already had that process.
+The second thing is that
+visualization literacy takes
+time.  And, you know, we could
+have come in and just said,
+like, okay, you're going to get
+a graph and you're going to like
+it.  But for a lot of these
+people, they're in a
+high-pressure, time-sensitive
+role and they don't have the
+time to play around with
+something and figure out, like,
+oh, now I will learn something
+new from this.  What was
+interesting, when I came in,
+there was an engineer on the MSL
+team who had sort of taught
+himself Java script and then
+taught himself D3 and was
+super-stoked that he was able to
+make visualizations.  And this
+kid was like poster child for
+this.  He would just add all
+this stuff and, Matt, why are
+you add something because I can.
+It took a couple hours.  Now we
+have this diagram -- is this
+useful?  Does anything get
+anything out of this?
+That's kind of what we were
+trying to not do with our whole
+user-centered design approach.
+We were trying to make sure
+people understood what was going
+on the page, it was useful and
+not just kind of gratuitous.  To
+in closing I would like to
+reiterate that I think that
+intuitive visualization will
+always trump shiny.  And maybe
+it's a bit harder to show at a
+visualization conference, but I
+think it's important to be
+building useful tools.  Thank
+you.
+

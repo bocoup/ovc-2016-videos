@@ -1,0 +1,871 @@
+>> Hello.  Thank you.  Thanks,
+Irene.  Hi, I'm Arvind.  And I'm
+excited to show you how to build
+interactive visualizations with
+Vega.  A language we have been
+building at the University of
+Washington data lab.  Before we
+dive into Vega, I want to start
+with three circles.  Borrowing a
+D3 tutorial from a couple years
+ago.  Here is what the code
+looks like to visually design
+the circles.  We're essentially
+binding the data to the circles
+and using the values to
+determine the properties like
+exposition and the radius.
+This is an example of
+declarative design.  We're
+specifying what we want from our
+design rather than how it should
+be computed.  So underneath the
+hood, D3 is building out all the
+loops we need and making the DOM
+calls, all the lower level
+details for us.  We don't have
+to do any of that ourselves.
+Now, what if we were to
+introduce simple interactivity?
+If I were to drag the circles up
+and down.  What would the code
+look like?  Look like this.  I
+have to register event listeners
+for the mouse up, down, move
+events.  And I could get
+explicit steps for what I want
+to happen during the events.  So
+what's the problem of specifying
+interaction?  This is imperative
+design.  Well, the first
+problem, it falls to us, the
+developers, to manually maintain
+state.  And Shirley did a great
+job of identifying why this gets
+complex.
+So in this simple example, my
+state it figuring out which
+circle I'm currently dragging.
+And whiffs putting this
+together, I screwed up the first
+time.  I forgot to clear out the
+state on mouse up, my circles
+kept moving around even though I
+stopped dragging.  And the
+sometime is just four lines and
+I still made a mistake.
+The second problem is we have to
+redefine the appearance of our
+visualization in multiple
+locations.  This makes it tricky
+to figure out why the
+visualization might look a
+particular way.  I have to trace
+down multiple code paths.
+Debugging becomes much more
+difficult.  And with this
+imperative paradigm, I have to
+deal with the low level details.
+D3 stores in this variable, or
+call stop propagation when I'm
+dragging to that text selection
+doesn't fire.  Low level details
+that has nothing to do with
+dragging circles around.  And
+with the programmers, call back
+hell, and the execution order
+can be unpredictable.
+This is an example, show you
+these problems exist with real
+world and more complex use
+cases.  So here's the canon Cal
+D3 of the linking in a
+scatterplot matrix.  Because
+brushing is so common, D3 has a
+brush component to substantiate
+in the code and pass three
+callbacks to.  And so let's
+examine these callbacks.  I like
+the IMAX, the code is actually
+readable.
+Let's look at these callbacks in
+greater detail.  So we can see,
+we have to manually maintain the
+state of the brush, including
+clearing out any previously
+active brushes.  In multiple
+locations, identify what set of
+points are highlighted.  And the
+low level details like the
+current brush stored in a
+variable named this, or D3 brush
+expositions it in a particularly
+opaque fashion, this double
+array.
+And on this point it's worth
+noting that it black boxes all
+of its event processing.  So,
+you know, it registers the event
+listeners that it needs.  You
+know, to drag out a brush
+including some support for
+mobile devices.  Now, the
+problem with that is, well, what
+if I wanted to use, you know,
+alternate events to trigger that
+interaction?  So, for example, a
+brush and pen in the same
+visualization, both are
+triggered by drags, so they
+conflict.  I would like to
+resolve that conflict, but I
+have no way of doing so.
+And so this is where reactive
+programming comes into play.
+You can think of it as, you
+know, working in a spreadsheet.
+When I enter new data values
+into spreadsheet cells, formulas
+that reference the cells
+automatically update to reflect
+the new values.  This is another
+example of declarative design.
+The formula is the same, what I
+want, the sum or average of a
+group of cells, rather than how
+or when those things should be
+computed.  Another way of
+thinking about it is, well, do
+you want to write a spreadsheet
+with event callbacks?  Because I
+sure don't.  That would be a
+nightmare.
+And so Vega uses this paradigm
+in a similar fashion.  So events
+are our data.  And more
+specifically, a form of
+streaming data.  And the
+formulas are dynamic variables
+called signals.  And these
+signals automatically update
+when new events fire.
+So let's actually look at Vega
+in more detail now.  Here is
+what a Vega specification looks
+like, this is a scatterplot
+matrix.  And as you can see --
+again, readable code.  It's is a
+JSON object with the
+transferring of the data, and
+load from the remote URL, or
+embed directly in the
+specification.  We have scale
+functions to map to visual
+properties like position, color,
+size.
+Guides that visualize those
+scales either as axis or
+legends.  And finally our marks.
+In this particular example you
+can see the special group mark.
+We have kind of like SVG groups,
+we can nest scales, guides, and
+marks within that and it
+provides a very concise way of
+doing small multiple and layered
+displays.
+So alongside these sort of
+familiar visual encoding
+building blocks, Vega introduces
+reactive ones to do interaction
+design.  As I have mentioned, we
+have event streams.  We also
+have a syntax I'm going to
+impact shortly for selecting the
+particular events we care about.
+The event streams feed signals,
+dynamic variables, values
+automatically update and
+recalculate whenever a new event
+fires.  Scale inversions that
+take the signal values, default
+in pixel or visual space and
+move them up to the data level.
+So they're sort of the opposite
+of scale transforms.
+Predicates, build selections.
+It returns true or false if the
+value is between the min and max
+signal values.  And finally
+production rules which use these
+selections to affect some change
+to the visualization.
+So this is also right there
+right now, let's make it a
+little more concrete.  Sticking
+with brushing and linking as our
+example.
+So as I mentioned, events are a
+form of streaming data.  So if I
+was to move my pointer across
+these rectangle marks, I might
+observe a stream of mouse move
+events.  That's simply denoted
+by the event type along with the
+element, the target of the
+source element of these events.
+Events can be sequenced in one
+of two ways.  So I can use the
+comma to merge multiple streams
+into a single one with those
+constituent events correctly
+interweaved.  And I can also
+order events.  So this is a
+stream of mouse move events that
+occur between a mouse down and a
+mouse up.  That's a lot of
+words.  You and I would call
+that a stream of drag events.
+We can also filter events before
+they enter a stream.  With
+square brackets, facility other
+events based on properties.
+With curly braces, based on a
+time interval between events.
+This is a concise way to
+de-balance the throttle events.
+As you can see, hopefully, it
+was inspired by CSS selectors
+because we wanted this to be a
+familiar process for people in
+the community of individuals
+designers.
+So what streams do we need for
+brushing and linking?  Well, a
+stream of mouse down events for
+that start position of our brush
+and a stream of drag events for
+the end position.  Now, we can
+use some signals to extract the
+particular coordinates of the
+start and end positions.  And we
+can actually use those
+coordinates directly with a
+rectangle mark.  And that's all
+we need to be able to draw a
+brush repeatedly on a
+scatterplot matrix.  Signals now
+represent my entire interaction
+state, and nay automatically
+update, which means I no longer
+have to do manual book keep like
+clearing out the previous brush
+like I have to with D3.  And
+these coordinates can feed a
+predicate function.  This is a
+simple selection, true or false.
+In this case, if the input
+parameter coordinates fall
+within the start and end
+coordinates, that returns true,
+otherwise it returns false.  And
+the way we use these selections
+are in production rules.  It's
+simple if-then-else chains.  The
+full of the circle mark should
+be determined by the fact if it
+falls within the brush, and
+color it blue or green based on
+data, if it doesn't, gray.  This
+is a setup for brushing and
+linking might look like.  But
+here is the interaction it
+produces.  If I start to brush
+orange and green, so many blue
+points are highlighted as well.
+So what's going on?  What's
+happening is I'm using the
+signal values directly in my
+predicate, and they are just
+pixels, right?  So what's
+happening is the same points
+that lie within the pixel ranges
+are being highlighted.  Whereas
+what I want is for only points
+that lie within the same data
+range to be highlighted instead.
+So if we switch back to our
+schematic, what I want to do is
+identify which scatterplot I'm
+in, and use its scales to invert
+my signal values.  Now the input
+parameters, what it's expressing
+is data query.  Looking at the
+sequel data value and the pedal
+data value and checking whether
+these lie within the two
+extents.  I can bring back my
+production rule from before.
+There we go.  It is doing the
+right thing.  If I brush orange
+and green points, I only see
+orange and green highlighted.
+Brush blue points, see those
+highlight.  Nothing weird going
+upon.
+And so this sort of setup brings
+the advantage of declarative
+design to interaction techniques
+as well.  So what are some of
+these advantages?  First the
+process of doing interaction
+design is now about combining
+and recombining these building
+blocks rather than programming
+from scratch.  It's much faster
+to iterate, only a set number of
+ways the blocks can combine
+together.  We no longer have to
+deal with the lower level
+details.  These encapsulate and
+take that away from us, we argue
+that interaction design is also
+accessible to a larger audience.
+The second point is, because
+events are just another form of
+streaming data, Vega, under the
+hood, can do a number of
+optimizations on our behalf, and
+ultimately yields performance
+twice as fast as D3 and event
+callbacks.  If you don't believe
+me, we have published our
+benchmarks.  You're welcome to
+run those yourself.
+And the third point, because
+it's declarative, only what we
+want, not how it's computed.
+It's easier to retarget the
+interaction technique to
+different devices and modalities
+and so forth.  So, for example,
+this interaction is using
+desktop, mouse down, mouse move
+and so forth.  What I wanted to
+retarget for mobile devices?
+Well, without touching any of
+the rest -- or the heart of my
+interaction logic, I can just
+switch out the event streams and
+instead use touch events.  And
+like I said, I'm not touching
+any of the rest of it.  And now
+this interaction technique works
+on mobile devices as well.
+As we'll soon see in some demos,
+signals don't have to be driven
+by a single event stream, they
+can be driven by multiple.  A
+single interaction technique
+cannot only work on a desktop,
+but mobile devices and you have
+one specification that deals
+with all of it.
+So like I said, demos.  Here is
+the URL that most of these demos
+will be run on.  So you're
+welcome to sort of tune me out
+and just play.  Is that
+readable?  Maybe not.  Put this
+up a little bit.  All right.
+So here is just -- I wanted to
+start simple.  Brushing in a
+scatterplot.  So we know that it
+works for sure.  And here are
+our signal values.
+And you can see each one has a
+name, an initial value, and we
+can specify the streams that
+trigger different value changes
+to it.
+And in this particular case,
+every time a mouse down event
+fires, this expression
+re-evaluates.  And Vega has a
+sort of very light version of
+the JavaScript syntax supported.
+A safer version along with
+helper functions like iScale
+allows me to call a scale
+inversion in here.  So brush
+start and end are just
+coordinates and data space of my
+brush extents.
+So here is the rest of the sort
+of visual encoding.  And I have
+my predicate function here.  The
+fill color, if it match this is
+test, which is basically just
+checking if some data values lie
+within these particular ranges,
+color it using this scale and
+field, and otherwise color it in
+gray.  And right at the bottom
+is my rectangle mark for the
+actually brush.  And you can see
+its positions are just being
+determined by the signal values
+directly.  Because these signal
+values are data values, we also
+use a scale function.
+So moving up the ladder of
+complexity, here is, you know,
+brushing and linking in the
+scatterplot matrix that we just
+worked through diagrammatically.
+And we decouple for clarity,
+differentiating the start and
+end coordinates from the start
+and end data.  Here is a signal
+to identify which particular
+scatterplot we're in.  And also
+calculate a total brush fall
+that holds these extents all
+together.  And the predicate
+function is similar, checking is
+if it's in the range.  And
+here's the mark that builds out
+our brush.  That way, that's all
+I need to brush across the
+scatterplot.
+Here is where things start to
+get fun.  So here is -- hey,
+that scrolls.  Here is an
+interaction technique inspired
+by the cross-filter js.  As I
+start to brush in the
+constituent histograms, the bars
+start to dance as the data is
+filtered out and ring a gated.
+And we're defining the start and
+end points with the brushes and
+then using that to filter, you
+know, particular data values.
+So these min day and max day are
+signal values and we check that
+they fall within the range.
+So we have definitely heard that
+this particular example is an
+especially overwhelming one.
+Let me scroll all the way down
+here.  516 lines of JSON.  That
+is a very large number.  But
+what if -- if you study this
+carefully, it's about the same
+120 lines of JSON, still a large
+number, I'll grant, but repeated
+four times.  One for each
+histogram.  The data and scales
+repeated over and over again.
+Some more examples here where
+reordering a JSON matrix,
+showing this.  And this is super
+simple.  I was surprised at how
+easily the spell out -- I have
+two signals.  A start and a
+destination signal that
+basically track which sort of,
+you know, columns or rows am I
+switching around.  And those
+signal values are used in data
+transformations to switch a data
+value.  That's basically it.  So
+that interaction technique sort
+of boils down to maybe a handful
+of lines of JSON.
+Here is another Mike example, he
+makes really good examples.
+Mike Bostock.  The airports in
+the United States, sized by how
+many flights go in and out.  And
+I can move my mouse point around
+the map to see the outbound
+connections from that particular
+airport.  Here is -- and SFO is
+around here somewhere.  And so
+forth.  What you might notice, I
+don't have to be on top of any
+of the circles to select them.
+And what's happening is
+underneath the hood, we're
+computing a Voronoi
+tessellation.  Driving the event
+streams to the signals.  I'm
+selecting which whichever
+airport is nearest rather than
+the one underneath it.
+And finally, one of our favorite
+examples to show, we didn't
+think this would be expressible.
+One of our star undergrad
+students built this and was
+surprised.  So this is a
+technique, Brittany and Chris
+Collins, talking later today
+talked about a few years ago.
+And has the story telling.
+Along the Y axis is, life
+expectancy, and the X, fertility
+and a number of countries.  I
+hover over a country and see the
+trajectory through time.  And I
+can drag and she the data being
+shown.  This is a nice way of
+navigating time series data.
+And we can mark points of
+interest and so forth.
+And what's nice about this
+technique is the author is
+initially -- especially intended
+this to be sort of a touch-based
+interaction technique.  Here I
+am demonstrating on a desktop.
+It's actually the exact same
+JSON definition.  Don't have to
+duplicate anything.  We have to
+specify a comma with both the
+mouse done and the touch events.
+And those same set of events
+drive the same, you know,
+interaction logic.
+But we're not the only ones
+building Vega examples.  We were
+really happy what we saw this
+one, created by John Lee.  And
+this is a -- as the title says,
+an interactive NBA shot chart.
+This is an impressive example.
+I can start brushing along any
+of these dimensions to start
+filtering the data.  And you can
+see sort of these stacked bars
+rise and fall as I, you know,
+filter the data out.  I can also
+filter these histograms hoar.
+And all these numbers up here
+are, you know, being
+manipulated.  I can also sort of
+drag on the court and so forth.
+All of this is being coordinated
+by Vega.  And quite performing,
+I'd say.  That's quite nice.
+And the last example I wanted to
+show is we have been really
+excited to work with the folks
+at Wikipedia who integrated Vega
+visualizations into Wikipedia
+itself.  You can take the JSON
+objects, paste them into a
+Wikipedia article, and boom, an
+interactive visualization.  Here
+is scatterplot of the most
+expensive paintings auctioned
+off so far.  It's a nice
+scatterplot, a nice way to
+visualize the data that
+Wikipedia editors collected.
+But I can hover over the points
+to get the thumbnails of the
+particular paintings.
+I can also, you know, click
+points to filter out by
+particular periods or artists.
+Things like that.  Simple
+interactions, but really
+powerful in this context.
+Because otherwise all this data
+is sort of, you know, trapped,
+so to speak, in this table.  And
+so this is, you know, the
+Wikipedia folks were really
+excited about the prospect of
+being able to do interactive
+graphics in Wikipedia.
+So I'm going to take a water
+break.  And switch back to this
+example of the scatterplot.  And
+one of the things that is both
+good and bad about declarative
+design is all the execution
+falls to the toolkit.  So in
+this case, Vega.  That means
+that debugging something becomes
+particularly hard because you
+need to know the internals of
+Vega to understand how to debug
+something.  The flip side of
+that coin is we can build a
+specific, tailor-made debugger
+for Vega.  Because Vega is
+domain specific and we
+understand what we want to do
+with it.  That's what my
+collaborator has been working
+upon.  If I get the debugger,
+records the signal values as I
+make them.  And I pause, I can
+go back in time and see how my
+interaction has actually, you
+know, been propagated through
+the visualization.  So, you
+know, there are a bunch of
+really cool interactions built
+in here so I can sort of
+navigate through the timeline to
+see the data values that the
+signals are holding.  These red
+highlights indicate where, you
+know, which signals were used in
+that calculation, how this
+builds up.  I can filter the
+timeline to a specific period
+and so forth.  The timeline also
+has a data table view.  So in
+this case, this is an index
+chart.  The data value is
+renormalized based on this index
+point.  A simple signal that
+uses it, but most of the magic
+is happening in the data tables.
+So you can see here, you know,
+it's similar, I can go back in
+time.  That I can sort of
+visualize how my data values are
+changing in response to my
+interaction techniques as well.
+So -- and so this is now brand
+new and live and note the alpha
+keyword there.  It is alpha.  It
+is -- we're really excited about
+it, but there might be things
+broken.  So please let us know.
+And also let us know how you're
+using it.
+To dive back into slides,
+everything is available at this
+URL, vega.github.io/vega, all of
+this is developed out in the
+open.  Before I wrap up, one
+more thing.  A couple months ago
+my colleagues released the first
+version of Vega lite.  A higher
+level visualization language.
+Akin to ggplot or the
+interactions in tableau for
+statistically graphics.  We have
+been collaborating to figure out
+how to define interactions in
+this high-level language.  So I
+have just under five minutes.
+I'm going to blast through this.
+Here is what a Vega lite
+visualization looks like.  This
+is a histogram of when flights
+take off.  I can embed, you
+know, a data definition, import
+data from the URL.  And this
+specification describes how it
+encodes the data.  And I'm
+having the line, the hour, and
+aggregating the count to build
+up the histogram.  It's so
+concise because I'm omitting
+lower level details, particular
+scales, the guides, the axis,
+the legends.  The Vega lite
+compiler has a default set of
+rules that evaluates to fill
+those details in and produces a
+Vega specification.
+Now, of course, as users we
+might know better than the
+general purpose compiler.  So we
+can specify overrides in there
+if we so desire.  Now, with the
+new operator I can repeat the
+specification for three data
+fields.  So now I'm showing the
+bin hour, delay, and bin
+distance that all these flights
+reported.  Can you tell where
+I'm going with this?
+So here I've got now three
+histograms.  And what I'm going
+to do is actually add an
+additional layer.  So this
+secondary layer, exact same
+histograms, but bars in gold.  A
+layer of blue bars and a layer
+of gold bars.  This is the stage
+we have got with our visual
+encoding.  Collapse that sucker
+and focus on our interaction
+design.
+So in that first layer with the
+blue bars, specify a selection,
+a new building block with Vega
+lite.  This is an interval
+selection, named region.  I can
+give it any name, it's not
+anything specific.  Once I do
+that, I can start to brush in
+each of my scatter -- my
+histograms.  And what the
+selection is doing, it's mapping
+to the event streams, the
+signals, predicate functions and
+scale inversions that we saw
+with Vega.  But I don't have to
+deal with that if I don't want
+to.  Of course I can override
+with custom values.  Maybe I
+want custom event streams.  And
+this project keyword is
+something that we're also
+introducing called a selection
+transform.  Just as we have data
+transforms, we are also going to
+have selection transforms which
+identify common design patterns
+and ways of overriding the data
+that these represent.  Now I
+have brushes, not doing anything
+great.
+So let's have them be useful.
+So the final part is to use
+those region selections to
+filter out the data in my gold
+layer.  And that's all I need.
+35lines of JSON.  So more than
+an order of magnitude smaller
+than Vega.  And just to show you
+that, you know, there are some
+other interaction techniques we
+have considered, here is panning
+and zooming in a scatterplot
+matrix.  And you'll notice that
+panning in one of the
+scatterplots keeps all the other
+ones in sync, including zooming.
+Not only can I pan and zoom, but
+brush in the scatterplot right
+there.  This is only
+highlighting points when they
+fall within all of the brushes.
+By changing just a single
+property, I can change that to,
+you know, highlight if they fall
+within any of the brushes.  Or
+just have a single brush like my
+Vega and D3 examples.  This is
+an overview technique, so I
+brush in the top chart, showing
+an overview of stock price data,
+and the bottom one, the selected
+points at a higher resolution.
+And finally just to, you know,
+demonstrate that it's not just
+brushing we care about, here the
+index chart we saw with Vega.
+In this case it's using
+something called a point
+selection to select that index
+point and then renormalize my
+data.  So all of these are, you
+know, tens of lines of JSON
+rather than 50 lines of JSON?
+Hundreds of lines?  I don't
+know.
+So I wanted to wrap up by just
+sort of reflecting on why we
+are -- we at interactive data
+lab are particularly excited
+about Vega.  We think, as the
+title suggested, it's a really
+viable platform for
+visualization.  What do we mean
+by that?  Not only can you and I
+write the Vega and Vega lite,
+but because they're JSON, they
+can be embedded in other
+software to generate
+visualizations programmatically.
+I have shown an example with
+Vega lite, automatically
+producing the Vega
+visualizations.  If you saw last
+year, you saw my adviser, Jeff,
+demonstrate Voyager and pole
+star, two new data
+visualizations in the lab that
+generate Vega lite and Vega
+visualizations automatically.
+We have been excited to see that
+the Jupiter community has
+started working on Python
+bindings for Vega lite.  We're
+hoping this will spread and be
+adopted by the other Python Vis
+vendors, all producing a common
+format, but the vendor-specific
+on top.  The esthetics.  If you
+were watching two years ago, I
+introduced Lyra, the illustrator
+tool for data visualization.
+And underneath the hood, Lyra is
+producing it every time they
+drag or drop a data field.
+And I showed you, Wikipedia is
+building on this tool stack by
+allowing Vega to be embedded.
+And what's nice about the
+ecosystem, no one tool needs to
+be the be all and end all of the
+data analysis, visualization
+pipeline.  Because all the tools
+are speaking the same language,
+maybe start the data exploration
+process in a tool like voyager,
+get a quick graphic out, export
+into Lyra, touch up with custom
+esthetics with and be maybe add
+a narrative, and export and
+embed in Wikipedia.  I'm using a
+variety of different tools.
+Each tailor-made for a specific
+task.  Going back to what we
+heard about user-centered
+design.  Keeping that focuses.
+Similarly, maybe start and go
+down by Vega lite, and all the
+way to SVG and then start to use
+something like Illustrator
+instead.  And I have left this
+big open space here, because I
+think we're just starting.  And,
+you know, we're building all of
+this out in the open because we
+want to work with the community
+and try to figure out what are
+the sort of new visualization
+and data sort of exploration
+applications we can start to
+build now that we have this sort
+of tool stack.
+The foundations of this tool
+stack in place.  And so all of
+this, the overall URL of the
+Vega project, vega.github.io.
+I'm over time, sorry about that.
+Thank you.
+

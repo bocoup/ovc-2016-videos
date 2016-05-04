@@ -1,0 +1,757 @@
+>> Okay.  So the first thing I
+will do is turn on the
+microphone.  And the second
+thing I should do, figure out
+how to put an image on the
+screen.  Because that's how we
+show data visualization.  Okay.
+So the next thing -- to this
+one.  Do that.  Okay.
+Okay.
+>> Make sure you confirm.
+>> Oopsy.  Confirm.  All right.
+So now I switch back to this --
+is it on?  Okay.  Where is it?
+Might have to -- I don't want to
+mirror, actually.  So let's see.
+Where is my other window?  This
+window.  Ta-da.
+View.  Hide tool bar, full
+screen.  Great!  Awesome.  Okay.
+So my name is Tony.  As -- thank
+you, Irene, for the
+introduction.  So I'm a
+designer.  I came to kind of
+visualization from a point of
+view of how do you kind of
+communicate?  How do you
+communicate ideas?  How do you
+communicate concepts to people?
+I really care about explaining
+things to people.  I really care
+about, as Nicky was saying,
+informing people.  This is a
+distillation of some of the
+lessons I've learned over the
+last couple of years.  Building
+data visualizations that are
+expositions for ideas.  And the
+techniques that I'm bringing in
+from kind of graphic design and
+motion design.
+That's why this talk is called
+Animation, Pacing, and
+Exposition.  A lot of it is
+going to be based on examples
+from this project that I did
+last year.  Called R2D3.  This
+project was about machine
+learning.  A lot of those things
+that the Google folks talked
+about this morning.
+I kind of toned it down, very
+simple, something that's very --
+one of the simplest machine
+models you can have.  Really
+break it down in how they
+explain it.  So I'm going to
+talk about how you actually view
+that from a designer's
+perspective.
+And so I'm going to go over
+three things.  Three things,
+actually.  So the goal -- the
+goal is exposition.  And
+explaining something.  What are
+we dealing with in terms of
+constraints?  What are we
+dealing with in terms was how we
+do this?  I will argue that the
+most important constraint you're
+dealing with is not screen size,
+it's not color, it's not time,
+it is not the amount of
+information you're dealing with,
+it's attention.  And speaking as
+the last speaker between you and
+your drinks, I recognize that
+attention is something that I
+have to deal with right now.
+So let's move on.
+So I'm going to talk about two
+tactics.  Tactics for data, how
+to manage the attention.  And a
+lot of that is animation, and
+it's about pacing.  But let me
+first start with the idea of
+what is exposition?  I think of
+exposition -- there's lots of
+ways to think about it.  I have
+the idea in my head, I'm going
+to try to reconstruct it in your
+head.  How do I do that?  How do
+I reconstruct an idea from my
+head to your head?  I have to
+establish a channel to move
+stuff between my head and your
+head.  Right now I'm doing that
+through sound.  There's a
+microphone.  I'm doing that with
+illustrations on the screen.
+But more importantly, though,
+I'm using your attention.  I am
+gathering your attention and I'm
+trying to like push things
+through so that you guys are
+receiving stuff that I think is
+important.
+So let's talk about attention.
+What is attention?  So the
+dictionary deaf nation --
+here -- is the mental faculty of
+considering or taking notice of
+something.
+From a kind of a science and
+psychology point of view,
+attention is really about how
+your brain is taking in tons and
+tons of information right now.
+Every one of you have eyes that
+take in more information than
+like I think -- has more
+bandwidth than Wi-Fi.  You are
+constantly doing that.  Your
+brain is doing the act of
+filtering all that stuff.
+Discarding what is irrelevant,
+and focusing it on something
+that is relevant.  And that
+process of filtering shit out is
+attention.
+When I'm doing the work of
+filtering things out, that's
+paying attention.  And from a
+designer's point of view, I
+think about dealing with two
+kinds of tension.  The first one
+is one I have hinted at, which
+is visual attention.  Your eyes
+can take in a lot of information
+at once, but, like, still have a
+sense of kind of directionality.
+You have to -- I'm looking over
+here, I can't really see what's
+over here.  When I'm looking
+over mere, I can't see you guys,
+all right?
+And so if you can design
+something that helps guide the
+eye to the thing that is
+relevant, you're saving
+attention.  You're like not
+making the eye work harder than
+necessary.  The second kind of
+attention is, well, kind of
+attention.  It's short-term
+memory.  Our conscious minds can
+really only deal with a few bits
+at once.  Our brain can deal
+with a lot more information.
+And so you have to consider at
+any given time you can -- if you
+can only fit so many things in
+short-term memory, you have to
+be very careful about what you
+put -- what you put in that
+short-term memory.  It's like
+RAM.  What do you put in there
+at a given moment to achieve
+what you need to achieve?  So
+when I think about this stuff, I
+think about this.  There's the
+race against time.  You're on a
+race against time.  And this
+arcade game, the thing that
+sticks with me is the idea of
+like, oh, you have to reach your
+next check point, and you have
+to get there fast enough to get
+your next time extension.
+I think about my design work as,
+like, oh, I have to get
+something interesting in front
+of you in order to get an
+attention extension.
+And if I don't, which it seem
+like -- for some of you guys I'm
+not successful, because some of
+you guys are sleeping.  So I
+need to get to the next kind of
+attention extension.  How do I
+do that?  Another metaphor,
+then, I use is this idea of a
+faucet and a sink.  All right?
+Your attention is constantly
+draining away, as it has been
+since 9:00 in the morning today.
+And we are kind of like here.
+So what I need to do as a
+designer, I need to like close
+up that sink as much as possible
+and then also open up the
+faucet.  Kind of give you guys
+stuff to feel like, oh, this is
+worth my attention.  I'm going
+to put more of it in here.  So
+let's look at what are some
+things that gains and drains
+attention.
+All right?  So things like gain
+attention is like surprise.  I
+remember the moment when Kyle
+turned on the sound thing.
+Like -- boom!  Suddenly, oh,
+wow.  Kyle has my attention now,
+right?  But something that is a
+little bit more gentle is
+delight.  Something that's fun,
+something that's beautiful.
+Something you have never seen
+before.  Like Nadieh's talk, all
+the gradient stuff.  I was like,
+oh, you could do that with SVG?
+Awesome.  Delight is very nice.
+Order and coherence is also
+nice.  It's the idea of do I
+have to spend a lot of energy to
+make sense of this?  Or if it's
+already ordered and framed and
+like organized well for you, so
+your brain has to do less work.
+Those things are able to tap
+into your brain and use less
+attention and gain you more
+attention.
+On the other side, what drains
+attention?  Time.  Time drains
+attention.  That's kind of
+obvious.  We have stray
+thoughts, our brains are here,
+there, everywhere.  Some of our
+brains between this screen, this
+voice, those screens in front of
+you.  And positions drain
+attention.  Come to a Website,
+and I ask you to click on
+something, you have to decide to
+click on that thing.  Like even
+though it's easy, you have to
+move your mouse to a particular
+spot on screen and click that
+button.  That's a decision that
+takes attention.  Clutter.
+Clutter takes attention.  If
+something is disorganized, can't
+make sense of it, your brain is
+trying hard.  If you can remove
+the clutter, it's not striving
+to make sense that have stuff,
+it's focused on what you need to
+pay attention to
+And lastly, confusion, drains
+attention for reasons I have
+already mentioned.  So these are
+things that drain attention.  So
+from a designer's point of view,
+graphic designers.  Graphic
+design is a fairly old
+discipline.  Dealing with this
+for a long time.  One of my
+favorites from a mentor.  Her
+name was Barbara de Wilde.  She
+was teaching me about graphic
+design.  This is her quote.
+Graphic design is the use of
+space to control time.  What
+does she mean by that?
+It means when a graphic design
+is about manipulating things,
+I'm going to put this here and
+here, you can use that ordering
+of how things are positioned in
+space to control your experience
+of things.
+You are going to look at this
+first and this next and this
+next.  So I'm going to show you
+this.  I didn't have to tell you
+to, like, look at the thing --
+look at the big title first.  I
+didn't have to tell you to go
+down -- go down this page.  I
+didn't have to tell you to read
+the last line.  That's because
+this leverages conventions in
+graphic design.  And conventions
+in the western world, like
+readers in the western world, we
+read from the top left to the
+bottom right.
+These conventions, again, saves
+attention.  Saves you from
+having to think about what this
+is.  And so when I approach my
+design work, I try to leverage
+these principles, right?
+So even you kind of squint and
+look at it, and don't read the
+thing yet.  You get a sense,
+what's the important thing?  The
+first thing you see, a visual
+introduction to machine
+learning.  That's the value
+proposition.  And there's a
+weird, interesting-looking thing
+on the right side.  You don't
+know what that is yet, but it's
+kind of cool.  And the last
+thing you see is school.  It's
+asking you.  Hey, if you're
+interested, and this is clear,
+please do this thing.
+And so circling out, and just
+like this is graphic design.
+This is like how do you position
+things in order to help you
+direct the user's attention to
+guide them towards some goal.
+And if you don't believe me,
+here is somebody else doing the
+same thing, right?
+This is one of my favorite New
+York Times visualizations.  It
+is about how the different
+sectors of the economy recover
+from the recession.  And very
+similar.  Value proposition, a
+vague thing that is not clear
+what it is yet, but potentially
+interesting, and then a call to
+action.  And the call to action
+is scroll.  So some of you may
+know of my work, you're the
+scrolling telling guy, you're
+always asking people to scroll.
+What's up with that?  That's
+because a click is a decision.
+A scroll is continuation.
+It's continuing what you've
+already been doing.  And so it's
+less engagement, less decisions,
+more attention to direct to the
+stuff that you actually care
+about.  Plus scrolling is fun.
+If you scroll and a fun thing
+happens, you're going to keep
+scrolling and more fun things
+happen.  Of course, now, the
+next part of the talk, which is
+animation.  Right?
+Animation is the manipulation of
+images to create the illusion of
+motion.  And so why is this
+cool?  Why is this good?  Well,
+that's because motion is
+pre-attentive.  What does that
+mean?  That means there's a big
+chunk of our brain near the back
+of our skull, the visual cortex,
+processes motion before it gets
+to the front of the cortex.
+There's a lot more processing
+power back here than up here.
+And so you can take in motion,
+you can get a sense of motion,
+even before you can like
+consciously process it.  And if
+you tap into that, once again,
+you're saving conscious
+attention.  But you're still
+communicating.  Which is great.
+So I'm going to show some
+examples.  These are examples
+from R2D3.  The first one is,
+all right.  This starts growing,
+what happens?  Some fun
+animation happens.  But it's not
+just fun, it hints at the idea
+of the first dimension that
+we're introducing into this data
+set, which is elevation.
+Elevation goes from the bottom
+up, right?  And so this motion,
+one, it's fun, grabs your
+attention.  And two, okay, this
+is elevation.  This is cool.
+And then I use this transition
+to turn that graph into a
+scatterplot.  Once again, I'm
+using motion to capture
+attention.  But I'm also using
+motion to show an idea.  It's
+like, oh, this one-dimension
+thing, now it's two-dimensions.
+And the other reason to do this
+is because you could imagine the
+counterexample, which is, oh, I
+have a graph.  I'll scroll it
+out of view, put another
+scatterplot in here, now what do
+I have to do?  I have to
+reestablish the context of what
+this visualization is.  Now this
+axis is the same, but this axis
+is new.  Using this animated
+transition, now I have saving
+attention that I would have
+spent reestablishing the
+context.
+Plus now I'm introducing a new
+idea.  So I'm saving attention,
+doing something fun.
+This is a different part of the
+project.  Where I'm using
+animation, again, to show the
+notion underneath of this
+industry.  Which is, hey, in
+order for you to get a sense of
+kind of what position the tree
+is doing, it splits the tree and
+splits the data into chunks and
+then it goes from top down.
+Which is why the animation goes
+from top down.  All right?
+And having established this,
+then I can actually do the
+really fun visualization in R2D3
+where the, like, little balls
+fall down the tree.  All right?
+And once again, I am using
+motion, one, just to kind of
+create a sense of delight.  But
+also then to say, hey, this is
+how the trees work.  The data
+point will literally follow the
+fork in the program to find the
+end point and that's the
+classification.  Okay.  Pause
+here for a second.
+So recap, we're trying to
+reconstruct an idea that is, in
+your head, in your audience's
+head, right?  So these lessons
+from graphic design and motion
+design help us preserve
+attention and directs attention.
+But why?  Who cares?
+So the reason that we care is
+because we need to direct
+attention to the pieces of the
+puzzle.  The pieces and the idea
+that you care about.  But how do
+we know when to direct attention
+where?  How do we know what
+pieces go first?  How big should
+these pieces be?  What do I even
+mean by pieces?  All right?
+So I'm going to take a slight
+detour and choose the idea of
+pace.  Pace.  Pace is to do
+something at a slow and steady
+rate in order to avoid
+overexertion.  Right?  Remember
+our idea of short-term memory.
+You have maybe seven things in
+your head at once.  You don't
+want to overexert and blow it
+up.
+So how do you then take this
+idea and pace this?  Oh, you can
+move the whole thing through
+without blowing up that
+pipeline?  Kind of similar to
+the pipeline that was talked
+about earlier.  And so one way
+to think about this, if you have
+an idea of this, and this is a
+Lego Flatiron building, my
+favorite in New York.  How to
+get from this to this?  If
+someone dumped out Legos and
+said build the Flatiron building
+with this, you wouldn't know
+where to start.  That's why the
+kit comes with an instruction
+manual.  Find the right piece,
+this is the right and relevant
+piece.  Put them together, fit
+them together this way and
+repeat and repeat and repeat.
+It's preserving your attention
+by not just give you a pile, but
+instead this is the right thing
+to focus your attention on now.
+And the Lego instruction manual
+hints at the relationship
+between pieces in the -- in the
+model, right?  So, like, oh.
+This is one panel, this is a
+different panel.  Pieces fit
+together.  There's a dependency
+between these things.
+So by -- by kind of
+understanding the dependencies,
+and understanding the order in
+which you fit these pieces
+together, you can build up to
+something big and interesting
+from very small pieces.  And the
+organization of principle for
+doing that is pacing.
+So let me show you a different
+pile of Legos.
+So this is the previous
+iteration of the project about
+campaign refinance reform.  This
+was one of my first D3 projects.
+I was excited.  I spent all
+weekend working on this and
+showed it to my classmates at
+SVA, and they're like, oh cool.
+What is it?
+And that's because I just
+literally felt every dimension
+in the data on to the screen.
+Built it.  And then if I told
+you now, oh, all the circles on
+the left side represent
+election -- Senate seats where
+democrats won, on the right side
+the republicans won, and I gave
+you like how to read this thing.
+Oh, actually you can read this
+thing and you can understand the
+data.  But just dumping it out
+on you, suddenly I've blown my
+attention project.  What's
+happening is this.  Your
+attention is overwhelmed.
+too many pieces.  The pieces are
+too big.
+So we need to figure out how to
+break it down.  We have to pace
+it out.  We have to find the
+pieces that are too big and too
+unwieldy and figure out how do
+we break it apart?
+So there's lots of ways of doing
+it, but one good rule of thumb
+is when you write it out and lay
+it on the screen, are you
+tempted to read it or skim it?
+If your natural inclination is
+like, I'm going to skim this,
+you probably didn't break it
+down enough
+So what ended up happening was
+this project, the same data set,
+the same Senate seats.  But now
+I'm focus on, hey, here's are
+the idea, the next idea, the
+third idea.  That's what I want
+to focus your attention on, and
+not necessarily all the Lego
+pieces.  You can go poke around
+in different circles and figure
+out, hey, this is the thing.
+But I just said you know what?
+Let's just pick the right thing
+to focus on and direct attention
+there
+The other principle for
+thinking about how to break down
+these ideas is recognizing that
+ideas depend on other ideas.  So
+given a big idea in your head,
+how do you break it down?  Ideas
+tend to not be entirely novel.
+They tend to be composed of
+other ideas.  Composed of
+existing ideas.  Kind of like
+how software is composed of
+other software.  So you're kind
+of dealing with a dependency
+tree, almost.
+So this is a very classic D3
+example of the dependency
+tree -- I actually don't know
+what this is.  But this idea,
+they depend on these ideas and
+these ideas, and you can
+understand the dependency tree
+of your idea, you know the
+pieces and you can break it
+apart.  All right?
+So and if I'm going to
+reconstruct this idea in my head
+in your head, I have to make
+sure I load in all the
+dependencies.  All right?  So
+let's go back to the machine
+learning example.  If I want to
+help people understand what is
+machine learning and I know that
+my audience is a layperson who
+may not even have taken much
+statistics, I need to make sure
+that this stuff is broken down
+really well.  So let's see.
+What does the idea of the
+decision tree depend on?
+Well it starts with the idea of
+data, patterns
+Not very controversial.  And
+then -- I can't read that.
+That's why I'm turning around.
+And it says patterns may be
+correlated with the desired
+outcome.  So if you want to
+predict if a house is in San
+Francisco or New York, patterns
+may help.  So together we can
+start to say, hey, we can use
+patterns to create some rule for
+making a decision.  All right?
+And I combine that with the idea
+of statistics can precisely
+capture a pattern.  Then now I
+can say -- we can use statistics
+to compute the best decision
+rule.  And then I can say, hey,
+if I combine that idea of using
+statistics and saying, oh, I'm
+going to subdivide things and
+I'm going to do this over and
+over and over again, suddenly I
+get to this idea of decision
+rules can be chained together to
+improve accuracy.  That's where
+the tree notion comes from.
+Actually, I skipped ahead.  And
+add the idea of like a tree met
+or.  Now you have a decision.
+This is roughly -- the
+decision -- the dependency tree
+of the idea of a decision tree.
+One thing to note here is order
+matters, all right?  You can't
+just introduce these ideas and
+say, oh, I'm going introduce
+first and then do this other one
+and then come back.  Right?  You
+have to make sure that things
+are in the right order.  You
+want to start from the simplest
+ideas.  And ideas that depend on
+the other things, and the most
+established in your audience's
+head and then build up.  All
+right?
+And even visually.  When I think
+as -- instead of the writing
+part of this and think about
+pasting, visually I do the same
+thing.  So here is that first
+kind of graph showing elevation.
+Pretty simple graphic.
+The next idea is like, oh, I'm
+going to rotate it, so on this
+side.  That's a pretty simple
+transformation.  And I'm going
+to now like collapse them and
+turn them into a histogram.  And
+you guys remember, I can show
+the visualization -- the
+animations after, but once
+again, the idea is just like
+this one idea.  I'm just going
+to collapse them, that was a
+histogram.  I'm going to choose
+one more idea, which is visually
+splitting the thing into two
+populations.
+And then now I'm going to
+visually, again, repeat that
+pattern that you have already
+seen.  Suddenly you're like
+starting to see the tree
+structure.  And now I remove the
+histogram and now you see the
+tree.
+So notice the thing that's
+happening here.  I'm really just
+introducing things one step at a
+time.  All right?  Because if
+your attention bandwidth is very
+small, you have to break things
+down to be that small to fit
+through it.  So we -- as, well,
+I don't know -- I can call
+everybody here a designer, but
+if you want to think about
+things from a design point of
+view, this is what we have to
+think about.  We have to think
+about preserving our audience's
+attention.  We have to think
+about how do we pace things such
+that you're moving ideas from
+your head to other people's
+heads one step at a time.  And
+my big takeaway from this is
+always this idea of, like, hey,
+we need to have a slow, measured
+conveyance of ideas through this
+gateway of attention.  And
+everything needs to fit.
+And so what do we talk about?
+We talked about exposition.  How
+to explain an idea to somebody.
+I talked about the constraint.
+The key thing that you have to
+think about is not necessarily
+colors, it's not necessarily
+type, it's not necessarily size
+or data, the key thing that you
+need to think about when you're
+explaining something to somebody
+is how did you channel their
+attention?
+And so, of course, then I talk
+about a bunch of techniques for
+animation and pacing.  There's
+lots more kind of research in
+this kind of work.  I draw
+heavily from, like cognitive
+psychology, I draw heavily from
+just like writing, technical
+writing.  I draw heavily from
+visual analytics, research.
+Like cognitive psychology
+research to think about all this
+stuff.  But all of it is in
+service of how do I conserve
+this really precious resource of
+attention?
+And that's it.
+
