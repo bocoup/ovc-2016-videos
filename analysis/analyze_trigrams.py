@@ -11,9 +11,9 @@ trigram_measures = nltk.collocations.TrigramAssocMeasures()
 # compute top trigrams and output results to console
 for i, file in enumerate(get_files()):
     finder = TrigramCollocationFinder.from_words(transcript_tokens[i])
-    trigrams = finder.score_ngrams(trigram_measures.likelihood_ratio)[:20]
+    trigrams = finder.score_ngrams(trigram_measures.likelihood_ratio)
 
     print(file)
-    for [tokens, value] in trigrams[0:20]:
+    for [tokens, value] in trigrams[0:50]:
         print('{},{}'.format(" ".join(tokens), value))
     print('---------\n')
