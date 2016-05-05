@@ -1,5 +1,6 @@
-{
-  "wattenberg_viegas": {
+[
+  {
+    "id": "wattenberg_viegas",
     "day": 25,
     "talk": 1,
     "keynote": true,
@@ -7,70 +8,80 @@
     "speakers": "Martin Wattenberg and Fernanda Viégas",
     "title": "Seeing Machines Think"
   },
-  "mcdonald": {
+  {
+    "id": "mcdonald",
     "day": 25,
     "talk": 2,
     "time": "10:00 - 10:30",
     "speakers": "Kyle McDonald",
     "title": "A Return to Machine Learning"
   },
-  "kosaka": {
+  {
+    "id": "kosaka",
     "day": 25,
     "talk": 3,
     "time": "11:00 - 11:30",
     "speakers": "Mariko Kosaka",
     "title": "Drawing on <canvas> - how computers read pixels"
   },
-  "case": {
+  {
+    "id": "case",
     "day": 25,
     "talk": 4,
     "time": "11:30 - 12:00",
     "speakers": "Nicky Case",
     "title": "How To Simulate The Universe, In 134 Easy Steps"
   },
-  "mcnamara": {
+  {
+    "id": "mcnamara",
     "day": 25,
     "talk": 5,
     "time": "12:00 - 12:30",
     "speakers": "Amelia McNamara",
     "title": "Do you know Nothing when you see it?"
   },
-  "bremer": {
+  {
+    "id": "bremer",
     "day": 25,
     "talk": 6,
     "time": "2:00 - 2:30",
     "speakers": "Nadieh Bremer",
     "title": "SVG Beyond Mere Shapes"
   },
-  "vivo": {
+  {
+    "id": "vivo",
     "day": 25,
     "talk": 7,
     "time": "2:30 - 3:15",
     "speakers": "Patricio Gonzalez Vivo",
     "title": "Enhancing your maps and visualizations with WebGL GLSL Shaders"
   },
-  "armstrong": {
+  {
+    "id": "armstrong",
     "day": 25,
     "talk": 8,
     "time": "4:00 - 4:30",
     "speakers": "Zan Armstrong",
     "title": "Everything is Seasonal"
   },
-  "wu": {
+  {
+    "id": "wu",
     "day": 25,
     "talk": 9,
     "time": "4:30 - 5:00",
     "speakers": "Shirley Wu",
     "title": "Building Data Visualizations for Product"
   },
-  "chu": {
+  {
+    "id": "chu",
     "day": 25,
     "talk": 10,
     "time": "5:00 - 5:45",
     "speakers": "Tony Hang Shing Chu",
     "title": "Animation, Pacing, and Exposition"
   },
-  "chalabi": {
+  {
+    "id": "chalabi",
     "day": 26,
     "talk": 1,
     "keynote": true,
@@ -78,74 +89,84 @@
     "speakers": "Mona Chalabi",
     "title": "Informing Without Alienating"
   },
-  "yanofsky": {
+  {
+    "id": "yanofsky",
     "day": 26,
     "talk": 2,
     "time": "10:00 - 10:30",
     "speakers": "David Yanofsky",
     "title": "The Charting Monster that Spawned from the Jaws of Defeat"
   },
-  "elliott": {
+  {
+    "id": "elliott",
     "day": 26,
     "talk": 3,
     "time": "11:00 - 11:30",
     "speakers": "Kennedy Elliott",
     "title": "Everything we know about how humans interpret graphics"
   },
-  "binx": {
+  {
+    "id": "binx",
     "day": 26,
     "talk": 4,
     "time": "11:30 - 12:00",
     "speakers": "Rachel Binx",
     "title": "Designing for Realtime Spacecraft Operations"
   },
-  "satyanarayan": {
+  {
+    "id": "satyanarayan",
     "day": 26,
     "talk": 5,
     "time": "12:00 - 12:30",
     "speakers": "Arvind Satyanarayan",
     "title": "Reactive Building Blocks: Interactive Visualizations with Vega"
   },
-  "pearce": {
+  {
+    "id": "pearce",
     "day": 26,
     "talk": 6,
     "time": "2:00 - 2:30",
     "speakers": "Adam Pearce",
     "title": "Tiny Tools"
   },
-  "hullman": {
+  {
+    "id": "hullman",
     "day": 26,
     "talk": 7,
     "time": "2:30 - 3:00",
     "speakers": "Jessica Hullman",
     "title": "The Visual Uncertainty Experience"
   },
-  "albrecht": {
+  {
+    "id": "albrecht",
     "day": 26,
     "talk": 8,
     "time": "3:00 - 3:30",
     "speakers": "Kim Albrecht",
     "title": "Untangling Tennis"
   },
-  "waigl": {
+  {
+    "id": "waigl",
     "day": 26,
     "talk": 9,
     "time": "4:00 - 4:45",
     "speakers": "Christine Waigl",
     "title": "Our Planet Seen from Space"
   },
-  "collins": {
+  {
+    "id": "collins",
     "day": 26,
     "talk": 10,
     "time": "4:45 - 5:15",
     "speakers": "Christopher Collins",
     "title": "Finding What to Read: Visual Text Analytics Tools and Techniques to Guide Investigation"
   },
-  "becker": {
+  {
+    "id": "becker",
     "day": 26,
     "talk": 11,
     "time": "5:15 - 5:45",
     "speakers": "Designing Virtual Reality Data Visualizations",
     "title": "Ana Asnes Becker"
   }
-}
+]
