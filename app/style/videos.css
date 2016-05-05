@@ -1,0 +1,6 @@
+.talk-cell {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #eee;
+  padding: 10px;
+}
