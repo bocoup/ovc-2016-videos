@@ -62,7 +62,7 @@ def tf_idf(document_tokens, corpus_tokens):
 
 
 # a list of tokens for each of the talks
-transcript_tokens = tokenize_transcripts()
+transcript_tokens = tokenize_transcripts(stem=True)
 
 # compute tf-idf and output results to console
 for i, file in enumerate(get_files()):
@@ -70,6 +70,6 @@ for i, file in enumerate(get_files()):
     sorted_token_tf_idfs = sort_counts(token_tf_idfs)
 
     print(file)
-    for [token, value] in sorted_token_tf_idfs[0:20]:
+    for [token, value] in sorted_token_tf_idfs[0:50]:
         print('{},{}'.format(token, value))
     print('---------\n')

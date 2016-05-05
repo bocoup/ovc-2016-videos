@@ -3,6 +3,7 @@ import os
 import re
 from string import punctuation
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
 # Many of these functions are taken from https://github.com/bocoup-education/text-vis-ovc
 # in particular the 14-analyze-document notebook
@@ -34,7 +35,7 @@ files = [
 def get_files():
     return files
 
-def tokenize_transcripts():
+def tokenize_transcripts(stem=False):
     dir = os.path.dirname(__file__)
 
     # a list of tokens for each of the talks
@@ -42,7 +43,7 @@ def tokenize_transcripts():
 
     # tokenize all the transcripts
     for filename in files:
-        words = prepare_tokens(words_from_file(os.path.join(dir, filename)))
+        words = prepare_tokens(words_from_file(os.path.join(dir, filename)), stem)
 
         # add list of tokens for talk to collection
         transcript_tokens.append(words)
@@ -76,10 +77,16 @@ def remove_word_fragments(tokens):
     return [token for token in tokens if "'" not in token]
 
 # prepare tokens by removing punctuation, making lowercase and removing stop words
-def prepare_tokens(tokens):
+def prepare_tokens(tokens, stem=False):
     stops = stopwords.words('english')
     tokens = remove_tokens(tokens, punctuation + "--")
     tokens = lowercase(tokens)
     tokens = remove_tokens(tokens, stops)
     tokens = remove_word_fragments(tokens)
+
+    # optionally stem tokens
+    if stem:
+        stemmer = PorterStemmer()
+        tokens = [stemmer.stem(token) for token in tokens]
+
     return tokens
