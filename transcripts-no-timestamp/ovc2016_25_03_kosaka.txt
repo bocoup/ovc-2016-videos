@@ -677,7 +677,6 @@ perspective, it has Transparency
 pixels, it's going to default to
 PNG and preserve your Twitter
 image.  You're welcome.
-[Applause]
 So all of that are open sourced.
 I have a little JavaScript
 utility.  I tried to aim it for
@@ -703,4 +702,3 @@ visualization.  I came here last
 year in person, that was
 amazing.  Now I get to talk
 here.  So thank you very much.
-[Applause]

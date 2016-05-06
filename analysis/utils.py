@@ -9,27 +9,27 @@ from nltk.stem import PorterStemmer
 # in particular the 14-analyze-document notebook
 
 files = [
-    "../transcripts_no_timestamp/ovc2016_25_01_wattenberg_viegas.txt",
-    "../transcripts_no_timestamp/ovc2016_25_02_mcdonald.txt",
-    "../transcripts_no_timestamp/ovc2016_25_03_kosaka.txt",
-    "../transcripts_no_timestamp/ovc2016_25_04_case.txt",
-    "../transcripts_no_timestamp/ovc2016_25_05_mcnamara.txt",
-    "../transcripts_no_timestamp/ovc2016_25_06_bremer.txt",
-    "../transcripts_no_timestamp/ovc2016_25_07_vivo.txt",
-    "../transcripts_no_timestamp/ovc2016_25_08_armstrong.txt",
-    "../transcripts_no_timestamp/ovc2016_25_09_wu.txt",
-    "../transcripts_no_timestamp/ovc2016_25_10_chu.txt",
-    "../transcripts_no_timestamp/ovc2016_26_01_chalabi.txt",
-    "../transcripts_no_timestamp/ovc2016_26_02_yanofsky.txt",
-    "../transcripts_no_timestamp/ovc2016_26_03_elliott.txt",
-    "../transcripts_no_timestamp/ovc2016_26_04_binx.txt",
-    "../transcripts_no_timestamp/ovc2016_26_05_satyanarayan.txt",
-    "../transcripts_no_timestamp/ovc2016_26_06_pearce.txt",
-    "../transcripts_no_timestamp/ovc2016_26_07_hullman.txt",
-    "../transcripts_no_timestamp/ovc2016_26_08_albrecht.txt",
-    "../transcripts_no_timestamp/ovc2016_26_09_waigl.txt",
-    "../transcripts_no_timestamp/ovc2016_26_10_collins.txt",
-    "../transcripts_no_timestamp/ovc2016_26_11_becker.txt"
+    "../transcripts-no-timestamp/ovc2016_25_01_wattenberg_viegas.txt",
+    "../transcripts-no-timestamp/ovc2016_25_02_mcdonald.txt",
+    "../transcripts-no-timestamp/ovc2016_25_03_kosaka.txt",
+    "../transcripts-no-timestamp/ovc2016_25_04_case.txt",
+    "../transcripts-no-timestamp/ovc2016_25_05_mcnamara.txt",
+    "../transcripts-no-timestamp/ovc2016_25_06_bremer.txt",
+    "../transcripts-no-timestamp/ovc2016_25_07_vivo.txt",
+    "../transcripts-no-timestamp/ovc2016_25_08_armstrong.txt",
+    "../transcripts-no-timestamp/ovc2016_25_09_wu.txt",
+    "../transcripts-no-timestamp/ovc2016_25_10_chu.txt",
+    "../transcripts-no-timestamp/ovc2016_26_01_chalabi.txt",
+    "../transcripts-no-timestamp/ovc2016_26_02_yanofsky.txt",
+    "../transcripts-no-timestamp/ovc2016_26_03_elliott.txt",
+    "../transcripts-no-timestamp/ovc2016_26_04_binx.txt",
+    "../transcripts-no-timestamp/ovc2016_26_05_satyanarayan.txt",
+    "../transcripts-no-timestamp/ovc2016_26_06_pearce.txt",
+    "../transcripts-no-timestamp/ovc2016_26_07_hullman.txt",
+    "../transcripts-no-timestamp/ovc2016_26_08_albrecht.txt",
+    "../transcripts-no-timestamp/ovc2016_26_09_waigl.txt",
+    "../transcripts-no-timestamp/ovc2016_26_10_collins.txt",
+    "../transcripts-no-timestamp/ovc2016_26_11_becker.txt"
 ]
 
 def get_files():
