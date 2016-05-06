@@ -802,4 +802,3 @@ iceberg.  So much more.  So if
 your data increase any sort of
 change over time, take
 seasonality into account.
-

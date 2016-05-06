@@ -39,7 +39,6 @@ data fast.  So once they had
 that in place, they needed
 something with D3.  It was like,
 what will you come up with?
-
 And you know I was really
 excited.  Yeah, I'm going to
 NASA, I'm going to make cool
@@ -315,7 +314,6 @@ EVRs, which are words.
 And that's it.  See?  You have
 learned everything you need to
 know about spacecrafts.
-
 Okay.  So to put this in
 context.  Cassini has a couple
 thousand channels, a couple
@@ -743,4 +741,3 @@ visualization conference, but I
 think it's important to be
 building useful tools.  Thank
 you.
-

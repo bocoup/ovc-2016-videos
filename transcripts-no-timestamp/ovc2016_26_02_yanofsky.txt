@@ -45,7 +45,6 @@ a laser pointer on a dog.
 You don't have to torment them.
 You can, like -- you can -- I
 don't know.
-
 appreciate the wonder of
 penguins.  Anyway.  Another
 thing my dad would point out is
@@ -223,7 +222,6 @@ screens.  You know, this looks
 great on an IMAX, I guess.  It
 looks better than it ever did
 now that it's on an IMAX.
-
 But like, you know, you shrink
 that down into the palm of your
 hand and you can't read anything
@@ -276,7 +274,6 @@ hour to make a single line
 chart?
 It was insane.  And the idea of
 workflow being this.
-
 So I started making a tool that
 would make a chart in our style
 that I could make these charts
@@ -404,7 +401,6 @@ We moved the palette to that.
 And even that turned out to be
 too much.  Because now our
 palette is just that.
-
 And this is more than enough.
 This is 11 colors.  11 colors.
 And these actually work much
@@ -682,4 +678,3 @@ I'm better for it, and I think
 everyone on the outside looking
 in interested in learning more
 would think so too.  Thank you.
-

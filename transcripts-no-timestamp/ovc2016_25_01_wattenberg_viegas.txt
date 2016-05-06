@@ -104,7 +104,6 @@ up with different problem --
 probabilities for each one of
 these options.  And then
 eventually decides, okay, horse
-
 is the one I'm most sure about.
 So I'm going to go with horse.
 So how does, you know, a deep

@@ -868,4 +868,3 @@ this, the overall URL of the
 Vega project, vega.github.io.
 I'm over time, sorry about that.
 Thank you.
-

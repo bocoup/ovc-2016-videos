@@ -128,7 +128,6 @@ dissemination exceeds the pace
 of tool and technique
 development.  We are always
 catching up. That's just me.
-
 So visualization has been used
 for text for a long period of
 time.  So this is a more literal
@@ -934,7 +933,6 @@ people-related words.  Go way
 down and you can see that she
 does talk about engineering a
 little bit.
-
 These are the data sets.  So
 that's hello Barbie.  It's been
 fun to work with this data set.
@@ -1078,4 +1076,3 @@ people with perception
 research to try to understand it
 better.  I'll end there.  Thanks
 to the students.  Thanks a lot.
-

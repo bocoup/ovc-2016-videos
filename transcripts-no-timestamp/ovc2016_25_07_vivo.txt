@@ -29,7 +29,6 @@ there.
 And it's because everything that
 we do -- oh.  Since when does
 that happen?
-
 thank you for pointing that out.
 So all the things that we do are
 open source.  So pay attention
@@ -333,7 +332,6 @@ And they should be drawing
 something black or white.  I
 hope that makes sense.  I'm
 afraid to go to the screen.
-
 so one more -- another example
 of that.  I'm going to make st.
 I'm going to add st to this y.
@@ -455,7 +453,6 @@ So I amend these out, you can
 see the solid buildings.  Let's
 make happy buildings.  I feel a
 little Bob Ross today.
-
 so I -- how would we do this?  I
 will mix two colors.  I want to
 go for red.  To blue.  Again,
@@ -624,7 +621,6 @@ here has a weather map?
 Because -- there's a very famous
 one, and I know that -- yeah.
 Thank you.
-
 so I said, okay.  This is an
 OpenVis Conference, I it to do
 better, make something they
@@ -661,7 +657,6 @@ visualize the map.  I know what
 you're thinking.  I'm using rain
 bow gradient.  I'm looking
 everybody in the eye.
-
 so what is happening here is we
 have all this weather stations,
 all that information is passed
@@ -719,4 +714,3 @@ this.  Thank you for dealing
 with my accent.  And thank you
 Bocoup for inviting me.  All
 done.
-

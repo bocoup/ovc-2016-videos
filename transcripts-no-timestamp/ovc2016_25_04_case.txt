@@ -1,4 +1,3 @@
->> Thank you.  I'm not on.
 >> So.  So correct me if I'm
 wrong, but I heard you like
 graphs.
@@ -53,7 +52,6 @@ survive?  But does our field
 deserve to survive?
 And that is the existential
 crisis.
-
 but, yeah, seriously.  It is a
 big problem.  But to be fair,
 database I think solves half of
@@ -97,7 +95,6 @@ Or systems of epidemiology, how
 disease spreads, what is heard
 and why is it important?  And
 civil conflict.
-
 and how much like a forest fire,
 or much like disease, how
 violence can spread across a
@@ -752,8 +749,6 @@ simulation explaining margin of
 error.
 And again, I will have a link to
 all the links for all this
-
-12:02:16
 And at the very far theoretical
 end we have agent-based
 modeling.  Also similar.
@@ -810,4 +805,3 @@ something that does all that,
 134.  Ship it.  And then fix
 bugs.  Thank you so much.  Link
 is over there.
-
