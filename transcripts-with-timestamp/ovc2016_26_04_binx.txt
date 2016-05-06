@@ -1,0 +1,743 @@
+11:29:20	>> Hey!  Okay.  Hi, everyone.
+11:29:26	I'm Rachel Binx.  So a little
+11:29:28	bit about myself before I get
+11:29:29	into my talk.  I have been in
+11:29:32	data visualization for a while.
+11:29:34	I got my start in design, and
+11:29:38	then I was doing freelancing for
+11:29:39	a while.  And then up until
+11:29:41	recently.  That brings us to
+11:29:43	JPL.  So JPL is one of the NASA
+11:29:48	centers.  They are responsible
+11:29:51	for most of the sort of -- let's
+11:29:55	see -- out past earth
+11:29:57	spacecrafts.  That sort of
+11:29:58	thing.  So basically you could
+11:30:00	say that what my job was datavis
+11:30:04	for space rockets.  That was
+11:30:08	pitched to me, duh, I have to
+11:30:11	get into that.
+11:30:12	What I was visualizing was
+11:30:14	telemetry, the term for data
+11:30:17	that is transmitted.  Over the
+11:30:19	course of my time there, I
+11:30:21	worked with four different
+11:30:22	missions.  There's SMAP, an
+11:30:25	earth orbiter, dealing with
+11:30:27	climate data, Cassini, around
+11:30:30	Saturn, Dawn, in the asteroid
+11:30:33	belt, and Curiosity, the rover
+11:30:36	on Mars.
+11:30:37	So basically when I was being
+11:30:39	asked to come work there the
+11:30:41	pitch was basically that
+11:30:43	Elasticsearch had just come to
+11:30:46	JPL.  And it was this new
+11:30:48	exciting thing.  And suddenly it
+11:30:50	was fast and we could return
+11:30:52	data fast.  So once they had
+11:30:55	that in place, they needed
+11:30:57	something with D3.  It was like,
+11:30:59	what will you come up with?
+11:31:03	And you know I was really
+11:31:05	excited.  Yeah, I'm going to
+11:31:06	NASA, I'm going to make cool
+11:31:09	visualizations.  Everyone loves
+11:31:10	NASA, right?  I was really
+11:31:12	stoked.
+11:31:13	And, you know, it's funny, over
+11:31:15	the period of time that I was
+11:31:17	working there, some friends of
+11:31:19	mine in the visualization work,
+11:31:20	oh, man, what are you working on
+11:31:22	at NASA?  And, you know, the
+11:31:24	answer was like, well, I'm doing
+11:31:31	data, I'm making line charts.
+11:31:33	And you know, their face would
+11:31:35	kind of fall.  Oh, you're doing
+11:31:37	line charts.  And, you know,
+11:31:38	yeah.  That's like time series
+11:31:41	data.  That's what you need to
+11:31:42	look at it.
+11:31:44	But -- here we go.  So the thing
+11:31:48	is that, you know, you can see
+11:31:49	that there's just like this, you
+11:31:51	know, D3 SVG line, but all these
+11:31:56	other things going on in the
+11:32:00	chart, I can't show you, it's
+11:32:02	all controlled.  But all of
+11:32:03	these features that we built
+11:32:05	into this glorious line chart
+11:32:07	that unfortunately to you just
+11:32:09	kind of looks like this.  And so
+11:32:11	I was putting together this
+11:32:12	talk, I was kind of thinking,
+11:32:13	you know, like what to include,
+11:32:16	what to talk about.
+11:32:17	And this sort of gets into the
+11:32:19	same sort of debate about UI
+11:32:22	versus UX.  But it's the debate
+11:32:24	of what is important enough to
+11:32:26	be called like the
+11:32:27	visualization?  What do we
+11:32:30	include?  So I figured I might
+11:32:32	show you the charts in context.
+11:32:36	So this is what it looks like.
+11:32:40	And I bet that most of you sort
+11:32:43	of zoomed in and focused on that
+11:32:45	chart area.  I would do the same
+11:32:46	thing.  You're kind of looking
+11:32:47	at it, she's got bars in there,
+11:32:50	mostly a line chart, SVG axis,
+11:32:53	we're good.  Now, the thing you
+11:32:55	probably didn't look at is this.
+11:32:57	And what you can't possibly know
+11:33:01	is that this took several weeks
+11:33:03	to develop in both research and
+11:33:05	testing, prototypes, and, you
+11:33:08	know, putting it in front of
+11:33:09	users and saying, does this
+11:33:11	actually convey what it needs?
+11:33:14	We have time bookmarks.  And
+11:33:15	this varied by mission.
+11:33:17	Different missions wanted to
+11:33:18	look at different chunks of
+11:33:19	time.  They wanted to look
+11:33:20	either from most recent time or
+11:33:22	from the end time.  You've got
+11:33:25	your start and your end text
+11:33:27	boxes that has UTC day of year
+11:33:31	in the time formatting.  And
+11:33:33	below, this time slider, you can
+11:33:35	be dragging to zoom in on the
+11:33:37	graph.
+11:33:37	What you couldn't possibly see,
+11:33:39	also, is that that little
+11:33:42	calendar icon opens up this date
+11:33:45	picker.  You'll notice that
+11:33:46	there's both the date and the
+11:33:48	day of year in this day picker
+11:33:50	as well as the week number on
+11:33:51	the side.  Now, this seems like
+11:33:53	a small, minor detail, but when
+11:33:56	we were showing this to the
+11:33:57	missions, it's actually opening
+11:33:59	this that really got people's
+11:34:01	attention.  They're like, oh.
+11:34:02	Oh, my god, I should use this.
+11:34:05	Because right now their current
+11:34:07	process is to print out a
+11:34:08	calendar for each year, pin it
+11:34:11	up to the side of the cubicle,
+11:34:13	and to convert, date and day of
+11:34:15	year, even having this, they can
+11:34:17	click on something and quickly
+11:34:19	go to the date-time they
+11:34:21	actually wanted was saving them
+11:34:22	precious seconds.  So People got
+11:34:24	really excited about that.
+11:34:26	And so I wanted to address for a
+11:34:28	bit before I get into the meat
+11:34:29	of my talk kind of what we talk
+11:34:31	about when we talk about
+11:34:32	visualization.  What gets to
+11:34:34	count?  For and to get into this
+11:34:38	I want to talk about the sort of
+11:34:41	design and art spectrum.  And
+11:34:44	there are many different
+11:34:45	definitions for this.  And I
+11:34:46	think, you know, we all have our
+11:34:48	own.  One of my favorites is
+11:34:49	that design solves problems
+11:34:51	while it creates them.  This is
+11:34:54	sort of cute and pithy, and like
+11:34:57	everything pithy, sort of
+11:34:59	generalizes.
+11:35:00	But sort of a more general
+11:35:01	definition that I'd like to
+11:35:03	propose for this talk is that
+11:35:04	art is sort of about taking your
+11:35:06	own experience, or your own
+11:35:08	thoughts, and kind of projecting
+11:35:09	it out into the world.  Hey, you
+11:35:12	should think about this too.
+11:35:13	Design, in contrast, is about
+11:35:15	taking the perspectives of many
+11:35:16	other people and synthesizing
+11:35:18	them.  Okay how can I build
+11:35:22	something that many people
+11:35:24	understand and know how to use.
+11:35:25	And that will be clearly
+11:35:26	communicating my data?
+11:35:29	I think that we like to have
+11:35:31	data visualizations situated
+11:35:35	halfway between.  It's a happy
+11:35:38	medium, take data, this cold,
+11:35:40	sterile thing, and I get to
+11:35:42	apply some creativity to it.
+11:35:44	Voila, data visualization.
+11:35:47	I'd argue, however, that it's
+11:35:48	much more like this.  The data
+11:35:51	visualization is, you know,
+11:35:52	really a subset of design and
+11:35:55	should be treated as such.  Now,
+11:35:58	this isn't to say that, you
+11:36:00	know, art is meaningless or
+11:36:02	something.  And if you're sad
+11:36:04	about that, lucky for you,
+11:36:06	there's a nice little term, data
+11:36:08	art.  This is not to belittle
+11:36:10	any sort of art or side projects
+11:36:11	or anything that you might do
+11:36:13	with data, I do this in my spare
+11:36:15	time.  But for the purposes of
+11:36:17	data visualization in what we
+11:36:19	are being hired to do as data
+11:36:22	visualizers, I would argue that
+11:36:24	it's basically design.
+11:36:27	Data visualization is not your
+11:36:28	creative outlet.  It's not your
+11:36:30	free expression.  It's not your
+11:36:32	time to just, I don't know, put
+11:36:34	stuff on a page.  Data
+11:36:39	visualization is making downtown
+11:36:42	understandable and making an
+11:36:43	interface that people can
+11:36:44	actually use and get value out
+11:36:46	of
+11:36:46	So at this point you might be
+11:36:49	thinking, Rachel, what if you
+11:36:51	just didn't try hard enough?
+11:36:53	What if you were just sad you
+11:36:56	went to JPL, thought you were
+11:36:58	going to do all this stuff and
+11:37:00	just did line charts.  That's a
+11:37:02	valid point, maybe I'm just
+11:37:04	bitter.  So the answer that I
+11:37:05	have to that is that when we
+11:37:07	were building all of these
+11:37:09	tools, we were doing it with
+11:37:12	user-centered design.  And I
+11:37:14	bring this up, it was the first
+11:37:15	time in my data visualization
+11:37:18	career that I was really able to
+11:37:21	take advantage of this.  Both in
+11:37:24	that the entire user base of the
+11:37:26	tool was at the same campus as
+11:37:27	me.  And also I was working
+11:37:29	within a human interfaces design
+11:37:32	group.
+11:37:32	Now, if in contrast, this was my
+11:37:36	process for data visualization.
+11:37:38	Yeah, I get the data, put it on
+11:37:41	the page.  Build the thing to
+11:37:44	show off the cool thing you
+11:37:45	found in the data.  It's done.
+11:37:47	And I bring this up to say that,
+11:37:48	like, I've spent actually most
+11:37:51	of my career kind of in this
+11:37:52	haphazard methodology.  And I
+11:37:55	still remember one of the first
+11:37:57	talks I gave, I was showing
+11:38:00	Twitter visualization, showing
+11:38:02	the animation and all that.  And
+11:38:03	one of the questions afterwards
+11:38:04	was like, oh, how do you know
+11:38:06	that the visualization that you
+11:38:07	have built is understandable?
+11:38:10	And I was like, well -- and I
+11:38:13	think at the time I was like,
+11:38:15	oh, there's no possible way I
+11:38:17	could have done research because
+11:38:19	it was two weeks.  Wrote it off.
+11:38:22	Afterward, I was like what if I
+11:38:24	have been building terrible
+11:38:25	visualizations and no one knows
+11:38:27	and I think they look cool and
+11:38:29	just kind of left it at that?
+11:38:31	So one of the wonderful things
+11:38:32	about working at JPL was being
+11:38:34	able to have -- you know, taking
+11:38:36	advantage of these more
+11:38:37	traditional design processes.
+11:38:39	Which is something that I think
+11:38:41	that data visualization as a
+11:38:46	field could stand to take a page
+11:38:48	out of the design book.  We're
+11:38:50	able to do research, we're able
+11:38:52	to, you know, come up with
+11:38:53	interfaces, draw them on paper,
+11:38:56	put them in front of people.
+11:38:57	Test them.  Does this actually
+11:38:59	so your needs?  Job shadowing,
+11:39:03	how do you actually use your
+11:39:05	data?  What kinds of things
+11:39:06	could we help you with?  Like
+11:39:08	what could we build?
+11:39:10	So for the rest of this talk I
+11:39:12	would like to take you through
+11:39:16	two features that we built,
+11:39:18	without showing what we actually
+11:39:19	made.  But before then I have to
+11:39:22	teach you how spacecrafts work.
+11:39:23	So hope you don't mind.  Wear
+11:39:27	going to do a little telemetry
+11:39:29	101.  So there are three main
+11:39:31	types of data, EHAs, EVRs,
+11:39:35	and data products.  EHAs are a
+11:39:39	stream of numbers.  You might
+11:39:40	have a temperature of a
+11:39:41	component.  So it's sampled
+11:39:43	about every 30 seconds.  For
+11:39:45	some graphs.  And then there's a
+11:39:47	way to encode states of
+11:39:49	information.  So you might have
+11:39:50	like on or off as zero and one.
+11:39:53	And that gets transmitted over
+11:39:55	radio waves and decoded on the
+11:39:57	ground.
+11:39:58	Secondly, there are EVRs,
+11:40:01	event records, basically a print
+11:40:03	statement.  So for EVRs you
+11:40:05	have some logic in how the
+11:40:07	spacecraft is operating.  And
+11:40:09	when certain triggers happen,
+11:40:10	then you get this constant log
+11:40:15	coming out with your statement.
+11:40:18	The third is data products, sort
+11:40:21	of a cop out, everything else.
+11:40:24	Might involve pictures.  More
+11:40:26	highly-sampled bits of data.
+11:40:28	But for the purposes of today,
+11:40:30	focus on EHAs, numbers, and
+11:40:32	EVRs, which are words.
+11:40:35	And that's it.  See?  You have
+11:40:38	learned everything you need to
+11:40:39	know about spacecrafts.
+11:40:47	Okay.  So to put this in
+11:40:50	context.  Cassini has a couple
+11:40:53	thousand channels, a couple
+11:40:56	thousand EHA channels.  And they
+11:40:57	are too old to have EVRs.
+11:41:01	Which is a funny thing, Cassini,
+11:41:03	launched in '87, too old to have
+11:41:06	print statements.  They have
+11:41:08	been doing this only with these
+11:41:10	channels and comparing the
+11:41:11	different spaces of the
+11:41:13	spacecraft, they decode, and
+11:41:23	they do that.  It's insane to
+11:41:25	me.  Voyager has about a hundred
+11:41:29	channels, most have not changed
+11:41:30	a value in the last three years.
+11:41:32	Dawn has -- I don't know.  A
+11:41:34	couple thousand channels and
+11:41:36	they get about a hundred EVRs
+11:41:39	a week.  So for Dawn every
+11:41:41	single EVR is a pretty important
+11:41:43	thing they need to know about.
+11:41:44	The start of a maneuver, the
+11:41:46	location of a maneuver.  So they
+11:41:48	take those, you know, there's a
+11:41:51	lot of weight in those.  Dawn
+11:41:53	also gets a down link.  When the
+11:41:55	data comes back.  Once a week.
+11:41:56	So once a week everyone gets all
+11:41:58	the data and then looks at it.
+11:41:59	And then if anything goes wrong,
+11:42:02	you know, they start working on
+11:42:03	a plan and then send on the data
+11:42:06	on the uplink.  SMAP, however,
+11:42:09	an earth orbiter, in
+11:42:11	near-constant communication with
+11:42:14	the earth.
+11:42:15	It has 25,000 channels and they
+11:42:17	get about 25,000 EVRs a day.
+11:42:20	So it's just this stream of
+11:42:23	text.  And I've watched people
+11:42:25	sit there mostly when they're
+11:42:27	like really stressed out in
+11:42:28	crisis mode and just watched
+11:42:30	these EVRs go down the page.
+11:42:33	I don't know.  It's insane to
+11:42:35	watch just that volume of data
+11:42:36	coming through.
+11:42:37	The Curiosity rover has 25,000
+11:42:42	channels and about 30,000
+11:42:43	EVRs.  Curiosity does a down
+11:42:47	link about every seven hours.
+11:42:49	So there's a lot of data coming
+11:42:51	back from these spacecrafts.
+11:42:52	And there's also a different
+11:42:54	cadence on how often people are
+11:42:56	getting data, how often they
+11:42:58	need to look at it, and how much
+11:43:01	time they need to create the
+11:43:02	plan for the next day.
+11:43:03	Curiosity currently has a
+11:43:05	20-hour sort of planning cycle
+11:43:09	where they get the data, they
+11:43:11	analyze it, if anything is
+11:43:12	wrong, go and fix it.  If not,
+11:43:15	make the plan for the next day.
+11:43:16	Plan, for example, in this case
+11:43:18	would be like, okay, we want to
+11:43:20	drive to that rock to drill.
+11:43:23	We're going to make a route
+11:43:24	according to the rocks in the
+11:43:25	middle.  Try to drive.  If we
+11:43:27	complete our drive for the day,
+11:43:28	then do the next little leg.  If
+11:43:30	not, then we're going to
+11:43:31	reroute.  It's very complicated.
+11:43:33	And there's hundreds of people
+11:43:34	around the world working on that
+11:43:36	one specific rover.
+11:43:38	Okay.  So case study number one.
+11:43:43	So there was this concept called
+11:43:45	the gumball that was there when
+11:43:47	I came to JPL.  This was
+11:43:50	pioneered on SMAP and Curiosity
+11:43:54	which are both the more active
+11:43:56	missions, getting the down link
+11:43:58	daily several times a day.
+11:44:00	So what is situational
+11:44:02	awareness?  Basically this.
+11:44:04	You're driving and you have to
+11:44:06	look over, but you're still
+11:44:08	driving, you need to get the
+11:44:10	data, keeping your eyes on the
+11:44:12	road.  It's hard.  You want to
+11:44:14	bubble up information, but not
+11:44:16	overwhelm people by how much
+11:44:18	you're bubbling up.  The gumball
+11:44:21	is basically this renamed
+11:44:24	stoplight idea.  There's green,
+11:44:25	everything is good, yellow
+11:44:27	alarms and red alarms.
+11:44:29	And your data gets situated
+11:44:31	among those.  Most of these
+11:44:33	gumballs were roll-ups for
+11:44:35	different subsystems.  So you
+11:44:37	might have the
+11:44:38	telecommunications subsystem
+11:44:41	would pick a couple different
+11:44:44	channels, maybe ten or so, and
+11:44:47	set thresholds for what the
+11:44:49	value should be.  Sum those up
+11:44:51	together, and they're all good,
+11:44:53	and you get green.  As soon as
+11:44:55	one fails, yellow and red.
+11:44:57	There's yellow and red alarm
+11:44:59	thresholds for every channel.
+11:45:00	So you night be thinking, wow,
+11:45:03	that doesn't seem like that
+11:45:04	would be that useful.  It's just
+11:45:05	that it's roll out that seems
+11:45:08	insufficient.
+11:45:09	So when we came in, we're like,
+11:45:11	okay, we're going to make the
+11:45:12	coolest stoplight ever.  We're
+11:45:14	going to redesign this gumball
+11:45:17	and have so much more
+11:45:18	information.  We did.  We went
+11:45:20	out and did user research.  Do
+11:45:22	you like this, no, I don't.  Why
+11:45:24	don't you like it?  Well, you
+11:45:26	know, it's very simplistic.  You
+11:45:28	know, if everything is okay, you
+11:45:30	know, that's good for right now.
+11:45:31	But is it trending towards
+11:45:33	something more dangerous?  You
+11:45:34	know, if something went wrong,
+11:45:36	how do I quickly find out what
+11:45:45	went wrong.  They called it the
+11:45:47	idiot lights.  Something is
+11:45:48	wrong.  I'm disempowered,
+11:45:50	something is wrong, but I don't
+11:45:51	know what it is.
+11:45:53	So this is the proposed design
+11:45:54	that we came up with.  This is
+11:45:56	for SMAP.  This is the nine
+11:46:00	different subsystems.  And each
+11:46:01	subsystem is this, you know,
+11:46:03	sort of rectangle.  And then
+11:46:05	they have chosen their channels
+11:46:06	and you have your channels that
+11:46:08	are like a value range like
+11:46:11	temperature, you know, has this
+11:46:13	bar slider showing where in the
+11:46:15	range it is.
+11:46:15	And then ones that are
+11:46:17	bullion, that should be like a
+11:46:19	certain value or, you know, a
+11:46:21	certain limited set of values,
+11:46:23	those are the solid colors.  So
+11:46:25	green, everything's all good.
+11:46:26	And you see some yellow --
+11:46:29	mostly the bullions that aren't
+11:46:31	working.  But there's also some
+11:46:32	of the ranges that have been
+11:46:34	exceeded.  The super-dense one
+11:46:36	is thermal.  They keep track of
+11:46:38	lots of things.
+11:46:39	And so we showed this to people
+11:46:40	and we're like, hey, look at
+11:46:42	this.  Now you know where all
+11:46:44	the values are, you know, within
+11:46:45	each range.  Isn't this so much
+11:46:48	better?  And, you know, people
+11:46:49	kept saying like, oh, yeah.  I
+11:46:53	guess that's better.  But really
+11:46:55	what we had built was more like
+11:46:56	this.
+11:46:57	We're suddenly just overwhelming
+11:46:59	people with information.  Okay,
+11:47:01	there's all this stuff going on.
+11:47:02	And you don't know if that's the
+11:47:04	information that you want to be
+11:47:05	looking at that particular
+11:47:08	moment.  At the end of the day
+11:47:10	we realized this is all people
+11:47:11	want.  Like they want to just
+11:47:13	have something quickly saying,
+11:47:15	hey, everything's fine.
+11:47:17	Now, once it's not fine, oh,
+11:47:19	yeah, then they want like all
+11:47:20	that stuff, you know, like top
+11:47:22	of the information on the
+11:47:23	screen, they want to know
+11:47:25	exactly which channels are in
+11:47:27	alarm, the graphs quickly, but
+11:47:30	until that point they just want
+11:47:32	this.
+11:47:34	Case study number two.  Would be
+11:47:36	these event records.  So I
+11:47:38	mentioned the EVRs, those
+11:47:41	console log statements.  And I
+11:47:44	was sort of picking this
+11:47:45	background image to be funny.
+11:47:47	But this is actually what most
+11:47:49	people were doing with these
+11:47:50	event records.  They were
+11:47:54	graphing through some amount of
+11:47:55	time and then trying to find the
+11:47:57	event records that corresponded
+11:47:59	to the subsystem that they
+11:48:00	needed to look at.  Which, you
+11:48:01	know, is very functional but is,
+11:48:04	you know, it's hard to know
+11:48:05	what's there if you don't know
+11:48:06	what you're looking for.
+11:48:08	So just to show you, this is a
+11:48:10	table that we built.  This is
+11:48:12	basically duplicating the
+11:48:14	existing tools that they have
+11:48:16	right now.  So you have your
+11:48:19	different level.  There's seven
+11:48:20	different levels.  There's three
+11:48:23	warnings.  Warning low, warning
+11:48:25	high, fatal, and then four,
+11:48:28	activity high, activity load,
+11:48:30	diagnostic command.  So you can
+11:48:32	see how there's sort of this
+11:48:34	information.  It's very
+11:48:35	text-based, and there's also a
+11:48:37	time.
+11:48:39	SKET is the time component.  Fun
+11:48:43	fact, spacecrafts keep track of
+11:48:47	three time, spacecraft time, and
+11:48:52	spacecraft clock time.  It's an
+11:48:53	incremental number.  And the
+11:48:55	funny thing is the space network
+11:48:58	that processes the data chops
+11:49:01	off the millisecond.  If
+11:49:03	something happens in the same
+11:49:05	second, you have to look at the
+11:49:06	clock time to actually correctly
+11:49:08	order your event records.  Time,
+11:49:10	it's really hard.
+11:49:11	So basically what people are
+11:49:14	doing right now, they have this
+11:49:15	text box, filtering down.  And
+11:49:17	then when they found something
+11:49:18	that they wanted to look at,
+11:49:21	they wanted to examine, okay,
+11:49:22	this is an entitle record that I
+11:49:24	need to look into further, this
+11:49:25	is what they would do.  They
+11:49:26	would write it down.  Write the
+11:49:28	time stamp down on a piece of
+11:49:30	paper and then do to their graph
+11:49:32	program, type in that time stamp
+11:49:34	and pull it up which, wow.  So
+11:49:38	everyone efficient.  That's
+11:49:39	something we wanted to improve
+11:49:40	on.
+11:49:43	Now I know that this just looks
+11:49:45	like a simple histogram to you,
+11:49:47	it is a simple histogram, but
+11:49:50	this is the piece de resistance
+11:49:53	in what we were building.  And
+11:49:55	Elasticsearch gave us the nice
+11:49:57	robots, the buckets in the types
+11:49:59	of EVRs coming down.  We saw
+11:50:01	that, put in a bar chart, sure.
+11:50:04	Pulled that up on the screen and
+11:50:06	showed people.  Hey, is this
+11:50:07	interesting?  And the people
+11:50:09	were like, oh, my god.
+11:50:11	Because they had never seen
+11:50:13	their data like this before.  If
+11:50:15	all you have ever seen is a
+11:50:16	table, you know, actually seeing
+11:50:18	this, like, oh, there's a
+11:50:20	cadence and frequency to my
+11:50:23	event records?  What?
+11:50:25	Which, I mean, it really
+11:50:26	shouldn't be mind-blowing, but
+11:50:28	it is because you're limited by
+11:50:30	the tools that you have access
+11:50:32	to at that time.  And suddenly
+11:50:35	you can see that, oh, daily,
+11:50:37	there's -- when we upload all
+11:50:38	the commands and diagnostics and
+11:50:40	starts the new cycle, yeah,
+11:50:42	there's a spike.  And people
+11:50:43	didn't know that before.
+11:50:45	So we built this -- and I'll
+11:50:47	show you what it looks like in
+11:50:48	context.  And the other part of
+11:50:49	that histogram is that we use
+11:50:52	that as sort of a filtering with
+11:50:54	method.  So you could deselect
+11:50:56	types you didn't want to see.
+11:50:58	It also had, you know, a nice
+11:51:00	brush so you could zoom in on a
+11:51:02	period of time that was
+11:51:03	interesting to you and filter
+11:51:04	down quickly in your table to
+11:51:06	the event records that you
+11:51:08	wanted to see.
+11:51:09	And so a lot of what we wound up
+11:51:12	doing in this project is, you
+11:51:14	know, sort of cross-pollinating
+11:51:17	these different data types that
+11:51:19	had previously been very siloed.
+11:51:21	That people had to look -- graph
+11:51:23	through event records and go to
+11:51:24	another graphing program that
+11:51:29	literally took minutes to create
+11:51:30	a graph.  And then we had a nice
+11:51:33	web interface, these were
+11:51:38	returning in seconds.  The best
+11:51:39	part of working on this project
+11:51:41	was getting people to think of
+11:51:42	the event records as points in
+11:51:44	time.  We built ways to show
+11:51:46	event records on the graph.  You
+11:51:47	could quickly jump gene
+11:51:49	different data types and do
+11:51:50	these analyses faster.
+11:51:56	So some lessons learned.  As we
+11:51:58	were doing this.  So the primary
+11:52:02	thing in building these data
+11:52:05	visualizations is to know thy
+11:52:08	user.  This is a photo of the
+11:52:11	team.  One of the things
+11:52:14	important to note about the
+11:52:15	visualization pieces is that all
+11:52:17	of these missions had been
+11:52:18	running for several years, if
+11:52:19	not decades, by the time that we
+11:52:22	came in.  So there really wasn't
+11:52:24	a lot of innovation, instead of
+11:52:30	you doing your job for several
+11:52:31	years, and how about I make a
+11:52:34	graph and you don't do your job.
+11:52:36	You have to remember that if
+11:52:37	someone screws up, it's on them
+11:52:39	and you can't really fix it.
+11:52:41	You know?  Like this thing is
+11:52:42	hurtling through space.  If you
+11:52:44	can't get the spacecraft back.
+11:52:46	So you have to be very, very
+11:52:48	careful in the analyses that you
+11:52:49	are doing.
+11:52:50	And there's honestly coming down
+11:52:52	to a bit of trust of people
+11:52:53	saying, you know what?  I have
+11:52:55	my own process and it's very
+11:52:57	nice that you have made a little
+11:52:59	web line graph thing.  But I'm
+11:53:00	going to stick to my process.
+11:53:02	Because I know that it keeps the
+11:53:04	spacecraft running.  So what we
+11:53:06	wound up being used for was more
+11:53:09	anomaly times.  When something
+11:53:11	did go wrong.
+11:53:13	Previously people had to do a
+11:53:14	best guess of what data to look
+11:53:16	at because the queries took so
+11:53:18	long and they had limited time
+11:53:20	before having to make a new
+11:53:21	plan.  And one of the things
+11:53:23	that our tool was able to
+11:53:26	accomplish is people were
+11:53:27	looking at more data more
+11:53:28	quickly, cross-reference,
+11:53:30	actually investigate, like, oh,
+11:53:31	have I seen this before?  When
+11:53:33	have I seen this before?  What
+11:53:34	is causing this?  What do I need
+11:53:36	to do to change?  So we were,
+11:53:38	you know, not an everyday tool
+11:53:40	for them, but that's okay.
+11:53:41	Because they had their process.
+11:53:43	We were coming in when they
+11:53:44	already had that process.
+11:53:46	The second thing is that
+11:53:48	visualization literacy takes
+11:53:50	time.  And, you know, we could
+11:53:52	have come in and just said,
+11:53:54	like, okay, you're going to get
+11:53:55	a graph and you're going to like
+11:53:58	it.  But for a lot of these
+11:53:59	people, they're in a
+11:54:00	high-pressure, time-sensitive
+11:54:03	role and they don't have the
+11:54:04	time to play around with
+11:54:05	something and figure out, like,
+11:54:06	oh, now I will learn something
+11:54:09	new from this.  What was
+11:54:12	interesting, when I came in,
+11:54:14	there was an engineer on the MSL
+11:54:15	team who had sort of taught
+11:54:17	himself Java script and then
+11:54:20	taught himself D3 and was
+11:54:22	super-stoked that he was able to
+11:54:23	make visualizations.  And this
+11:54:25	kid was like poster child for
+11:54:27	this.  He would just add all
+11:54:29	this stuff and, Matt, why are
+11:54:33	you add something because I can.
+11:54:35	It took a couple hours.  Now we
+11:54:36	have this diagram -- is this
+11:54:41	useful?  Does anything get
+11:54:43	anything out of this?
+11:54:44	That's kind of what we were
+11:54:45	trying to not do with our whole
+11:54:47	user-centered design approach.
+11:54:49	We were trying to make sure
+11:54:51	people understood what was going
+11:54:52	on the page, it was useful and
+11:54:53	not just kind of gratuitous.  To
+11:54:56	in closing I would like to
+11:54:57	reiterate that I think that
+11:54:59	intuitive visualization will
+11:55:01	always trump shiny.  And maybe
+11:55:03	it's a bit harder to show at a
+11:55:05	visualization conference, but I
+11:55:07	think it's important to be
+11:55:08	building useful tools.  Thank
+11:55:10	you.

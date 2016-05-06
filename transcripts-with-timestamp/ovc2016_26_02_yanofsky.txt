@@ -1,0 +1,680 @@
+9:54:20	>> Anyone know why Cinderella
+9:54:22	was a bad baseball player?  I
+9:54:26	was at Fenway Park, and a
+9:54:31	3-year-old boy says she's a
+9:54:34	girl, and she's terrible, but
+9:54:35	the real reason is she runs away
+9:54:37	from the ball.
+9:54:40	glad to know this thing is on.
+9:54:43	Okay.  Give me a second to set
+9:54:45	up.  I was surprised I was
+9:54:47	called an engineer.  That's the
+9:54:49	first time in my life I have
+9:54:50	been called that.  I should also
+9:54:53	close my text messages.
+9:54:55	I know you're not all
+9:54:57	journalists, but anything that
+9:54:58	pops up from my text messages,
+9:55:00	let's just assume that's off the
+9:55:01	record.
+9:55:05	Let's see.  Cool.  This is going
+9:55:30	to get very hard if I try to do
+9:55:32	a demo. All right.  The Charting
+9:55:42	Monster that Spawned from the
+9:55:42	Jaws of Defeat.  Hi, I'm David
+9:55:45	Yanofsky.  As mentioned, I'm a
+9:55:48	reporter at Quartz.  I'm based
+9:55:50	in the San Francisco Bay area.
+9:55:53	But I'm originally around here.
+9:55:55	Which makes presenting all the
+9:56:01	more special for me.  When I was
+9:56:04	younger I used to come here with
+9:56:08	my dad.  It was before this
+9:56:10	theater existed, and actually of
+9:56:12	the aquarium existed.  And I
+9:56:16	would go around, and my dad
+9:56:18	showed me things, go over the
+9:56:20	penguin tank and wave your hand,
+9:56:23	make a shadow, the penguins
+9:56:25	follow it around.  Thing it's a
+9:56:27	fish.  Which, yeah, the first
+9:56:29	time in my life I had people
+9:56:31	tell me I shouldn't do that
+9:56:32	yesterday.  That's like putting
+9:56:34	a laser pointer on a dog.
+9:56:36	You don't have to torment them.
+9:56:38	You can, like -- you can -- I
+9:56:40	don't know.
+9:56:42	appreciate the wonder of
+9:56:47	penguins.  Anyway.  Another
+9:56:49	thing my dad would point out is
+9:56:52	that the giant ocean tank, or
+9:56:54	the great ocean tank, that big
+9:56:56	tank in the middle, used to have
+9:56:58	these sand tiger sharks in
+9:57:00	there.  And they would get fed
+9:57:02	twice a day.  And they -- they
+9:57:05	started developing these like
+9:57:07	humps and curves in their spine.
+9:57:09	They're actually not in the tank
+9:57:11	anymore.  But my dad would tell
+9:57:13	me how that was a symptom of
+9:57:14	their captivity.
+9:57:17	Anyway.  We're here to talk
+9:57:20	about a different piece.  It's a
+9:57:23	tool I made, Chartbuilder.  It's
+9:57:25	a tool that we use at Quartz to
+9:57:28	make thousands of charts a year.
+9:57:31	All across, you know, the
+9:57:33	editorial staff.
+9:57:36	And here's what it looks like.
+9:57:41	If it opens at all.  Great.  So
+9:57:43	this is inside of our charting
+9:57:46	platform.  Sorry the contrast
+9:57:48	isn't so great on this.  But --
+9:57:52	once again -- so we have a
+9:57:54	preview of the chart here, some
+9:57:56	input area over here, and you
+9:57:58	can do all sorts of changes of,
+9:58:06	you know, stuff.  It live
+9:58:09	updates.  You can drag your
+9:58:13	labels if you want to more
+9:58:15	directly label stuff.  You can
+9:58:18	see that there's a mobile
+9:58:19	preview down below.  You can --
+9:58:24	if you really wanted to, if your
+9:58:28	access was -- you can change
+9:58:30	that.  Make sure that you're
+9:58:31	adding -- that's not how you
+9:58:36	spell millions.  Make sure you
+9:58:39	add your units.  You can adjust
+9:58:41	the axis either by doing that or
+9:58:45	you can just type in numbers.
+9:58:49	You can even use your arrow keys
+9:58:52	and get things to do nicer
+9:58:56	values.  You can set the title.
+9:59:04	And what else -- and also say
+9:59:07	you wanted to have a different
+9:59:09	access on mobile, you can do
+9:59:10	that too.  You could be doing
+9:59:16	something like that.  But
+9:59:17	anyway.  That's Chartbuilder.
+9:59:29	So it's a pretty simple amount
+9:59:33	of data that we're working with
+9:59:35	that you can't see.  Great.
+9:59:42	It's, you know, a chart in
+9:59:44	Chartbuilder has data, title,
+9:59:46	source, has these scales, has
+9:59:49	some annotations.  We track all
+9:59:51	of this stuff using React.
+9:59:55	JavaScript library.  That is
+9:59:58	just -- I mean, it's essential
+10:00:01	to handling the complexity of
+10:00:03	any sort of user interface that
+10:00:06	has constantly changing data
+10:00:08	like this.
+10:00:10	And I think I have something to
+10:00:15	show you -- yeah.  So it varies
+10:00:17	from chart to chart.  Chart type
+10:00:20	to chart type.  But you can see
+10:00:22	there's some basic stuff about
+10:00:25	its sizing and then some basic
+10:00:31	stuff about its scales.  This
+10:00:34	would be populated with, you
+10:00:36	know, computer-understandable
+10:00:40	data objects.  And this is just
+10:00:42	a string of whatever you put
+10:00:43	into that box.
+10:00:48	And then, you know, whether you
+10:00:50	have dragged those labels.
+10:00:52	There's not much to it.
+10:01:00	But, you know, it's all made
+10:01:03	possible by React.  Which you
+10:01:05	have already heard three times I
+10:01:08	think, I counted, at this
+10:01:09	conference.  How great it is.
+10:01:11	If you change like one little
+10:01:13	thing in React, not in React.
+10:01:18	If you change an edit, one of
+10:01:20	those little fields, all you
+10:01:22	have to do is tell React that
+10:01:24	value has changed and it will
+10:01:26	repopulate the whole app as
+10:01:32	appropriate.  And it does that
+10:01:34	very efficiently.  It does that
+10:01:35	super-quickly.  And it does it
+10:01:38	in a way that doesn't melt my
+10:01:41	brain.
+10:01:42	Or it melts my brain if I had to
+10:01:46	think about how I did it, but in
+10:01:48	actually making it work, it
+10:01:51	doesn't melt my brain.
+10:01:53	So as we continue to build
+10:01:55	Chartbuilder, we are going to
+10:01:57	use React more and more and use
+10:02:00	D3 a little less to manipulate
+10:02:02	browser elements.  I'm sorry
+10:02:04	this is a little small.  But all
+10:02:06	this is showing is what you
+10:02:07	would do in D3 to make a line
+10:02:09	chart line.  You would create
+10:02:11	a -- you would use the D3
+10:02:18	path generator and never append
+10:02:22	the path.  You would append the
+10:02:25	path.  So this code wouldn't
+10:02:27	work.  But a code that looks
+10:02:28	very similar to it would.
+10:02:30	Anyway, this is what we're
+10:02:31	moving towards in React.  We're
+10:02:34	a same line generator, but
+10:02:36	instead of using D3 to
+10:02:39	manipulate the data, you would
+10:02:42	let React -- you would directly
+10:02:45	create path elements using the
+10:02:48	path generator to make the D
+10:02:55	attribute.  Which is what you
+10:02:56	would do anyway in D3.  And then
+10:02:59	put that inside of any kind of
+10:03:02	SVG group.
+10:03:04	So Chartbuilder started very
+10:03:09	slowly.  Despite it being pretty
+10:03:14	successful -- or it's very
+10:03:16	successful internally now.  And
+10:03:18	it's been adopted by a whole
+10:03:20	slew of news rooms.  And some
+10:03:22	non-news companies around the
+10:03:24	world.  It like really just
+10:03:27	started as like my -- trying to
+10:03:30	solve my personal frustration
+10:03:33	with kind of the visual quality
+10:03:36	of digital publications.  And
+10:03:39	not just at Quartz.  I have been
+10:03:42	at Quartz at the beginning --
+10:03:45	since the beginning.  The
+10:03:47	picture on the left, one year
+10:03:49	anniversary, the middle, two
+10:03:50	year anniversary, and the
+10:03:51	picture on the right is our
+10:03:52	third anniversary.
+10:03:55	And it's also done as incidental
+10:04:02	visualization of our group at
+10:04:03	the time.  And, you know, it was
+10:04:05	only -- when we were even before
+10:04:07	that picture all the way on the
+10:04:08	left, we were just like a dozen
+10:04:10	people -- maybe a little more --
+10:04:13	in this office in Soho.  And
+10:04:17	only me and my colleague Ritchie
+10:04:21	King were able to make charts
+10:04:24	that met our -- that met kind of
+10:04:27	the style requirements of our
+10:04:28	site.  We also had the same
+10:04:30	shoes at the time.
+10:04:33	Anyway.  Back then we -- neither
+10:04:37	Ritchie or I wanted to make
+10:04:41	other people's charts, it took a
+10:04:43	lot of time.  But nonetheless,
+10:04:44	we didn't want charts like this
+10:04:46	showing up on the site.  And
+10:04:48	they were.  Especially when
+10:04:49	we're focused on mobile-sized
+10:04:51	screens.  You know, this looks
+10:04:53	great on an IMAX, I guess.  It
+10:04:58	looks better than it ever did
+10:04:59	now that it's on an IMAX.
+10:05:04	But like, you know, you shrink
+10:05:06	that down into the palm of your
+10:05:07	hand and you can't read anything
+10:05:09	on it other than seeing some
+10:05:11	bars.  This is from a financial
+10:05:13	terminal that we use at Quartz.
+10:05:16	Similarly.  You know -- our
+10:05:19	reporters would have that, or go
+10:05:21	to a government Website and take
+10:05:23	a thing, or they would use, you
+10:05:25	know, a style, something that
+10:05:28	was -- looked like our intended
+10:05:33	tile at the time.  Or, you know,
+10:05:35	just people didn't have -- they
+10:05:39	had no tools.  This was all they
+10:05:41	could do.  This was the best
+10:05:42	that -- they wanted to make
+10:05:44	charts and this is what they had
+10:05:46	to settle for, really.
+10:05:50	But, you know, as much as I
+10:05:51	hated them, I didn't want to
+10:05:53	have to spend my whole day
+10:05:56	turning these charts into charts
+10:05:57	that matched our style.  You
+10:05:58	know, I went to Quartz because
+10:06:01	it wasn't a newspaper that, you
+10:06:05	know -- and many newspapers have
+10:06:09	full desks that just do that
+10:06:10	kind of work.  They are a
+10:06:13	service to other people to make
+10:06:15	prettier versions of the things
+10:06:16	that they want to make.
+10:06:18	But the biggest impediment
+10:06:22	towards me or Ritchie or other
+10:06:26	people on our team in the future
+10:06:28	to making this stuff is the
+10:06:30	terrible workflow that you had
+10:06:33	at the time.  This was how you
+10:06:34	would make a chart in Quartz's
+10:06:36	style.  Which is just like -- it
+10:06:39	would take like an hour.  And it
+10:06:41	only felt like it was taking 20
+10:06:43	minutes.  But you look at your
+10:06:44	watch and you're like, oh, wow.
+10:06:46	After the editor saw it and I
+10:06:48	had to go back and change some
+10:06:49	stuff.  And by the time I got
+10:06:51	this out the door, it took me an
+10:06:53	hour to make a single line
+10:06:55	chart?
+10:06:56	It was insane.  And the idea of
+10:06:59	workflow being this.
+10:07:03	So I started making a tool that
+10:07:04	would make a chart in our style
+10:07:08	that I could make these charts
+10:07:11	all the time without feeling
+10:07:14	like I was wasting it.
+10:07:16	The first version was pretty
+10:07:18	basic.  It was -- it's all built
+10:07:21	in the web browser, and it
+10:07:23	was -- it was using D3 as much
+10:07:27	as I could.  And I would drop --
+10:07:33	I would paste some data into the
+10:07:35	field.  Not dissimilar to what
+10:07:39	was up there, but much uglier.
+10:07:42	And the only way to export it
+10:07:44	was you would go and view source
+10:07:47	on the page and copy the SVG
+10:07:49	node.  And I would copy the text
+10:07:53	document and open up in
+10:07:54	illustrator.  Saved time, I
+10:07:56	didn't have to restyle anything,
+10:07:58	I just had to save that.  But
+10:08:00	kept on trying to improve it.
+10:08:02	Eventually the tool was able to
+10:08:04	create the images on its own,
+10:08:06	export the SVG on its own.  If
+10:08:09	we wanted to use that as a
+10:08:10	starting point for something
+10:08:12	more complex.  And it was given
+10:08:15	to some of our reporters most
+10:08:17	dependent on making charts.
+10:08:19	There were people that would
+10:08:21	come to me all the time and ask
+10:08:22	can I make charts.  Or can I
+10:08:24	make them a chart.
+10:08:25	And we were able to give it to
+10:08:27	them as a test.  We were also
+10:08:29	able to give it to people in our
+10:08:31	foreign offices so they could
+10:08:33	make charts when we were asleep.
+10:08:35	Quartz at the time had offices
+10:08:37	in London, Hong Kong, Los
+10:08:41	Angeles, and Bangkok.  Now we
+10:08:43	have many of those places and
+10:08:46	more.  Which is really cool.
+10:08:51	And it caught on really quick,
+10:08:53	you know?  The tool was direct
+10:08:56	enough and it was easy enough to
+10:09:01	train someone on that people
+10:09:05	were willing to use it.  And
+10:09:07	they saw the value in that they
+10:09:09	didn't have to wait.
+10:09:10	If it was taking me an hour to
+10:09:16	make a chart, for them, it was
+10:09:18	probably three or four hours to
+10:09:19	make a chart.  They send me an
+10:09:21	e-mail, I don't see it for an
+10:09:22	hour.  I have to be doing other
+10:09:24	things for another hour, it
+10:09:26	takes an hour to make it, and
+10:09:28	back and forth with them until
+10:09:29	they can publish their story.
+10:09:31	So then being able to directly
+10:09:34	make the charts saved a whole
+10:09:35	bunch of time.  Not just in
+10:09:37	chart creation, but also in
+10:09:38	administration.
+10:09:40	So, you know, we roll this out
+10:09:43	to the whole newsroom and
+10:09:46	leveraging the people who hadn't
+10:09:48	been using it, and getting other
+10:09:51	trainees internally.  And, you
+10:09:54	know, we were making like 100
+10:09:56	charts a month.  And the vast
+10:09:58	majority of our stories started
+10:09:59	having charts in them.  And most
+10:10:01	importantly, our reporters
+10:10:03	started to be able to make the
+10:10:05	chart a story.  And not just a
+10:10:07	side bar to a story.
+10:10:08	But, of course, there were
+10:10:10	unintended consequences.  We
+10:10:12	tried to make this tool, you
+10:10:13	know, I built this tool for me,
+10:10:16	originally.  So it had all sorts
+10:10:18	of flexibility built into it
+10:10:20	that I knew how to not abuse,
+10:10:23	but my colleagues did not.
+10:10:25	We had charts that had
+10:10:29	irrational disparate colors,
+10:10:31	trying to show too much data.
+10:10:34	Lacking a clear sense of point.
+10:10:35	And mostly typified in this.
+10:10:38	Which if you know anything about
+10:10:42	Quartz's color scheme, we have
+10:10:45	never had an orange in it.  If
+10:10:46	you're good at criticizing
+10:10:49	charts like I am, you'll notice
+10:10:51	this is a column chart that
+10:10:53	doesn't start at zero on the Y
+10:10:55	axis.
+10:10:56	We also have this issue with how
+10:10:58	we do the labeling where it says
+10:11:01	million, Microsoft, and the
+10:11:05	parens in millions, and in terms
+10:11:07	of thousands.  So instead of
+10:11:09	just saying billions and
+10:11:10	reducing the data.
+10:11:15	It was bad.  But, you know, the
+10:11:18	biggest -- one of the biggest
+10:11:22	issues that we actually saw was
+10:11:24	we were giving the color pallet
+10:11:27	like this in the first version
+10:11:28	of the tool.  And this was the
+10:11:30	Quartz color palette.  Making
+10:11:35	real custom graphics, this is
+10:11:37	the bucket I would pull from.
+10:11:39	Oh, yeah, give it to everyone
+10:11:41	and only use the top three rows.
+10:11:43	And I guess I shouldn't have
+10:11:45	been surprised when people
+10:11:46	started using the other stuff.
+10:11:48	But it was nonetheless
+10:11:50	surprising.  And frustrating.
+10:11:52	We moved the palette to that.
+10:11:54	And even that turned out to be
+10:11:56	too much.  Because now our
+10:11:57	palette is just that.
+10:12:00	And this is more than enough.
+10:12:01	This is 11 colors.  11 colors.
+10:12:03	And these actually work much
+10:12:05	better together than any of the
+10:12:09	other stuff.  I don't get any
+10:12:13	complaints that there aren't
+10:12:14	enough colors.  Which is --
+10:12:19	might be surprising to you.
+10:12:22	So there's a couple other things
+10:12:25	that are more trouble than
+10:12:26	they're worth.  We used to have
+10:12:28	animations in the editor that
+10:12:30	were just -- turned out to be
+10:12:31	like some massive technical debt
+10:12:34	to continue to maintain.  Like
+10:12:36	every now chart type should be
+10:12:39	animated from state to state.
+10:12:40	You know when we were -- as long
+10:12:42	as the chart is changing like
+10:12:43	really quickly, it turns out
+10:12:46	that the animations weren't as
+10:12:48	helpful as we thought in helping
+10:12:50	users understand what they were
+10:12:52	actually manipulating.
+10:12:54	We left -- at the start we had
+10:12:56	lots of options in the code base
+10:12:58	for like other people, for you
+10:13:00	guys, for other news
+10:13:02	organizations, if they wanted to
+10:13:05	implement this at their
+10:13:06	organizations.  We tried to
+10:13:08	guess what our clients wanted
+10:13:09	instead of having our clients
+10:13:11	tell us what they want.  As much
+10:13:14	as you can have a client in an
+10:13:16	open source project.
+10:13:18	But we've actually -- at this
+10:13:19	point we have taken a lot of
+10:13:20	them out and we suggest people
+10:13:23	do those modifications to the
+10:13:26	code base on their own because
+10:13:29	they are so organizationally
+10:13:33	specific.
+10:13:33	And those mobile that I was
+10:13:37	showing you, they sound great,
+10:13:39	hopefully when you saw them, oh,
+10:13:41	that's a great idea.  But no one
+10:13:43	uses them.  And the -- the
+10:13:46	reality is that now that we're
+10:13:49	rendering our charts -- we've
+10:13:51	changed our code so that our
+10:13:53	mobile charts can deal with the
+10:13:56	most common issues of being
+10:13:58	squeezed to a small screen.
+10:14:00	Namely, text wrapping.
+10:14:03	But there have been other things
+10:14:05	that were really valuable.
+10:14:07	Simple export.   The open source
+10:14:10	version of Chartbuilder, the
+10:14:14	default export is saving as an
+10:14:16	image.  You click a button and
+10:14:18	you get a ping.  Which is
+10:14:20	something that I think most
+10:14:21	people in most organizations are
+10:14:22	comfortable slinging around.
+10:14:24	How do I get this chart into my
+10:14:26	power point?  Just put this
+10:14:28	image in there.  How do I get
+10:14:30	this chart on my Website?  Just
+10:14:31	upload this image.  There's no
+10:14:34	fumbling with embed codes.
+10:14:36	There's no missing half of an
+10:14:38	embed code.  There's no breaking
+10:14:39	a whole page because there's a
+10:14:42	character off in your embed
+10:14:46	code.
+10:14:46	In the way that Quartz is using
+10:14:49	it now, still don't have embed
+10:14:52	codes.  Every chart has a unique
+10:14:54	URL that our reporters and
+10:14:56	editors can put in a story as
+10:14:59	plain text.  When that story is
+10:15:01	rendered on you are Website, the
+10:15:02	chart is embedded by our
+10:15:04	Website.  Or the embed code is
+10:15:06	created by our Website instead
+10:15:07	of by our user.
+10:15:10	So automatic axis tick value
+10:15:16	logic.  It's -- we have done
+10:15:21	some things that we think are --
+10:15:23	handle stuff a little better for
+10:15:26	D3 than D3 does.  Just because
+10:15:28	of the way in which we want our
+10:15:30	axis to look.  More importantly
+10:15:34	on this point is being able to
+10:15:35	tell people when they have bad
+10:15:37	values on their ticks.  In their
+10:15:40	axis.  If like they're increment
+10:15:42	is like 2.75 it can happen.
+10:15:45	Because we're defining axis by a
+10:15:50	maximum and a min and a number
+10:15:52	of steps.  You can wind up with
+10:15:58	weird gaps in between them.
+10:16:00	Clear helps with the axis, we
+10:16:05	can warn people things don't
+10:16:08	look good.  In the original
+10:16:09	versions of Chartbuilder, it
+10:16:11	would freeze if you did it
+10:16:13	wrong, and the official line --
+10:16:15	the official support line when
+10:16:17	it breaks back then was just
+10:16:19	rebuild the page.
+10:16:20	And now we can actually tell you
+10:16:22	on an element by element basis,
+10:16:26	each component that you can add,
+10:16:27	we can put a message to tell you
+10:16:29	what may -- what appears to be
+10:16:31	wrong with what you're doing and
+10:16:33	why that's breaking.
+10:16:36	So the future.  We're still
+10:16:38	adding features to try and make
+10:16:40	it easier to add new chart
+10:16:42	types.  Even maps.  We're
+10:16:45	working on being able to have
+10:16:48	more free text annotations on
+10:16:51	top of charts.  And, you know --
+10:16:58	but it's an open source project.
+10:17:01	It's used sporadically or
+10:17:04	consistently, depending, by news
+10:17:07	organizations around the world.
+10:17:08	From local public radio to
+10:17:10	national magazines, newspapers.
+10:17:14	But not all of them -- there's
+10:17:18	other -- there's plenty of other
+10:17:20	publications that aren't using
+10:17:21	Chartbuilder.  And which kind of
+10:17:25	shows -- in recent years it's
+10:17:28	been a development.  Since
+10:17:29	Chartbuilder came out, there's a
+10:17:32	development of other
+10:17:33	organizations building their own
+10:17:34	charting tools.  The New York
+10:17:35	times built one, Washington Post
+10:17:39	built one, The Guardian is in
+10:17:40	the middle, Boston Globe,
+10:17:45	FiveThirtyEight used
+10:17:46	Chartbuilder, just switching to
+10:17:48	one they custom built.
+10:17:50	I'm pretty sure it's because the
+10:17:52	theory of Chartbuilder works.
+10:17:54	Because we have colleagues who
+10:17:55	are wasting their time on
+10:17:57	skill-intensive and
+10:18:01	time-intensive text making
+10:18:04	charts for other people.  Seems
+10:18:05	like it should be simple, but
+10:18:06	it's not.  And if we can give
+10:18:08	them a tool to free up their
+10:18:10	time, they'll be able to have
+10:18:12	more time to make the more
+10:18:13	complex and more interesting
+10:18:15	work that they're better suited
+10:18:16	for.
+10:18:17	We have people, went four years
+10:18:19	of school, got some interactive
+10:18:21	whatever degree, and now we have
+10:18:23	them in some agency as some
+10:18:25	low-level person.  And our
+10:18:27	client needs charts for their
+10:18:29	PowerPoint, so we have them make
+10:18:31	it.  Seems like a waste.  Where
+10:18:34	if we could build a tool for
+10:18:36	that client to help them be able
+10:18:38	to make their own charts, we now
+10:18:40	have this resource this, you
+10:18:41	know, really green, ambitious
+10:18:46	person who's going to spend all
+10:18:48	day in the office coding this
+10:18:49	crazy visualization that now
+10:18:52	doesn't have to be making
+10:18:55	charts.
+10:18:56	At the same time we're
+10:19:03	democratizing the charts, and
+10:19:06	raising the value of the charts
+10:19:09	because we have more people who
+10:19:10	can make better charts.  Like I
+10:19:12	mentioned, you have more people
+10:19:13	that can make more complex
+10:19:15	charts.
+10:19:17	Of course, I mean, this can
+10:19:20	happen in a newsroom.  Of
+10:19:23	course, there's one thing that
+10:19:25	does end up happen, and it's
+10:19:26	this medium complexity chart
+10:19:28	kind of disappears.  Which I'm
+10:19:32	totally fine with.  You start --
+10:19:35	what we found is that if a chart
+10:19:38	now is going to take two to
+10:19:41	three hours to make something
+10:19:45	just, I don't know, needs a
+10:19:47	little extra love, we try and
+10:19:49	just shoe horn it into a
+10:19:52	Chartbuilder chart.  Make it
+10:19:54	simpler.  Make it two charts
+10:19:56	instead of one fancy chart.
+10:19:58	And then, you know, if you
+10:20:03	want -- or make it
+10:20:04	super-complex.  And, you know,
+10:20:07	for better or for worse, that's
+10:20:09	what happens.  And that brings
+10:20:10	us back to the sharks.  As I
+10:20:13	mentioned, the sand shark --
+10:20:15	sand tiger sharks that used to
+10:20:17	be in the tank had some crooked
+10:20:20	spines.  Some had humps, kind of
+10:20:21	like this one.  This is from a
+10:20:23	journal -- or a study that
+10:20:27	looked into the phenomenal.
+10:20:29	There have been a couple studies
+10:20:30	that looked into a the
+10:20:32	phenomenon.  And some say it's
+10:20:34	because of the curve of the
+10:20:35	tank.  Some say it's the tank
+10:20:37	being too small.  Some say that
+10:20:39	it's a result of vitamin
+10:20:41	deficiencies.
+10:20:42	But, you know, experts agree
+10:20:44	that sharks in the wild don't
+10:20:46	regularly develop these
+10:20:47	symptoms.  And sharks in
+10:20:50	captivity do.  Which is not
+10:20:53	dissimilar to these sharks.
+10:20:58	Anything goes, this is my
+10:20:59	colleague here, he's been shown
+10:21:01	to have a vicious beast.  So
+10:21:03	much so he's been on Japanese
+10:21:05	television with a special on his
+10:21:11	brutality.  In my colleague's
+10:21:14	natural habitat they make charts
+10:21:16	using the defaults in Excel,
+10:21:19	reprinting something supplied
+10:21:21	from a third party.  But like a
+10:21:23	shark eats in the wild, they
+10:21:25	would do this sporadically.
+10:21:27	They were thinking charting was
+10:21:29	something to be done
+10:21:31	occasionally.
+10:21:32	And just like the sharks here
+10:21:35	eating frozen fish off a stick,
+10:21:38	we had to train our reporters to
+10:21:40	think differently and change
+10:21:42	their habits.  This is
+10:21:47	important, take a wild shark and
+10:21:48	throw them in the tank with the
+10:21:50	rest of the fish.  There's a lot
+10:21:51	of problems.  When it comes to
+10:21:52	charting, we do our best to help
+10:21:55	our new colleagues get
+10:21:56	acclimated.  Some are more
+10:21:59	willing than others, but in the
+10:22:01	end they're already captive.
+10:22:02	And we also have like this
+10:22:04	massive institutional support
+10:22:06	behind our tool.  If you can gin
+10:22:09	it up, it's invaluable.
+10:22:13	But all this means that our
+10:22:15	ecosystem is healthier, our
+10:22:17	reporters are less vicious.  And
+10:22:19	in an environment where they can
+10:22:20	thrive sustainably.  Sometimes
+10:22:30	my colleagues and I contort
+10:22:32	ourselves due to the limited
+10:22:34	options in Chartbuilder.  But
+10:22:36	I'm better for it, and I think
+10:22:39	everyone on the outside looking
+10:22:40	in interested in learning more
+10:22:43	would think so too.  Thank you.

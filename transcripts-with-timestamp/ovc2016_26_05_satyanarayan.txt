@@ -1,0 +1,870 @@
+12:01:38	>> Hello.  Thank you.  Thanks,
+12:01:41	Irene.  Hi, I'm Arvind.  And I'm
+12:01:45	excited to show you how to build
+12:01:47	interactive visualizations with
+12:01:50	Vega.  A language we have been
+12:01:54	building at the University of
+12:01:54	Washington data lab.  Before we
+12:01:58	dive into Vega, I want to start
+12:02:01	with three circles.  Borrowing a
+12:02:04	D3 tutorial from a couple years
+12:02:08	ago.  Here is what the code
+12:02:09	looks like to visually design
+12:02:11	the circles.  We're essentially
+12:02:15	binding the data to the circles
+12:02:16	and using the values to
+12:02:18	determine the properties like
+12:02:20	exposition and the radius.
+12:02:21	This is an example of
+12:02:24	declarative design.  We're
+12:02:25	specifying what we want from our
+12:02:26	design rather than how it should
+12:02:28	be computed.  So underneath the
+12:02:30	hood, D3 is building out all the
+12:02:33	loops we need and making the DOM
+12:02:35	calls, all the lower level
+12:02:36	details for us.  We don't have
+12:02:38	to do any of that ourselves.
+12:02:40	Now, what if we were to
+12:02:42	introduce simple interactivity?
+12:02:45	If I were to drag the circles up
+12:02:47	and down.  What would the code
+12:02:49	look like?  Look like this.  I
+12:02:50	have to register event listeners
+12:02:53	for the mouse up, down, move
+12:02:55	events.  And I could get
+12:02:57	explicit steps for what I want
+12:03:00	to happen during the events.  So
+12:03:03	what's the problem of specifying
+12:03:05	interaction?  This is imperative
+12:03:07	design.  Well, the first
+12:03:10	problem, it falls to us, the
+12:03:12	developers, to manually maintain
+12:03:15	state.  And Shirley did a great
+12:03:17	job of identifying why this gets
+12:03:19	complex.
+12:03:19	So in this simple example, my
+12:03:21	state it figuring out which
+12:03:23	circle I'm currently dragging.
+12:03:25	And whiffs putting this
+12:03:26	together, I screwed up the first
+12:03:27	time.  I forgot to clear out the
+12:03:30	state on mouse up, my circles
+12:03:32	kept moving around even though I
+12:03:34	stopped dragging.  And the
+12:03:36	sometime is just four lines and
+12:03:38	I still made a mistake.
+12:03:40	The second problem is we have to
+12:03:42	redefine the appearance of our
+12:03:44	visualization in multiple
+12:03:46	locations.  This makes it tricky
+12:03:48	to figure out why the
+12:03:50	visualization might look a
+12:03:51	particular way.  I have to trace
+12:03:53	down multiple code paths.
+12:03:55	Debugging becomes much more
+12:03:58	difficult.  And with this
+12:03:59	imperative paradigm, I have to
+12:04:01	deal with the low level details.
+12:04:04	D3 stores in this variable, or
+12:04:07	call stop propagation when I'm
+12:04:09	dragging to that text selection
+12:04:13	doesn't fire.  Low level details
+12:04:16	that has nothing to do with
+12:04:18	dragging circles around.  And
+12:04:21	with the programmers, call back
+12:04:25	hell, and the execution order
+12:04:27	can be unpredictable.
+12:04:29	This is an example, show you
+12:04:32	these problems exist with real
+12:04:34	world and more complex use
+12:04:35	cases.  So here's the canon Cal
+12:04:38	D3 of the linking in a
+12:04:40	scatterplot matrix.  Because
+12:04:43	brushing is so common, D3 has a
+12:04:47	brush component to substantiate
+12:04:48	in the code and pass three
+12:04:50	callbacks to.  And so let's
+12:04:52	examine these callbacks.  I like
+12:04:55	the IMAX, the code is actually
+12:04:57	readable.
+12:04:58	Let's look at these callbacks in
+12:04:59	greater detail.  So we can see,
+12:05:02	we have to manually maintain the
+12:05:04	state of the brush, including
+12:05:05	clearing out any previously
+12:05:07	active brushes.  In multiple
+12:05:10	locations, identify what set of
+12:05:13	points are highlighted.  And the
+12:05:14	low level details like the
+12:05:16	current brush stored in a
+12:05:20	variable named this, or D3 brush
+12:05:23	expositions it in a particularly
+12:05:25	opaque fashion, this double
+12:05:27	array.
+12:05:28	And on this point it's worth
+12:05:30	noting that it black boxes all
+12:05:32	of its event processing.  So,
+12:05:34	you know, it registers the event
+12:05:36	listeners that it needs.  You
+12:05:37	know, to drag out a brush
+12:05:40	including some support for
+12:05:41	mobile devices.  Now, the
+12:05:42	problem with that is, well, what
+12:05:44	if I wanted to use, you know,
+12:05:46	alternate events to trigger that
+12:05:50	interaction?  So, for example, a
+12:05:53	brush and pen in the same
+12:05:54	visualization, both are
+12:05:56	triggered by drags, so they
+12:06:00	conflict.  I would like to
+12:06:01	resolve that conflict, but I
+12:06:03	have no way of doing so.
+12:06:05	And so this is where reactive
+12:06:07	programming comes into play.
+12:06:09	You can think of it as, you
+12:06:10	know, working in a spreadsheet.
+12:06:12	When I enter new data values
+12:06:15	into spreadsheet cells, formulas
+12:06:18	that reference the cells
+12:06:20	automatically update to reflect
+12:06:21	the new values.  This is another
+12:06:23	example of declarative design.
+12:06:25	The formula is the same, what I
+12:06:27	want, the sum or average of a
+12:06:28	group of cells, rather than how
+12:06:30	or when those things should be
+12:06:33	computed.  Another way of
+12:06:34	thinking about it is, well, do
+12:06:36	you want to write a spreadsheet
+12:06:38	with event callbacks?  Because I
+12:06:41	sure don't.  That would be a
+12:06:42	nightmare.
+12:06:43	And so Vega uses this paradigm
+12:06:46	in a similar fashion.  So events
+12:06:48	are our data.  And more
+12:06:50	specifically, a form of
+12:06:51	streaming data.  And the
+12:06:53	formulas are dynamic variables
+12:06:55	called signals.  And these
+12:06:57	signals automatically update
+12:06:58	when new events fire.
+12:07:00	So let's actually look at Vega
+12:07:02	in more detail now.  Here is
+12:07:04	what a Vega specification looks
+12:07:08	like, this is a scatterplot
+12:07:10	matrix.  And as you can see --
+12:07:12	again, readable code.  It's is a
+12:07:16	JSON object with the
+12:07:19	transferring of the data, and
+12:07:21	load from the remote URL, or
+12:07:23	embed directly in the
+12:07:24	specification.  We have scale
+12:07:27	functions to map to visual
+12:07:28	properties like position, color,
+12:07:30	size.
+12:07:31	Guides that visualize those
+12:07:33	scales either as axis or
+12:07:35	legends.  And finally our marks.
+12:07:38	In this particular example you
+12:07:39	can see the special group mark.
+12:07:41	We have kind of like SVG groups,
+12:07:43	we can nest scales, guides, and
+12:07:45	marks within that and it
+12:07:47	provides a very concise way of
+12:07:48	doing small multiple and layered
+12:07:51	displays.
+12:07:52	So alongside these sort of
+12:07:54	familiar visual encoding
+12:07:56	building blocks, Vega introduces
+12:07:58	reactive ones to do interaction
+12:08:00	design.  As I have mentioned, we
+12:08:02	have event streams.  We also
+12:08:04	have a syntax I'm going to
+12:08:06	impact shortly for selecting the
+12:08:08	particular events we care about.
+12:08:09	The event streams feed signals,
+12:08:12	dynamic variables, values
+12:08:14	automatically update and
+12:08:15	recalculate whenever a new event
+12:08:18	fires.  Scale inversions that
+12:08:20	take the signal values, default
+12:08:22	in pixel or visual space and
+12:08:24	move them up to the data level.
+12:08:25	So they're sort of the opposite
+12:08:26	of scale transforms.
+12:08:29	Predicates, build selections.
+12:08:35	It returns true or false if the
+12:08:37	value is between the min and max
+12:08:40	signal values.  And finally
+12:08:41	production rules which use these
+12:08:45	selections to affect some change
+12:08:46	to the visualization.
+12:08:47	So this is also right there
+12:08:49	right now, let's make it a
+12:08:50	little more concrete.  Sticking
+12:08:52	with brushing and linking as our
+12:08:54	example.
+12:08:55	So as I mentioned, events are a
+12:08:57	form of streaming data.  So if I
+12:08:59	was to move my pointer across
+12:09:01	these rectangle marks, I might
+12:09:05	observe a stream of mouse move
+12:09:07	events.  That's simply denoted
+12:09:09	by the event type along with the
+12:09:12	element, the target of the
+12:09:13	source element of these events.
+12:09:15	Events can be sequenced in one
+12:09:16	of two ways.  So I can use the
+12:09:18	comma to merge multiple streams
+12:09:20	into a single one with those
+12:09:22	constituent events correctly
+12:09:25	interweaved.  And I can also
+12:09:27	order events.  So this is a
+12:09:28	stream of mouse move events that
+12:09:29	occur between a mouse down and a
+12:09:32	mouse up.  That's a lot of
+12:09:33	words.  You and I would call
+12:09:35	that a stream of drag events.
+12:09:36	We can also filter events before
+12:09:39	they enter a stream.  With
+12:09:41	square brackets, facility other
+12:09:43	events based on properties.
+12:09:44	With curly braces, based on a
+12:09:48	time interval between events.
+12:09:50	This is a concise way to
+12:09:52	de-balance the throttle events.
+12:09:55	As you can see, hopefully, it
+12:09:58	was inspired by CSS selectors
+12:10:01	because we wanted this to be a
+12:10:02	familiar process for people in
+12:10:04	the community of individuals
+12:10:06	designers.
+12:10:07	So what streams do we need for
+12:10:10	brushing and linking?  Well, a
+12:10:11	stream of mouse down events for
+12:10:13	that start position of our brush
+12:10:15	and a stream of drag events for
+12:10:16	the end position.  Now, we can
+12:10:18	use some signals to extract the
+12:10:21	particular coordinates of the
+12:10:22	start and end positions.  And we
+12:10:23	can actually use those
+12:10:25	coordinates directly with a
+12:10:27	rectangle mark.  And that's all
+12:10:28	we need to be able to draw a
+12:10:31	brush repeatedly on a
+12:10:32	scatterplot matrix.  Signals now
+12:10:35	represent my entire interaction
+12:10:37	state, and nay automatically
+12:10:38	update, which means I no longer
+12:10:42	have to do manual book keep like
+12:10:45	clearing out the previous brush
+12:10:47	like I have to with D3.  And
+12:10:49	these coordinates can feed a
+12:10:51	predicate function.  This is a
+12:10:54	simple selection, true or false.
+12:10:56	In this case, if the input
+12:10:58	parameter coordinates fall
+12:11:00	within the start and end
+12:11:01	coordinates, that returns true,
+12:11:04	otherwise it returns false.  And
+12:11:05	the way we use these selections
+12:11:07	are in production rules.  It's
+12:11:09	simple if-then-else chains.  The
+12:11:14	full of the circle mark should
+12:11:15	be determined by the fact if it
+12:11:19	falls within the brush, and
+12:11:21	color it blue or green based on
+12:11:26	data, if it doesn't, gray.  This
+12:11:28	is a setup for brushing and
+12:11:30	linking might look like.  But
+12:11:32	here is the interaction it
+12:11:33	produces.  If I start to brush
+12:11:36	orange and green, so many blue
+12:11:38	points are highlighted as well.
+12:11:40	So what's going on?  What's
+12:11:42	happening is I'm using the
+12:11:44	signal values directly in my
+12:11:46	predicate, and they are just
+12:11:48	pixels, right?  So what's
+12:11:50	happening is the same points
+12:11:51	that lie within the pixel ranges
+12:11:52	are being highlighted.  Whereas
+12:11:55	what I want is for only points
+12:11:56	that lie within the same data
+12:11:58	range to be highlighted instead.
+12:12:00	So if we switch back to our
+12:12:02	schematic, what I want to do is
+12:12:05	identify which scatterplot I'm
+12:12:06	in, and use its scales to invert
+12:12:09	my signal values.  Now the input
+12:12:15	parameters, what it's expressing
+12:12:18	is data query.  Looking at the
+12:12:20	sequel data value and the pedal
+12:12:23	data value and checking whether
+12:12:26	these lie within the two
+12:12:28	extents.  I can bring back my
+12:12:30	production rule from before.
+12:12:32	There we go.  It is doing the
+12:12:34	right thing.  If I brush orange
+12:12:35	and green points, I only see
+12:12:38	orange and green highlighted.
+12:12:40	Brush blue points, see those
+12:12:41	highlight.  Nothing weird going
+12:12:43	upon.
+12:12:44	And so this sort of setup brings
+12:12:47	the advantage of declarative
+12:12:48	design to interaction techniques
+12:12:50	as well.  So what are some of
+12:12:54	these advantages?  First the
+12:12:55	process of doing interaction
+12:12:56	design is now about combining
+12:12:58	and recombining these building
+12:12:59	blocks rather than programming
+12:13:03	from scratch.  It's much faster
+12:13:06	to iterate, only a set number of
+12:13:08	ways the blocks can combine
+12:13:09	together.  We no longer have to
+12:13:11	deal with the lower level
+12:13:12	details.  These encapsulate and
+12:13:15	take that away from us, we argue
+12:13:17	that interaction design is also
+12:13:19	accessible to a larger audience.
+12:13:21	The second point is, because
+12:13:23	events are just another form of
+12:13:25	streaming data, Vega, under the
+12:13:27	hood, can do a number of
+12:13:29	optimizations on our behalf, and
+12:13:32	ultimately yields performance
+12:13:34	twice as fast as D3 and event
+12:13:37	callbacks.  If you don't believe
+12:13:38	me, we have published our
+12:13:40	benchmarks.  You're welcome to
+12:13:45	run those yourself.
+12:13:46	And the third point, because
+12:13:49	it's declarative, only what we
+12:13:51	want, not how it's computed.
+12:13:54	It's easier to retarget the
+12:13:56	interaction technique to
+12:13:57	different devices and modalities
+12:13:59	and so forth.  So, for example,
+12:14:01	this interaction is using
+12:14:04	desktop, mouse down, mouse move
+12:14:06	and so forth.  What I wanted to
+12:14:07	retarget for mobile devices?
+12:14:09	Well, without touching any of
+12:14:10	the rest -- or the heart of my
+12:14:13	interaction logic, I can just
+12:14:16	switch out the event streams and
+12:14:17	instead use touch events.  And
+12:14:19	like I said, I'm not touching
+12:14:21	any of the rest of it.  And now
+12:14:23	this interaction technique works
+12:14:25	on mobile devices as well.
+12:14:27	As we'll soon see in some demos,
+12:14:29	signals don't have to be driven
+12:14:31	by a single event stream, they
+12:14:33	can be driven by multiple.  A
+12:14:36	single interaction technique
+12:14:38	cannot only work on a desktop,
+12:14:40	but mobile devices and you have
+12:14:41	one specification that deals
+12:14:43	with all of it.
+12:14:44	So like I said, demos.  Here is
+12:14:47	the URL that most of these demos
+12:14:49	will be run on.  So you're
+12:14:51	welcome to sort of tune me out
+12:14:54	and just play.  Is that
+12:14:59	readable?  Maybe not.  Put this
+12:15:02	up a little bit.  All right.
+12:15:04	So here is just -- I wanted to
+12:15:07	start simple.  Brushing in a
+12:15:09	scatterplot.  So we know that it
+12:15:12	works for sure.  And here are
+12:15:14	our signal values.
+12:15:16	And you can see each one has a
+12:15:17	name, an initial value, and we
+12:15:20	can specify the streams that
+12:15:22	trigger different value changes
+12:15:24	to it.
+12:15:25	And in this particular case,
+12:15:27	every time a mouse down event
+12:15:28	fires, this expression
+12:15:29	re-evaluates.  And Vega has a
+12:15:33	sort of very light version of
+12:15:34	the JavaScript syntax supported.
+12:15:38	A safer version along with
+12:15:40	helper functions like iScale
+12:15:44	allows me to call a scale
+12:15:45	inversion in here.  So brush
+12:15:48	start and end are just
+12:15:49	coordinates and data space of my
+12:15:50	brush extents.
+12:15:52	So here is the rest of the sort
+12:15:54	of visual encoding.  And I have
+12:15:56	my predicate function here.  The
+12:15:59	fill color, if it match this is
+12:16:01	test, which is basically just
+12:16:02	checking if some data values lie
+12:16:05	within these particular ranges,
+12:16:08	color it using this scale and
+12:16:09	field, and otherwise color it in
+12:16:11	gray.  And right at the bottom
+12:16:12	is my rectangle mark for the
+12:16:15	actually brush.  And you can see
+12:16:16	its positions are just being
+12:16:17	determined by the signal values
+12:16:22	directly.  Because these signal
+12:16:24	values are data values, we also
+12:16:26	use a scale function.
+12:16:27	So moving up the ladder of
+12:16:29	complexity, here is, you know,
+12:16:31	brushing and linking in the
+12:16:32	scatterplot matrix that we just
+12:16:34	worked through diagrammatically.
+12:16:40	And we decouple for clarity,
+12:16:44	differentiating the start and
+12:16:45	end coordinates from the start
+12:16:46	and end data.  Here is a signal
+12:16:48	to identify which particular
+12:16:50	scatterplot we're in.  And also
+12:16:53	calculate a total brush fall
+12:16:55	that holds these extents all
+12:16:58	together.  And the predicate
+12:16:59	function is similar, checking is
+12:17:01	if it's in the range.  And
+12:17:03	here's the mark that builds out
+12:17:04	our brush.  That way, that's all
+12:17:07	I need to brush across the
+12:17:08	scatterplot.
+12:17:11	Here is where things start to
+12:17:12	get fun.  So here is -- hey,
+12:17:15	that scrolls.  Here is an
+12:17:20	interaction technique inspired
+12:17:22	by the cross-filter js.  As I
+12:17:26	start to brush in the
+12:17:28	constituent histograms, the bars
+12:17:30	start to dance as the data is
+12:17:33	filtered out and ring a gated.
+12:17:41	And we're defining the start and
+12:17:43	end points with the brushes and
+12:17:44	then using that to filter, you
+12:17:48	know, particular data values.
+12:17:50	So these min day and max day are
+12:17:53	signal values and we check that
+12:17:55	they fall within the range.
+12:17:57	So we have definitely heard that
+12:17:58	this particular example is an
+12:18:00	especially overwhelming one.
+12:18:02	Let me scroll all the way down
+12:18:03	here.  516 lines of JSON.  That
+12:18:06	is a very large number.  But
+12:18:09	what if -- if you study this
+12:18:12	carefully, it's about the same
+12:18:16	120 lines of JSON, still a large
+12:18:18	number, I'll grant, but repeated
+12:18:20	four times.  One for each
+12:18:24	histogram.  The data and scales
+12:18:26	repeated over and over again.
+12:18:28	Some more examples here where
+12:18:30	reordering a JSON matrix,
+12:18:33	showing this.  And this is super
+12:18:39	simple.  I was surprised at how
+12:18:41	easily the spell out -- I have
+12:18:43	two signals.  A start and a
+12:18:45	destination signal that
+12:18:46	basically track which sort of,
+12:18:49	you know, columns or rows am I
+12:18:52	switching around.  And those
+12:18:54	signal values are used in data
+12:18:56	transformations to switch a data
+12:18:58	value.  That's basically it.  So
+12:19:00	that interaction technique sort
+12:19:02	of boils down to maybe a handful
+12:19:04	of lines of JSON.
+12:19:06	Here is another Mike example, he
+12:19:09	makes really good examples.
+12:19:12	Mike Bostock.  The airports in
+12:19:16	the United States, sized by how
+12:19:18	many flights go in and out.  And
+12:19:20	I can move my mouse point around
+12:19:22	the map to see the outbound
+12:19:24	connections from that particular
+12:19:27	airport.  Here is -- and SFO is
+12:19:31	around here somewhere.  And so
+12:19:33	forth.  What you might notice, I
+12:19:35	don't have to be on top of any
+12:19:37	of the circles to select them.
+12:19:39	And what's happening is
+12:19:40	underneath the hood, we're
+12:19:41	computing a Voronoi
+12:19:42	tessellation.  Driving the event
+12:19:52	streams to the signals.  I'm
+12:19:53	selecting which whichever
+12:19:55	airport is nearest rather than
+12:19:58	the one underneath it.
+12:20:01	And finally, one of our favorite
+12:20:03	examples to show, we didn't
+12:20:04	think this would be expressible.
+12:20:06	One of our star undergrad
+12:20:08	students built this and was
+12:20:11	surprised.  So this is a
+12:20:13	technique, Brittany and Chris
+12:20:16	Collins, talking later today
+12:20:20	talked about a few years ago.
+12:20:21	And has the story telling.
+12:20:24	Along the Y axis is, life
+12:20:26	expectancy, and the X, fertility
+12:20:29	and a number of countries.  I
+12:20:31	hover over a country and see the
+12:20:33	trajectory through time.  And I
+12:20:40	can drag and she the data being
+12:20:43	shown.  This is a nice way of
+12:20:44	navigating time series data.
+12:20:46	And we can mark points of
+12:20:48	interest and so forth.
+12:20:49	And what's nice about this
+12:20:51	technique is the author is
+12:20:53	initially -- especially intended
+12:20:55	this to be sort of a touch-based
+12:20:58	interaction technique.  Here I
+12:21:00	am demonstrating on a desktop.
+12:21:03	It's actually the exact same
+12:21:05	JSON definition.  Don't have to
+12:21:07	duplicate anything.  We have to
+12:21:09	specify a comma with both the
+12:21:12	mouse done and the touch events.
+12:21:14	And those same set of events
+12:21:16	drive the same, you know,
+12:21:17	interaction logic.
+12:21:18	But we're not the only ones
+12:21:20	building Vega examples.  We were
+12:21:22	really happy what we saw this
+12:21:24	one, created by John Lee.  And
+12:21:26	this is a -- as the title says,
+12:21:29	an interactive NBA shot chart.
+12:21:34	This is an impressive example.
+12:21:36	I can start brushing along any
+12:21:37	of these dimensions to start
+12:21:40	filtering the data.  And you can
+12:21:41	see sort of these stacked bars
+12:21:43	rise and fall as I, you know,
+12:21:45	filter the data out.  I can also
+12:21:47	filter these histograms hoar.
+12:21:50	And all these numbers up here
+12:21:52	are, you know, being
+12:21:53	manipulated.  I can also sort of
+12:21:55	drag on the court and so forth.
+12:21:59	All of this is being coordinated
+12:22:00	by Vega.  And quite performing,
+12:22:04	I'd say.  That's quite nice.
+12:22:06	And the last example I wanted to
+12:22:08	show is we have been really
+12:22:09	excited to work with the folks
+12:22:12	at Wikipedia who integrated Vega
+12:22:17	visualizations into Wikipedia
+12:22:19	itself.  You can take the JSON
+12:22:21	objects, paste them into a
+12:22:22	Wikipedia article, and boom, an
+12:22:25	interactive visualization.  Here
+12:22:28	is scatterplot of the most
+12:22:32	expensive paintings auctioned
+12:22:35	off so far.  It's a nice
+12:22:37	scatterplot, a nice way to
+12:22:39	visualize the data that
+12:22:41	Wikipedia editors collected.
+12:22:44	But I can hover over the points
+12:22:45	to get the thumbnails of the
+12:22:47	particular paintings.
+12:22:48	I can also, you know, click
+12:22:50	points to filter out by
+12:22:52	particular periods or artists.
+12:22:54	Things like that.  Simple
+12:22:56	interactions, but really
+12:22:57	powerful in this context.
+12:22:58	Because otherwise all this data
+12:23:00	is sort of, you know, trapped,
+12:23:02	so to speak, in this table.  And
+12:23:04	so this is, you know, the
+12:23:05	Wikipedia folks were really
+12:23:07	excited about the prospect of
+12:23:09	being able to do interactive
+12:23:11	graphics in Wikipedia.
+12:23:13	So I'm going to take a water
+12:23:15	break.  And switch back to this
+12:23:19	example of the scatterplot.  And
+12:23:21	one of the things that is both
+12:23:24	good and bad about declarative
+12:23:27	design is all the execution
+12:23:29	falls to the toolkit.  So in
+12:23:31	this case, Vega.  That means
+12:23:33	that debugging something becomes
+12:23:35	particularly hard because you
+12:23:37	need to know the internals of
+12:23:38	Vega to understand how to debug
+12:23:40	something.  The flip side of
+12:23:41	that coin is we can build a
+12:23:44	specific, tailor-made debugger
+12:23:47	for Vega.  Because Vega is
+12:23:52	domain specific and we
+12:23:54	understand what we want to do
+12:23:55	with it.  That's what my
+12:23:59	collaborator has been working
+12:24:00	upon.  If I get the debugger,
+12:24:02	records the signal values as I
+12:24:04	make them.  And I pause, I can
+12:24:06	go back in time and see how my
+12:24:08	interaction has actually, you
+12:24:10	know, been propagated through
+12:24:15	the visualization.  So, you
+12:24:16	know, there are a bunch of
+12:24:17	really cool interactions built
+12:24:18	in here so I can sort of
+12:24:24	navigate through the timeline to
+12:24:25	see the data values that the
+12:24:26	signals are holding.  These red
+12:24:28	highlights indicate where, you
+12:24:30	know, which signals were used in
+12:24:32	that calculation, how this
+12:24:34	builds up.  I can filter the
+12:24:36	timeline to a specific period
+12:24:39	and so forth.  The timeline also
+12:24:41	has a data table view.  So in
+12:24:43	this case, this is an index
+12:24:45	chart.  The data value is
+12:24:47	renormalized based on this index
+12:24:49	point.  A simple signal that
+12:24:50	uses it, but most of the magic
+12:24:53	is happening in the data tables.
+12:24:54	So you can see here, you know,
+12:24:57	it's similar, I can go back in
+12:24:59	time.  That I can sort of
+12:25:01	visualize how my data values are
+12:25:03	changing in response to my
+12:25:05	interaction techniques as well.
+12:25:08	So -- and so this is now brand
+12:25:12	new and live and note the alpha
+12:25:15	keyword there.  It is alpha.  It
+12:25:17	is -- we're really excited about
+12:25:20	it, but there might be things
+12:25:21	broken.  So please let us know.
+12:25:24	And also let us know how you're
+12:25:27	using it.
+12:25:29	To dive back into slides,
+12:25:32	everything is available at this
+12:25:33	URL, vega.github.io/vega, all of
+12:25:39	this is developed out in the
+12:25:41	open.  Before I wrap up, one
+12:25:44	more thing.  A couple months ago
+12:25:46	my colleagues released the first
+12:25:49	version of Vega lite.  A higher
+12:25:52	level visualization language.
+12:25:54	Akin to ggplot or the
+12:25:58	interactions in tableau for
+12:26:02	statistically graphics.  We have
+12:26:03	been collaborating to figure out
+12:26:05	how to define interactions in
+12:26:06	this high-level language.  So I
+12:26:08	have just under five minutes.
+12:26:10	I'm going to blast through this.
+12:26:13	Here is what a Vega lite
+12:26:16	visualization looks like.  This
+12:26:17	is a histogram of when flights
+12:26:19	take off.  I can embed, you
+12:26:21	know, a data definition, import
+12:26:23	data from the URL.  And this
+12:26:28	specification describes how it
+12:26:31	encodes the data.  And I'm
+12:26:33	having the line, the hour, and
+12:26:38	aggregating the count to build
+12:26:40	up the histogram.  It's so
+12:26:43	concise because I'm omitting
+12:26:45	lower level details, particular
+12:26:47	scales, the guides, the axis,
+12:26:49	the legends.  The Vega lite
+12:26:51	compiler has a default set of
+12:26:53	rules that evaluates to fill
+12:26:55	those details in and produces a
+12:26:56	Vega specification.
+12:26:58	Now, of course, as users we
+12:27:00	might know better than the
+12:27:01	general purpose compiler.  So we
+12:27:03	can specify overrides in there
+12:27:06	if we so desire.  Now, with the
+12:27:08	new operator I can repeat the
+12:27:10	specification for three data
+12:27:12	fields.  So now I'm showing the
+12:27:14	bin hour, delay, and bin
+12:27:17	distance that all these flights
+12:27:19	reported.  Can you tell where
+12:27:21	I'm going with this?
+12:27:23	So here I've got now three
+12:27:25	histograms.  And what I'm going
+12:27:27	to do is actually add an
+12:27:29	additional layer.  So this
+12:27:34	secondary layer, exact same
+12:27:37	histograms, but bars in gold.  A
+12:27:40	layer of blue bars and a layer
+12:27:42	of gold bars.  This is the stage
+12:27:44	we have got with our visual
+12:27:46	encoding.  Collapse that sucker
+12:27:47	and focus on our interaction
+12:27:49	design.
+12:27:49	So in that first layer with the
+12:27:52	blue bars, specify a selection,
+12:27:55	a new building block with Vega
+12:27:58	lite.  This is an interval
+12:28:00	selection, named region.  I can
+12:28:01	give it any name, it's not
+12:28:03	anything specific.  Once I do
+12:28:05	that, I can start to brush in
+12:28:06	each of my scatter -- my
+12:28:09	histograms.  And what the
+12:28:11	selection is doing, it's mapping
+12:28:12	to the event streams, the
+12:28:14	signals, predicate functions and
+12:28:17	scale inversions that we saw
+12:28:18	with Vega.  But I don't have to
+12:28:21	deal with that if I don't want
+12:28:23	to.  Of course I can override
+12:28:25	with custom values.  Maybe I
+12:28:27	want custom event streams.  And
+12:28:28	this project keyword is
+12:28:30	something that we're also
+12:28:31	introducing called a selection
+12:28:33	transform.  Just as we have data
+12:28:35	transforms, we are also going to
+12:28:37	have selection transforms which
+12:28:40	identify common design patterns
+12:28:42	and ways of overriding the data
+12:28:45	that these represent.  Now I
+12:28:48	have brushes, not doing anything
+12:28:49	great.
+12:28:50	So let's have them be useful.
+12:28:51	So the final part is to use
+12:28:53	those region selections to
+12:28:56	filter out the data in my gold
+12:28:59	layer.  And that's all I need.
+12:29:01	35lines of JSON.  So more than
+12:29:04	an order of magnitude smaller
+12:29:06	than Vega.  And just to show you
+12:29:10	that, you know, there are some
+12:29:11	other interaction techniques we
+12:29:13	have considered, here is panning
+12:29:15	and zooming in a scatterplot
+12:29:17	matrix.  And you'll notice that
+12:29:19	panning in one of the
+12:29:20	scatterplots keeps all the other
+12:29:22	ones in sync, including zooming.
+12:29:26	Not only can I pan and zoom, but
+12:29:30	brush in the scatterplot right
+12:29:32	there.  This is only
+12:29:33	highlighting points when they
+12:29:34	fall within all of the brushes.
+12:29:36	By changing just a single
+12:29:37	property, I can change that to,
+12:29:39	you know, highlight if they fall
+12:29:40	within any of the brushes.  Or
+12:29:42	just have a single brush like my
+12:29:44	Vega and D3 examples.  This is
+12:29:49	an overview technique, so I
+12:29:51	brush in the top chart, showing
+12:29:52	an overview of stock price data,
+12:29:55	and the bottom one, the selected
+12:29:56	points at a higher resolution.
+12:29:58	And finally just to, you know,
+12:30:00	demonstrate that it's not just
+12:30:02	brushing we care about, here the
+12:30:04	index chart we saw with Vega.
+12:30:06	In this case it's using
+12:30:08	something called a point
+12:30:09	selection to select that index
+12:30:10	point and then renormalize my
+12:30:12	data.  So all of these are, you
+12:30:13	know, tens of lines of JSON
+12:30:16	rather than 50 lines of JSON?
+12:30:20	Hundreds of lines?  I don't
+12:30:21	know.
+12:30:23	So I wanted to wrap up by just
+12:30:25	sort of reflecting on why we
+12:30:26	are -- we at interactive data
+12:30:29	lab are particularly excited
+12:30:30	about Vega.  We think, as the
+12:30:32	title suggested, it's a really
+12:30:34	viable platform for
+12:30:36	visualization.  What do we mean
+12:30:39	by that?  Not only can you and I
+12:30:42	write the Vega and Vega lite,
+12:30:44	but because they're JSON, they
+12:30:45	can be embedded in other
+12:30:47	software to generate
+12:30:48	visualizations programmatically.
+12:30:50	I have shown an example with
+12:30:53	Vega lite, automatically
+12:30:56	producing the Vega
+12:30:57	visualizations.  If you saw last
+12:30:59	year, you saw my adviser, Jeff,
+12:31:02	demonstrate Voyager and pole
+12:31:05	star, two new data
+12:31:08	visualizations in the lab that
+12:31:10	generate Vega lite and Vega
+12:31:12	visualizations automatically.
+12:31:14	We have been excited to see that
+12:31:15	the Jupiter community has
+12:31:17	started working on Python
+12:31:22	bindings for Vega lite.  We're
+12:31:26	hoping this will spread and be
+12:31:28	adopted by the other Python Vis
+12:31:32	vendors, all producing a common
+12:31:35	format, but the vendor-specific
+12:31:37	on top.  The esthetics.  If you
+12:31:40	were watching two years ago, I
+12:31:43	introduced Lyra, the illustrator
+12:31:46	tool for data visualization.
+12:31:48	And underneath the hood, Lyra is
+12:31:53	producing it every time they
+12:31:55	drag or drop a data field.
+12:31:57	And I showed you, Wikipedia is
+12:31:59	building on this tool stack by
+12:32:02	allowing Vega to be embedded.
+12:32:04	And what's nice about the
+12:32:06	ecosystem, no one tool needs to
+12:32:08	be the be all and end all of the
+12:32:11	data analysis, visualization
+12:32:13	pipeline.  Because all the tools
+12:32:15	are speaking the same language,
+12:32:16	maybe start the data exploration
+12:32:18	process in a tool like voyager,
+12:32:21	get a quick graphic out, export
+12:32:24	into Lyra, touch up with custom
+12:32:28	esthetics with and be maybe add
+12:32:29	a narrative, and export and
+12:32:31	embed in Wikipedia.  I'm using a
+12:32:34	variety of different tools.
+12:32:36	Each tailor-made for a specific
+12:32:38	task.  Going back to what we
+12:32:39	heard about user-centered
+12:32:41	design.  Keeping that focuses.
+12:32:43	Similarly, maybe start and go
+12:32:45	down by Vega lite, and all the
+12:32:47	way to SVG and then start to use
+12:32:52	something like Illustrator
+12:32:53	instead.  And I have left this
+12:32:54	big open space here, because I
+12:32:56	think we're just starting.  And,
+12:32:58	you know, we're building all of
+12:32:59	this out in the open because we
+12:33:01	want to work with the community
+12:33:02	and try to figure out what are
+12:33:03	the sort of new visualization
+12:33:05	and data sort of exploration
+12:33:07	applications we can start to
+12:33:08	build now that we have this sort
+12:33:10	of tool stack.
+12:33:11	The foundations of this tool
+12:33:15	stack in place.  And so all of
+12:33:18	this, the overall URL of the
+12:33:22	Vega project, vega.github.io.
+12:33:28	I'm over time, sorry about that.
+12:33:32	Thank you.

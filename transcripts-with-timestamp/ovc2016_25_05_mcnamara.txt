@@ -1,0 +1,612 @@
+12:05:41	>> Thank you.  So the title of
+12:05:43	my talk Do you know Nothing when
+12:05:47	you see it.  When I say nothing,
+12:05:50	not like television static,
+12:05:53	that's not nothing, that's
+12:05:54	something.  That's an image that
+12:05:57	got garbled.  I mean something
+12:05:59	like this, but not this.  This
+12:06:01	was random noise generated with
+12:06:03	the computer.  It's
+12:06:04	pseudo-random, and probably your
+12:06:06	awesome human brain is finding
+12:06:08	patterns like DeepDream already.
+12:06:11	You can see the funnies and
+12:06:13	hearts and clouds in my random
+12:06:14	data.
+12:06:15	So our goal is to be able to
+12:06:16	identify when something that we
+12:06:18	created is nothing.  And to do
+12:06:23	that, I'm going try statistics.
+12:06:26	So I am a statistics professor.
+12:06:28	That means whenever I get in
+12:06:29	front of a group of people, I
+12:06:31	try to sneakily teach them some
+12:06:34	statistics.  The question is,
+12:06:35	what is statistics about?
+12:06:37	It's about many things.  It's
+12:06:38	about variation, which is one of
+12:06:40	the main themes we're going to
+12:06:41	talk about here.  Sometimes
+12:06:43	there's modeling.  I'm going to
+12:06:44	ignore modeling almost
+12:06:46	completely.
+12:06:47	And when you take an intro stat
+12:06:52	class or basic science, you're
+12:06:55	asking are the numbers
+12:06:56	different?  Another way of
+12:06:58	saying is this one number, the
+12:06:59	difference, different than zero?
+12:07:01	Sometimes you want to know, this
+12:07:02	number, what are some other
+12:07:05	reasonable numbers that we could
+12:07:06	have seen if we hadn't seen this
+12:07:08	one?  Okay.
+12:07:09	In order to answer those
+12:07:11	questions, we need context about
+12:07:13	the variation.  The first
+12:07:15	example that came to mind when I
+12:07:16	was preparing this talk was
+12:07:18	ants.  I don't know why.
+12:07:19	Imagine you had some ants.  And
+12:07:21	big-looking ants and
+12:07:22	little-looking ants.  And you
+12:07:24	thought maybe I got unlucky.
+12:07:26	Five big-looking ants and five
+12:07:29	little-looking ants.  But really
+12:07:30	they're both draws from the same
+12:07:33	population.  And overall they
+12:07:35	don't have any difference in
+12:07:38	size.  But you observed
+12:07:39	differences in the group sizes
+12:07:40	of three-quarters of an age.
+12:07:42	You and I know about ant size
+12:07:45	variation.  That sounds very
+12:07:47	large, and we'll see that it
+12:07:49	actually was.
+12:07:51	In another context, imagine you
+12:07:53	had tug of war games set up, men
+12:07:56	and women split into the blue
+12:07:59	and the pink teams.  We mapped
+12:08:00	their heights.  Found the
+12:08:02	average height, found that the
+12:08:03	average high height between the
+12:08:06	group was difference.  And
+12:08:08	observed a difference of about
+12:08:09	three quarters of an inch.  Is
+12:08:11	that significant?  Are the two
+12:08:13	teams really different, or did
+12:08:14	we just observe a difference by
+12:08:16	nature of the selection process?
+12:08:17	The random generation that we're
+12:08:20	summing is happening behind the
+12:08:21	scenes?
+12:08:22	So if you have taken standard
+12:08:24	statistics class, you're
+12:08:25	thinking confidence intervals,
+12:08:27	you're thinking point estimate,
+12:08:29	plus or minus the standard error
+12:08:31	times something that has to do
+12:08:34	with distribution.  And maybe
+12:08:35	thinking about pages in your
+12:08:37	textbook that had standard error
+12:08:39	calculations, square roots,
+12:08:42	fractions.  Okay, so thinking
+12:08:43	about difference of means.  It's
+12:08:46	just that first one, but really
+12:08:48	worse, there's all the different
+12:08:50	groups.  Different group sizes
+12:08:51	and the variances are different.
+12:08:53	Then you have to pick those
+12:08:54	things out.  And then it is
+12:08:56	worse than that, because once
+12:08:57	you have the standard error, you
+12:08:58	have to know the degrees of
+12:09:00	freedom you're going to look at
+12:09:01	in your distribution.
+12:09:03	And even I, I have a Ph.D. in
+12:09:05	statistics, I get the
+12:09:07	heebie-jeebies if you ask me to
+12:09:10	think of the right standard
+12:09:12	computation.  Say you are better
+12:09:14	at statistics than me, and came
+12:09:16	up with the right standard
+12:09:17	error, found the degrees of
+12:09:18	freedom.  Now you're going to
+12:09:20	look at idealized distribution.
+12:09:22	And we call this a sampling
+12:09:24	distribution.  Not a
+12:09:25	distribution of data, it's a
+12:09:27	distribution of statistics.
+12:09:28	Which are numbers computed from
+12:09:29	other numbers.  In this case we
+12:09:31	had the average heights of the
+12:09:33	two tug of war teams and then
+12:09:35	looking at their difference.
+12:09:36	And then you could come up with
+12:09:37	some confidence interval and you
+12:09:39	could see if there was really no
+12:09:41	relationship between the team
+12:09:43	and the height, how often would
+12:09:45	we observe a difference of
+12:09:47	three-quarters of an inch?
+12:09:49	I'm going to argue that's not
+12:09:51	the way that you should do that
+12:09:53	problem solving.  Instead, you
+12:09:55	should use randomization.
+12:09:58	And randomization is just what
+12:10:00	it sounds.  You have two things
+12:10:01	that you think they might have a
+12:10:03	relationship.  You want to come
+12:10:04	up with the sampling
+12:10:05	distribution, and you want it to
+12:10:06	be the null distribution.  The
+12:10:08	distribution of, essentially,
+12:10:09	nothing.  So what you're doing
+12:10:11	to do is you're going to take
+12:10:12	the values, the labels here, and
+12:10:14	you're going to mix them up.
+12:10:16	You're going to compute the
+12:10:17	group height means for those
+12:10:20	different groups in the mix-up
+12:10:22	data and compute the difference
+12:10:23	in the heights.
+12:10:25	So you can see already sometimes
+12:10:26	you're getting a positive
+12:10:27	difference, sometimes you're
+12:10:28	getting a negative difference.
+12:10:29	I think one of those turned out
+12:10:31	to be zero.  We're going to do
+12:10:33	this like a thousand times and
+12:10:34	then we can look at the
+12:10:35	distribution of that statistic.
+12:10:36	This distribution is centered
+12:10:38	around zero because it's a null
+12:10:40	distribution.  And then we can
+12:10:41	calculate where is 95% of the
+12:10:43	data?  What's the middle 95%?
+12:10:47	And then sort of say if there
+12:10:49	really was no difference between
+12:10:50	the heights of these two tug of
+12:10:52	war teams, what sorts of
+12:10:54	differences might we observe?
+12:10:56	And so in the case of the tug of
+12:10:58	war teams, if there was really
+12:11:00	no difference, we could observe
+12:11:02	height differences that were
+12:11:03	negative four inches to positive
+12:11:05	four inches different.  Our
+12:11:06	observed difference of three
+12:11:08	modify quarters of an inch is
+12:11:11	tiny we think that's nothing.
+12:11:13	Even though we saw a difference
+12:11:16	of three-quarters of an inch,
+12:11:18	that was nothing.
+12:11:19	For the ants, same thing, that
+12:11:21	looks different.  Randomization
+12:11:23	distributions are not always
+12:11:25	symmetric.  And they're not
+12:11:26	always smooth.  They can have
+12:11:28	these lumps.  But, again, we can
+12:11:29	compute where the middle 95% of
+12:11:31	the data is.  So for the ants it
+12:11:33	goes from negative 0.5 to 0.5.
+12:11:37	The observed difference of
+12:11:39	three-quarters of an inch, that
+12:11:41	would be pretty weird to see if
+12:11:42	there was no difference between
+12:11:43	my two different ant size
+12:11:46	groups.
+12:11:46	Okay.  I'm a statistician, the
+12:11:48	open source programming language
+12:11:50	of my choice is R.  So if you
+12:11:52	wanted to do this yourself, this
+12:11:53	is the code.  So if I wanted to
+12:11:56	compute one difference in means,
+12:11:58	it's the first piece of code.
+12:12:00	And I wanted to do a thousand of
+12:12:02	them, I could use the second
+12:12:04	chunk.
+12:12:04	But there's another technique
+12:12:06	that we might want to use for
+12:12:08	assessing whether the number
+12:12:10	that we got is sort of
+12:12:11	reasonable or what some other
+12:12:14	possible numbers we could have
+12:12:15	observed could be.  That's
+12:12:17	bootstrapping.  So with
+12:12:18	bootstrapping you take the data
+12:12:20	that you have, kind of like
+12:12:22	pulling yourself up by your
+12:12:24	bootstraps.  Making something
+12:12:25	from nothing.  That's not really
+12:12:27	possible.  We're going to make
+12:12:29	data from our old data.
+12:12:30	We're going to sample with
+12:12:31	replace want.  Pull out data
+12:12:36	points.  Here we're not breaking
+12:12:37	the relationship between the two
+12:12:39	variables.  We're just pulling
+12:12:40	them out directly.  And you can
+12:12:42	see sometimes I get the same
+12:12:43	data point more than once in my
+12:12:45	bootstrap sample.  But now I
+12:12:47	have new data, and I can treat
+12:12:49	that as my -- my current data.
+12:12:53	And compute the mean, heights,
+12:12:55	and then the possible difference
+12:12:56	in heights.
+12:12:57	And so if that observed tug of
+12:13:02	war game that we saw was really
+12:13:04	representative of the world,
+12:13:06	other than 0.75 I might have
+12:13:09	observed o.6637.  Then I can
+12:13:14	come up with bootstrap
+12:13:16	directions, much in the same way
+12:13:18	with randomization, they might
+12:13:21	not be symmetric.  They are
+12:13:23	centered around the estimate
+12:13:24	from the real data.  In this
+12:13:26	case, centered around the 0.75.
+12:13:28	And then it shows us some
+12:13:30	possible numbers that we could
+12:13:31	have observed.
+12:13:32	So, again, if that was our data
+12:13:34	and we were generating bootstrap
+12:13:37	samples, we might have seen
+12:13:38	differences from negative 3 to
+12:13:40	positive 4, and again we think
+12:13:47	that ours is not difference from
+12:13:49	nothing or zero.  And with the
+12:13:50	ants, all the observable values
+12:13:52	we could have seen, they are all
+12:13:53	negative.  We think there is a
+12:13:55	relationship.  One of those
+12:13:56	groups is bigger than the other.
+12:13:57	If you want to know more about
+12:13:59	randomization and the bootstrap,
+12:14:02	you could look at this open
+12:14:03	source textbook.  What?
+12:14:05	It was written by some really
+12:14:07	cool statisticians.  The source
+12:14:09	is all on GitHub.  You can done
+12:14:13	load the PDF for free.  If you
+12:14:15	like physical books, you can buy
+12:14:18	this statistics textbook that I
+12:14:20	used in my class for $9 on
+12:14:23	Amazon.  So it's really cool and
+12:14:25	good.  If you have other
+12:14:28	resources, Jonathan Stray has a
+12:14:32	lighting talk, solve every
+12:14:35	problem with one weird trick,
+12:14:37	that's randomization.  You kind
+12:14:39	of know about that.  And Tim
+12:14:43	Hesterberg, what teachers should
+12:14:46	know about the bootstrap.  I
+12:14:48	think everyone should know about
+12:14:51	the bootstrap.
+12:14:52	What does this have to do with
+12:14:54	visualization?  Try to do the
+12:14:56	same thing as we did with
+12:14:57	numbers.  Try to say is this
+12:15:00	different than nothing?  What
+12:15:02	are other things we could have
+12:15:04	observed.  This is to not make
+12:15:07	visualizations that don't show
+12:15:09	anything.  Not like WTF-biz.
+12:15:14	Like those two.  And I don't
+12:15:17	mean showing nothing in the way
+12:15:18	that Daryl is talking about in
+12:15:20	the 1950s with how to lie with
+12:15:22	statistics.  Instead, using
+12:15:24	techniques like randomization.
+12:15:26	For there's an awesome paper and
+12:15:32	it's called Graphical Inference
+12:15:36	for Info BIS.  You can find the
+12:15:41	link here.  It's worth checking
+12:15:43	out.  One of the techniques they
+12:15:44	suggest in the paper is called
+12:15:46	the lineup.
+12:15:46	The and idea of the lineup is
+12:15:49	that you put your data, that you
+12:15:52	think is real, in a lineup with
+12:15:53	a bunch of innocent plots.  If
+12:15:57	you can pick your plot out of
+12:16:01	the innocent plots, you are
+12:16:11	doing something.
+12:16:13	But I would break the
+12:16:14	relationship between X and Y
+12:16:16	with and look at what other
+12:16:18	plots I could have gotten from
+12:16:19	the same data with that
+12:16:22	relationship broken.
+12:16:23	Instead of looking at them all
+12:16:24	in sequence, I want to look at
+12:16:26	them all together.  So let's
+12:16:28	take an example.  This is some
+12:16:29	data about loans.  And I'm
+12:16:32	plotting the balance of a loan
+12:16:33	against the income.  And I'm
+12:16:35	coloring by whether or not a
+12:16:36	person defaulted on their loan.
+12:16:38	And my human brain sees a
+12:16:40	pattern.  I say, it looks like
+12:16:43	people who default on loans are
+12:16:45	the ones that have really high
+12:16:46	loan balances.  It doesn't
+12:16:48	matter if they're rich or poor,
+12:16:49	it's just those high loan
+12:16:51	balances.
+12:16:52	But is it possible I just sort
+12:16:56	of made that up?  This is what
+12:17:00	it would like for if you use the
+12:17:02	protocol in the graphical
+12:17:04	inference paper and look at the
+12:17:09	plots, there's 20, there's a
+12:17:10	P-value cut off of 1.5, same as
+12:17:14	one out of 20.  If you guessed
+12:17:16	randomly, you get the right one
+12:17:18	right 1 out of 20 times even
+12:17:21	guessing at random.
+12:17:22	So with this one I think you can
+12:17:24	probably identify which is the
+12:17:25	real plot.  Part of it is I
+12:17:28	showed you the real one before.
+12:17:30	You might have recognized it.
+12:17:31	In practice you shouldn't look
+12:17:33	at the accused plot alone before
+12:17:34	you look at it in the lineup.
+12:17:36	So either you should build this
+12:17:38	into your workflow, looking at a
+12:17:40	lineup of plots every time you
+12:17:42	make a visualization, or more
+12:17:43	realistically than that, make a
+12:17:45	plot and think it might sort of
+12:17:47	show nothing, make a lineup and
+12:17:48	show it to someone who hasn't
+12:17:52	seen the regular plot.
+12:17:55	And if you're an R person, this
+12:17:58	is familiar, this is the ggplot
+12:18:03	to make a scatter plot.  And the
+12:18:05	bottom is to randomize the data
+12:18:07	to make null plots.  I'm doing a
+12:18:10	null commute on the label of
+12:18:12	default versus not default and
+12:18:14	wrapping those facets into an
+12:18:17	array of plots.  When you run
+12:18:19	the code, they have done a
+12:18:21	clever thing, it will make a
+12:18:22	plot in your plotting window,
+12:18:24	but also prints this thing in
+12:18:25	the console.
+12:18:26	It says decrypt and then it's a
+12:18:29	bunch of nonsense characters.
+12:18:31	And that's where they hid the
+12:18:32	answer.  So if you were doing
+12:18:33	this on your computer and you
+12:18:34	wanted to not know ahead of time
+12:18:38	which was the real plot, but
+12:18:40	figure it out afterward, this
+12:18:42	is how to do it.  You give the
+12:18:44	piece of code, and run the code,
+12:18:46	tells you where the true data
+12:18:48	was.  So in this case we got it
+12:18:50	right.
+12:18:51	You can use the same code for
+12:18:53	the T-test.  This is the tug of
+12:18:56	war teams again.  I have hidden
+12:18:58	the real heights, they recognize
+12:19:01	the mean heights, the crosses,
+12:19:02	and then if you can pick out the
+12:19:04	real data.  So in your head,
+12:19:06	make your guess.
+12:19:06	It says decrypt, if you're good
+12:19:11	at decrypting quickly, you could
+12:19:13	see what it is.  But the true
+12:19:16	data is -- so I'll show you
+12:19:18	again.  That's not the one I
+12:19:20	picked out.  Certainly not the
+12:19:21	most extreme of the possible
+12:19:24	plots.  What this is telling me
+12:19:25	is the same thing as the
+12:19:26	permutation test that I did with
+12:19:29	the statistics and the
+12:19:30	distribution at the beginning of
+12:19:31	the talk.  There really isn't a
+12:19:36	difference between these two
+12:19:37	groups.
+12:19:37	So these examples are sort of
+12:19:39	the -- there was like a positive
+12:19:42	one and a negative one.  But
+12:19:43	this one, I don't think you
+12:19:44	really needed visualization to
+12:19:46	tell you that answer.  You could
+12:19:47	have used standard statistics.
+12:19:48	The power of the graphical
+12:19:50	inference technique, it's
+12:19:54	generalizable.  You can use it
+12:19:56	for everything.
+12:19:58	One thing, humans are great at
+12:20:00	finding patterns in noise.  Time
+12:20:02	series analysis.  This is about
+12:20:03	the steps that I take.  So it's
+12:20:05	from my FitBit.  And sometimes I
+12:20:08	like to make up stories, like
+12:20:10	the variance is going up.  Or
+12:20:12	the mean seems like it's
+12:20:14	changing.  Or something happened
+12:20:15	in December and I'm really good
+12:20:16	at making up those stories about
+12:20:18	the distributions.
+12:20:19	So this is, you know, again, it
+12:20:22	could be a plot, the real data
+12:20:26	is in there.  Again, look at it
+12:20:28	and try to see if you can guess
+12:20:30	which one it is.  Oh.  Maybe I
+12:20:33	have another one where I made
+12:20:34	the scale a little bit nicer.
+12:20:37	And now we're going to try and
+12:20:39	decrypt.  So there's the string
+12:20:43	again.  It says the true data is
+12:20:44	in position 4.  And I'll show it
+12:20:48	to you again.  Again, that
+12:20:49	wasn't the one that I had really
+12:20:51	picked out.  But if I had just
+12:20:53	shown you the one time series
+12:20:55	plot, you would have believed my
+12:20:57	stories about what was
+12:20:58	interesting about that plot.
+12:21:00	Okay.  So with the statistics
+12:21:03	analog, we've kind of being
+12:21:05	doing the -- is this different
+12:21:07	than zero task?  But then I want
+12:21:08	to switch to the is -- what are
+12:21:12	some other reasonable values
+12:21:13	that we could have gotten for
+12:21:15	this?  So with the numbers, that
+12:21:16	was what are some other
+12:21:17	reasonable values that we could
+12:21:20	have gotten.  And then I'm going
+12:21:21	to talk about that in terms of
+12:21:24	plots.
+12:21:24	So some of this comes from joint
+12:21:27	work with a colleague of mine,
+12:21:30	Aran Lunzer, we worked together.
+12:21:35	This is the highest quality
+12:21:38	image I could find.  Almost life
+12:21:41	size in the theater.  That was
+12:21:42	fine.
+12:21:43	We worked on a tool, a prototype
+12:21:46	tool, and we called it lively
+12:21:48	arm.  So this is something that
+12:21:49	is real in the sense that if you
+12:21:52	go on GitHub and download the
+12:21:54	code you could run it yourself.
+12:21:55	I don't recommend it.  It's very
+12:21:57	buggy.  But it really has R on
+12:21:59	the back end and then it has
+12:22:02	lively web and Java search on
+12:22:06	the front end.  It lets you play
+12:22:09	with the bin offset of a
+12:22:11	histogram.  Many things let you
+12:22:13	do this.  But this also lets you
+12:22:16	overlay a sweep of parameter
+12:22:20	values.  So you can see a
+12:22:21	variety of histograms with bin
+12:22:23	widths and bin offsets.  And
+12:22:26	create a histogram cloud.  Which
+12:22:28	is like a kernel density
+12:22:30	estimate, but easier for people
+12:22:32	to understand.
+12:22:36	There's one more feature that we
+12:22:37	have built into this, which is
+12:22:39	that you could call out the
+12:22:40	individual histograms if you
+12:22:43	wanted to.
+12:22:44	And so instead of just seeing
+12:22:45	them overlaid as a cloud, you
+12:22:48	could do small multiples.  And
+12:22:50	it's actually a two-hand
+12:22:52	interaction here.  There's like
+12:22:52	an iPad and you're controlling
+12:22:55	the one screen with your right
+12:22:56	hand and the other with your
+12:22:57	left hand.  So it's a little bit
+12:22:59	buggy.  But you can see the
+12:23:01	small multiples of the different
+12:23:03	possibilities of histograms that
+12:23:05	you could have seen.
+12:23:06	Again, I think it's really easy
+12:23:08	with histograms to use the
+12:23:11	algorithm, whatever it is in
+12:23:13	your favorite tool, which will
+12:23:15	make the bin widths for you.  If
+12:23:18	you're using ggplot two, it'll
+12:23:21	be a warning, you chose a value,
+12:23:25	but I can do better.  Many
+12:23:27	people don't.  But you do,
+12:23:29	you're visualization
+12:23:30	professionals.
+12:23:31	But it's not always obvious to
+12:23:33	non-professionals that those
+12:23:34	defaults make a huge difference.
+12:23:36	You might use the defaults and
+12:23:38	find what looks like a pattern,
+12:23:39	but it's really a result of the
+12:23:41	parameter values that you chose.
+12:23:43	So giving people the opportunity
+12:23:44	to play with the parameters is
+12:23:47	really powerful.  So after Aran
+12:23:51	and I work on this work,
+12:23:53	one-dimension, looking at the
+12:23:55	histograms.  I started thinking
+12:23:57	how could we do this in two
+12:23:59	dimensions?  Which got me
+12:24:01	thinking about maps.  So the
+12:24:02	modifiable aerial unit problem,
+12:24:05	aggregate different data in
+12:24:08	different polygonal shapes,
+12:24:12	you're going to get different
+12:24:13	patterns.  This can happen with
+12:24:15	gerrymandering.  It can happen
+12:24:17	with the different county and
+12:24:18	zip code data.
+12:24:20	The different levels of polygons
+12:24:22	and a lot of statistic problems
+12:24:25	that go along with that.  So
+12:24:28	Aran and I worked on in next
+12:24:32	tool, no name, it takes point
+12:24:34	data about earthquakes in
+12:24:36	southern California and
+12:24:37	aggregating them into polygons.
+12:24:40	But instead of making just fixed
+12:24:42	polygons, you can scale and
+12:24:43	rotate and move the polygons to
+12:24:45	see some other possible values
+12:24:47	of the visualization that you
+12:24:48	could have gotten.
+12:24:49	So you start with your default
+12:24:52	values and maybe you think that
+12:24:54	there are some very obvious
+12:24:56	trend that everyone should be
+12:25:00	aware of.  And you can tell some
+12:25:02	great story about why there is a
+12:25:04	hot spot of earthquakes in this
+12:25:06	one place.
+12:25:06	But then when you start
+12:25:07	manipulating the polygons, you
+12:25:10	can see that there's many other
+12:25:12	possible patterns that you could
+12:25:13	have created.
+12:25:16	So the takeaway that I want you
+12:25:20	to take from this talk is that
+12:25:24	there are statistically tasks
+12:25:26	and there are very analogous
+12:25:30	visualization tasks.  So in
+12:25:32	statistics we want to know if
+12:25:33	two numbers are different.
+12:25:34	Which is like knowing if one
+12:25:36	number is different than zero.
+12:25:38	And we could use tools like
+12:25:40	randomization to answer that
+12:25:42	question.  In the visualization
+12:25:46	world we can use randomization
+12:25:48	in a different way to answer the
+12:25:50	question, is this plot different
+12:25:51	than nothing?  In statistics we
+12:25:54	might want to ask, what are some
+12:25:56	reasonable, other possible
+12:25:58	values for this number?  So what
+12:26:00	other differences and heights
+12:26:01	could we have observed?  And you
+12:26:03	can use something like the
+12:26:05	bootstrap to show you other
+12:26:06	possible reasonable values.
+12:26:08	And in the visualization space I
+12:26:11	think that using parameter
+12:26:14	manipulation, or giving users
+12:26:15	the ability to see how your
+12:26:18	parameter choices impact the
+12:26:19	visual story that they are
+12:26:21	seeing can be really powerful.
+12:26:25	And so I -- thank you.

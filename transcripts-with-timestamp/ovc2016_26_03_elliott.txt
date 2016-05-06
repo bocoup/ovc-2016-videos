@@ -1,0 +1,602 @@
+11:05:23	>> Yeah, so I pitched a topic
+11:05:25	for this that was pretty big.
+11:05:27	Obviously I learned everything
+11:05:28	about how humans perceive
+11:05:30	graphics, but found it really
+11:05:31	hard to fit it all into 30
+11:05:34	minutes.  Obviously I know
+11:05:35	everything.  So why don't we
+11:05:36	just call it Everything we know
+11:05:39	about how humans interpret
+11:05:39	graphics.  And maybe just take
+11:05:42	some pressure off you guys to
+11:05:43	hear all that information.
+11:05:45	As Irene said, I work at the
+11:05:47	Washington Post, a graphics
+11:05:50	editor, a part editor/part
+11:05:55	journalist.  We rely on
+11:05:58	experience to inform our
+11:06:00	decisions on making graphics.
+11:06:01	And I have been wondering what
+11:06:05	studies are out there.  My role,
+11:06:07	I don't get involved in the
+11:06:08	academic world.  And it just
+11:06:10	seems that that's something I
+11:06:11	should really know.  It's
+11:06:12	collecting little bits and
+11:06:13	pieces here and there.  When I
+11:06:15	started researching this
+11:06:17	project, I became fully aware on
+11:06:21	how huge research is on
+11:06:24	visualization.  It's
+11:06:25	overwhelming.  And not
+11:06:27	everything is here, but it's
+11:06:29	synthesized versions of what I
+11:06:30	read.  But I gave it my best
+11:06:32	shot.
+11:06:33	And the visualization is
+11:06:35	visualization, a science, or
+11:06:37	language, it's perhaps a science
+11:06:38	because it must represent data
+11:06:40	accurately and methodically and
+11:06:42	without flourish so we can see
+11:06:44	trends and patterns.
+11:06:45	And because of this selecting a
+11:06:48	data visualization can be
+11:06:50	prescriptive based on what to
+11:06:54	show.  Many argue it's a
+11:06:55	language, it uses diagrams, and
+11:06:57	data is in symboling and
+11:06:59	semiology.  And the context must
+11:07:02	be learned and are not inherent.
+11:07:04	So throughout this presentation,
+11:07:06	think about what you think it
+11:07:07	is.  A science or language?
+11:07:11	In 1984 William Cleveland and
+11:07:15	Robert McGill had the ark
+11:07:18	typical study for visualization.
+11:07:21	Referenced by many of the
+11:07:22	studies I'm going to talk about.
+11:07:24	When that happens, I put William
+11:07:28	Cleveland's head next to the
+11:07:30	study.  Couldn't find a picture
+11:07:31	of McGill.  It gives us the
+11:07:33	ranking of the most basic visual
+11:07:36	tasks in our perception of
+11:07:39	graphics.  At the top of the
+11:07:40	ranking it's easiest to perceive
+11:07:43	position on the common scale,
+11:07:46	think about a scatterplot.
+11:07:47	Anchored on two common axis, X
+11:07:51	and Y, you are comparing across
+11:07:53	two common scales.  Bar charts
+11:07:55	are the same.  Usually compared
+11:07:57	along a common X axis, but
+11:08:00	Cleveland and McGill stated
+11:08:01	that length and area could be a
+11:08:05	factor in perceiving this as
+11:08:07	well.
+11:08:08	But this study was done over
+11:08:10	three decades ago, how relevant
+11:08:12	today?  Fortunately we have some
+11:08:14	clue.  They revisited some of
+11:08:17	the old experiments in a study
+11:08:20	as more of a proof of concept
+11:08:21	for using a mechanical term.  It
+11:08:28	was similar to Cleveland and
+11:08:30	McGill, at least with the
+11:08:32	tasks they tested for.  That's
+11:08:34	kind of reassuring.
+11:08:36	The studies show we have
+11:08:38	inherent biases with the objects
+11:08:40	and the objects in them.  And
+11:08:41	these biases made us distort the
+11:08:45	information from the graph.  We
+11:08:46	know from Steven's law, when
+11:08:48	seen in the context of other
+11:08:50	objects, it appears larger
+11:08:52	itself.  When seen in context of
+11:08:54	smaller objects, it appears
+11:08:55	smaller.  They found the
+11:08:58	spatial separation of lines
+11:09:00	could produce either effect.  If
+11:09:02	lines are close enough, a line's
+11:09:05	length is more similar to the
+11:09:07	length of line around it.
+11:09:08	Further apart, and long lines
+11:09:11	appear longer, short, shorter.
+11:09:13	And in two others, they found
+11:09:15	that charts were remembered as
+11:09:16	being more symmetrical than they
+11:09:21	were.  They gave them charts and
+11:09:23	told them they were charts or
+11:09:24	maps.  When participants
+11:09:25	encountered the smarts, they
+11:09:28	remembered them closer to the
+11:09:30	imagery 45 degree line.  When
+11:09:34	presented as a map, no
+11:09:36	distortion.  When text appeared
+11:09:38	next to the chart, calling the
+11:09:40	symmetry, they call it as being
+11:09:42	more symmetrical even though it
+11:09:45	was not.  This mean that
+11:09:47	annotations are powerful.  Of in
+11:09:49	a second study, a systemic bias
+11:09:51	toward an imagery 45 degree line
+11:09:54	in line charts.  When the
+11:09:55	diagonal line was there, they
+11:09:58	continually thought it was
+11:10:00	closer to 45 degrees than it
+11:10:01	was.  Meaning they overestimated
+11:10:03	the larger angles and
+11:10:05	underestimated the smaller
+11:10:07	angles.  Thus it's an imagery
+11:10:10	reference point for line charts,
+11:10:12	but not in other contexts.  And
+11:10:14	the works suggest that many
+11:10:16	visual systems promote different
+11:10:18	reference frames.
+11:10:22	Croxton found over eight decades
+11:10:25	ago that bars were more
+11:10:27	effective in communicating
+11:10:28	values than circles, squares, or
+11:10:31	cubes.  Circles and squares were
+11:10:34	as effective, but cubes were the
+11:10:38	worst.
+11:10:40	Much is said about the merits of
+11:10:42	bars and circles.  All of this
+11:10:45	the five studies legitimize pie
+11:10:48	charts and show their
+11:10:49	superiority over bar charts.  I
+11:10:51	did not encounter any studies
+11:10:54	that said we should not show pie
+11:10:57	charts.  He was among the first
+11:10:59	to publish a paper on this topic
+11:11:01	in 1926.  Much like today, pie
+11:11:05	charts were assumed to be
+11:11:07	inadequate.  For example, we're
+11:11:08	told the human eye cannot judge
+11:11:11	arcs, angles or chords
+11:11:15	efficiently.  He wanted to know
+11:11:17	how circles were processed, he
+11:11:21	handed out worksheets and asked
+11:11:23	them to estimate the proportions
+11:11:25	in the pie and bar charts.  They
+11:11:29	were read as quickly and
+11:11:31	accurately as bar charts, but as
+11:11:33	the number of components in the
+11:11:35	chart increases, bar charts
+11:11:37	become less efficient at
+11:11:38	encoding the data.  The opposite
+11:11:39	is true for pie charts.
+11:11:42	He found that 50% of the people
+11:11:45	use the outer arc to make
+11:11:48	proportion judgments.  While 25%
+11:11:51	use the area, and the other 25%
+11:11:52	use it in an arc or angle.
+11:11:55	Furthermore, 71 people in the
+11:11:57	class preferred the pies.  And
+11:11:58	only 25% preferred the bars.  He
+11:12:01	concluded that we ought to use
+11:12:03	pie charts.  Not just for their
+11:12:05	appeal, but for their scientific
+11:12:07	accuracy.
+11:12:09	He also concluded that men were
+11:12:11	superior to women in estimating
+11:12:14	these proportions.  So hats off
+11:12:17	to the men in the room.  You
+11:12:18	have done it again.
+11:12:21	A follow-up study in response to
+11:12:24	his work a year later did not
+11:12:27	find pie charts were so
+11:12:29	conclusively better than bar
+11:12:32	charts.  But they made cases, in
+11:12:35	the least, as accurate as bars.
+11:12:37	Six decades later, and three
+11:12:39	more experiments, pie charts
+11:12:41	were hailed for their strength
+11:12:43	in proportional data.
+11:12:45	Participants make proportional
+11:12:47	and segment to segment judgments
+11:12:50	like the dots in the bars.  And
+11:12:53	segment to segment judgments,
+11:12:56	bar charts were best, and then
+11:12:58	divided bar and pie charts.  For
+11:13:00	proportional, pie and bar charts
+11:13:02	were tied with simple bar charts
+11:13:05	at the worse.
+11:13:07	They have found that comparisons
+11:13:10	among multiple segments take
+11:13:12	longer and with lower accuracy.
+11:13:14	And when multiple segments must
+11:13:16	be compared, pie charts are
+11:13:18	best.
+11:13:19	Collins and Spence found that
+11:13:21	when the number of components in
+11:13:23	bar charts increased, the
+11:13:24	effectiveness at creating
+11:13:27	proportions decreases.  For bar
+11:13:30	charts, with each new component,
+11:13:33	1.7 additional seconds to
+11:13:35	process.  Tables were inferior,
+11:13:38	except for values, against what
+11:13:41	they advise.
+11:13:42	In two studies researchers found
+11:13:44	when participants were shown bar
+11:13:46	graphs and asked to describe the
+11:13:48	data, they reference the
+11:13:50	contrast between the variables
+11:13:52	and bars.  For example, A is
+11:13:55	greater than the quantity in B.
+11:13:58	In line charts, described the
+11:14:00	trends, as X increases, Y
+11:14:03	increases.
+11:14:04	And the third variable of data,
+11:14:05	the line chart description
+11:14:06	focused on X by relationships.
+11:14:08	Whereas the bars reach out a
+11:14:10	little bit more to include the
+11:14:12	same variable.  These studies
+11:14:14	show that people have a hard
+11:14:16	time seeing line charts.
+11:14:20	Collins and Spence evaluated the
+11:14:23	performance if the performance
+11:14:24	of the graph depends on the type
+11:14:26	of judgment that needs to be
+11:14:27	done.  They felt that lines were
+11:14:29	superior to other graphs because
+11:14:33	they are integrated systems,
+11:14:34	meaning that you could just tell
+11:14:36	the change just by the line
+11:14:38	alone.
+11:14:38	They tested participant's
+11:14:41	perception of change and
+11:14:43	proportion among bar, line and
+11:14:45	pie charts.  They failed at
+11:14:48	communicating change
+11:14:49	efficiently, but bar charts had
+11:14:52	similar success to line charts.
+11:14:54	They hypothesized that people
+11:14:56	draw imagery lines across the
+11:14:58	bars to create that slope.  So
+11:15:00	he created a new terrible graph
+11:15:03	called a tier bar chart, and
+11:15:05	tested them again.  They found
+11:15:07	that, yes, any chart allowing
+11:15:09	the reader to see a real or
+11:15:10	imagery trend line was the best
+11:15:13	at communication.  For
+11:15:14	proportions, if charts had no
+11:15:15	scales, pie charts were best.
+11:15:20	Line shape can be loaded with
+11:15:21	context.  That fascinates us but
+11:15:25	distorts our perception of data.
+11:15:27	As we know the independent
+11:15:29	variable, the cause, is usually
+11:15:31	plotted on the X axis, and the
+11:15:34	dependent variable, the effect,
+11:15:35	is on the Y axis.
+11:15:37	But we tend to perceive slope
+11:15:40	for quickness, height, or
+11:15:42	amount.  And these two
+11:15:44	conventions can be in conflict.
+11:15:46	They designed an experiment
+11:15:48	where the slope could indicate
+11:15:50	height or altitude.  But that
+11:15:52	meant that independent/dependent
+11:15:54	variables were on the wrong
+11:15:56	axis.  And they presented the
+11:15:58	charts and asked if the dotted
+11:15:59	line indicated a quicker or
+11:16:01	slower rate.  When on the Y
+11:16:03	axis, corresponding with the
+11:16:07	visual, participants were more
+11:16:12	accurate.  We see quickness,
+11:16:15	height, weight, above anything
+11:16:16	else.  And there were slopes
+11:16:17	that facilitate reasoning above
+11:16:19	all others and revealed a
+11:16:22	universal association of more or
+11:16:24	better with the upper direction.
+11:16:27	They found when line graphs
+11:16:30	showed trend reversals, people
+11:16:33	studied them longer.  It was not
+11:16:34	the case when they varied the
+11:16:37	data points or the linearity.
+11:16:39	And studies suggest that we
+11:16:42	evaluate 3D objects more
+11:16:44	accurately than we think.  Two
+11:16:46	studies reject the popular high
+11:16:50	ratio mantra.  They found that
+11:16:53	among bar charts, 2D is sue peer
+11:16:57	your to 3D, but is longer to
+11:17:00	process.  An angle makes a
+11:17:03	difference because it obscures
+11:17:05	the data.
+11:17:06	The co-authors acknowledged that
+11:17:09	the 3D graphics, while sexy,
+11:17:13	don't convey the knowledge.  And
+11:17:15	they do it in extraneous cubes.
+11:17:18	They were given the option to
+11:17:20	select among 2D and 3D charts.
+11:17:23	When they selected with other
+11:17:24	people, they chose the 3D
+11:17:26	charts.  And also when they were
+11:17:28	told the data had to be
+11:17:30	remembered.  Selected 2D bar
+11:17:32	graphs when told they needed to
+11:17:34	convey specific details, and
+11:17:37	line charts when the message was
+11:17:39	communicated quickly.  The
+11:17:41	authors concluded that 3D charts
+11:17:44	might be useful in some cases.
+11:17:46	The final two experiments are
+11:17:49	with the law, an object size
+11:17:51	appears larger when presented
+11:17:53	with larger objects, and smaller
+11:17:55	with smaller objects.  Contrary
+11:17:57	to popular physics, it doesn't
+11:18:00	happen with two shapes of the
+11:18:02	same dimensionality.  Only when
+11:18:03	you vary the dimensionality
+11:18:05	among the shapes does this
+11:18:07	distortion happen.
+11:18:09	Cleveland and co-authors found
+11:18:11	that people come to conclusions
+11:18:13	about the correlation in
+11:18:14	scatterplots partly based on the
+11:18:17	size of the plot cloud.  When
+11:18:20	represented in graphs, but in
+11:18:22	one graph the point cloud
+11:18:24	becomes very small, people
+11:18:26	perceive it as having a higher
+11:18:28	correlation.
+11:18:29	Experimenting with simple type
+11:18:31	and scatterplots they found that
+11:18:34	altering color is most
+11:18:36	discernible to the eye.  When
+11:18:39	varying the color is not the
+11:18:40	option, varying fill or shape or
+11:18:43	non-confusible lettering has no
+11:18:45	great loss in accuracy.  He
+11:18:47	suggests that using letters, and
+11:18:53	for getting the annotation about
+11:18:58	the risk.  And in a crowd
+11:19:00	source, they created it in a
+11:19:02	simple palette to be ordered to
+11:19:04	be most discernible to the eye.
+11:19:10	They found that directing
+11:19:12	participants to navigate maps of
+11:19:16	metaphors made it more accurate.
+11:19:18	For example, directing
+11:19:20	participants to find a data
+11:19:23	point inside a tree map, and the
+11:19:26	cascading tree map worked best.
+11:19:30	They discerned values best when
+11:19:32	they are rectangles with
+11:19:34	disperse aspect ratios and
+11:19:36	somewhat counter intuitively,
+11:19:39	they are not compared to each
+11:19:42	other.  And extreme in the
+11:19:45	angles are not effective.  They
+11:19:47	found the bar charts are better
+11:19:49	at tree maps at representing
+11:19:50	data fewer than 1,000 data
+11:19:53	points.
+11:19:54	In 2001 Barlow and Neville asked
+11:19:59	to compare plots.  This is in
+11:20:01	2001.  They found the
+11:20:03	participants did not like the
+11:20:04	tree map and preferred the plot
+11:20:06	in the org chart.  In 2007 they
+11:20:11	showed that esthetics can be
+11:20:14	linked to an individual's
+11:20:16	engagement with a visualization.
+11:20:19	They found the sun burst was the
+11:20:21	most popular, and participated
+11:20:22	found the 3D looking beam tree
+11:20:28	to be the most hideous.
+11:20:30	Engagement was best with the sun
+11:20:33	burst.  And worst with the beam
+11:20:34	tree and tree map.  And it
+11:20:37	summarizes that beauty can be
+11:20:40	visible.
+11:20:41	They ranked the effectiveness of
+11:20:43	several visualization types for
+11:20:45	depicting correlation.
+11:20:48	Scatterplots and coordination
+11:20:49	are best at this.  Among the
+11:20:52	stacked chart variants, the
+11:20:54	stacked bar significantly
+11:20:56	outperformed boast the stacked
+11:20:58	area and stacked line.  A year
+11:21:02	later they re-evaluated the data
+11:21:04	and split the visualizations
+11:21:06	into two groups.  The top
+11:21:09	ranking remained the same.
+11:21:11	However, they explored how dense
+11:21:13	graphics can be and still be
+11:21:15	sufficient for readers.  They
+11:21:16	had the negative values in a
+11:21:18	time series charts and overlaid
+11:21:19	the extreme values into two,
+11:21:22	three, and four-color bands,
+11:21:24	effectively ruing chart size by
+11:21:26	75%.
+11:21:27	They also manipulated the height
+11:21:29	of the chart so some appeared to
+11:21:31	be only 60 pixels high for
+11:21:34	participants.  The more color
+11:21:36	bands presented in the graphs,
+11:21:38	the more mistakes were made,
+11:21:40	suggesting that not all visual
+11:21:42	markers were helpful.  They
+11:21:44	performed worst at small sizes,
+11:21:46	showing the effect does not
+11:21:49	provide a great loss in
+11:21:51	comprehension.
+11:21:55	Experimenting with using pick to
+11:21:57	graphs to represent data in
+11:22:00	charts.  They found discreet
+11:22:03	shapes, pictographs led to more
+11:22:13	errors.  And found that
+11:22:14	replacing generic shapes was not
+11:22:17	a detriment to changing the data
+11:22:21	in the stack graphs.  People
+11:22:23	were inclined to investigate
+11:22:26	them rather than numeric shapes.
+11:22:29	In one of my favorite studies
+11:22:31	they investigated participants
+11:22:34	understanding computer
+11:22:36	renderings of line drawings as
+11:22:40	compared to an artist.  Some are
+11:22:42	comparable, but some are not
+11:22:45	close.  When they interpreted
+11:22:47	the shapes inaccurately, they
+11:22:49	were similar and concentrated in
+11:22:52	hot spots.  Some of the shapes
+11:22:54	were funky.  No one knows what
+11:22:56	the thing on the right is.  And
+11:22:58	they have got that one really
+11:23:00	wrong.
+11:23:01	A team of researchers evaluated
+11:23:06	how they looked at list-like and
+11:23:09	container-style.  Those are high
+11:23:13	internal LOC, can control
+11:23:17	internal events weren't as good
+11:23:19	with the external.  Those who
+11:23:22	believe they are merely
+11:23:23	controlled by external events
+11:23:25	perform faster and more
+11:23:26	accurately.  Similarly, more
+11:23:29	neurotic participants were best
+11:23:32	with the structure-like, and the
+11:23:37	others had the opposite.
+11:23:38	Introverts were more accurate
+11:23:41	than extroverts.  Another group
+11:23:44	of researchers encountered
+11:23:46	unfamiliar visualizations and
+11:23:49	tried to make sense of them.
+11:23:51	Participants had difficulty
+11:23:52	moving away from the initial
+11:23:53	marks even if incorrect.  Thus
+11:23:56	first impressions are quite
+11:23:58	important.  Harrison and
+11:23:59	co-authors provided participants
+11:24:02	with an article aimed at the
+11:24:05	emotion, positively, or
+11:24:07	negatively, and found how they
+11:24:10	worked at tasks.  And negative
+11:24:14	made more errors, and positive,
+11:24:16	improved performance.  Only one
+11:24:18	in five was successfully primed,
+11:24:20	however, that is harder to
+11:24:21	achieve.
+11:24:24	Pullman and Shaw replicated it
+11:24:28	with the mechanical chart, but a
+11:24:31	major change.  Showed the social
+11:24:32	histogram of the last 50
+11:24:35	responses as a participant
+11:24:36	answered questions.  And
+11:24:37	sometimes queued up or down from
+11:24:39	the values.  And those shown the
+11:24:41	incorrect histogram obviously
+11:24:44	got more wrong.
+11:24:46	They found that latency of a
+11:24:48	half second with interactive
+11:24:52	graphics had profound effects on
+11:24:54	the engagement with the graphic.
+11:24:57	Moved the mouse less, shifted
+11:24:58	the interactions they did and
+11:25:00	lessened some altogether.  They
+11:25:02	were more likely to comment on
+11:25:05	the interface.  This delayed
+11:25:07	subsequent sessions for the
+11:25:09	participant.  He or she was less
+11:25:11	likely to engage in a graphic in
+11:25:12	a session that followed.
+11:25:14	Visually the researchers wanted
+11:25:16	to include a one second delay
+11:25:18	option, but in pilot studies
+11:25:20	users found this unusable.  So
+11:25:22	think about that as you make
+11:25:23	your next graphic.
+11:25:25	in 2007 the they found that
+11:25:30	completing elementary tasks like
+11:25:32	position or angle direction was
+11:25:33	a lot harder if the screen was
+11:25:37	on the table.  The orientation
+11:25:39	of the screen can distort the
+11:25:40	graph.  In 2008 researchers gave
+11:25:43	participants a large data set
+11:25:44	presented three different ways
+11:25:46	in an animated fashion.
+11:25:48	Esthetic and traced, and a small
+11:25:50	multiples version and asked
+11:25:53	questions about the data.  Even
+11:25:55	though the animation version won
+11:25:58	time and time again in a
+11:25:59	preferences survey, for
+11:26:01	helpfulness, ease of use,
+11:26:04	enjoyment and excitement.  The
+11:26:06	small multiple was better for
+11:26:09	large data sets, faster, and led
+11:26:10	to fewer errors.  I wasn't going
+11:26:14	to do one on color, there was a
+11:26:16	great talk on color that I
+11:26:18	really recommend.  But I like
+11:26:19	this study a lot.  A group of
+11:26:21	researchers created an algorithm
+11:26:23	to identify resident colors.  If
+11:26:26	I want to talk about oceans,
+11:26:27	blue, love, I want to use pink
+11:26:29	or red.
+11:26:30	The algorithm searched Google
+11:26:34	images and assigned a particular
+11:26:35	color to a key word.  And then
+11:26:38	how this algorithm did with the
+11:26:41	participants, and some of it was
+11:26:42	humorous.  Like the blue -- the
+11:26:44	right-hand side here, the bleu
+11:26:49	cheese dressing, wanted to call
+11:26:51	that orange, but the
+11:26:52	participants assigned that to
+11:26:54	blue.  And in a later
+11:26:57	experiment, had the tableau
+11:26:59	symbol artist who created the
+11:27:00	one at the lower left here
+11:27:03	design a human-specific palette
+11:27:05	for each symbol that they were
+11:27:07	going to use.  And tested their
+11:27:09	algorithm against that and a
+11:27:11	non-semantic color scheme.  They
+11:27:14	hypothesized that the
+11:27:16	human-picked palette would be
+11:27:18	the most effective, bet against
+11:27:20	the algorithm, but it did just
+11:27:22	as well with the human-generated
+11:27:25	with a subset of the data, at
+11:27:26	least.
+11:27:27	So what can we conclude from
+11:27:28	these studies?  What is left to
+11:27:30	be uncovered?  And how do these
+11:27:33	change as visualization becomes
+11:27:35	more common place and people are
+11:27:36	more visually literate?  Most
+11:27:39	importantly, what do you think
+11:27:40	about the data visualization is
+11:27:42	a science or language?  I don't
+11:27:43	think data visualization or
+11:27:45	story telling is prescriptive.
+11:27:48	I think there are many options
+11:27:50	and an infinite number of
+11:27:52	possible visualizations and even
+11:27:54	those we haven't discovered yet.
+11:27:56	But not purely a language either
+11:27:58	after these studies.  Obviously
+11:28:00	we have biases and distortions
+11:28:02	with graphing frameworks and how
+11:28:04	we perceive objects.  And some
+11:28:07	of that's learned, and some of
+11:28:08	that seems inherent as well.
+11:28:10	And that's all I have.

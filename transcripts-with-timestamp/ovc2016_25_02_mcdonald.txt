@@ -1,0 +1,826 @@
+10:06:03	>> Hi hey, my name is Kyle
+10:06:05	McDonald.  I'm an artist working
+10:06:07	with code.  And I wanted to say
+10:06:10	thank you to Irene and everyone
+10:06:13	organizing for having me here.
+10:06:15	First it was a chat bot name,
+10:06:18	MegaHAL.  I read this with JSON
+10:06:23	when I was in high school.  Tu
+10:06:27	parles francais.  I guess so.
+10:06:33	In 1793, the French king was
+10:06:36	executed.  Ha ha ha.  Correct.
+10:06:39	Although, executed has multiple
+10:06:41	meanings.  The Revolution
+10:06:43	started on July 14th.  It is
+10:06:45	14 degrees. -- I was in awe.  It
+10:06:48	turns out how it was basically a
+10:06:52	sleight of hand.  And you could
+10:06:54	run it forward and back ward,
+10:06:56	but reading the transcripts had
+10:06:58	a big effect on computers.  I
+10:07:01	decided to study AI in college
+10:07:03	and started a degree in
+10:07:04	philosophy and computer science.
+10:07:06	Halfway through undergrad I
+10:07:07	started researching at an AI
+10:07:10	lab.  I skipped most of my CS
+10:07:12	classes to sit in on art and
+10:07:14	music classes.  In lab meetings,
+10:07:16	we were supposed to be talking
+10:07:18	about natural language, I spent
+10:07:20	most of the time proposing ideas
+10:07:22	about computational creativity
+10:07:24	or online identity and activity.
+10:07:27	After a few too many of the
+10:07:30	introductions, the director sat
+10:07:32	me down and said, Kyle, I think
+10:07:34	it might be an artist.
+10:07:37	It wasn't a complicate.  But I
+10:07:39	took it to heart.  I did an MFA.
+10:07:42	I learned about a new tool,
+10:07:44	field of research, explore it
+10:07:46	conceptually and technically and
+10:07:49	craft new artwork that
+10:07:51	integrates reoccurring things
+10:07:53	from my practice.  And
+10:07:54	previously I focused on tools
+10:07:56	like 3-D scanning or face
+10:07:59	tracking.  And most recently,
+10:08:01	I'm stuck on fission learning.
+10:08:03	But it's not my first time with
+10:08:05	this obsession.  Outside of the
+10:08:06	AI lab I was building my own
+10:08:09	side projects.  Projects that
+10:08:10	tried to understand and
+10:08:12	rhythmize, and finish drawings.
+10:08:16	I did everything from clustering
+10:08:18	to genetic programming.  But my
+10:08:21	favorite tool was neural nets.
+10:08:22	At the time they were small and
+10:08:23	out of fashion.  But in the last
+10:08:25	five to ten years they have
+10:08:27	really returned stronger than
+10:08:28	ever.  Fueled by new research,
+10:08:31	new kinds of data, huge amounts
+10:08:33	of it.  New toolkit.  New
+10:08:39	communities.  And this last
+10:08:40	year, last two years, I guess.
+10:08:43	Back into machine learning and
+10:08:44	AI and rediscovering a lot of
+10:08:45	the things that drew me to it in
+10:08:48	the first place in college and
+10:08:50	high school.  I'm still in that
+10:08:52	getting familiar, making small
+10:08:53	studies of my art that comes
+10:08:56	before making any new artwork.
+10:08:58	But I wanted to share some of
+10:08:59	that process today.
+10:09:02	I'll cover topics, convolutional
+10:09:05	nets, recurrent nets, and
+10:09:08	dimensionality.  I am glad about
+10:09:12	your presentation, I was worried
+10:09:13	this would be too quick.
+10:09:15	On June 16th, 2015, Reddit had
+10:09:18	this image of a puppy slug,
+10:09:22	posted with the image generated
+10:09:23	by a convolutional neural
+10:09:26	network.  Which I'm sure was
+10:09:27	leaked from someone at Google.
+10:09:29	Machine learning researchers and
+10:09:31	hobbyists were quick to argue
+10:09:33	over whether it could possibly
+10:09:35	be the work of a neural net, as
+10:09:38	claimed, or another algorithm or
+10:09:41	hand crafted.  And deleted
+10:09:43	comments, and the deleting of
+10:09:45	the thread added to the mystery
+10:09:47	of the origins.  A week later,
+10:09:49	Google research blog post,
+10:09:52	titled “Inceptionism,” and
+10:09:58	confirming the puppy slug
+10:10:00	origin.  And they released code,
+10:10:03	DeepDream, that anybody could
+10:10:05	use to re-create the images.
+10:10:06	And journalists ascribed it to
+10:10:09	Google's AI as if there was a
+10:10:12	massive digital brain in the
+10:10:14	underground lair feeding photos
+10:10:18	from a few posts from Google
+10:10:20	Plus.  While it may have been
+10:10:23	the first moment a neural net
+10:10:25	captured the public's
+10:10:27	imagination so visibly, it has
+10:10:29	seen plenty of success in daily
+10:10:32	life.
+10:10:34	ConvNets have been used for
+10:10:36	checks since the '90s, and
+10:10:39	powering recent search by image
+10:10:40	systems.  And audio images, and
+10:10:43	demonstrating how homogenous
+10:10:46	research groups are.  A year
+10:10:48	before DeepDream I saw others
+10:10:51	of learning and discovered how
+10:10:54	much it changed since I left it
+10:10:56	in college.  I was looking for a
+10:10:57	toolkit written in a language I
+10:11:00	was familiar with.  I found
+10:11:03	this, CCV, it ships with a
+10:11:05	flexible license and made a
+10:11:07	toolkit for the openFramework to
+10:11:11	try to recognize thing this is
+10:11:12	real time.  I haven't done this
+10:11:16	switch before.  See what
+10:11:17	happens.
+10:11:18	This is going to be -- let's
+10:11:19	see.  Yeah.  There we go.  So
+10:11:22	here's an example of how to
+10:11:27	do -- it's a little rough.  It
+10:11:35	tends to think I'm a band aid a
+10:11:37	lot of the time.
+10:11:38	maybe --
+10:11:45	>> I pod.
+10:11:46	>> IPod.  Good job, neural net.
+10:11:49	That'll do it.  That'll do.
+10:11:51	That'll do.
+10:11:54	I've done a lot of confuser
+10:11:57	vision work before, but this was
+10:11:59	beyond what I was familiar with.
+10:12:01	Wasn't color matching or feature
+10:12:03	tracking.  Even if I got things
+10:12:04	totally wrong, the uncanny
+10:12:06	labels were still surely
+10:12:08	inspiring.  And it made me think
+10:12:11	back to the story of AI pioneer
+10:12:13	Mark Kaminski, MIT
+10:12:20	undergraduate, 1966, solved the
+10:12:23	problem of computer vision.  I
+10:12:25	was wondering, what would he
+10:12:26	think about these techniques?
+10:12:28	After watching Jeff Hinton on
+10:12:34	deep learning, I was looking at
+10:12:37	more, and it was daunting due to
+10:12:39	the lack of community and
+10:12:40	examples.  Looking at other
+10:12:42	focus, I learned the big
+10:12:44	contenders were cafe, torch,
+10:12:47	written in C++ now there's
+10:12:50	Spencer flow, of course, which
+10:12:52	is one of the biggest.  And
+10:12:54	there are plenty of
+10:12:55	less-recognized toolkits in
+10:12:58	Python.  Even cafe had a Python
+10:13:02	rapper.  I started investing in
+10:13:04	Python.  It was a great
+10:13:06	investment, the huge ecosystem
+10:13:08	and the tools.
+10:13:09	The first thing I tried tackling
+10:13:11	was a problem I tried before,
+10:13:14	smile detection.  They are great
+10:13:15	to automatically inject
+10:13:18	emoticons into the chat or take
+10:13:22	screen shots of things that make
+10:13:23	you laugh.  Or other interactive
+10:13:27	installation.  And you can get a
+10:13:29	decent metrics with the relative
+10:13:31	distance between the corners of
+10:13:32	the mouth.  I was wondering how
+10:13:35	ConfNet would do.  I found a
+10:13:39	few smiling and faces.  And hand
+10:13:43	wrote for vision recognition,
+10:13:46	and had a smile detector.
+10:13:49	Rather than asking if it's a
+10:13:51	small image, hand drawn, one,
+10:13:52	two, three, zero.  I asked if it
+10:13:55	was a smile or not, zero.
+10:13:57	Besides the input images changes
+10:14:00	and output size, I didn't make
+10:14:04	any other modifications.  Let's
+10:14:06	see what it looks like in
+10:14:07	practice.  I'm going to try
+10:14:09	something incredibly
+10:14:10	irresponsible and try the
+10:14:12	convolutional neural net on
+10:14:14	stage.
+10:14:15	So right now I'm starting up
+10:14:16	this tool which is a wrapper
+10:14:19	for -- it's a wrapper with
+10:14:22	multiple back ends.  You can run
+10:14:24	TensorFlow.  The first thing I
+10:14:29	do normally is download the
+10:14:30	data, but I did that in advance.
+10:14:32	I'd load all the images in, and
+10:14:34	convert them to a slightly
+10:14:36	different format.  So I have
+10:14:38	them in one really big matrix
+10:14:40	for Tensor.  And that can take a
+10:14:42	few seconds.  But once they're
+10:14:44	in that format, and I made sure
+10:14:46	that they're like right for the
+10:14:48	neural net.  A lot of these
+10:14:50	techniques, 32-bit floating
+10:14:54	point, give them something else,
+10:14:56	they get really mad at you.  We
+10:14:57	can take a look.  Cool.  Images
+10:14:59	look good.  I'm going to save
+10:15:01	these to disk.
+10:15:02	And we're going to move on to
+10:15:03	the next step.  Training.  So
+10:15:07	we'll load the data in using
+10:15:10	numpy, and say we want to have
+10:15:15	these two classes.  Like I said
+10:15:17	just a moment ago.  Instead of
+10:15:19	ten, we have two.  We shuffle
+10:15:21	all the data around so we don't
+10:15:23	use, you know -- so we don't
+10:15:25	train on one part of the data
+10:15:27	and try to validate on data we
+10:15:29	have never seen before.  And I
+10:15:31	start up the GPU on my computer.
+10:15:35	Which could go terribly wrong.
+10:15:38	Normally this takes about ten
+10:15:39	seconds, if we're lucky.  And
+10:15:41	then we define the neural net.
+10:15:43	So this is like the sort of
+10:15:45	textural description, or the
+10:15:49	corollary we were seeing in the
+10:15:50	last presentation, and working
+10:15:51	with TensorFlow looks pretty
+10:15:54	similar.  This is just.  And we
+10:15:59	can see it's just got about --
+10:16:02	I'll just start -- crossing my
+10:16:04	fingers.  All right.  Okay.
+10:16:06	We're off to a good start.  So
+10:16:08	it's taking about eight seconds.
+10:16:11	Which means it takes eight
+10:16:12	seconds to go through all the
+10:16:14	data once.  In the first round,
+10:16:17	wasn't that good.  We're at 73%
+10:16:19	accuracy.  But it's going up.
+10:16:22	Now we're at 83% accuracy.  Our
+10:16:24	validation is about the same,
+10:16:25	it's a little better.  And I'm
+10:16:27	going to run it for five epics,
+10:16:30	and then save it and do a quick
+10:16:33	test.  You can see this net's
+10:16:34	got like 800,000 parameters that
+10:16:37	define it.  Most of those are in
+10:16:39	almost the last layer for these
+10:16:42	dense connections.  Cool.  It
+10:16:44	works.
+10:16:44	We're going to save that and
+10:16:47	take a look.  That's the way you
+10:16:48	want things to look.  That's
+10:16:50	great.  Cool.  Accuracy is going
+10:16:51	up, it's going down -- oops.
+10:16:55	All right.  We're coming back.
+10:16:56	Here we go.
+10:17:00	Last step.  Evaluation.  All
+10:17:02	right.  I'm going to load them
+10:17:03	all back in again, start with
+10:17:04	the GPU again, this can also go
+10:17:07	terribly wrong if something
+10:17:09	wasn't like, you know, something
+10:17:11	was not unlocked correctly.  And
+10:17:13	we're going to evaluate this on
+10:17:14	one image.  Okay.  It says that
+10:17:16	this image is like a little more
+10:17:18	towards neutral than smiling.
+10:17:20	Which I'd say that's about
+10:17:22	accurate.  But let's try it on
+10:17:26	something that's a little more
+10:17:27	intense.  I just need this
+10:17:29	little app that feeds my face in
+10:17:31	real-time -- if anyone's used
+10:17:34	this toolkit, used this in
+10:17:37	Jupiter and Python, you would
+10:17:39	realize this is ridiculous.
+10:17:41	Okay.  Here we go.  Hey!
+10:17:47	Yes.  Oh, man.  I don't think my
+10:17:51	heart's been racing that fast
+10:17:53	before.  Cool.  Thanks for
+10:17:58	sticking with that.  So let's
+10:17:59	talk about what's going on here
+10:18:00	in a little more detail.  We got
+10:18:03	a lot of that from the last
+10:18:04	presentation.  But
+10:18:06	simultaneously learning, and
+10:18:08	there's image patches that help
+10:18:09	discern categories, and what
+10:18:11	combination of the patches make
+10:18:13	up a given category?  Net
+10:18:16	detects edges and spots, and
+10:18:19	then a combination of like an
+10:18:20	edge and a dark spot that might
+10:18:22	make up an eyebrow and an eye.
+10:18:25	And finally the net will
+10:18:26	recognize that an eyebrow, an
+10:18:28	eye, and a nose, makes up a face
+10:18:29	and is that sort of thing.
+10:18:31	Sometimes it's hard to
+10:18:32	disentangle where it's detecting
+10:18:35	features and combinations, but
+10:18:37	this is one way that researchers
+10:18:39	conceptualize the otherwise
+10:18:43	murky inner workings of the
+10:18:45	technique.
+10:18:46	And they were working on
+10:18:48	reversing the process.  Say you
+10:18:50	start with the picture of a
+10:18:51	squirrel, like before, and the
+10:18:53	network that's detecting a
+10:18:54	thousand different categories.
+10:18:55	DeepDream runs the squirrel
+10:19:00	image through the net and
+10:19:01	recognizes what's happening on
+10:19:03	the output.  Are there edges?
+10:19:06	Spots?  Eyes?  I'm sorry, what's
+10:19:08	happening inside the network,
+10:19:09	are there edges?  Spots?  Eye?
+10:19:15	The et cetera?  And DeepDream
+10:19:18	modifies the original image to
+10:19:20	amplify that activity.  Just
+10:19:22	like a minute ago, taking
+10:19:24	something and making it look
+10:19:25	more like a frog or more like a
+10:19:28	bird or a plane.  So if you have
+10:19:30	some vaguely eye-like shapes,
+10:19:33	they start looking like eyes.
+10:19:35	If you have a dog-like shape,
+10:19:37	turns into a dog.  This happens
+10:19:38	a lot.
+10:19:39	Because many of the thousand
+10:19:40	categories that researchers are
+10:19:42	training on happen to be
+10:19:45	different.  And through this
+10:19:46	process, you can also ask
+10:19:48	DeepDream to visualize a
+10:19:51	specific category.  Instead of
+10:19:53	just the inside of the net, you
+10:19:54	can look at the output.  That's
+10:19:56	how researchers discovered that
+10:19:59	according to neural nets, a
+10:20:02	dumbbell is only a dumbbell when
+10:20:05	attached to an arm.
+10:20:06	I started to explore this by
+10:20:08	applying it to a large number of
+10:20:09	images from classics,
+10:20:12	Michelangelo, to my personal
+10:20:15	collection of glitches.  Testing
+10:20:16	with different settings or
+10:20:17	networks trained on different
+10:20:19	categories.  Or making
+10:20:20	animations out of a series of
+10:20:22	images.
+10:20:23	And then about two months after
+10:20:25	the inceptionism post,
+10:20:27	researchers from the university
+10:20:30	in Germany posted a neural
+10:20:34	artistic style.  And this paper,
+10:20:36	they show how to imitate an
+10:20:39	artistic style rendering a photo
+10:20:42	using a neural net.  It looks
+10:20:44	impossible.  The sort of thing
+10:20:46	that should require carefully
+10:20:48	trained humans who have
+10:20:51	undergone years of practice.
+10:20:53	But it's taking this and making
+10:20:55	it automatically.
+10:20:58	My first was to try something
+10:20:59	harder, reverse the technique.
+10:21:02	Maybe remove the filter and turn
+10:21:04	it into a photo.  Discover what
+10:21:06	Vincent Van Gogh was looking
+10:21:11	for.  It was mixed and
+10:21:12	uninspiring.  I posted to
+10:21:14	Twitter with a hoax, based on
+10:21:17	another artist's work and moved
+10:21:19	on.  But with DeepDream, I
+10:21:21	learned most by processing
+10:21:23	different images from western
+10:21:25	art history that I was familiar
+10:21:27	with, plus a few carefully-tune
+10:21:29	would portraits.  And I found
+10:21:31	that styles transfer meant
+10:21:34	something like texture transfer.
+10:21:36	There's a lot to explore, from
+10:21:37	animation to improvisation,
+10:21:41	inventing styles, interpolating
+10:21:46	between styles.  And last month
+10:21:48	some researchers just posted a
+10:21:50	new article saying they can do
+10:21:51	it this in real-time.  Normally
+10:21:55	it's five minutes per frame.
+10:21:57	One of my favorite things about
+10:21:59	DeepDream and style transfer,
+10:22:01	they visually work for
+10:22:04	complicated topics.  Not many
+10:22:06	people understand how a neural
+10:22:07	networks from front to back,
+10:22:09	the justifications of the code
+10:22:11	and what's gone into the system,
+10:22:14	but they can look at a puppy
+10:22:16	slug or a fake Van Gogh and know
+10:22:21	what's going on.  DeepDream has
+10:22:23	human intuition for
+10:22:28	intelligence.
+10:22:28	And it's easy to develop a feel
+10:22:30	for manipulating neural nets
+10:22:33	when you have an understanding
+10:22:34	of the basic concepts.  It's
+10:22:37	additional or multiplication or
+10:22:39	weighted sums.  The training
+10:22:41	process is about figuring out
+10:22:42	which weights will give you the
+10:22:44	answers you expected.  And one
+10:22:47	modification is to take the
+10:22:50	current state of the net and
+10:22:53	feed it into the next state.
+10:22:55	It's a recurrent neural net.
+10:22:59	It's usually a fixed size output
+10:23:02	from an input, like a thousand
+10:23:04	from an image, it's modeling
+10:23:07	variable lengths, predicting one
+10:23:10	time set for every prediction.
+10:23:12	Like pen movements from
+10:23:13	handwriting, a series of
+10:23:16	characters and texts, notes in
+10:23:17	music, or temperatures from the
+10:23:18	weather.  And I think the
+10:23:20	DeepDream moment is, an example
+10:23:25	posted in May of last year.  If
+10:23:27	you feed it a -- RNN -- a few
+10:23:34	megabytes, you'll get the novel
+10:23:38	text.  After feeding the
+10:23:39	collective work of Shakespeare,
+10:23:43	drop on your lordship's head,
+10:23:45	your opinion on your honor.  And
+10:23:47	Wikipedia, naturalism and
+10:23:50	decision for the majority of
+10:23:54	Arab countries.  Or Linux code.
+10:23:59	Even with the arcane comments.
+10:24:02	If you're familiar with other
+10:24:03	text generation techniques,
+10:24:07	you'll notice the recurrent net
+10:24:08	has a surprising ability to
+10:24:11	balance correctness.  With
+10:24:14	Markov chains, you have the
+10:24:17	tradeoff between copying source
+10:24:19	material exactly and producing
+10:24:20	incorrect output.  But recounter
+10:24:23	nets find the middle ground,
+10:24:25	capturing the deeper structure
+10:24:26	to the data.  What if you
+10:24:30	combine the nets?  Let's try
+10:24:33	this.
+10:24:37	You combine a ConvNet through a
+10:24:41	recounter net.  Is it cropped at
+10:24:44	the top?  I think it's cropped.
+10:24:49	Yeah.  Try again.  If you
+10:24:53	combine the ConvNet with a
+10:24:56	recurrent net -- even weirder.
+10:25:01	The font is not loaded on that
+10:25:03	screen.  That's the weirdest
+10:25:05	thing I have seen in a while.
+10:25:06	And you give it a bunch of
+10:25:08	examples of images with
+10:25:09	captions, you have an automatic
+10:25:11	caption-generating tool.  A man
+10:25:13	in a suit with a tie is holding
+10:25:16	a wine glass.  Back to the wine
+10:25:18	again.  And now we know -- I
+10:25:20	would be happy if it said video
+10:25:23	feedback.  But that's not it.
+10:25:25	Maybe if I'm like, you know,
+10:25:27	cell phone -- talking on a cell
+10:25:28	phone, glasses is talking on a
+10:25:32	cell phone.  I'm curious.  What
+10:25:34	does it know about everyone
+10:25:35	here?
+10:25:38	Oh, I think I just crashed it.
+10:25:43	yep.  That's a crash.  Are we
+10:25:48	still -- yeah.  Cool.  So I'm --
+10:25:58	so many dangerous demos.  Okay.
+10:26:04	My first experiment with it was
+10:26:06	not the image captioning, but
+10:26:09	feeding in a dictionary,
+10:26:10	generating new words.  RNN
+10:26:13	captures basic structure, part
+10:26:15	of speech following a word,
+10:26:17	numbers coming sequentially.
+10:26:20	Sometimes it's a correct
+10:26:21	inflection or vaguely topical
+10:26:23	definition.  And then inspired
+10:26:24	by MegaHouse to repeat a word
+10:26:28	from the previous line, added a
+10:26:30	constraint of another net
+10:26:31	trained on phrases from a 1917
+10:26:33	book of thousands of useful
+10:26:35	phrases.  And some of these were
+10:26:37	really -- I love how it
+10:26:40	finishes.  Flip in love,
+10:26:43	flipping with every move of the
+10:26:47	acknowledgment.  The moon of the
+10:26:48	stars of the soul.  Then I tried
+10:26:50	a more personal direction,
+10:26:51	feeding it some chat history.
+10:26:54	Lauren says, so, did you Steve
+10:26:56	anymore?  Yeah, we only hear it
+10:26:58	out sense that you were kind of
+10:27:00	because it could be last year.
+10:27:01	So he was quickly saying it
+10:27:04	might be realtime.  I guess it
+10:27:06	would.  Ever to want trash
+10:27:08	support of general.  His once
+10:27:12	weird mids.  Ya.  The GitHub
+10:27:15	link.  The lines are the right
+10:27:20	length.  And Lauren writes Y-A.
+10:27:24	They look like the links we
+10:27:26	would send each other.  The
+10:27:28	output seems to occupy the
+10:27:31	subliminal space between modes
+10:27:34	and awareness, dreaming and
+10:27:35	waking tension.  And has the
+10:27:37	look and the feel of the thing
+10:27:38	without having the content.
+10:27:40	I have been constructed
+10:27:43	hand-crafted artisanal small
+10:27:46	data archive of pickup lines.
+10:27:53	And got this.  How was the into
+10:27:55	the your beautiful getting to
+10:27:57	hand Bibl.  A lost you.  Loomed
+10:28:00	you a love every time I was in
+10:28:02	your daticn.  When your name
+10:28:06	your manage to are a stars with
+10:28:07	a heart because I'm milling in
+10:28:10	on a -- there wasn't quite
+10:28:12	enough text in the database to
+10:28:13	learn English.
+10:28:15	so it sounds kind of drunk.
+10:28:18	Which I guess is appropriate.
+10:28:20	But I wonder how long will it be
+10:28:23	until a machine is more
+10:28:24	seductive than a human?  Next I
+10:28:28	tried around 228,000 lines from
+10:28:30	a huge movie dialogue database.
+10:28:34	But it was nonsensical.  I
+10:28:38	needed a bigger network.  And
+10:28:40	Google published it based on
+10:28:43	movie titles.  And it was
+10:28:45	awesome.  The last was 20,000
+10:28:47	drug experiences.  And with such
+10:28:50	a huge collection of outputs,
+10:28:53	much more grammatically correct
+10:28:55	with proper spelling and
+10:29:01	punctuation.  I wonder what
+10:29:04	happens when it becomes a
+10:29:05	perfect mimic.  And if humans
+10:29:08	are unable to see a generated
+10:29:10	experience from a real one.  Is
+10:29:13	it a philosophical zombie,
+10:29:16	describing an experience so
+10:29:18	perfectly that we can't tell the
+10:29:20	difference?
+10:29:21	It's not just about text in the
+10:29:23	sense of natural language.  But
+10:29:25	anything that can be encoded as
+10:29:26	a sequence is perfect.  So
+10:29:28	another kind of text that's not
+10:29:30	natural language is an SPG file.
+10:29:33	Look like this.  This is an
+10:29:34	example from the emoji library
+10:29:40	from Twitter.  I collected them,
+10:29:44	875 files in 2megs.  And asked
+10:29:48	for new files.  This is titled
+10:29:52	clock face nine.  Here's a
+10:29:53	bigger collection to show you
+10:29:54	the variety in the output.  It's
+10:29:58	amazing to see how the big
+10:30:00	circles with faces consistently
+10:30:02	find their way into the mix, and
+10:30:04	other barely recognizable shapes
+10:30:08	throughout.  And it's the most
+10:30:10	consistent, it's a restricted
+10:30:12	palette and it memorizes it
+10:30:15	exactly.  If you like this,
+10:30:16	check out smiling face with face
+10:30:18	by Allison, or glitch logos by
+10:30:21	Darius.
+10:30:22	All right.  Finishing up here.
+10:30:25	I wanted to mention something
+10:30:27	separate from deep learning, but
+10:30:28	a huge inspiration to me.  It's
+10:30:30	a tool I've always wanted but
+10:30:33	has only made sense to me
+10:30:35	recently.  So one way to think
+10:30:36	about abstractions is to think
+10:30:39	about what's called
+10:30:40	dimensionality obstruction.  You
+10:30:43	have the 10 by 10 pixel image,
+10:30:46	100 colors, 1 dimensions.  But
+10:30:51	each is a handwritten digit,
+10:30:54	maybe it's better to do a 10 --
+10:30:57	strong for the first value, this
+10:30:58	is zero.  Strong for the second
+10:31:00	value.  So on, et cetera.
+10:31:02	Ten dimension might be useful
+10:31:04	for describing the categories of
+10:31:06	the images.  But hard to
+10:31:07	visualize the ten dimensional
+10:31:09	space as we saw with the six or
+10:31:11	32-dimensional space earlier.
+10:31:13	So we can take this farther and
+10:31:14	try to embed the ten dimensional
+10:31:17	space or the higher dimensional
+10:31:18	space into two or three
+10:31:20	dimensions and draw something
+10:31:22	that's easier to interpret.
+10:31:27	Different ones have different
+10:31:29	kinds of abstractions or
+10:31:31	arrangements they create.  One
+10:31:32	of my favorite algorithms is of
+10:31:35	t-SNE.  It has similar data
+10:31:39	points close to each other.
+10:31:40	It's not worry about points too
+10:31:44	far from each other.  It's the
+10:31:46	largest scale, you can see here
+10:31:48	it's placed different digits.
+10:31:50	These are the handwritten digits
+10:31:52	from a database.  It's placed
+10:31:55	the different digits in
+10:31:57	different clusters, one per
+10:31:59	digits, and you can see how
+10:32:02	slanted the handwriting is, and
+10:32:09	gradients in stroke and weight.
+10:32:11	Keep going.  Unfortunately some
+10:32:13	of the most interesting data
+10:32:14	doesn't have numerical
+10:32:16	representation, but we can learn
+10:32:17	that from context a lot of the
+10:32:19	time.  And word2vec looks at
+10:32:24	what context a word course in
+10:32:26	and uses the context to
+10:32:28	determine which words should
+10:32:29	have similar or dissimilar
+10:32:31	representations.  It's usually
+10:32:33	trained on hundreds of thousands
+10:32:35	from millions of unique words,
+10:32:38	scattered throughout hundreds of
+10:32:40	millions of news articles and
+10:32:41	returns 300 numbers for each
+10:32:43	word.
+10:32:44	Each of these numbers does not
+10:32:45	really have a clear
+10:32:46	representation, like a value or
+10:32:49	a category, but you can do basic
+10:32:51	comparisons between them.  Like
+10:32:53	you can look at distances.  So
+10:32:55	words that are similar have
+10:32:57	smaller distance.  In this case,
+10:32:59	Monday through Friday are
+10:33:00	similar to each other.  But
+10:33:01	different from Saturday and
+10:33:02	Sunday.
+10:33:03	Or months of the year are
+10:33:05	roughly divided into March
+10:33:06	through July and August through
+10:33:08	February.  I don't totally get
+10:33:09	this one.  But you can tell that
+10:33:12	the consecutive months are more
+10:33:14	similar than distant months.
+10:33:15	And you can do analogies too.
+10:33:18	The closest vector to Moscow
+10:33:21	minus Russia plus Japan is
+10:33:23	Tokyo.  All these relationships
+10:33:25	were going the same direction.
+10:33:26	Each dimension is not clearly
+10:33:29	interpretable, the general
+10:33:31	location of each vector encodes
+10:33:34	the meaning.
+10:33:35	If we look at a bunch of country
+10:33:37	comparisons, we can see the
+10:33:39	relationship pretty clearly.
+10:33:41	Now you know we can get a vector
+10:33:42	for any word.  Take any list of
+10:33:45	words and run it through t-SNE.
+10:33:49	These are related to moods.  I
+10:33:51	use color to indicate the 3D
+10:33:55	embedding versus the 2D
+10:33:57	embedding used for the
+10:33:58	visualizations.  This groups the
+10:33:59	clusters a little more.
+10:34:01	Some obvious pairings are things
+10:34:04	like happy and glad and green
+10:34:06	right next to each other.  And
+10:34:08	eager and anxious.  Others are
+10:34:11	surprising.  Even though they
+10:34:12	occupy the same general
+10:34:13	category, doubtful and hopeful
+10:34:15	are two examples.  They're next
+10:34:17	to each other, they're kind of
+10:34:19	interchangeable in the middle of
+10:34:21	a sentence.  They just mean the
+10:34:24	exact opposite thing.
+10:34:26	Got me interested in antonym,
+10:34:31	and comparing relationships, is
+10:34:33	the forward/backward, more
+10:34:37	similar to happy/sad, or
+10:34:39	future/past?  Maybe changes in
+10:34:42	languages.  Sometimes they are
+10:34:44	easy to interpret,
+10:34:46	unintelligent/intelligent is
+10:34:47	right next to
+10:34:48	uninteresting/interesting.  And
+10:34:50	others.  But most of the time
+10:34:53	it's very difficult to interpret
+10:34:55	with the antonyms have in
+10:34:59	common.  One is that they might
+10:35:01	have different relationships.
+10:35:02	And there's no single
+10:35:03	relationship encoded in language
+10:35:05	as oppositeness.
+10:35:07	I'm going to keep going.  Well,
+10:35:10	actually -- no.  Instead of
+10:35:11	creating vectors for words, it's
+10:35:15	common to make vectors for
+10:35:18	documents using topic modeling.
+10:35:20	And we can, for example, watch
+10:35:22	the dramatic content of the book
+10:35:25	develop over time.  Or run the
+10:35:27	t-SNE on it after it processes
+10:35:33	the image.  Instead of running
+10:35:36	through a net to generate a
+10:35:37	caption, we can use that as a
+10:35:41	description.  So abstract
+10:35:42	concepts, green sky, eye shapes,
+10:35:46	textures, they get grouped
+10:35:48	together.
+10:35:49	Let me open up this.  Last one,
+10:35:55	I think.  So I worked with some
+10:36:00	researchers from an interactive
+10:36:06	agency in Japan exploring the
+10:36:09	archive, about 800 hours of
+10:36:12	footage from history that's been
+10:36:13	recorded over the last 30 years
+10:36:15	or so.  And we use this
+10:36:17	technique to kind of put similar
+10:36:20	images from the data set next to
+10:36:23	each other.  You can see here
+10:36:25	like all of the psychedelic
+10:36:28	frames.  We took like one frame
+10:36:30	per minute of video.  All the
+10:36:31	psychedelic minutes end up next
+10:36:33	to each other.
+10:36:34	Some of this, like, kind of
+10:36:36	sci-fi-looking blue against
+10:36:39	black ends up next to each
+10:36:40	other.  I like this area over
+10:36:42	here where there's just a bunch
+10:36:44	of spherical things.  Or like at
+10:36:47	the bottom left.  This is where
+10:36:48	all the faces end up.  You can
+10:36:51	see that a little better.  And
+10:36:55	when there's one video that has
+10:36:58	like a bunch of frames that are
+10:37:00	exactly the same, they end up
+10:37:01	right next to each other, and
+10:37:03	you can see like duplicates in
+10:37:04	the archive.  Like these two
+10:37:08	videos are the same video.
+10:37:18	Cool.  But I'll finish up
+10:37:20	with -- so there's one more
+10:37:23	demo.  For me I got into
+10:37:26	interactive art through
+10:37:27	experimental music.  And a lot
+10:37:29	of this exploration with machine
+10:37:32	learning has been about finding
+10:37:33	my way back into making sounds.
+10:37:35	But I guess I just realized, I
+10:37:38	don't know if we have, I guess
+10:37:40	this is a visualization
+10:37:43	conference, huh?  But maybe if
+10:37:44	we're really quiet.  Here's what
+10:37:47	happens when you apply these
+10:37:49	techniques to spectrograms
+10:37:52	instead of images.  Let's see
+10:37:57	here. Oh.
+10:38:09	It works!
+10:38:10	yeah.  Maybe at like half that
+10:38:16	volume.  Is it work?
+10:38:20	>> On your laptop --
+10:38:23	>> Line control -- okay.  So --
+10:38:28	there's a nice guitar in here
+10:38:33	somewhere.
+10:38:38	Whoa.  I was not expecting that.
+10:38:40	We can see how the snares end up
+10:38:43	in the same area.  I'll try and
+10:38:45	move slowly.
+10:38:55	And all over here -- we're all
+10:38:59	familiar with.
+10:39:10	I really like the cowbells.
+10:39:12	There's one corner over here.
+10:39:15	T-SNE was saying all of these
+10:39:18	cowbells are basically the same.
+10:39:20	So --
+10:39:27	Let's see.  Thank you,
+10:39:34	everybody.
+10:39:35	>> Good-bye.

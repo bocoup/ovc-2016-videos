@@ -1,0 +1,804 @@
+16:02:02	>> What an awesome day we're
+16:02:03	having.  Thank you so much for
+16:02:04	the organizers for bringing us
+16:02:08	together today and for you for
+16:02:10	coming.  I'm Zan Armstrong, and
+16:02:13	excited to talk about why
+16:02:16	Everything is Seasonal.  And
+16:02:16	when I say everything is
+16:02:18	seasonal, I mean, not quite
+16:02:20	everything.  Everything related
+16:02:23	to change over time.  But that's
+16:02:24	a lot of things.  Consider so
+16:02:26	many of the dash boards you have
+16:02:27	made, seen, or been recruited to
+16:02:30	make.  Consider all of the times
+16:02:31	that you want to know if metric
+16:02:33	is going up or down, or if some
+16:02:35	event had an impact.
+16:02:37	My main point today, if your
+16:02:40	data includes any sort of change
+16:02:42	over time, you should take
+16:02:45	seasonality into account.
+16:02:47	I want to start by telling a
+16:02:48	story.  Imagine that it's summer
+16:02:51	and you just got a new job.
+16:02:54	You're so psyched.  The only
+16:02:56	down side, there's a commute.
+16:02:58	But it really doesn't seem so
+16:03:00	bad.  And at first, it's not.
+16:03:05	Fast forward a few months to
+16:03:07	early move, and this is your
+16:03:08	life.  A world filled with red
+16:03:11	taillights, misery, road rage.
+16:03:13	How could traffic have gotten so
+16:03:14	much worse so quickly?
+16:03:16	Is it going to go on like this
+16:03:18	forever?  Maybe.  Maybe.  Or
+16:03:25	maybe it's just November.
+16:03:26	Consider that the number of
+16:03:27	commuters influences the amount
+16:03:29	of traffic there is.  So if
+16:03:30	everybody takes a one week
+16:03:32	summer vacation during the ten
+16:03:34	weeks of summer, and almost
+16:03:36	nobody takes a vacation early
+16:03:38	November, right before the
+16:03:40	holidays, 10% fewer commuters
+16:03:42	per week on the road.  So the
+16:03:49	goal of the story is to put you
+16:03:50	in the mind set of seasonality,
+16:03:52	and to cover this fact, that the
+16:03:54	seasonality of causal factors
+16:03:59	could matter.  And six ways to
+16:04:02	think about seasonality and
+16:04:03	different ways it could trip you
+16:04:05	up.  Not just about traffic, but
+16:04:07	the factors that contribute to
+16:04:10	the traffic, the number of
+16:04:11	commuters, and the percent of
+16:04:16	people on vacation at any given
+16:04:19	time.
+16:04:19	But first, talk about what is
+16:04:21	seasonality?  Seasonality are
+16:04:23	patterns that repeat over known
+16:04:25	fixed periods of time.  And the
+16:04:30	most obvious of these of course
+16:04:32	are the seasons.  And of course
+16:04:37	also the time of day.
+16:04:38	In San Francisco other people
+16:04:40	say don't have seasons.  Looking
+16:04:42	at this the two years of data, we
+16:04:44	actually do.  Look at that.  Two
+16:04:48	years of repeated patterns.  We
+16:04:50	have seasons.
+16:04:51	But perhaps the more obvious
+16:04:53	type of season that we have is
+16:04:55	our famous fog.  Zoom in to look
+16:04:57	at our weather data at a three
+16:04:59	month interval, you can see the
+16:05:01	hourly data peaks and see the
+16:05:03	years, sorry, the days, standing
+16:05:05	out.  You get a good portion of
+16:05:08	our annual temperature variation
+16:05:10	every single day.
+16:05:12	But it's not just about weather
+16:05:13	or seasonality and time series
+16:05:15	that aren't growing and
+16:05:17	shrinking.
+16:05:20	While we're familiar with the
+16:05:22	temperature seasonalities in our
+16:05:24	hometown, there are more factors
+16:05:25	that have even more predictable
+16:05:29	patterns.  In Hawaii, they have
+16:05:30	been measuring parts per million
+16:05:32	in fact atmosphere since the
+16:05:33	early 1970s.  Here is that
+16:05:37	data.  Along the F-axis, every
+16:05:40	day from late 1974 to the end of
+16:05:42	the 2014.  And we have the CO2
+16:05:46	parts per million.  Two things
+16:05:48	jump out, of course the increase
+16:05:50	over time that we have been
+16:05:51	seeing throughout this time
+16:05:53	period, and the repeating annual
+16:05:54	increase and decrease we have
+16:05:56	had year in and year out.
+16:05:58	There's a strong seasonality to
+16:05:59	the CO2 in our atmosphere.
+16:06:01	Let's talk about a third type of
+16:06:03	data, births.  Something that we
+16:06:05	don't of as having seasonality.
+16:06:09	Babies come in the middle of the
+16:06:10	night, come after two hours of
+16:06:12	labor and come after 20.  Right?
+16:06:15	In fact, baby data actually
+16:06:17	illustrates three type of
+16:06:18	seasonality, day of the week,
+16:06:20	week of year, and hour of day.
+16:06:21	So let's take a look at the
+16:06:22	data.
+16:06:24	Here we have the number of
+16:06:25	babies born in the United States
+16:06:26	from 1969 to 1988.  Every single
+16:06:30	day.  And it's kind of a mess.
+16:06:33	So let's zoom in and see what we
+16:06:38	can find.  We will look at 1985,
+16:06:42	some of you might be represented
+16:06:44	in this data set.  But we start
+16:06:45	to see there's some sort of
+16:06:47	repeating pattern here.  Zoom
+16:06:50	into the summer.  And we start
+16:06:51	to see every -- there's these
+16:06:53	weekend dips, and in between is
+16:06:56	higher.  Weekend, weekend,
+16:06:57	weekend.
+16:06:57	And you might notice that one of
+16:06:59	these weeks was a little bit
+16:07:03	different than the rest.  This
+16:07:04	one right here.  The first week
+16:07:06	of July.  July 4th.  That's a
+16:07:08	lot more like a weekend than a
+16:07:09	weekday.  So now we can zoom
+16:07:14	back out to our full data set of
+16:07:16	this period.  And you we've
+16:07:17	aggregated by week.  We
+16:07:19	recognize the day of the week
+16:07:21	and aggregate by week.  And a
+16:07:23	second pattern starts to emerge.
+16:07:26	We can zoom in on the last four
+16:07:28	years of this time period and
+16:07:29	see a repeating pattern over a
+16:07:32	fixed period.  Up from the early
+16:07:34	part of the year to December,
+16:07:36	and then a decline.  Up,
+16:07:37	decline.  And that repeats.  So
+16:07:41	in addition to having a strong
+16:07:44	day of the week seasonality, we
+16:07:46	see a week of the year pattern
+16:07:47	as well.
+16:07:48	Now let's look at the minutes of
+16:07:50	the day.  This is a different
+16:07:52	data set.  This is babies born
+16:07:53	in 2014.  Based on what minute
+16:07:55	they were born.  So everybody
+16:07:57	single point on this data set is
+16:07:59	the number of babies born at a
+16:08:01	maritime on a Saturday.  So
+16:08:03	there were 384 babies born in
+16:08:07	2014 at 9:31 a.m. on Saturdays.
+16:08:11	And we go to the Saturday data,
+16:08:12	see the partner, there's an
+16:08:14	increase in the morning.
+16:08:15	There's some pattern there.
+16:08:17	Let's look at another day, just
+16:08:18	for fun.  How about Mondays?
+16:08:22	Same, right?  Totally the same.
+16:08:25	Let's look at all seven days.
+16:08:27	We have Monday, Tuesday,
+16:08:28	Wednesday, Thursday, Friday in
+16:08:29	the brown, and Saturday and
+16:08:31	Sunday in the blue.  This is
+16:08:32	babies being born.  Totally a
+16:08:34	natural process.  What peaks at
+16:08:37	8:00 in the morning on weekdays,
+16:08:43	12:41 a.m., and right before the
+16:08:46	end of the workday.  I was going
+16:08:47	to stop here.  But I thought you
+16:08:48	might want to explore a little
+16:08:50	bit more.  Let's look at two of
+16:08:51	the ways we can influence when a
+16:08:53	baby is born.  C-sections and
+16:08:55	inductions.  Babies born by
+16:08:58	C-section.  Not that many in the
+16:09:00	middle of the night.  A lot of 8
+16:09:01	p.m.
+16:09:02	Babies born that were induced.
+16:09:05	Not that many in the morning, a
+16:09:06	lot more in that noon to 6 p.m.
+16:09:10	period.  And neither C-section
+16:09:12	nor induced.  So we still have a
+16:09:14	hour, minute of day, a subtle
+16:09:17	pattern here that doesn't vary
+16:09:18	by day of week.
+16:09:19	So this baby data set
+16:09:21	illustrate -- these baby data
+16:09:24	sets illustrated three types of
+16:09:26	seasonality I wanted to discuss
+16:09:27	today.  Day of the week, week of
+16:09:29	the year, and minute and hour of
+16:09:30	day.
+16:09:31	And, of course, two of these are
+16:09:33	very much natural cycles that
+16:09:35	our human behavior is closely
+16:09:38	tied to.  And day of the week is
+16:09:40	a human construct we have made
+16:09:42	up, but it drives so much of our
+16:09:44	collective behavior.
+16:09:45	You might be wondering what
+16:09:46	about monthly?  It's super
+16:09:50	common to see data aggregated to
+16:09:52	the month.  So many of the data
+16:09:55	sets are published at that
+16:09:56	level.  And I want to talk about
+16:09:57	why that not be such a good
+16:10:00	idea.  So let's say that I own a
+16:10:02	restaurant.  It's a great little
+16:10:03	neighborhood place.  People love
+16:10:04	it when I open up the outdoor
+16:10:07	seating in the summer.  Friday
+16:10:09	and Saturday nights are popular,
+16:10:11	and my famous weekend brunch
+16:10:13	with mimosas.  And I'm closed on
+16:10:16	Mondays, got to do data
+16:10:18	visualization sometime.  So
+16:10:20	let's make up data for the
+16:10:21	hypothetical awesome restaurant.
+16:10:27	$4,000, a day, it's a boring
+16:10:31	line chart.  All the way across
+16:10:32	from 2014 to now.  And build on
+16:10:35	the growth.  Inflation to deal
+16:10:37	with.  Maybe a little bit more
+16:10:38	popular.  So we'll bring in 1.6%
+16:10:41	year over year growth.  So I add
+16:10:43	a little bit of slant to that
+16:10:45	line.  Bring in some real
+16:10:48	numbers here.  Might be
+16:10:50	interested to see me compare
+16:10:52	January 10th so January
+16:10:54	11th, I want to compare
+16:10:57	Fridays and Fridays.  It is not
+16:11:00	so much important now, but more
+16:11:01	important with more patterns.
+16:11:03	And now growth chart, daily,
+16:11:05	year, growth.  And 1.6% every
+16:11:09	single day.  Very nice and
+16:11:10	steady bar chart.
+16:11:12	So let's bring in some week of
+16:11:14	the year seasonality.  I opened
+16:11:16	up my patio in the summer.  When
+16:11:19	I have more seating, more money,
+16:11:22	less seating, less money.  A
+16:11:24	little under 4,000 in the winter
+16:11:26	days, a little more than 4,000
+16:11:31	when I open the patio.  It's
+16:11:33	still boring, it's 1.6%.  We're
+16:11:36	comparing summer to summer and
+16:11:38	winter to winter.  And assuming
+16:11:39	I open up my patio on the same
+16:11:41	appropriate day.
+16:11:42	And let's bring in some day of
+16:11:43	the week seasonality.  And here
+16:11:45	we go, it's kind of a mess.  So
+16:11:47	let's drill in to see what's
+16:11:49	there.  As I mentioned on
+16:11:50	Mondays, I'm closed due to my
+16:11:52	data visualizations.  And I have
+16:11:54	the big weekends, a big Friday
+16:11:56	dinner.  Saturday brunch,
+16:11:57	Saturday dinner, and a big
+16:12:01	Sunday brunch with mimosas.
+16:12:04	Zoom out to daily revenue, still
+16:12:08	boring, apples to apples.  And I
+16:12:09	have baseline revenue, the
+16:12:11	growth, two types of seasonal
+16:12:14	patterns that seem quite
+16:12:16	plausible.  Aggregate by week.
+16:12:19	What does this look like?
+16:12:20	Almost the same.  A little bit
+16:12:23	of an angle.  Sometimes before
+16:12:25	and after I open up the patio.
+16:12:29	Weekly growth, boring.
+16:12:30	Comparing to the previous year.
+16:12:32	And back week to week.
+16:12:35	And if I add a 5% bump in March
+16:12:38	and April, see that in the
+16:12:40	chart, stands out clearly.
+16:12:41	Let's aggregate now by month.
+16:12:44	Here's our nice, clean data set.
+16:12:47	We can still see some of the
+16:12:48	signal.  The summer is a little
+16:12:50	bit bigger.  And the winter's a
+16:12:53	little bit smaller.  But it
+16:12:54	looks like there's so much going
+16:12:55	on here.  And especially when we
+16:12:57	bring in those growth metrics,
+16:12:59	it looks like there's a lot
+16:13:01	happening.  A lot of variation
+16:13:02	in the data set from
+16:13:03	month-to-month.  Some months,
+16:13:04	negative 5% growth.  Other
+16:13:06	months, almost 10% positive
+16:13:08	growth.  There's a lot going on.
+16:13:09	If we wanted to find a real
+16:13:11	signal, it looks like -- how
+16:13:13	could we even see it?  Could we
+16:13:15	see a 5% change?  Point to these
+16:13:17	and say that's a weird change.
+16:13:19	Something happens with the
+16:13:21	business, we need to be worried
+16:13:22	or excited?
+16:13:24	>> So what's going on.  Of
+16:13:25	course we have a factor, months
+16:13:28	have a different number of days.
+16:13:30	But a different set number of
+16:13:32	days per year.  In 2016, four
+16:13:36	weeks, and two bonus days to get
+16:13:38	to April.  And those were a
+16:13:40	Tuesday and a Wednesday in 2014.
+16:13:42	2015, we have 365 days in a
+16:13:44	year, one more than a factor of
+16:13:46	seven.  We shift the month one
+16:13:48	day forward in the week.  Now
+16:13:49	two bonus days that don't fall
+16:13:52	into a happy week are a
+16:13:53	Wednesday and a Thursday.
+16:13:55	Effectively we have a Wednesday
+16:13:56	and Thursday, the previous year
+16:13:57	we had a Tuesday and a
+16:13:59	Wednesday.
+16:13:59	April 2016 is particularly
+16:14:01	interesting.  Now we're on a
+16:14:03	leap year.  We move forward two
+16:14:05	days and it just so happens when
+16:14:06	we move forward two days we fall
+16:14:09	into the weekend.  Okay?  Those
+16:14:11	big extra revenue days.  So in
+16:14:13	April 2016, it's going to have
+16:14:15	more money in it just because
+16:14:17	the days of the week that are
+16:14:19	bonus are making more money.
+16:14:21	Doesn't mean I did better in
+16:14:23	April 2016 than in April 2015.
+16:14:25	I just get five weekends to
+16:14:29	count instead of four.
+16:14:30	And I think it's easy, that's
+16:14:34	true.  How much of an effect
+16:14:36	could that?  Changed the data
+16:14:38	from one that's easy to read,
+16:14:40	easily see the change, to one
+16:14:43	where there's so much more
+16:14:45	happening and nothing really is.
+16:14:46	This is a really simple time
+16:14:47	series.  Growth, consistent day
+16:14:49	of the week pattern, consistent
+16:14:50	week of year.  No random
+16:14:52	variation.  No variation due to
+16:14:54	weather.
+16:14:55	No holidays, no decreases due to
+16:14:57	a bad review, no short or
+16:15:00	long-term variation due to
+16:15:02	marketing campaigns, good press,
+16:15:04	or a new chef.  No change in
+16:15:05	trend, day or week of year
+16:15:07	seasonality.  And yet we look
+16:15:09	like there was so much going on
+16:15:11	in the monthly data.  It would
+16:15:14	have hidden if there was a true
+16:15:16	signal that we needed to make
+16:15:17	decisions about, would have been
+16:15:19	hidden unless we're doing more
+16:15:23	than a 2% change to get a signal
+16:15:26	that you could see is huge.
+16:15:27	So monthly aggregation is
+16:15:30	inherently a bad idea unless the
+16:15:33	data is monthly.  If I was
+16:15:36	analyzing rent checks, a land
+16:15:38	owner with a lot of rent.  I
+16:15:40	don't care if they pay on the
+16:15:41	29th, 30th, 31st.  I might
+16:15:44	care if they pay me or not in
+16:15:48	that month.  In that case, a
+16:15:49	month is appropriate.  But our
+16:15:51	behavior is so much more tied to
+16:15:52	day of week than to month of
+16:15:54	year.
+16:15:55	That in most cases I would look
+16:15:57	to day of week first and
+16:16:00	aggregating by weeks instead of
+16:16:02	months.  But the main point,
+16:16:04	aggregate time periods that make
+16:16:06	sense for your data.  We saw
+16:16:08	that daily data can be hard to
+16:16:10	interpret, and year over year
+16:16:13	growth of minus 364 days, that's
+16:16:19	only there.  But then 365 or
+16:16:24	366, that compares weekends to
+16:16:28	weekdays and an impossible chart
+16:16:32	to read.  But major tools,
+16:16:34	Google analytics compare
+16:16:36	previous years by comparing the
+16:16:38	calendar year.  Presumably
+16:16:40	that's what people expect.
+16:16:42	The good news is you can change
+16:16:44	it right in the tool in this
+16:16:45	case.
+16:16:46	So in general, compare apples to
+16:16:53	apples.  Can compare 364 back.
+16:16:56	Seasonality is the story we
+16:16:58	sometimes actually want to tell,
+16:17:00	where the most important insight
+16:17:01	is, the seed, the kernel you're
+16:17:04	looking for is.  To save lives.
+16:17:07	That's with the baby data set.
+16:17:08	Looking at the minute of the day
+16:17:11	by day of the week was
+16:17:12	informative.  We learned
+16:17:13	something and saw something new
+16:17:15	that we wouldn't have seen if we
+16:17:17	looked at the total number of
+16:17:19	babies per day.  This is true on
+16:17:21	a 1985 study on deaths by
+16:17:24	tractor accident that a nursing
+16:17:26	friend told me.  It's still told
+16:17:28	today to tell about the
+16:17:30	potential impact of seasonality
+16:17:32	data and you can actually save
+16:17:33	lives if you put the data at
+16:17:36	this granularity.  And the study
+16:17:38	was looking at tractor accidents
+16:17:40	in Georgia, fatalities, month,
+16:17:42	location, hour, and age.  And in
+16:17:44	month you can see there's two
+16:17:46	main peaks, during the planting
+16:17:48	and harvesting season, there's
+16:17:50	more tractor usage.  And the
+16:17:52	deaths per hour.  A few stand
+16:17:54	out.  The 11 a.m. to noon, right
+16:17:56	before lunch.  Higher values in
+16:17:58	the afternoon than in the
+16:17:59	morning, and that 4 p.m. to 5
+16:18:01	p.m. peak.  And knowing this can
+16:18:04	change the recommendation that
+16:18:04	people made about when you use
+16:18:07	your tractors and various safety
+16:18:08	recommendations and actually
+16:18:09	save lives.
+16:18:11	The point I want to talk about
+16:18:12	next is to the duality by
+16:18:17	looking at the impact, or trying
+16:18:19	to do causal analysis as close
+16:18:22	as you can.  Things that are
+16:18:25	expected, holidays, sales,
+16:18:26	events.  Things unexpected, but
+16:18:30	common, weather.  Natural
+16:18:31	disasters, death of a CEO,
+16:18:34	mergers.  And we often want to
+16:18:36	know what the effect is, short
+16:18:38	or long-term.
+16:18:39	Let's look at some data.  In
+16:18:41	September 2011 the month of
+16:18:43	9/11, gun sales increased by 28%
+16:18:46	compared to the previous -- to
+16:18:47	the August, the month before.
+16:18:50	And I told you not to use
+16:18:52	monthly data, I'm using monthly
+16:18:53	data.  Sometimes it's the best
+16:18:56	you have available.  Hopefully
+16:18:57	you can check and see if day of
+16:18:59	the week is important.  The
+16:19:01	restaurant business typically
+16:19:03	exacerbates that.  But we'll do
+16:19:05	months because it's what we've
+16:19:07	got.
+16:19:08	January 2015, Obama's second
+16:19:12	inauguration, the month after
+16:19:14	Sandy Hook, dropped by 10%.  And
+16:19:20	nothing special happened, they
+16:19:23	increased by 21% from the
+16:19:24	previous month.  See the time
+16:19:27	series.  Here are the three
+16:19:28	points plotted on the time
+16:19:31	series.  And we can there is
+16:19:32	annual pattern we can recognize.
+16:19:35	We don't know, just by looking
+16:19:36	at the previous month, hard to
+16:19:38	tell if it's a true impact or
+16:19:40	based on seasonality, a
+16:19:42	variation.  Look at this, and we
+16:19:44	know we should deal with
+16:19:47	seasonality, what can we do?
+16:19:49	What we can do is what New York
+16:19:51	times did.  And this came from
+16:19:54	Josh Keller, and this amazing
+16:19:57	analysis, they created the data
+16:20:00	set on federal background
+16:20:02	checks.  They started with this
+16:20:04	view which is what we were just
+16:20:05	look at with a lot more
+16:20:07	annotation.
+16:20:08	And then they showed you the
+16:20:11	de-sensationalization of it.
+16:20:13	Here's the seasonality, and
+16:20:15	after you calculate and remove
+16:20:16	the seasonality from the data
+16:20:18	set.  It's so much more clear
+16:20:19	you can see the overall trend or
+16:20:21	time and these big points of
+16:20:22	unusual gun sales.
+16:20:25	One of the best parts was not
+16:20:27	only did they do an amazing,
+16:20:28	fantastic article.  And I
+16:20:30	encourage you to read this, the
+16:20:31	rest of the article is also
+16:20:33	great.  But they also have a
+16:20:35	blog driven by data, he posted
+16:20:39	his analysis, and including the
+16:20:43	link to GitHub, I could see what
+16:20:45	he was using, he was using the
+16:20:47	arena method, a great method in
+16:20:50	the seasonal package.  Yay.  Go
+16:20:53	check it out.
+16:20:54	But -- so they used that method.
+16:20:56	If you're reacting for
+16:21:01	seasonality, it's year and year
+16:21:04	growth.  It's great to see is
+16:21:06	this year different than last
+16:21:07	year?  If you want to isolate
+16:21:09	it, you can use decomposing with
+16:21:13	STL, or de-seasonallizing with
+16:21:17	census X.  And then you can
+16:21:20	mimic an A/B test that never
+16:21:22	existed, and there's
+16:21:23	documentation that I'll post at
+16:21:25	the end of the talk.
+16:21:26	So what we're going to talk
+16:21:28	about today is decomposing with
+16:21:30	STL.  A three-part
+16:21:32	decomposition.  It's additive.
+16:21:39	If you want to do an analysis,
+16:21:41	look at both methods and decide
+16:21:43	what makes most sense.  There's
+16:21:45	a lot of parameter choices with
+16:21:47	these methods as well.  So
+16:21:54	there's three parts.  Here's our
+16:21:56	time series, and the other
+16:21:57	three, the long-term trend, the
+16:21:59	annual seasonality and the
+16:22:00	remainder.  So this is an
+16:22:02	additive method, you can add
+16:22:05	them together, and add the
+16:22:06	values in a column, you get the
+16:22:09	original time series.  Don't
+16:22:10	necessarily want additive
+16:22:16	series, but it's a nice place to
+16:22:18	start.
+16:22:18	And long-term trend, eyeball it,
+16:22:20	decline, increase, and steeper
+16:22:22	increase, and we can do it with
+16:22:24	math.  And we can see the purple
+16:22:26	long-term trend overlaid on the
+16:22:28	original graph as well as
+16:22:29	removing the trend and seeing
+16:22:31	what's left.  And looking at a
+16:22:33	long-term trend, it lets us ask
+16:22:37	questions.  How have gun sales
+16:22:39	changed over the last 15 years
+16:22:40	in general?
+16:22:42	And look at month seasonality,
+16:22:43	and to isolate this, I block out
+16:22:47	the charts.  You can focus on
+16:22:49	the even years so you can see --
+16:22:51	sorry.  See what's going on.
+16:22:53	And overlaid all 15 year on a
+16:22:55	single chart.  The lighter green
+16:22:56	is older, and the darker green
+16:22:58	is newer.  So it's been a little
+16:23:01	bit of seasonal drift.  We can
+16:23:03	see it higher February, March,
+16:23:06	lower June, July, and increasing
+16:23:10	into the end of the year.
+16:23:12	And increasing at the top, this
+16:23:14	allows some drift in the
+16:23:15	seasonality over time and we can
+16:23:18	see there's actually the
+16:23:19	component is changing.  A second
+16:23:21	peak.  That might be an
+16:23:22	interesting question to ask.
+16:23:23	Why is the seasonality of gun
+16:23:25	sales changing?  Are there
+16:23:26	different types of sales at
+16:23:28	different types of year?  What's
+16:23:29	going on?  And see it without
+16:23:31	seasonality, Akin to what they
+16:23:33	did in the New York Times and
+16:23:37	lets you see the trend without
+16:23:39	the extra layer.  Both with the
+16:23:41	seasonality and without the
+16:23:43	seasonality are interesting.
+16:23:44	And asks questions, during the
+16:23:47	months the most were sold and
+16:23:51	the changes.
+16:23:53	We can eyeball these, this looks
+16:23:55	funny, so does that, that was
+16:23:56	funny.  And again in the end of
+16:23:58	2016, that looks pretty funny.
+16:24:01	But it helps when we can isolate
+16:24:04	it mathematically and see the
+16:24:06	time series without the
+16:24:07	remainder and see the entitles
+16:24:09	isolated and see how big they
+16:24:11	were.
+16:24:12	And if you're doing forecasting,
+16:24:13	you want to forecast without the
+16:24:15	remainder, without the long-term
+16:24:17	trend and the seasonality.
+16:24:18	These are unpredictable events,
+16:24:21	presumably.  So you want to see
+16:24:22	them on a baseline.
+16:24:24	And this is to ask questions,
+16:24:27	when did gun sales spike and by
+16:24:32	how much?  Never dipping, all of
+16:24:33	the one-off events are spikes.
+16:24:35	You can see it overlaid in the
+16:24:37	original and see that January is
+16:24:41	part of a two month spike, three
+16:24:43	month.  And the other was a
+16:24:45	smaller spike.  It's much
+16:24:47	smaller compared to more recent
+16:24:48	disruptions.  And February 2011
+16:24:50	was just life as usual.
+16:24:52	Here's those decomposed time
+16:24:55	series one more time.  So the
+16:25:01	next point I want to discuss,
+16:25:03	the seasonality that matters
+16:25:04	most might be a subset of your
+16:25:06	data.  And this is going to be
+16:25:08	left as a challenge for the
+16:25:09	audience.  So over beers tonight
+16:25:11	I challenge you to describe a
+16:25:13	scenario in which ignoring the
+16:25:14	seasonality of a subset of the
+16:25:16	data will lead to
+16:25:17	misinterpreting the aggregate
+16:25:20	data.  But I will give you a
+16:25:22	hint or two.
+16:25:23	So consider what if your subsets
+16:25:26	had different seasonalities?
+16:25:28	What if they had different
+16:25:29	growth rates?  Hint number two
+16:25:31	for those of you interested in
+16:25:34	principal component analysis,
+16:25:37	what if there's different
+16:25:38	seasonality in the components?
+16:25:40	How does that affect your
+16:25:41	analysis?
+16:25:42	Last but not least, people and
+16:25:44	places are different, so are
+16:25:45	their seasonal ties.  So many of
+16:25:47	these patterns are
+16:25:49	super-ingrained, it's easy to
+16:25:51	take them for granted or assume
+16:25:52	our seasonality patterns are
+16:25:54	shared by everybody around us.
+16:25:56	But people are in different
+16:25:58	places, ages, cultures,
+16:26:00	different interests.  And all of
+16:26:01	these things might affect their
+16:26:03	behavior or the behavior in
+16:26:04	their data.  Are they the same
+16:26:06	as you or using the product in a
+16:26:08	different way?  The people that
+16:26:09	you're analyzing, trying to
+16:26:11	understand, or the nature that
+16:26:13	you're analyzing?  Trying to
+16:26:14	understand them.  You have to
+16:26:15	look at the data in the
+16:26:16	granularity.
+16:26:18	And fortunately that's
+16:26:21	wonderful.
+16:26:22	Our lives are so full of the
+16:26:24	patterns.  I get to show eye
+16:26:26	candy and a call of action to
+16:26:28	you.  I ask you to look although
+16:26:29	the data, dive deeper, don't
+16:26:32	aggregate it away, see what the
+16:26:34	data weeks look like, the
+16:26:35	minutes of the hour, the weeks
+16:26:38	of the year?  Are there patterns
+16:26:40	that make you connect better
+16:26:42	with the data that you're
+16:26:43	looking at?  Things that you can
+16:26:44	show and reveal and share?
+16:26:47	And these -- so there's a lot of
+16:26:49	obviously really pretty things
+16:26:51	done throughout the web.  One is
+16:26:53	why people visit the emergency
+16:26:54	room by Nathan Yau.  He took an
+16:26:58	amazing data set of number of ER
+16:27:02	visits associated with common
+16:27:04	products.  Like footballs.
+16:27:06	There's more during football
+16:27:08	season in the fall.  And nails,
+16:27:11	screws, tacks, and bolts.  More
+16:27:14	in the summer.  Presumably
+16:27:16	people are doing more house work
+16:27:18	then.
+16:27:19	But ask you what's the
+16:27:21	seasonality of nails, screws,
+16:27:24	tacks and bolts, would you have
+16:27:26	known?  These things don't have
+16:27:28	to be line charts.  I have used
+16:27:30	them as a good place to start
+16:27:31	and an illustration.  But
+16:27:32	there's a lot of ways to explore
+16:27:34	and engage with and play with
+16:27:36	seasonal data.
+16:27:39	Flickr flow by Martin Wattenberg
+16:27:42	and Fernanda Viegas, opened up
+16:27:43	the conference this morning.
+16:27:45	The beautiful Flickr flow.  I
+16:27:47	have a project, weather circles,
+16:27:50	plays with animating weather at
+16:27:51	different hours of day,
+16:27:53	different months of the year for
+16:27:54	different cities.  This is
+16:27:55	looking at cloud data in San
+16:27:58	Diego.  Percent cloudiness
+16:28:02	during the day.
+16:28:03	Based in Boston, the MBTA data,
+16:28:06	the Boston subway system.  It's
+16:28:08	a wonderful project.  Just one
+16:28:10	of many charts they have made
+16:28:12	looking at the various
+16:28:13	seasonalities and patterns
+16:28:14	around how people get around
+16:28:16	Boston.
+16:28:17	A similar project in Ville
+16:28:24	Vivante, a similar data set, how
+16:28:27	people are moving think Geneva
+16:28:29	and when they do, kind of how
+16:28:31	active the city is.  Traffic
+16:28:34	accidents data by Nadieh who
+16:28:39	spoke earlier today, looking at
+16:28:40	the patterns there.  And it
+16:28:42	doesn't even have to be a chart
+16:28:44	at all.  From Giorgia and
+16:28:48	Stephanie's postcard project you
+16:28:51	might have seen, these are all
+16:28:52	the doors that Giorgia opened in
+16:28:56	a week.
+16:28:57	The first three she opens into
+16:29:01	work on Monday, Tuesday,
+16:29:02	Wednesday, Thursday, and Friday.
+16:29:04	So in summation, as you go home,
+16:29:07	my real hope is you're going to
+16:29:09	spend the next week looking and
+16:29:14	you and all the time think that
+16:29:16	the world is seasonal.  Number
+16:29:18	one, consider the seasonality of
+16:29:20	common factors.  Number two,
+16:29:22	aggregate the time period that
+16:29:25	makes sense for the data.  If
+16:29:26	you don't know, look at it.
+16:29:27	Number three, sometimes
+16:29:28	seasonality is the story.  Don't
+16:29:31	always aggregate it away or
+16:29:33	de-seasonallize it.  Sometimes
+16:29:36	it's the crux of the story,
+16:29:37	might be the most beautiful
+16:29:40	rendering or insight.  Number
+16:29:42	four, adjust for seasonality
+16:29:44	when adjusting impact for an
+16:29:47	event with cause analysis.
+16:29:49	Number five, the seasonality
+16:29:50	that matters might be in a
+16:29:53	subset of your data.  I'm
+16:29:56	looking forward to talking about
+16:29:57	this tonight for anybody with a
+16:30:00	scenario.  And number six,
+16:30:01	seasonal patterns vary by place,
+16:30:03	culture, and lifestyle.  It's an
+16:30:05	amazing way to understand the
+16:30:06	people and culture and nature
+16:30:07	around us.  So go and enjoy and
+16:30:11	explore and send your
+16:30:12	visualizations.  If you would
+16:30:15	like more info, I have my GitHub
+16:30:18	repo.  Things here that didn't
+16:30:21	make it into the final cut.
+16:30:23	This is just the tip of the
+16:30:24	iceberg.  So much more.  So if
+16:30:26	your data increase any sort of
+16:30:27	change over time, take
+16:30:29	seasonality into account.

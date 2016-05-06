@@ -1,0 +1,756 @@
+17:04:56	>> Okay.  So the first thing I
+17:04:59	will do is turn on the
+17:05:01	microphone.  And the second
+17:05:01	thing I should do, figure out
+17:05:04	how to put an image on the
+17:05:05	screen.  Because that's how we
+17:05:08	show data visualization.  Okay.
+17:05:13	So the next thing -- to this
+17:05:19	one.  Do that.  Okay.
+17:05:30	Okay.
+17:05:31	>> Make sure you confirm.
+17:05:35	>> Oopsy.  Confirm.  All right.
+17:05:38	So now I switch back to this --
+17:05:41	is it on?  Okay.  Where is it?
+17:05:45	Might have to -- I don't want to
+17:05:46	mirror, actually.  So let's see.
+17:05:51	Where is my other window?  This
+17:05:53	window.  Ta-da.
+17:06:04	View.  Hide tool bar, full
+17:06:06	screen.  Great!  Awesome.  Okay.
+17:06:10	So my name is Tony.  As -- thank
+17:06:14	you, Irene, for the
+17:06:16	introduction.  So I'm a
+17:06:18	designer.  I came to kind of
+17:06:22	visualization from a point of
+17:06:24	view of how do you kind of
+17:06:26	communicate?  How do you
+17:06:27	communicate ideas?  How do you
+17:06:29	communicate concepts to people?
+17:06:31	I really care about explaining
+17:06:33	things to people.  I really care
+17:06:36	about, as Nicky was saying,
+17:06:43	informing people.  This is a
+17:06:44	distillation of some of the
+17:06:46	lessons I've learned over the
+17:06:47	last couple of years.  Building
+17:06:50	data visualizations that are
+17:06:51	expositions for ideas.  And the
+17:06:52	techniques that I'm bringing in
+17:06:54	from kind of graphic design and
+17:06:56	motion design.
+17:06:57	That's why this talk is called
+17:06:59	Animation, Pacing, and
+17:06:59	Exposition.  A lot of it is
+17:07:03	going to be based on examples
+17:07:05	from this project that I did
+17:07:07	last year.  Called R2D3.  This
+17:07:14	project was about machine
+17:07:15	learning.  A lot of those things
+17:07:17	that the Google folks talked
+17:07:19	about this morning.
+17:07:20	I kind of toned it down, very
+17:07:22	simple, something that's very --
+17:07:25	one of the simplest machine
+17:07:27	models you can have.  Really
+17:07:29	break it down in how they
+17:07:31	explain it.  So I'm going to
+17:07:32	talk about how you actually view
+17:07:34	that from a designer's
+17:07:36	perspective.
+17:07:37	And so I'm going to go over
+17:07:39	three things.  Three things,
+17:07:41	actually.  So the goal -- the
+17:07:43	goal is exposition.  And
+17:07:44	explaining something.  What are
+17:07:47	we dealing with in terms of
+17:07:49	constraints?  What are we
+17:07:50	dealing with in terms was how we
+17:07:52	do this?  I will argue that the
+17:07:53	most important constraint you're
+17:07:56	dealing with is not screen size,
+17:07:57	it's not color, it's not time,
+17:07:59	it is not the amount of
+17:08:01	information you're dealing with,
+17:08:04	it's attention.  And speaking as
+17:08:05	the last speaker between you and
+17:08:07	your drinks, I recognize that
+17:08:11	attention is something that I
+17:08:12	have to deal with right now.
+17:08:14	So let's move on.
+17:08:16	So I'm going to talk about two
+17:08:17	tactics.  Tactics for data, how
+17:08:20	to manage the attention.  And a
+17:08:22	lot of that is animation, and
+17:08:24	it's about pacing.  But let me
+17:08:26	first start with the idea of
+17:08:28	what is exposition?  I think of
+17:08:30	exposition -- there's lots of
+17:08:32	ways to think about it.  I have
+17:08:35	the idea in my head, I'm going
+17:08:37	to try to reconstruct it in your
+17:08:39	head.  How do I do that?  How do
+17:08:41	I reconstruct an idea from my
+17:08:44	head to your head?  I have to
+17:08:47	establish a channel to move
+17:08:48	stuff between my head and your
+17:08:49	head.  Right now I'm doing that
+17:08:51	through sound.  There's a
+17:08:53	microphone.  I'm doing that with
+17:08:54	illustrations on the screen.
+17:08:58	But more importantly, though,
+17:08:59	I'm using your attention.  I am
+17:09:02	gathering your attention and I'm
+17:09:04	trying to like push things
+17:09:06	through so that you guys are
+17:09:07	receiving stuff that I think is
+17:09:10	important.
+17:09:11	So let's talk about attention.
+17:09:13	What is attention?  So the
+17:09:15	dictionary deaf nation --
+17:09:18	here -- is the mental faculty of
+17:09:19	considering or taking notice of
+17:09:22	something.
+17:09:24	From a kind of a science and
+17:09:28	psychology point of view,
+17:09:29	attention is really about how
+17:09:30	your brain is taking in tons and
+17:09:33	tons of information right now.
+17:09:34	Every one of you have eyes that
+17:09:37	take in more information than
+17:09:39	like I think -- has more
+17:09:42	bandwidth than Wi-Fi.  You are
+17:09:46	constantly doing that.  Your
+17:09:48	brain is doing the act of
+17:09:49	filtering all that stuff.
+17:09:50	Discarding what is irrelevant,
+17:09:53	and focusing it on something
+17:09:54	that is relevant.  And that
+17:09:55	process of filtering shit out is
+17:09:58	attention.
+17:10:00	When I'm doing the work of
+17:10:02	filtering things out, that's
+17:10:03	paying attention.  And from a
+17:10:06	designer's point of view, I
+17:10:07	think about dealing with two
+17:10:09	kinds of tension.  The first one
+17:10:11	is one I have hinted at, which
+17:10:13	is visual attention.  Your eyes
+17:10:15	can take in a lot of information
+17:10:17	at once, but, like, still have a
+17:10:19	sense of kind of directionality.
+17:10:22	You have to -- I'm looking over
+17:10:23	here, I can't really see what's
+17:10:24	over here.  When I'm looking
+17:10:27	over mere, I can't see you guys,
+17:10:29	all right?
+17:10:30	And so if you can design
+17:10:31	something that helps guide the
+17:10:33	eye to the thing that is
+17:10:34	relevant, you're saving
+17:10:37	attention.  You're like not
+17:10:40	making the eye work harder than
+17:10:42	necessary.  The second kind of
+17:10:43	attention is, well, kind of
+17:10:45	attention.  It's short-term
+17:10:47	memory.  Our conscious minds can
+17:10:49	really only deal with a few bits
+17:10:52	at once.  Our brain can deal
+17:10:53	with a lot more information.
+17:10:55	And so you have to consider at
+17:10:57	any given time you can -- if you
+17:10:58	can only fit so many things in
+17:11:00	short-term memory, you have to
+17:11:01	be very careful about what you
+17:11:04	put -- what you put in that
+17:11:07	short-term memory.  It's like
+17:11:08	RAM.  What do you put in there
+17:11:11	at a given moment to achieve
+17:11:12	what you need to achieve?  So
+17:11:14	when I think about this stuff, I
+17:11:15	think about this.  There's the
+17:11:17	race against time.  You're on a
+17:11:18	race against time.  And this
+17:11:21	arcade game, the thing that
+17:11:23	sticks with me is the idea of
+17:11:24	like, oh, you have to reach your
+17:11:26	next check point, and you have
+17:11:27	to get there fast enough to get
+17:11:29	your next time extension.
+17:11:31	I think about my design work as,
+17:11:33	like, oh, I have to get
+17:11:34	something interesting in front
+17:11:35	of you in order to get an
+17:11:37	attention extension.
+17:11:39	And if I don't, which it seem
+17:11:41	like -- for some of you guys I'm
+17:11:43	not successful, because some of
+17:11:45	you guys are sleeping.  So I
+17:11:47	need to get to the next kind of
+17:11:49	attention extension.  How do I
+17:11:51	do that?  Another metaphor,
+17:11:53	then, I use is this idea of a
+17:11:55	faucet and a sink.  All right?
+17:12:00	Your attention is constantly
+17:12:01	draining away, as it has been
+17:12:03	since 9:00 in the morning today.
+17:12:05	And we are kind of like here.
+17:12:08	So what I need to do as a
+17:12:11	designer, I need to like close
+17:12:12	up that sink as much as possible
+17:12:14	and then also open up the
+17:12:16	faucet.  Kind of give you guys
+17:12:18	stuff to feel like, oh, this is
+17:12:19	worth my attention.  I'm going
+17:12:21	to put more of it in here.  So
+17:12:22	let's look at what are some
+17:12:24	things that gains and drains
+17:12:27	attention.
+17:12:28	All right?  So things like gain
+17:12:30	attention is like surprise.  I
+17:12:31	remember the moment when Kyle
+17:12:32	turned on the sound thing.
+17:12:35	Like -- boom!  Suddenly, oh,
+17:12:37	wow.  Kyle has my attention now,
+17:12:39	right?  But something that is a
+17:12:43	little bit more gentle is
+17:12:45	delight.  Something that's fun,
+17:12:47	something that's beautiful.
+17:12:48	Something you have never seen
+17:12:49	before.  Like Nadieh's talk, all
+17:12:53	the gradient stuff.  I was like,
+17:12:55	oh, you could do that with SVG?
+17:13:00	Awesome.  Delight is very nice.
+17:13:02	Order and coherence is also
+17:13:04	nice.  It's the idea of do I
+17:13:06	have to spend a lot of energy to
+17:13:08	make sense of this?  Or if it's
+17:13:10	already ordered and framed and
+17:13:11	like organized well for you, so
+17:13:13	your brain has to do less work.
+17:13:16	Those things are able to tap
+17:13:17	into your brain and use less
+17:13:19	attention and gain you more
+17:13:20	attention.
+17:13:21	On the other side, what drains
+17:13:23	attention?  Time.  Time drains
+17:13:25	attention.  That's kind of
+17:13:26	obvious.  We have stray
+17:13:28	thoughts, our brains are here,
+17:13:30	there, everywhere.  Some of our
+17:13:32	brains between this screen, this
+17:13:35	voice, those screens in front of
+17:13:40	you.  And positions drain
+17:13:41	attention.  Come to a Website,
+17:13:43	and I ask you to click on
+17:13:44	something, you have to decide to
+17:13:46	click on that thing.  Like even
+17:13:49	though it's easy, you have to
+17:13:51	move your mouse to a particular
+17:13:52	spot on screen and click that
+17:13:55	button.  That's a decision that
+17:13:56	takes attention.  Clutter.
+17:13:58	Clutter takes attention.  If
+17:14:00	something is disorganized, can't
+17:14:04	make sense of it, your brain is
+17:14:06	trying hard.  If you can remove
+17:14:08	the clutter, it's not striving
+17:14:09	to make sense that have stuff,
+17:14:11	it's focused on what you need to
+17:14:14	pay attention to
+17:14:15	And lastly, confusion, drains
+17:14:17	attention for reasons I have
+17:14:18	already mentioned.  So these are
+17:14:20	things that drain attention.  So
+17:14:22	from a designer's point of view,
+17:14:25	graphic designers.  Graphic
+17:14:26	design is a fairly old
+17:14:31	discipline.  Dealing with this
+17:14:33	for a long time.  One of my
+17:14:34	favorites from a mentor.  Her
+17:14:37	name was Barbara de Wilde.  She
+17:14:44	was teaching me about graphic
+17:14:47	design.  This is her quote.
+17:14:49	Graphic design is the use of
+17:14:51	space to control time.  What
+17:14:52	does she mean by that?
+17:14:55	It means when a graphic design
+17:14:57	is about manipulating things,
+17:15:01	I'm going to put this here and
+17:15:04	here, you can use that ordering
+17:15:05	of how things are positioned in
+17:15:07	space to control your experience
+17:15:08	of things.
+17:15:09	You are going to look at this
+17:15:12	first and this next and this
+17:15:13	next.  So I'm going to show you
+17:15:16	this.  I didn't have to tell you
+17:15:18	to, like, look at the thing --
+17:15:21	look at the big title first.  I
+17:15:23	didn't have to tell you to go
+17:15:24	down -- go down this page.  I
+17:15:27	didn't have to tell you to read
+17:15:28	the last line.  That's because
+17:15:31	this leverages conventions in
+17:15:33	graphic design.  And conventions
+17:15:35	in the western world, like
+17:15:37	readers in the western world, we
+17:15:39	read from the top left to the
+17:15:40	bottom right.
+17:15:42	These conventions, again, saves
+17:15:43	attention.  Saves you from
+17:15:46	having to think about what this
+17:15:47	is.  And so when I approach my
+17:15:52	design work, I try to leverage
+17:15:54	these principles, right?
+17:15:56	So even you kind of squint and
+17:15:59	look at it, and don't read the
+17:16:01	thing yet.  You get a sense,
+17:16:02	what's the important thing?  The
+17:16:04	first thing you see, a visual
+17:16:10	introduction to machine
+17:16:10	learning.  That's the value
+17:16:12	proposition.  And there's a
+17:16:13	weird, interesting-looking thing
+17:16:15	on the right side.  You don't
+17:16:17	know what that is yet, but it's
+17:16:18	kind of cool.  And the last
+17:16:21	thing you see is school.  It's
+17:16:22	asking you.  Hey, if you're
+17:16:25	interested, and this is clear,
+17:16:27	please do this thing.
+17:16:29	And so circling out, and just
+17:16:32	like this is graphic design.
+17:16:33	This is like how do you position
+17:16:35	things in order to help you
+17:16:37	direct the user's attention to
+17:16:39	guide them towards some goal.
+17:16:41	And if you don't believe me,
+17:16:43	here is somebody else doing the
+17:16:46	same thing, right?
+17:16:48	This is one of my favorite New
+17:16:49	York Times visualizations.  It
+17:16:51	is about how the different
+17:16:53	sectors of the economy recover
+17:16:54	from the recession.  And very
+17:16:56	similar.  Value proposition, a
+17:16:58	vague thing that is not clear
+17:16:59	what it is yet, but potentially
+17:17:02	interesting, and then a call to
+17:17:04	action.  And the call to action
+17:17:06	is scroll.  So some of you may
+17:17:10	know of my work, you're the
+17:17:11	scrolling telling guy, you're
+17:17:14	always asking people to scroll.
+17:17:15	What's up with that?  That's
+17:17:17	because a click is a decision.
+17:17:19	A scroll is continuation.
+17:17:21	It's continuing what you've
+17:17:23	already been doing.  And so it's
+17:17:25	less engagement, less decisions,
+17:17:27	more attention to direct to the
+17:17:29	stuff that you actually care
+17:17:31	about.  Plus scrolling is fun.
+17:17:38	If you scroll and a fun thing
+17:17:42	happens, you're going to keep
+17:17:43	scrolling and more fun things
+17:17:45	happen.  Of course, now, the
+17:17:47	next part of the talk, which is
+17:17:48	animation.  Right?
+17:17:50	Animation is the manipulation of
+17:17:52	images to create the illusion of
+17:17:54	motion.  And so why is this
+17:17:56	cool?  Why is this good?  Well,
+17:17:59	that's because motion is
+17:18:00	pre-attentive.  What does that
+17:18:04	mean?  That means there's a big
+17:18:06	chunk of our brain near the back
+17:18:08	of our skull, the visual cortex,
+17:18:10	processes motion before it gets
+17:18:12	to the front of the cortex.
+17:18:13	There's a lot more processing
+17:18:15	power back here than up here.
+17:18:17	And so you can take in motion,
+17:18:19	you can get a sense of motion,
+17:18:21	even before you can like
+17:18:22	consciously process it.  And if
+17:18:24	you tap into that, once again,
+17:18:26	you're saving conscious
+17:18:27	attention.  But you're still
+17:18:29	communicating.  Which is great.
+17:18:32	So I'm going to show some
+17:18:35	examples.  These are examples
+17:18:37	from R2D3.  The first one is,
+17:18:39	all right.  This starts growing,
+17:18:42	what happens?  Some fun
+17:18:45	animation happens.  But it's not
+17:18:47	just fun, it hints at the idea
+17:18:49	of the first dimension that
+17:18:50	we're introducing into this data
+17:18:52	set, which is elevation.
+17:18:54	Elevation goes from the bottom
+17:18:55	up, right?  And so this motion,
+17:18:58	one, it's fun, grabs your
+17:19:00	attention.  And two, okay, this
+17:19:02	is elevation.  This is cool.
+17:19:04	And then I use this transition
+17:19:06	to turn that graph into a
+17:19:09	scatterplot.  Once again, I'm
+17:19:11	using motion to capture
+17:19:14	attention.  But I'm also using
+17:19:16	motion to show an idea.  It's
+17:19:17	like, oh, this one-dimension
+17:19:19	thing, now it's two-dimensions.
+17:19:22	And the other reason to do this
+17:19:23	is because you could imagine the
+17:19:26	counterexample, which is, oh, I
+17:19:28	have a graph.  I'll scroll it
+17:19:30	out of view, put another
+17:19:32	scatterplot in here, now what do
+17:19:35	I have to do?  I have to
+17:19:36	reestablish the context of what
+17:19:37	this visualization is.  Now this
+17:19:39	axis is the same, but this axis
+17:19:42	is new.  Using this animated
+17:19:45	transition, now I have saving
+17:19:47	attention that I would have
+17:19:48	spent reestablishing the
+17:19:49	context.
+17:19:50	Plus now I'm introducing a new
+17:19:52	idea.  So I'm saving attention,
+17:19:54	doing something fun.
+17:19:56	This is a different part of the
+17:19:58	project.  Where I'm using
+17:20:01	animation, again, to show the
+17:20:04	notion underneath of this
+17:20:10	industry.  Which is, hey, in
+17:20:11	order for you to get a sense of
+17:20:13	kind of what position the tree
+17:20:15	is doing, it splits the tree and
+17:20:17	splits the data into chunks and
+17:20:18	then it goes from top down.
+17:20:21	Which is why the animation goes
+17:20:22	from top down.  All right?
+17:20:25	And having established this,
+17:20:27	then I can actually do the
+17:20:29	really fun visualization in R2D3
+17:20:31	where the, like, little balls
+17:20:33	fall down the tree.  All right?
+17:20:36	And once again, I am using
+17:20:38	motion, one, just to kind of
+17:20:41	create a sense of delight.  But
+17:20:44	also then to say, hey, this is
+17:20:46	how the trees work.  The data
+17:20:49	point will literally follow the
+17:20:54	fork in the program to find the
+17:20:55	end point and that's the
+17:21:00	classification.  Okay.  Pause
+17:21:01	here for a second.
+17:21:02	So recap, we're trying to
+17:21:04	reconstruct an idea that is, in
+17:21:06	your head, in your audience's
+17:21:10	head, right?  So these lessons
+17:21:12	from graphic design and motion
+17:21:14	design help us preserve
+17:21:15	attention and directs attention.
+17:21:18	But why?  Who cares?
+17:21:21	So the reason that we care is
+17:21:24	because we need to direct
+17:21:26	attention to the pieces of the
+17:21:27	puzzle.  The pieces and the idea
+17:21:29	that you care about.  But how do
+17:21:30	we know when to direct attention
+17:21:32	where?  How do we know what
+17:21:34	pieces go first?  How big should
+17:21:37	these pieces be?  What do I even
+17:21:39	mean by pieces?  All right?
+17:21:41	So I'm going to take a slight
+17:21:43	detour and choose the idea of
+17:21:45	pace.  Pace.  Pace is to do
+17:21:47	something at a slow and steady
+17:21:52	rate in order to avoid
+17:21:53	overexertion.  Right?  Remember
+17:21:55	our idea of short-term memory.
+17:21:58	You have maybe seven things in
+17:22:02	your head at once.  You don't
+17:22:03	want to overexert and blow it
+17:22:05	up.
+17:22:06	So how do you then take this
+17:22:08	idea and pace this?  Oh, you can
+17:22:10	move the whole thing through
+17:22:12	without blowing up that
+17:22:13	pipeline?  Kind of similar to
+17:22:15	the pipeline that was talked
+17:22:17	about earlier.  And so one way
+17:22:21	to think about this, if you have
+17:22:23	an idea of this, and this is a
+17:22:25	Lego Flatiron building, my
+17:22:31	favorite in New York.  How to
+17:22:33	get from this to this?  If
+17:22:35	someone dumped out Legos and
+17:22:40	said build the Flatiron building
+17:22:44	with this, you wouldn't know
+17:22:46	where to start.  That's why the
+17:22:48	kit comes with an instruction
+17:22:50	manual.  Find the right piece,
+17:22:54	this is the right and relevant
+17:22:56	piece.  Put them together, fit
+17:22:59	them together this way and
+17:23:00	repeat and repeat and repeat.
+17:23:02	It's preserving your attention
+17:23:04	by not just give you a pile, but
+17:23:09	instead this is the right thing
+17:23:10	to focus your attention on now.
+17:23:12	And the Lego instruction manual
+17:23:16	hints at the relationship
+17:23:17	between pieces in the -- in the
+17:23:19	model, right?  So, like, oh.
+17:23:22	This is one panel, this is a
+17:23:23	different panel.  Pieces fit
+17:23:25	together.  There's a dependency
+17:23:27	between these things.
+17:23:29	So by -- by kind of
+17:23:32	understanding the dependencies,
+17:23:35	and understanding the order in
+17:23:36	which you fit these pieces
+17:23:38	together, you can build up to
+17:23:39	something big and interesting
+17:23:41	from very small pieces.  And the
+17:23:43	organization of principle for
+17:23:44	doing that is pacing.
+17:23:46	So let me show you a different
+17:23:49	pile of Legos.
+17:23:52	So this is the previous
+17:23:55	iteration of the project about
+17:24:00	campaign refinance reform.  This
+17:24:02	was one of my first D3 projects.
+17:24:05	I was excited.  I spent all
+17:24:07	weekend working on this and
+17:24:08	showed it to my classmates at
+17:24:10	SVA, and they're like, oh cool.
+17:24:14	What is it?
+17:24:14	And that's because I just
+17:24:17	literally felt every dimension
+17:24:18	in the data on to the screen.
+17:24:22	Built it.  And then if I told
+17:24:24	you now, oh, all the circles on
+17:24:26	the left side represent
+17:24:27	election -- Senate seats where
+17:24:30	democrats won, on the right side
+17:24:32	the republicans won, and I gave
+17:24:34	you like how to read this thing.
+17:24:35	Oh, actually you can read this
+17:24:37	thing and you can understand the
+17:24:38	data.  But just dumping it out
+17:24:42	on you, suddenly I've blown my
+17:24:46	attention project.  What's
+17:24:47	happening is this.  Your
+17:24:49	attention is overwhelmed.
+17:24:51	too many pieces.  The pieces are
+17:24:55	too big.
+17:24:56	So we need to figure out how to
+17:24:58	break it down.  We have to pace
+17:24:59	it out.  We have to find the
+17:25:00	pieces that are too big and too
+17:25:02	unwieldy and figure out how do
+17:25:04	we break it apart?
+17:25:07	So there's lots of ways of doing
+17:25:13	it, but one good rule of thumb
+17:25:14	is when you write it out and lay
+17:25:16	it on the screen, are you
+17:25:18	tempted to read it or skim it?
+17:25:20	If your natural inclination is
+17:25:23	like, I'm going to skim this,
+17:25:24	you probably didn't break it
+17:25:29	down enough
+17:25:30	So what ended up happening was
+17:25:32	this project, the same data set,
+17:25:34	the same Senate seats.  But now
+17:25:36	I'm focus on, hey, here's are
+17:25:38	the idea, the next idea, the
+17:25:40	third idea.  That's what I want
+17:25:41	to focus your attention on, and
+17:25:43	not necessarily all the Lego
+17:25:45	pieces.  You can go poke around
+17:25:47	in different circles and figure
+17:25:49	out, hey, this is the thing.
+17:25:50	But I just said you know what?
+17:25:52	Let's just pick the right thing
+17:25:54	to focus on and direct attention
+17:25:56	there
+17:25:56	The other principle for
+17:25:57	thinking about how to break down
+17:26:02	these ideas is recognizing that
+17:26:03	ideas depend on other ideas.  So
+17:26:05	given a big idea in your head,
+17:26:07	how do you break it down?  Ideas
+17:26:10	tend to not be entirely novel.
+17:26:12	They tend to be composed of
+17:26:14	other ideas.  Composed of
+17:26:16	existing ideas.  Kind of like
+17:26:18	how software is composed of
+17:26:20	other software.  So you're kind
+17:26:21	of dealing with a dependency
+17:26:24	tree, almost.
+17:26:25	So this is a very classic D3
+17:26:28	example of the dependency
+17:26:35	tree -- I actually don't know
+17:26:37	what this is.  But this idea,
+17:26:40	they depend on these ideas and
+17:26:41	these ideas, and you can
+17:26:43	understand the dependency tree
+17:26:45	of your idea, you know the
+17:26:46	pieces and you can break it
+17:26:48	apart.  All right?
+17:26:49	So and if I'm going to
+17:26:52	reconstruct this idea in my head
+17:26:54	in your head, I have to make
+17:26:55	sure I load in all the
+17:26:57	dependencies.  All right?  So
+17:26:58	let's go back to the machine
+17:26:59	learning example.  If I want to
+17:27:01	help people understand what is
+17:27:03	machine learning and I know that
+17:27:04	my audience is a layperson who
+17:27:06	may not even have taken much
+17:27:08	statistics, I need to make sure
+17:27:10	that this stuff is broken down
+17:27:14	really well.  So let's see.
+17:27:17	What does the idea of the
+17:27:20	decision tree depend on?
+17:27:23	Well it starts with the idea of
+17:27:26	data, patterns
+17:27:27	Not very controversial.  And
+17:27:29	then -- I can't read that.
+17:27:31	That's why I'm turning around.
+17:27:32	And it says patterns may be
+17:27:34	correlated with the desired
+17:27:35	outcome.  So if you want to
+17:27:37	predict if a house is in San
+17:27:39	Francisco or New York, patterns
+17:27:40	may help.  So together we can
+17:27:42	start to say, hey, we can use
+17:27:45	patterns to create some rule for
+17:27:46	making a decision.  All right?
+17:27:48	And I combine that with the idea
+17:27:49	of statistics can precisely
+17:27:52	capture a pattern.  Then now I
+17:27:54	can say -- we can use statistics
+17:27:59	to compute the best decision
+17:28:01	rule.  And then I can say, hey,
+17:28:03	if I combine that idea of using
+17:28:05	statistics and saying, oh, I'm
+17:28:07	going to subdivide things and
+17:28:08	I'm going to do this over and
+17:28:10	over and over again, suddenly I
+17:28:13	get to this idea of decision
+17:28:15	rules can be chained together to
+17:28:17	improve accuracy.  That's where
+17:28:19	the tree notion comes from.
+17:28:20	Actually, I skipped ahead.  And
+17:28:23	add the idea of like a tree met
+17:28:25	or.  Now you have a decision.
+17:28:27	This is roughly -- the
+17:28:29	decision -- the dependency tree
+17:28:31	of the idea of a decision tree.
+17:28:36	One thing to note here is order
+17:28:39	matters, all right?  You can't
+17:28:41	just introduce these ideas and
+17:28:43	say, oh, I'm going introduce
+17:28:45	first and then do this other one
+17:28:47	and then come back.  Right?  You
+17:28:48	have to make sure that things
+17:28:49	are in the right order.  You
+17:28:51	want to start from the simplest
+17:28:53	ideas.  And ideas that depend on
+17:28:54	the other things, and the most
+17:28:58	established in your audience's
+17:28:59	head and then build up.  All
+17:29:01	right?
+17:29:01	And even visually.  When I think
+17:29:04	as -- instead of the writing
+17:29:06	part of this and think about
+17:29:07	pasting, visually I do the same
+17:29:11	thing.  So here is that first
+17:29:14	kind of graph showing elevation.
+17:29:16	Pretty simple graphic.
+17:29:18	The next idea is like, oh, I'm
+17:29:20	going to rotate it, so on this
+17:29:22	side.  That's a pretty simple
+17:29:24	transformation.  And I'm going
+17:29:26	to now like collapse them and
+17:29:27	turn them into a histogram.  And
+17:29:30	you guys remember, I can show
+17:29:31	the visualization -- the
+17:29:33	animations after, but once
+17:29:35	again, the idea is just like
+17:29:36	this one idea.  I'm just going
+17:29:38	to collapse them, that was a
+17:29:39	histogram.  I'm going to choose
+17:29:41	one more idea, which is visually
+17:29:43	splitting the thing into two
+17:29:45	populations.
+17:29:46	And then now I'm going to
+17:29:47	visually, again, repeat that
+17:29:49	pattern that you have already
+17:29:50	seen.  Suddenly you're like
+17:29:52	starting to see the tree
+17:29:54	structure.  And now I remove the
+17:29:58	histogram and now you see the
+17:30:00	tree.
+17:30:01	So notice the thing that's
+17:30:02	happening here.  I'm really just
+17:30:04	introducing things one step at a
+17:30:06	time.  All right?  Because if
+17:30:09	your attention bandwidth is very
+17:30:13	small, you have to break things
+17:30:15	down to be that small to fit
+17:30:17	through it.  So we -- as, well,
+17:30:22	I don't know -- I can call
+17:30:23	everybody here a designer, but
+17:30:24	if you want to think about
+17:30:25	things from a design point of
+17:30:27	view, this is what we have to
+17:30:28	think about.  We have to think
+17:30:29	about preserving our audience's
+17:30:32	attention.  We have to think
+17:30:33	about how do we pace things such
+17:30:35	that you're moving ideas from
+17:30:37	your head to other people's
+17:30:40	heads one step at a time.  And
+17:30:43	my big takeaway from this is
+17:30:45	always this idea of, like, hey,
+17:30:47	we need to have a slow, measured
+17:30:50	conveyance of ideas through this
+17:30:52	gateway of attention.  And
+17:30:54	everything needs to fit.
+17:30:56	And so what do we talk about?
+17:30:59	We talked about exposition.  How
+17:31:01	to explain an idea to somebody.
+17:31:04	I talked about the constraint.
+17:31:06	The key thing that you have to
+17:31:08	think about is not necessarily
+17:31:09	colors, it's not necessarily
+17:31:10	type, it's not necessarily size
+17:31:12	or data, the key thing that you
+17:31:14	need to think about when you're
+17:31:16	explaining something to somebody
+17:31:17	is how did you channel their
+17:31:20	attention?
+17:31:22	And so, of course, then I talk
+17:31:23	about a bunch of techniques for
+17:31:25	animation and pacing.  There's
+17:31:26	lots more kind of research in
+17:31:28	this kind of work.  I draw
+17:31:29	heavily from, like cognitive
+17:31:32	psychology, I draw heavily from
+17:31:35	just like writing, technical
+17:31:37	writing.  I draw heavily from
+17:31:38	visual analytics, research.
+17:31:41	Like cognitive psychology
+17:31:42	research to think about all this
+17:31:44	stuff.  But all of it is in
+17:31:45	service of how do I conserve
+17:31:48	this really precious resource of
+17:31:51	attention?
+17:31:54	And that's it.

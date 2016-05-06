@@ -1,0 +1,704 @@
+11:02:46	>> Yay!  And my computer is
+11:02:49	froze.  So let's give a minute.
+11:02:53	Hi.  It's so nice to be here.
+11:02:56	I'm so excited.  As mentioned,
+11:02:59	thank you very much for the kind
+11:03:00	introduction.  My name is
+11:03:01	Mariko, and that's my Twitter
+11:03:03	handle.  I just tweeted the link
+11:03:07	to the slide.  You may not have
+11:03:09	any problem with the big screen.
+11:03:11	But if you want to have it on
+11:03:13	your lap, I Tweeted on the
+11:03:14	screen.  I work at Scripto, I'm
+11:03:16	a textile engineer.  I don't do
+11:03:20	that for my day job.  My company
+11:03:23	makes a software for TV shows, a
+11:03:25	lot of text, but they give me my
+11:03:30	title based on my side project.
+11:03:32	One of my side projects is
+11:03:36	meetup with BrooklynJS.  Visit,
+11:03:40	we have a lot of meetings in New
+11:03:41	York.  We get to discuss a lot
+11:03:43	of data information as well.
+11:03:45	And my favorite data type is an
+11:03:48	array.  I really, really like
+11:03:50	array.  I like mapping them, I
+11:03:52	deducing them.  I like to do
+11:03:55	that on a physical scale.
+11:03:56	So I like mapping and reducing
+11:03:58	the array that's on the needle.
+11:04:02	And I have a whole bunch of
+11:04:04	research about how knitting is
+11:04:05	coding.  And if you're
+11:04:08	interested, I'm more than happy
+11:04:09	to talk about it.  But I got
+11:04:10	really interested in doing
+11:04:12	physical array.  I wrote a
+11:04:14	program language.  A program
+11:04:16	language to make a textile
+11:04:17	pattern for.  It's basically an
+11:04:20	array.  And I put the array into
+11:04:22	the software to visualize it
+11:04:24	better.  And I put it back into
+11:04:25	the machine and knit something
+11:04:28	like this scarf.  It's --
+11:04:32	visualizing, took it into the
+11:04:33	JavaScript application, and
+11:04:35	array, and then communicating
+11:04:38	into the machines, so it's all
+11:04:40	the way to JavaScript.  If you
+11:04:44	can't tell.
+11:04:44	And sometimes a request comes in
+11:04:46	and I kind of make a scarf out
+11:04:48	of -- this was an API usage.  So
+11:04:56	this is what my weekend desk
+11:05:00	looks like.  Code, visual,
+11:05:03	graphics.  And then the machine
+11:05:04	and yarn.  And that somehow all
+11:05:08	makes sense to me.  And this
+11:05:09	kind of started heavily a year
+11:05:11	and a half ago.
+11:05:13	So I had a problem were or I had
+11:05:17	a journey to take.  I wanted to
+11:05:21	cute cat photo on my jumper or
+11:05:23	sweater, or anything I want.  I
+11:05:25	wanted to make that happen.  And
+11:05:27	I realized that my knitting
+11:05:29	machine only takes -- well,
+11:05:30	first of all, knitting machine
+11:05:32	is only 200 wide, so I have to
+11:05:34	re-size the image, and yarn
+11:05:38	doesn't come in that color.  So
+11:05:40	I have to figure out what kinds
+11:05:42	of image processing,
+11:05:43	essentially.  And I go into
+11:05:45	Google things.  And I'm like,
+11:05:46	you know, find a bee keeping
+11:05:49	page and the research from the
+11:05:50	university, and like I just want
+11:05:52	to take this cat image into
+11:05:54	yarn.
+11:05:56	Please do that.  So it was a lot
+11:05:57	of frustration.  And I, you
+11:05:59	know, discovered that like I can
+11:06:00	do that on Photoshop, but also
+11:06:03	Photoshop is frustrating.  I
+11:06:06	don't understand what those
+11:06:07	buttons and lines do.
+11:06:08	So I had a question that -- can
+11:06:10	I make that all happen in the
+11:06:12	language that I use every day,
+11:06:14	which is JavaScript and HTML?
+11:06:17	And do that in the software I
+11:06:20	use every day, a browser?  And
+11:06:22	that kind of started.
+11:06:23	And, yes, I can.  I can use
+11:06:26	something called Canvas.  It's
+11:06:28	designed for that.  It says on
+11:06:30	headline medical element that
+11:06:32	can be used to draw graphics
+11:06:34	using JavaScript.  So for the
+11:06:36	next 25 minutes or so I'm going
+11:06:38	to talk about how I utilize
+11:06:42	canvas to do processing.  My
+11:06:44	primary interest is printing out
+11:06:46	a blanket.  But I promise that
+11:06:48	you will take away something
+11:06:50	useful hopefully for your data
+11:06:56	visualization for your web
+11:06:57	application.  Something to take
+11:06:59	away.
+11:06:59	If you are image processing
+11:07:03	professional, might be very
+11:07:05	general.  I might be
+11:07:06	generalizing stuff, might be
+11:07:08	basic.  But bear with me.
+11:07:09	So let's talk about canvas.
+11:07:12	Canvas you can create an element
+11:07:16	and give up size within things,
+11:07:18	or create an HTML tag and ID.
+11:07:21	But creating canvas itself is
+11:07:23	like buying a piece of land.
+11:07:25	You don't know where that land
+11:07:26	is located.  You need to give
+11:07:28	something called context in
+11:07:30	order to understand where this
+11:07:31	is located and what kind of
+11:07:33	building you can build on.
+11:07:34	So you cannot give a context
+11:07:36	like with GL, you use a lot of
+11:07:39	3D and heavy computing.  Or
+11:07:41	giving a complex of 2D, you deal
+11:07:48	with a lot of graphics.  But
+11:07:50	getting the context gives the
+11:07:54	canvas a set of language to
+11:07:57	commute.  You might speak 2D,
+11:08:00	you might speak a Boston accent.
+11:08:03	Same thing.  Getting the context
+11:08:04	in a set of language.
+11:08:05	So for entire example I'm going
+11:08:07	to use 2D context.  So once we
+11:08:10	have established a context, you
+11:08:13	can use a language, but then it
+11:08:16	will -- or even get the image
+11:08:19	from the parts of HTML and draw
+11:08:23	the image.  But I like data.  So
+11:08:26	the canvas has a thing for that.
+11:08:29	Canvas can communicate by data
+11:08:31	using image data and put image
+11:08:34	data with it.  Basically get
+11:08:35	image data.  Get out of the
+11:08:37	canvas and you can put it in and
+11:08:40	put the image data back in using
+11:08:43	the image data.
+11:08:44	So for the example that I'm
+11:08:46	going to show, this is the
+11:08:48	process that I'm taking.  You
+11:08:49	have some kind of image.  You
+11:08:52	create a blank canvas.  You
+11:08:54	don't know where it is yet.  The
+11:08:56	context of 2D.  Now you have a
+11:08:58	set of language.  And you load
+11:08:59	that image into that canvas.
+11:09:01	Now you have that image in the
+11:09:02	canvas, you can get the data
+11:09:04	out.  And do some cool things.
+11:09:06	And then put the image back in.
+11:09:09	So what does that data look
+11:09:12	like?  When you call a get image
+11:09:15	data, that data -- or that
+11:09:17	returns an object or image data.
+11:09:21	What does that look like?
+11:09:23	So this is what it looks like.
+11:09:26	Some of them are very
+11:09:27	straightforward.  Width and
+11:09:30	height are the width and height
+11:09:31	of the image.  So I have three
+11:09:34	by three, very small enhanced
+11:09:37	image.  But then there's a thing
+11:09:39	called data.  Has a bunch of
+11:09:41	numbers and I don't understand
+11:09:42	what this is.  How do I
+11:09:44	understand this?
+11:09:45	In order to understand what this
+11:09:46	data is, you need to understand
+11:09:47	what's in each pixel.  So let's
+11:09:51	look at this pink square.
+11:09:53	So -- this image, this is a
+11:09:58	single pixel, may or may not
+11:10:01	have googly eyes, but okay to
+11:10:06	put them.  Underneath a single
+11:10:09	pixel you are four numbers, and
+11:10:11	all between 0 and 255.  The
+11:10:14	first three are lightbulbs
+11:10:16	illuminating a different level.
+11:10:19	This is a red, green, blue
+11:10:20	value.  You may know.  So you
+11:10:22	can change those to change the
+11:10:25	color.
+11:10:26	It's just, you know, what level
+11:10:28	the three lightbulbs are
+11:10:30	illuminating.  And if you have
+11:10:32	equal number for each three, you
+11:10:34	always get gray.  And this is
+11:10:36	how you grayscale an image.  If
+11:10:39	you get the three colors, do
+11:10:41	whatever the math, average, take
+11:10:42	a green, whatever.  Just put the
+11:10:45	same number for three colors,
+11:10:47	you get the grayscaling.  And
+11:10:49	the last number is purely for
+11:10:52	software.  Which is opacity
+11:10:57	value.  So if I had lower
+11:10:59	opacity, transparency.  This is
+11:11:02	for canvas to know the color if
+11:11:04	two elements are overlapping
+11:11:07	each other.
+11:11:07	So if -- with this understanding
+11:11:11	you can see the image data like
+11:11:12	this.  It was four, and each for
+11:11:19	three color lightbulb, and the
+11:11:22	last is opacity.  Change the
+11:11:25	first to 55, which is the max,
+11:11:27	and turn down green and blue
+11:11:29	lightbulb all the way, and
+11:11:31	update it, then the pixel will
+11:11:33	turn red.
+11:11:35	So that's how we are going to
+11:11:36	manipulate the image from now
+11:11:39	on.  So -- but this image is
+11:11:43	one-dimensional already.  And
+11:11:45	you have information about
+11:11:47	widths and height.  How do I
+11:11:50	know the coding of these
+11:11:51	pictures?  I like to think of it
+11:11:53	like writing a letter on paper.
+11:11:56	I'm thinking about writing a
+11:11:57	letter to somebody, the data
+11:11:58	that's coming in my mind in a
+11:12:01	stream, and it's that
+11:12:02	one-dimensional.  But the output
+11:12:07	has a dimension.  Whenever I run
+11:12:09	out of space on the paper, I
+11:12:12	find a blank and go to the next
+11:12:14	one.  That's how this pixel
+11:12:15	works.  In code you might see
+11:12:17	something like this.  The outer
+11:12:20	loop goes through my axis to get
+11:12:25	to the Y axis, and the inner
+11:12:28	loop gets to XY code.
+11:12:32	Each pixel has four numbers, you
+11:12:37	need to know the index of that
+11:12:39	to get to each addressable data.
+11:12:42	Even if you have those numbers,
+11:12:44	you can have a project like
+11:12:45	this.  I created a project of a
+11:12:48	ghost image.  It is a one by one
+11:12:50	pixel that has a whole bunch
+11:12:52	of -- to create that you have an
+11:12:57	image here.  This is not an
+11:12:58	image, but it is a box shuttle
+11:13:01	with one by one pixel.  Not
+11:13:03	really practical.  It's using a
+11:13:05	lot of memory to operate.  But
+11:13:07	certainly fun to kind of prank
+11:13:09	people.
+11:13:11	So I got all the data in.  I
+11:13:13	know how to edit the stuff.  Can
+11:13:16	I do image filters like
+11:13:18	Instagram?  And I kind of, you
+11:13:19	know, like started to research
+11:13:21	about it.  And I researched
+11:13:23	this.  Everybody was talking
+11:13:24	about math and like I don't
+11:13:27	really talk math.  Like I don't
+11:13:31	functions, I like function and
+11:13:33	type -- so I like to think of it
+11:13:35	kind of like a playground.  And
+11:13:36	the shape of the sloping of the
+11:13:39	playground determines what kind
+11:13:41	of folder you get out
+11:13:45	And this was the data
+11:13:47	conference, completed a
+11:13:48	visualization of this slide.
+11:13:50	So this is the original slide.
+11:13:51	If you have an input of 128,
+11:13:55	output is 128.  Let's invert
+11:13:58	this image.  Invert photo.  It's
+11:14:01	quite literally inverting the
+11:14:03	slope.  Now if I have a higher
+11:14:05	value, you get the lower value
+11:14:07	out.  If I have a lower value,
+11:14:09	you get the higher value out.
+11:14:10	And this is how you invert the
+11:14:12	image.
+11:14:13	Brightness is shifting up and
+11:14:15	down the original slide.  So if
+11:14:17	I lighten the image, all of
+11:14:21	these numbers -- that's like 138
+11:14:23	to 55 -- just get fully on all
+11:14:28	the illuminated in the
+11:14:30	lightbulb.  If I move that down,
+11:14:33	then it gets darker.
+11:14:36	The contrast.  I'm the kind of
+11:14:38	person who guesstimates the
+11:14:41	contrast in the Photoshop until
+11:14:43	I'm satisfied.  I understood
+11:14:45	what it does.  Contrast is a
+11:14:47	slope of that slide.  So if I
+11:14:49	change the low slope, that's a
+11:14:51	low contrast.  Meaning the input
+11:14:53	is coming from zero to 255, but
+11:14:55	output is there, so you get a
+11:15:00	low contrast of color, and high
+11:15:02	contrast is the opposite way.
+11:15:04	It doesn't have to be straight
+11:15:06	line slope.  It can be step and
+11:15:09	creating a full-size effect.
+11:15:12	And you can limit the color that
+11:15:14	you use in the image.
+11:15:16	Or you can do something like
+11:15:17	solarize, which is a
+11:15:19	high-contrast on the two sides
+11:15:22	and then inverting on the
+11:15:24	middle.  So creating kind of
+11:15:25	color to photo kind of cool
+11:15:27	effect.
+11:15:28	And if you take a gray-scaled
+11:15:31	image and put the two-step on,
+11:15:34	you can do the threshold image.
+11:15:36	I'm sure a lot of image
+11:15:37	processing and computer vision
+11:15:38	use this as a first step to get
+11:15:40	to a usable data set.  So you
+11:15:43	can kind of locate where things
+11:15:45	are.
+11:15:46	And taking those gray-scale
+11:15:48	data, you can also -- I know
+11:15:52	pseudo color is not recommended.
+11:15:54	But you can see that -- you can
+11:15:56	see why.  It's why I did it this
+11:15:59	way.  So it's not recommended
+11:16:01	because the blues are very
+11:16:04	harsh, but on the green step,
+11:16:07	can't maybe tell the step.  It
+11:16:09	makes sense.  The green is fully
+11:16:10	on longer than any other color.
+11:16:12	And our eyes are more receptive
+11:16:16	to green.  You can change the
+11:16:18	lines to create a difference of
+11:16:20	color to give a color to your
+11:16:21	data set.
+11:16:22	So this technique is not only
+11:16:25	for creating Instagram filters.
+11:16:28	I had this challenge of taking
+11:16:30	old data -- so I don't have any
+11:16:32	coordinates or any data points.
+11:16:34	I just have an image from the
+11:16:36	archive.  And I wanted to create
+11:16:38	an interactive map.  How do I go
+11:16:41	with that?  Well, you can do
+11:16:42	things very basic, like creating
+11:16:45	it in CSS and making a box.  It
+11:16:49	doesn't cover other parts of
+11:16:52	Boston, kind of not accurate.
+11:16:53	You can use HTML 5 map element
+11:16:57	and kind of draw the polygram
+11:17:05	and kind of make it right.  But
+11:17:06	if I do the pixel event, I can
+11:17:09	put it into the editing
+11:17:11	software, draw the line and then
+11:17:13	fill it with white and it took
+11:17:17	me 15 seconds.  I gray-scaled
+11:17:19	it.  Now fully white pixels are
+11:17:22	the target.  So I threshold it.
+11:17:25	Now I have a reference map.  If
+11:17:27	the quick coordinates go there,
+11:17:29	and a pixel is black, that means
+11:17:32	don't trigger the quick event,
+11:17:34	if it's white, trigger the
+11:17:36	event.  So I have basic function
+11:17:37	in the hidden -- canvas has this
+11:17:43	threshold in it.  It doesn't
+11:17:48	have to be overlapping, but for
+11:17:50	the reference, I had it
+11:17:52	overlapping.  It goes in, I call
+11:17:54	it -- is it black?  White?
+11:17:57	Trigger the event.  You can use
+11:17:59	a processing technique not only
+11:18:02	for creating a photo for
+11:18:04	Instagram, but you can utilize
+11:18:05	it for interactivity.  It got me
+11:18:08	interested in now I can control
+11:18:09	cover.  Can I change the shape
+11:18:11	of it, I think?
+11:18:12	And, again, this keyword got
+11:18:16	mentioned today in the two talks
+11:18:18	in the morning.  The colonel
+11:18:20	convolution.  To me that sounds
+11:18:23	like a yummy cereal.  I don't
+11:18:25	know what that is.  But cool.
+11:18:29	Itself it is not too
+11:18:31	complicated, but the explanation
+11:18:32	of very complicated.  So I like
+11:18:34	to think of the colonel
+11:18:35	conversion as a pixel social
+11:18:38	graph.  It's just thinking about
+11:18:41	it with pixels.  Let me explain.
+11:18:45	So you have a single pixel
+11:18:46	you're going to change the color
+11:18:48	of, sometimes called kernel.
+11:18:53	And you have a friend and create
+11:18:55	a convolution.  And this wants
+11:18:58	to blend it into your friend, I
+11:19:01	don't want to be noticed.  So
+11:19:02	you give a number to each of the
+11:19:04	friends.  You combine all the
+11:19:05	color, divide it by some of this
+11:19:08	number.  So in this case, nine.
+11:19:09	And then you get new color for
+11:19:11	this pixel.
+11:19:13	How does that look like in the
+11:19:14	bigger image?  So I have this
+11:19:17	very vivid pink line going on.
+11:19:20	We learned that each pixel are
+11:19:23	has three colors.  So we do that
+11:19:25	for three channels.  Get the
+11:19:28	number for red, get a number for
+11:19:30	green, another for blue, and
+11:19:32	then do that for all of the
+11:19:37	pixel one by one.  And then you
+11:19:41	get a blurred image.  You get
+11:19:45	the kernel conversion, I call it
+11:19:49	the graph.  And the box blur,
+11:19:52	every pixel is equal.  You get
+11:19:54	this image, it's subtle.  But it
+11:19:56	gets the blurred image.
+11:19:58	But in reality, your friends are
+11:20:00	not as equal.  You have a close
+11:20:02	friend and then you have a
+11:20:03	distant friend.  So you can have
+11:20:05	the Gaussian blur, and the
+11:20:10	distant pixel gets a lore number
+11:20:12	to create for of a blur.  This
+11:20:16	makes sense to me.  I always
+11:20:18	wondered, when I make a folder
+11:20:20	in SPG, I have to type Gaussian
+11:20:24	blur, in the just blur?  Turns
+11:20:26	out blur has a different kind.
+11:20:29	Now I know.
+11:20:29	The sharp is the opposite.  Like
+11:20:31	you do not want to blend it in.
+11:20:35	You want to be unique.  And
+11:20:37	almost like opposite.  And so
+11:20:40	you get yourself really high and
+11:20:43	make your friends really low and
+11:20:44	do the same thing to get a
+11:20:46	sharpened effect.  Yeah.
+11:20:50	So I used this technique to
+11:20:53	create a fake tilt shift
+11:20:56	application.  So if I put an
+11:20:58	image in and then specify the
+11:21:00	area of something.  And then
+11:21:02	start processing an image.  Then
+11:21:04	it kind of -- the area gets
+11:21:06	blurred, blur, and then kind of
+11:21:08	making a fake tilt shift effect.
+11:21:13	This was one project.  But this
+11:21:15	taught me another challenge that
+11:21:18	I would encounter if I were to
+11:21:20	use this in the project.
+11:21:22	In the project, the performance
+11:21:25	matters.  And exploring the
+11:21:27	image.  Like I do all the image
+11:21:29	editing there, but it lives in
+11:21:31	the canvas.  And what I want to
+11:21:34	Tweet or share on Facebook or
+11:21:37	export the image?  There are two
+11:21:39	things that need to be
+11:21:41	addressed.  I'm going to go
+11:21:43	through that in a minute.
+11:21:44	So performance.  The performance
+11:21:45	gets really slow.  And because
+11:21:47	JavaScript is -- that slow
+11:21:52	process blocks the UI.  The
+11:21:55	entitle and everything.  You can
+11:21:57	go by UI, using faster
+11:21:59	algorithms, better function that
+11:22:00	you write.  But you are doing a
+11:22:03	lot of calculation and image, if
+11:22:06	you want to use an original
+11:22:09	image, like 10meg, you will have
+11:22:13	problems with blocking UI.  You
+11:22:16	can use a worker.  They are a
+11:22:18	way to run the JavaScript in the
+11:22:21	background threads off of UI.
+11:22:24	What does that mean?
+11:22:26	I like to think of that as a --
+11:22:29	it's like the international
+11:22:31	space station.  If you think of
+11:22:32	the -- the earth.  And then the
+11:22:39	browser and DOM is in the earth.
+11:22:45	All the elements are here.  You
+11:22:47	can talk to it, the
+11:22:49	international space station
+11:22:50	cannot touch the element on the
+11:22:52	earth.  So it does not have the
+11:22:54	access to the window object, or
+11:22:57	you can't use the select inside
+11:22:59	of the win worker.  So how does
+11:23:02	this doing in code look like?
+11:23:04	Quite simple.
+11:23:05	So let's go through it one by
+11:23:06	one.  So the worker is literally
+11:23:10	just taking you, worker, and
+11:23:12	giving a file that you want to
+11:23:13	execute in the worker thread.
+11:23:15	That's like the international
+11:23:17	space station.
+11:23:18	I mentioned that a web worker
+11:23:21	does not have access to window
+11:23:24	or DOM.  So even though you
+11:23:27	might have underscored some
+11:23:29	utility library in your main
+11:23:30	thread, you need to be required
+11:23:32	again to use it.  And use that
+11:23:34	as a postscript.  Once that's
+11:23:37	done, the communication between
+11:23:39	the main and worker thread are
+11:23:41	done by posthumous.  And they
+11:23:48	are taking care of the thread,
+11:23:50	and the UIs that you want the
+11:23:52	user to use, you can push the
+11:23:56	calculation off to the worker
+11:23:57	side.  And once it goes back,
+11:23:59	you don't need a worker anymore,
+11:24:01	and you can send the ISS to the
+11:24:06	worker.
+11:24:07	So I created a demo.  Simple
+11:24:11	demo.  Of a tilt shift that I
+11:24:15	showed just now.  I have a --
+11:24:17	the demo on the main thread, and
+11:24:19	then I have a web worker-ified
+11:24:23	of the stuff.  And I created it
+11:24:25	with JavaScript.  There's a
+11:24:27	color box that's moving, that's
+11:24:29	controlled by JavaScript to kind
+11:24:31	of hijack that event.
+11:24:35	So once I run that, that
+11:24:37	starts -- immediately the main
+11:24:39	one, the UI freezes.  Doesn't
+11:24:41	respond to any click event.  The
+11:24:43	web worker side is responding
+11:24:45	beautifully and doing so.  And
+11:24:49	in a minute, it finishes, like
+11:24:50	nothing happened.  But in the
+11:24:51	main thread one, it finishes and
+11:24:53	then just executes all the of
+11:24:55	the events accumulated and junks
+11:24:58	up the UI.  So you don't want
+11:25:00	that in your digital vision if
+11:25:04	you want to do that.
+11:25:05	So performance is kind of taken
+11:25:07	care of.  Let's think about how
+11:25:09	to export.  Like you might want
+11:25:10	to put it into PDF to send a
+11:25:14	report.  Or you might want to
+11:25:15	tweet.
+11:25:17	There are two ways to get data
+11:25:18	out and save it as an image from
+11:25:20	canvas.  And one is to dataURL
+11:25:25	and to blob.  The easiest one is
+11:25:27	to dataURL.  Calling it on
+11:25:31	canvas, returns the base64 text
+11:25:37	image.  You can direct that to
+11:25:38	CSS, or put that into your
+11:25:42	element and create a download
+11:25:43	button.  However -- so -- let me
+11:25:46	show the example.  So I have
+11:25:48	mentioned that I created this
+11:25:51	programming language for a
+11:25:53	knitting machine.  So I have a
+11:25:54	little partial learning on the
+11:25:58	background.  Every type I do,
+11:26:01	it's learning it, and creating a
+11:26:03	canvas here.  The canvas is just
+11:26:06	a tiny corner.  Every time I
+11:26:08	change the canvas it's going to
+11:26:09	data URI and getting the basics.
+11:26:12	Putting it into CSS.  And
+11:26:15	letting the CSS take care of all
+11:26:17	the background timing and stuff.
+11:26:18	So I don't need to worry about
+11:26:21	it.
+11:26:21	And I can just click the
+11:26:23	download.  I don't know if you
+11:26:24	can see it there.  But that's
+11:26:26	like 64, literally -- so that's
+11:26:31	how I use base64.  However, it's
+11:26:35	expensive if the image is big.
+11:26:38	Lying any web, like basic image
+11:26:41	with the text is expensive.  So
+11:26:42	you want to avoid that.  And
+11:26:44	also the href itself, although I
+11:26:48	couldn't find it in spec, as far
+11:26:50	as I know the spec doesn't
+11:26:52	restrict the length of what's
+11:26:54	going into the href, but the
+11:26:57	browser restricts it.  Seems to
+11:27:00	be around 2,000 characters.
+11:27:02	Dealing with a small image, you
+11:27:03	can get away it.  But doing the
+11:27:05	image with the meg or something,
+11:27:09	you will have a problem.
+11:27:11	And you can use something called
+11:27:13	TOBLOG.  It makes a binary
+11:27:19	object that you can pass into
+11:27:21	window called create object URL.
+11:27:24	And you can use that image for
+11:27:26	your downloading.
+11:27:28	In either case you need to
+11:27:30	specify what kind of image
+11:27:31	format you want.  And this got
+11:27:34	me thinking that I need to
+11:27:37	specifically state I want this
+11:27:39	format and this impression.  And
+11:27:42	I was like I actually don't know
+11:27:44	how image works.  Like I know
+11:27:47	GIF is animation, PNG is like
+11:27:50	everything, and JPEG is what
+11:27:52	comes out of the phone.  Before
+11:27:54	but I don't know -- I don't have
+11:27:56	any like sophisticated knowledge
+11:27:57	to decide on which one is the
+11:27:59	best for my data visualization.
+11:28:01	So I did a little research.
+11:28:03	GIF.  It's color to 256 colors,
+11:28:08	you cannot use more.  PN G and
+11:28:11	JPEG use full colors.  PNG is
+11:28:15	like a GIF.
+11:28:17	The file, so it tends to be
+11:28:19	smaller on GIF and JPEG and
+11:28:22	larger on PNG.  Set a pallet
+11:28:26	mode on PNG, almost always
+11:28:29	smaller than GIF.  And the
+11:28:31	transparency, the GIF is fully
+11:28:40	opaque or transparent.  And then
+11:28:44	it's lossless, so once you show
+11:28:48	it, you can get the original
+11:28:50	state, and JPEG creates
+11:28:52	something called JPEG artifact
+11:29:00	on the way.  And this is a handy
+11:29:03	graphic.  If it's not, is it
+11:29:06	graphics or photo?  You can
+11:29:07	decide on the image.  Of I
+11:29:10	discovered after researching
+11:29:10	this, this is why Twitter
+11:29:12	picture looks so shitty.
+11:29:15	So Twitter used JPEG complexion.
+11:29:19	No matter what your original
+11:29:21	input is.  If the image is fully
+11:29:23	opaque.  However, remember, JPEG
+11:29:27	cannot handle transparency
+11:29:31	pixel.  But you put a
+11:29:33	transparent image in the
+11:29:34	Twitter, then it will use PNG
+11:29:38	and not create a JPEG.  I
+11:29:40	learned that from somebody who
+11:29:42	created a tool to just upload
+11:29:44	your image.
+11:29:45	And it's a fully opaque image.
+11:29:47	You can't even tell.  There is
+11:29:49	like one pixel on the top left
+11:29:52	corner that is turned 99.6%
+11:29:55	transparent.  So that Twitter's
+11:29:59	perspective, it has Transparency
+11:30:02	pixels, it's going to default to
+11:30:04	PNG and preserve your Twitter
+11:30:07	image.  You're welcome.
+11:30:11	So all of that are open sourced.
+11:30:17	I have a little JavaScript
+11:30:20	utility.  I tried to aim it for
+11:30:23	like underscore, but for image
+11:30:24	data, so you can kind of
+11:30:27	prototype stuff.  It is not
+11:30:30	smart or clever code, it is very
+11:30:32	slow.  But the problem is I had
+11:30:34	so much problem understanding
+11:30:35	those high-level, sophisticated
+11:30:38	systems.  And all I needed was
+11:30:39	the basic concept of how image
+11:30:41	processing works.  So the code
+11:30:43	is very simple, however, it is
+11:30:45	meant to be.  And encouraged to
+11:30:49	look at this.
+11:30:51	All of the examples, links are
+11:30:53	there.  And I have a googly eyes
+11:31:00	if you want to.  This
+11:31:04	conference -- when I started, I
+11:31:05	was learning how to do the data
+11:31:08	visualization.  I came here last
+11:31:10	year in person, that was
+11:31:11	amazing.  Now I get to talk
+11:31:13	here.  So thank you very much.

@@ -1,0 +1,906 @@
+14:26:52	>> All right.  Cool.  So --
+14:26:55	microphone.  Okay.  Can you hear
+14:26:57	me?  Yes.  Okay.  Hi, I'm
+14:27:01	Jessica Hullman, an assistant
+14:27:03	professor at the University of
+14:27:04	Washington.  I study research
+14:27:06	visualization.  My talk is the
+14:27:11	visual uncertainty experience.
+14:27:13	When I proposed the talk, I
+14:27:14	wanted to talk about the future,
+14:27:17	new ways that designers are
+14:27:19	using and studying for showing
+14:27:21	uncertainty visually.  But then
+14:27:22	I sat down and started preparing
+14:27:26	the talk, if I'm going to talk
+14:27:28	about uncertainty, I have to
+14:27:30	talk about not so exciting
+14:27:31	things, probability,
+14:27:33	distributions, variants.  Maybe
+14:27:35	I should retitle the talk so
+14:27:37	people know what they have
+14:27:39	coming.  Something like the
+14:27:40	trouble with uncertainty, or
+14:27:41	maybe even more appropriately,
+14:27:43	call it stats 101.  And people
+14:27:45	would know exactly what they
+14:27:46	were getting into it.  Maybe I
+14:27:48	could talk about these sort of
+14:27:50	fundamental aspects of
+14:27:51	uncertainty and the really
+14:27:52	exciting stuff.  And I'll just
+14:27:53	do it through a story.
+14:27:55	So the story I want to start
+14:27:56	with is that of Sir Francis
+14:27:59	Galton, a Victorian
+14:28:02	statistician, and thinking about
+14:28:04	a lot of things.  But one of
+14:28:05	those things was uncertainty.
+14:28:09	Galton became interested in
+14:28:12	height, it was driven by a
+14:28:14	simple observation as he looked
+14:28:17	at the heights of people near
+14:28:18	him.  Everyone has height, but
+14:28:20	we can't exactly predict what it
+14:28:24	will be.  This bugged him a lot.
+14:28:26	How can we predict height?  I
+14:28:27	see heights around me.  He
+14:28:30	starts measuring people's
+14:28:32	heights, measuring families at
+14:28:34	first with children.  He's
+14:28:35	trying to figure out the
+14:28:38	possible heights.
+14:28:39	He starts to make observations
+14:28:41	from the measurements he has
+14:28:43	about a thousand people he
+14:28:45	measures, and figures out when
+14:28:46	you have parents that are
+14:28:47	unusually tall or small, the
+14:28:49	child's height is often closer
+14:28:51	to average.  And this happens on
+14:28:54	both sides of average, whether
+14:28:55	they're very tall or small.  The
+14:28:59	inverse is true, so if you have
+14:29:02	a child who's tall or small, the
+14:29:05	parents are average in height.
+14:29:06	What Galton noticed, we call
+14:29:08	regression to the mean.  And he
+14:29:10	was interested in this and
+14:29:13	started to think what does the
+14:29:14	set of possible heights look
+14:29:16	like?  He started making more
+14:29:18	observations.  And looked at the
+14:29:20	measurements, the number of
+14:29:21	people with heights average plus
+14:29:23	or minus some amount, decreases
+14:29:25	predictably and symmetrically
+14:29:31	towards the extremes of heights.
+14:29:32	And starts to see the vision of
+14:29:34	what height looks like.  So here
+14:29:37	we have the height scale.  And
+14:29:38	to the right of that, you see
+14:29:39	the curve, looks like a bell
+14:29:41	curve.  What he discovered was
+14:29:43	in the normal distribution.  And
+14:29:45	read it as you move further
+14:29:47	right.  That means there's a
+14:29:48	higher probability of having a
+14:29:49	height at that value.  So he was
+14:29:51	excited because he knew this was
+14:29:53	super-powerful.  So suddenly
+14:29:55	without any knowledge about the
+14:29:57	family's heights, other things
+14:29:59	to help him predict, he could
+14:30:02	take the shape and say, for
+14:30:03	instance, given child, a random
+14:30:06	boy, his probability of being
+14:30:07	some height, 61, is 14%.  So
+14:30:11	this was really powerful.  But
+14:30:13	he knew he could really confuse
+14:30:15	people with this.  What does
+14:30:17	this mean?  You have a random
+14:30:19	boy, what's the probability
+14:30:21	he'll be six foot one?  It's
+14:30:25	14%.  He's going to be that or
+14:30:27	not.  What do we do with the
+14:30:29	14%?  What does this mean?
+14:30:31	Maybe if I communicate this as a
+14:30:33	frequency, maybe people will get
+14:30:35	it.  Maybe I could say that like
+14:30:37	a hundred boys, if we took a
+14:30:39	hundred, 14 would be six foot
+14:30:41	one.  This is how I'm going to
+14:30:42	communicate it, and I want to
+14:30:43	visually represent.
+14:30:44	So he draws a chart.  So he
+14:30:46	draws his height scale and next
+14:30:49	to that has a bar.  He decides
+14:30:51	to draw dots about possible
+14:30:53	people.  So he draws a million
+14:30:55	dots and sort of the frequency
+14:30:56	of the dots in a given region
+14:30:58	means that's how many people
+14:30:59	there are with that height.  And
+14:31:00	he annotates.  He is a little
+14:31:06	bit wrong.  Height is not
+14:31:08	normal.  There's not as many
+14:31:10	nine foot tall people as he
+14:31:12	predicted.  But that's okay, he
+14:31:13	discovered something important.
+14:31:16	He created an uncertainty
+14:31:18	visualization, possible heights,
+14:31:20	he's representing it as
+14:31:22	frequency, people understand
+14:31:25	probability in terms of
+14:31:26	frequency easier.  We can say
+14:31:28	that uncertainty is a
+14:31:29	possibility that a quantity
+14:31:31	could take multiple values.  And
+14:31:33	certainly visualization, the
+14:31:35	task of representing what those
+14:31:36	values are.  So the interesting
+14:31:38	thing, and I'm not first person
+14:31:40	to say this, is that most
+14:31:42	visualizations don't represent
+14:31:43	understand certainty.  People
+14:31:44	know, designers know, users
+14:31:47	know, uncertainty is
+14:31:50	complicated.  Even though the
+14:31:51	data are measurements and
+14:31:52	imperfect samples, we don't know
+14:31:54	the uncertainty.  We don't know
+14:31:56	what to do with it.
+14:31:58	And he knew that uncertainty was
+14:32:01	complicated and done the best to
+14:32:04	represent it in the chart.  He
+14:32:05	was not happy with this.  If I
+14:32:07	want to communicate this shape,
+14:32:08	the normal distribution, I have
+14:32:09	to communicate it as a process.
+14:32:12	So it's an abstract thing, any
+14:32:14	probability distribution, but
+14:32:15	maybe will understand what it is
+14:32:17	if I can show how it naturally
+14:32:20	arises from a bunch of events
+14:32:22	that are random, basically.  So
+14:32:24	he makes something else to
+14:32:25	communicate this distribution,
+14:32:26	which is more like a device.
+14:32:29	He make this is thing out of
+14:32:31	wood, has a funnel at the top
+14:32:33	and drops balls into it.  With
+14:32:36	various probabilities they move
+14:32:37	through peg board and bin up in
+14:32:39	the bottom in the bins.  So you
+14:32:41	get back basically a normal
+14:32:43	distribution when you put a
+14:32:44	bunch of balls in it.  It looks
+14:32:46	something like this.  If you
+14:32:49	were to play it out, building
+14:32:51	the normal distribution.  He was
+14:32:54	way happier, and he can
+14:32:55	communicate with his colleagues
+14:32:57	that it arises from sampling
+14:32:58	people from the population, not
+14:33:00	the heights from the
+14:33:01	distribution, and get back the
+14:33:02	same thing.  So he was happy
+14:33:04	with what he made.
+14:33:05	I want to pause here and point
+14:33:07	out that just in Galton's work,
+14:33:10	a dichotomy, two ways to show
+14:33:12	uncertainty.  On the one hand,
+14:33:15	all of the probability
+14:33:17	distribution at once in a single
+14:33:18	static graph.  On the other hand
+14:33:19	we're showing it sort of one
+14:33:21	outcome or one observation at a
+14:33:24	time.  We're building up the
+14:33:26	distribution at the bottom, but
+14:33:28	the focus is on the individual
+14:33:30	samples.
+14:33:31	Fast forward to uncertainty
+14:33:33	visualization today.  What's
+14:33:35	interesting, with uncertainty in
+14:33:37	visualizations today, we see
+14:33:38	these same two approaches.  One
+14:33:40	is way more common.  So on the
+14:33:43	one hand, static plots, error
+14:33:45	bars, violin plots to show
+14:33:48	distributions, a gradient plot,
+14:33:50	map it opacity.  And I like to
+14:33:52	call these static distribution
+14:33:55	plots overall, or sad plots.  On
+14:33:58	the other hand we sometimes see,
+14:33:59	occasionally, not very often,
+14:34:01	what I would call a
+14:34:02	sample-based, or experiencable
+14:34:06	visualizations opinion like the
+14:34:08	board.  We're showing people
+14:34:09	there's a focus on one
+14:34:10	observation or one sample at a
+14:34:12	time.  We can do these so they
+14:34:15	build in the depiction of the
+14:34:17	probabilities distribution
+14:34:18	overall.  But a very different
+14:34:19	technique.
+14:34:20	So one of the things that I want
+14:34:22	to convince you of today, most
+14:34:24	of the time, seeing uncertainty
+14:34:27	visualization, it is using one
+14:34:28	of these static aggregate
+14:34:31	distribution approaches.  And I
+14:34:31	want you to see that there's
+14:34:33	problems with those.  So let's
+14:34:34	take a closer look at them.
+14:34:36	Here's a bunch of the
+14:34:37	techniques.  On the far left,
+14:34:40	error bars, designed to show an
+14:34:42	interval, a mean height, or
+14:34:48	height measurement.  And next to
+14:34:49	that, a box plot, also showing
+14:34:51	through lines basically
+14:34:52	graphical annotations.
+14:34:54	Different properties of a
+14:34:55	distribution, like the tiles
+14:34:57	which are points that break it
+14:34:58	up into four equal-size bins.  I
+14:35:01	call these approaches sort of
+14:35:02	summary marks, because we're
+14:35:04	using lines to summarize
+14:35:05	properties of a distribution.
+14:35:09	On the other hand we see
+14:35:10	approaches that take the
+14:35:11	probability and map it to a
+14:35:12	visual variable.  So things like
+14:35:15	area in this violin plot,
+14:35:17	basically a PDF turned on the
+14:35:19	side and doubled, so it's
+14:35:21	symmetric.  And the gradient
+14:35:23	plot next to that, using
+14:35:25	opacity.  What are the problems
+14:35:28	with these things
+14:35:29	Let's start with the summary
+14:35:30	marks.  In the infovis research,
+14:35:35	we look at how they can be
+14:35:38	successful.  One is
+14:35:39	expressiveness, does it express
+14:35:42	the data in a way that the
+14:35:44	user's natural interpretations
+14:35:46	are accurate.  We don't want to
+14:35:48	put something in front of the
+14:35:49	user that misleads them.  And we
+14:35:53	have them fail sometimes in this
+14:35:54	regard.  One thing they do when
+14:35:56	they get error bars is do --
+14:35:58	they show what's called within
+14:36:02	the bar bias.  And within the
+14:36:03	error bar.  Half is on top of
+14:36:06	the data.  Oh, that part has to
+14:36:07	be more probable.  Actually,
+14:36:09	this is not true.
+14:36:10	And so this is one problem.
+14:36:13	Another problem we have is that
+14:36:14	we know people don't like
+14:36:16	uncertainty.  It's just
+14:36:18	complicated.  When you show it
+14:36:20	as lines on top of the data,
+14:36:22	it's really easy for people to
+14:36:23	just sort of squint and say I
+14:36:25	don't really want to deal with
+14:36:27	that and it just kind of goes
+14:36:29	away.  They don't use it at all.
+14:36:31	Which is a problem because they
+14:36:32	want people to incorporate
+14:36:33	uncertainty into their
+14:36:35	judgments.
+14:36:35	Okay, other problems that tend
+14:36:37	to affect the approaches that
+14:36:38	use visual variables to show the
+14:36:42	probability visuals.  This other
+14:36:44	criteria in visualization,
+14:36:47	effectiveness, how can they read
+14:36:50	the data values back from the
+14:36:52	visualization.  We know that
+14:36:53	things like position are the
+14:36:55	most accurate channels.  So
+14:36:58	scatterplots are great, length
+14:37:00	is good.  Often visualizing
+14:37:02	uncertainty, we're using the
+14:37:04	good channels to show the data
+14:37:06	itself, for instance.  So we're
+14:37:08	left with these less effective
+14:37:10	channels, area, hard for people,
+14:37:14	opacity, hard for people.  They
+14:37:17	can't read the probabilities
+14:37:19	back.
+14:37:20	So these are what I would call
+14:37:21	visual problems with the static
+14:37:24	aggregate distribution plots.
+14:37:27	And the model problems, that
+14:37:28	deal with what we're showing
+14:37:30	people and how conflicted an
+14:37:31	abstract that is.  We call
+14:37:33	uncertainty visualization is
+14:37:34	representing the possible values
+14:37:36	that a quantity can take.  So
+14:37:38	things get complicated because
+14:37:40	what quantity we're talking
+14:37:41	about can differ.  So on the one
+14:37:44	hand, we could be talking about
+14:37:46	the actual measurements. what if
+14:37:50	I measure height from a bunch of
+14:37:52	people?  On the other hand we
+14:37:53	could talk about a quantity
+14:37:54	that's a statistic that we
+14:37:55	calculate given a set of
+14:37:56	measurements.  So what is the
+14:37:58	average height look like?
+14:37:59	What's that set of possible
+14:38:01	values?  Two different things.
+14:38:02	Usually when we're looking at
+14:38:04	uncertainty visualizations, like
+14:38:07	error bars, it's the latter.
+14:38:09	The distribution like average
+14:38:11	height, which is very different
+14:38:12	from the distribution of actual
+14:38:14	height measurements.  It's
+14:38:15	called the sampling distribution
+14:38:16	of the mean.  And it's basically
+14:38:18	related to the data
+14:38:19	distribution, so this red SD is
+14:38:22	the standard deviation of that
+14:38:23	sampling distribution or
+14:38:25	standard error.  We can look at
+14:38:27	the data distribution and the
+14:38:28	standard deviation, decide by
+14:38:30	the square root of N, number of
+14:38:32	samples.  But nobody really
+14:38:34	understands this.  It's not
+14:38:36	broader audiences.  And even
+14:38:39	statisticians struggle with
+14:38:40	this.  People don't understand
+14:38:41	how sample size relates to
+14:38:43	variance.  So this distribution,
+14:38:45	tell them that's what they
+14:38:47	seeing.  Maybe they're seeing
+14:38:49	the data distribution.  You tell
+14:38:51	them it's the sampling
+14:38:52	distribution, it does not
+14:38:53	compute at all.
+14:38:54	Okay.  So if I were going to
+14:38:57	summarize the static aggregate
+14:39:00	distribution plots, they are the
+14:39:02	folk music of uncertainty
+14:39:05	visualization.  I mean this in
+14:39:06	the most scientific kind of way.
+14:39:08	I have some folk music to listen
+14:39:11	to.  Let's see what this means.
+14:39:18	>> How many times -- and pretend
+14:39:20	that he just doesn't see.
+14:39:24	>> The answer my friend is
+14:39:26	blowing in the wind.  The answer
+14:39:30	is blowing in the wind.
+14:39:35	>> Okay.  So why do I say this?
+14:39:37	The folk music of uncertainty.
+14:39:39	For one, folk music has
+14:39:40	complicated abstract lyrics.
+14:39:43	Lots of metaphors.  Nobody
+14:39:45	really knows what the song is
+14:39:46	about.  They argue, about
+14:39:48	politics?  Drugs?  We don't
+14:39:49	know.  And similarly static
+14:39:52	aggregate distribution plots,
+14:39:54	like error bars, represent
+14:39:55	something complicated, abstract.
+14:40:00	People don't know what they're
+14:40:01	looking at.  Folk music is
+14:40:02	unplugged, so they could have
+14:40:04	used technology, amplifiers,
+14:40:07	synthesizers, and chose not to.
+14:40:09	And similarly static aggregate
+14:40:11	distribution plots don't make
+14:40:13	use of animation to help us
+14:40:15	convey uncertainty to people.
+14:40:17	Finally, folk music, the lyrics
+14:40:20	often raise questions and don't
+14:40:22	answer them.  And similarly,
+14:40:23	with error bars on
+14:40:26	visualizations, there are
+14:40:27	questions we want to answer and
+14:40:29	can't.  It's frustrating.  So I
+14:40:30	think this last point is really
+14:40:31	important.  So to me
+14:40:35	visualization is about
+14:40:35	comparisons.  So we want to put
+14:40:37	the data in front of people in a
+14:40:39	way that they can accurately
+14:40:41	compare the values.  In
+14:40:43	visualization research we care
+14:40:44	about graphical perception
+14:40:47	studies.  What is the most
+14:40:48	accurate encoding?  Exposition?
+14:40:51	Et cetera?  We compare about
+14:40:52	comparisons and differences.
+14:40:53	And the problem is that when we
+14:40:55	put a visualization.  A bar
+14:40:58	chart with error bars, they want
+14:41:02	to look at the differences and
+14:41:04	ask themselves if they're
+14:41:06	reliable?  Likely to repeat if
+14:41:09	they do the study again?  But
+14:41:11	they can't make that judgment.
+14:41:13	For instance, I did an
+14:41:14	experiment, looking at blood
+14:41:17	pressure drugs or new drugs.
+14:41:20	And the treatment group, and the
+14:41:23	regular group.  It's uncertain,
+14:41:25	I have a limited number of
+14:41:26	people.  I want my readers to
+14:41:30	say what's the probability that
+14:41:32	this will repeat if I reran the
+14:41:35	study?  Or an effect of 10%
+14:41:38	points?  Nobody can answer that
+14:41:40	easily.
+14:41:41	We might think people are
+14:41:43	rational, right?  So they know
+14:41:44	they can't use the visualization
+14:41:46	to make judgments of liability.
+14:41:48	They're smart, look at other
+14:41:50	statistics, you know,
+14:41:51	significance testing which has
+14:41:53	problems of its own.
+14:41:54	But that's actually not what
+14:41:56	people do.  What they do is use
+14:41:58	the chart anyway.  Because they
+14:41:59	can still make a judgment with
+14:42:01	it.  So this has led Daniel
+14:42:04	Kahneman when called upon to
+14:42:09	judge product probability, they
+14:42:12	judge something else.  What are
+14:42:15	they judging with error bars and
+14:42:17	trying to judge reliability?
+14:42:19	Might be judging how much they
+14:42:21	like the authors of the study.
+14:42:22	How reliable thing it is.  When
+14:42:25	I have done studies to see how
+14:42:27	people interpret error bars,
+14:42:29	they look at the difference in
+14:42:30	the means, or the difference in
+14:42:32	bar heights, regardless of the
+14:42:33	uncertainty.  So they'll say,
+14:42:35	oh, a big difference has to be
+14:42:37	reliable, regardless.  And a
+14:42:39	small difference is always
+14:42:40	reliable.
+14:42:40	So this does not always work.
+14:42:42	But they're using a heuristic,
+14:42:44	it's a mental shortcut, people
+14:42:48	use it when thinking about
+14:42:49	uncertainties and probabilities.
+14:42:50	They don't know how to answer
+14:42:52	the question, so they use other
+14:42:54	information.  And heuristics
+14:42:56	help us reduce complexity, we
+14:42:58	can answer questions more
+14:42:59	easily.  But we use them so
+14:43:02	often and they're too familiar
+14:43:03	that we end up being confident
+14:43:05	even though we're using these
+14:43:06	flawed sort of mental short
+14:43:08	cuts.  And I think to people
+14:43:10	visualizing uncertainty, this is
+14:43:12	scary.  What it means we can put
+14:43:14	a crappy uncertainty
+14:43:16	visualization in front of
+14:43:17	someone, they don't know how to
+14:43:19	interpret it, but they do anyway
+14:43:21	and feel confident.  So that's
+14:43:22	not a good thing.
+14:43:23	So what can help us?  So we see
+14:43:26	there's all these limitations of
+14:43:27	static aggregate distribution
+14:43:30	plots and uncertainty in
+14:43:32	general.  So what's the answer?
+14:43:33	So one thing I have been
+14:43:35	thinking about, which I think is
+14:43:36	one path that could potentially
+14:43:37	help is to sort of step away
+14:43:39	from conventions of modeling
+14:43:41	uncertainty and how we tend to
+14:43:43	think about it and graph it in
+14:43:45	statistics.  And instead think
+14:43:46	about how we experience
+14:43:47	uncertainty and uncertain events
+14:43:50	in our everyday lives.
+14:43:53	So, for instance, maybe I take a
+14:43:54	bus home from work every day.
+14:43:56	And so every day I'm sort of
+14:43:57	waiting for the bus and I get a
+14:43:59	sense of, you know, when it's
+14:44:00	going to arrive.  And how that
+14:44:02	compares to its scheduled
+14:44:04	arrival times.  So maybe five
+14:44:07	out of ten times, within one
+14:44:09	minute of scheduled time.  Maybe
+14:44:11	another three out of ten, two to
+14:44:13	three minutes late, two out of
+14:44:15	ten it's really late, et cetera.
+14:44:17	So I'm building a probability
+14:44:18	distribution in my head.
+14:44:20	But it does not feel like that.
+14:44:21	It's just a sense of expectation
+14:44:23	that I get from observing things
+14:44:25	over time.  And this has led
+14:44:29	Laplace to say the theory of
+14:44:33	probability basically just
+14:44:36	common sense reduced to
+14:44:39	calculus.
+14:44:40	How can we draw on this with
+14:44:41	uncertainty.  How can we show
+14:44:43	uncertainty in a way that
+14:44:45	matches the way people are used
+14:44:46	to experiencing it?  One thing I
+14:44:49	showed briefly earlier, what I
+14:44:51	would call an experience-based
+14:44:53	uncertainty visualization.
+14:44:54	Showing someone what it looks
+14:44:57	like.  This is an example from
+14:44:58	the New York Times.  We wanted
+14:45:00	to communicate to people how the
+14:45:02	jobs report, an interpretation
+14:45:04	of employment and job growth
+14:45:06	rates can be highly sensitive to
+14:45:09	variations in the month cans
+14:45:11	preceding when the report was
+14:45:12	written.  What we care about is
+14:45:14	the overall annual job growth
+14:45:16	rates.  But we can write reports
+14:45:18	that are very sensitive to sort
+14:45:20	of what happened the last two
+14:45:21	months.
+14:45:22	So to shows to the user, they
+14:45:25	have headlines that could occur
+14:45:27	from the exact same annual rate
+14:45:28	depending on local variation.
+14:45:30	And then at bottom, graphs.  We
+14:45:32	see on the far left sort of what
+14:45:33	we might expect if the job
+14:45:35	growth rate was actually
+14:45:37	studied.  But this is sort of
+14:45:38	hypothetical.  We would never
+14:45:41	see this.  This is the case
+14:45:42	where there's no random
+14:45:43	variation.  But next to that, we
+14:45:45	see the steady growth rate, what
+14:45:49	it looks like with random
+14:45:52	variations.  I could have a
+14:45:53	steady growth rate and this is
+14:45:55	what I would see.  There's a lot
+14:45:56	of variation.
+14:45:57	And next to that, showing on the
+14:46:01	right side, what it would be if
+14:46:03	it was accelerating, without
+14:46:05	random variation, and next to
+14:46:07	that, what happens with random
+14:46:09	variation.  People can suddenly
+14:46:11	watch randomness play out in the
+14:46:12	data they have and see, okay,
+14:46:15	these are other possible
+14:46:16	outcomes.
+14:46:17	Another thing I like about these
+14:46:18	types of visualizations is that
+14:46:20	we can, as designers, build in
+14:46:22	or build on people's natural
+14:46:24	associations with randomness.
+14:46:26	People do have experiences with
+14:46:28	randomness through things like
+14:46:29	coin flips and gambling.  And so
+14:46:31	we can sort of build this in and
+14:46:34	give them sort of a fun
+14:46:35	experience with uncertainty.  So
+14:46:37	this is from the New York Times
+14:46:38	also, and they're using roulette
+14:46:40	wheels to show you in a way that
+14:46:42	you can play again and again
+14:46:44	what the outcomes could be for
+14:46:45	states -- for different states
+14:46:47	for the election.
+14:46:50	Finally I think these types of
+14:46:52	visualizations that are showing
+14:46:53	you sort of individual samples,
+14:46:56	possible values, are better at
+14:46:58	showing the process.  And in
+14:46:59	that way better at communicating
+14:47:01	what a probability distribution
+14:47:02	actually is.  So I think
+14:47:04	actually Nicky Case showed this
+14:47:09	from Nathan Yau, but the
+14:47:12	probability of living to the
+14:47:14	next year, disparate outcomes
+14:47:17	based on gender and age and
+14:47:19	building up the histogram as it
+14:47:23	goes, so people have a better
+14:47:25	understanding of what it stands
+14:47:26	for.
+14:47:27	And I think most importantly, if
+14:47:28	we show uncertainty as sort of
+14:47:30	sets of possible values, actual
+14:47:32	possible outcome welcomes people
+14:47:34	can suddenly have a chance at
+14:47:35	answering questions about how
+14:47:36	reliable differences in the data
+14:47:38	are.
+14:47:38	So we know this is hard with
+14:47:40	error bars.  But imagine that
+14:47:42	I'm showing sort of just a set
+14:47:44	of outcomes.  So suddenly
+14:47:46	someone could watch this over
+14:47:48	time and say, oh, I think, you
+14:47:49	know, about, you know, 70% of
+14:47:52	the time the treatment's going
+14:47:53	to have a lower value than the
+14:47:55	control.  And they can get even
+14:47:56	more precise.  Perhaps with
+14:47:59	interactive help, look for
+14:48:00	things like how much there's an
+14:48:02	effect of a given size or more.
+14:48:05	Another cool thing, you can show
+14:48:06	joint probabilities with these
+14:48:07	sample-based plots.  You can not
+14:48:09	show with the static aggregate
+14:48:11	plot.  So imagine in one
+14:48:13	possible world I run my study of
+14:48:14	the blood pressure drug, and
+14:48:16	I've done it as a between
+14:48:18	subject study.  So different
+14:48:20	people in the control and
+14:48:20	treatment.  But then in another
+14:48:22	world I decided I wanted to run
+14:48:23	it as an in-subjects study.
+14:48:28	Suddenly I have the same people
+14:48:29	in the control and the
+14:48:30	treatment, doing both in
+14:48:31	randomized orders.  The sample
+14:48:33	plots will show, you can't see
+14:48:35	from other visualizations, when
+14:48:37	you have or correlations between
+14:48:41	variables.  When the control
+14:48:43	goes up, the treatment goes up
+14:48:44	as well.  Same, vice versa,
+14:48:47	that's the same person.  There's
+14:48:48	correlation there.  And I can
+14:48:50	suddenly see that.
+14:48:51	So what this is leading up to
+14:48:53	really is this thought that I
+14:48:55	have, the experiencable
+14:48:57	uncertainty visualizations that
+14:48:59	show possible values is the
+14:49:01	disco funk of uncertainties.  So
+14:49:06	let's think about what that
+14:49:06	means.
+14:49:32	>> Okay.  So I think you get the
+14:49:34	point.  So why do I say this.
+14:49:36	When you go to a discotheque or
+14:49:39	a rave, you want to feel it on a
+14:49:41	sensory level.  You want your
+14:49:44	organs to vibrate.  And these
+14:49:46	experiencable visualizations are
+14:49:48	showing an uncertainty in the
+14:49:49	way that it becomes a perceptual
+14:49:52	experience.  Frequency over
+14:49:53	time, which is something we can
+14:49:55	relate to.  Disco-funk uses a
+14:49:58	lot of technology, a lot of
+14:49:59	synthesizers, DJs mixing the
+14:50:02	same songs over and over with
+14:50:05	different sound effects.  And
+14:50:06	these allow us to use animation
+14:50:08	and interactivity.  We're just
+14:50:10	beginning, really, to explore
+14:50:11	sort of how we can use
+14:50:13	interactivity to set up the
+14:50:16	conversation between the user
+14:50:17	and the uncertainty in the data.
+14:50:19	Finally, anyone can get into
+14:50:21	disco-funk.  You don't have to
+14:50:23	know the history of that music
+14:50:25	to enjoy it.  There's a low
+14:50:28	barrier to entry, and the same
+14:50:29	is true of the experiencable
+14:50:30	uncertainty visualizations.
+14:50:32	People can understand randomness
+14:50:34	without a statistics background.
+14:50:36	I want to spend the last five
+14:50:37	minutes talking about how we can
+14:50:39	create these things.  There's a
+14:50:40	general formula.  And I want to
+14:50:42	show you really that you could
+14:50:43	do this for different types of
+14:50:44	data.  And for different types
+14:50:46	of visualizations.
+14:50:48	So there's sort of three steps.
+14:50:51	So first step, you want to
+14:50:53	generate from your data these
+14:50:54	hypothetical outcomes or
+14:50:56	samples.  And the goal here is
+14:50:58	we want to generate these
+14:50:59	samples in such a way that they
+14:51:01	are representative.  So if we
+14:51:02	were to rerun our measurement
+14:51:05	process, our data collection
+14:51:07	process, we could have gotten
+14:51:08	these other values.  So they're
+14:51:10	plausible and representative.
+14:51:12	So how do we do that?  Well, we
+14:51:14	can do that in a few ways.
+14:51:16	Imagine we have our data set.
+14:51:18	Where we have our control and
+14:51:19	treatment for the blood pressure
+14:51:21	study.  One thing we could do is
+14:51:24	look at the distributions we
+14:51:25	have in our actual data and
+14:51:27	sample from those distributions.
+14:51:29	So maybe I find that my control
+14:51:31	and treatment are both normally
+14:51:32	distributed.  And they have a
+14:51:34	given mean.  So control has one
+14:51:36	mean and one standard deviation,
+14:51:38	treatment has another.
+14:51:39	And then I just sample over and
+14:51:41	over from distributions that are
+14:51:43	set to those parameters.
+14:51:45	Another way that I can do it
+14:51:46	even better, because I don't
+14:51:48	have to assume what kind of
+14:51:49	distributions I have is to use
+14:51:51	bootstrap, resampling with
+14:51:52	replacement from the original
+14:51:54	data set.  And Amelia talked
+14:51:58	about this as well.  Nice thing
+14:52:00	about bootstrapping, there's
+14:52:01	ways to do it for almost any
+14:52:03	type of data.  There's a lot of
+14:52:06	literature, books online, and
+14:52:09	Google it.  And what type of
+14:52:11	data you have, you can find
+14:52:13	guidance.
+14:52:14	And take the hypothetical
+14:52:15	samples, make a lot.  A thousand
+14:52:17	would be great.  And visualize
+14:52:19	them.  They become separate
+14:52:21	frames in a visualization.  To
+14:52:23	do this, make sure you can
+14:52:24	compare the frames one to
+14:52:26	another pretty easily.  So in
+14:52:28	most cases that's pretty easy.
+14:52:30	In some cases it's trickier,
+14:52:32	depending on what sort of
+14:52:33	visualizations you're using.
+14:52:35	But sort of an example of why we
+14:52:37	need to do this would be to
+14:52:38	imagine that I have these bar
+14:52:40	charts where I'm showing the
+14:52:42	data using height of bar.  But I
+14:52:44	have different Y axis ranges on
+14:52:48	every bar chart.  That's hard
+14:52:50	for people to compare.  It's not
+14:52:51	easy at all.
+14:52:52	So we want to make sure that
+14:52:54	those mappings are the same.  Or
+14:52:55	are functions that set the
+14:52:57	scales, et cetera, are the same.
+14:52:59	Finally, we present them.  And
+14:53:01	you can do this in many ways.
+14:53:03	And we're just starting to
+14:53:09	explore how to do it, you can is
+14:53:12	ring it down, you can show a
+14:53:13	lot.  And animation, and tons of
+14:53:16	possibilities for animation.
+14:53:18	Pure, one sample at a time, you
+14:53:19	can add the summary marks like
+14:53:21	the mean, et cetera.  You can
+14:53:22	have it aggregate in to show the
+14:53:24	distribution.  You can have it
+14:53:25	be interactive.  So you think
+14:53:27	it's too distracting to have the
+14:53:29	animation, maybe people can
+14:53:31	interact and turn that on when
+14:53:32	they need it.  There's so many
+14:53:34	possibilities here.
+14:53:35	So the last example I want to do
+14:53:36	is to show you that you can
+14:53:37	apply this type of technique to
+14:53:39	any data set, really.  And so I
+14:53:41	thought I would walk through
+14:53:42	this example from the New York
+14:53:43	Times.  So what they wanted to
+14:53:46	show is that we can use poll
+14:53:48	data to predict who's going to
+14:53:49	be in the republican debate.
+14:53:51	So they did this before the
+14:53:53	debate happened.  But they want
+14:53:54	to show how poll results are
+14:53:56	uncertain.  And so how we could
+14:53:58	actually run the same poll over
+14:54:00	and over and we might see
+14:54:02	different people predicted as
+14:54:05	debate candidates.  So they want
+14:54:06	to basically show what happens
+14:54:08	when you have sampling errors.
+14:54:09	Because polls are always based
+14:54:11	on, you know, smaller numbers of
+14:54:12	people than the actual
+14:54:13	population.  So there's error
+14:54:15	there.  So how do they do it?
+14:54:18	So they're doing this all in
+14:54:20	JavaScript.  I looked at the
+14:54:23	code.  They're simulating many
+14:54:25	polls and showing different
+14:54:26	rankings that you get based on
+14:54:28	each poll.
+14:54:28	So what they're going to do is
+14:54:30	start at zero and they're going
+14:54:31	to take the most recent poll
+14:54:34	results from the candidates, the
+14:54:35	different republican candidates.
+14:54:37	So maybe in the recent poll
+14:54:39	Trump had 18%, Bush, 14%, et
+14:54:41	cetera.  And then starting at
+14:54:43	zero, they're going to create a
+14:54:45	bin for the percentage for each
+14:54:46	candidate.  And so, for
+14:54:48	instance, Trump would get zero
+14:54:50	to 18.  Then the next one, build
+14:54:52	on top of that, so Bush gets 18
+14:54:55	to 32, Walker gets 32 to 43, et
+14:54:58	cetera.  So we do this for all
+14:55:00	the candidates and it should sum
+14:55:02	to 100.  And then what we're
+14:55:05	going to do is simulate each
+14:55:07	poll.  Simulate a large number
+14:55:10	of polls a thousand times.  And
+14:55:12	for each poll, decide how big, I
+14:55:15	think 2,000 is a common poll
+14:55:16	number.  So for each of 2,000
+14:55:18	people we're going to simulate,
+14:55:20	just draw a random number
+14:55:22	between 0 and 100, and put it in
+14:55:24	the corresponding bin for
+14:55:25	whatever candidate it falls in.
+14:55:27	The first one goes to Walker,
+14:55:29	the second one goes to Trump, et
+14:55:31	cetera.
+14:55:32	So we do this for 2,000 people,
+14:55:34	we have simulated a poll.  We're
+14:55:36	doing this for many, many polls.
+14:55:38	All we have to do, really, for
+14:55:40	each poll after we have put all
+14:55:42	the people in the bins,
+14:55:44	calculate the new percentage for
+14:55:46	each candidate.  Sort those and
+14:55:47	assign rank.  Sometimes the
+14:55:49	ranks are going to change.  So
+14:55:50	people are going to swap.  So
+14:55:53	we're going to predict different
+14:55:56	people in the debate.  And then
+14:55:59	the last step, visualize it.
+14:56:01	Use something like D3, create a
+14:56:03	function that visualizes a set
+14:56:04	of ranked candidates.
+14:56:06	In order to make it easier to
+14:56:07	compare, we're going to animate
+14:56:10	transitions so people don't have
+14:56:11	to keep track of where each
+14:56:13	candidate was.  They can sort of
+14:56:15	follow just from the transition.
+14:56:17	Okay.  So I think I'm about out
+14:56:19	of time.  So thanks for your
+14:56:20	attention.  If you're interested
+14:56:21	in more on this technique of
+14:56:23	experiencable uncertainty
+14:56:25	visualizations, you can check
+14:56:26	out my Website.  I have also
+14:56:28	written some stuff on the
+14:56:29	interactive data lab blog on
+14:56:32	medium.  So thanks.

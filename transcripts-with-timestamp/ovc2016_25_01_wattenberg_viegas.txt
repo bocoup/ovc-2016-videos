@@ -1,0 +1,1124 @@
+9:24:20	>> Let's see.
+9:24:22	>> Any time now.
+9:24:23	>> Any time now.  Yeah --
+9:24:29	meanwhile, talk about how
+9:24:31	intimidated I am to be
+9:24:33	transcribed.  I feel like I need
+9:24:35	to talk like George Will.  In
+9:24:38	complete paragraphs.  Okay.
+9:24:39	Good.  Back to it.  We want to
+9:24:45	talk about Seeing Machines
+9:24:46	Think.  And artificial
+9:24:49	intelligence is an increasingly
+9:24:52	interesting thing to think
+9:24:52	about.  At the same time it's
+9:24:53	been an enduring concern for a
+9:24:56	long time.  In fact, in the old
+9:24:58	days people try to create smart
+9:25:00	machines with hand crafted
+9:25:02	algorithms, connect them to
+9:25:04	different rules, brute force
+9:25:07	calculations.  And even then,
+9:25:09	leads to interesting things.
+9:25:10	One thing that, you know, I have
+9:25:12	been interested in for a long
+9:25:13	time is the game of Chess.  And
+9:25:16	I just want to show you a very,
+9:25:17	very relatively old piece.
+9:25:20	Because it has a point to make.
+9:25:22	So this is a game of Chess.  You
+9:25:24	can play it against the
+9:25:26	computer.
+9:25:27	And as I play, you can see every
+9:25:29	move that the computer is
+9:25:31	thinking.  The computer is not
+9:25:33	playing a great game here, by
+9:25:36	the way.  But it's thinking hard
+9:25:38	and we give it credit for that.
+9:25:40	What it's doing, it's simply
+9:25:42	looking at every possible move
+9:25:44	and figure out what's good, bad,
+9:25:46	according to a pre-made formula
+9:25:48	for good or bad moves.  And this
+9:25:50	really represents, I think, sort
+9:25:52	of an old view of intelligence
+9:25:53	on computers.  That it just sits
+9:25:55	there and calculates, brute
+9:25:57	force.
+9:25:58	However, what's exciting is that
+9:26:00	we're seeing a very different
+9:26:02	role for artificial intelligence
+9:26:04	today.
+9:26:04	>> And so today we're going to
+9:26:06	talk about neural nets.  And one
+9:26:09	of the things that sets that
+9:26:10	apart from the kind of old world
+9:26:12	computing that Martin was
+9:26:14	talking about, is the fact that
+9:26:16	these systems learn over time,
+9:26:18	right?  And they're modeled
+9:26:20	after the human brain and
+9:26:21	nervous system.
+9:26:22	They're also probabilistic.  So
+9:26:25	there are many sort of shades of
+9:26:27	gray there.  No pun intended.
+9:26:30	And they're not predictable.
+9:26:33	They are not completely
+9:26:35	predictable.  And that makes it
+9:26:36	for a really interesting
+9:26:37	opportunity for visualization.
+9:26:39	Because one of the big
+9:26:40	challenges is understanding
+9:26:41	exactly what is being learned by
+9:26:43	these systems.  And experts
+9:26:47	don't always know what these
+9:26:49	systems are learning.
+9:26:51	So this is a very simple sort of
+9:26:53	artistic rendering of what a
+9:26:54	neural net might look like.  You
+9:26:59	put in some data.  So over there
+9:27:01	we're inputting a picture.  And
+9:27:02	this picture will pass through
+9:27:04	all of these sort of layers.
+9:27:06	Each one of those vertical
+9:27:07	things is a layer in the neural
+9:27:09	net.  And each layer is made up
+9:27:12	of a bunch of neurons.  Okay?
+9:27:15	And they are firing up and
+9:27:16	trying to understand things
+9:27:17	about this picture.  So what you
+9:27:19	see at the bottom are sort of
+9:27:20	filters and activations.
+9:27:22	They're trying to sort of take
+9:27:23	the picture apart and understand
+9:27:24	what it is that the machine is
+9:27:26	looking at.
+9:27:28	Eventually, as this goes through
+9:27:30	all these layers, it comes up
+9:27:32	with a prediction.  Oak.  So
+9:27:34	what kind of picture is this?
+9:27:35	Is it a horse?  A deer?  A
+9:27:37	plane?  And the machine will
+9:27:39	come with different -- will come
+9:27:41	up with different problem --
+9:27:44	probabilities for each one of
+9:27:46	these options.  And then
+9:27:48	eventually decides, okay, horse
+9:27:50	is the one I'm most sure about.
+9:27:52	So I'm going to go with horse.
+9:27:54	So how does, you know, a deep
+9:27:59	network work.  It's a mystery.
+9:28:01	In fact people go on Twitter to
+9:28:03	make jokes about it.  And if you
+9:28:06	search for things like black box
+9:28:11	neural nets, you get tons of
+9:28:12	answers right away.  And this is
+9:28:15	one of the, again, hooks for us
+9:28:17	in visualization, in sort of
+9:28:19	opening up the black box a
+9:28:20	little bit and try to understand
+9:28:22	what it is that's happening
+9:28:23	inside these systems.
+9:28:25	>> So we want to suggest that
+9:28:27	there are a couple of reasons to
+9:28:28	stay calm about this.  One is
+9:28:30	it's actually normal for
+9:28:32	technology to be kind of
+9:28:33	mysterious.  One of the
+9:28:35	things -- I went and did a
+9:28:37	little bit of reading about all
+9:28:39	kinds of technology.  And think
+9:28:41	about something as simple as
+9:28:42	metal.  For thousands of years,
+9:28:44	people were using iron, and they
+9:28:45	would basically extract it using
+9:28:48	these very complicated,
+9:28:51	dangerous blast furnaces.  And
+9:28:54	you see images on the left from
+9:28:56	the 1600s, and on the right,
+9:28:59	the 1300s of Chinese iron
+9:29:02	blast furnaces.  When these were
+9:29:05	created, it was super high-tech
+9:29:07	nothing and no one knew
+9:29:10	everything involved.  It was
+9:29:11	okay.  It's like the normal
+9:29:13	human condition that the
+9:29:14	technology runs a little ahead
+9:29:15	of our understanding.
+9:29:17	And the other thing is, we don't
+9:29:19	know how brains work either.
+9:29:20	And pretty comfortable with
+9:29:22	them.  That's one reason to stay
+9:29:23	calm.  There's another thing,
+9:29:25	which is that visualization
+9:29:26	really can help.  And in fact
+9:29:29	this is an amazing opportunity.
+9:29:31	Taking an MRI of a human brain
+9:29:33	is very, very difficult,
+9:29:34	obviously.  It's like a big
+9:29:36	honking machine you have to get
+9:29:37	in.  It's horrible.
+9:29:39	When we have artificial neural
+9:29:41	networks, we can actually start
+9:29:44	inspecting them in interesting
+9:29:45	ways.  And it's really a great
+9:29:46	opportunity to understand what's
+9:29:47	going on.  So we want to talk
+9:29:49	about some of that today.
+9:29:51	And I wanted to start with a
+9:29:53	little bit of a warm up,
+9:29:56	actually.  Before we leap to
+9:29:57	neural networks.  I wanted to
+9:29:59	talk a little bit about machine
+9:30:00	learning and how you can sort of
+9:30:02	understand it in general.  And
+9:30:03	so let's start to teach a
+9:30:06	computer to drink wine.
+9:30:08	Let's have a computer tell red
+9:30:10	and white wine apart.  So the
+9:30:12	first step is to get data for
+9:30:16	that.  I found great data,
+9:30:18	there's a nice UCI site with a
+9:30:20	nice archive of data sets.  And
+9:30:22	I found data conveniently on the
+9:30:25	amount of chlorides and total
+9:30:27	sulfur dioxide.  I wish I could
+9:30:30	have gotten it on oaky flavors
+9:30:34	or a cherry note.  But you have
+9:30:40	a data set like this.  There's
+9:30:42	one particular maneuver credit
+9:30:44	Cal to understanding the field.
+9:30:46	You have these numbers, each row
+9:30:50	has two numbers.  And the key
+9:30:51	mental maneuver is to think
+9:30:53	about those pairs of numbers as
+9:30:57	points in space.
+9:30:58	That transition from a data
+9:31:00	table to geometry has a lot of
+9:31:02	power to help you think about
+9:31:04	this.  So, for example, I can
+9:31:06	plot the red wines as points in
+9:31:08	the two dimensional space.  I
+9:31:11	can plot white wines.  And just
+9:31:13	by plotting I can start to see,
+9:31:15	yeah, all right, there is a
+9:31:17	difference there.  And I request
+9:31:18	start to think, how could I
+9:31:19	quantify that difference in a
+9:31:21	way that a computer could
+9:31:23	understand?
+9:31:26	So one of the things I could do,
+9:31:28	look at one of the features, and
+9:31:30	using machine learning jargon.
+9:31:32	The chlorides are a feature, the
+9:31:34	amount of sulfur dioxide.  And
+9:31:40	instead of Y1 -- just getting
+9:31:42	you used to the weird jargon.  I
+9:31:45	could look at one feature.  For
+9:31:47	example, I could say, look at
+9:31:48	just the chlorides and write
+9:31:50	down this little equation here,
+9:31:52	or formula.  And I could say,
+9:31:54	well, that is positive.  Yes,
+9:31:55	but this is a red wine.  And if
+9:31:58	it's negative, I'm going to
+9:31:59	guess it's a white wine.  Since
+9:32:01	this is a visualization crowd, I
+9:32:03	have done a visualization thing
+9:32:05	here and placed a heat map on
+9:32:06	the back, showing you the value
+9:32:09	of this formula.  You can see
+9:32:10	it's not terrible.  Like it kind
+9:32:12	of gets a lot of the white wines
+9:32:15	right, they're in the white
+9:32:16	area, the red wines in the red
+9:32:19	area.
+9:32:19	Maybe.  It's not great, though.
+9:32:21	I could try sulfur dioxide.
+9:32:24	It's much worse if I look at
+9:32:26	just that feature.  Not good at
+9:32:29	all.  You want to combine the
+9:32:30	two of them.  And the simplest
+9:32:32	thing to do is combine these in
+9:32:34	a linear way.
+9:32:35	So I've created a sort of
+9:32:39	diagram on the right, gives you
+9:32:40	an indication what's going on.
+9:32:42	Taken two features, X1 and X2,
+9:32:46	and combined them, putting more
+9:32:47	weight on the X1 feature, the
+9:32:49	one at the top, to get the
+9:32:50	linear classifier here.  And if
+9:32:53	you look, you see most of the
+9:32:55	red dots for the red wine in the
+9:32:57	red area, most of the white in
+9:32:59	the white area.  It's not
+9:33:01	perfect, but better than most
+9:33:02	humans at this task.  A lot of
+9:33:04	people think it's very easy to
+9:33:06	tell these apart.  But studies
+9:33:08	show that people are much worse
+9:33:09	than you would expect.
+9:33:11	There many ways you could find
+9:33:14	this formula, analytically, or
+9:33:17	teach the computer gradually to
+9:33:18	find it.  We won't go into
+9:33:21	details about the exact
+9:33:23	training.  But the formula
+9:33:24	exists and this is a way to tell
+9:33:26	it apart.
+9:33:27	As I said, the formula did
+9:33:29	better than most people, but we
+9:33:30	cannot conclude from that that
+9:33:34	is a hyper intelligence
+9:33:36	computer.  On the contrary --
+9:33:38	get that back.  Yes.  I was
+9:33:40	about to insult it.
+9:33:42	it is hyper intelligent.  Okay.
+9:33:48	What would happen, for example,
+9:33:49	if you gave it a glass of pure
+9:33:52	sulfur dioxide.  You look at the
+9:33:54	diagram and plug into the
+9:33:56	formula that will says that
+9:33:58	definitely white wine.  A human
+9:34:00	would say argh.  Because it's
+9:34:03	poison gas.  And that's sort of
+9:34:05	an interesting point to keep in
+9:34:06	mind as you think about it.
+9:34:08	It's designed to tell you stuff
+9:34:10	about the data it's been trained
+9:34:12	on.
+9:34:13	>> Okay.  So now, let's look at
+9:34:16	a demo.  That sort of makes that
+9:34:22	point.  Let me see if I can make
+9:34:24	this a little bit bigger.  So
+9:34:26	this -- this over here is a
+9:34:31	neural net, a very, very small,
+9:34:34	simple and transparent neural
+9:34:37	net that we launched a couple
+9:34:38	weeks ago and that you can play
+9:34:40	with on your browser.  So it
+9:34:42	runs locally on your browser.
+9:34:43	This is part of the flow
+9:34:47	project.  We will talk about it
+9:34:48	in a little bit.  But this is
+9:34:49	all a good source.
+9:34:52	So please play with this.  The
+9:34:54	whole point here is to start to
+9:34:56	do what Martin was walking you
+9:34:58	there.  To play with different
+9:34:59	scenarios and see how tweaking
+9:35:01	the network will give you better
+9:35:03	or worse answers for the
+9:35:05	scenario you have.
+9:35:06	So to mimic what Martin was
+9:35:08	looking at, I have here very
+9:35:10	simple network that's looking at
+9:35:12	these dots over here.  These are
+9:35:15	data points.  And we have two
+9:35:16	sort of rough clusters.  We have
+9:35:18	the blue clusters, which are
+9:35:20	positive points.  And we have
+9:35:21	the orange clusters, which are
+9:35:23	negative points.
+9:35:24	And we're trying to ask the
+9:35:25	machine to separate these in the
+9:35:29	best way it can.  And we have
+9:35:35	different features here, the
+9:35:38	first partitions the space
+9:35:40	vertically.  The next partitions
+9:35:42	the space horizontally.  Okay.
+9:35:45	So this is our simple system.
+9:35:47	It has no hidden layers, it's
+9:35:49	very straight forward.  Now I'm
+9:35:51	going to play it, and very
+9:35:53	quickly it gets the answer,
+9:35:54	right, of this may be the best
+9:35:56	partition for this set of points
+9:35:58	Okay.  So this is all good.
+9:36:00	And straightforward.  So now
+9:36:02	let's give it a slightly more
+9:36:04	challenging data set.  I have
+9:36:05	now two concentric circles with
+9:36:09	different points.   The negative
+9:36:10	points are on the outside, the
+9:36:12	positive points are on the
+9:36:13	inside.  Okay.  If I run the
+9:36:14	same network with the same
+9:36:16	features, what does it do?
+9:36:19	It doesn't.  It doesn't find a
+9:36:21	good answer.  It can't, right?
+9:36:23	Okay.  It's too complicated a
+9:36:26	data set for it to figure out
+9:36:27	with these features.  So what I
+9:36:30	can start to do is I can start
+9:36:32	to add a couple of layers here
+9:36:34	and these are hidden layers.
+9:36:36	And now I'm going it add
+9:36:38	different neurons to these
+9:36:41	layers.  Now let's see if it
+9:36:42	gets it.
+9:36:44	Okay.  It does.  Okay.  So let's
+9:36:50	talk a little bit about what's
+9:36:51	going on here.  So I've made my
+9:36:53	system more complex.  I've added
+9:36:57	neurons to it.  Now each neuron
+9:36:59	here, each little box is telling
+9:37:03	me how it sees the world and how
+9:37:04	it thinks the world should be
+9:37:06	partitioned given the data set
+9:37:08	it's given, right?  And I can
+9:37:11	see over here it starts to form
+9:37:12	these curves and starts to sort
+9:37:14	of follow the shape of the data
+9:37:16	better.
+9:37:16	The other thing it does is that
+9:37:18	now we have these lines that are
+9:37:20	both blue and orange.  And what
+9:37:22	that means is these lines are
+9:37:24	weights.  It's how much weight
+9:37:27	we're giving to each one of
+9:37:29	these neurons, okay?  So the
+9:37:31	thicker the line, the more
+9:37:32	weight that neuron has on the
+9:37:34	output.  Or to the input to the
+9:37:36	next layer.  They're also
+9:37:38	different colors.  So the orange
+9:37:41	weights are negative weights.
+9:37:42	And the little weights are
+9:37:44	positive.
+9:37:46	Positive weights mean this is a
+9:37:49	straight forward weight.  So
+9:37:51	you're going to take whatever I
+9:37:52	give you and you're going to
+9:37:54	move that to the next layer.
+9:37:57	A negative weight means that you
+9:38:00	are going to take exactly the
+9:38:01	opposite of what I give you.
+9:38:03	Okay?  So if we look, all of
+9:38:06	these final neurons here are
+9:38:08	feeding negative weights to the
+9:38:10	output, okay?  If I look at the
+9:38:12	output, everything on the
+9:38:13	outside is orange, and
+9:38:14	everything on the inside is
+9:38:16	blue.  Just like our data set,
+9:38:18	which is great.  But if I look
+9:38:20	at this neuron, it's flipped.
+9:38:23	That's why we get the negative
+9:38:25	weights.  And then we can start
+9:38:26	playing with different things.
+9:38:28	So now I'm putting in a very
+9:38:30	different kind of data input
+9:38:32	where I have sort of a
+9:38:33	checkerboard set up.  And I'm
+9:38:36	going to take the same exact
+9:38:39	network and see what I get.  Not
+9:38:42	bad.  I get a pretty good,
+9:38:43	straightforward answer.  But the
+9:38:46	other game I can play is I can
+9:38:48	just fiddle with these features,
+9:38:51	right?  And sometimes I may
+9:38:53	choose a feature that actually
+9:38:54	is really good at predicting the
+9:38:56	data I have.
+9:38:57	So if I run it now, it's
+9:39:00	slightly better.  And this is
+9:39:02	something -- this is -- this is
+9:39:05	a lot of the art of machine
+9:39:06	learning.  It is choosing your
+9:39:08	features wisely, playing with
+9:39:11	your data, tweaking your network
+9:39:12	so that you can -- you can, you
+9:39:14	know, come to the best outcome.
+9:39:16	And then you start to see things
+9:39:18	like this, this neuron at the
+9:39:21	top here is almost deactivated
+9:39:23	because we don't need it
+9:39:24	anymore.  We don't care about
+9:39:26	that.
+9:39:27	And then there is stuff like
+9:39:28	this.  A much more complicated
+9:39:31	data set.  And let's see if I
+9:39:35	just run this network the same
+9:39:36	way.  It tries.
+9:39:39	>> Trying really hard.
+9:39:41	>> It is.  But it's not getting
+9:39:43	there.
+9:39:43	>> Poor thing.
+9:39:44	>> Let's play with it.  Let's
+9:39:45	give it a full set of things.
+9:39:48	Let's make it --
+9:39:50	>> Make the frame bigger?
+9:39:52	>> Very complicated.  And let's
+9:39:53	see how -- how far we get with
+9:39:58	this.  See if this is any
+9:40:00	better.  It's -- it's trying so
+9:40:09	hard --
+9:40:10	>> Oh, look at that.  It'll
+9:40:11	figure it out.
+9:40:12	>> It will figure it out
+9:40:15	eventually.  And then there's
+9:40:16	all sorts of questions that, you
+9:40:17	know, you want to ask of your
+9:40:19	network if it ever gets to a
+9:40:21	stable state.  Is it
+9:40:23	over-fitting the data?  Really
+9:40:25	looking really hard at the data
+9:40:27	you have?  And that's it?  Or is
+9:40:29	it general in you want something
+9:40:31	that is general.  But anyway,
+9:40:32	the point here -- I'm going to
+9:40:34	stop it for a minute.
+9:40:36	The point here is that this is a
+9:40:39	toy network that you can play
+9:40:40	with and start to develop some
+9:40:42	of the intuition for it.  It was
+9:40:44	really interesting because we
+9:40:45	developed this tool internally
+9:40:48	at first.  And even experts were
+9:40:50	surprised with some of the
+9:40:53	things that they could see on
+9:40:54	this very, very simple network.
+9:40:57	So, again, the role that
+9:40:59	visualization would play here is
+9:41:01	really important.  Because even
+9:41:03	people who deal with these kinds
+9:41:04	of systems every day have
+9:41:06	trouble developing a really deep
+9:41:10	intuition for what's happening
+9:41:11	here.
+9:41:12	So -- so now that we looked at a
+9:41:19	toy network, let's look at real
+9:41:21	networks.  And the point of
+9:41:23	that -- these networks are very
+9:41:25	complex.  They are massive,
+9:41:28	sometimes.  And they have lots
+9:41:31	of high degree nodes.  And this
+9:41:34	is degree nodes.  This is work
+9:41:36	I'm about to show that was done
+9:41:37	with Ham over here in the
+9:41:42	audience.  He was an intern last
+9:41:44	summer and started this amazing
+9:41:46	work.
+9:41:46	So the goal is to turn something
+9:41:48	like that on the left, where you
+9:41:50	have all the low-level nodes and
+9:41:52	all the edges in a network, into
+9:41:54	something that is a lot more
+9:41:55	structured.  That takes into
+9:41:57	account hierarchies.  That takes
+9:42:01	into account high-degree nodes
+9:42:04	and how you should deal with
+9:42:05	that for the topology of the
+9:42:07	network.
+9:42:08	The other point here is that
+9:42:10	it's really important to be able
+9:42:11	to show these systems.  It's
+9:42:13	really hard, but it's very
+9:42:15	important.  So to give you a
+9:42:17	sense, every time a new break
+9:42:18	through comes up in neural nets,
+9:42:21	you will have publications,
+9:42:25	academic papers, and the first
+9:42:26	thing people will do is draw a
+9:42:29	diagram like you are looking at.
+9:42:31	These are high-level diagrams.
+9:42:33	It's the level at which, we as
+9:42:35	humans, want to think about
+9:42:36	these systems.  This is my
+9:42:38	system.  It's made of 20 layers,
+9:42:40	this is layer one, this is layer
+9:42:41	two, that is a fully connected
+9:42:43	layer.  And this is the level at
+9:42:45	which we want to talk and think
+9:42:47	about these things.
+9:42:48	However, the structure of these
+9:42:52	graphs is incredibly low-level.
+9:42:54	Where if you want to add nodes,
+9:42:56	you're literally adding one node
+9:42:58	and another node and that's
+9:42:59	creating edges.  So you can
+9:43:01	imagine the difference between
+9:43:02	the data you have to play with,
+9:43:04	and this kind of manually drawn
+9:43:07	diagram.  Right?
+9:43:08	And yet this is the lingua franca
+9:43:14	this is what everybody will draw
+9:43:16	on papers if they want to talk
+9:43:18	and communicate about their
+9:43:20	networks.  This is the
+9:43:21	challenge.  How to get as close
+9:43:23	as we can get to something like
+9:43:25	this automatically?  Okay.
+9:43:26	So to show you what we have --
+9:43:29	this one here.  Okay.  This is
+9:43:32	something we did -- I want to --
+9:43:38	okay.  This is a visualization
+9:43:42	that has been open sourced
+9:43:44	together with TensorFlow, it's
+9:43:50	Google's open source, machine
+9:43:52	learning platform.  And when it
+9:43:54	launched, we launched this
+9:43:56	visualization of the graphs
+9:43:58	TensorFlow as well.  And what
+9:44:02	this does is it automatically
+9:44:04	reads your graph and visualizes
+9:44:07	it.  And so this is a simple
+9:44:08	network called C-far.  And it
+9:44:12	does a couple of things.  One of
+9:44:14	the things it does is that it
+9:44:16	shows you these big blocks.  And
+9:44:19	these are hierarchical blocks,
+9:44:22	clusters of operations that are
+9:44:23	happening.  So if I open one of
+9:44:25	them, you can see they have a
+9:44:28	lot of stuff inside.  A lot of
+9:44:30	computation that happens.
+9:44:32	Another thing that we're doing
+9:44:34	here is whenever we find blocks
+9:44:36	that have -- that share the same
+9:44:38	structure, we're highlighting
+9:44:39	that to you.  By color.  So
+9:44:43	blocks that share the same color
+9:44:45	are blocks that share the same
+9:44:47	structures.
+9:44:47	So to give you a peek of that,
+9:44:50	this is convolution two,
+9:44:52	convolution of layer two and
+9:44:55	layer one.  And, yep, you can
+9:44:57	see they share the same
+9:44:58	structure.  Okay.
+9:45:00	The different -- the -- oh,
+9:45:03	there's one thing I should have
+9:45:04	said in the beginning.  So let
+9:45:06	me go back.  The way these
+9:45:08	things flow, this is like a data
+9:45:09	flow graph, it flows from bottom
+9:45:12	to top.  So the input to this
+9:45:15	system is at the bottom.  The
+9:45:16	output is at the top.  Okay?
+9:45:18	This is just a convention in
+9:45:21	neural nets.
+9:45:22	And the other thing you see here
+9:45:25	are varying lines.  So whenever
+9:45:27	you have an edge, a lot of times
+9:45:30	these are tensors in these
+9:45:34	systems.  And these are the
+9:45:35	things that are carrying all the
+9:45:37	data.  Remember that artistic
+9:45:39	rendering where you saw the
+9:45:40	beautiful things flowing from
+9:45:41	one layer to another?  These are
+9:45:44	the tensors.  And the tensors
+9:45:46	have different shapes and sizes
+9:45:48	as they go through --
+9:45:50	>> I'm going to say something,
+9:45:52	as the -- when I first heard the
+9:45:55	name Tensor, it was like
+9:45:57	differential geometry.  It's
+9:45:59	turned out it's using it as a
+9:46:01	multi-dimensional array.  But
+9:46:04	it's two syllables.  Better than
+9:46:07	multi-dimensional array.
+9:46:09	Wouldn't want to call it
+9:46:11	multi-dimensional array flow.
+9:46:14	>> The other thing people care
+9:46:16	about when working on the
+9:46:17	systems, what shape, what size
+9:46:19	are the tensors.  We label the
+9:46:23	tensors and tell you what shape
+9:46:25	they are.
+9:46:26	There's other things we're doing
+9:46:29	here.  So we can't show the
+9:46:31	entire graph at once, otherwise
+9:46:32	it would be completely
+9:46:34	impossible to read.  There are
+9:46:36	always nodes in these systems
+9:46:38	that connect to everything else,
+9:46:41	like gradients.  And so you just
+9:46:43	can't read a graph like that.
+9:46:46	So we did a couple of tricks.
+9:46:47	One of the tricks is that -- if
+9:46:49	I go back to the original
+9:46:50	view -- you have the main graph
+9:46:53	on the left.  And this is your
+9:46:56	real -- the core of your system.
+9:46:59	And then you have auxiliary
+9:47:01	nodes on the right.
+9:47:04	And these auxiliary nodes are
+9:47:07	actually part of the graph.
+9:47:09	They are all together.  All this
+9:47:11	exists together.  But we had to
+9:47:12	cut them off and show them
+9:47:14	separately.  Because otherwise
+9:47:15	you couldn't read the graph at
+9:47:17	all.  And this is something that
+9:47:19	was sort of a bold move on our
+9:47:20	end, on our side.  Oh, we're
+9:47:23	going to cut off these high
+9:47:25	degree nodes.  We started
+9:47:27	talking to users and saying this
+9:47:29	would make sense, when you look
+9:47:30	at a graph like this, does it
+9:47:32	match the mental model of what
+9:47:35	you're doing or is it completely
+9:47:37	bust?  They were like, no, this
+9:47:39	is great.  In fact can you give
+9:47:41	us control and can I ask to trim
+9:47:42	out even more nodes out of my
+9:47:44	network if I want to?  We're
+9:47:47	like, okay, this is a good
+9:47:49	feature.  All right.
+9:47:50	So now you can click on any node
+9:47:52	and say add back to main graph.
+9:47:54	Or --
+9:47:55	>> See why we take them out.
+9:47:58	>> Yes.  Exactly.  Or take it
+9:48:00	out.  There are other things,
+9:48:02	other fun things.  So because
+9:48:03	we're trimming things, whenever
+9:48:05	you see these side nodes, these
+9:48:07	are things that have been
+9:48:08	trimmed.  If you click on any of
+9:48:10	them, you're taken there.  You
+9:48:12	can open them up.  And again,
+9:48:14	you get to see -- you get so
+9:48:16	start to see the complexity of
+9:48:18	what's happening in, you know,
+9:48:22	somewhat simple network like
+9:48:24	this one.
+9:48:25	All right.  So let me go back.
+9:48:28	And tell you a couple of things.
+9:48:31	So -- yeah.
+9:48:32	So this is all on TensorFlows.
+9:48:35	Again, open source.  This is
+9:48:39	work done with a lot of people
+9:48:40	including Ham who started the
+9:48:42	project here.  Why is this hard?
+9:48:47	I'll let you take a look at
+9:48:49	this.  But as visualization
+9:48:51	folks, I'm sure you can relate.
+9:48:54	This is what one of the networks
+9:48:56	looked like without any of the
+9:48:58	trimming that we did.  So it's
+9:49:01	impossible to visualize.  And
+9:49:03	then, again, some of the tricks
+9:49:05	that we played here.  High
+9:49:09	degree notes being trimmed, core
+9:49:12	structure on the side.
+9:49:13	The reaction has been incredibly
+9:49:15	positive.  One of the things to
+9:49:20	realize about this community is
+9:49:21	that even though they're dealing
+9:49:23	with tons of data and very
+9:49:25	complex systems, there is a
+9:49:28	dearth of visualization.
+9:49:31	There's no good visualization
+9:49:33	tools that are used across the
+9:49:35	board.  People were always
+9:49:37	building their own little
+9:49:39	systems.  So it was a real -- it
+9:49:40	was a real boon when TensorFlow
+9:49:44	came out and you could just
+9:49:45	visualize your graph like that.
+9:49:48	People have been editing the
+9:49:50	graphs.  The other thing is, if
+9:49:51	your code is a mess, and it's a
+9:49:54	mess, the visualization will
+9:49:56	show that very quickly.  And so
+9:49:58	people have been actively
+9:49:59	editing their graphs to make the
+9:50:01	visualization better so that
+9:50:03	they can understand the systems
+9:50:04	that they are building.  That
+9:50:09	makes sense how useful some of
+9:50:12	this is.
+9:50:13	And again, the whole inspiration
+9:50:17	for doing this was
+9:50:19	communications.  People to want
+9:50:20	talk at high level.  We are
+9:50:22	seeing this sort of
+9:50:23	communication happening in
+9:50:24	screen sharing and so forth.
+9:50:26	Oak.  So so far we have talked
+9:50:30	about visualizing the network
+9:50:32	themselves.  The systems.  There
+9:50:33	are two main ingredients in
+9:50:35	machine learning systems.  One
+9:50:36	is the algorithms and the
+9:50:38	network that you build.  The
+9:50:39	other is the data that you're
+9:50:41	feeding it.  Because it's
+9:50:43	learning, right?  It's only
+9:50:44	going to learn depending on the
+9:50:46	data you feed it.
+9:50:48	And so we are also starting to
+9:50:49	visualize that input data.  So
+9:50:52	one of the things that we did is
+9:50:54	look at, again, a simple system
+9:51:00	CIFAR-10.  What that is, it's an
+9:51:03	image classification network.
+9:51:05	So it sort of like -- it takes a
+9:51:07	bunch of images.  It takes a
+9:51:09	bunch of 32 by 32 images and has
+9:51:14	ten classes.  Classes being, is
+9:51:16	it a car?  Is it an airplane?
+9:51:19	Is it a deer?  A dog?  A cat?
+9:51:22	So it has ten of those.  All it
+9:51:24	is is a bunch of pictures.  It's
+9:51:27	trying to classify the pictures.
+9:51:28	Each picture has been labeled by
+9:51:30	humans.  So we have a ground
+9:51:32	truth to go back to and say is
+9:51:34	this really a dog?  Is this
+9:51:37	really a cat and so forth.
+9:51:38	So now let me show you this demo
+9:51:42	that visualizes, oh, god.  That
+9:51:45	was interesting.
+9:51:49	>> I have -- yeah.
+9:51:50	>> Hang on.  Let me just go
+9:51:51	here.  And what I want to do is
+9:51:55	actually I want to reload this
+9:51:57	thing.  See if it's bigger.
+9:51:58	Okay.
+9:51:59	So this is a visualization of
+9:52:04	the data set, of a sixth or a
+9:52:07	fifth of the data set in CIFAR.
+9:52:10	Each one of those squares is an
+9:52:12	image.  So being able to see
+9:52:13	that all at once is already huge
+9:52:15	for people who are dealing with
+9:52:17	these systems.  You can zoom in
+9:52:19	and actually look at the
+9:52:20	pictures that you're going to be
+9:52:24	working with.
+9:52:26	We are separating these
+9:52:27	systems -- these pictures into
+9:52:29	different classes, like I said,
+9:52:31	so the airplane, the automobile,
+9:52:33	the birds, so forth.  And then
+9:52:36	we can start playing interesting
+9:52:37	tricks on it.  So I'm going to
+9:52:39	look at the same images, but I'm
+9:52:42	going to organize them by hue
+9:52:45	now.  Just because I can.
+9:52:47	And I can see right away that
+9:52:49	there are some classes of images
+9:52:51	that have bunch of blue.  Which
+9:52:53	makes sense, right?  Airplanes
+9:52:57	and ships I would imagine have a
+9:52:58	bunch of blue.  Another thing
+9:53:00	that was interesting to me,
+9:53:01	frogs, almost no blue frogs at
+9:53:04	all.  Which was interesting to
+9:53:05	note.  But the other thing is
+9:53:06	the distribution of things like
+9:53:09	automobile and truck as being
+9:53:10	the only ones where you have a
+9:53:13	really nice distribution across
+9:53:16	the spectrum.
+9:53:18	But now I can start to play --
+9:53:19	so this is only the input data.
+9:53:21	It hasn't even touched the
+9:53:23	machine learning system yet.
+9:53:25	I'm just looking at my data.
+9:53:26	Okay.  Just the small anecdote
+9:53:28	about why input data is so
+9:53:30	important.  We are talking to a
+9:53:33	professor at MIT who was doing
+9:53:35	this sort of thing, trying to
+9:53:36	understand images, and he was
+9:53:37	like, we scrape the lab, look at
+9:53:40	tons of images.  But you can't
+9:53:41	look at millions of images.
+9:53:43	So one of the problems in their
+9:53:45	system is it couldn't recognize
+9:53:47	months very well.  Why months?
+9:53:50	What's the problem?  But it
+9:53:53	turns out the input data for
+9:53:55	some reason on the web tends to
+9:53:57	be mugs with the handle to the
+9:54:00	left.  And not to the right.
+9:54:03	And so when, you know, when it
+9:54:06	got images of the handle on the
+9:54:07	right, it didn't know what to do
+9:54:09	with it, right?  This is why
+9:54:11	input data is so important.
+9:54:14	Dice biasing your data is
+9:54:19	incredibly important.
+9:54:20	Now I'm going to start touching
+9:54:22	the machine learning system and
+9:54:23	try to look at this data through
+9:54:24	the eyes of the system.  So what
+9:54:27	I'm showing you now is a
+9:54:29	confusion matrix.  This is a
+9:54:31	comparison between what the
+9:54:33	system thinks a picture is, and
+9:54:35	what the picture has been
+9:54:36	labeled as.  Okay?
+9:54:38	So it's good news to me that the
+9:54:42	diagonal here is the biggest --
+9:54:44	is the one with the biggest --
+9:54:46	the biggest distribution here.
+9:54:47	Because -- oh, go away.  Because
+9:54:50	this means that the diagonal is
+9:54:53	like what I call are cats are
+9:54:56	really cats.  But now let's do
+9:54:58	one thing.  Let's take away the
+9:55:00	correct predictions.  Let's take
+9:55:02	away everything that's right.
+9:55:03	That diagonal.  And now I have
+9:55:05	everything that's wrong.  That
+9:55:08	my computer -- that my system
+9:55:10	got wrong.  And I can see there
+9:55:12	are two big chunks here, for
+9:55:14	instance, things I'm thinking
+9:55:16	are dogs and are really cats and
+9:55:19	vice versa.  Or things that, you
+9:55:20	know, are birds, for instance,
+9:55:22	that the system thought were
+9:55:24	airplanes.  Okay.
+9:55:25	So this is one here.  Where the
+9:55:27	system was thinking they were
+9:55:30	airplanes.  And, again, this
+9:55:32	will allow you to start tweaking
+9:55:35	your system to understand what's
+9:55:38	happening.  I want to show you
+9:55:39	one more thing here.  This
+9:55:42	distribution is each class and
+9:55:46	how certain the computer is that
+9:55:50	all of these images, which are
+9:55:52	of airplanes, are, indeed,
+9:55:55	airplanes.
+9:55:56	So the computer is very, very
+9:55:57	sure that all of these pictures
+9:55:58	here on the right are truly
+9:56:01	airplanes.  Which is great.  But
+9:56:02	it's very certain these are not
+9:56:04	airplanes.  And they are.  So
+9:56:06	you can see the distribution,
+9:56:07	again, that cats and dogs, it
+9:56:09	does not do very well.
+9:56:11	So these are cats that it's very
+9:56:14	certain are not cats.  Very,
+9:56:17	very certain.
+9:56:19	>> Insulting to the poor cats.
+9:56:21	>> But -- but -- here's the
+9:56:24	other thing.  This is a system
+9:56:26	that has been out for a while.
+9:56:27	It's a proven data set.  It's
+9:56:29	one of those model data sets.
+9:56:31	And by doing this visualization,
+9:56:34	we found a mistake in this data
+9:56:36	set.  So again, I'm going to
+9:56:38	zoom into cats.  Cats that it's
+9:56:40	very certain are not cats.
+9:56:43	Okay.
+9:56:44	So these have all been labeled
+9:56:46	by humans as cats.  Look at this
+9:56:50	guy here.
+9:56:53	right?  The machine was right
+9:56:56	once.
+9:56:59	>> Cat --
+9:57:00	>> Right.  So this is exactly
+9:57:01	the kind of exercise we want to
+9:57:03	do when you're training these
+9:57:05	systems.  And just being able to
+9:57:07	look at things and slice and
+9:57:09	dice is incredibly useful.
+9:57:12	So -- oh, god.  Cool.  Images --
+9:57:18	get you to the next point.
+9:57:20	>> Yeah.  So this -- the
+9:57:23	CIFAR-10 classifier that was
+9:57:27	used to create that is actually
+9:57:28	the open source tutorial in the
+9:57:31	TensorFlow.  So you can play
+9:57:33	with this yourself.
+9:57:34	And I want to talk quickly about
+9:57:36	what neural nets are learning.
+9:57:38	Because you have -- you saw that
+9:57:40	input data can be tricky, but
+9:57:42	let's talk about some
+9:57:43	interesting things.  So what
+9:57:46	happens if we give it random
+9:57:48	images?  Okay.  It's mildly
+9:57:50	constant.  We forced it to say
+9:57:53	something.  The left one is a
+9:57:54	bird, the right is a cat.  Can't
+9:57:56	fault it too much so far.  But
+9:57:58	you can actually play a little
+9:57:59	game, you take a random image
+9:58:01	and you say how could I tweak
+9:58:03	that to make it more confident
+9:58:04	about what it's classification
+9:58:06	is?
+9:58:07	And if you keep doing that, you
+9:58:09	can actually come up with what
+9:58:10	are called rubbish examples.  So
+9:58:13	here it is, 100% confident that
+9:58:15	the thing on the left is a frog
+9:58:16	and the thing on the right is a
+9:58:18	bird.  I have had a couple claim
+9:58:20	they can see a frog in the left
+9:58:22	one.  I personally cannot.  You
+9:58:24	know, it's funny, I looked at
+9:58:25	these images when it created
+9:58:27	them, and reminded me of
+9:58:30	something.  It was an art piece
+9:58:31	I have seen.  These are not
+9:58:32	random colors here.  The blacks
+9:58:34	and whites with some other
+9:58:37	colors.
+9:58:37	And it was, oh, it's just like
+9:58:40	that art.  9 million.  And so if
+9:58:44	you click in there, you can see
+9:58:47	these examples are kind of
+9:58:49	halfway in between.  Raises an
+9:58:51	important question which I'm
+9:58:53	sure is in all of your minds
+9:58:55	right now, and just to answer
+9:58:56	it, that's a frog.
+9:58:59	in all seriousness, I think this
+9:59:00	is a nice way to appreciate why
+9:59:02	that painting is too good.  If
+9:59:03	you spend a long time looking at
+9:59:05	these, you think, wow, that's a
+9:59:07	very subtle painting.  It is,
+9:59:10	quite.  There's something more
+9:59:12	strange than rubbish examples.
+9:59:13	That's something called
+9:59:15	adversarial examples.
+9:59:17	And the idea here is that you
+9:59:19	take an image that it is correct
+9:59:21	in and confident.  So here's a
+9:59:23	frog.  99% confident it's a
+9:59:29	frog.  It turns out with subtle
+9:59:31	changes you can create an image.
+9:59:33	The image on the right is
+9:59:34	different from the one on the
+9:59:35	left, 99% confident it's a bird.
+9:59:37	You see the difference?  Okay.
+9:59:39	Let me -- we'll work on the
+9:59:41	difference.
+9:59:42	We're going to put them right
+9:59:44	one after the other.  Look very
+9:59:46	carefully at the colors, you'll
+9:59:48	see them shifting.  You see it?
+9:59:50	Yeah.  Subtle.  We can do this
+9:59:52	another way, we can take the
+9:59:53	difference in Photoshop and
+9:59:55	barely see the difference.  You
+9:59:56	say, computer, enhance.
+10:00:01	and there's actually a black
+10:00:02	image there.  So making these
+10:00:03	tiny changes makes a difference.
+10:00:06	Here's one, airplane on the
+10:00:07	left, and on the right, 99%
+10:00:10	confident, automobile.  You can
+10:00:12	kind of see a difference in the
+10:00:14	sky.  I don't know.  Here, horse
+10:00:16	on the left, 95% confident,
+10:00:19	99.9% it's a truck.
+10:00:22	So these things are learning
+10:00:23	something.  This is a good
+10:00:25	classifier, and yet it is doing
+10:00:27	something very different from
+10:00:28	what a human is doing.  It's
+10:00:29	hard to understand what could
+10:00:32	possibly be going on.  There's a
+10:00:34	very nice paper, which has a
+10:00:37	really interesting explanation
+10:00:39	of what's happening.  Their
+10:00:43	explanation, and there's more to
+10:00:44	be said about this, this is a
+10:00:46	fact about high-dimensional
+10:00:48	space.  So if I think about
+10:00:49	images as points in a space,
+10:00:51	just as we have turned the data
+10:00:54	into a two dimensional space.
+10:00:56	We use images specialized by
+10:00:58	3,000 numbers, there are points
+10:01:01	in a 300 dimensional space.  And
+10:01:04	tiny pixel changes in the
+10:01:07	coordinates can make a big
+10:01:10	difference.  You can think about
+10:01:12	this, with are geometry, a tiny
+10:01:16	step to the left and up, a tiny
+10:01:19	difference.
+10:01:20	Maybe the factor of the square
+10:01:22	root of two.  But in the end
+10:01:24	dimensions, it's the square of
+10:01:25	the N.  And if N is very high,
+10:01:27	those little tiny steps can
+10:01:29	really add up.  We can think
+10:01:31	about this geometrically, and
+10:01:35	this is a cube.  If we had the
+10:01:38	six dimensional cube, this is
+10:01:41	not, but the diagonals distorted
+10:01:44	to the same degree and length to
+10:01:46	the sides the actual cube would
+10:01:49	have.  And we can dial this up,
+10:01:52	and see a 32 by 32 by 32 has
+10:01:56	corners very far apart.  There's
+10:01:58	something happening in high
+10:02:00	directional space that's very
+10:02:02	mysterious.
+10:02:03	And I'm going to talk about
+10:02:05	that.  We have talked about
+10:02:06	geometry, talked about that.
+10:02:08	There's one other things we
+10:02:10	could do this these things.
+10:02:12	Okay, computers are seeing
+10:02:13	something here.  What are they?
+10:02:15	Let's give it a Rorschach test.
+10:02:19	Treat them like humans.  I'm
+10:02:21	going to give you the results of
+10:02:23	the test.  We found the four
+10:02:26	APIs, refer to as robots one,
+10:02:29	two, three, and four here.  And
+10:02:31	gave them images.  And see if
+10:02:33	you can spot the personalities.
+10:02:34	Robot one here, very literal.
+10:02:38	Robot two, interesting,
+10:02:39	barrette.  Robot three is like
+10:02:42	it's art.  Robot four is like
+10:02:46	that's a Rorschach image.  And
+10:02:51	another one, robot one, jigsaw
+10:02:53	puzzle, and robot two, it's a
+10:02:56	fleur-de-lis.  And robot three,
+10:03:00	that's design.  And robot four,
+10:03:02	that's a black ink splotch.
+10:03:06	Robot one, it's a mask, robot
+10:03:08	two, it's a pin.  It's creative.
+10:03:10	Robot three is showing some
+10:03:12	emotional stuff.  Isolated.  I'm
+10:03:14	an isolated artist.  And robot
+10:03:17	four is like it's a Rorschach
+10:03:20	image.  And another one, robot
+10:03:22	one, hook, claw, and robot two,
+10:03:24	handle-bar mustache.  I feel
+10:03:27	that.  Robot three, it's a
+10:03:29	print.  It's very art-focused.
+10:03:31	Robot four, black face paint
+10:03:34	print.  It's trying to work with
+10:03:35	us a little bit.
+10:03:37	Rorschach, and again, robot one,
+10:03:39	very literal.  You're seeing the
+10:03:41	personality.  Robot two, brass
+10:03:42	knuckles.  Robot three, I'm
+10:03:45	isolated.  Robot four is trying
+10:03:47	to say something smart and it's
+10:03:49	coming close.  And then this is
+10:03:51	the one we ended on.  Robot one,
+10:03:54	literal, robot two, clever, and
+10:03:57	robot three -- it's isolated.
+10:03:59	And robot four is like it's a
+10:04:01	black art splat.
+10:04:04	You can feel it roll its eyes.
+10:04:06	So you know one ending note here
+10:04:08	is maybe these were a Rorschach
+10:04:11	test, maybe treating them as
+10:04:13	humans is a decent way to
+10:04:15	develop I think we'll end there.
+10:04:16	And thank you very much.

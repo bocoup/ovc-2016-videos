@@ -1,0 +1,822 @@
+16:04:25	>> Hello.  Yeah.  Hello,
+16:04:27	everybody.  Thank you so much
+16:04:28	for having me.  It's been a
+16:04:30	great pleasure to be here.
+16:04:31	Absolutely great pleasure.  I
+16:04:33	need to see if I can get my --
+16:04:36	ah, yes, wonderful.  I can get
+16:04:40	my curser over here.  This is
+16:04:41	really sophisticated.  Thank you
+16:04:46	so much.  My topic is Our Planet
+16:04:48	Seen from Space.  And I'm a
+16:04:50	Ph.D. candidate at the
+16:04:51	University of Alaska favor
+16:04:53	banks, and I moved to consider
+16:04:56	Fairbanks in 2011.  I worked
+16:04:59	with a company with marketing
+16:05:02	software, and someone or
+16:05:04	something attracted me to
+16:05:05	Alaska.  Really, either they
+16:05:08	stick there or don't.  And I
+16:05:09	really fell in love with the
+16:05:10	north.  There's so much going on
+16:05:12	and people don't know about it.
+16:05:13	I monitor wildfires with
+16:05:17	satellite imagery.  A few people
+16:05:19	give me money to do that.  Give
+16:05:21	a shoutout to NASA and several
+16:05:23	organizations.
+16:05:26	there was very much seen from
+16:05:29	space in the title slide
+16:05:32	earlier.  So I put -- we see a
+16:05:34	lot of pictures from space.
+16:05:36	This is from the international
+16:05:38	space station, shows the aurora
+16:05:40	borealis, the lights that we
+16:05:43	have a lot of where I live in
+16:05:46	the winter.  And the preparation
+16:05:49	of my talk, the question is,
+16:05:51	there's so much mapping there,
+16:05:56	no one in the audience won't say
+16:05:58	projection or something like
+16:06:00	that, but even if you work in a
+16:06:02	different field.  But hardly
+16:06:04	anyone uses satellite imagery.
+16:06:08	There's a lot of it there.  We
+16:06:09	send students out all the time
+16:06:10	to get like GIS vector data
+16:06:14	from, for example, the local
+16:06:16	government and then put it on a
+16:06:17	map as an exercise.  This is
+16:06:18	very common to do.  But we
+16:06:20	rarely give them some satellite
+16:06:24	imagery and put it on a map and
+16:06:27	do something with it.
+16:06:28	For those who are unfamiliar,
+16:06:29	the differences are quite stark.
+16:06:33	So for vector data, you have
+16:06:36	files that could be proprietary
+16:06:38	like the geo, that's open, a
+16:06:43	flat file.  It's basically a
+16:06:45	database table where each record
+16:06:48	has a geometry associated with
+16:06:51	it.  Point, polygon, or some
+16:06:53	variations of it.
+16:06:57	And the image that comes out of
+16:06:58	your digital camera, it's an
+16:07:02	array where each cell has a
+16:07:05	value.  And I have been
+16:07:06	wondering why is everybody going
+16:07:07	to the vector and no one -- few
+16:07:10	work with raster.  It's
+16:07:15	something to do with vector data
+16:07:17	being an abstraction, and then
+16:07:18	you do something concrete, make
+16:07:21	a concrete presentation of it,
+16:07:23	and for raster, and the other
+16:07:25	way around, you already started
+16:07:27	with the representation, and you
+16:07:28	analyze and extract something
+16:07:30	from it.  I'm not sure.  Maybe
+16:07:32	this is just a speculation.
+16:07:33	This is, however, a data
+16:07:36	visualization conference.  Not
+16:07:37	an image analysis conference.
+16:07:40	This is one in one direction,
+16:07:41	the other in the other
+16:07:42	direction.  Maybe.  Who knows.
+16:07:44	But both are just data.  We can
+16:07:48	deal with data.  If you're a
+16:07:50	developer or can program, I'm
+16:07:52	self-taught.  To one gave me a
+16:07:54	stamp.  I can deal with data.  I
+16:07:57	can deal with data.  Vector-type
+16:08:01	tables, geolocation data
+16:08:03	associated with it, and meta
+16:08:05	data.  Meta data is extremely
+16:08:07	important, it tells you what's
+16:08:09	in the data.  Plus the data is
+16:08:11	to the arrays, stacked, and
+16:08:14	sometimes you have these things
+16:08:16	that have time and height and
+16:08:17	all sorts of dimensions
+16:08:20	associated with it with
+16:08:21	geolocation data and meta data.
+16:08:24	So we can deal with this.  But
+16:08:27	should we?  The question is
+16:08:29	should we care that there are
+16:08:33	oodles of free satellite data
+16:08:35	available?  Well, obviously I
+16:08:37	wouldn't be here if I didn't
+16:08:38	think we should care.  But I
+16:08:40	think we should give it some
+16:08:41	thought.  And, for example, here
+16:08:43	let me just start with
+16:08:44	something.  You will recognize
+16:08:46	this as a satellite image of
+16:08:48	some sort.  I actually
+16:08:49	downloaded it from scratch.  I
+16:08:51	got it from the archive and made
+16:08:54	this to show you.  What is this?
+16:08:56	Oh, see if that actually works
+16:08:58	from this.  So you can see it's
+16:09:01	something -- huh.  Yes, it does.
+16:09:04	It does not work.  So I have to
+16:09:05	change this over, I'm sorry.  I
+16:09:16	apologize for this.  All right.
+16:09:20	And this -- ha.  This will work.
+16:09:23	If I find this -- there's a
+16:09:26	market here.  And this is where
+16:09:27	I live, Fairbanks.  So I can
+16:09:31	zoom into this.  And I can zoom
+16:09:36	in like this.  Right.  So I can
+16:09:38	zoom into it, move around in
+16:09:40	it I can see there is a river.
+16:09:42	There is something weird going
+16:09:43	on over here.  And this is --
+16:09:45	there was a fire.  This image
+16:09:47	was from 2013, July.  We had a
+16:09:50	huge fire here.  I don't live in
+16:09:53	Fairbanks, I live here, 30 miles
+16:09:57	outside Fairbanks, we had to
+16:10:00	evacuate.  I want to know these
+16:10:04	things, and go from the south.
+16:10:06	Something interesting happens, I
+16:10:07	will see glaciers.  There are
+16:10:10	big glaciers here.  And you see
+16:10:11	that these glaciers, once went
+16:10:14	up to all the way here, now
+16:10:15	they're here.  And I can do even
+16:10:17	more.  I can go over here and I
+16:10:19	can switch the imagery over.
+16:10:21	And suddenly this is a bit dark.
+16:10:23	We saw this earlier, I'm sorry.
+16:10:26	But this glacier actually -- and
+16:10:28	this is an image from 1987.  I
+16:10:30	also got this one, put it all
+16:10:33	together.  And the glacier is a
+16:10:34	little bit further ahead in 1987
+16:10:37	than it is now.  Glaciers
+16:10:38	retreat really fast.  So this
+16:10:40	sort of thing is not unfamiliar
+16:10:44	to people who live where I live.
+16:10:46	And we want to work with it.
+16:10:48	And you might want to too, you
+16:10:51	know?  You -- where's my mouse?
+16:10:56	You might have a mine outside
+16:10:57	your town that might have a
+16:10:59	problem somewhere.  For example,
+16:11:01	this mine in 2014, it's in
+16:11:03	Canada.  On the left it was July
+16:11:06	29th and there is a tailing
+16:11:10	pond, on the south.  And August,
+16:11:12	the tailing pond is gone, it
+16:11:15	rained, and the creek then
+16:11:18	became a huge mud bath.  So you
+16:11:20	might want to have images of
+16:11:22	this and follow what's going on
+16:11:25	in your environment.
+16:11:26	And some people have now started
+16:11:28	to do this professionally.  One
+16:11:30	of the motivations I had for
+16:11:32	giving a talk about it was
+16:11:34	seeing this journalistic
+16:11:36	investigation.  It's a piece by
+16:11:41	Pro Publica, published a year
+16:11:45	ago about the disappearing coast
+16:11:47	of Louisiana, losing ground.  I
+16:11:50	heard from the developers that
+16:11:52	worked with the team, he had
+16:11:54	never learned to deal with
+16:11:55	satellites.  They went and got
+16:11:56	the data and made the
+16:11:59	visualization.  They are
+16:12:02	wonderful.  Google, you can find
+16:12:04	it.
+16:12:04	That tells me that as a science
+16:12:09	educator and communicators, of
+16:12:11	course, we use science imagery.
+16:12:13	But not just us, maybe citizen
+16:12:18	scientists, people who want to
+16:12:20	monitor their town or state.
+16:12:22	Industrial development.
+16:12:23	Agricultural development, does
+16:12:26	my city get more parks?  They
+16:12:28	disappear?  What's going on?  Is
+16:12:30	it growing or shrinking?  And of
+16:12:32	course some of us help planning
+16:12:34	for disasters.  I happen to work
+16:12:36	with the fire service and they
+16:12:37	also need to understand this
+16:12:39	better.
+16:12:40	So this brings me to my third
+16:12:43	question.  What data and
+16:12:46	toolkits do we have to do this?
+16:12:48	And if you think of the image I
+16:12:49	had from the Louisiana
+16:12:51	investigation in the bottom
+16:12:52	right corner, there was this
+16:12:53	little thing here, this little
+16:12:55	map telling you where you are,
+16:12:57	and it says source: NASA, USGS
+16:13:01	Landsat.  And that's where you
+16:13:05	can go.  I thought we should
+16:13:07	know a little bit more about
+16:13:08	satellite imagery.  What
+16:13:10	satellites are we talking about.
+16:13:11	We talk about something called
+16:13:13	polar orbiting satellites.
+16:13:15	There are others.
+16:13:16	We heard early tracking
+16:13:20	satellites, communication
+16:13:21	satellites.  They have different
+16:13:23	orbits.  And you have heard of
+16:13:24	geostationary satellites.  They
+16:13:27	just look at the same part of
+16:13:28	the earth all the time and they
+16:13:30	are very far away from the earth
+16:13:32	because they orbit with the
+16:13:33	earth.  They are about 10% all
+16:13:35	the way to the moon.  Which is
+16:13:36	really far.  Whereas the polar
+16:13:38	orbiting satellites are just
+16:13:40	about 800, 700 kilometers above
+16:13:44	us.  The international space
+16:13:45	station is even lower.
+16:13:47	So they actually get a pretty
+16:13:49	good image of the earth.  And as
+16:13:52	you can see, well, one here has
+16:13:54	orbited itself out.  Start it
+16:13:57	again.  Oh.  Well, I don't
+16:13:59	know -- anyhow, you can see here
+16:14:03	that it will acquire the image
+16:14:05	in a band that goes around.  And
+16:14:07	at the poles those bands overlap
+16:14:09	more.  Which is why at the poles
+16:14:11	you put down -- or close in the
+16:14:13	poles in the high latitudes,
+16:14:19	putdown receiving stations.  We
+16:14:24	have two operate, one operated
+16:14:27	for NASA, and the other one uses
+16:14:29	their software which is open
+16:14:32	source.  If you have a thing
+16:14:33	like that, you don't need any
+16:14:36	permission for it.  But, yes,
+16:14:38	institutions can actually do
+16:14:39	that, you know, and some do it
+16:14:42	commercially.  We have stations
+16:14:44	by NOAA, that's the National
+16:14:46	atmospheric and oceanographic
+16:14:50	organization that does the
+16:14:52	weather service.  So they have
+16:14:53	satellites there.  And then we
+16:14:55	also sometimes do a dish like
+16:14:58	this in the woods.  Dig a little
+16:15:00	deeper, it's a private company
+16:15:02	that runs that satellite.
+16:15:04	So as I said, the easiest
+16:15:08	satellites to use actually is
+16:15:10	Landsat.  The nice thing is it's
+16:15:13	all free.  Spatial resolution is
+16:15:15	30 meters, each pixel is pretty
+16:15:18	much a square 30 by 30 meters.
+16:15:21	It's good enough.  The images I
+16:15:23	showed were -- not good enough
+16:15:26	for monitoring your house.  But
+16:15:27	anything a little bit bigger,
+16:15:29	yeah.
+16:15:29	It has a data archive.  It goes
+16:15:32	back to the '70s, which is
+16:15:34	great.  And the data is
+16:15:35	published in the GeoTIFF.
+16:15:41	Basically a TIFF with your
+16:15:44	information.  We will come to
+16:15:45	that.  If you want satellite
+16:15:47	data, you need to work with data
+16:15:49	portals.
+16:15:50	And this is I think one of the
+16:15:51	biggest portals.  They are
+16:15:53	written by scientists for
+16:15:56	scientists.  And that's not
+16:15:58	always a good thing.  But the
+16:15:59	people who run these data
+16:16:00	portals have become a lot more
+16:16:03	aware of questions of usability.
+16:16:07	There are now organizations who
+16:16:08	talk about data usability,
+16:16:10	discoverability, meta data
+16:16:13	standardization, thing like
+16:16:14	that.  I think this is a great
+16:16:16	development.  And some of the
+16:16:18	easier to use portals are
+16:16:20	actually not hard to use.  This
+16:16:22	one has a lot of public data,
+16:16:24	not just from Landsat, but other
+16:16:27	satellites, including
+16:16:29	non-satellite data, aerial
+16:16:31	imagery, historical aerial
+16:16:35	imagery from the '50s, really
+16:16:37	interesting stuff.  And it's
+16:16:38	really, get an account, simple
+16:16:41	registration.  Don't have to
+16:16:42	belong to any particular -- you
+16:16:44	just have to have an e-mail
+16:16:46	address.  You do a selection by
+16:16:47	location.  You have a relatively
+16:16:49	easy to use -- well, it's clear,
+16:16:52	right?  And, well, just leave
+16:16:54	open everything you don't
+16:16:56	understand and this one actually
+16:16:57	still works.  Others don't.
+16:17:01	This one is really good.  When
+16:17:04	you go there you can make your
+16:17:07	selection and here the images
+16:17:08	for some reason they have
+16:17:10	disappeared.  But when you want
+16:17:12	to download it, you get some
+16:17:14	offers.  You see Landsat look
+16:17:18	images, they are a few
+16:17:20	megabytes.  If you want to
+16:17:22	illustrate something, good.  If
+16:17:24	you want to view spatial mapping
+16:17:26	you need something slightly
+16:17:28	better.
+16:17:29	Well, the lens that look with a
+16:17:30	geographic reference comes with
+16:17:32	a little file that's called a
+16:17:35	are row file.  Better than
+16:17:37	nothing.  Many applications work
+16:17:39	with that.  If you want the full
+16:17:41	thing, you get the level one
+16:17:43	product.  And for the older
+16:17:45	data, the older Landsat had a
+16:17:49	lower pixel, 150 megabyte for
+16:17:51	one.  The new one is about 900
+16:17:56	megabytes.  2 gigabytes.  So you
+16:18:01	have to deal with this amount of
+16:18:03	data.
+16:18:05	Alternatives, there is a similar
+16:18:08	satellite.  And I will go with
+16:18:09	what they are from the European
+16:18:11	space agency.  The sentinel
+16:18:12	missions.  And the Europeans,
+16:18:15	until recently, had like the
+16:18:16	Japanese and others had more of
+16:18:18	a philosophy it that, yes, the
+16:18:21	data should be available, but
+16:18:23	for registered users in a
+16:18:25	well-recognized institution.
+16:18:26	But I think it was a good
+16:18:28	influence of the United States
+16:18:30	whereas always this idea that
+16:18:32	public produced data should be
+16:18:33	public.  I think this is one of
+16:18:34	the good principles here.
+16:18:37	They had really -- they have
+16:18:38	made some headway.  And the
+16:18:43	sentinel data is available, ESA.
+16:18:47	It's in JPEG2000.  I have less
+16:18:52	experience with it, but it's
+16:18:53	workable.
+16:18:54	And then if you want to map the
+16:18:55	whole world, if you wanted to
+16:18:57	climate mapping, you need
+16:18:59	something like MODIS or VIIRS,
+16:19:04	search for them.  Maybe more
+16:19:06	arduous data formats.  But your
+16:19:10	tools work with them.
+16:19:12	If you sign up, sentinel data,
+16:19:15	it's open and free to all.  It's
+16:19:17	wonderful.  Used to not be like
+16:19:18	this.  And sentinel data is
+16:19:20	going to be ten to 20 meters
+16:19:25	resolution, which is very nice.
+16:19:27	There are a few more, one called
+16:19:30	Spot is a French one.  These are
+16:19:31	not free.  But the state of
+16:19:33	Alaska has bought this data they
+16:19:35	have for my state.  That might
+16:19:37	be the case for your state or
+16:19:39	country.  Just check and look.
+16:19:42	A good source is also NASA
+16:19:44	worldview.  It's a very rich
+16:19:47	interface.  You can overlay all
+16:19:49	sorts of layers and download
+16:19:50	directly from there.
+16:19:52	But as you can see, the download
+16:19:54	names are really complicated,
+16:19:56	and the performance, HTS, so
+16:20:00	there's learning here.
+16:20:01	What is a satellite image?  It's
+16:20:03	actually, as I said, not very
+16:20:05	different than any other image
+16:20:09	that you have, except there's a
+16:20:10	lot of channels.  The current
+16:20:12	Landsat has 11 channels, the old
+16:20:15	one had 7, MODIS, 36.  Some
+16:20:20	satellite sources that have 120
+16:20:22	channels.  You do look at those,
+16:20:26	but some have just four.  Then
+16:20:31	you select some and make a full
+16:20:33	color from them.  And depending
+16:20:35	on what you select, you will get
+16:20:37	a different result.  Here's what
+16:20:39	you get from Landsat.
+16:20:42	Currently, it's unzipped, and
+16:20:44	the TIF files, it sorts it in
+16:20:49	this order, of course.  And down
+16:20:51	to band nine.  And then a
+16:20:53	quality band.  You can forget
+16:20:55	about that, and the MTL has the
+16:20:59	meta data.  And the library I
+16:21:00	will talk about.  We will read
+16:21:03	the meta data, it's not even
+16:21:06	XML.  Well, it's not -- but it's
+16:21:10	okay to read.  So depending on
+16:21:12	which channels you combine, here
+16:21:13	is a fire, I worked on
+16:21:16	wildfires, this was last year, I
+16:21:17	had a lot of them.  Having a lot
+16:21:20	of them this year.  In a town
+16:21:21	called willow, under the smoke.
+16:21:23	There's a beautiful river to the
+16:21:25	left.  And you can see this is a
+16:21:26	color combination that is most
+16:21:28	close to the eyes.  So this is
+16:21:30	the natural color image.  It's a
+16:21:33	glacial river, has a lot of
+16:21:35	silt, looks gray.  And you can't
+16:21:37	see the fire, there is smoke
+16:21:38	there.  There is a road, we
+16:21:40	don't have many in Alaska.  But
+16:21:42	if you take the bands in the
+16:21:43	near and short-wave infrared, if
+16:21:48	you know micrometers, one to two
+16:21:51	micrometers and combine with the
+16:21:53	visible bands.  If you don't
+16:21:55	know, infrared is good for
+16:21:58	smoke, you get an image of where
+16:22:00	the fire is, and most of the
+16:22:02	smoke disappeared because it has
+16:22:05	it looking through the smoke.
+16:22:06	This has a thermal band that
+16:22:09	works at a higher wavelength.
+16:22:11	It's raid ration emitted by the
+16:22:16	fire.  And you can plot this
+16:22:18	too.  I opened this in a free
+16:22:20	image processing software and
+16:22:22	added a color.  You could do it
+16:22:24	with a command too.  That's what
+16:22:26	I did here.
+16:22:28	So the question is now what can
+16:22:29	we do with this?  How do we get
+16:22:32	that have anyway?  And what is
+16:22:34	our infrastructure here?  So I'm
+16:22:37	a Python person.  You can have
+16:22:40	similar things in R, and many of
+16:22:42	the underlying libraries that
+16:22:44	approach in GEOS and GDAL, they
+16:22:50	have findings in Python and
+16:22:52	other languages.  NUMPY is
+16:22:57	Python specific.  And you have
+16:22:59	special libraries to plot or
+16:23:00	read the files if you need them.
+16:23:02	You don't need those for
+16:23:03	Landsat.  And Pygaarst, my
+16:23:11	library, making opening them
+16:23:13	easier and Sean contributed with
+16:23:17	his tools shapely, fee owe that
+16:23:19	and rasterio, or rasterio, I
+16:23:25	never know.  And these are built
+16:23:26	on the underlying libraries.
+16:23:28	They need them installed, but
+16:23:29	you don't have to deal with the
+16:23:31	pretty awkward interface in the
+16:23:39	API.
+16:23:40	So to come together to get the
+16:23:42	images I showed you, you need
+16:23:44	the GDAL, it's a big library.
+16:23:47	It comes with command utilities.
+16:23:49	And you can just take what I
+16:23:52	showed you earlier, cut them to
+16:23:54	the size you want.  You will
+16:23:56	need the library to figure out
+16:23:59	where your coordinates may be.
+16:24:01	You may know the latitude and
+16:24:04	longitude.  But it doesn't come
+16:24:06	in a latitude/longitude, it's a
+16:24:14	projection.  And if you want all
+16:24:16	together, you can use merge.py
+16:24:19	to mosaicking stuff together.
+16:24:23	And shell scripting is your best
+16:24:26	guess here.  It's a good skill.
+16:24:29	You don't need more than
+16:24:33	associated commands.  But basic
+16:24:36	knowledge of scripting is a good
+16:24:39	their here.
+16:24:41	And now you downloaded the data
+16:24:42	and you have RGB come positive
+16:24:46	its and the combinations you
+16:24:47	want.  And sometimes you see
+16:24:49	something really interesting by
+16:24:50	using a combination that no one
+16:24:52	told you to do.  There is a lot
+16:24:53	of pretty artistic stuff that
+16:24:56	comes out of this.  Vegetation
+16:24:58	is different color from sand,
+16:25:00	forest is different colors from
+16:25:04	pasture or grass.
+16:25:06	You will see a lot of things
+16:25:06	there.  But now we want to put
+16:25:09	stuff towards an audience.  You
+16:25:11	want to make it usable.  You
+16:25:13	want to make something -- I
+16:25:15	have -- I have two approaches
+16:25:18	here.  One is more like you want
+16:25:19	to put stuff on the web.
+16:25:21	Well, you have HTML, you have
+16:25:25	modern HTML, and all these
+16:25:27	things that you probably know a
+16:25:29	lot better than I do.  But what
+16:25:31	you can do is, for example, I
+16:25:33	have pictures of my fire that I
+16:25:35	had earlier.  Now I have a
+16:25:36	before, a during, and an after
+16:25:38	picture.  I did what I did
+16:25:39	before here, I took this.  This
+16:25:41	is the during picture.  And I
+16:25:42	have a before and an after.  And
+16:25:44	I combined them using nothing
+16:25:46	more fancy than -- well, I
+16:25:49	formed them into PNGs and then
+16:25:52	I combined them into one using
+16:25:57	image magic.  And then with HTML
+16:26:01	five I can do a key frame
+16:26:03	animation to show the before,
+16:26:05	during, and after.  Just to make
+16:26:07	change visible.
+16:26:08	So change depiction is a really
+16:26:12	great thing.  And one way of
+16:26:14	very simply doing this is this.
+16:26:17	There are more complex ones.
+16:26:18	Obviously.  You have a very
+16:26:20	large number of libraries that
+16:26:22	use before/after sliders.  And
+16:26:25	here I do have -- try to get it.
+16:26:30	So this was a situation where we
+16:26:33	had a flood.  The Yukon River
+16:26:42	changes, it's cold.  And we have
+16:26:43	a time that's called the iceout
+16:26:46	or snow melt.  The iceout leads
+16:26:49	to horrible ice jams and can
+16:26:53	lead to horrible flooding.  And
+16:26:56	here in 2012, the town of
+16:27:01	Galena, a completely normal
+16:27:03	situation in 2012 was the victim
+16:27:05	of a flood because of an ice
+16:27:07	jam.  You can slide over and
+16:27:09	make visible how much flooding
+16:27:11	there was a year later.  That
+16:27:12	was 2013.  Yes, 2013 happened.
+16:27:14	So as you can see, this scale
+16:27:17	here, these were made by the
+16:27:23	observatory.  So this is 10
+16:27:28	kilometers, six miles of water.
+16:27:32	It was pretty much wiped out,
+16:27:34	it's a small town.  And people
+16:27:35	were flown out.  One thing you
+16:27:38	don't see are roads.  You travel
+16:27:41	by the river or by train here.
+16:27:42	So this is an example of what
+16:27:44	you want to use.
+16:27:45	Or, of course, the example I had
+16:27:47	earlier.  Go a little bit
+16:27:51	back -- my leaflet map.  As you
+16:27:55	see, this is nothing more than a
+16:27:56	regular map made with leaflet.
+16:28:00	The library, I could use open as
+16:28:05	well.  And GDAL has a helper
+16:28:08	that will make tiles.
+16:28:11	It's one command line, one line,
+16:28:13	GL to tiles.  I get tiles.  And
+16:28:15	I just have to figure out how to
+16:28:18	get them into leaflet and I can
+16:28:21	use all the tools I have from
+16:28:22	leaflet.  Including the thing
+16:28:25	here -- I could make the roads
+16:28:29	visible.  So as you can see, you
+16:28:31	can make a normal web map like
+16:28:32	this with the before and the
+16:28:34	after slide like earlier.  So
+16:28:36	this is one thing I would like
+16:28:37	to put towards you today with
+16:28:41	satellite maps.
+16:28:43	But not everybody wants to do
+16:28:44	all that much -- well, this is
+16:28:48	the recalculation.  Satellite
+16:28:52	mapping with HTML5/CSS,
+16:28:56	JavaScript, use tiles to
+16:28:59	generate tiles, leaflet or
+16:29:00	OpenLayer, ImageMagic to
+16:29:06	manipulate, or the plugins to
+16:29:12	make sliders.  And the images
+16:29:13	there.  And as long as you have
+16:29:15	preserved the projection and the
+16:29:18	geoinformation before you ended
+16:29:19	up going through the PNG images,
+16:29:22	you have perfectly aligned
+16:29:24	images.
+16:29:25	And even over the processing of
+16:29:27	these agencies is so good, that
+16:29:29	even if you compare something in
+16:29:30	the 1970s to now, they
+16:29:35	overlap.  '87, and 2015, 2013,
+16:29:39	25 years in between.  And I had
+16:29:41	the perfect overlap.  So this
+16:29:43	was really easy and not -- and
+16:29:45	quite gratifying.
+16:29:47	So things that I, however, do
+16:29:50	more often is to analyze the
+16:29:52	data a little bit more.  To get
+16:29:54	them inside some software.
+16:29:56	Inside a script.  Manipulate
+16:29:58	them.  And then use libraries in
+16:30:00	the script to plot them on maps
+16:30:02	or not on maps or whenever I
+16:30:04	want them.  Maybe to animate
+16:30:06	them.  Maybe movies out of them.
+16:30:08	So the toolkit for this one, I
+16:30:09	call it toolkit 2B, is a little
+16:30:12	bit ready.  And you can do it in
+16:30:15	Python, R, whatever you like.
+16:30:19	You use Numpy, because then you
+16:30:22	have rasters, Matplotlib for
+16:30:26	plotting, Basemap, GDAL, and to
+16:30:31	make movies -- I want to show an
+16:30:34	example of what I did.  Some
+16:30:36	example of what I do.  And the
+16:30:38	example has a little bit of
+16:30:39	code.
+16:30:39	So an example of what I do with
+16:30:41	the code right now is something
+16:30:43	called the burn index, or
+16:30:48	actually the differential
+16:30:50	normalized index.  You take a
+16:30:53	before and after image and look
+16:30:58	what is on freshly burned soil.
+16:31:02	So you maybe need an intern who
+16:31:04	knows a little bit about that.
+16:31:05	But we teach the introductory
+16:31:09	for that.  The burn index,
+16:31:11	before and after, if I compare
+16:31:13	it.  In brown, the fire earlier,
+16:31:15	the most severely burned places.
+16:31:18	Then I also have low-resolution
+16:31:21	data that I personally
+16:31:22	transformed into a GIS polygon
+16:31:25	data set.  But you could get
+16:31:27	this from somewhere else, or
+16:31:29	fire detections, where was fire
+16:31:31	detected by satellites that fly
+16:31:33	over more often but with a lower
+16:31:35	resolution.
+16:31:36	So I can overlay those with
+16:31:39	Python.  And plot them.  And the
+16:31:42	more red things are more
+16:31:43	defection texts, and where is
+16:31:48	there more burning.  And this is
+16:31:50	an example.  Maybe something
+16:31:52	entirely different.  Maybe you
+16:31:53	have demographic data to overlay
+16:31:55	over a map and see, for example,
+16:31:57	how does a demographic makeup of
+16:31:59	my city coincide with green
+16:32:02	spaces?  To detect the green
+16:32:06	spaces, they have demographic
+16:32:08	data in polygon.
+16:32:10	And now for my other -- my work
+16:32:14	example.  There is something I
+16:32:15	really have a very fondness for.
+16:32:17	It's the National Snow and Ice
+16:32:20	Datacenter.  They are doing the
+16:32:22	best job I have seen for
+16:32:24	distributing data.  They have
+16:32:26	good documentation that's
+16:32:27	readable that tells you in words
+16:32:29	you can understand, you know,
+16:32:30	what does a pixel mean?
+16:32:33	So they deal with many data
+16:32:35	sets.  This is the one I have
+16:32:38	the page here, sea ice
+16:32:40	concentration from some
+16:32:41	satellite or another.  Which
+16:32:43	happens to be someone that looks
+16:32:45	at microwave radiation coming up
+16:32:48	from the earth.  And microwave
+16:32:51	radiation shows you about cold
+16:32:54	things.  Microwave radiation is
+16:32:56	relatively cold compared to
+16:32:58	light and the infrared.
+16:32:59	So we have ice in the north.
+16:33:01	And it's shrinking.  So they
+16:33:04	have the best data set about the
+16:33:08	ice concentration around the
+16:33:09	north pole.  And if I take one
+16:33:11	of these images I have this.  So
+16:33:12	the concentration goes up to
+16:33:14	100%.  I don't have anything
+16:33:16	right at the pole, which is
+16:33:17	typical for a polar orbiting
+16:33:20	satellite.  Because it actually
+16:33:22	orbits slightly next to the
+16:33:23	pole, or around the pole.
+16:33:26	And we have sea ice all the way
+16:33:28	along Greenland, the Canadian
+16:33:33	coast, and to Alaska.  And this
+16:33:36	is some that I forgot.  So if I
+16:33:40	want to combine a lot of
+16:33:44	visualizations, what do I need
+16:33:45	to do?  I need to open this in
+16:33:47	Python.  I need to put in numpy,
+16:33:52	manipulating, and I showed with
+16:33:57	pygaarst, you can do the same,
+16:34:00	maybe with a few more lines.  I
+16:34:02	have to say raster, GeoTIFF of
+16:34:07	my finding.  And I have the data
+16:34:09	property that has the data in
+16:34:11	it.  In this case, I have to
+16:34:14	divide it by 2.5.  250 data
+16:34:17	value is 100%.  I have to
+16:34:19	normalize it 2%.  And then I can
+16:34:22	do a little bit about where is
+16:34:25	my -- where should my center be?
+16:34:28	I don't want to see the whole
+16:34:29	north pole.  I have a particular
+16:34:31	area I'm interested in.  This is
+16:34:33	north of the Aleutian Islands.
+16:34:38	I get the latitude and
+16:34:44	longitude.  And I can transfer
+16:34:47	them within the coordinate
+16:34:49	system of my data.  And I come
+16:34:50	to a few tests about which I, J
+16:34:55	coordinate of my raster
+16:34:57	corresponds to my X, Y,
+16:35:00	coordinate of my projected data.
+16:35:02	And then -- there we go.
+16:35:05	I can use the base map tool kit.
+16:35:11	And you may not be familiar with
+16:35:12	this syntax, but you have
+16:35:14	probably seen similar things.
+16:35:16	Even if you never used this one,
+16:35:18	you define a map with some
+16:35:20	variables in there.  You give it
+16:35:21	a latitude and longitude of the
+16:35:25	center.  And okay, maybe there's
+16:35:27	a scatterplot in there, see what
+16:35:29	it's for.  Give me coastlines,
+16:35:32	give me rivers.  And then
+16:35:33	putting it all together, you get
+16:35:35	a lot of data for each scene.
+16:35:37	And then I make a movie out of
+16:35:41	it.  And here is the coast of
+16:35:43	Alaska.  I happened to be in the
+16:35:45	interested in the yellow, which
+16:35:47	are the Islands, someone I know
+16:35:49	was doing research on foxes out
+16:35:52	there.  He wanted to know how
+16:35:53	much sea ice was out there.  So
+16:35:55	I made a video for him.  Sea ice
+16:35:58	doesn't usually reach those
+16:36:00	islands.  Saint George and Saint
+16:36:02	Paul.  But you can see how it
+16:36:05	develops and retreats, et
+16:36:06	cetera.  So this was not very
+16:36:07	much lines of code to get to a
+16:36:09	really nice thing.
+16:36:11	And with this observation I'm
+16:36:14	drawing sort of to the end of my
+16:36:18	talk.  I hope I have been giving
+16:36:19	you something to think about.
+16:36:22	And some -- some inspiration,
+16:36:26	maybe, to take the problems that
+16:36:29	you have and people you work
+16:36:30	with have and think about not
+16:36:32	just, is there a government
+16:36:35	agency or a business or a
+16:36:36	citizen science outfit or a
+16:36:38	censor out there that would give
+16:36:41	me some point data?  But maybe
+16:36:43	is there a satellite that was up
+16:36:45	there in space looking down on
+16:36:47	us that would give me some
+16:36:48	images that I could use to do
+16:36:50	something with it?  And then
+16:36:52	combine it and match it up.  I
+16:36:53	think that has become a little
+16:36:55	bit old fashioned.  It just came
+16:36:59	to me, it's kind of a mashup of
+16:37:00	things.  People specialize in
+16:37:02	one or the other, right?  So
+16:37:04	thank you very much for your
+16:37:06	attention.  I believe we have
+16:37:07	some time for questions, right?

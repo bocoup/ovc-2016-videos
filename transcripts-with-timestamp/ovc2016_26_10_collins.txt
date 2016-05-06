@@ -1,0 +1,1078 @@
+16:44:51	>> Thank you.  I'm the only
+16:44:54	person here with a Windows
+16:44:56	computer.  I ran over very
+16:45:02	awkwardly.  The battery was
+16:45:04	about to die.  That's why I was
+16:45:05	sitting on the floor at the end
+16:45:06	of the talk.  Okay.  Let's see
+16:45:09	here.  I'm just getting it set
+16:45:38	up.
+16:45:39	So thanks, Irene.  We have
+16:45:43	enjoyed this conference,
+16:45:47	everyone is friendly, and it's a
+16:45:49	different community.  I love how
+16:45:50	everyone is paying attention.
+16:45:51	And I have been to conferences,
+16:45:53	people get a little bit
+16:45:54	distracted with this stuff.  So
+16:45:55	it's refreshing.
+16:45:57	So, yeah, as Irene said, I'm a
+16:45:59	professor of computer science.
+16:46:00	It is a little bit true when you
+16:46:02	get your Ph.D., you get a little
+16:46:04	bit more out of touch with the
+16:46:05	hands on stuff.  But I got to
+16:46:07	tell you today about some of the
+16:46:09	work in my lab with the
+16:46:10	students.  One of them is here.
+16:46:11	And our research area is really
+16:46:14	around linguistic information
+16:46:17	visualization is what I call it.
+16:46:18	So looking at language data and
+16:46:20	how we can interpret documents
+16:46:22	and understand document
+16:46:24	collections.  We also have some
+16:46:26	work in visualization technique
+16:46:28	and interaction design.  And
+16:46:29	thanks, Arvind, for the
+16:46:32	shoutout, that's one example of
+16:46:33	the work we do.  We do some work
+16:46:35	with natural user interfaces.
+16:46:39	I'll talk to you today about the
+16:46:43	visualization research.
+16:46:44	Today I want to skewer some of
+16:46:46	the concepts we see in the media
+16:46:48	about the information overload.
+16:46:50	So in my grant applications I'm
+16:46:53	with this too. there's so much
+16:46:56	linguistic information, what to
+16:46:57	do?  We need to solve it.  Thing
+16:46:59	like this.  Lawrence Perry,
+16:47:00	2010, With the amount of
+16:47:01	information online, it is very
+16:47:01	easy for people to drown in
+16:47:01	useless information that they do
+16:47:01	not need in their business or in
+16:47:01	their lives. If you try to
+16:47:01	absorb all of the information
+16:47:01	you can find online, then you
+16:47:01	will experience social media
+16:47:01	overload.
+16:47:01	This isn't the first comment
+16:47:14	like this.  Go back further.
+16:47:16	Marshall McLuhan, One of the
+16:47:16	effects of living with electric
+16:47:16	information is that we live
+16:47:16	habitually in a state of
+16:47:16	information overload. There's
+16:47:16	always more than you can cope
+16:47:16	with.
+16:47:16	This is a payments quote.  Back
+16:47:29	further.  1755, Denis Diderot,
+16:47:30	As long as the centuries
+16:47:30	continue to unfold, the number
+16:47:30	of books will grow continually,
+16:47:30	and one can predict that a time
+16:47:30	will come when it will be almost
+16:47:30	as difficult to learn anything
+16:47:30	from books as from the direct
+16:47:30	study of the whole universe. It
+16:47:30	will be almost as convenient to
+16:47:30	search for some bit of truth
+16:47:30	concealed in nature as it will
+16:47:30	be to find it hidden away in an
+16:47:30	immense multitude of bound
+16:47:30	volumes.
+16:47:30	Gets even worse.  We have reason
+16:47:54	to fear that the multitude of
+16:47:54	books which grows every day in a
+16:47:54	prodigious fashion will make the
+16:47:54	following centuries fall into a
+16:47:54	state as barbarous as that of
+16:47:54	the centuries that followed the
+16:47:54	fall of the Roman Empire. How is
+16:48:05	that for drama?  I should put
+16:48:07	this in my grant application.
+16:48:09	So I would say don't panic.
+16:48:12	Solutions have also been around
+16:48:13	for a long time.  Öutility of
+16:48:14	lexica comes not from reading it
+16:48:14	from beginning to end, which
+16:48:14	would be more tedious than
+16:48:14	useful, but from consulting it
+16:48:14	from time to time.
+16:48:14	This is an example of an
+16:48:26	encyclopedia you would read.
+16:48:30	And understanding the document
+16:48:32	structure through a personalize
+16:48:33	the system.
+16:48:35	Charles Sorel, 1673, The
+16:48:38	greatest secret is to make
+16:48:38	different marks for different
+16:48:38	kinds of passages: crosses,
+16:48:38	circles, half-circles, numbers,
+16:48:38	letters and other characters
+16:48:38	which had the various meanings
+16:48:38	one had assigned to them.
+16:48:38	This is a personal process of
+16:48:50	annotation to allow somebody to
+16:48:51	understand the document.
+16:48:52	So the real problem is not and
+16:48:52	never has been the wealth of
+16:48:52	information.  The problem is the
+16:48:52	lack of appropriate tools for
+16:48:52	filtering, exploration,
+16:48:52	annotation, and collaboration.
+16:48:52	The pace of information
+16:48:52	dissemination exceeds the pace
+16:48:52	of tool and technique
+16:48:52	development.  We are always
+16:48:52	catching up. That's just me.
+16:49:12	So visualization has been used
+16:49:14	for text for a long period of
+16:49:16	time.  So this is a more literal
+16:49:17	sort of drawing of a
+16:49:19	visualization.  But these
+16:49:20	beautiful visualizations of
+16:49:22	bible stories from Clarence
+16:49:23	Larkin really depict the kind of
+16:49:26	possibilities that are out there
+16:49:27	if we really delve into a
+16:49:31	document deeply.  A lot of
+16:49:32	researchers outside of my lab
+16:49:34	have been looking at this,
+16:49:36	including before when I was
+16:49:37	working in this field in 2007.
+16:49:40	So what kind of language data
+16:49:41	are we looking at?  We're
+16:49:42	looking at possibilities for
+16:49:43	things like understanding
+16:49:45	culture and society,
+16:49:46	understanding the history of
+16:49:48	English literature, the history
+16:49:50	of the court system, business
+16:49:51	analytics, analysis, these kind
+16:49:53	of things.  All under the field
+16:49:55	of language data analysis that
+16:49:57	I'm working in.
+16:49:58	However, and thanks for Marty
+16:50:02	Hearst for this example.
+16:50:04	Visualization is not really a
+16:50:05	replacement for reading.  What
+16:50:07	do you think this book is?
+16:50:09	First impressions?
+16:50:12	Goldilocks and the agree bears.
+16:50:17	In fact, it's to be or not to be
+16:50:18	from the nunnery scene in
+16:50:22	Hamlet.  So we have this problem
+16:50:24	of a multitude of books, but I
+16:50:27	don't think visualization is
+16:50:29	going to solve the problem of
+16:50:31	having to read them.  I'm sorry.
+16:50:32	But today I'm going to tell you
+16:50:35	about how visualization can find
+16:50:36	what to read.  This can operate
+16:50:38	on a bunch of different levels.
+16:50:40	We started at the level of text.
+16:50:43	Multiple Websites or collections
+16:50:47	of documents.  We could go into
+16:50:50	a single document or the single
+16:50:54	document letters or topography.
+16:50:56	And might have meta data at each
+16:50:58	level.
+16:50:59	So it's a really challenging
+16:51:00	problem.  So what I want to sort
+16:51:02	of propose today is if we can
+16:51:03	make a visualization at one of
+16:51:05	these levels, we're helping
+16:51:07	people dive into a lower level
+16:51:08	to find out what they want to
+16:51:10	investigate more deeply.  So,
+16:51:11	for example, we might visualize
+16:51:14	a document collection to help
+16:51:16	somebody find a document of
+16:51:17	interest.  And I'll talk you
+16:51:18	about a couple of projects we
+16:51:20	have in that area.  So the first
+16:51:21	one is called flex flow.  This
+16:51:23	was a project led by a student
+16:51:25	in collaboration.  He was at the
+16:51:26	University of Toronto,
+16:51:29	collaboration with my lab and
+16:51:31	others.  What we were interested
+16:51:33	inside project, looking at this
+16:51:36	at detecting rumors on Twitter,
+16:51:39	or things that were unusual.
+16:51:41	Unusual propagation patterns.
+16:51:42	Inspired by events that we were
+16:51:44	seeing where rumors would go
+16:51:46	viral on Twitter.  We saw sharks
+16:51:49	running down the street during
+16:51:52	Hurricane Katrina.  And others
+16:51:54	from the London riots.  So for
+16:51:56	this project it had both a big
+16:51:59	back end piece in terms of the
+16:52:00	linguistic analysis, we had some
+16:52:02	help with that.  As well as the
+16:52:05	front end visualization.
+16:52:06	On the back end, with detecting
+16:52:09	anomalies, a variety of features
+16:52:12	to process the Tweets.  We
+16:52:13	collected millions of Tweets
+16:52:15	from a particular event, and on
+16:52:17	a high level the features were
+16:52:19	about the user.  So, for
+16:52:20	example, is it unusual for this
+16:52:22	person to be Tweeting at this
+16:52:23	time or Retweeting this person
+16:52:25	or using this language that they
+16:52:27	don't normally use.  Tweet
+16:52:29	trajectory features, is the
+16:52:34	Retweeting increasing in a way
+16:52:36	that's unusual.  And the
+16:52:37	semantics of the Tweet itself.
+16:52:39	We were looking at retweeting
+16:52:42	patterns and create the graphs.
+16:52:47	And glyphs.  It represents a few
+16:52:51	different things.  I don't want
+16:52:52	to get into too much detail, I
+16:52:54	have a bunch of projects to tell
+16:52:56	you about.  The time since the
+16:52:57	Tweet was posted.   The overall
+16:53:00	color, or the hue of the circle
+16:53:01	is the anomaly score from an
+16:53:03	orange meaning low anomaly to
+16:53:05	purple, high anomaly.  And then
+16:53:07	the size of it is the volume of
+16:53:08	the Retweeting that is
+16:53:11	happening.  So the pattern
+16:53:12	across from left to right are
+16:53:13	all the Retweets of this week.
+16:53:15	Okay?  So each one of these
+16:53:17	circles is Retweeting the
+16:53:19	original Tweet.  You can see
+16:53:20	here that it change there is
+16:53:21	orange to purple as our
+16:53:23	classifier is saying that over
+16:53:24	time this became more unusual.
+16:53:26	It has a higher anomaly score
+16:53:28	later in the time period.
+16:53:30	Which is why it's becoming
+16:53:32	purple.  The stuff in the
+16:53:34	background is a bit of
+16:53:35	artificial intelligence
+16:53:38	visualization.  Shout out to
+16:53:41	Martin, I don't know if you're
+16:53:42	still here, but it's the hidden
+16:53:44	states in the classifier.
+16:53:45	That's the background.  You can
+16:53:48	see, for example, the lower
+16:53:50	anomaly, and only bottom, higher
+16:53:53	anomaly, higher volume.  You can
+16:53:56	play around with this at this
+16:53:59	FluxFlow address if you want.
+16:54:02	The data set you'll find there
+16:54:04	is the Hurricane Katrina.  Yeah,
+16:54:06	Hurricane Katrina data set.  If
+16:54:09	we look -- I just have a vector
+16:54:11	of it here.  See if we can --
+16:54:16	So in this version we can see
+16:54:20	I've loaded in a few Tweets, and
+16:54:22	this is one that was given a
+16:54:24	higher anomaly score.  It was
+16:54:26	actually -- they were talking
+16:54:27	about the people still standing
+16:54:29	at the Tomb of the Unknown
+16:54:32	Soldier in New Orleans during
+16:54:34	the hurricane, which was a rumor
+16:54:37	of course.
+16:54:38	So the way we evaluated this was
+16:54:41	to look at whether or not humans
+16:54:42	could do classifications of
+16:54:46	Tweets better using this tool
+16:54:47	than if they were just reading
+16:54:49	them.  And against a couple of
+16:54:50	different classifiers.  And we
+16:54:52	pulled out the top 500
+16:54:53	abnormally ranked Tweets and put
+16:54:56	them into the interface.  And
+16:54:58	allowed people to manually
+16:55:00	triage them.  And found the
+16:55:02	success rates were sort of low.
+16:55:04	You can see here we were able --
+16:55:06	ours is the blue bars.  For the
+16:55:09	Hurricane Sandy example, our
+16:55:11	top-ranked anomalous Tweet was
+16:55:13	ranked at being an anomaly or
+16:55:16	rumor.  But when we started
+16:55:17	getting down into the top 20,
+16:55:19	only about a 40%.  So only 40%
+16:55:25	were rumors.  However, take this
+16:55:28	in the context of random chance,
+16:55:30	one out of 500 to try to get
+16:55:32	whether it was anomalous or not.
+16:55:34	We're a lot better than random,
+16:55:36	but still a bit of a problem.
+16:55:38	So the message to take away here
+16:55:39	is we were able to create a
+16:55:41	system that allowed people to
+16:55:42	find Tweets that had to read to
+16:55:47	decide if they were rumors or
+16:55:49	not.  It was accurate to 100 to
+16:55:53	40% depending on the list, but
+16:55:56	not enough that you have full
+16:55:57	confidence.  With that said,
+16:55:59	nobody wanted to read all 3,000
+16:56:02	Tweets, or 5 million.  Too much
+16:56:05	information.
+16:56:05	So we're looking at here, then,
+16:56:07	can we make a system where
+16:56:09	somebody can speed up the access
+16:56:11	to the information of interest?
+16:56:13	So another project along the
+16:56:15	same lines that we were working
+16:56:17	on a few years ago was published
+16:56:20	in 2013.  Was looking at car
+16:56:22	accident reports.
+16:56:23	So in this project we looked at
+16:56:25	600,000 car accident reports.
+16:56:27	And these are car accidents that
+16:56:29	were reported to the national
+16:56:31	highway traffic safety
+16:56:33	administration in the United
+16:56:34	States and each of them
+16:56:35	contained a report of an injury
+16:56:37	or a death related to the
+16:56:38	accident.  So what we were
+16:56:40	interested in this project,
+16:56:41	could we take those car accident
+16:56:43	reports and do a different kind
+16:56:45	of twist on text visualization
+16:56:47	by turning it back into the
+16:56:50	original object being discussed?
+16:56:52	So we made our own ontology
+16:56:54	keywords relating to car parts.
+16:56:57	And to do that we used Wikipedia
+16:56:59	and a few other resources to
+16:57:01	gather car part words with some
+16:57:03	manual creation, we created this
+16:57:05	ontology.  We also processed the
+16:57:08	text to find synonyms and things
+16:57:10	like that.  And then we had to
+16:57:12	do a bit of manual tweaking to
+16:57:15	pick out problems.  First,
+16:57:17	second, third, are gears.  But
+16:57:19	used a lot in a description of
+16:57:21	an accident.  First and second
+16:57:22	this happened.  So we had to
+16:57:24	take those out.  You're used to
+16:57:26	this.  The theme with the data.
+16:57:28	And you'll see this coming up
+16:57:30	now and then, and processed it
+16:57:32	into a database.  The
+16:57:34	visualization works so that we
+16:57:35	get -- if something doesn't
+16:57:37	occur at all, we show it as a
+16:57:39	ghosted image to provide context
+16:57:40	about the shape of the vehicle.
+16:57:42	And then if it does occur, then
+16:57:44	we play around with some
+16:57:45	rendering using a hue-varying.
+16:57:48	We really struggled here about
+16:57:50	whether or not to use lighting
+16:57:51	effects.  Because of course the
+16:57:54	lighting effects modify the
+16:57:57	color, but were necessary to
+16:57:59	distinguish the parts from one
+16:58:01	other.  Definitely a design
+16:58:03	tradeoff.  This is what it look
+16:58:05	like.
+16:58:06	We can drill down into different
+16:58:08	years and makes and
+16:58:08	manufacturers.  It's based on
+16:58:10	the rendering of a vehicle.  And
+16:58:12	we also have a lens that allows
+16:58:15	tows look at more details about
+16:58:17	a particular part of the
+16:58:18	vehicle.  Anything in that lens,
+16:58:21	a time trajectory, a matrix plot
+16:58:24	or heat map about the car part
+16:58:26	in the accident reports over
+16:58:29	time.  And finally, going along
+16:58:30	with the theme of the talk, you
+16:58:34	can drill down to the part of
+16:58:35	the car you selected as well as
+16:58:37	the make and model and model
+16:58:39	year of the car that you have
+16:58:41	chosen.  This is intended to be
+16:58:44	used on a touch screen display,
+16:58:47	but also used in an environment
+16:58:48	where you are using a mouse.
+16:58:50	And here is just a video of how
+16:58:52	it works.  So just looking
+16:58:53	around this car, you can see the
+16:58:54	various different details.
+16:58:56	There are too many car parts to
+16:58:57	show them all at once.  And you
+16:58:58	can also use the little handle
+16:59:00	that you can see happening on
+16:59:03	the lens allows you to spin it
+16:59:04	around and drill down into the
+16:59:06	car itself.
+16:59:08	I think that's going to happen.
+16:59:10	No.  Yeah.  So you can sort of
+16:59:12	cut away the car to see the
+16:59:13	internal parts and isolate those
+16:59:15	parts.
+16:59:16	So what were we able to find?
+16:59:19	Just as a proof of concept we
+16:59:20	were able to see, for example,
+16:59:22	that the Toyota accelerator
+16:59:25	pedal issue coming up with the
+16:59:27	Toyota's uncontrolled
+16:59:29	acceleration, very highly -- you
+16:59:31	can see here just the power.
+16:59:33	Just to go back to the stuff
+16:59:35	yesterday about humanizing and
+16:59:37	the power of visualization.  The
+16:59:38	power of reading this example,
+16:59:40	the actual text of this is more
+16:59:42	viscerally impactful than just
+16:59:44	the visualization.  I advocate
+16:59:46	for providing access to the
+16:59:48	underlying data.  It sounds
+16:59:50	scary, the way the car took off
+16:59:52	and had no control.  That's
+16:59:55	isolating the brake pedal.  You
+16:59:56	can see the huge jump between
+16:59:58	January and February.  It's
+17:00:00	interesting, actually.  The
+17:00:01	biggest increase in complaints
+17:00:02	about Toyota cars in this
+17:00:04	database happened after Toyota
+17:00:06	announced that there was a
+17:00:07	problem with the cars.  So then
+17:00:09	people started just jumping on
+17:00:10	board and complaining about this
+17:00:12	problem.  But we can see before
+17:00:14	that there are some issues being
+17:00:16	reported.
+17:00:17	So what could we use this for?
+17:00:20	So things like an am --
+17:00:23	visualization in a car
+17:00:24	manufacturer, what's happening
+17:00:26	with the current incoming
+17:00:27	accident reports.  Maybe
+17:00:29	something with hotel or product
+17:00:31	reviews.  Highlight the
+17:00:34	information being discussed on
+17:00:35	social media.  Okay.  Whirlwind
+17:00:38	tour.  Here's another project.
+17:00:40	So in this case we were
+17:00:42	interested in, again, finding
+17:00:44	documents to read.  And this
+17:00:45	actually was a project from
+17:00:46	quite a while ago I did with
+17:00:48	Martin and Fernanda at IBM.  We
+17:00:55	were interested in the U.S.
+17:00:56	court system.  And the
+17:00:57	collaborator was interested in
+17:00:59	the idea of form shopping.  This
+17:01:01	means do people bring a
+17:01:03	particular type of case to a
+17:01:05	specific court district because
+17:01:06	thing they're going to get a
+17:01:08	favorable decision in that
+17:01:10	district?  If you don't know,
+17:01:11	the U.S. court system is broken
+17:01:13	down into circuit courts,
+17:01:15	roughly geographical in the
+17:01:17	number here.  And then we had
+17:01:19	time and the parts of the course
+17:01:21	cases we were interested in.
+17:01:23	We downloaded the history of the
+17:01:25	courts.  I won't bore you with
+17:01:27	the problem of the fact that the
+17:01:28	data was so messy.  Quite a bit
+17:01:30	of my internship was spent
+17:01:33	cleaning up the data.  But it
+17:01:35	was turned into a database we
+17:01:37	were able to work with.
+17:01:39	Detecting and separating the
+17:01:41	text, and typical techniques
+17:01:44	like some stop words.  We had a
+17:01:47	dynamic list on the frequency.
+17:01:49	We didn't want judge and court
+17:01:51	showing up on the visualization.
+17:01:53	And then something called
+17:01:54	expectation statistics which I
+17:01:55	want to talk about.
+17:01:56	So doing anything with relation
+17:01:59	to text, to look at how a text
+17:02:01	is interesting, to look at how a
+17:02:03	text differs from a reference.
+17:02:06	So if we have the collective
+17:02:08	works of William Shakespeare,
+17:02:12	these are the most common.
+17:02:15	Macbeth, these are the same
+17:02:18	words.  And we use an
+17:02:19	expectation measure, what's the
+17:02:21	likelihood that the occurrence
+17:02:22	of this word is going to be this
+17:02:23	high given the reference corpus
+17:02:26	of William Shakespeare, we might
+17:02:29	get the specific words related
+17:02:31	to the play.  We did the same
+17:02:33	thing for the courts.
+17:02:34	We looked at given one court,
+17:02:36	and all the rest of the courts
+17:02:37	as a reference, what are the
+17:02:38	words more distinguishing for
+17:02:40	that court district?  This is
+17:02:42	what we found.  So notice first
+17:02:43	of all that we have words like
+17:02:45	Vermont and names like Pierce
+17:02:53	Kearse.  This was a good thing.
+17:02:56	A sanity check.  We expect the
+17:02:58	names of the judges, the names
+17:03:00	of the states to appear as the
+17:03:02	most distinguishing things for
+17:03:03	that district.
+17:03:04	So that was great.  We knew it
+17:03:06	was working.  So then we took
+17:03:07	those things out.  And looked at
+17:03:09	the more content words we were
+17:03:12	interested in.
+17:03:13	So the visualization is
+17:03:14	basically like a word cloud.
+17:03:16	However, it's organized into
+17:03:18	column, but relating to the
+17:03:22	court districts.  We have the
+17:03:24	hubs that indicate it's
+17:03:26	significant in a court district.
+17:03:28	It's in a light blue, and you
+17:03:30	hover and get the full edge.  So
+17:03:32	in this video, it's the quality,
+17:03:34	it's an old video, sorry about
+17:03:36	the quality.  You can see the
+17:03:38	exploration of the details here.
+17:03:39	So, again, getting into the idea
+17:03:43	of being able to drill down, if
+17:03:45	you hover on any of the words,
+17:03:46	you can actually get details
+17:03:47	about how that word course
+17:03:49	across all of the court
+17:03:51	districts.  Because maybe it
+17:03:52	only course in one of the
+17:03:53	columns.  And you can see those
+17:03:55	connections.  And finally you
+17:03:57	can select terms in order to get
+17:04:00	the list of cases that contain
+17:04:02	that term.
+17:04:03	And you can see here I'm going
+17:04:04	to select a few words relating
+17:04:06	to -- this was coming up a lot.
+17:04:09	It was interesting to me.  These
+17:04:11	words relate to a disease that
+17:04:13	coalminers get.  And they were
+17:04:14	bringing workers compensation
+17:04:17	cases to the court.  So you can
+17:04:19	see here the details of one of
+17:04:21	the cases that contains these
+17:04:25	three terms.
+17:04:26	And then you can click this and
+17:04:28	get down into the full details.
+17:04:30	So what else did we see?  Some
+17:04:34	interesting I think this is,
+17:04:35	like the word ostrich in the
+17:04:37	seventh circuit.  I didn't know
+17:04:39	what was going on.  I'm not a
+17:04:42	legal expert.  I thought it was
+17:04:43	an ostrich farm.  It turns out
+17:04:46	this is a legal term.  Excuse me
+17:04:48	if I get this wrong with the
+17:04:50	legal experts in the room, it's
+17:04:51	an instruction that the judge
+17:04:53	can give to the jury to say
+17:04:54	remember it's no excuse that
+17:04:56	this person didn't know what
+17:04:57	they were doing was wrong,
+17:04:58	right?  Can't put your head in
+17:05:00	the sand.  And this was used in
+17:05:03	a case, a famous Canadian was
+17:05:05	prosecuted here in the United
+17:05:06	States and it was used in that
+17:05:07	case.
+17:05:08	We also found some interesting
+17:05:10	patterns.  So, for example, our
+17:05:12	drug and narcotic-related terms
+17:05:15	have some weird geographic
+17:05:18	differences.  So methamphetamine
+17:05:19	in the west versus -- what do we
+17:05:22	have here?  Narcotics in the
+17:05:24	northeast.  And we don't know,
+17:05:26	of course, if this is meaning
+17:05:27	there's more prosecution
+17:05:28	happening or a higher rate of
+17:05:32	abuse of these drugs.
+17:05:33	Okay.  So that's document
+17:05:38	collections to document.  Let's
+17:05:40	look at another project, which
+17:05:41	is document collections to
+17:05:44	multi-words.  Things like
+17:05:49	phrases, but not actually full
+17:05:51	sentences.  This project was
+17:05:52	really exciting for us.  We were
+17:05:54	looking at passwords.  So
+17:05:56	passwords are things that we
+17:05:57	write every day.  They mean a
+17:05:58	lot to us.  We know that we're
+17:06:00	going to be writing them over
+17:06:02	and over, choose them carefully.
+17:06:05	They're personal, and we found
+17:06:07	they could be evocative.  So
+17:06:08	they have a lot of potential
+17:06:10	emotional content.
+17:06:12	So we had millions of leaks
+17:06:13	passwords from various different
+17:06:15	Websites.  First of all we were
+17:06:17	interested -- I was working with
+17:06:19	my colleague, Julie, a Ph.D.
+17:06:22	student, and we were thinking
+17:06:25	about the implications if we
+17:06:27	could detect the linguistics in
+17:06:29	the passwords.  As soon as we
+17:06:31	started looking at it, I got
+17:06:33	into a in the cultural analytics
+17:06:36	implications, the
+17:06:38	sociolinguistics.  What kinds of
+17:06:42	words do people use?  Do they
+17:06:43	represent security learnability?
+17:06:45	Can we train a model to learn
+17:06:47	the types of patterns that
+17:06:48	people use.  The answer is yes,
+17:06:49	unfortunately.  But it was a
+17:06:51	very good model.  And what do
+17:06:52	the passwords tell us about
+17:06:54	society and culture?  The
+17:06:55	process was to extract 32
+17:06:57	million passwords and parts to
+17:06:59	extract the most likely word
+17:07:01	sequences.  One of the things
+17:07:02	you'll hear me say is we use
+17:07:05	reference corpus.  And the
+17:07:08	corpus of American English is
+17:07:10	our reference.  It's available,
+17:07:11	it's not free, unfortunately,
+17:07:13	but it's available online.  And
+17:07:16	to do this, categorized the
+17:07:19	words on their meaning, WordNet,
+17:07:22	that is available for free
+17:07:23	online.  And parsed the results
+17:07:25	to create a grammar of
+17:07:26	passwords, basically.  And we
+17:07:28	were able to see that the
+17:07:29	grammar of passwords is
+17:07:31	different from the grammar of
+17:07:34	English.
+17:07:35	So, for example, this is the
+17:07:37	individuals.  I should have put
+17:07:38	the URL, you can find this
+17:07:41	online.  Let me see here.  Oh,
+17:07:49	there you go.  Okay.  So --
+17:07:53	not -- anyway.  So it's my lab
+17:07:58	Website/words in passwords.  So
+17:08:02	on this visualization we can so
+17:08:04	that what you're going to be
+17:08:07	looking at the most is this
+17:08:08	column, the G squared measure.
+17:08:11	The expectation.  Every line is
+17:08:12	a word.  We're looking at the
+17:08:14	ranking of the words based on
+17:08:15	their difference in expectation
+17:08:17	given English as a reference.
+17:08:19	So the most -- the word that's
+17:08:20	most common in passwords against
+17:08:22	English is the letter I, right?
+17:08:24	So people talk about themselves
+17:08:26	a lot in their passwords.  The
+17:08:28	second most common word is love.
+17:08:30	Which was huge.  We saw it
+17:08:32	throughout.  It was very
+17:08:33	unexpected.  It was seriously
+17:08:35	significantly high.  And this is
+17:08:36	hard to do on an IMAX screen
+17:08:38	while turning around.
+17:08:40	And then down here you'll see
+17:08:43	things like a lot of
+17:08:45	affectionate terms like baby and
+17:08:47	sexy and love and those things.
+17:08:49	So we found that people were
+17:08:51	really interested in playing
+17:08:53	with this, and the implications
+17:08:55	were that the language of
+17:08:57	passwords was very different
+17:08:58	than the language of English.
+17:09:00	So you can play with that a
+17:09:01	little bit.  We were able to use
+17:09:03	this to create a password
+17:09:05	cracker, which was best on a
+17:09:06	number of different measures,
+17:09:08	and we were able to find
+17:09:09	interesting phenomenon.  For
+17:09:09	example, animals.  Cute animals
+17:09:11	were way more common than ugly
+17:09:14	animals.  Which we sort of
+17:09:16	expected.  Monkeys, pets.
+17:09:18	Monkey is the number one,
+17:09:20	dolphins, monkeys cats and dogs.
+17:09:25	Emotional words like love,
+17:09:27	extremely common.  And this was
+17:09:29	verified across a couple of data
+17:09:31	sets.  People loved male names
+17:09:33	four times more than female
+17:09:35	names.  Not sure what this
+17:09:39	means, if it's heterosexual
+17:09:41	women with their password, or
+17:09:43	people writing about themselves.
+17:09:46	We tried to normalize for the
+17:09:48	population of users, but don't
+17:09:50	are the information if the data
+17:09:51	sets.  We weren't able to do
+17:09:53	that.  And profanity is
+17:09:55	extremely common, much more than
+17:09:57	predicted in the cannon of
+17:09:59	research, they're told to create
+17:10:01	a password in an experimental
+17:10:03	setting.  Don't worry, won't be
+17:10:05	associated with you, but they
+17:10:06	don't use profanity as much as
+17:10:10	they do in real passwords.
+17:10:12	And this is a preview of another
+17:10:14	visualization.  Looking at
+17:10:15	animal words.  These are the
+17:10:17	animals in the data set.  So
+17:10:18	this got some media coverage.
+17:10:20	It was fun to collaborate with
+17:10:21	the New York times on this
+17:10:26	article.  And we also looked at
+17:10:28	number patterns.  Again, this
+17:10:29	one looking at the things like
+17:10:31	dates.  So on the top here, we
+17:10:32	have the calendar, 365 days.
+17:10:35	And the brightness -- sorry, the
+17:10:37	dark blue is more common.  A
+17:10:39	date, number pattern that
+17:10:40	matches that in the password.
+17:10:41	So 14344, anybody know what that
+17:10:46	is?  What is I love you very
+17:10:49	much -- I love you very much.
+17:10:50	Yeah.  I love you very much.
+17:10:52	It's the number of letters.
+17:10:54	It's not actually a date, it's a
+17:10:55	mistake.  But it's what people
+17:10:57	would write if it they were
+17:11:00	saying I love you very much in
+17:11:01	the password.  The most common
+17:11:03	is I love you, which is nice.
+17:11:06	And 90210, which is interesting.
+17:11:11	And we found interesting date
+17:11:13	patterns.  These dates from
+17:11:15	September 11th, 2001.  And
+17:11:18	NY91105.  And twin towers, TT.
+17:11:24	Okay.  So I parked too much into
+17:11:25	this -- sorry.  I'm getting the
+17:11:27	okay from here, so I'm going to
+17:11:29	keep going.
+17:11:30	let's see here.  This is a
+17:11:33	project looking at the document
+17:11:34	level.  From the document down
+17:11:36	into the particular segments of
+17:11:38	the document.  On this project,
+17:11:40	looked at the WordNet database
+17:11:43	and the book, and two
+17:11:45	directions.  And we are
+17:11:46	extracting an ontology of words
+17:11:48	that is our relationship.  So
+17:11:49	water is a liquid, game is an
+17:11:52	activity, and the furniture, and
+17:11:53	also extracting words from the
+17:11:55	text and sending them and
+17:11:56	bringing the two together to
+17:11:59	create a visualization that
+17:12:00	creates the sun burst diagram,
+17:12:04	the darker the green, the more
+17:12:07	in the text.  It's organized
+17:12:09	secondarily the manically.  And
+17:12:10	this is a preview, not yet
+17:12:14	published.
+17:12:15	We are working on a general
+17:12:17	method for uneven tree cuts.  So
+17:12:19	in this technique, and going to
+17:12:21	publish this open source online
+17:12:23	is a method for automatically
+17:12:25	determining what the initial
+17:12:27	view that you should show of a
+17:12:28	large hierarchy.  And this is
+17:12:30	being done with D3.  So here we
+17:12:32	have a tree, and you can see the
+17:12:35	yellow and the orange lines are
+17:12:37	different depth of a tree cut.
+17:12:39	So if you look at a traditional
+17:12:41	hierarchy on the bottom, you
+17:12:43	would normally get three levels
+17:12:45	of depth.  Our algorithm is
+17:12:47	using information theory and
+17:12:49	entropy to measure the
+17:12:51	characteristics of the data
+17:12:53	underneath the level, and maybe
+17:12:57	open the other levels, maybe
+17:12:59	there's something interesting,
+17:13:00	and collapse the top.  This is
+17:13:02	our initial view.  And we expand
+17:13:04	down, we see that the
+17:13:06	traditional view expands
+17:13:07	everything, and our view expands
+17:13:09	more deeply in some regions and
+17:13:12	shallow in others to show the
+17:13:14	data with higher values.  We're
+17:13:15	excited about this work.
+17:13:17	Submitted it for publication.
+17:13:22	The demo includes some of this.
+17:13:24	You remember this.  This is a
+17:13:32	feminist hacker Barbie, a
+17:13:34	response to the awful book:
+17:13:37	Barbie becomes a computer
+17:13:39	engineer.  We have data from
+17:13:40	hello Barbie, which is a new
+17:13:43	Barbie doll that you can talk
+17:13:45	to, your child can talk to, I
+17:13:48	guess.
+17:13:49	We have the script of all the
+17:13:50	things that hello Barbie can
+17:13:53	say.  Interested in the data,
+17:13:54	great to give to Kyle to put
+17:13:56	into his linguistic generator to
+17:13:59	create Barbie language.  But we
+17:14:01	have put it into docuburst to
+17:14:05	look at patterns.  This is the
+17:14:06	word entity, these are the top
+17:14:09	level things that Barbie might
+17:14:10	say.  This is the general
+17:14:11	version, and I switch over to
+17:14:13	the uneven tree cut version.  So
+17:14:16	just a video because for time
+17:14:18	purposes I didn't want to mess
+17:14:19	up the demo.  So here is all the
+17:14:22	words that Barbie can say.  The
+17:14:24	things you can see, she's
+17:14:26	interested in talking about her
+17:14:27	friends and her parents, mother
+17:14:28	and father.  Asking questions a
+17:14:30	lot too.  The Barbie doll is
+17:14:32	saying how are your parents?
+17:14:33	What else in here?  Food, fun.
+17:14:37	It's a toy.  Maybe give it a
+17:14:40	pass for talking about fun and
+17:14:41	games.  But let's drill down a
+17:14:42	little bit, look at the area of
+17:14:44	cognition in WordNet.  These are
+17:14:49	the cognition-related words that
+17:14:51	hello Barbie will talk about.
+17:14:55	So kind and right here, an
+17:14:58	anomaly, the way they are used.
+17:15:01	It's a mis-characteristic.  She
+17:15:04	talks about fashion.  Changes
+17:15:06	the conference to talk about
+17:15:09	fashion.  I love fashion.  There
+17:15:10	are so many comments about
+17:15:12	fashion.  Let's get a little bit
+17:15:14	deeper, and we have to drill in
+17:15:17	where she talks about science
+17:15:18	and math.  There are some, there
+17:15:20	are three things about physics.
+17:15:21	So I think there's some response
+17:15:23	here to try to bring out some
+17:15:24	diversity in comments.  But the
+17:15:26	fashion is still really big.
+17:15:27	And nothing against fashion.  It
+17:15:29	just -- thought you might find
+17:15:31	it interesting.  Definitely
+17:15:32	Barbie has a different view on
+17:15:34	that than she used to.  So she's
+17:15:36	really into math, which is great
+17:15:39	and fun to see.  Let's see where
+17:15:41	else this goes.
+17:15:42	One more thing I want to show
+17:15:43	you.
+17:15:44	>> Use the word content or
+17:15:46	entity?
+17:15:47	>> They're gray, they're not
+17:15:49	used.  Her favorite color is
+17:15:52	pink and red, green is here
+17:15:54	because of Christmas.  She
+17:15:55	doesn't talk about any other
+17:15:56	colors though.  Just pink and
+17:15:58	red.  The absence here means
+17:16:00	something.  So there's no other
+17:16:02	color.
+17:16:03	Let's see.  Second to last
+17:16:06	example, look at person words.
+17:16:08	So person words.  She's really
+17:16:09	into medicine.  So doctor,
+17:16:12	veterinarian, teacher is great.
+17:16:15	Other related person words, so
+17:16:17	things like princess is huge.
+17:16:23	And in here, talking about
+17:16:24	princess, Halloween costume, and
+17:16:28	better, and lots of
+17:16:30	princess-themed things.  And I
+17:16:33	have to look around to try and
+17:16:35	find this, these are all the
+17:16:36	people-related words.  Go way
+17:16:38	down and you can see that she
+17:16:39	does talk about engineering a
+17:16:41	little bit.
+17:16:43	These are the data sets.  So
+17:16:45	that's hello Barbie.  It's been
+17:16:47	fun to work with this data set.
+17:16:49	And thanks to my student, she's
+17:16:50	done this analysis over the past
+17:16:52	day and a half.  I have been
+17:16:53	Slack messaging back and forth
+17:16:55	to get ready for the talk.  So
+17:16:57	we have an online version,
+17:16:58	unfortunately it's broken.  This
+17:17:00	is one of the things I'm getting
+17:17:02	used to.  I have to maintain
+17:17:04	things, hard to do.  And this is
+17:17:05	using a service called open
+17:17:07	Calais, and it recently changed
+17:17:11	and no longer working.  We're
+17:17:13	going to get it fixed.
+17:17:14	Okay.  I'm way over-ish.  Three
+17:17:17	minutes.  Okay.  I got to read
+17:17:19	you a quote.  Once upon a
+17:17:21	midnight dreary, ponders, over
+17:17:25	acquaintance.  I nodded, as
+17:17:29	someone gently rapping at my
+17:17:32	chamber door.  Which one is
+17:17:34	this?  Which bar?  Any
+17:17:36	intuition?  Third one.  Yes.  So
+17:17:41	this is a new project called
+17:17:43	Lexichrome.  That was Edgar
+17:17:50	Allen Poe.  A student here at
+17:17:55	the conference, I invite you to
+17:17:56	check it out, crowd source data
+17:17:58	of how people respond to terms
+17:18:00	with a color reaction.  So what
+17:18:02	kind of colors do words evoke in
+17:18:03	people's minds?  We have 12,000
+17:18:05	readings of colors done by our
+17:18:08	colleague.  And we have been
+17:18:09	turning this into a
+17:18:11	visualization allowing you to
+17:18:12	explore the language based on
+17:18:13	colors that it inspires.  So we
+17:18:16	can look at the agreement levels
+17:18:17	so people really strongly agree
+17:18:20	that cowardly is a yellow word.
+17:18:24	Less agreement, but cowardly is
+17:18:26	the most positive.
+17:18:27	We can look at the language
+17:18:28	structure.  So, for example,
+17:18:29	here you might think this is
+17:18:31	available you can play with it
+17:18:32	yourself, Lexichrome.com.  The
+17:18:36	upper right is -- it's really
+17:18:39	into grass and plants, it's
+17:18:40	green and money.  And the
+17:18:42	bottom -- the bottom left are
+17:18:45	words relating to love and
+17:18:46	affection.  So you can explore
+17:18:49	this and drill down.  We have an
+17:18:50	editor that allow use to type in
+17:18:53	your own document and replace
+17:18:54	the words with other synonyms
+17:18:56	that might evoke a better color.
+17:18:58	Imagine you're an ad executive.
+17:19:00	This is the Coca-Cola manifesto,
+17:19:03	and they're talking about
+17:19:04	refreshing, we think it might be
+17:19:06	invigorating in this case to
+17:19:09	bring out red feeling in the
+17:19:10	reading of the document.
+17:19:12	Other things as I wrap up,
+17:19:13	looking at mapping literature.
+17:19:16	This is 12 years a slave,
+17:19:17	looking at the patterns of
+17:19:18	movement of the characters in a
+17:19:21	book.  Looking at open tools to
+17:19:23	parse the text, geonames and
+17:19:25	open text, disambiguating, it's
+17:19:27	an issue there.  And what do you
+17:19:30	do with the same locations, same
+17:19:33	name.  We have algorithms for
+17:19:36	that, but no time for it.  And
+17:19:37	tools.  Things we use generally
+17:19:39	in the lab.  Thing like tagging
+17:19:42	text, labeling people, cleaning
+17:19:44	the data, stemming.  One is we
+17:19:46	do, inflection.  In the synonym
+17:19:49	example, refresh to invigorate,
+17:19:52	if it said cats, we have to do
+17:19:55	dogs.  We often are doing things
+17:19:58	like partitioning text.  We're
+17:20:02	using some of the same
+17:20:04	technologies you have been
+17:20:05	hearing about, and using a bunch
+17:20:07	of NLP resources that you can
+17:20:10	find out about if you watch the
+17:20:12	video and pause it and read the
+17:20:13	slide.  And I want to give you a
+17:20:15	bit of a caution.  That there's
+17:20:16	also some challenges here.  So,
+17:20:18	for example, we saw the word
+17:20:20	team in the passwords
+17:20:22	investigation.  And we were
+17:20:23	really curious why people were
+17:20:24	talking about teams so much more
+17:20:26	in passwords than in regular
+17:20:28	language.  When we dove into the
+17:20:30	data a little bit more and
+17:20:32	drilled down, getting to reading
+17:20:33	the raw data, we saw this.
+17:20:36	Teamo, it's just teamo.  So this
+17:20:40	was just the I love you, back
+17:20:42	again, but in Spanish.  So we
+17:20:45	were assuming English passwords.
+17:20:47	But not all the users were
+17:20:50	writing in English.
+17:20:51	This one's from Barbie.  But
+17:20:54	this is what she actually says.
+17:20:56	Chelsea would love to see your
+17:20:58	shell collection.  So I'm
+17:21:00	assuming the shell direction
+17:21:01	that the child is telling Barbie
+17:21:03	about is really seashells and
+17:21:05	not -- but -- but the systems
+17:21:08	we're using don't have the
+17:21:09	ability in the small amount of
+17:21:11	data we have to disambiguate the
+17:21:15	meaning of the term.  We have
+17:21:16	things like speech tagging,
+17:21:18	things change a lot.  We have
+17:21:19	open research challenges.  The
+17:21:21	ambiguity of text, volume, and
+17:21:25	legibility.  We are putting
+17:21:28	backgrounds on it, skewing it,
+17:21:30	rotating it, putting links
+17:21:32	between things.  And we don't
+17:21:33	really know how we're affecting
+17:21:35	the legibility.  So some of the
+17:21:37	research we are working on
+17:21:38	lately has been partnering with
+17:21:40	people with perception
+17:21:41	research to try to understand it
+17:21:43	better.  I'll end there.  Thanks
+17:21:45	to the students.  Thanks a lot.

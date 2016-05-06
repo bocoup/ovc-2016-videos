@@ -1,0 +1,807 @@
+11:33:44	>> So.  So correct me if I'm
+11:33:50	wrong, but I heard you like
+11:33:52	graphs.
+11:33:53	>> Yes.
+11:33:54	>> Well, have I got a graph for
+11:33:55	you.  So here's a completely
+11:33:58	made up graph.  Based off an
+11:34:04	unscientific survey of two
+11:34:07	anecdotes.  How informed we are
+11:34:09	versus how much information we
+11:34:10	have.  And obviously the more
+11:34:12	information we have, the less
+11:34:13	informed we are.  Because now
+11:34:14	there's too much noise, not
+11:34:16	enough signal, too much
+11:34:19	haystack, not enough needles.
+11:34:23	What really matters.  And
+11:34:25	another graph, how connected we
+11:34:27	are versus how much information
+11:34:29	we have.  And obviously the more
+11:34:31	information we have, the less
+11:34:33	connected we are.  On the
+11:34:34	Internet and the media, you can
+11:34:36	find the information to confirm
+11:34:37	your biases and beliefs.  More
+11:34:39	information is making us more
+11:34:42	polarized.
+11:34:43	Here's another graph.  How
+11:34:44	empowered we are versus -- let
+11:34:47	me just get to the punchline.
+11:34:51	The more you learn, the more
+11:34:53	it's off-limit and out of your
+11:34:55	control.  You can't do anything
+11:34:56	about it.  That sucks.  So I
+11:34:58	heard you like graphs and
+11:35:00	visualizations.  I think we're
+11:35:02	all here because we want to make
+11:35:03	things and graphics.  And it
+11:35:05	really helps you give
+11:35:06	information.
+11:35:07	We to want make things that help
+11:35:09	people be more informed, more
+11:35:11	connected.  More empowered.
+11:35:13	But if just putting more and
+11:35:15	more information out there
+11:35:17	accomplishes the complete
+11:35:18	opposite of all that, then I
+11:35:21	guess for us media makers and
+11:35:23	journalists in this new age, the
+11:35:25	question is not, can our field
+11:35:27	survive?  But does our field
+11:35:30	deserve to survive?
+11:35:32	And that is the existential
+11:35:35	crisis.
+11:35:38	but, yeah, seriously.  It is a
+11:35:42	big problem.  But to be fair,
+11:35:45	database I think solves half of
+11:35:46	that.  Because data
+11:35:48	visualization let's us go from
+11:35:50	the individual stories to the
+11:35:52	larger patterns.  But I think
+11:35:53	now we need to go deeper because
+11:35:57	what's under those stories are
+11:35:59	patterns, what's under those
+11:36:00	patterns are systems.
+11:36:03	Water break one.  So the problem
+11:36:11	is we have too much information
+11:36:13	and not enough understanding.
+11:36:16	Patterns can show us how things
+11:36:19	happen, but not really why
+11:36:20	things happen.  And for a deeper
+11:36:23	understand we need systems.
+11:36:24	So we kind of know already what
+11:36:26	dataviz looks like, what would
+11:36:30	System (VIS) look like?  One
+11:36:34	tool that might be useful, not
+11:36:36	the only tool, is simulation.
+11:36:38	So here's a prototype -- not a
+11:36:42	prototype, a product I
+11:36:46	launched -- for once, simulating
+11:36:49	in emoji.  At the end I will
+11:36:52	have links to the slide and re
+11:36:54	resources and projects.
+11:36:57	So the reader could play with
+11:36:58	the simulations, and the emoji,
+11:37:01	and mess around with the rules
+11:37:04	and create their own
+11:37:05	simulations.  And these
+11:37:06	simulations were used to explain
+11:37:07	systems.  Systems like
+11:37:09	ecosystems.  And why forest
+11:37:10	fires are actually good for the
+11:37:12	forest.
+11:37:12	Or systems of epidemiology, how
+11:37:16	disease spreads, what is heard
+11:37:18	and why is it important?  And
+11:37:21	civil conflict.
+11:37:27	and how much like a forest fire,
+11:37:29	or much like disease, how
+11:37:31	violence can spread across a
+11:37:33	population.
+11:37:34	Now -- yes.  This emoji is not
+11:37:37	going to be very complicated.
+11:37:39	They're obviously very
+11:37:40	simplified.  But that's not a
+11:37:42	bug.  That's a feature.  So
+11:37:44	think about this street map.  A
+11:37:46	street map is -- is useful not
+11:37:50	despite being simplified, but
+11:37:53	because it's simplified.  It
+11:37:55	cuts away what doesn't matter to
+11:37:59	just leave what does.
+11:38:00	That's the issue.  A lot of
+11:38:01	things in our media stuff
+11:38:04	doesn't matter.  Or at least it
+11:38:05	gives the false impression.  A
+11:38:08	concrete example, turn on your
+11:38:10	cable news and you'll see some
+11:38:12	gnarly, nasty, gruesome crime
+11:38:14	story.  And you'll probably see
+11:38:16	it like twice a day or more.
+11:38:18	Probably -- yeah, definitely a
+11:38:19	lot more.
+11:38:20	And you might get the
+11:38:22	impression -- and the public
+11:38:23	opinion in the U.S. right now --
+11:38:24	is that the world and the U.S.
+11:38:25	is getting more dangerous.  But
+11:38:27	if you're to look at -- beyond
+11:38:28	the things and look at the
+11:38:30	trends, the U.S. crime rate has
+11:38:33	been actually dropping since the
+11:38:35	1980s across all categories.
+11:38:38	But the trends only tell you
+11:38:39	that it's dropping.  It doesn't
+11:38:41	tell you why.
+11:38:43	And for that you need to go down
+11:38:44	beyond the things and the trends
+11:38:45	to the fear.  Sociology,
+11:38:49	criminology, psychology,
+11:38:50	economics, so on and so forth.
+11:38:52	And only once you have theory,
+11:38:57	can you create a more humanized
+11:39:02	justice system.  Theories let us
+11:39:05	create the future.
+11:39:06	That's why we have to go deeper,
+11:39:07	as the inception person says, go
+11:39:10	deeper.  Can we go even deeper
+11:39:13	than theory?  I think, yes.
+11:39:15	There is something fundamental
+11:39:16	and underlies all theory.  Other
+11:39:18	than you know philosophy and
+11:39:20	math and logic and language and
+11:39:21	the scientific method itself,
+11:39:23	there is also systems.  Systems
+11:39:25	thinking.  What is systems
+11:39:26	thinking?
+11:39:27	Actually to be honest, the
+11:39:29	systems thinking community
+11:39:30	doesn't know what systems
+11:39:32	thinking really is.  It's
+11:39:33	very -- again, I think it might
+11:39:35	be a feature, maybe.  It's very
+11:39:38	interdisciplinary.  It's kind of
+11:39:40	broad and a little bit fuzzy in
+11:39:42	places.  But at its core, this
+11:39:46	is what system thinking is.
+11:39:47	So in our day-to-day lives, we
+11:39:50	think of cause and effect in a
+11:39:52	linear fashion.  A affects B
+11:39:55	affects C and so on.  But the
+11:39:57	world's not linear, it's loopy,
+11:39:59	according to the thinking.
+11:40:02	Where A can affect B and B
+11:40:06	affects A, vicious cycles, arms
+11:40:09	races, escalation of violation,
+11:40:14	and kindness with more kindness,
+11:40:17	a positive example.  And
+11:40:20	stabilizing loops.  The next
+11:40:22	time you think of a cause and
+11:40:24	affect, don't just think of how
+11:40:26	A can affect B, but B can
+11:40:29	directly or indirectly fax A.
+11:40:31	It's not linear, it's loopy.
+11:40:35	That's the thinking.
+11:40:37	So I want to tell a story, start
+11:40:40	with the story, the human story,
+11:40:41	the human elements that really
+11:40:42	matter.  But go beyond the thing
+11:40:44	and go for the system.  Because
+11:40:46	only once we have a deep
+11:40:47	understanding of the underlying
+11:40:49	systems that we can really go
+11:40:53	where we want to go.
+11:40:56	Okay.  Still on.  Just making
+11:40:57	sure.  Water break two.  The
+11:41:00	sequel.
+11:41:01	So -- but even if we're
+11:41:11	informed, we can have polarized
+11:41:13	echo chambers.  How do we
+11:41:15	overcome that?  People have
+11:41:19	contradicting viewpoints, or
+11:41:21	seemingly contradicting
+11:41:24	viewpoints.  I'm going to show a
+11:41:26	simulation I made a year and a
+11:41:28	half ago.  It's a good example
+11:41:30	of how system thinking can
+11:41:32	combine.  It's the one hit
+11:41:35	wonder.  Parable of the polygons
+11:41:37	is an explorable about
+11:41:43	discrimination and diversity.
+11:41:45	Racism and is polarizing,
+11:41:49	especially on the Internet.  To
+11:41:50	say the least.  But there's more
+11:41:53	than two.
+11:41:54	Like one person could say, well,
+11:41:56	look at the racial ratio in our
+11:41:59	incarceration system and
+11:42:03	obviously on the societal level,
+11:42:05	there's a huge discrimination.
+11:42:06	But on an individual level, a
+11:42:08	lot of people say I'm not
+11:42:10	racist, none of my friends are,
+11:42:12	and society has a huge taboo
+11:42:14	against it.  Even if you are a
+11:42:16	little bit biased, how can it be
+11:42:18	that bad?  Parable polygons show
+11:42:22	how a small bias can accumulate
+11:42:25	through a vicious cycle into a
+11:42:27	large societal discrimination.
+11:42:29	So -- and I'll just play through
+11:42:31	it.  And I play through it, I
+11:42:34	mean pre-recorded video.  So you
+11:42:37	can drag around shapes.  And so
+11:42:39	each shape -- so you can only
+11:42:41	move the unhappy shapes.  And
+11:42:43	shapes are unhappy -- fine.
+11:42:46	Just moving without me.  Every
+11:42:47	shape has a rule.  An individual
+11:42:51	rule.  I want to move if less
+11:42:53	than a third of my neighbors are
+11:42:55	like me.  The triangle is
+11:42:58	unhappy, less of the neighbors
+11:42:59	are like it, one out of six, and
+11:43:05	then two out of six, and the
+11:43:07	right most one, it's meh,
+11:43:10	totally full of its own peeps.
+11:43:12	So keep in mind, look at the
+11:43:14	middle section, every shape is
+11:43:16	okay being in the minority in
+11:43:18	their own local neighborhood.
+11:43:20	So it's a very small bias.
+11:43:22	Every one would be okay being a
+11:43:24	minority.  And yet -- and yet in
+11:43:26	a larger society -- so right now
+11:43:29	I'm just moving around the
+11:43:31	unhappy shapes randomly.  Not
+11:43:33	really thinking.  Just moving
+11:43:35	them into a happy spot, not
+11:43:38	really thinking where they're
+11:43:39	going.  But that small,
+11:43:41	individual bias accumulates.  It
+11:43:43	cascades.  Because once someone
+11:43:45	moves out of their neighborhood,
+11:43:46	that neighborhood changes.  And
+11:43:48	so more people move out of that
+11:43:50	neighborhood.  And eventually
+11:43:51	you get something like this.
+11:43:55	Where it started off like
+11:43:57	totally randomly mixed, and now
+11:43:59	there's definitely blue section
+11:44:01	and yellow sections and this is
+11:44:04	a square town, this is triangle
+11:44:06	town.  Wow.
+11:44:08	What is up with that?  So, yeah.
+11:44:12	A vicious cycle.  Or loop.  And
+11:44:14	that's how you can combine that
+11:44:17	contradiction.  Where someone
+11:44:19	could reasonably say there's
+11:44:21	discrimination on a societal
+11:44:22	level, and why someone could
+11:44:24	reasonably say that for
+11:44:26	individuals, it might not be
+11:44:28	that much.  I just want to
+11:44:29	emphasize this is -- I'm not
+11:44:30	saying this is how it always
+11:44:32	works.  Like there are some very
+11:44:33	top-down discriminatory cases.
+11:44:36	But I think for at least
+11:44:37	bottom-up cases, this is how --
+11:44:40	this is a plausible mechanism
+11:44:41	for how this kind of
+11:44:43	discrimination can arise from
+11:44:44	the bottom up.
+11:44:46	Another thing to emphasize is
+11:44:47	that it's not just presenting
+11:44:49	both sides.  Instead of --
+11:44:51	because, you know, just do that,
+11:44:54	and the confirmation bias,
+11:44:56	people pick the side they
+11:44:57	already believe in.  What you do
+11:44:59	instead is to combine those
+11:45:01	sides.  Not just merely -- show
+11:45:03	that they can be both part of
+11:45:05	the same thing.
+11:45:08	Let's talk about conflict.  I
+11:45:10	like this illustration of
+11:45:11	conflict.  It's a good
+11:45:12	illustration.  I worked for days
+11:45:15	on this.  It's my masterpiece.
+11:45:18	So the mediators are actually
+11:45:21	using systems thinking to help
+11:45:23	people resolve conflicts.  So
+11:45:26	here we have like a little toy
+11:45:28	example of a very basic
+11:45:30	conflict.  One person would have
+11:45:31	a linear cause and effect story
+11:45:34	they would have.  Attack us and
+11:45:36	fight back and then the story,
+11:45:38	they attacked us, fighting back.
+11:45:41	The world's not linear, it's
+11:45:43	loopy.  Yeah.  And in this case
+11:45:45	it's a pretty common pattern,
+11:45:47	the vicious cycle, arms race,
+11:45:49	escalation of violence.  So the
+11:45:53	common mediator shows it to all
+11:45:55	the parties involved that the
+11:45:57	system is their common enemy,
+11:46:00	not each other.
+11:46:02	And maybe once they realize that
+11:46:03	the system is their common
+11:46:05	enemy, maybe they can work
+11:46:08	together.  At least that's the
+11:46:09	hope.
+11:46:10	This is the part where I drop
+11:46:12	the word empathy.  And I'm going
+11:46:14	to say it, I really like
+11:46:16	empathy.  I've made stories and
+11:46:18	games for empathy.  Kind of a
+11:46:21	buzz word nowadays.  Not like
+11:46:23	synergy bad.  But kind of
+11:46:26	getting -- where gamification
+11:46:27	is, that's where empathy kind of
+11:46:30	is.
+11:46:32	I can see it now, Nicky hates
+11:46:34	empathy.  Thank you.  But,
+11:46:38	really.  Like -- yeah.  With
+11:46:41	individuals, it's important.
+11:46:42	But here's the thing about
+11:46:44	systems.  Individual -- I mean,
+11:46:46	they matter, but not as much as
+11:46:48	the system itself.
+11:46:49	So the empathy is too
+11:46:56	individual.  You have to start
+11:46:57	with the individual, but you
+11:46:58	have to look at the system.  So
+11:46:59	if information is making us feel
+11:47:01	more polarized, more
+11:47:03	disconnected, then what systems
+11:47:05	thinking tells us, we're all
+11:47:09	connected whether or not we like
+11:47:10	it, even if they're not healthy.
+11:47:13	A lot of time they're not
+11:47:14	healthy.  But in any case, the
+11:47:16	system is our common enemy, not
+11:47:18	the individuals.
+11:47:19	Water break three.  From the
+11:47:21	creators of water break one and
+11:47:24	water break two.
+11:47:28	So even if we're informed and
+11:47:31	connected against those in
+11:47:32	power, you can say, well, now I
+11:47:34	am very informed about the
+11:47:35	system and I know we're all in
+11:47:37	this together.  And we're
+11:47:38	trapped.  This sucked.  What can
+11:47:40	we do?
+11:47:41	And I don't know.  I really
+11:47:44	hoped I would be able to figure
+11:47:45	this out by the time I was
+11:47:47	scheduled to give this talk.
+11:47:48	But given I have been dealing
+11:47:50	with political problems dealing
+11:47:52	with this for millennia, this is
+11:47:55	a thing we have to keep thinking
+11:47:56	about forever.
+11:48:00	How can people like average --
+11:48:02	you know, they're average
+11:48:03	citizens, feel empowered.  Or
+11:48:05	actually make a change?
+11:48:06	Still -- I think I have like
+11:48:10	partial, half-baked ideas that
+11:48:11	I'll show off in this prototype.
+11:48:14	Which is not out.  And also,
+11:48:17	yes, the UI is a little bit
+11:48:19	bad.  But, yes, prototype.  It's
+11:48:23	a presentation using a U.S.
+11:48:26	statistic.  So it's got six
+11:48:28	boxes and people move from box
+11:48:30	to box.  So students at the top,
+11:48:32	employed in the middle and
+11:48:35	incarcerated at the bottom.
+11:48:36	And so they move
+11:48:38	probabilistically, and the
+11:48:41	probabilities are based off
+11:48:42	stats on race, age, education,
+11:48:45	income, employment,
+11:48:46	incarceration, at least for the
+11:48:48	U.S.
+11:48:50	And they move around
+11:48:52	probabilistically based on those
+11:48:54	stats, and you can also ask --
+11:48:56	you can change those stats in
+11:48:57	the side bar to ask what if --
+11:49:00	what if fewer juveniles were
+11:49:02	incarcerated?  What if
+11:49:05	employment prospects were
+11:49:06	better?  And each box is also
+11:49:08	separated.  And each side bar is
+11:49:12	separated by a box.  So you can
+11:49:14	say like, if you're a small
+11:49:15	business owner, you get the
+11:49:16	little box where you control the
+11:49:19	probabilities of who gets
+11:49:20	employed.  Like do you want to
+11:49:23	hire ex-cons?  Or how to
+11:49:27	increase job prospects?  How
+11:49:28	often do you have to fire or lay
+11:49:30	people off?
+11:49:31	So not only do you get to ask
+11:49:33	what if, you can ask what can I,
+11:49:36	or people like me, can do?  And
+11:49:38	how can that affect the entire
+11:49:40	system?
+11:49:41	So here it is just running.
+11:49:43	Simulations, probabilities using
+11:49:44	the real stats from -- using
+11:49:48	real stats.  And you can also
+11:49:49	focus on individual's story.  So
+11:49:53	you can click on someone and you
+11:49:54	can see the individual story and
+11:49:56	the system at the same time.
+11:49:58	And so as it runs, you can also
+11:50:01	think, oh, I'm a teacher.  What
+11:50:03	if I helped people, more people
+11:50:05	go to college.  I'm a small
+11:50:07	business owner, what if I didn't
+11:50:10	discriminate against ex-cons?
+11:50:12	Or I'm a policy maker, get rid
+11:50:14	of mandatory minimums, or at
+11:50:17	least reduce them?  In a pro
+11:50:21	prototype, you can't see how it
+11:50:23	affects the entire system, but
+11:50:24	the idea, hopefully once it's
+11:50:26	done, what small change you can
+11:50:29	do in your field and how that
+11:50:30	ripples out throughout the
+11:50:32	entire system.
+11:50:33	So that's an idea for maybe how
+11:50:36	system thinking can help us.
+11:50:41	Give a thought of why people
+11:50:43	might feel this?  And I'll say
+11:50:45	it's like a pretty legitimate
+11:50:46	reason.  I think it comes from
+11:50:48	having a linear story.
+11:50:52	Believing that power comes from
+11:50:55	one party controlling another,
+11:50:58	and crap runs downhill.  And
+11:51:01	they are -- you know, at the
+11:51:03	very top there's the
+11:51:04	corporations, or the government,
+11:51:05	and they control the media or
+11:51:06	the middlemen, who control a
+11:51:09	very easily-manipulated
+11:51:12	majority.
+11:51:12	And if you're not at the root
+11:51:14	cause, and a linear cause and
+11:51:17	effect story, there's only one
+11:51:19	root cause.  If you're not the
+11:51:22	root cause, if you're not at the
+11:51:23	very top, then you have no power
+11:51:25	and you can't really do
+11:51:27	anything.  That's a very
+11:51:29	disempowering story.  And idea.
+11:51:32	But the world's not linear,
+11:51:37	it's --
+11:51:38	>> Loopy!
+11:51:40	>> Yay, thank you.  And when the
+11:51:41	world is loopy, there is no root
+11:51:44	cause.  And that's great.  That
+11:51:46	means any part of the system
+11:51:48	where you are at -- you can
+11:51:53	affect the feedback loops,
+11:51:55	vicious cycles, stabilizing
+11:51:57	loops -- your affects can ripple
+11:52:01	throughout the system.  Just
+11:52:02	like the polygons showed how
+11:52:05	even a very small bias or effect
+11:52:07	in a local neighborhood can
+11:52:09	ripple out throughout the entire
+11:52:12	world.  Maybe -- maybe that's
+11:52:17	how system thinking can empower
+11:52:19	us.  Maybe.
+11:52:20	As a more concrete example, for
+11:52:22	example, you're a small business
+11:52:24	owner and you want to hire
+11:52:25	ex-cons.  And it turns out that
+11:52:28	it works pretty well, and your
+11:52:30	peers, your network in your
+11:52:32	business community also hires
+11:52:35	ex-cons for themselves.  And --
+11:52:37	but the ex-cons also have their
+11:52:40	own network.  Their own friends.
+11:52:44	Most of the people in poor,
+11:52:46	disadvantaged neighborhoods,
+11:52:47	communities of color.  And so
+11:52:50	they reach out to their network
+11:52:52	and it just keeps spreading and
+11:52:54	public opinion shifts on race
+11:52:56	and criminal justice.  And
+11:52:59	public opinion then turns into
+11:53:01	public pressure on politicians
+11:53:03	to fix their stuff.
+11:53:05	And that is a lot easier said
+11:53:12	than done.  Again, these are
+11:53:14	half-baked ideas.  I'm figuring
+11:53:16	it out.  And I hope you'll join
+11:53:19	me in figuring out systems
+11:53:20	things and stuff like that.
+11:53:23	As the old joke goes, you are
+11:53:24	not stuck in traffic, you are
+11:53:26	traffic.  And what systems
+11:53:27	thinking tells us, we are not
+11:53:29	trapped in the system, we are
+11:53:30	the system.
+11:53:33	Water break four.  Water break
+11:53:36	origins: hydrate harder.
+11:53:42	Anyway.  And that is how we can
+11:53:44	use systems thinking to give us
+11:53:45	a deeper understanding.  To
+11:53:47	overcome polarization.  And
+11:53:49	maybe, just maybe, we can change
+11:53:51	the world.  So wut?  So wut?
+11:53:55	Because I just gave you a whole
+11:53:57	bunch of theory, and not a lot
+11:53:59	is actually practical.
+11:54:01	You might be saying, Nicky, I
+11:54:04	have deadlines, I have to learn
+11:54:06	D3, I'm only up to D2.  What
+11:54:08	have you got for me?  Well, I'm
+11:54:12	glad you asked, said
+11:54:14	hypothetical person.  Here are
+11:54:16	five tools I can give you on how
+11:54:18	to tell stories about systems
+11:54:20	and turn systems into stories.
+11:54:22	And, again, all the links and
+11:54:24	projects I will be referring to
+11:54:26	will be posted at the end of
+11:54:27	this slide talkie thing.
+11:54:30	So five tools.  From least cray
+11:54:34	cray to most cray cray to
+11:54:37	implement.  And the first tool
+11:54:39	is nothing.  Or at least nothing
+11:54:42	new.  So, you know, you don't
+11:54:44	have to change your work flow,
+11:54:45	your tools.
+11:54:47	Because people have been telling
+11:54:48	stories about systems in all
+11:54:49	kinds of media.  So three of my
+11:54:53	favorite examples.  The Wire is
+11:54:56	the quintessential example, the
+11:55:01	cast, multiple perspectives.
+11:55:04	And every season is showing a
+11:55:06	different part of the system.  A
+11:55:07	different part of the Baltimore
+11:55:08	criminal justice system.
+11:55:10	So, yeah.  If you make a video,
+11:55:12	or, you know, film stuff.  Like
+11:55:14	check out The Wire.  That's how
+11:55:17	you look at systems.  And still
+11:55:22	a great way to do story telling
+11:55:24	in a non-linear way.  For those
+11:55:27	who make infographic, I heard
+11:55:29	you like graphs.  Chris Wear.
+11:55:32	Check out the work of Chris Ware
+11:55:37	and specifically the stories.
+11:55:40	12 stories that can be read in
+11:55:42	any order.  And each
+11:55:47	installment, I guess, is so
+11:55:49	non-linear.  Timelines
+11:55:54	intersecting, all which way,
+11:55:56	what.  That's how to do the
+11:55:59	story telling in a visual
+11:56:01	format.  The comics.  And there
+11:56:03	is quote, unquote, post-modern
+11:56:05	literature.  Like one of my
+11:56:07	favorite books by Kurt Vonnegut.
+11:56:12	Creates a character timeline to
+11:56:14	timeline.  And another one I
+11:56:15	read recently, Jennifer Egan's,
+11:56:19	a Visit from the Goon Squad.
+11:56:24	And boast of these post-modern
+11:56:26	literatures are a way of doing
+11:56:29	multiple perspectives and
+11:56:30	non-linear story telling.
+11:56:32	The point is you don't need
+11:56:34	simulations or anything fancy to
+11:56:35	tell stories about systems.
+11:56:37	People have been doing it -- not
+11:56:38	very common, actually pretty
+11:56:41	rare, but it has been done.
+11:56:44	Number two is the causal loop
+11:56:47	diagram.  And I have been doing
+11:56:48	this the entire talk.  So the
+11:56:53	causal loop diagram -- so here
+11:56:57	is my favorite example that I
+11:56:58	found randomly through Google
+11:57:00	image search.  So it's about the
+11:57:02	war on drugs.
+11:57:03	Specifically on focusing on
+11:57:05	heroin.  And so I really like
+11:57:07	this one because with just three
+11:57:09	loops it tells three really deep
+11:57:11	stories.  So the first causal
+11:57:14	loop is about how if we seize
+11:57:16	heroin, yes, it reduces it in
+11:57:18	had the short run, but a
+11:57:18	reduction in inventory, supply
+11:57:21	and demand, reducing inventory,
+11:57:24	drives up the price, drives up
+11:57:26	price drives up profits, and
+11:57:28	driving up the profit creates
+11:57:31	the incentive to create more
+11:57:33	heroin.  Second loop, if the
+11:57:35	price goes up, addicts, they
+11:57:38	demand it, they're addicted to
+11:57:39	it.  They have to resort to
+11:57:41	petty crime to, you know -- to
+11:57:44	petty crime.  Results in
+11:57:46	arrests.  So that's, you know,
+11:57:47	our versioning incarceration
+11:57:54	system.  And with the arresting
+11:57:56	of addicts, the inventory goes
+11:58:00	up.
+11:58:01	And then the third group, there
+11:58:02	is level over inventory, the
+11:58:06	drug dealers have to market it,
+11:58:08	so to speak, and bring in my new
+11:58:12	addicts into the system.  So
+11:58:13	three different stories.  This
+11:58:15	is the content of three
+11:58:16	documentaries captured in one
+11:58:18	diagram.  I really like the
+11:58:19	causal loop diagram.  But if you
+11:58:22	do a Google image search on
+11:58:24	this, they all look this bad.
+11:58:27	Like apparently the systems
+11:58:29	thinking community doesn't
+11:58:31	realize there's more than one
+11:58:33	font than times new Roman, and
+11:58:36	more than one shade of blue, hex
+11:58:40	code zero, zero, zero, XF.  And
+11:58:43	if you want to use the causal
+11:58:45	loop diagrams, make it better.
+11:58:47	It's horrible.  Even though it's
+11:58:49	powerful, oh, my eyes are
+11:58:50	bleeding.
+11:58:52	Tool number three.  Water break
+11:58:56	five: water returns.
+11:59:00	Stock and flow models.  So a
+11:59:01	stock and flow -- imagine a
+11:59:05	stock as a bathtub and, you
+11:59:07	know, things flow in, things
+11:59:08	flow out.  That's a stock and
+11:59:10	flow model.  Kind of similar to
+11:59:12	the causal loop diagram.  So
+11:59:14	this one is the -- here's where
+11:59:16	simulation comes in.  Stock and
+11:59:18	flow models are specifically
+11:59:19	created for simulation.  When I
+11:59:21	was researching on stock and
+11:59:22	flow models, it turns out the
+11:59:26	earliest simulation was not done
+11:59:28	on an electronic computer, it
+11:59:30	was a water computer.  This is a
+11:59:33	computer made of water.  What?
+11:59:34	So instead of electricity
+11:59:36	flowing through wires, we have
+11:59:41	water flowing through pipes.
+11:59:43	This was created in 1949 by a
+11:59:46	New Zealand person to simulate
+11:59:48	the economy.  One tank is the
+11:59:50	treasury, money flows in, money
+11:59:54	flows out.  And worked well
+11:59:56	enough to get a place in a
+11:59:57	museum.  So good for you.  1949
+12:00:06	New Zealand person.
+12:00:07	They use stock and flow models
+12:00:09	today.  Scientists use it to
+12:00:11	model greenhouse gases in the
+12:00:14	atmosphere and more are going in
+12:00:16	than coming out, obviously.  And
+12:00:19	also simulating economies.
+12:00:21	People use stock and flow for
+12:00:22	that.  And also like modeling
+12:00:24	disease.  Basically you can use
+12:00:26	stock and flow simulations to
+12:00:27	simulation anything where you
+12:00:29	have a thing and things go into
+12:00:30	the thing and things come out of
+12:00:32	the thing.
+12:00:33	It's pretty flexible as a tool.
+12:00:37	And tool number four is
+12:00:39	probability simulations.  And
+12:00:42	this one's used already.  And
+12:00:45	these are examples that a lot of
+12:00:47	you might already know.  First
+12:00:48	one is the comma, probably.
+12:00:54	Where using the CDC data he
+12:00:56	simulates people being born and
+12:00:59	dying over and over again.  And
+12:01:01	you get a nice little histogram
+12:01:04	of death over there.  And I can
+12:01:05	tell you how many years you have
+12:01:08	left to live.  Probably.
+12:01:09	The second one is -- the one
+12:01:11	that actually really inspired my
+12:01:13	prototype, the Marshall project,
+12:01:21	FiveThirtyEight, made the
+12:01:23	simulator.  You can choose at
+12:01:25	what risk people get parole or
+12:01:27	don't get parole.  And you can
+12:01:29	make that tradeoff here for
+12:01:30	yourself and see how it works
+12:01:33	probabilistically.
+12:01:35	The third one, with the goat and
+12:01:37	the car, that's an infamous
+12:01:39	mathematical paradox.  Created
+12:01:42	by Victor Powell as an explainer
+12:01:45	of the paradox.  And finally,
+12:01:49	selection season.  Martin made
+12:01:53	rock and pole.  Which -- great
+12:01:56	title -- which shows off why a
+12:01:59	2% chance -- a 2% difference in
+12:02:02	the polling results isn't much
+12:02:04	to analyze about, that is the
+12:02:06	margin of error.  So made a
+12:02:08	simulation explaining margin of
+12:02:10	error.
+12:02:11	And again, I will have a link to
+12:02:12	all the links for all this
+12:02:17	And at the very far theoretical
+12:02:19	end we have agent-based
+12:02:21	modeling.  Also similar.
+12:02:24	Agent-based modeling.  So an
+12:02:28	agent is a thing that makes
+12:02:30	decisions.  And an agent-based
+12:02:32	model is a whole bunch of
+12:02:33	things, a whole bunch of agents
+12:02:35	that make decisions based off of
+12:02:36	others 'decisions.  So that's
+12:02:39	like infinite feedback loops
+12:02:42	there.  It's also loopy.
+12:02:43	So, for example, a concrete
+12:02:45	example, parable of the polygons
+12:02:51	is -- I actually stole a model
+12:02:53	created by Thomas Shelly.  He
+12:02:59	created the original model.  We
+12:03:01	just added cute shapes and
+12:03:03	smiles to it to explain it in
+12:03:04	such a cute way, segregation.
+12:03:07	What a cute topic.
+12:03:08	But you don't have to do just
+12:03:10	grids.  You can also do a
+12:03:11	network.  And -- yeah.  Grids
+12:03:14	and networks, all that.  And the
+12:03:15	CDC also used agent-based models
+12:03:19	to simulate disease spread in
+12:03:23	real time.  Simulations save
+12:03:25	lives.  And now the theory and
+12:03:26	the tools, I have a minute left.
+12:03:31	How to Simulate the Universe, In
+12:03:31	134 Easy Steps.  You need a
+12:03:36	human hook.
+12:03:37	If I go beyond that, and step
+12:03:39	two, the trends, and step three,
+12:03:42	go beyond that and find a
+12:03:43	theory.  You don't need to be an
+12:03:45	expert on everything, but just
+12:03:48	learn enough to get to step
+12:03:49	four.  Find the non-linear loopy
+12:03:51	causes and effects.  The vicious
+12:03:53	and virtuous cycles.  And then
+12:03:58	if I can a tool that works for
+12:03:59	you.  Once you have a prototype,
+12:04:01	step six, it's iterate.  And
+12:04:06	seven iterate, eight, iterate,
+12:04:08	and keep doing this over and
+12:04:10	over again until you have
+12:04:11	something that informs people.
+12:04:12	Something that connects people.
+12:04:14	Something that really empowers
+12:04:15	people.  And once you have
+12:04:17	something that does all that,
+12:04:19	134.  Ship it.  And then fix
+12:04:24	bugs.  Thank you so much.  Link
+12:04:26	is over there.

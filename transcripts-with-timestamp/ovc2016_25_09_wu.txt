@@ -1,0 +1,773 @@
+16:31:39	>> Hello?  Hello?  Cool.  Hi.
+16:31:43	There's some more setup to be
+16:31:45	done.  Oh.  Got it.
+16:32:06	Hi, everyone.  Nope.  Okay.  Not
+16:32:11	hi.  Not yet.  Yes!  All right.
+16:32:17	Hello.  Hi.  Thank you so much
+16:32:18	for having me here.  I'm
+16:32:20	super-excited.  My name is
+16:32:22	Shirley.
+16:32:24	Today I want to be talking to
+16:32:26	you about building data
+16:32:28	visualizations for product.  So
+16:32:30	before we begin, why talk about
+16:32:32	it?  So about two years ago when
+16:32:35	I first started at ILLUMIO, we
+16:32:39	looked out for guidance and
+16:32:41	mentorship to try and find
+16:32:43	people who might be going
+16:32:44	through similar challenges as
+16:32:47	us.  And we found we couldn't
+16:32:48	find any.  We could have been
+16:32:54	living under a rock, but that
+16:32:57	makes a lot of sense.  Because a
+16:32:59	product is hard to talk about.
+16:33:01	A lot of the times it's
+16:33:02	proprietary.  So it might be
+16:33:06	hard to share a screen shot, let
+16:33:09	alone some of the challenges
+16:33:10	somebody might have faced.
+16:33:12	But since I have the benefit of
+16:33:15	being able to talk about it, I
+16:33:16	would like to share with you
+16:33:19	some of the experiences we have
+16:33:20	had, the challenges we faced and
+16:33:22	the lessons that we learned in
+16:33:23	the last two years.  I really
+16:33:25	hope that this might offer some
+16:33:27	guidance or help if you're about
+16:33:29	to go through something similar
+16:33:31	or are going through something
+16:33:33	similar.
+16:33:34	So I work at a company called
+16:33:38	Illumio, we create enterprise
+16:33:41	security software.  My favorite
+16:33:46	analogy for what we do, if the
+16:33:48	traditional data center is a
+16:33:49	hotel, and the firewall is that
+16:33:52	big dead bolt on the front door,
+16:33:54	then if anybody malicious gets
+16:33:57	in through the front door, and
+16:33:59	they have free-for-all access to
+16:34:02	all of your rooms.  What Illumio
+16:34:06	does instead is provide a lock
+16:34:09	for each of those hotel doors as
+16:34:11	well as calculates who should be
+16:34:14	allowed in and out of each of
+16:34:15	those rooms.
+16:34:16	And I work on the part of the
+16:34:19	product called Illumination.
+16:34:22	Which visualizes data center
+16:34:24	traffic.  And this is
+16:34:26	particularly important for us
+16:34:27	because a lot of our customers
+16:34:29	have huge deployments with large
+16:34:32	numbers of rooms.  And what that
+16:34:35	means for them is that they very
+16:34:36	oftentimes don't even know who
+16:34:40	might be going in and out of one
+16:34:42	of the rooms.
+16:34:43	And oftentimes they also need to
+16:34:45	be able to verify that who
+16:34:49	they've given access to go in
+16:34:51	and out of those rooms are
+16:34:53	actually accurate.
+16:34:56	So while thinking about what I
+16:34:58	wanted to talk about with this
+16:35:00	talk, I've figured out some
+16:35:04	technical aspects.  So building
+16:35:07	the actual visualization,
+16:35:10	building the framework around
+16:35:11	that visualization that manages
+16:35:14	the underlying data, and scaling
+16:35:17	the visualization and
+16:35:19	application.  As well as some of
+16:35:19	the more human aspects of
+16:35:22	interfacing with our customers
+16:35:23	and our team.
+16:35:27	So before we begin, I want to
+16:35:30	give some key terms for
+16:35:33	illumination.  So the squares
+16:35:36	that you see are the workflows,
+16:35:39	or the rooms, in my analogy.
+16:35:42	The lines are the traffic or the
+16:35:44	people going in and out of the
+16:35:46	rooms.  And each of those
+16:35:49	squares, the workloads, are
+16:35:51	grouped by their labels.  What
+16:35:54	we call applications,
+16:35:56	environments, and locations.
+16:35:58	So this is the very, very first
+16:36:03	mock that our designer gave us
+16:36:06	when we first started out.  It's
+16:36:09	really quite beautiful.  And
+16:36:12	this is our very first
+16:36:14	implementation.  So some of with
+16:36:18	you, or many of you that might
+16:36:20	be familiar with the force
+16:36:23	layout might recognize that a
+16:36:25	lot of it is being used here.
+16:36:27	In particular, it's being used
+16:36:28	to calculate the positions of
+16:36:30	the workflows in each of the
+16:36:33	groups.  And then once we have
+16:36:34	the positions of those
+16:36:36	workflows, then we calculate the
+16:36:39	dimensions of those groups based
+16:36:41	on the positions of the
+16:36:42	workflows.  And then once we
+16:36:44	have the dimensions of each of
+16:36:46	those groups, we then use a
+16:36:49	force layout again to calculate
+16:36:51	the positions of those groups.
+16:36:53	And alongside the floating
+16:37:02	workloads around it.  For those
+16:37:05	unfamiliar, it is hugely
+16:37:07	computationally intensive.
+16:37:10	Logged in over thousands and
+16:37:12	thousands of iterations.  And we
+16:37:14	were doing this five, six, ten
+16:37:16	times on each render.
+16:37:21	And just to keep life
+16:37:23	interesting, we decided that we
+16:37:25	needed collision detection at
+16:37:27	each of those levels.  So we
+16:37:30	were truly abusing the force.
+16:37:34	And this is like I'm really
+16:37:36	excited about this slide.  I
+16:37:37	hope Jim's in this room
+16:37:39	somewhere.  I have been like
+16:37:41	bragging to him about it.  Yeah,
+16:37:43	I hope we made Jim proud.  His
+16:37:45	talk was some of our
+16:37:47	inspiration.
+16:37:48	But you could probably imagine
+16:37:51	what happened because of this.
+16:37:54	This is what we got for abusing
+16:37:57	the force.  We're really sorry.
+16:38:03	So how do we fix it?  We circled
+16:38:07	back.  We talked to our CTO.
+16:38:11	And we figured out that actually
+16:38:12	the most intuitive way of laying
+16:38:15	out our workflows was actually
+16:38:18	by observing the points and
+16:38:20	protocols running on the traffic
+16:38:22	between those work flows.
+16:38:25	Because surprisingly that
+16:38:27	reflected the mental model our
+16:38:30	dev ops guys had.  So we
+16:38:35	completely stripped out the
+16:38:36	force layout from all of our
+16:38:40	code and implemented a layout
+16:38:43	algorithm that was designed
+16:38:45	specifically for our own needs.
+16:38:48	So this is the before and after.
+16:38:50	The before on your left and the
+16:38:52	after on your right.  And this
+16:38:57	was absolutely awesome.  Because
+16:38:59	the re-factor gave us a layout
+16:39:05	that was much, much more
+16:39:08	performing.  It's over one
+16:39:09	iteration as opposed to over
+16:39:13	thousands and thousands of
+16:39:13	iterations fort force layout.
+16:39:18	And much more orderly because we
+16:39:20	made it so.  And finally because
+16:39:24	the algorithm was deterministic,
+16:39:26	it was able to maintain the same
+16:39:28	layout on each refresh.  And
+16:39:30	that was really integral to our
+16:39:32	customer experience, to our user
+16:39:34	experience.
+16:39:35	So we learned some really
+16:39:37	important lessons.  Which was
+16:39:40	mainly that for building
+16:39:43	visualizations within product,
+16:39:46	we never -- we oftentimes don't
+16:39:48	have an exact data set.  And we
+16:39:51	very rarely know the exact shape
+16:39:54	of all of our customer's
+16:39:58	potential data sets, but we do
+16:40:00	have the advantage oftentimes of
+16:40:02	having a closed feedback loop
+16:40:05	with our customers.  In this
+16:40:07	case it was just us because we
+16:40:11	had our product.  And we were
+16:40:14	able to figure out what are
+16:40:17	users expecting to see and
+16:40:19	what's familiar with them?  We
+16:40:21	were able to customize and
+16:40:23	optimize that based on user
+16:40:28	feedback and expectation.  It
+16:40:29	was not only a lot more
+16:40:31	performance for us, it turns out
+16:40:33	it was a lot easier for our
+16:40:35	customers to adopt from a mental
+16:40:39	model perspective.
+16:40:40	So at the very beginning I
+16:40:41	mentioned that one of the things
+16:40:43	that I love about -- or one of
+16:40:47	the things that we do is not
+16:40:49	only visualize our customer's
+16:40:51	application traffic, but also to
+16:40:54	provide ways to control that --
+16:40:59	the access for that application
+16:41:02	traffic.  And we build a lot of
+16:41:05	workflows and features around
+16:41:08	that.  So one of the main
+16:41:09	workflows we have is this.
+16:41:11	This is one of our earliest
+16:41:12	versions of the workflow for
+16:41:14	adding our rule.  And so what
+16:41:17	this is showing is all of the
+16:41:20	red lines show our traffic that
+16:41:23	are not allowed for our
+16:41:25	customers.  And the green lines
+16:41:27	mean that they are allowed.  And
+16:41:33	this workflow encourages our
+16:41:35	users to take the action to
+16:41:38	write the rule to turn those
+16:41:39	lines green.  To allow that
+16:41:41	traffic.
+16:41:42	Which means that as soon as that
+16:41:46	user clicks save, they expect
+16:41:48	all of the corresponding red
+16:41:51	lines within that visualization
+16:41:53	to turn green right away without
+16:41:57	a refresh.
+16:41:58	Which means that potentially
+16:42:00	each user action could be
+16:42:02	changing the visualizations in
+16:42:06	multiple places, oftentimes
+16:42:10	in -- sorry, changing the
+16:42:11	visualization in multiple
+16:42:13	places.
+16:42:16	And we were like, oh, my god.
+16:42:20	So I really, really love D-3 for
+16:42:24	the fact that it gives us
+16:42:26	fine-grain control of
+16:42:28	intelligently updating.  We
+16:42:30	tried to keep it that way when
+16:42:32	we first started implementing
+16:42:34	Illumination.  So we really
+16:42:36	tried to, you know -- we really
+16:42:38	tried to kind of control how
+16:42:39	much we recalculated the data,
+16:42:42	as well as how -- as well as we
+16:42:45	cherry picked how much and how
+16:42:47	often we touched it on each of
+16:42:50	the user interactions.  And that
+16:42:52	was great when we first started
+16:42:54	out.  Because we had pretty
+16:42:56	simple features then.
+16:42:58	But as we added more and more
+16:43:00	features, we started having more
+16:43:02	and more user actions.  So this
+16:43:05	table that you kind of see
+16:43:07	faintly in the background is
+16:43:08	actually only half of our user
+16:43:11	actions at a certain point in
+16:43:13	time, about a year ago.  It's
+16:43:14	all of the user actions as well
+16:43:16	as their corresponding data
+16:43:17	recalculations as well as their
+16:43:20	corresponding DOM re-renderings.
+16:43:23	And it became so much for us to
+16:43:26	keep track of, to keep track of
+16:43:28	what needs to be entered and
+16:43:29	what needs to be updated and
+16:43:31	exited with D3, that we just
+16:43:35	couldn't keep track of them all
+16:43:37	anymore.
+16:43:37	Which meant that the more the
+16:43:39	user interacted with
+16:43:41	Illumination, the more incorrect
+16:43:44	our visualization became.  And
+16:43:46	that's really not good.
+16:43:47	So we fixed it by first we moved
+16:43:53	most of our rendering
+16:43:54	responsibilities to react as
+16:43:56	opposed to only with pure D3.
+16:43:58	We ended up using a mix of both.
+16:44:02	But this allowed us to aspect
+16:44:05	away of the managing the DOM.
+16:44:09	And we decided to recalculate
+16:44:13	everything.  Everything.  All
+16:44:14	data calculations.  On each user
+16:44:18	action.  You might say, wow,
+16:44:20	that's really counterintuitive,
+16:44:23	that must have been heavily
+16:44:26	unperforming.  But we found that
+16:44:28	because the modern browser, and
+16:44:29	because we have moved to
+16:44:30	reactive flux, and especially
+16:44:33	because of React's virtual DOM
+16:44:36	dip, this was actually
+16:44:38	surprisingly okay.
+16:44:41	So this is what Illumination
+16:44:44	looked like.  The same workflow
+16:44:46	of adding a rule after
+16:44:48	re-factor.  So it was great for
+16:44:50	us because -- because we stopped
+16:44:53	recalculate -- because we now
+16:44:55	recalculate all of the data on
+16:44:57	each user action, we no longer
+16:44:59	needed to keep track of
+16:45:00	anything.
+16:45:02	And because we used flux's
+16:45:05	one-directional data flow,
+16:45:07	everything was really easy to
+16:45:09	reason about from an
+16:45:10	architecture perspective.  And
+16:45:14	because we were no longer using
+16:45:16	all of our brain power to keep
+16:45:18	track of all of our updates, we
+16:45:20	could instead concentrate on
+16:45:22	delivering features.
+16:45:24	So we could do much more than we
+16:45:26	could before and everything just
+16:45:29	kind of worked.  So we learned
+16:45:37	here that managing underlying
+16:45:39	data, especially data that is
+16:45:41	constantly, constantly changing
+16:45:43	with each user action, is one of
+16:45:45	the -- the biggest, hardest
+16:45:49	challenges of building data
+16:45:50	visualizations for a product.
+16:45:52	And for us we made the mistake
+16:45:54	of optimizing prematurely.  And
+16:46:03	from there we learned to start
+16:46:05	with a very stupidly simple
+16:46:07	approach when we're starting.
+16:46:10	And once it has had the time to
+16:46:13	kind of just marinate and soak
+16:46:15	in the code base, then we can
+16:46:17	start figuring out exactly where
+16:46:18	the optimizations are needed.
+16:46:23	So thus far everything I have
+16:46:26	shown you happened for
+16:46:29	relatively a reasonable number.
+16:46:32	But a lot of our customers don't
+16:46:34	have reasonable numbers.  They
+16:46:37	have huge numbers.
+16:46:41	So at one point in time our
+16:46:43	customer's deployments started
+16:46:47	to look like this.  So that's
+16:46:50	kind of fun, but not really
+16:46:52	great for user experience.  And
+16:46:54	so the first thing we did was we
+16:46:56	figured out that the -- probably
+16:46:59	the most straightforward thing
+16:47:01	to do is to just reduce the
+16:47:03	number of data being rendered on
+16:47:05	the screen.  And we did this by
+16:47:07	aggregating each of the
+16:47:09	workflows by their respective
+16:47:12	groups, and then by their
+16:47:13	location labels.  And then we
+16:47:18	filtered down -- filtered away
+16:47:20	anything that wasn't relevant as
+16:47:22	a user was drilling down.  And
+16:47:23	this -- this is actually our dog
+16:47:26	food environment.  And this
+16:47:28	worked really well for us.  This
+16:47:31	isn't that big of a number.  But
+16:47:33	what this meant, and what this
+16:47:34	did was it meant that -- and
+16:47:38	this is when that looked like
+16:47:39	after we factor.  And this was
+16:47:41	much, much more visually
+16:47:43	appealing, one.  And two, it
+16:47:46	significantly lightened the
+16:47:48	cognitive load on our users.
+16:47:50	Because they no longer had to
+16:47:53	dig through those spaghetti
+16:47:55	lines.  And three, it was a lot
+16:47:57	better for our browser.
+16:47:58	But what we started to notice as
+16:48:01	we got bigger and bigger in our
+16:48:03	numbers, with our customers, was
+16:48:05	that even though the pretty
+16:48:08	picture resolved, every user
+16:48:11	action, a drag, a pin, a zoom, a
+16:48:14	click, started.  And that makes
+16:48:22	a lot of sense because we were
+16:48:24	recalculating everything on
+16:48:25	every single user action.
+16:48:28	So this is my favorite --
+16:48:29	absolute favorite part.  We went
+16:48:31	in and we got crazy with the
+16:48:32	Google performance tools.
+16:48:35	So we figured out three main
+16:48:37	things among a bunch of other
+16:48:39	ones.  But the first thing we
+16:48:41	did was we figured out what was
+16:48:45	the biggest current road block
+16:48:48	of what was slowing our
+16:48:50	calculations down?  What was
+16:48:52	slowing Illumination down?  And
+16:48:54	we, surprisingly, hindsight
+16:48:57	20/20, found out that because
+16:49:00	our data stores were using
+16:49:04	arrays, the lookup on those
+16:49:06	arrays were slowing us down
+16:49:08	significantly in larger numbers.
+16:49:11	So we just replaced our arrays
+16:49:14	with objects in the data source.
+16:49:16	And then the second thing that
+16:49:17	we went into figure out was what
+16:49:22	was the next most expensive
+16:49:24	operation?  And we learned that
+16:49:26	it was actually calculating
+16:49:28	whether the lines should be red
+16:49:29	or green.  And so we figured out
+16:49:31	where that could be moved to.
+16:49:33	Which was on each time the data
+16:49:35	was loaded from the back end
+16:49:37	after, you know, some user
+16:49:40	action of adding a rule or
+16:49:42	changing a rule.
+16:49:43	And then we did similar things
+16:49:45	with all of the other places
+16:49:47	where we figured out what was
+16:49:49	least performing, and we stopped
+16:49:52	recalculating those on each user
+16:49:55	action also.
+16:49:56	And finally we took a look at
+16:49:57	what was the most memory --
+16:50:00	which data structures were the
+16:50:02	most memory-intensive.  And we
+16:50:05	figured out how -- we figured
+16:50:08	out how much of the data
+16:50:13	calculations we could move to
+16:50:14	the back end.  We moved as much
+16:50:16	as we could to the back end.
+16:50:18	And only loaded just enough data
+16:50:19	to render what's needed on the
+16:50:21	screen.
+16:50:23	And this meant that everything
+16:50:24	became much smoother, much
+16:50:26	snappier, happier, both us and
+16:50:28	the product.  And -- and we
+16:50:33	could support much larger
+16:50:34	numbers than before.
+16:50:37	So the important lesson we
+16:50:39	learned here is that we very
+16:50:43	rarely know exactly the shape of
+16:50:45	the data our customers are going
+16:50:47	to have.  Which is probably why
+16:50:49	optimizing prematurely fails so
+16:50:53	miserably for us.  But what we
+16:50:57	should do instead is to figure
+16:51:00	out what is slowing us down only
+16:51:03	when it's slowing us down.  And
+16:51:05	do so -- do the optimizations
+16:51:07	based on what we've learned.
+16:51:09	The results we've learned and
+16:51:11	gather from the profile tools
+16:51:14	that we've run.  And we're still
+16:51:19	working on scaling.  It's an
+16:51:22	ongoing process.  We have been
+16:51:23	learning -- learning a lot.  And
+16:51:26	we just keep swimming.  We just
+16:51:29	keep swimming.  I had to add
+16:51:31	that.  It's an aquarium.  Okay.
+16:51:35	I just -- I just hope you guys
+16:51:37	really like it.  So thus far
+16:51:42	I've talked a majority about the
+16:51:44	technical -- I've talked about
+16:51:46	the technical challenges that
+16:51:48	we've gone through.  But I think
+16:51:51	it's really also very important
+16:51:52	to talk about the human aspects
+16:51:54	as well.
+16:51:55	So we have been very fortunate
+16:51:57	in that we have been able to
+16:51:58	have very tight feedback loops
+16:52:01	with our customers for the last
+16:52:02	two years.  And we noticed two
+16:52:05	things.  Two primary things.
+16:52:07	Which was that when we first
+16:52:10	started, we were largely selling
+16:52:13	our product.  And so none of our
+16:52:16	customers really were, you know,
+16:52:19	using Illumination that much.
+16:52:22	Which meant that a lot of our
+16:52:26	features, all of our features,
+16:52:28	were put in based on needs of
+16:52:31	the demo.  And feedback that we
+16:52:34	got on those demos.  Which meant
+16:52:36	that we were building for
+16:52:38	customer wants as opposed to
+16:52:40	their needs.
+16:52:42	And in the last two years, as we
+16:52:44	have gotten more and more
+16:52:45	customers installed in using
+16:52:48	Illumination, we have started to
+16:52:50	seat patterns emerge how they're
+16:52:53	using Illumination.  Which means
+16:52:57	we can hone in on their
+16:53:00	workflows and start simplifying
+16:53:02	the features of
+16:53:03	Illumination.  And that's really
+16:53:05	important to us because in
+16:53:06	product with customers there's
+16:53:08	always, always edge cases.
+16:53:10	Because we'll build something,
+16:53:14	illumination, for, you know, a
+16:53:18	data set that we're pretty sure
+16:53:20	that our customers should have
+16:53:21	it shaped like this, hopefully.
+16:53:25	And it works for most of our
+16:53:26	customers, yay.  And then there
+16:53:27	will come a customer that will
+16:53:29	come along and then they have
+16:53:31	data shaped like nothing we ever
+16:53:34	expected and suddenly, boom, we
+16:53:36	have, you know, like support
+16:53:38	tickets and fire drills.
+16:53:41	So at one point in time when we
+16:53:47	first started working on scaling
+16:53:48	our product, we made the
+16:53:51	assumption that we should have
+16:53:53	optimized for the number of
+16:53:55	workflows.  That seems pretty
+16:53:57	reasonable.  And then over a
+16:54:02	period of time we started
+16:54:03	getting all these support
+16:54:05	tickets filed on us about
+16:54:07	Illumination freezing up really,
+16:54:10	really small number of
+16:54:12	workflows.  Ten, 15, 20, things
+16:54:17	we would have been able to
+16:54:19	support reasonably, easily.  And
+16:54:21	we started digging in and
+16:54:23	realized it was just because the
+16:54:25	data wasn't going to just grow
+16:54:27	and sale over the number of
+16:54:29	workflows, there was other
+16:54:31	places of complexity also.  For
+16:54:32	example, the number -- some of
+16:54:34	our customers that, you know,
+16:54:36	froze Illumination had huge,
+16:54:39	huge numbers of ports and
+16:54:41	protocols running between some
+16:54:43	of their workflows.  Or we would
+16:54:48	be tracking a large number of
+16:54:49	H3, addresses for their IP list.
+16:54:53	So as we have scaled and as we
+16:54:54	have gotten bigger and what we
+16:54:57	can handle with Illumination,
+16:55:00	it's increasingly more important
+16:55:02	to be able to really understand
+16:55:03	the needs of our customers.  And
+16:55:05	cut out any unnecessarily --
+16:55:07	unnecessary features.  Or else
+16:55:10	edge cases and everything below
+16:55:16	blowing up over and over.  And
+16:55:19	so the lesson we learned here
+16:55:21	was that when we build for
+16:55:23	product, there's obviously
+16:55:24	different customers that have --
+16:55:26	some customers that have small,
+16:55:29	small data sets.  And some
+16:55:30	customers that have large, huge
+16:55:31	data sets.  And with need to be
+16:55:33	able to accommodate both of them
+16:55:35	for Illumination.
+16:55:37	So we've learned that we need to
+16:55:39	take advantage of that tight
+16:55:42	feedback loop and figure out
+16:55:43	what's important in the use
+16:55:45	cases and work towards a
+16:55:47	visualization and an application
+16:55:48	that can be flexible, that can
+16:55:51	handle all of those situations.
+16:55:53	And the most important to be
+16:55:56	able to do that is to be -- to
+16:55:59	always make sure -- to get and
+16:56:01	use real data as often and as
+16:56:04	early as possible.
+16:56:07	And if we can't get real data
+16:56:09	from our customers, then to
+16:56:11	simulate their data as closely
+16:56:12	as possible.  Because only then
+16:56:14	can we make informed decisions
+16:56:17	about their needs for their use
+16:56:19	cases.
+16:56:21	So when we first started with
+16:56:25	Illumination, we had two front
+16:56:27	end engineers working on it
+16:56:29	full-time.  We are now a
+16:56:32	cross-functional team of front
+16:56:35	and back end QA, design,
+16:56:37	product, project managers, most
+16:56:39	of us working full-time on this
+16:56:41	project.
+16:56:42	And that's really absolutely
+16:56:45	very cool.  But despite all of
+16:56:49	this emphasis and importance
+16:56:51	that's been placed on
+16:56:52	visualization with our product,
+16:56:54	sometimes it's so
+16:56:55	surprisingly -- surprisingly
+16:56:59	difficult to get immediate
+16:57:00	buy-in on new ideas of
+16:57:03	visualization.
+16:57:04	And I think that's because of
+16:57:06	two primary reasons.  That, one,
+16:57:09	no matter how brilliant our team
+16:57:10	is, because they are, sometimes
+16:57:15	a visualizations that we propose
+16:57:17	are absolutely esoteric.  Like
+16:57:20	we might think that parallel
+16:57:24	corners and diagrams make so
+16:57:26	much sense to us.  But when we
+16:57:29	pitch it to our teammates that
+16:57:30	have never seen it before, it's
+16:57:32	hard for them to understand what
+16:57:34	it is, let alone what it's
+16:57:36	supposed to do, or should do.
+16:57:38	Or how that data will look --
+16:57:40	how our data will look within
+16:57:42	that visualization.  Let alone
+16:57:45	what the use case -- or the
+16:57:47	customer need -- is for that
+16:57:49	visualization.
+16:57:53	And second, Illumination is
+16:57:57	quite novel.  I have been told
+16:57:58	oftentimes that the security
+16:58:01	industry, UI -- has never really
+16:58:06	seen something like this before.
+16:58:08	Some of my favorite stories are
+16:58:09	of our customers are seeing
+16:58:11	their networks visualized for
+16:58:14	the first time.  And going, huh.
+16:58:22	That's our dev.  And that's our
+16:58:24	prod.  And there's a line
+16:58:26	between them that shouldn't be
+16:58:28	there.  Let me -- let me talk to
+16:58:32	our dev ops guys.  And that
+16:58:37	interaction is really, really
+16:58:38	cool, that story is really cool.
+16:58:40	But it also means that sometimes
+16:58:41	our team don't know -- doesn't
+16:58:43	know where we should be going
+16:58:46	because our customers don't even
+16:58:49	really know what they want or
+16:58:51	need from us.  Or where we
+16:58:54	should be going.
+16:58:57	So the lesson -- and I think
+16:59:00	that's actually -- and that's
+16:59:02	actually quite exciting.  And
+16:59:04	the way that we've gotten around
+16:59:07	that is by, one, when we don't
+16:59:11	know where we should be going,
+16:59:13	encourage prototyping.  We made
+16:59:18	prototyping really easy for
+16:59:19	ourselves.  Where all we have to
+16:59:21	do is to drop a hidden page into
+16:59:23	our application.  And then it
+16:59:25	has access to all of our
+16:59:27	resources of, you know,
+16:59:30	function -- like our data
+16:59:32	calculation functions, our
+16:59:34	rendering functions.  And it
+16:59:36	means when we have an idea for
+16:59:37	our visualization, it's
+16:59:40	relatively inexpensive to go on
+16:59:42	property for a few days, come
+16:59:44	back to our team and say, hey,
+16:59:47	that idea that I had, this is
+16:59:48	what it looks like with our
+16:59:50	data.  And now our team can use
+16:59:52	that prototype.  And make an
+16:59:55	informed decision of whether or
+16:59:58	not it is important or valuable
+16:59:59	for it to go into our product.
+17:00:01	And sometimes it is.  And
+17:00:03	sometimes it makes it into a
+17:00:05	product.  And sometimes it
+17:00:07	isn't.  But that's also okay.
+17:00:10	Because then we have taken the
+17:00:11	time to explore and -- to
+17:00:17	explore what's out there and our
+17:00:19	options.  That we could
+17:00:20	potentially use in a future use
+17:00:22	case.  And when we didn't know
+17:00:26	where we were to go.
+17:00:30	So in the past 20 minutes or so
+17:00:32	I have kind of just dumped all
+17:00:34	these stories and experiences on
+17:00:36	to you.  And to recap, so first,
+17:00:40	customize and optimize the
+17:00:42	visualization based on user
+17:00:45	expectation and feedback.
+17:00:46	Second, don't pre-optimize, or
+17:00:49	rather, start with a stupidly
+17:00:51	simple approach when it comes to
+17:00:52	the framework, architecture,
+17:00:55	around the visualization.
+17:00:57	Third, only optimize when we hit
+17:01:01	the performance road block, and
+17:01:04	then optimize based on data
+17:01:06	for -- the data we get -- we
+17:01:09	gather.
+17:01:11	And always, always get and use
+17:01:14	real data as often and as early
+17:01:17	as possible.
+17:01:20	And when we don't know what to
+17:01:22	do, always prototype and always
+17:01:25	explore.  So for the past two
+17:01:30	years I have learned so, so much
+17:01:32	from all of these experiences.
+17:01:33	And if I can boil it down to
+17:01:36	just some of the most important
+17:01:38	points for me, it's been to be
+17:01:39	flexible.  Both in the product,
+17:01:42	because we never know what kind
+17:01:43	of data our customers can throw
+17:01:44	at us, and also to be flexible
+17:01:47	in the process.  So that we can
+17:01:49	explore when necessary, but not
+17:01:52	all the time.  And perhaps my --
+17:01:55	the most important tool is be
+17:01:58	willing to throw things out.
+17:01:59	Re-factor and don't -- don't get
+17:02:04	attached to any one prototype or
+17:02:07	iteration.
+17:02:08	And I fully believe that the
+17:02:11	team that can do this is the
+17:02:14	most important.  Because I fully
+17:02:16	believe that is because of our
+17:02:18	team and our beliefs and our
+17:02:22	culture that we built that has
+17:02:25	taken Illumination to where we
+17:02:28	are today.
+17:02:29	So at the very beginning I
+17:02:32	mentioned that there was kind of
+17:02:36	not as many resources that we
+17:02:38	could find in terms of giving us
+17:02:41	guidance on how to build
+17:02:43	visualizations within the
+17:02:45	product.
+17:02:46	So I've compiled a survey.  And
+17:02:52	if you've had these experiences
+17:02:53	of building for a product,
+17:02:57	please help by filling this out.
+17:02:59	Because what I have talked about
+17:03:01	is only one perspective.  And
+17:03:04	I'm really, really hoping to
+17:03:06	compile a multitude of
+17:03:09	perspectives into a write-up of
+17:03:12	sort of like, mistakes made, and
+17:03:14	lessons learned.  And in the
+17:03:19	meanwhile, please join our Slack
+17:03:22	channel, called
+17:03:23	dataviz-in-product.  We're
+17:03:28	trying to foster maybe kind of a
+17:03:30	community support group.
+17:03:31	Because I'm pretty sure that I'm
+17:03:32	not alone in this.  So thank you
+17:03:38	very much.  That's all that I
+17:03:41	can think to say.

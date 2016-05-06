@@ -1,0 +1,777 @@
+9:12:20	>> Hi, everyone.  Thanks so much
+9:12:23	for having me here today.  You
+9:12:24	can see that the subject is
+9:12:27	informing without alienating.  I
+9:12:29	want to talk about why it's so
+9:12:31	important not to alienate
+9:12:41	people.
+9:12:41	When you're in a room like this,
+9:12:43	it's easy to talk a common
+9:12:45	language, and the temptation to
+9:12:47	forget some of the people are
+9:12:49	outside of the room and might
+9:12:51	understand these beautiful and
+9:12:52	technical visualizations.  But
+9:12:55	my talk as a journalist is to
+9:12:57	make sure that what I do makes
+9:13:00	sense to as many people as
+9:13:02	possible.  And the
+9:13:03	information -- but it's
+9:13:05	something I think is very
+9:13:06	important.
+9:13:08	So I wanted to start out with
+9:13:09	the one thing, which is I'm sure
+9:13:12	pretty much everyone here has
+9:13:13	made at least one -- some of you
+9:13:15	have made hundreds and hundreds,
+9:13:17	but how many times have you been
+9:13:18	in the data set you're
+9:13:20	visualizing?  And this is
+9:13:22	something I have thought about
+9:13:24	for a really long time.  In 2010
+9:13:26	I started working for the
+9:13:28	statistics department at the
+9:13:31	organization migration, I was
+9:13:33	working on trying to keep track
+9:13:36	of how many families became
+9:13:39	refugees as a result of the war
+9:13:41	in Iraq, and how many were
+9:13:43	displaced in the country.  But
+9:13:44	more important than simply
+9:13:46	counting how many families there
+9:13:47	were, I was trying to understand
+9:13:50	whether they needed water, an
+9:13:52	education, feed, what they
+9:13:55	needed to stay alive.
+9:13:57	But the statistics served a
+9:13:59	second purpose, we can go and
+9:14:01	say this is the money we need to
+9:14:03	provide for those Iraqis.
+9:14:06	And I have a really, really
+9:14:08	important part of this, I was
+9:14:11	really, really bad at my job.
+9:14:13	That's not me being modest as
+9:14:16	all.  And you can look at this
+9:14:17	chart.  Which proves it.  It
+9:14:22	comes from one of the reports
+9:14:23	that we published.  And I have
+9:14:25	some big issues with it.
+9:14:28	Surprisingly, the thing that
+9:14:29	bothers me is not the fact it's
+9:14:31	an ugly pie chart.  Think about
+9:14:34	the people outside of this room,
+9:14:36	and it's charts like this people
+9:14:38	are producing in classrooms and
+9:14:41	offices.  The fact it's 3D, it's
+9:14:43	not great, it's misleading and
+9:14:46	other things that are
+9:14:48	problematic and explain why it
+9:14:50	was I was so bad at my job.  And
+9:14:52	the first of those is simple
+9:14:53	geography.  So I was based in
+9:14:56	Iraq.  Like so many
+9:14:58	organizations at the time, we
+9:14:59	were based in Jordan because the
+9:15:02	situation in Iraq was so, so
+9:15:03	bad.  And I think the
+9:15:05	geographical separation from the
+9:15:06	data is super important and
+9:15:08	really easy for tows forget
+9:15:09	about it.  It meant I couldn't
+9:15:13	look at some of the results.  I
+9:15:16	noticed there was electricity
+9:15:19	problems in one part of the
+9:15:20	country.  Without being there,
+9:15:21	it's hard to understand whether
+9:15:22	they are because of the
+9:15:24	short-term outage, or systemic
+9:15:25	within the country.  Or whether,
+9:15:27	in fact, actually people just
+9:15:29	misunderstood the question put
+9:15:31	to them.  And we're talking
+9:15:32	about electrical products as
+9:15:33	opposed to electricity.
+9:15:35	So that geography was a big, big
+9:15:37	problem for me.  There's another
+9:15:40	reason I have a big problem with
+9:15:41	this chart.  If you remove the
+9:15:43	labels, I could be depicting
+9:15:47	absolutely anything.  I could be
+9:15:48	showing the types of underwear
+9:15:52	that women wear, murder weapons,
+9:15:54	because the visualization is so
+9:15:57	divorced from the subject
+9:15:59	itself.  And the idea of
+9:16:01	communicating something personal
+9:16:02	about the data might feel
+9:16:03	alien -- this is a cheesy
+9:16:06	transition.  Speaking of aliens,
+9:16:08	this is Lieutenant Commander
+9:16:11	Data from Star Trek.  And I'm a
+9:16:16	Star Trek fan.  Data is smart.
+9:16:21	He can compute just about
+9:16:22	everything.  That's why he was
+9:16:24	such an asset to the captain.
+9:16:30	He don't understand human.  In
+9:16:32	season one, episode 13, his
+9:16:35	identical twin shows up.  And he
+9:16:39	is an upgrade on data, he has
+9:16:42	the emotion chip that Data
+9:16:45	doesn't have.  While Data is
+9:16:48	super virtuous, the other is
+9:16:51	manipulative and self-serving.
+9:16:55	That reflects how a lot of
+9:16:56	people think about data.  It's
+9:16:57	emotional-less and it's good for
+9:16:59	that reason.
+9:17:00	And that's kind of problematic
+9:17:03	for us, very often people
+9:17:04	working with data don't have the
+9:17:06	incentive to correct people.
+9:17:08	It's great thing we're perfect
+9:17:11	humans doing this with no input
+9:17:13	and no biases.  But it's
+9:17:16	important to be honest and
+9:17:18	upfront about what we do.  And
+9:17:20	there's the data individuals,
+9:17:22	any visualization is by a human.
+9:17:27	We must acknowledge that, we
+9:17:29	make decisions about colors and
+9:17:32	scale all the time.
+9:17:34	Reason number three I was bad at
+9:17:35	my job is I think the most
+9:17:37	important reason.  Which is the
+9:17:38	charts I was making were being
+9:17:40	shown to a couple dozen people,
+9:17:42	sometimes a hundred.  Mostly
+9:17:44	donors and colleagues.  And not
+9:17:48	seen by the Iraqis.  The Iraqis
+9:17:50	provided the data, but weren't
+9:17:52	given any kind of mechanism to
+9:17:54	say, hang on a second, you have
+9:17:56	that wrong.  And I think this
+9:17:58	happens all the time.  One
+9:17:59	aspect of this that was report
+9:18:03	was 8 megabytes in side, it was
+9:18:07	huge.  And download speeds are
+9:18:09	not the same around the world.
+9:18:10	And the fact is that some Iraqis
+9:18:13	would have had to have waited
+9:18:14	for ages and ages in front of
+9:18:16	their screens to have simply
+9:18:18	downloaded the thing.  And even
+9:18:21	just the Iraqis that were
+9:18:22	speaking English.  Some of the
+9:18:24	reports were translated into
+9:18:26	Arabic.  Not all were.  I can
+9:18:35	understand that, it was a
+9:18:36	difficult environment, and the
+9:18:39	people seeing it needed the
+9:18:40	money to give to us.  And we
+9:18:43	weren't being transparent about
+9:18:45	the limitations of the data and
+9:18:47	the visualization, or the
+9:18:49	people, us, putting this stuff
+9:18:51	together.
+9:18:52	You can't see my process here,
+9:18:54	can't see if it's collected from
+9:18:56	questionnaires or face-to-face
+9:18:58	interviews.  You can't see how
+9:19:00	many people I'm depicting.  It's
+9:19:03	a failure.  And the simple fact
+9:19:06	this didn't give the Iraqis the
+9:19:08	opportunity to say you got to
+9:19:09	wrong.  And that's super-ironic,
+9:19:12	the people you are visualizing,
+9:19:15	saying they're disempowered, and
+9:19:17	not giving them to the
+9:19:19	opportunity say you're wrong.
+9:19:20	It was an intense experience.
+9:19:22	And I was bad at my job.  And I
+9:19:25	don't like being bad at my job.
+9:19:26	In 2012 I decided to go to Iraq
+9:19:30	to see if I got the numbers
+9:19:32	right.
+9:19:32	And it just -- it was pretty
+9:19:38	intense because I realized how
+9:19:39	little my charts were really,
+9:19:41	really communicating the
+9:19:42	reality.  They were completely
+9:19:44	out of touch.  And so it was a
+9:19:46	way of capturing something that
+9:19:48	felt less abstract.  I started
+9:19:50	to take photographs that felt
+9:19:52	more real to me of what life was
+9:19:55	like there.  And I started to
+9:19:56	take photographs all the time,
+9:19:57	hundreds and hundreds of them.
+9:19:59	And this kind of process of
+9:20:00	repetition meant I started to
+9:20:02	notice patterns in some of these
+9:20:04	photographs and noticing
+9:20:07	patterns makes you want to
+9:20:10	visualize data.
+9:20:11	Eventually I turned these into
+9:20:13	charts in the process.  And I
+9:20:15	turned them into charts and
+9:20:16	produced an exhibition of the
+9:20:18	photographic images in 2013.  So
+9:20:20	I'm just going to talk you
+9:20:22	through a couple of the visuals
+9:20:23	that I made in case they're
+9:20:25	interesting.
+9:20:25	This was a woman just kind of
+9:20:27	walking down the street in
+9:20:28	Baghdad.  And I turned it into a
+9:20:31	bar chart.  And what I'm
+9:20:33	displaying here is the
+9:20:35	proportion of women 18 to 59
+9:20:37	that think a husband has a
+9:20:40	justification for striking his
+9:20:41	wife.  And the terminology is
+9:20:46	bizarre, but that's the way the
+9:20:48	question was worded.  It was
+9:20:51	easy to forget the cultural
+9:20:53	differences.  In Iraq, asking
+9:20:55	people, have you been abused by
+9:20:57	your husband is a massive
+9:20:58	intrusion into the private life.
+9:21:00	The data we're going to get is
+9:21:01	going to be incredibly,
+9:21:03	incredibly fluid.  You have to
+9:21:05	be creative how you understand
+9:21:07	trends.  This comes from the
+9:21:08	Iraqi census.
+9:21:10	And as you can see, one in five
+9:21:12	women think that a husband has
+9:21:13	ha justification for striking
+9:21:15	his wife if she burns the food.
+9:21:17	Like really, really shocking
+9:21:18	data.  But I just wanted to
+9:21:21	remember some of the actual
+9:21:22	people behind the data, and
+9:21:23	using photographs was important
+9:21:25	in order to do that.
+9:21:26	Similarly, this one is just some
+9:21:29	Iraqis in the north of Iraq.  I
+9:21:31	actually -- anyone have a guess
+9:21:35	of what it is I'm visualizing
+9:21:37	here?  See the line at the top?
+9:21:40	Sorry?  No, that would have been
+9:21:43	a better thing to visualize with
+9:21:44	this particular image.  It's
+9:21:46	actually -- it's actually
+9:21:48	depicting foreign aid.  So it's
+9:21:51	quite useful for kind of seeing
+9:21:53	how the country was quickly -- I
+9:21:54	wouldn't say forgotten, but some
+9:21:56	of that financial aid trailed
+9:21:58	off.  And the electricity, it
+9:21:59	was running out of the financial
+9:22:02	aid at that time.
+9:22:04	This one here shows because
+9:22:08	working for the migration
+9:22:10	organization, I was focusing on
+9:22:11	the number of refugees, the
+9:22:13	number of people internally
+9:22:15	displaced in the country, as
+9:22:16	well as refugees who had kind of
+9:22:18	come back to Iraq.  And again,
+9:22:20	the idea of this was to remind
+9:22:22	people that this data is humans
+9:22:25	and fix it in a geographic
+9:22:27	landscape of Iraq.
+9:22:28	This one was -- I actually was
+9:22:31	helping someone who wanted to
+9:22:32	write a will.  And in Iraq you
+9:22:34	kind of -- you go to these
+9:22:35	people out in the street.  This
+9:22:37	was like a guy under an
+9:22:41	umbrella.  You get a form from
+9:22:43	him and go a mile down the road
+9:22:45	to get a stamp from another guy.
+9:22:47	They don't publish in the papers
+9:22:50	anymore, but explains the number
+9:22:52	of steps for a contract.  And I
+9:22:53	want you to visualize it this
+9:22:58	way, it was a bureaucratic
+9:22:59	nightmare to get anything done.
+9:23:01	And each one of these steps
+9:23:03	creates an opportunity for
+9:23:06	corruption.  The corruption in
+9:23:06	the country is relevant to the
+9:23:08	statistics we are looking at and
+9:23:09	so easy to forgot.  Before I
+9:23:11	went there, I was looking at
+9:23:12	education statistics all the
+9:23:14	time.
+9:23:14	Things like the percent of
+9:23:16	Iraqis that graduated from high
+9:23:18	school, literacy rates, thing
+9:23:20	like that.  While I was there, I
+9:23:23	talked to a mother who explained
+9:23:25	her daughter was falling behind
+9:23:27	in school, not because she
+9:23:28	necessarily wasn't doing well,
+9:23:31	but even the teachers accepted
+9:23:34	bribes to give better grades.  I
+9:23:37	could look at the data set of
+9:23:38	the school grades to not
+9:23:40	understand the way that it was
+9:23:41	distorted by facts on the
+9:23:44	ground.
+9:23:44	So it helped me to understand
+9:23:46	the way that I wasn't -- the
+9:23:48	kind of missing gaps in the
+9:23:49	things I was looking at.  This
+9:23:51	was an attempt to do a better
+9:23:53	pie chart.  I'm not claiming
+9:23:56	that any of these are good.  I
+9:23:58	look back with the benefit of
+9:23:59	hindsight and think they're bad
+9:24:01	in lots to of ways.  But this
+9:24:03	showed that nine out of every
+9:24:05	100 Iraqis, the cause of death
+9:24:08	was suspected torture.  And you
+9:24:10	couldn't look at the
+9:24:11	visualization and lose sight of
+9:24:14	the people in it, the human side
+9:24:16	of things.
+9:24:17	And even if you read the labels,
+9:24:19	get a sense of subject, in a
+9:24:22	real time in a real place.  And
+9:24:24	the other purpose of these
+9:24:25	charts is they're supposed to be
+9:24:27	very inclusive.  The process,
+9:24:30	someone selected -- I
+9:24:31	think, and it looks like a real
+9:24:33	color.  So hopefully people
+9:24:35	could see a way they could
+9:24:36	replicate my process.  And I
+9:24:38	think that's really, really
+9:24:39	important.  I do not think that
+9:24:41	data visualization is for geeks,
+9:24:44	I don't describe myself as a
+9:24:46	geek, and I don't like the label
+9:24:47	of a geek, it creates insiders
+9:24:51	that can be exclusionary.  I
+9:24:52	want people to look at my work,
+9:24:54	as many as possible.  That's the
+9:24:56	reason I moved into journalism.
+9:24:58	And I am not ashamed that I seek
+9:25:02	out and want a lot of readers.
+9:25:04	They can check my work and tell
+9:25:07	me whether or not I'm getting
+9:25:09	things right.
+9:25:09	So I started working out with
+9:25:12	the Guardian's data block, and
+9:25:15	this tone FiveThirtyEight in the
+9:25:18	U.S.  And I started writing a
+9:25:21	column called am I normal?  The
+9:25:24	name eventually switched.  It
+9:25:26	sounded like we were placing
+9:25:28	something on the readers by
+9:25:30	providing a response to the
+9:25:31	questions?
+9:25:32	The idea was that, A, I could
+9:25:36	not only get more input
+9:25:38	visualizations, but the
+9:25:39	questions that I should be
+9:25:42	asking, what kind of hypotheses.
+9:25:46	And I wanted to talk about one
+9:25:50	of these for a different site.
+9:25:52	I got a question for Caroline,
+9:25:54	living in Philadelphia at the
+9:25:55	time.  And she wrote to me and
+9:25:57	asked, dear Mona, I read an
+9:26:00	article that said most of the
+9:26:02	prison population is religious.
+9:26:04	There are few atheists in
+9:26:05	prison.  Please tell me if that
+9:26:08	is true for the United States.
+9:26:09	As many journalists do, I found
+9:26:13	the data and visualized it with
+9:26:18	FiveThirtyEight.  What's the
+9:26:20	best way to visualize this?
+9:26:22	Should we be showing more
+9:26:23	numbers and we were really
+9:26:27	interested in ratios.  What was
+9:26:29	underrepresented in prison
+9:26:30	relative to the U.S. prison
+9:26:33	population.  And you can see
+9:26:35	Christians underrepresented,
+9:26:37	more in prison relative to the
+9:26:40	population as a whole, and
+9:26:43	Jewish inmates as well.  So I
+9:26:44	published this data, and as I
+9:26:46	always do at the end of the
+9:26:47	columns, invited readers to get
+9:26:50	in touch.  I did, I had former
+9:26:52	inmates who get in touch that
+9:26:54	explain that part of the reason
+9:26:55	for this data is that if you are
+9:26:56	in prison, as these individuals
+9:26:59	had been, sometimes you get
+9:27:01	access to better meals as
+9:27:02	opposed to standard prison
+9:27:05	meals.  I had it explained that
+9:27:09	you could get extra recreational
+9:27:11	time, gets you out of your cell
+9:27:14	which is important if you're in
+9:27:15	the prison for 23 hours a day.
+9:27:17	So the ability for people to
+9:27:22	explain the why is important.
+9:27:24	The theories, not that I'm not
+9:27:27	going to accept the anecdotes,
+9:27:30	but it's new lines of inquiry.
+9:27:34	My job is not working if I'm not
+9:27:36	relentlessly looking at what
+9:27:39	rather than what is happening.
+9:27:41	My inbox is really, really
+9:27:43	important to me.  I'm going to
+9:27:45	share some of the questions I
+9:27:46	have in the inbox.  They are
+9:27:47	quite interesting.  They reveal,
+9:27:49	again, some of the things the
+9:27:51	general public are thinking --
+9:27:52	is thinking about data.
+9:27:53	So this one which was sent to me
+9:27:57	in 2015, to attractive people
+9:28:02	have more sex than ugly people.
+9:28:04	I could imagine together, they
+9:28:07	did really well and people
+9:28:08	accepting that data on face
+9:28:10	value without any kind of
+9:28:11	interrogation of what is meant
+9:28:14	by attractive and ugly.
+9:28:15	And I think the need to take a
+9:28:17	step back and explain the
+9:28:18	definition of terms and the
+9:28:20	methodology of the way you're
+9:28:21	collecting this stuff is super
+9:28:23	important.
+9:28:24	Here's another one.  Am I the
+9:28:26	only one that doesn't use the
+9:28:28	designed opening in my underwear
+9:28:30	when peeing.  This was
+9:28:35	interesting.  I assume it came
+9:28:36	from a man.  As someone without
+9:28:38	a penis, I didn't think this was
+9:28:42	interesting at all.  But I
+9:28:43	shared it on social media.  And
+9:28:44	a lot of people think this is
+9:28:46	interesting.  Which is quite
+9:28:48	nice.  Because what I find
+9:28:50	interesting isn't necessarily
+9:28:51	the same topics as the people I
+9:28:53	should be serving.  So to be
+9:28:55	able to check that is super
+9:28:58	important.
+9:28:58	And this one is quite dark.  So
+9:29:00	someone asked me asked what the
+9:29:03	auto-erotic asphyxiation success
+9:29:08	rate was, and looking for a good
+9:29:10	answer.  I'm sure it's performed
+9:29:12	successfully a lot of times,
+9:29:14	right?  You are looking for
+9:29:16	reassurance.  But it got me
+9:29:19	thinking critically about your
+9:29:21	responsibilities as a
+9:29:22	journalist.  Let's say I was
+9:29:23	able to collect the data and the
+9:29:25	data showed that 90% of the time
+9:29:27	you're fine.  You're totally
+9:29:29	fine.  How can I put that into a
+9:29:31	chart that communicates risk to
+9:29:33	a reader in a really, really
+9:29:35	responsible manner so people
+9:29:36	don't just see that chart and do
+9:29:38	something that is potentially
+9:29:39	quite dangerous to them.
+9:29:41	And with a health report, these
+9:29:43	questions are critical.  You
+9:29:44	could be shaping kind of
+9:29:46	people's choices.  And then this
+9:29:48	really simple one.  This last
+9:29:54	one leads to me the last of my
+9:29:57	very strange kind of annotated,
+9:30:00	somewhat narcissistic resume,
+9:30:03	the thing I'm describing, but I
+9:30:05	want to talk about the iteration
+9:30:08	in the way I have tried to think
+9:30:09	about data visualization.  As
+9:30:12	you can see from the messages,
+9:30:14	FiveThirtyEight readers are
+9:30:16	special.  This happens around
+9:30:17	most Websites.  The Internet
+9:30:19	doesn't create a perfect flat
+9:30:23	space.  You get clusters and
+9:30:25	community, The Guardian reader,
+9:30:28	not necessarily the same as a
+9:30:30	FiveThirtyEight reader.  I
+9:30:31	wanted to publish on something
+9:30:33	that was a little more flat and
+9:30:35	help give me access to
+9:30:36	audiences.  And I want to resist
+9:30:38	the urge to produce interactives
+9:30:41	all the time.  I was starting to
+9:30:42	do that.  And I wasn't thinking
+9:30:44	critically when I needed to ask
+9:30:46	the reader to get involved and
+9:30:48	when to give them the simple
+9:30:50	image and kind of the more
+9:30:52	simplistic story.
+9:30:55	So I started to basically use
+9:30:57	Instagram.  I thought it was a
+9:30:58	good way as well -- the images
+9:31:00	are really fantastic.  They're
+9:31:02	transparent and gives them an
+9:31:03	opportunity to have a discussion
+9:31:05	and a debate around that
+9:31:07	visualization.  So here's one I
+9:31:08	do, which was a response to a
+9:31:10	particular question.  How much
+9:31:11	pee is a lot of pee?  I tried to
+9:31:15	use everyday objects whenever I
+9:31:16	can in order to have the scale.
+9:31:19	That's super important.  Not
+9:31:20	everyone necessarily uses the
+9:31:23	same units of measurement, they
+9:31:26	are different.  And especially
+9:31:27	with large units, it's really
+9:31:30	hard to understand what we're
+9:31:32	talking about.  Pretty much
+9:31:33	everybody has had a one liter
+9:31:37	bottle in their hands and they
+9:31:41	can understand it.
+9:31:42	This is another one, and kind of
+9:31:44	don't think I need my hand in
+9:31:46	it.  Makes it look like a mini
+9:31:49	basketball.  But it's to show
+9:31:50	the relative size of the
+9:31:52	basketball.  And the hoop, this
+9:31:53	is about scale.  So contrasting
+9:31:56	the average parking space in
+9:31:58	America with the average
+9:32:00	confinement cell.  And I got
+9:32:02	online abuse from both sides of
+9:32:05	the spectrum.  Abuse from people
+9:32:09	who say you are implying they
+9:32:11	have too much space, and abuse
+9:32:13	from those implying they have
+9:32:15	too little space.  Which bodes
+9:32:17	well with the way you visualize
+9:32:20	something.
+9:32:20	And I wanted to use this as a
+9:32:22	way to reach out to the
+9:32:25	community of non-Geeks,
+9:32:26	and say information is
+9:32:31	relevant.  There was a
+9:32:32	journalist in New York that do a
+9:32:33	freedom of information act
+9:32:35	request to find out how much
+9:32:36	decapitated animals there were
+9:32:38	in New York parks.  I was able
+9:32:40	to visualize this and which ones
+9:32:42	were the most commonly found
+9:32:45	animals.  Headless chicks, over
+9:32:47	a ten year time period, but
+9:32:51	interesting.  Not always just
+9:32:53	heads.  But sometimes the bodies
+9:32:54	and not the heads.  It was super
+9:32:57	interesting and I got people
+9:32:58	thinking about why this data is
+9:32:59	the way it is.  And we -- for me
+9:33:03	it was a good thing.  And then
+9:33:06	the benefits of having -- before
+9:33:14	finishing, I want to talk about
+9:33:16	some examples of what I think
+9:33:17	are good data journalism on my
+9:33:19	own.  And good visualizations.
+9:33:22	So, again, I want to come back
+9:33:25	to the idea of conveying what we
+9:33:27	do, the fallibility of what we
+9:33:30	do.  And I want to focus on one
+9:33:33	very, very small data set in a
+9:33:36	way.  So this comes from this
+9:33:38	block that some of you know
+9:33:40	called the quantified breakup.
+9:33:42	And it was written by a woman
+9:33:44	going through a divorce in New
+9:33:45	York.  And she visualized all
+9:33:48	kinds of aspects of the breakup.
+9:33:49	Visualized the messages, the
+9:33:52	frequency, the time of day, and
+9:33:54	how the relationship fizzled
+9:33:56	out.  Visualized how much sleep,
+9:33:59	and times she just started
+9:34:02	crying in public and couldn't
+9:34:03	control herself.  People loved
+9:34:04	it, not just because it told a
+9:34:06	story, but because it was
+9:34:07	really, really honest in terms
+9:34:09	of the limitations.  This wasn't
+9:34:11	one woman trying to claim she
+9:34:13	was trying to represent divorce
+9:34:15	in America or New York or women
+9:34:17	in general.  She was saying here
+9:34:19	is the story, my data.  And the
+9:34:21	transparency is very great.
+9:34:25	This is a very different
+9:34:26	example.  This was from the New
+9:34:27	York Times.  Done by Gregor
+9:34:32	Aisch, Kevin Quealy, and Amanda
+9:34:34	Cox.  And this chart -- the
+9:34:36	parent's income versus the
+9:34:38	likelihood that their children
+9:34:40	will attend college.  Draw out
+9:34:43	the data and how it compares.
+9:34:44	Tells you a story and inspires
+9:34:46	you in a way that feels super,
+9:34:48	super inclusive.  And you can
+9:34:49	see how you compare to other
+9:34:51	people.
+9:34:52	Again, it's just really, really
+9:34:53	friendly and it just had great
+9:34:55	design.
+9:34:57	And then the last one I want to
+9:34:59	talk about is early this month
+9:35:01	The Guardian published what I
+9:35:04	thought was a good analysis of
+9:35:06	17 million comments published on
+9:35:08	the Website.  One reason why it
+9:35:11	was really, really good is that
+9:35:12	it didn't overwhelm the viewer
+9:35:14	in terms of too much data.  It
+9:35:16	broke it down into several
+9:35:19	slices to you could see how
+9:35:21	levels of abuse varied by gender
+9:35:23	and subject area.  But what was
+9:35:25	good, I think, it allowed the
+9:35:27	reader to kind of take part in a
+9:35:28	little quiz where you could read
+9:35:30	a real comment that was on the
+9:35:32	site and decide for yourself
+9:35:34	whether you would block it,
+9:35:38	define as abuse or left it up.
+9:35:40	What it did, it was, A, a sense
+9:35:43	of scale, you took a minute or
+9:35:46	two to decide if it was abusive.
+9:35:48	And 17 million have been
+9:35:50	analyzed, that's a lot.  And
+9:35:51	shows you that even though you
+9:35:53	can read in all of this what was
+9:35:55	truly objective data looking at
+9:35:57	the scale of abuse, once you
+9:35:59	read that comment, you realize
+9:36:00	that every one of the data
+9:36:01	points represents a small human
+9:36:03	decision.  Whether or not this
+9:36:04	is abuse.  It's based purely on
+9:36:07	subjectivity.  Even the whole
+9:36:09	appears objective.  And is
+9:36:11	objective in some ways.
+9:36:12	So I thought that was really,
+9:36:15	really smart.  Now I know I
+9:36:17	touched on a lot of disparate
+9:36:19	topics.  So I would like to
+9:36:23	close with some ways we can get
+9:36:27	better at what it is we are
+9:36:28	doing.  Even though data
+9:36:30	visualization has obviously made
+9:36:31	leaps and bounds and has
+9:36:32	progressed hugely, in some ways
+9:36:35	our data literacy hasn't and
+9:36:37	never will.  We're kind of
+9:36:39	flawed human beings.  If I was
+9:36:41	to ask how many people are in
+9:36:43	the auditorium, we would get
+9:36:45	very different response on
+9:36:47	range.  And the bigger -- if
+9:36:49	you're in a huge concert venue,
+9:36:53	it's hard to guesstimate.  You
+9:36:55	have the opportunity to
+9:36:57	community scale to readers in
+9:36:58	much better ways.
+9:37:00	So even something as simple as
+9:37:02	17 million comments, trying to
+9:37:03	help people to understand how
+9:37:04	many that actually represents.
+9:37:07	And there's all the kinds of
+9:37:08	simple and complicated ways of
+9:37:10	doing that.  But I think it's
+9:37:11	important as a goal to kind of
+9:37:13	bear in mind.  The other thing
+9:37:14	that I think is super important,
+9:37:15	if I haven't made it kind of
+9:37:17	clear already is, is the
+9:37:20	conversation.  So I think kind
+9:37:21	of communicating, interacting
+9:37:23	with people makes me so much
+9:37:29	better at what I do.  Gawker
+9:37:31	used to let you leave comments
+9:37:33	on the photograph.  And you
+9:37:37	could see where they clustered
+9:37:40	together to have the
+9:37:41	conversation.  You could see the
+9:37:42	people were more interested in
+9:37:43	the President of the United
+9:37:44	States, or the wealthy
+9:37:46	2-year-old child.  And
+9:37:47	translated into a chart where
+9:37:49	people left comments, it would
+9:37:50	be incredibly powerful.  You
+9:37:52	could see, if everyone is having
+9:37:54	a conversation about one year in
+9:37:55	the data on a line chart, or
+9:37:57	whether everyone is focused on
+9:38:01	one state in America.  Or
+9:38:02	whether everyone is talking
+9:38:03	about one dot, scatterplot,
+9:38:06	maybe a point of inaccuracy in
+9:38:08	your data and you can change it.
+9:38:12	And it's more focused and more
+9:38:14	fruitful as a decision.
+9:38:16	That's all I was going to say
+9:38:19	about Obama and the child.  The
+9:38:20	last thing that's really
+9:38:21	important, question just get
+9:38:23	better at communicating
+9:38:24	uncertainty.  That was the idea
+9:38:25	of doing hand drawings and
+9:38:27	photographs.  It was about
+9:38:28	admitting fallibility better.  I
+9:38:34	think some data visualizations
+9:38:36	communicate in a way that I find
+9:38:40	slightly troubling.  There's
+9:38:41	ways to communicate uncertainty,
+9:38:44	plotting out things around an
+9:38:45	average, or plotting out
+9:38:47	probabilities, we need to think
+9:38:48	more critically about it.
+9:38:50	So the last thing I would say is
+9:38:52	that, you know, yes, data should
+9:38:55	strive for objectivity and
+9:38:57	fairness, and visualizations
+9:38:58	keep trying to do that, but
+9:39:00	shouldn't be alienating people,
+9:39:01	but we may jeopardize the
+9:39:04	quality of what we're doing.  It
+9:39:06	doesn't solve everything, you
+9:39:08	have access to a whole lot of
+9:39:09	people, but reach out and
+9:39:11	publish in the same language as
+9:39:13	them.  That they are available
+9:39:15	to you regardless of Internet
+9:39:16	speeds.  And we, you know, in a
+9:39:18	very, very concrete way we're
+9:39:20	actually unelected officials who
+9:39:22	are kind of representing people
+9:39:23	in our data.  If we're not
+9:39:25	checking in on them to say, have
+9:39:27	we got this right?  I think
+9:39:29	there's something pretty dark
+9:39:30	about that.  Thank you very
+9:39:32	much.  Thank you.
+9:39:38	Oh, yeah.  And yeah -- if anyone
+9:39:41	has any questions for me?

@@ -1,0 +1,760 @@
+14:02:38	>> Hey, guys.  Is this working?
+14:02:40	Oh.  I have to turn it on.  Yes.
+14:02:45	Yes.  Okay.  I hope everybody
+14:02:47	had a really nice lunch and
+14:02:48	enjoyed -- did you see the giant
+14:02:51	turtle in the -- that was
+14:02:52	awesome.
+14:02:54	So anyway.  Imagine that you
+14:02:57	spend your days looking at the
+14:02:59	star ands and seeing all of
+14:03:02	these fascinating shapes.  I
+14:03:05	started my career working with
+14:03:06	the infinity space and working
+14:03:08	with the enormous amount of data
+14:03:11	it can produce.  And although I
+14:03:13	graduated as an astronomer, I
+14:03:16	switched to a career as a data
+14:03:18	scientist.  I couldn't say
+14:03:20	good-bye to the visual
+14:03:21	astronomer inside of me, I found
+14:03:24	myself floating the
+14:03:27	visualization more than the
+14:03:28	analysis itself.
+14:03:29	So I switched gears again, and
+14:03:31	now I'm a data visualization
+14:03:33	designer.  At night I work on
+14:03:36	personal projects or experiment
+14:03:38	with new ideas.  Or create
+14:03:40	tutorials for my Website.  And I
+14:03:42	found that in data visualization
+14:03:48	I tend to be a perfectionist.  I
+14:03:50	love spending hours and hours on
+14:03:51	small details, making it exactly
+14:03:53	as I had in mind.
+14:03:55	Being born and raised in
+14:03:57	Holland, I always hoped that
+14:03:59	maybe my craving for
+14:04:01	perfectionism came from the same
+14:04:05	genes as the artists.  Small
+14:04:09	country.  But, you know, they
+14:04:10	managed to put such dedication
+14:04:12	into their artworks.  And
+14:04:14	although data visualization and
+14:04:17	painting isn't exactly the same
+14:04:19	thing, I do always start my
+14:04:21	visuals on plain paper.
+14:04:23	And once I have a mental image
+14:04:24	of how something should look,
+14:04:26	the computer had damn well be
+14:04:28	able to create some semblance
+14:04:31	for it on the screen for me.
+14:04:33	However, what I usually have in
+14:04:36	mind is not the beautiful
+14:04:37	setting what the examples let me
+14:04:40	use.  That forces me to work
+14:04:42	outside of the box from time to
+14:04:43	time.
+14:04:43	But with the results, if you try
+14:04:45	to experiment with the norm, use
+14:04:48	things in an unconventional
+14:04:49	manner, or get inspiration from
+14:04:51	different fields of design to
+14:04:52	create a more effective, or fun,
+14:04:55	visualization.
+14:04:56	Okay.  We're almost ready to go,
+14:04:59	but just to be sure, let me
+14:05:02	explain how SVGs, scalable
+14:05:06	vector graphics fit into this
+14:05:09	world.  When you work with these
+14:05:11	things, you figure out the
+14:05:12	building blocks, shapes, are
+14:05:15	SVGs.  And by combining
+14:05:17	circles and rectangles, you can
+14:05:20	create awesome visualizations.
+14:05:23	And my journey on how I started
+14:05:25	using SVGs beyond shapes.  My
+14:05:29	first step beyond shapes came
+14:05:32	when I was trying to create a
+14:05:34	code legend.  That would go
+14:05:37	smoothly through all the colors
+14:05:39	I was using.  And that's why I
+14:05:41	got into gradients.  The data
+14:05:44	set I was working with, it was
+14:05:47	not necessary to read off the
+14:05:49	exact value that each value
+14:05:51	represented.  It was the trends
+14:05:52	and getting an overall sense of
+14:05:54	the numbers.  Such as this, for
+14:05:57	example.  Here we have the total
+14:05:59	number of traffic accidents that
+14:06:01	occurred in the Netherlands in
+14:06:02	2014 aggregated on the
+14:06:08	horizontal and vertical.  And
+14:06:10	the darker the color, the more
+14:06:12	accidents that occurred on that
+14:06:13	day and hour.
+14:06:14	No surprise that most accidents
+14:06:16	occurred in the morning and
+14:06:17	especially evening rush hours.
+14:06:19	But it's about seeing trends.
+14:06:21	It isn't that important that you
+14:06:23	know that one thing is either
+14:06:24	1420 or 1440 accidents, it's
+14:06:29	seeing more the trends.
+14:06:30	And this legend below, that's
+14:06:33	when I mean by having a smooth
+14:06:35	legend going through your
+14:06:37	colors.  And it's nothing more
+14:06:38	than a rectangle, SVG rectangle
+14:06:43	filled with a gradient.  Because
+14:06:44	I'm going to show you a few more
+14:06:46	gradient examples after this,
+14:06:48	I'm going to explain how you can
+14:06:51	create one.
+14:06:52	There's actually something
+14:06:54	called a linear gradient
+14:06:57	balance.  But you have to nest
+14:06:59	it.  Defs is short for
+14:07:03	definitions and holds the
+14:07:04	special things such as
+14:07:06	gradients, but also filters,
+14:07:07	which we'll see later.  And it's
+14:07:10	also very important that you
+14:07:11	give your gradient a unique ID
+14:07:13	so you can reference is again
+14:07:16	when you set the fill of the
+14:07:18	element that you want to apply
+14:07:19	the gradient to.
+14:07:20	And we have to give it
+14:07:22	information about the direction.
+14:07:25	A way for the gradient to run.
+14:07:27	And you do this in a way, it's
+14:07:29	similar to an SVG, and we create
+14:07:34	a starting point, X1, Y1, and an
+14:07:37	end point, X2, Y2.  And we can
+14:07:40	supply these in percentages and
+14:07:42	exact locations.  But in 90% of
+14:07:44	the locations percentages is way
+14:07:46	easier.
+14:07:46	So as a result the gradient as
+14:07:49	X1 at 0%, X2, 100%.  Both Ys
+14:07:55	can be the same.  And playing
+14:07:57	around with these values you can
+14:07:59	create a vertical gradient or a
+14:08:01	gradient along any angle that
+14:08:03	you may want.  This is not the
+14:08:06	truth that I'm showing here,
+14:08:07	because it's actually the
+14:08:08	building blocks.  So the
+14:08:10	smallest rectangle that can
+14:08:13	define where these end points
+14:08:15	lie.  So in this case the
+14:08:16	starting point of 0.0% is
+14:08:19	outside of what's visible in the
+14:08:21	shape.  And once you start
+14:08:22	seeing it, it's already turned
+14:08:24	slightly more purple.  And maybe
+14:08:26	you don't want that.  That's
+14:08:29	fine.  You don't have to start
+14:08:30	at 0%.  You can start wherever
+14:08:33	you want, and they can be padded
+14:08:34	with whatever was there at the
+14:08:35	end of your gradient.
+14:08:38	But we're just going to use a
+14:08:40	normal gradient.  So now we have
+14:08:42	set the direction, all that's
+14:08:44	left to do is supply it with
+14:08:45	some color information.  And for
+14:08:47	that we have the stop elements.
+14:08:49	And with a stop element you
+14:08:51	supply it with a color, the stop
+14:08:54	color, and the offset.  Which is
+14:08:55	the location along that sort of
+14:08:57	directional arrow that color
+14:08:59	should be.
+14:09:02	And here I have a light blue
+14:09:03	color at the start as it's
+14:09:06	represented, and then another
+14:09:08	color stop, otherwise it
+14:09:09	wouldn't be a gradient, at the
+14:09:11	other end, of 100%, a dark blue.
+14:09:16	Now the gradient is done, it can
+14:09:17	be used.  So we select that
+14:09:20	rectangle and set the style by
+14:09:22	referencing that unique item we
+14:09:25	created for a gradient.  And
+14:09:26	then we get this result.
+14:09:29	If you have many colors in your
+14:09:31	gradient, it might become
+14:09:33	tedious to people with the color
+14:09:35	stops.  But luckily we can use
+14:09:38	the data step to define the
+14:09:41	color stops for us.  In way it's
+14:09:43	similar to adding circles to a
+14:09:47	spatter plot.  And we will set
+14:09:50	the direction of the horizontal
+14:09:52	gradient.  This time we're going
+14:09:54	to append a data set that holds
+14:09:56	the offset location and the
+14:09:58	collar that you have at that
+14:10:00	location.  And create a stop for
+14:10:03	each data point.  Afterwards, it
+14:10:05	only takes two lines to set this
+14:10:07	offset, this stop color, by
+14:10:09	referencing the data.
+14:10:10	And now we have a smooth
+14:10:11	gradient going all through these
+14:10:15	nine colors.
+14:10:18	Well, another example that is in
+14:10:20	essence a heat map is what you
+14:10:25	see here.  And can be combined
+14:10:27	with a legend and a smooth
+14:10:29	coloration.  It is a visual
+14:10:31	output of a machine learning
+14:10:34	with data.  It started my love
+14:10:37	for hexagons.  I wish I could
+14:10:40	say I was using the palette that
+14:10:42	you can see right now, but I was
+14:10:44	working with these before I knew
+14:10:45	that data visualization was a
+14:10:47	thing in itself.  I didn't know
+14:10:49	that for a long.
+14:10:51	I am from the science
+14:10:53	background, so the actual pallet
+14:10:56	I used was -- yes.  So.  Anyway.
+14:10:59	If anybody is interested to know
+14:11:02	how to interpret these, you can
+14:11:04	ask me later today or tomorrow.
+14:11:06	But to stay in the rainbow mood,
+14:11:10	one of my temperature
+14:11:11	visualizations.  I re-created a
+14:11:13	weather radio for Boston last
+14:11:15	year.  And each day is a bar,
+14:11:17	from the minimum temperature to
+14:11:18	the maximum temperature.  And
+14:11:20	it's colored according to the
+14:11:22	average.  And here again, it's
+14:11:24	mostly about seeing trends.
+14:11:26	When was it very hot?  When was
+14:11:27	it cold?
+14:11:31	Being an astronomer, I of course
+14:11:33	wanted to join a club of people
+14:11:35	that made visualizations about
+14:11:38	exoplanets.  It was simple, I
+14:11:41	wanted to do data story telling
+14:11:44	and how weird it was to make it
+14:11:47	work.  By making the circles
+14:11:50	rotating around one generic star
+14:11:53	more than flat circles, I wanted
+14:11:55	it to look like spheres by using
+14:11:57	a gradient.  And I wanted to
+14:11:59	have the colors depends on some
+14:12:01	aspect of the data.
+14:12:02	Well, a radial gradient is the
+14:12:04	second option that you have for
+14:12:06	gradients.  It's, as you expect,
+14:12:08	from a center point outward.
+14:12:10	And creating a gradient based on
+14:12:12	data is also very easy.  You can
+14:12:14	use the data set in a similar
+14:12:18	way.  But this time we
+14:12:19	immediately append our data set
+14:12:22	when we attach it to the defs.
+14:12:27	We create a gradient for each
+14:12:29	data point.  And very important
+14:12:31	you give them two IDs to
+14:12:33	reference again when you combine
+14:12:35	them with your circles.
+14:12:37	And afterwards you can use the
+14:12:38	data that's inside of it to set
+14:12:41	something like a color of your
+14:12:43	gradient.  I can say some
+14:12:45	features of the color scale
+14:12:47	should be used.  And I can make
+14:12:48	it lighter on the inside, darker
+14:12:54	on the outside, move the
+14:12:55	direction of the center, make it
+14:12:57	bigger, and we have something
+14:12:58	that sort of mimics a 3D sphere,
+14:13:01	but just using that one color we
+14:13:03	had to start with.
+14:13:05	If we were to use the def tools,
+14:13:08	we have a gradient for each of
+14:13:10	the end points and each is
+14:13:13	slightly different.  And
+14:13:14	finally, select the circles and
+14:13:16	connect them to the right
+14:13:17	gradient.
+14:13:19	And a visualization about
+14:13:21	exoplanets, which you see, I'll
+14:13:26	show you what I think is one of
+14:13:27	the most important plots in
+14:13:29	astronomy.  It's a diagram.  And
+14:13:34	in this case, they are not
+14:13:36	planets, they are some of the
+14:13:38	nearest stars that we have.  We
+14:13:40	have luminosity on the vertical
+14:13:44	scale, and temperature on the
+14:13:45	horizontal.  But notice the
+14:13:47	warmer on the left side, cooler
+14:13:49	on the right.  There's a reason
+14:13:51	for that.
+14:13:52	And I heard this could be
+14:13:54	actually one of the first
+14:13:55	scatterplots ever made.  Which
+14:13:58	was kind of cool.  Our sun is
+14:14:00	somewhere over there.  And these
+14:14:03	stars in the upper portion, they
+14:14:05	are, indeed, bigger.  But I'm
+14:14:07	not actually being honest.
+14:14:08	Because if I was feeling
+14:14:10	correctly, they would look like
+14:14:11	this.  But then you can't really
+14:14:13	have a useful thing for the rest
+14:14:16	of the plot anymore.  So that's
+14:14:18	why we scale it back.
+14:14:20	Also, of course, things are the
+14:14:22	things that shine.  They are not
+14:14:25	shined upon.  We can tweak the
+14:14:27	gradient and make them look more
+14:14:28	like the glowing orbs that they
+14:14:31	are.  And what I like about this
+14:14:34	plot is that I feel there is
+14:14:36	very little visual encoding
+14:14:39	done.  The stars are roundish,
+14:14:42	round, and they are visible in
+14:14:43	the colors.  It's like you're
+14:14:45	plotting the things that they
+14:14:46	are.  I don't know of a more
+14:14:48	perfect scatterplot than
+14:14:50	visualizing planets and stars.
+14:14:53	But I might be biased.
+14:14:55	Anyway.  Besides using
+14:14:56	data-specific colors with your
+14:14:59	gradient, you can use data for
+14:15:01	setting anything on the
+14:15:02	gradient, such as the
+14:15:04	directions.  And after watching
+14:15:05	the second Avenger's movie, I
+14:15:08	was wondering how they were
+14:15:12	connected, how often they
+14:15:15	appeared in a movie.  And I
+14:15:16	thought the cord would work for
+14:15:21	this.  The thick the cord, the
+14:15:23	more movies they have appeared
+14:15:25	in together.  In a default case,
+14:15:27	the cord is given one color.
+14:15:29	But that doesn't really make a
+14:15:30	lot of sense because the data is
+14:15:31	symmetrical, and Thor and
+14:15:36	Hawkeye, the reverse was true as
+14:15:39	well.  I could make them all
+14:15:41	gray, but that felt boring.
+14:15:44	But instead I wanted to have a
+14:15:46	gradient that runs from the
+14:15:47	Avenger on one side to the
+14:15:49	other.  So to pull that off,
+14:15:51	focus on Black Widow here, and I
+14:15:54	want to create a gradient along
+14:15:56	these directional arrows.  Sort
+14:15:58	of mimic the idea of it running
+14:16:02	across the cord.  So I get
+14:16:05	something that looks a bit like
+14:16:06	this.  But we start out similar
+14:16:09	to the planets case.  So here we
+14:16:10	start by putting can the chord
+14:16:14	to the depths, and it will
+14:16:16	create a gradient for each of
+14:16:18	the chords.  And one thing
+14:16:20	that's different than in
+14:16:21	previous cases, here it's better
+14:16:23	not to use the box on the chord
+14:16:26	to which you want to apply the
+14:16:28	gradient.  But use the chorded
+14:16:30	system you were using with the
+14:16:32	origin right in the center of
+14:16:33	that circle.
+14:16:34	And you can do this by setting
+14:16:38	gradients for uses.  I want you
+14:16:40	to know it can be done.  The
+14:16:42	reason is that we can actually
+14:16:43	find the exact pixel locations
+14:16:46	of these two colors dots by
+14:16:48	using the chord data set
+14:16:50	together with some signs and
+14:16:51	co-signs and trigonometry,
+14:16:54	nothing fancy, but it's way
+14:16:58	easier.  So after setting these
+14:17:00	directional arrows using the
+14:17:06	data, set two color stops.  One
+14:17:08	with the color of the Avenger
+14:17:11	the source, 0%, and one that's
+14:17:15	100%, and the color of the
+14:17:17	Avenger at the other side.  And
+14:17:19	we get this result.  These cords
+14:17:21	are a representation of both of
+14:17:25	the Avengers.  But you can use
+14:17:30	gradients for a smooth color
+14:17:33	change, and come in handy for
+14:17:34	rough color changes as well.
+14:17:36	And many analyses about baby
+14:17:40	names have been done, the most
+14:17:42	trendy name, unisex name.  But I
+14:17:51	wanted to know how the most
+14:17:53	popular rose and fell.  But I
+14:17:56	was interested to find out the
+14:17:58	data set went back to 1880.  But
+14:18:01	a typical screen isn't wide
+14:18:03	enough to do justice to that
+14:18:06	many years of change.  So
+14:18:08	instead I used the focus and
+14:18:10	context in which you have a
+14:18:11	small box below.  You see all of
+14:18:15	the data and select the small
+14:18:16	window.  And this chart here
+14:18:19	will show you sort of the -- the
+14:18:21	more detailed small box that you
+14:18:24	selected.
+14:18:25	But to make the connection
+14:18:26	between this small window and
+14:18:28	the top chart more apparent, I
+14:18:30	wanted to color the bottom
+14:18:36	window -- exactly the same as
+14:18:39	the top chart, but only within
+14:18:41	the window you selected.
+14:18:42	However, you can only have the
+14:18:44	one color.  And I didn't to want
+14:18:46	cut the lines up into three
+14:18:47	sections.  Before, within, and
+14:18:50	after the selected window.
+14:18:52	And instead I just used the
+14:18:53	simple gradient to re-create
+14:18:56	this effect.  Because if you
+14:18:57	append two color stops in
+14:19:00	exactly the same location, the
+14:19:02	color change is very abrupt.
+14:19:04	First we append a gray stop and
+14:19:07	a colored one at 40%, get the
+14:19:10	same result.  It seems like two
+14:19:12	different things.  Then do the
+14:19:13	reverse at some other
+14:19:14	percentage, 60, first the
+14:19:16	colored stop, and then the gray.
+14:19:18	Now it appears as if we have
+14:19:20	these three different sections.
+14:19:22	So if I take one of these
+14:19:24	gradients for these lines and
+14:19:26	apply it to a rectangle, it
+14:19:28	seems as if we have three
+14:19:30	rectangles, but it's only one
+14:19:33	with a gradient applied to it.
+14:19:35	And by changing these
+14:19:36	percentages when somebody is
+14:19:38	dragging this window, and
+14:19:40	therefore some update functions,
+14:19:43	you can make it appear that the
+14:19:44	gradient is moving along with
+14:19:45	your choice.
+14:19:48	But it can also be very handy to
+14:19:51	visualize thresholds, such as
+14:19:52	the value of something is bad or
+14:19:54	good.  Or it changes categories.
+14:19:56	And here is an example of the
+14:20:01	mean body mass index for 50
+14:20:03	randomly chosen countries in the
+14:20:05	last 40 years.  And above 25,
+14:20:09	according to health
+14:20:10	institutions, you're overweight.
+14:20:13	Above 30, obese.  And I pulled
+14:20:16	the lines with all the same
+14:20:18	gradient to show the structure
+14:20:19	of something changing from sort
+14:20:21	of neutral to bad more apparent.
+14:20:23	And this line, I really just
+14:20:26	suddenly becomes from gray to
+14:20:28	orange.  And even if you change
+14:20:30	your data set, you don't have to
+14:20:32	do anything about the colors.
+14:20:34	So if you go from men to women,
+14:20:36	the linear gradient doesn't
+14:20:38	care.  It's still in the same
+14:20:40	location.  So you don't have to
+14:20:43	think about that.
+14:20:44	And I was also very pleasantly
+14:20:47	surprised to find out that
+14:20:49	gradients can easily be
+14:20:52	animated.
+14:20:52	and I was working on a fun
+14:20:55	project, we had access to a data
+14:20:57	set.  We knew what education
+14:20:58	people had studied and then what
+14:21:01	occupation they were doing a
+14:21:02	year and a half after their
+14:21:04	graduation.  And we wanted to
+14:21:05	show this flow from education to
+14:21:08	occupation.  And I could do that
+14:21:09	with a diagram.  So from one
+14:21:12	thing to another.  But I love
+14:21:13	circular things.  So I wanted to
+14:21:15	try something more circular.
+14:21:17	So I went back to a chord
+14:21:19	diagram, which had a lot of
+14:21:21	chords.  And then I started
+14:21:22	tweaking this around adding
+14:21:23	things.  I even went into the
+14:21:25	source code and made some
+14:21:27	changes here and there.  To make
+14:21:29	it look more like these circular
+14:21:32	ones.  Although I have seen the
+14:21:35	term backlog on the Internet as
+14:21:39	well.
+14:21:40	Anyway, this is the end result.
+14:21:42	So we have educations on the
+14:21:43	left and occupations on the
+14:21:45	right.  But to make this flow
+14:21:47	from education to occupation
+14:21:48	more apparent, I wanted to mimic
+14:21:51	that by actually making an
+14:21:54	animated gradient from education
+14:21:57	to occupation.  But not -- just
+14:22:01	going that way.  And gave me an
+14:22:04	excuse, animating gradients, to
+14:22:07	put the famous map in the
+14:22:11	demonstration.  The troop
+14:22:13	movements, the brown is moving
+14:22:15	towards Moscow, and the black,
+14:22:17	away from Moscow.  Never too
+14:22:18	much in your face, but there.
+14:22:21	All right.  So finally leaving
+14:22:25	the realm of SVG gradients and
+14:22:31	moving into filters.
+14:22:32	You might know them from
+14:22:34	Photoshop or Instagram.  And
+14:22:36	we're also sort of leaving the
+14:22:38	realm of effectiveness in
+14:22:39	visualization behind, and moving
+14:22:42	more towards experimenting to
+14:22:45	have fun.  And creating a
+14:22:48	filter, similar to a gradient.
+14:22:50	And now we still have to give it
+14:22:52	a unique ID.  And afterwards
+14:22:56	comes the magic part, a specific
+14:22:58	combination of filters creates
+14:23:00	an effect you might never have
+14:23:02	expected.  But the good thing
+14:23:03	is, once it works, you can copy
+14:23:07	the code and use whatever visual
+14:23:09	you want.  You don't have to
+14:23:10	change everything, usually you
+14:23:13	only change a few things.
+14:23:16	I'm not going to show you the
+14:23:17	code, but focus on the results.
+14:23:19	What can you do with these
+14:23:24	filters?  Afterwards, you set
+14:23:27	the ID.  The first one is very
+14:23:29	subtle.  But can have a nice
+14:23:30	added effect in the right
+14:23:32	circumstances.
+14:23:33	Well, some people love charts, a
+14:23:40	few months ago I made a redesign
+14:23:42	of a chart in D3.  It was fine
+14:23:46	the way it looks.  But I
+14:23:48	remember coming across some code
+14:23:49	for a filter to create a shadow,
+14:23:52	or a glow around text.  And I
+14:23:53	thought maybe that will make
+14:23:55	this more engaging as well.
+14:23:57	I'll show you the glow, it's
+14:23:58	really subtle.  I hope you can
+14:24:00	see it on the screen.  That was
+14:24:01	it.  And this is also really a
+14:24:03	matter of taste.  Some people
+14:24:04	might like it more, some people,
+14:24:06	it's worse.
+14:24:07	I mean, I liked it, so I left it
+14:24:12	in.  What it does, it's simple.
+14:24:15	Say you applied to a circle,
+14:24:17	makes a blur version, pastes the
+14:24:21	normal back on top and then you
+14:24:23	have it.  And you can do that
+14:24:25	with rectangles and pods and
+14:24:27	circles.  But no line.  So no
+14:24:29	glow, with glow.  Although it's
+14:24:31	a bit better.  And one location
+14:24:35	where I found that really sort
+14:24:36	of made it look more special was
+14:24:40	when I was playing around with
+14:24:46	spirographs.  I loved these as a
+14:24:50	kid.  And we have glow, no glow,
+14:24:54	it's really subtle.
+14:24:55	Well, another filter where I
+14:24:58	found that it has sort of a nice
+14:25:03	touch had to do with the motion.
+14:25:07	If things are moving faster or
+14:25:09	closed to us, they appear
+14:25:10	blurred.  And with the right
+14:25:11	filter we can re-create that
+14:25:14	effect as well.  Just these
+14:25:15	circles, the faster they move
+14:25:17	the more blurred they appear to
+14:25:20	mimic the idea of fast movement.
+14:25:22	I first came across this when I
+14:25:23	saw a demo for an image gallery
+14:25:26	where images were sliding across
+14:25:28	the screen.
+14:25:29	And I thought data visualization
+14:25:31	we usually have movement, often
+14:25:33	show movement.  Figuring out if
+14:25:35	I could use that there as well.
+14:25:37	And it's very simple.  Just
+14:25:38	making the element blurred in
+14:25:41	one direction.  That's it.  X or
+14:25:43	Y.  As an example, here we have
+14:25:46	some service moving outward, no
+14:25:48	blur.  And with a bit of an
+14:25:51	exaggerated blur, it looks like
+14:25:52	this.  So no blur, with the
+14:25:55	blur.  And I feel that the blur
+14:25:57	just makes it a bit more human,
+14:25:59	I guess.  A bit more fun.
+14:26:02	So for an appropriate data
+14:26:05	visualization, I thought, well,
+14:26:07	let's visualize the top running
+14:26:09	speeds of animals and the
+14:26:11	fastest human.  When the circles
+14:26:13	are moving outward, the faster,
+14:26:16	the more blurred they appeared.
+14:26:18	Although I have seen there's a
+14:26:20	growth circle sometimes.  Not on
+14:26:22	my screen, but here it is, you
+14:26:24	have the ghost circle.
+14:26:26	When they moved out, they were
+14:26:28	blurred.  You didn't notice it,
+14:26:30	it was a subconscious thing.
+14:26:32	And let me pull back in and show
+14:26:35	the blur.  So the cheetahs move
+14:26:37	fastest, most blur.  And the
+14:26:40	turtle is practically not
+14:26:42	moving.  No blur.  You can do
+14:26:44	this with more than just the SVG
+14:26:47	elements.  Say you wanted to add
+14:26:48	images to your data set, that's
+14:26:50	fine.  They know that the filter
+14:26:52	doesn't mind.
+14:26:53	If I move these outward, they
+14:26:55	will get blurred as well.
+14:26:57	Okay.  So now this is my
+14:26:59	favorite filter.  The gooey
+14:27:03	effect.  I came across this one
+14:27:05	when I saw a really nice loading
+14:27:08	demo somewhere on the web.  And
+14:27:09	I thought, well, that's a good
+14:27:11	one to keep in mind.
+14:27:12	And at some point I was working
+14:27:16	for a golf firm, they could
+14:27:23	swing and see the results on the
+14:27:24	screen.  To visualize how far
+14:27:27	the ball had gotten, I could use
+14:27:30	the points on the screen like
+14:27:31	this.  But that felt a bit
+14:27:32	boring.  So I thought why not
+14:27:34	mimic the golf swing and let the
+14:27:36	circles start out from the
+14:27:37	starting point.  I thought this
+14:27:38	was better, but I wasn't quite
+14:27:40	feeling it yet.
+14:27:42	Then I remembered the gooey
+14:27:44	effect, and by adding that,
+14:27:46	suddenly it felt that the
+14:27:48	visualization was acknowledging
+14:27:49	the effort that the participant
+14:27:50	was doing trying to get the ball
+14:27:53	as far away as possible.  Didn't
+14:27:55	make it more true or false, but
+14:27:57	made it more fun to watch for
+14:27:59	these people.
+14:28:00	And I'm not even going to
+14:28:02	explain how this filter works.
+14:28:04	I only understand about half of
+14:28:05	the steps.  But besides having
+14:28:06	this fun gooey effect, it does
+14:28:09	some nice color blending as
+14:28:11	well.  I think.  That's pretty
+14:28:12	cool.
+14:28:14	Well, I'm trying to think of
+14:28:16	some ideas for data
+14:28:17	visualizations.  One I have, say
+14:28:21	we want to visualize the 150
+14:28:24	largest can cities in the world.
+14:28:25	We just let them blur out of
+14:28:28	this, or instead, if we wanted
+14:28:29	to bring them back together on a
+14:28:31	country level, in the country is
+14:28:33	one thing, so once they come
+14:28:35	together, they form one country
+14:28:37	again.
+14:28:38	And this actually also reminded
+14:28:39	me of my collection.  This is
+14:28:45	fun already, it's working.  But,
+14:28:47	you know, with this -- oh, no.
+14:28:49	Right there.  So I actually find
+14:28:51	this a lot of fun too.  Trying
+14:28:53	to keep that one out.  Still the
+14:28:55	same.  But it was like your
+14:28:57	mother not wanting you to play
+14:29:04	with this -- anyway.  It's time
+14:29:06	for the final example.
+14:29:07	This one has to do with the nice
+14:29:10	color blending techniques you
+14:29:11	have in Photoshop.  One color or
+14:29:14	another can create an entirely
+14:29:17	different color.  I tried to do
+14:29:19	this with SVG filters.  It is
+14:29:22	possible.  Then I saw a blog
+14:29:24	that showed how it could be done
+14:29:26	with this.  So I -- although
+14:29:30	it's no longer a filter, the
+14:29:32	effects are still visible on
+14:29:34	SVG.  That's why I included it.
+14:29:37	So my two favorite modes are
+14:29:39	multiply and screen.  And you
+14:29:41	can create this effect by
+14:29:42	setting the mixed blend mode of
+14:29:45	these circles to either one of
+14:29:47	these two.  And it's also very
+14:29:48	important that you have to group
+14:29:49	these circles and isolate them.
+14:29:51	Otherwise the background color
+14:29:53	will be taken into account when
+14:29:54	the blend mode is doing its
+14:29:57	thing.  And you might end up
+14:29:59	seeing absolutely nothing on
+14:30:00	your screen, having no error
+14:30:02	messages.  And you can't figure
+14:30:04	out what the heck you're doing
+14:30:06	wrong.  I have been there.
+14:30:09	So no data visualization example
+14:30:11	right here.  But just something
+14:30:14	that I can watch indefinitely.
+14:30:17	And the blending really makes
+14:30:20	for a better result.  Because if
+14:30:22	I turn it off, I mean, I would
+14:30:25	say it definitely has less
+14:30:27	magic.
+14:30:28	So I hope that some of these
+14:30:32	examples will be -- assist you
+14:30:38	some day to create even more
+14:30:40	effective visualization.  I hope
+14:30:42	I inspire you to go and
+14:30:44	experiment with the norms so you
+14:30:45	have to say as few concessions
+14:30:48	as possible to re-create the
+14:30:50	image that you have in your
+14:30:53	mind.  And above all, I hope
+14:30:56	you'll go beyond shapes.  You
+14:30:57	can find all of these examples
+14:30:58	you see and way more explanation
+14:31:01	and the code on my blog soon.
+14:31:04	And thank you very much for your
+14:31:05	time and attention.

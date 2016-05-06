@@ -1,0 +1,716 @@
+14:32:58	>> Welcome to a universe of
+14:33:01	procedural random.  Well, the
+14:33:04	buildings, geometry, the roads,
+14:33:07	the water lines, comes from open
+14:33:11	street map.  Carefully created
+14:33:15	and chopped into tiles.  And now
+14:33:21	with Mapzen.  And then extrude
+14:33:24	on timeline GS, a free map
+14:33:28	engine.  And the rest -- the
+14:33:38	grids, the numbers, the
+14:33:40	patterns.  The tiles.  The
+14:33:41	movement of the camera.  All
+14:33:43	that is constructed in realtime.
+14:33:46	Directly in the graphic card of
+14:33:48	this computer.  There's no
+14:33:49	video.
+14:33:53	The language to program directly
+14:33:55	on the graphic cards is called
+14:33:59	Shaders.  I'm Patricio Gonzalez
+14:34:07	Vivo.  I'm an artist interested
+14:34:11	in landscape.  Here's some of my
+14:34:15	previous work.  And almost two
+14:34:23	years ago I have the privilege
+14:34:25	of working with all these great
+14:34:28	engineers and designers.  I have
+14:34:30	been learning so much.  I feel
+14:34:33	very privileged to be working
+14:34:34	there.
+14:34:36	And it's because everything that
+14:34:39	we do -- oh.  Since when does
+14:34:41	that happen?
+14:34:44	thank you for pointing that out.
+14:34:47	So all the things that we do are
+14:34:49	open source.  So pay attention
+14:34:54	to our Website.  We would like
+14:34:58	to help your needs.  We have --
+14:35:06	and you can get an API key for
+14:35:08	free.
+14:35:09	So there I have been working in
+14:35:12	some of these experiments.
+14:35:14	Working with -- from the back
+14:35:16	end to the front end.  And
+14:35:18	working on -- not just doing
+14:35:23	implementations on it, but
+14:35:25	pushing the limits of what
+14:35:28	cartography is.  I'm not a
+14:35:30	cartographer, so I do that.  So
+14:35:33	I'm having a lot of fun doing
+14:35:34	this demos for what we do.
+14:35:39	And trying to add more data to
+14:35:41	that.  So I have been finding
+14:35:43	ways to bring animation and data
+14:35:46	to our maps.  And most of the
+14:35:52	samples that we took here use
+14:35:55	what is called GLSL Shaders.
+14:35:59	Which is the two things I love
+14:36:02	the most.  And what I really
+14:36:04	enjoy about my work.  So what
+14:36:06	are shaders?  Who -- let's do a
+14:36:09	test.  Who knows what a shader
+14:36:13	is?  Great.  This is awesome.
+14:36:18	So I was going to go through a
+14:36:21	small instruction today.  I have
+14:36:22	been working in my free time in
+14:36:24	this book, called the book of
+14:36:26	shaders.  And I'm going to bring
+14:36:28	some of the contents of it into
+14:36:31	the presentation.  So if you
+14:36:32	feel lost, or you want to dig
+14:36:35	deeper, I encourage you to take
+14:36:38	a look at it.
+14:36:39	So this is shader code.  And
+14:36:42	we -- we can start thinking --
+14:36:47	if we take a look at it, you
+14:36:49	will notice that it looks like
+14:36:51	C, yes.  It's a blend of C.  So
+14:36:54	you see your main function
+14:36:55	there.  And then -- and then
+14:36:58	there's -- it's very small.  And
+14:37:02	then you will discover there are
+14:37:04	specific firewalls and things
+14:37:07	happening there.
+14:37:09	So I will try to do a small
+14:37:13	interpretation of what is
+14:37:14	happening here.  And it was
+14:37:15	great that Mariko presented
+14:37:20	that.  Because she was
+14:37:22	explaining about the double
+14:37:23	loop, the double loop to do
+14:37:27	pixel to pixel calculations.
+14:37:30	Actually everything that she
+14:37:32	puts inside that double loop
+14:37:33	goes inside this part.
+14:37:35	So I'm going to go back.  And
+14:37:39	start speaking in metaphors.  So
+14:37:42	I like to think of shaders as a
+14:37:46	press.  They are for graphic
+14:37:47	engineers for me what the word
+14:37:50	press was for authors, for
+14:37:53	books.  They let us free from
+14:37:55	the one single threat that --
+14:37:57	again, thank you for explaining
+14:37:58	that.
+14:38:00	And it has, like, put our work
+14:38:02	in the designing of a page.
+14:38:05	Making an algorithm that will --
+14:38:08	once we have it, create a whole
+14:38:10	page one at a time.  So there is
+14:38:12	no need of writing a letter
+14:38:14	after a letter after a letter to
+14:38:16	make a word.  And then like put
+14:38:18	all the words together in order
+14:38:19	to have a line.  And then the
+14:38:21	lines mix up, and we make the
+14:38:25	page.  Here is all the letters,
+14:38:27	all the words.  Everything in a
+14:38:28	single page.  Happens at once.
+14:38:31	So I have a second method to
+14:38:33	explain that.  I like to use
+14:38:35	this with my students.
+14:38:36	So imagine like a single thread
+14:38:40	as a pipe.  Right?  The
+14:38:44	computers this century, we have
+14:38:46	like -- this year we have a very
+14:38:48	robust computer.  So they are
+14:38:51	designed to do very complicated
+14:38:53	tasks.  And I see a lot of new
+14:38:56	computers.  So you have like
+14:38:57	around four of these big pipes.
+14:39:00	Or cores.
+14:39:03	But for small things, for
+14:39:05	example, computing pixel to
+14:39:08	pixel, that slows down.  She was
+14:39:10	like speaking a lot, you make
+14:39:13	pixel to pixel operations, this
+14:39:16	load on your computer.  Why is
+14:39:17	that?  Because you mentioned
+14:39:20	that deciding a quarter of a
+14:39:24	pixel is a tiny task.  If we
+14:39:28	have a box that's a tiny task,
+14:39:30	and it's very small.  We can
+14:39:32	picture it like a Ping-Pong
+14:39:34	ball, right?  So all this
+14:39:36	computer, and the screen, it's
+14:39:37	like half a million pixels to
+14:39:39	compute.  And the screen running
+14:39:40	at 60 frames per second is
+14:39:43	almost 26 million calculations
+14:39:46	per second.
+14:39:47	Imagine now with one of these
+14:39:49	new, like -- this place and it's
+14:39:54	just at 5 million pixels.  And
+14:39:59	60mHz per second, it's insane.
+14:40:06	We try to do that with a CPU, we
+14:40:09	get a sad CPU.  And we mentioned
+14:40:12	we have this industrial pipe,
+14:40:14	trying to put all the string of
+14:40:16	pixels, Ping-Pong balls, the
+14:40:18	small calculations and they are
+14:40:20	stuck, right?  Right in the
+14:40:22	trans.
+14:40:23	So for everybody here, a new
+14:40:27	computer, engineers have solved
+14:40:29	this problem by using parallel
+14:40:31	computation.  And this is --
+14:40:37	this has been for a while.  Like
+14:40:39	15 years ago.  And the idea of
+14:40:41	it is like to -- like you have
+14:40:44	little tiny little pipes.  Very
+14:40:46	small.  Running parallel.  So
+14:40:49	looking back to our -- the big
+14:40:52	industrial pipe.  These are more
+14:40:54	like -- I don't know -- toilet
+14:40:57	paper tubes.
+14:40:58	So the idea is that this is a
+14:41:02	constant flow of Ping-Pong balls
+14:41:05	that our computers all the time
+14:41:07	are generating.  Will pass
+14:41:09	through them like water in a
+14:41:10	strainer.  Each one going
+14:41:13	through a different pipe, right?
+14:41:14	And to illuminate this metaphor
+14:41:17	that I'm insisting on, imagine
+14:41:20	each one of these tubes as
+14:41:22	something that is less powerful
+14:41:23	of a -- I don't know if some
+14:41:28	people have like the chance of
+14:41:31	programming.  But it's simple.
+14:41:34	You give it a C code.  So
+14:41:37	imagine that you have a table,
+14:41:39	and each one of them is
+14:41:41	controlling one line, one light,
+14:41:44	one like L.E.D. light.  L.E.D.
+14:41:51	light to be more precise.  And
+14:41:54	you have the opportunity to
+14:41:56	flash them all at once, at the
+14:41:58	same time.  And I say flash them
+14:42:00	all, I mean like load a
+14:42:04	framework all at once.
+14:42:05	And also imagine that these --
+14:42:08	all these are doing are not
+14:42:13	enough -- imagine that you have
+14:42:14	one per pixel.  They share some
+14:42:18	resources.  And one of the
+14:42:19	resources they share is the
+14:42:21	memory.  And this specific
+14:42:23	memory is what we call the
+14:42:24	memory of the graphic card.  You
+14:42:27	have heard that when you go to
+14:42:29	buy a computer.  It's completely
+14:42:32	separate from memory.  It's
+14:42:34	images and geometry, mostly.
+14:42:36	So this is my -- this is my
+14:42:39	introduction to what a graphic
+14:42:41	GPU unit is versus a CPU is.  So
+14:42:48	let's jump into the coding part
+14:42:50	of this.
+14:42:52	So be patient with me.  I'm
+14:42:54	going to make this bigger.
+14:42:55	Everybody can see?  Right?  So
+14:42:58	this is an online editor that I
+14:43:01	made for the book.  It's where I
+14:43:03	spend most of my time coding
+14:43:05	examples.  And I want to point
+14:43:07	out to some -- some important
+14:43:10	aspects of this code in order to
+14:43:12	explain what this is.  So this
+14:43:15	is the main function where
+14:43:19	everything happens.  This first
+14:43:21	variable over there is the
+14:43:22	precision of the pixel that is
+14:43:25	running the computation.  So
+14:43:27	each one of these pixels on this
+14:43:28	viewport is running this same
+14:43:32	function.  Here is receives the
+14:43:34	information where it is
+14:43:35	located.
+14:43:36	and here is the variable that we
+14:43:38	will write what is the color of
+14:43:41	that?
+14:43:43	So if you have been paying
+14:43:45	attention, you will know that
+14:43:48	these colors are -- as Mariko
+14:43:51	also noted -- it has four
+14:43:53	values.  But here, instead of
+14:43:56	going from zero to one, to 255,
+14:43:59	it goes from zero to one.  So we
+14:44:02	will say all are normalized
+14:44:05	colors.  So we pass here our
+14:44:07	color.  In this case we are
+14:44:09	passing the position -- sorry --
+14:44:10	the position of the pixel.
+14:44:14	Normalize it.  And the blue
+14:44:16	channel we are putting that
+14:44:19	aside -- the various other
+14:44:26	times.
+14:44:27	So let's do -- let's start
+14:44:30	making something more fun.  So
+14:44:31	I'm going to take this line out.
+14:44:33	Boop.  And in order to do that,
+14:44:38	I'm going to put the coordinates
+14:44:39	in it.  So you will see that now
+14:44:41	the pixels in the top -- in
+14:44:44	the -- this side -- in this side
+14:44:50	are serial.  And when they get
+14:44:54	closer to the other side, they
+14:44:55	get one.  They make this nice
+14:44:58	gradient.  If I change the X by
+14:45:00	the Y, this is going to happen
+14:45:04	from bottom to top.  So now if
+14:45:06	we put two things together, we
+14:45:08	know that the top -- the
+14:45:11	zero/zero position, the top,
+14:45:15	right?
+14:45:17	So let's -- I will do a small
+14:45:23	demo of how to make a shape of
+14:45:24	this.  So I'm going to get the
+14:45:29	dot product of st, which is a
+14:45:31	coding system.  And that's like
+14:45:34	a sphere here.  I want a circle.
+14:45:39	So I know to move the whole
+14:45:41	chording system, that holds the
+14:45:43	position, I'm going to move it
+14:45:46	aside.  So I'm going to put
+14:45:49	these -- so this is --
+14:45:53	And then what I love the most
+14:45:58	about shaders is that the API,
+14:46:00	the language is very small.  And
+14:46:02	it's mostly mathematical.  And
+14:46:04	the code looks very atomic.  And
+14:46:07	also the language comes with
+14:46:09	some useful functions.  And one
+14:46:11	of them is essentially a step.
+14:46:20	So we're going to step from the
+14:46:21	nice gradient, we're going to us
+14:46:23	cult it in 0.5.  So if -- so we
+14:46:33	are like -- in the previous
+14:46:36	step, it was like -- like went
+14:46:41	from black to white.  And here
+14:46:43	we're making a slim cut at one
+14:46:46	specific point.  Let's invert
+14:46:48	this.  And then we have a black
+14:46:50	and white dot on a black.
+14:46:53	And this is where the moment
+14:46:57	when I was like, oh, okay.  I
+14:47:00	buy this thing.  Because this is
+14:47:05	calculated in each one of the
+14:47:10	pixels on the screen, there's
+14:47:11	nothing like a circle.  So if
+14:47:14	you have drawn circles before,
+14:47:16	there's a moment where the
+14:47:17	computer is getting angry and
+14:47:18	sad that you are making so many
+14:47:20	circles.
+14:47:21	But here, because everything is
+14:47:23	per pixel, it's the same if you
+14:47:25	put one or a million.  Let me
+14:47:27	show you that.  So I'm going
+14:47:29	grab this space, I'm going to --
+14:47:32	that means you get only that
+14:47:35	part.  And move it by one first.
+14:47:36	And then I'm going to move it by
+14:47:38	two, three, four, five, ten.
+14:47:42	100.  And the computer -- and
+14:47:44	the framework is constant
+14:47:47	because I'm not in any place
+14:47:51	saying draw one circle.  And
+14:47:53	each one of these pixels is
+14:47:56	getting the coordinates to draw
+14:47:57	a circle.
+14:47:58	And they should be drawing
+14:48:01	something black or white.  I
+14:48:02	hope that makes sense.  I'm
+14:48:05	afraid to go to the screen.
+14:48:08	so one more -- another example
+14:48:13	of that.  I'm going to make st.
+14:48:21	I'm going to add st to this y.
+14:48:25	I'm going to use this to -- oh,
+14:48:28	sorry.  Entering over black.  So
+14:48:31	basically I'm making it using
+14:48:35	the combined position of X and
+14:48:38	Y.  So that makes a wave in the
+14:48:43	side.  So let's multiply this by
+14:48:46	a big number.  So I'll move
+14:48:49	it -- too big.  Let's do this
+14:48:55	thing again.  And we have a
+14:49:02	stripe pattern.
+14:49:03	So this technology, it's not
+14:49:09	rare.  It's used a lot in the
+14:49:10	gaming industry because it's
+14:49:11	very cheap to make textures.
+14:49:15	Economically.  And that's what I
+14:49:17	love about this.  And this is
+14:49:18	what I do all day.
+14:49:22	So that brings us to the second
+14:49:25	thing.  Thousand apply this.
+14:49:30	Then the data comes from
+14:49:32	OpenStreetMap, right?  And
+14:49:36	that's vector tiles.  We chop
+14:49:40	from open stream lab into
+14:49:42	vectors.  So basically that's
+14:49:43	like SVGs, right?  Position in
+14:49:46	the screen.  And then we extrude
+14:49:50	them.  Some information in Open-
+14:49:53	StreetMap, the buildings, some
+14:49:55	buildings have height.  And so
+14:49:59	the extra geometry to make that
+14:50:02	extrusion.  And this is
+14:50:03	basically the canvas that I work
+14:50:05	with.
+14:50:08	Once we have this I can apply
+14:50:12	using the same techniques that I
+14:50:14	showed before to any part on
+14:50:16	that.  I have an example here.
+14:50:19	So this is basically the same
+14:50:22	simple patterns of dots and
+14:50:24	lines, but applied into lower
+14:50:26	Manhattan.  And all of this is
+14:50:31	running directly in realtime.
+14:50:38	Or with a little more effort you
+14:50:40	can go in the other direction.
+14:50:43	Something more realistic.  So
+14:50:44	here I'm using random to
+14:50:48	generate some -- two lights --
+14:50:52	squares in some parts and not
+14:50:53	another.  To generate the
+14:50:55	illusion that these are windows.
+14:50:59	New York doesn't look like that,
+14:51:01	really.  It's more like a
+14:51:05	Gotham.
+14:51:07	So I have the privilege of
+14:51:13	working on this project, tangram
+14:51:17	play.  I like making these
+14:51:20	things, we are coders.  And we
+14:51:22	are lazy.  And sometimes it
+14:51:24	takes -- when something takes
+14:51:26	you too much to do something,
+14:51:27	you feel like thinking, okay.
+14:51:30	Make this go faster.  So I was
+14:51:33	using it, and I wanted to start
+14:51:37	making an online tool.  So the
+14:51:41	files we use for Tangram.  So I
+14:51:45	put together, and then Lou
+14:51:50	joined the team with Mapzen.
+14:51:52	He's an UI engineer.  He took
+14:51:57	Tangram to the next level.  He
+14:51:59	also referred to it like you
+14:52:00	have this baby.
+14:52:02	So here -- so here we have
+14:52:11	Tangram play.  Encourage you to
+14:52:12	take a look.  You have a lot of
+14:52:14	examples that you can look at.
+14:52:15	But I don't want to overwhelm
+14:52:17	you with a lot of things.
+14:52:18	So I want to explain a little
+14:52:19	bit what's happening here.  So
+14:52:23	most of you have worked with
+14:52:26	maps before.  And this is very
+14:52:28	similar to those.  Specifically
+14:52:33	something that this is how you
+14:52:34	take the data, how to process
+14:52:36	it, and how to display it.  So
+14:52:39	here we defined our source.  Or
+14:52:43	sources.  And Mapzen vector
+14:52:47	tile.
+14:52:47	And then those vectors come --
+14:52:50	that have different layers
+14:52:51	inside them.  And I'm deciding
+14:52:57	which goes where.  So, for
+14:52:58	example, we can change the --
+14:53:03	blue, that's right.
+14:53:07	In this case, for example, in
+14:53:09	the building, which is out of
+14:53:12	stream, because -- in the
+14:53:15	building I'm defining a
+14:53:16	custom -- a custom style called
+14:53:23	buildings.
+14:53:24	And here is where the magic
+14:53:26	starts.  And when I -- and my
+14:53:30	job is so satisfying.  Is that
+14:53:33	Tangram lets you -- gives you
+14:53:35	some space to access the
+14:53:38	pipeline -- the WebGL pipeline.
+14:53:41	Specifically to -- you can
+14:53:43	inject a shader code into the
+14:53:46	pipeline.  So here you can see
+14:53:49	how the buildings, the style, a
+14:53:58	new line inside the shader.
+14:53:59	Which basically adds this nice
+14:54:01	gradient between the bottom of
+14:54:02	the building to the top.
+14:54:04	So I amend these out, you can
+14:54:08	see the solid buildings.  Let's
+14:54:10	make happy buildings.  I feel a
+14:54:14	little Bob Ross today.
+14:54:16	so I -- how would we do this?  I
+14:54:23	will mix two colors.  I want to
+14:54:29	go for red.  To blue.  Again,
+14:54:39	crazy art of creativity.  And
+14:54:44	then we see the gradient goes
+14:54:46	from blue to red, right?  And we
+14:54:49	can add some animation to that.
+14:54:51	So let's say -- let's turn the
+14:54:58	animated on.  And then use time
+14:55:01	to move this.  Up.  So it will
+14:55:06	add time.  And because times go
+14:55:11	differently, I'm going to make
+14:55:16	this right now.  Let's make it
+14:55:18	fract.  I have to play around
+14:55:22	with this.  Now we have a happy,
+14:55:25	flashing building.
+14:55:27	I leave the rest for the
+14:55:30	exposition people.  Hope you are
+14:55:35	getting excited right now.
+14:55:38	So -- so now comes the data
+14:55:44	equation.  On the maps.  Not
+14:55:47	hard data, but what to put in
+14:55:50	it.  So this is something that I
+14:55:52	have been working on.  Some work
+14:55:54	I have been doing.
+14:55:55	But first I want to speak about
+14:55:58	sufficiency.  So when you have
+14:55:59	an engine, it's a WebGL and you
+14:56:03	go on, from the engine part of
+14:56:05	you, what you want to avoid, to
+14:56:08	heat the server too much.  The
+14:56:11	driver too much.  Imagine you
+14:56:12	have the CPU.  We describe that.
+14:56:14	And I present this -- the GPU in
+14:56:17	a bottle.  You don't want things
+14:56:19	to be sending constantly.  Like
+14:56:21	making ships in a bottle, you
+14:56:23	want to put all your stuff in
+14:56:25	the bottle and just move things
+14:56:27	around in it.  Because otherwise
+14:56:28	it will not go into -- it will
+14:56:31	not work.
+14:56:32	And also I make reference to how
+14:56:36	the graphic card is really has
+14:56:38	some resources inside it.  So it
+14:56:41	has the ability to store the
+14:56:43	geometry, which is going to be
+14:56:45	the map.  Something else I'm
+14:56:48	going show you.  And images.
+14:56:51	And this is useful in graphs and
+14:56:53	videos.  Right?  You put the
+14:56:55	texture and all that.
+14:56:58	So for this project I was
+14:57:01	working at the end of last year
+14:57:02	called line of sight.  I want to
+14:57:05	visualize in realtime the -- all
+14:57:09	the satellites that were
+14:57:11	present.  This is only a subset,
+14:57:14	right that?  That I made.
+14:57:18	And, yes, it's a lot -- I can
+14:57:20	show what it is -- this takes
+14:57:23	longer to load.  Or -- yes.  So
+14:57:26	now we have all the satellites
+14:57:28	available.  And imagine --
+14:57:32	imagine this.  While I do this.
+14:57:37	And each one of them you have to
+14:57:40	predict where it's going to be.
+14:57:41	This is a prediction of where
+14:57:42	it's going to be -- that
+14:57:45	satellite -- in the next hour.
+14:57:48	So it's around 15,000 satellites
+14:57:53	that has to be visualized with
+14:57:55	precision.  So that's a lot of
+14:57:57	points.  And a lot of things to
+14:58:00	be doing to be passing
+14:58:03	information from one point to
+14:58:04	another one.
+14:58:04	So I was thinking a lot about
+14:58:08	how to solve this problem.  And
+14:58:14	I came back -- I came up with a
+14:58:17	technique that's very well known
+14:58:20	in the gaming industry.  Which
+14:58:21	is encode the data.
+14:58:27	So this is -- so you need 24
+14:58:31	frames per second, right?  To
+14:58:33	make something smooth.  I have
+14:58:36	1500 of the satellites.  That's
+14:58:42	around 36 calls a second.  If
+14:58:48	you want to animate all these
+14:58:49	satellites which, again, is a
+14:58:53	lot.  And this has to run in a
+14:58:55	browser.  It's kind of I think
+14:58:56	too much for a browser.  So the
+14:58:58	decision was to put the
+14:58:59	information, to use the memory
+14:59:00	that the graphic card has.
+14:59:02	Assign it to whole images to
+14:59:04	store all the data.
+14:59:05	So if I parked -- and imagine
+14:59:07	that this image is like a piano
+14:59:14	row, right?  If we put all the
+14:59:17	information of all the
+14:59:17	satellites in an image and we
+14:59:19	pass it inside the bottle.  And
+14:59:23	all the information is right
+14:59:25	there.  So this is how the image
+14:59:26	looks.
+14:59:27	And it's very interesting.  So
+14:59:30	each satellite will look in one
+14:59:33	specific row.  And then you will
+14:59:35	know that the latitude is at the
+14:59:37	beginning and then the -- the
+14:59:42	longitude is the beginning of
+14:59:45	the line, and then the second
+14:59:46	half of the axis is going to
+14:59:49	find the latitude.  Each
+14:59:54	satellite knows, it's reading
+14:59:57	for a moment and moving the
+14:59:58	header away.  Does that make
+15:00:00	sense?  Yeah.  Good.
+15:00:01	And that I was very happy also
+15:00:05	to see that saves a lot of
+15:00:08	memory.  So here the same JSON
+15:00:10	file that holds the same
+15:00:12	information is around 20
+15:00:17	megabytes, while the information
+15:00:19	of that is only 2 megabytes.
+15:00:22	Efficiently.
+15:00:23	So how the satellite knows where
+15:00:27	to see?  Well, I'm using color,
+15:00:29	again, to encode information.
+15:00:31	And I wanted to put some little
+15:00:33	bits of information.  So this is
+15:00:35	some JavaScript that you can put
+15:00:39	in the file.  And here I'm using
+15:00:41	the red channel and the green
+15:00:43	channel to encode -- to encode
+15:00:46	an ID of that satellite.  And
+15:00:49	I'm letting the blue channel to
+15:00:51	see if that is hovered or not.
+15:00:56	If it's selected or not.
+15:00:58	Then in the share part I have
+15:00:59	these nice functions that
+15:01:01	according to the color of the
+15:01:03	satellite, it will search for a
+15:01:04	specific place.  So it's a way
+15:01:06	to trick the graphic card.  To
+15:01:08	pass information through.
+15:01:12	And what I like about this is,
+15:01:14	like, it's kind of -- kind of
+15:01:17	the same way -- when taken this
+15:01:21	way, it's how we know about the
+15:01:25	composition of the stars.  It's
+15:01:27	been done before, like analyzing
+15:01:30	the color of something.
+15:01:32	Analyzing the color.  Getting
+15:01:34	all this extra information about
+15:01:36	this distant thing.  It's a nice
+15:01:38	analogy between a way of, like,
+15:01:41	reconstituting these two units,
+15:01:44	the CPU and the GPU.
+15:01:47	So how about one more example?
+15:01:52	Which is -- I kind of put it
+15:01:55	together for this talk.  So who
+15:01:59	here has a weather map?
+15:02:02	Because -- there's a very famous
+15:02:08	one, and I know that -- yeah.
+15:02:13	Thank you.
+15:02:15	so I said, okay.  This is an
+15:02:20	OpenVis Conference, I it to do
+15:02:23	better, make something they
+15:02:24	enjoy.  Don't judge me.  This is
+15:02:28	my first one with the data.  So
+15:02:31	I set up my file in my desktop
+15:02:35	to be going to the servers every
+15:02:39	day and collecting the last 24
+15:02:41	hours of data in wind and
+15:02:42	temperature data.
+15:02:48	So that's around 1700 stations.
+15:02:54	For the last 40 days.  That's
+15:02:57	around 960 hours.  That's almost
+15:03:02	1.5 million samples, right?
+15:03:06	And I'm going to -- I'm storing
+15:03:07	the temperature of each station
+15:03:09	in the red channel.  And the
+15:03:11	green, the wind speed.  Into the
+15:03:14	blue channel the wind direction.
+15:03:20	And in the server this image is
+15:03:23	building up.  So I actually --
+15:03:25	let's get out of the
+15:03:26	presentation mode.  I will pass
+15:03:31	all the information about this.
+15:03:33	But if you come here, you can
+15:03:35	see the image -- actually you
+15:03:36	have access to the image itself.
+15:03:39	And it makes the pull request.
+15:03:41	So this is helping working.  So
+15:03:49	this information -- this image
+15:03:50	is building up.  And now I made
+15:03:54	a small -- what it does is
+15:03:58	visualize the map.  I know what
+15:04:00	you're thinking.  I'm using rain
+15:04:02	bow gradient.  I'm looking
+15:04:05	everybody in the eye.
+15:04:08	so what is happening here is we
+15:04:12	have all this weather stations,
+15:04:15	all that information is passed
+15:04:16	directly to the graphic card.
+15:04:17	The graphic card has all the
+15:04:19	information for all these
+15:04:21	weather stations.  So the
+15:04:23	animation can go very smoothly.
+15:04:26	And I only need -- if I want to
+15:04:28	add some interaction to this, I
+15:04:30	only need to pass the offset by
+15:04:34	you from the moments.  So I
+15:04:37	think from a distance you can
+15:04:39	see better.
+15:04:40	I added some features -- some
+15:04:44	cues.  If you click one of the
+15:04:46	stations, it will give you the
+15:04:48	data and how the data looks in
+15:04:49	the image.  So here you can see
+15:04:52	the speed, wind direction, the
+15:04:56	speed of the wind, the
+15:04:59	temperature, changing over time.
+15:05:02	And being interpolated in
+15:05:04	realtime.  So this is -- I think
+15:05:06	this is an important argument of
+15:05:11	how it is different from other
+15:05:16	fields and can be very
+15:05:18	beneficial.  Also I found very
+15:05:20	much interesting this image by
+15:05:23	itself.
+15:05:24	I had the chance to travel the
+15:05:26	last few weeks, and we went in
+15:05:28	Virginia with my wife.  I think
+15:05:32	in this -- here.  No.  In this
+15:05:35	red spot here.  Which means
+15:05:37	there was more red, which was
+15:05:39	kind of nicer days.  There were
+15:05:42	more warm days you can see here,
+15:05:44	the bluish days, bluish/greenish
+15:05:47	days.  And how the last days
+15:05:49	have been better and better.
+15:05:50	Also, it's very interesting to
+15:05:51	see that there are some places
+15:05:53	that never get cold.  I guess
+15:05:56	that's Alaska?
+15:06:00	It's always cold there.  So
+15:06:15	here's the link to this.  Feel
+15:06:18	free to play with it.  Here's
+15:06:22	the link to this presentation.
+15:06:26	Any questions that you want to
+15:06:30	ask, I will be glad to reply.  I
+15:06:33	will be around.  I want to thank
+15:06:35	so much everybody for going to
+15:06:37	this.  Thank you for dealing
+15:06:39	with my accent.  And thank you
+15:06:43	Bocoup for inviting me.  All
+15:06:46	done.

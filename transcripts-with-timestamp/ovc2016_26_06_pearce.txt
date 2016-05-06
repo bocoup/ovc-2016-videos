@@ -1,0 +1,645 @@
+14:01:52	>> Is this on?  Hey.  So today
+14:01:55	I'm going to be talking about
+14:01:56	writing reusable D3.  It's sort
+14:02:00	of an intrinsically complicated
+14:02:03	task.  We use D3 because it's
+14:02:05	super-flexible.  Unlike most
+14:02:08	charting libraries, you're not
+14:02:10	stop using whatever sort of
+14:02:12	taxonomy charts, library
+14:02:15	developer originally envisioned.
+14:02:18	You can directly encode data
+14:02:20	into marks on the screen.  But
+14:02:23	that flexibility bites you in
+14:02:25	the back when you finish your
+14:02:26	project and start something new
+14:02:28	and turns out you have a big
+14:02:30	pile of spaghetti code.
+14:02:33	So I'm Adam, start the at the
+14:02:38	New York Times last week.
+14:02:40	Learned very little except how
+14:02:42	the union works.  So I'm going
+14:02:44	to talk about my experience at
+14:02:46	Bloomberg over the last few
+14:02:50	years.  When I started, it was
+14:02:52	an in-house data design studio.
+14:02:56	Chris and Lisa talked about it
+14:02:59	the last two years.  And focused
+14:03:01	on the product that would take a
+14:03:04	slice of Bloomberg's data and
+14:03:08	dig down into it.  This is one
+14:03:12	that's up.  And you can see
+14:03:13	there's all sorts of ways of
+14:03:15	filtering, grouping, sorting.
+14:03:17	And the top has another four
+14:03:19	kinds of graphs.  And there were
+14:03:21	explorative tools that
+14:03:23	journalists and really
+14:03:24	interested people would dig
+14:03:25	into.  And we'd spend months and
+14:03:27	months and months designing and
+14:03:30	prototyping and making these
+14:03:31	things.
+14:03:32	And for making a big project
+14:03:35	like that, there's lots of stuff
+14:03:36	out there that'll help you do
+14:03:38	it.  I did not put React on
+14:03:40	this.  But there's all sorts of
+14:03:42	JavaScript front end frameworks
+14:03:45	that help you manage complexity
+14:03:47	when you're building a large
+14:03:48	app.
+14:03:49	And within a project you re-use
+14:03:52	codes with like your view or
+14:03:54	your control or directive or
+14:03:57	whatever the theme of your
+14:04:01	framework is.  You build the
+14:04:03	domain-specific scatterplot and
+14:04:05	keep using that throughout the
+14:04:07	app.  Between projects you can
+14:04:08	reuse the framework extractions.
+14:04:11	That worked great for a while.
+14:04:14	But then we transitioned to more
+14:04:17	of this traditional graphics
+14:04:19	that was tied more to the news
+14:04:22	cycle.  And instead of working
+14:04:23	on something for a couple of
+14:04:25	months and publishing a couple
+14:04:27	things every year, it was a
+14:04:29	couple of weeks or a couple of
+14:04:30	days or even a couple of hours.
+14:04:33	And I think in 2015 we published
+14:04:35	nearly 100 graphics.  And when
+14:04:38	you start working at that speed,
+14:04:41	frameworks become unwieldy,
+14:04:43	right?  They have a bunch of
+14:04:44	unnecessary abstractions.  So we
+14:04:47	saw earlier that redux is great
+14:04:50	for when you want to manage the
+14:04:52	complex state and the users
+14:04:54	interacting with the graphic
+14:04:56	through three or four entity
+14:04:59	points and stay in sync.  But
+14:05:01	that's overkill when you have
+14:05:02	the toggle and the toolkit, the
+14:05:05	only interaction you need.  And
+14:05:07	build up the layers between you
+14:05:09	and the DOM.  When you're trying
+14:05:11	to do cutting edge, flashy stuff
+14:05:13	so people pay attention, that
+14:05:15	stuff can get in the way.
+14:05:17	And the higher barriers to
+14:05:20	entry, you wanted the
+14:05:22	journalists and others to dig in
+14:05:23	and mess around with the files.
+14:05:26	And asking them to learn all of
+14:05:28	CSS, HTML, JavaScript, along
+14:05:32	with the JavaScript framework of
+14:05:35	the month is kind of a lot.
+14:05:36	And every individual project,
+14:05:40	you know, how do I build it, how
+14:05:42	do I react?  And build this
+14:05:44	template, it generates 20 files
+14:05:46	and you're ready to go and it's
+14:05:49	super-easy.
+14:05:50	And I kind of am a proponent,
+14:05:54	doing the small stuff, publish
+14:05:57	it and move on.  Just code like
+14:05:59	it's 2005 with your index on
+14:06:02	HTML, script out to CSS -- or
+14:06:05	script out js, and the style CSS
+14:06:08	if you are writing something
+14:06:10	with lines of code.  But this
+14:06:12	contributes to challenges.
+14:06:13	Because you can no longer rely
+14:06:16	on your framework do manage your
+14:06:17	code reuse.
+14:06:19	And we would start projects by
+14:06:21	going through and finding the
+14:06:22	block for the margin convention
+14:06:24	and one for axis.  And we would
+14:06:27	forge through the last thing we
+14:06:29	remember that had a toolkit and
+14:06:31	copy and paste that code.
+14:06:33	That's okay.  But every time you
+14:06:34	have to take out the code
+14:06:36	specific to the last project in
+14:06:38	the toolkit, just becomes really
+14:06:40	messy and waste a lot of time
+14:06:42	doing that
+14:06:42	And the thing that really
+14:06:43	starts to slow you down, I love
+14:06:45	D3, but it's pretty verbose.
+14:06:48	And before you even get into the
+14:06:50	like messiness of the callbacks
+14:06:55	that we just saw before lunch,
+14:06:57	managing interaction, just
+14:06:58	drawing a simple scatterplot on
+14:07:01	the screen isn't easy.  This is
+14:07:03	from the canon Cal scatterplot
+14:07:06	example.  And just to plot on
+14:07:08	the X and Y axis with the data
+14:07:11	points, you have to set up your
+14:07:13	margin object, the width and the
+14:07:16	height, make the SVG with all
+14:07:18	these attributes with the group
+14:07:20	element.  I found it has this
+14:07:21	magic transform translate string
+14:07:24	that exactly matches your
+14:07:26	margin, set up your X scale, Y
+14:07:29	scale, set up an X and Y axis,
+14:07:34	link to the data and the scale
+14:07:36	domains and link after you have
+14:07:38	done that.
+14:07:39	Once you have all that stuff
+14:07:40	there, you can finally start
+14:07:42	putting your data on the screen.
+14:07:44	And this takes a while.  So
+14:07:46	last -- I think it was around
+14:07:48	January or February, Gregor
+14:07:51	Aisch published this D3 jet pack
+14:07:55	library.  And it's a bunch of
+14:07:58	small functions that modify the
+14:08:01	functions to the D3 itself or
+14:08:04	monkey patch other functions.
+14:08:06	And really a bunch of stuff that
+14:08:07	condense the API.  This was like
+14:08:10	totally blowing my mind when I
+14:08:12	saw it.  You can play around
+14:08:13	with the D3AP without filing the
+14:08:18	pull requests.  It's hugely
+14:08:20	intimidating.  Just write the
+14:08:22	script and play around and
+14:08:23	experiment with other ways of
+14:08:27	writing D3.
+14:08:28	A couple other things in it.  If
+14:08:30	you ever want to move a whole
+14:08:32	group of things around in SVG,
+14:08:34	you have to translate a group
+14:08:36	element.  You have to remember
+14:08:37	that you have to modify the
+14:08:39	transform attribute and pass the
+14:08:41	translate string, and do the
+14:08:44	awkward, it's transform,
+14:08:48	translate, and not the other
+14:08:49	way, and you have to look at an
+14:08:51	old example and it takes
+14:08:53	forever.  So you just modify the
+14:08:55	selection prototype in D3 itself
+14:08:57	to add this translate function,
+14:09:00	which you just pass and it moves
+14:09:02	it by that much.
+14:09:05	And another thing you do over
+14:09:06	and over again, you set the
+14:09:08	things IDs and classes.  Takes
+14:09:13	a separate line of code every
+14:09:15	time you do it.  But you can go
+14:09:16	in and modify the event function
+14:09:18	so it -- you can just pass it
+14:09:20	like a CSS selector.  And it
+14:09:22	just turns out the sort of extra
+14:09:26	line that would be inside of the
+14:09:28	string.  And this is a thing
+14:09:30	that I think my co-workers
+14:09:33	dislike me the most more.  It's
+14:09:36	a wonky field accessor function,
+14:09:41	and you type it automatic with
+14:09:43	option F.  And over and over in
+14:09:45	D3 you're constantly making
+14:09:46	these unanimous functions that
+14:09:48	take a piece of data and return
+14:09:51	a piece of that data's property,
+14:09:53	maybe transform it with the
+14:09:55	scale.
+14:09:56	And ES5 is pretty verbose, you
+14:09:59	have to type function, curly
+14:10:00	braces, return, semicolon.  And
+14:10:12	this lets you do it in a single
+14:10:14	character.
+14:10:15	And things like word wrapping,
+14:10:17	things for helping you sort
+14:10:18	arrays without needing an
+14:10:20	underscore.  But eventually he
+14:10:22	got fed up with me and stopped
+14:10:25	accepting my pull requests for
+14:10:26	this library.  I realized I
+14:10:29	didn't need Gregor, I started my
+14:10:32	own library.  That's what D3
+14:10:34	startup is.  Another thing you
+14:10:36	do lots of times in D3, if you
+14:10:38	want to make new elements for
+14:10:42	everything, you have an array of
+14:10:45	data, you have to make a phantom
+14:10:47	selection.  And you get the
+14:10:49	thing you want to select, and
+14:10:50	call up the data on that, and
+14:10:53	that makes a bunch of imagery
+14:10:55	things, and enter to bring them
+14:10:58	into existence.  And then you
+14:11:00	have to repeat the thing you're
+14:11:01	selecting against.  I just
+14:11:03	edited the data function, and
+14:11:06	turns what's three lines of code
+14:11:08	into one line of code.
+14:11:09	And all of this stuff isn't big
+14:11:11	on its own, but it starts to add
+14:11:13	up.  And it just -- your code
+14:11:15	gets smaller and smaller and
+14:11:17	smaller and you can work with it
+14:11:19	so much quicker.  The biggest
+14:11:21	thing in the library is this D3
+14:11:24	conventions function.  So
+14:11:25	instead of setting up your
+14:11:27	margin thing and having it copy
+14:11:29	and paste this bit that
+14:11:30	configures an SVG over and over
+14:11:34	again, you have the objects and
+14:11:36	it automatically adds an SVG to
+14:11:38	the page that's configured how
+14:11:40	you like it.
+14:11:41	It also gives you back X and Y
+14:11:44	scales that are linked to the
+14:11:46	width and the height of the --
+14:11:50	of the SVG that you have
+14:11:52	created.  And creates X and Y
+14:11:55	axis that you can add to the
+14:11:57	page with the draw axis.  Which
+14:12:01	is great.  I hated doing it over
+14:12:04	and over again.  Instead of
+14:12:06	packaging this into a separate
+14:12:07	library, and there's a thousand
+14:12:12	of them, creates a short hand
+14:12:14	that you can use in line with
+14:12:15	the rest of the D3.  You have
+14:12:17	the flexibility of D3, but you
+14:12:19	don't have to type 49 lines of
+14:12:21	code to make a scatterplot.
+14:12:22	Instead it comes out being about
+14:12:24	nine lines of code.
+14:12:27	Which doesn't seem big.  And
+14:12:29	it's like, Adam, you're so lazy,
+14:12:32	why is it worth it just so you
+14:12:35	don't have to type this?  It's
+14:12:36	not only saving me eight
+14:12:38	minutes, but it transforms how
+14:12:40	I can work fundamentally.
+14:12:41	Instead of spending an afternoon
+14:12:43	trying to get my plot on the
+14:12:46	page, you can sketch within D3
+14:12:48	itself.  Which is great.  It's
+14:12:50	still not as short as, you know,
+14:12:52	making a plot with ggplot or
+14:12:56	Vega lite, but it's like you
+14:12:58	still have all this flexibility
+14:13:00	and you can do so much.
+14:13:01	And when you -- it lets you
+14:13:03	iterate over the data encoding
+14:13:05	space instead of just getting
+14:13:07	one acceptable plot on the
+14:13:08	screen and immediately starting
+14:13:09	to try to polish the design of
+14:13:11	it.  You get to pick from so
+14:13:13	much more.  So the two previous
+14:13:18	libraries were just about one
+14:13:20	and three and five-line
+14:13:21	functions that sort of work on
+14:13:22	your code to make it sort of
+14:13:25	more reusable as a micro level.
+14:13:30	This next one works on your code
+14:13:32	at a larger level.  It's a set
+14:13:33	of -- it basically does like
+14:13:36	really simple scrolling events.
+14:13:38	So you can make like -- do the
+14:13:42	scroll telling, and another
+14:13:44	callout to Jim.  Previous
+14:13:48	OpenVis talk.  He gave a talk
+14:13:51	last year.
+14:13:52	I'm going to focus just quickly
+14:13:54	on sort of what we -- why we
+14:13:56	built this and what we learned.
+14:13:58	So I was just -- kept making all
+14:14:01	of these steppers.  And every
+14:14:03	time we had a new stepper to
+14:14:05	make, look at the analytics code
+14:14:07	from the last stepper.  Realized
+14:14:09	that no one clicked through it
+14:14:11	all the way, and needed to
+14:14:13	redesign the stepper.  As the
+14:14:14	person making it, I would make
+14:14:15	like five steppers for every one
+14:14:18	before we could pick one that we
+14:14:19	liked.  And I don't like CSS
+14:14:21	that much, so I wanted to do
+14:14:22	something just totally
+14:14:24	different.  But for every one of
+14:14:25	these graphics that we are using
+14:14:27	a stepper for, it's on a
+14:14:29	deadline.  And you have three
+14:14:30	days to make the graphic, it
+14:14:31	makes zero sense to spend an
+14:14:33	unknown number of days trying to
+14:14:35	figure out how to do scrolling
+14:14:38	from scratch.
+14:14:39	So once we had a little bit of
+14:14:41	down time, and slowed down on
+14:14:43	the holidays, and I worked on
+14:14:45	this project on my blog
+14:14:46	explaining D3 color scales and
+14:14:48	mapping.  And had lots of time
+14:14:50	without the constraint of a
+14:14:52	deadline to think about how a
+14:14:56	scrolly sort of API should work.
+14:14:59	So I had that, had something
+14:15:01	rough for it.  It was good.  And
+14:15:03	then work starts up again, and
+14:15:06	we have this visual graphic that
+14:15:09	we want to do.  It's the
+14:15:12	sites -- Bloomberg.com, the
+14:15:14	yearly relaunch.  And so we
+14:15:17	wanted this to be good.  And we
+14:15:18	were working with new people and
+14:15:21	it was coming down to the crunch
+14:15:24	to get it done before it
+14:15:25	happened.
+14:15:26	But because there's a firm tool,
+14:15:28	I didn't have to worry about the
+14:15:31	scrolling, it worked with and it
+14:15:34	was magical and great.  I
+14:15:36	thought it was done.  It was
+14:15:38	scrolling, and shared it with my
+14:15:40	co-workers and use this, great.
+14:15:43	But it wasn't quite that simple.
+14:15:44	I had a couple of comments on
+14:15:46	the code, hadn't documented it.
+14:15:48	Everyone was like, what the hell
+14:15:50	is this?  How does this work?  I
+14:15:53	had to take more time and write
+14:15:55	up documentation and polish to
+14:15:59	put online.  And it helped to
+14:16:02	realize that everyone was having
+14:16:03	trouble and what wasn't working
+14:16:05	and adding that back into the
+14:16:06	library.
+14:16:07	Once that was done, we really
+14:16:08	had a nice little -- I was
+14:16:10	super-proud of all of the stuff
+14:16:13	that we did last year that I
+14:16:14	didn't even really work on.  But
+14:16:16	just the members of my team,
+14:16:18	because they had this new tool,
+14:16:24	didn't have to worry about
+14:16:25	working on steppers, they had
+14:16:27	the things that I didn't think
+14:16:30	was possible.
+14:16:30	And one of the things to
+14:16:32	preserve while making the
+14:16:33	library was keeping it really
+14:16:36	flexible and not too
+14:16:37	prescriptive about how the page
+14:16:39	is laid out.  So you can do all
+14:16:41	sorts of crazy, creative things
+14:16:44	with it like this scrolling.
+14:16:45	And I think we ended up making
+14:16:47	15, 20 of these last year.  Love
+14:16:49	to show them all, but don't want
+14:16:51	to make Robert's head explode.
+14:16:55	So it's open source.  But it
+14:16:58	wasn't as hugely successful as
+14:17:00	other people haven't been able
+14:17:02	to use it as much as I kind of
+14:17:04	hoped.  It's an awkward
+14:17:07	combination of CSS, HTML, and
+14:17:09	JavaScript.  And I really
+14:17:12	emphasize it would be flexible,
+14:17:14	and you can do whatever with it.
+14:17:16	But it might have been better if
+14:17:18	there were firmer guide rails to
+14:17:20	help there.  And the big thing
+14:17:21	that it's missing, it needs more
+14:17:24	work in the documentation.  I
+14:17:25	could sort of tell it was
+14:17:27	lacking when the tickets started
+14:17:28	and I had to talk it over with
+14:17:30	someone.  But it's been harder
+14:17:32	to invest that time.  And I'm
+14:17:34	not sure exactly how to do that.
+14:17:36	And there's a conversation on
+14:17:38	Twitter last week.  And when --
+14:17:41	the time, and experimenting, and
+14:17:43	Adam confessed he had to read
+14:17:46	the source too.  And that's one
+14:17:47	thing I want to encourage
+14:17:49	everybody with this talk.  Don't
+14:17:50	be afraid to roll your own
+14:17:52	tolls.  Think about what doesn't
+14:17:53	work in your workflow.  Or what
+14:17:56	your current tool set doesn't
+14:17:58	allow you to do.  And just
+14:18:00	experiment and try to make
+14:18:01	something.
+14:18:01	The Wall Street Journal just
+14:18:06	published a scrolling library
+14:18:09	that thinks about it in a way,
+14:18:11	and it would be difficult to do
+14:18:13	with the one I published.
+14:18:15	That's interesting to see.
+14:18:16	The last sort of full library
+14:18:18	that I did wasn't really a
+14:18:20	library.  I kind of mentioned in
+14:18:21	my talk proposal that I had this
+14:18:23	tool for how Bloomberg does
+14:18:25	annotations.
+14:18:28	And that didn't really exist.
+14:18:30	So I had to -- I was
+14:18:33	procrastinating on making this
+14:18:36	talk.  And basically it's kind
+14:18:37	of like this victory -- let's
+14:18:41	lay out our annotations by
+14:18:44	interacting directly with the
+14:18:45	thing.  You can drag and swoop
+14:18:48	arrows and get the labels in
+14:18:49	just the right position and also
+14:18:51	responsive.  That solves some
+14:18:54	problems with the other ways we
+14:18:55	were doing it.
+14:18:58	So this is to our like editors
+14:19:01	would come up to us -- it's like
+14:19:04	8:00, something is supposed to
+14:19:06	publish the next day.  They're
+14:19:07	like, could we just label that
+14:19:10	data point.  It would be great
+14:19:11	to have that text on the chart
+14:19:14	instead of in the body copy.
+14:19:16	And after they -- this like
+14:19:19	crazy transitions and 3D
+14:19:21	animations.  They have trouble
+14:19:23	understanding how it can be just
+14:19:25	so hard to put text next to a
+14:19:28	dot on the page.  We tried lots
+14:19:30	of ways of doing this.  One
+14:19:31	thing was use SVG crowbar and
+14:19:36	grab the graphic, and
+14:19:37	JavaScript, mess around in
+14:19:40	illustrator, but lose the data
+14:19:42	encoding, it's no longer
+14:19:44	responsive.  And viewport, and
+14:19:46	transform the scale.  Makes the
+14:19:49	text small.  You run into a
+14:19:51	cascade of problems.  And AI to
+14:19:54	HTML, responsive illustrator
+14:19:56	graphics, but then it was hard
+14:19:57	to -- it makes a pretty messy
+14:20:00	SVG that's hard to remake
+14:20:02	interactive again.
+14:20:04	And this library that kind of
+14:20:08	draws them more
+14:20:11	programmatically.  And you save
+14:20:13	it in the text editor, and save
+14:20:16	and reload the page.  It's nice
+14:20:18	to move it.  Which is what the
+14:20:21	library was for.
+14:20:22	And initially it was a snippet
+14:20:24	on my computer.  I didn't really
+14:20:26	tell anyone about it.  And I
+14:20:28	would just grab the annotations
+14:20:31	on the page and call this drive
+14:20:32	thing and save out their offsets
+14:20:35	into a position.  And I used
+14:20:37	that and it was great.  And no
+14:20:41	one else was using it.  I was
+14:20:44	like you should use my draggy
+14:20:46	thing.  I don't understand at
+14:20:48	all how to do that.
+14:20:50	So it was worth the time to go
+14:20:52	down and write everything and
+14:20:55	make a nice API, and include a
+14:20:57	single script on the page when
+14:20:58	you're ready to go, instead of
+14:21:00	having to muck around with the
+14:21:01	specifics of your project each
+14:21:02	time.
+14:21:03	And just in the last month since
+14:21:05	it's been out, it's been really
+14:21:07	exciting to, you know -- the
+14:21:09	Financial Times went sort of
+14:21:11	crazy with swoop arrows and done
+14:21:12	a bunch of things with it, it's
+14:21:14	been fun to see.  Gabriel did a
+14:21:18	less crazy thing, but nice to
+14:21:20	see it for dogs.  Yeah, you
+14:21:23	should open source your stuff.
+14:21:26	Because then you feel like you
+14:21:27	helped people.
+14:21:29	The last thing I'm going to talk
+14:21:30	about -- it's not actually like
+14:21:33	a full library.  And maybe it
+14:21:35	will be, or maybe it's not worth
+14:21:37	it.  So we were working on this,
+14:21:39	had this idea for a piece about
+14:21:41	the Super Bowl.  And let me load
+14:21:45	it.  It kind of had this, you
+14:21:49	know, it's -- had this idea at
+14:21:53	the last second and David had
+14:21:55	this whole like page mocked up
+14:21:57	in Illustrator.  And we were
+14:22:00	sitting there and finally got
+14:22:01	approval to make it.  And then
+14:22:03	we really wanted to do these fun
+14:22:05	affects.  But we had this page
+14:22:06	in Illustrator, and I'm sitting
+14:22:08	there and it's 5:00 and I'd
+14:22:11	really like to go home.  But I
+14:22:13	start trying to remake this as
+14:22:15	like HTML tables.
+14:22:17	It's like, no, this is so hard
+14:22:20	to do.  And I realize this
+14:22:22	Illustrator page was just a
+14:22:25	bunch of SVG.  So I just grabbed
+14:22:28	that SVG, and I opened it up in
+14:22:35	sublime, and pasted into the
+14:22:37	page.  That worked great.
+14:22:39	Surprisingly well.
+14:22:41	So we did that a couple of times
+14:22:42	for different projects.  It's a
+14:22:44	fun technique.  But one thing
+14:22:46	that gets in the way working
+14:22:47	like that, every time there's a
+14:22:49	copy change or something, you
+14:22:50	have to open up can the SVG in
+14:22:52	Sublime, you have to copy and
+14:22:55	paste over exactly the right
+14:22:56	index in HTML.  It sort of takes
+14:22:59	three minutes.  And if you're
+14:23:00	working with a designer,
+14:23:01	eventually they paste over the
+14:23:03	wrong thing and it's just a
+14:23:04	total mess very quickly.
+14:23:06	So I just made this -- it's
+14:23:09	literally just four lines of
+14:23:10	code that made this technique so
+14:23:12	much easier to do.  It's just a
+14:23:14	little bit of D3 that loads the
+14:23:17	page -- loads the SVG and drops
+14:23:20	it on to a page.  Not as an
+14:23:23	image, so you can interact and
+14:23:24	move it, do whatever you want
+14:23:28	with it.
+14:23:29	And David could just save his
+14:23:31	SVG and refresh the page and it
+14:23:34	would update automatically.
+14:23:36	This isn't huge, four lines of
+14:23:38	code.  But it made it so he
+14:23:40	could tweak things and get
+14:23:41	things to work exactly right.
+14:23:43	That's what you should be
+14:23:45	thinking about.  What are the
+14:23:47	rough edges that you are but
+14:23:48	thing up against and how could
+14:23:49	you fix them?
+14:23:50	There's a wheel like little
+14:23:52	universe of these tiny tools and
+14:23:54	they do so many things that make
+14:23:56	your lives so much better.  From
+14:23:58	loading data to really easy
+14:24:03	tools that don't make you muck
+14:24:05	around with SVG devs that are
+14:24:11	hard to do, drawing legends.
+14:24:15	And you don't have to be afraid
+14:24:16	of making these.  I was talking
+14:24:18	to Zan, she made this
+14:24:20	super-useful -- you type in your
+14:24:22	number, and you type in your
+14:24:24	format specifier, and it show
+14:24:27	use how it's formatting.  So it
+14:24:29	makes it so nice to just figure
+14:24:33	out how you need your number to
+14:24:35	be formatted.  She said this was
+14:24:36	the second thing she made with
+14:24:38	D3.  She was having trouble
+14:24:40	understanding how number formats
+14:24:42	were made.  You don't need to be
+14:24:44	an expert to make these, you
+14:24:47	don't need to be a whole monster
+14:24:50	charting library.  You can do
+14:24:52	this with just a couple of lines
+14:24:54	of code.  And use it to include
+14:24:57	with your workflow.
+14:24:59	And D3 itself, the version 4 is
+14:25:02	sort of moving into this like
+14:25:04	direction of all being broken up
+14:25:06	into a bunch of -- instead of
+14:25:08	being a big model library,
+14:25:10	here's a bunch of things.
+14:25:12	Here's how it loads DSV, here's
+14:25:15	how it formats numbers, here's
+14:25:17	how scales work.  It's just a
+14:25:19	bunch of tiny components.  And
+14:25:21	you can open up any one of
+14:25:23	these.  Some are big and long
+14:25:24	and confusing.
+14:25:26	But a lot of them, like the quad
+14:25:28	stream one is 150 lines of code.
+14:25:30	You can pop it open and see how
+14:25:31	it works and think about making
+14:25:34	your own to make your life
+14:25:35	better.  Thank you.

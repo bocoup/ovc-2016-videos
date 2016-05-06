@@ -1,0 +1,484 @@
+14:58:33	>> Hi.  Can you hear me?  Okay.
+14:58:36	Thanks for having me.  Yeah.
+14:58:38	I'm a designer.  So I've got a
+14:58:40	background in graphic design and
+14:58:43	interface design.  The last
+14:58:45	couple of years, specializing in
+14:58:47	data visualization.  And, yeah,
+14:58:49	since one and a half years I'm
+14:58:51	here in Boston.  I'm working
+14:58:54	with a lab, and my colleagues
+14:58:58	there are pretty much all
+14:59:00	physicists and we are dealing
+14:59:02	with complex systems and
+14:59:04	networks and data science
+14:59:06	issues.
+14:59:07	And we're about 30 people.  And
+14:59:08	I'm the designer.  I'm like the
+14:59:10	odd guy in the group.  So
+14:59:12	everybody else is like a hard
+14:59:14	scientist.  And I'm more like
+14:59:18	doing the graphics for them for
+14:59:19	different topics.
+14:59:21	One topic in the lab currently
+14:59:23	is success.  And how can we
+14:59:25	understand success.  What is
+14:59:27	success?  How can we measure it?
+14:59:29	And we think of success as
+14:59:30	having two main ingredients.
+14:59:33	The one ingredient is
+14:59:36	performance, so you need to be
+14:59:37	good at something to be
+14:59:39	successful.  You need to be a
+14:59:41	good writer, you need to be a
+14:59:43	good programmer and good
+14:59:44	musician or good artist to be
+14:59:47	successful.  But on the other
+14:59:49	side, this needs to be reflected
+14:59:50	by society.  So if you are
+14:59:52	writing this amazing poems, but
+14:59:55	nobody ever read them, like it's
+14:59:57	not really success.
+14:59:58	So what we study is like this
+15:00:01	interplay between those two
+15:00:02	things and how they actually
+15:00:04	create success together and how
+15:00:07	it works.  So this is like a
+15:00:09	triangle that we're studying.
+15:00:10	And you can think of many
+15:00:13	examples in like contemporary
+15:00:16	culture where the triangle is
+15:00:18	not 100% in sync.  So most
+15:00:22	probably pretty much all of you
+15:00:24	know these two people.  Paris
+15:00:29	Hilton and the Kardashians.  And
+15:00:31	they're extremely popular, but
+15:00:33	they're not really performing
+15:00:35	specifically well in anything in
+15:00:37	particular.
+15:00:37	So -- and you can also think
+15:00:42	about like other examples in the
+15:00:45	sport world.  Where David
+15:00:47	Beckham, he is performing very
+15:00:49	good, and he is at the top of
+15:00:51	what he's doing, but maybe his
+15:00:53	popularity is a bit higher than
+15:00:55	that.
+15:00:55	And same for Tiger Woods, the
+15:00:59	discussion at the moment goes in
+15:01:00	very different directions than
+15:01:02	what he actually does when he
+15:01:04	plays golf.
+15:01:05	So there's a saying that the
+15:01:09	celebrity is a person who is
+15:01:10	known for his well-known-ness.
+15:01:16	There's a disconnect between
+15:01:18	performance and popularity.  And
+15:01:19	we were interested if this also
+15:01:22	exists in sport.  So how are
+15:01:24	performance and popularity
+15:01:26	related to each other?
+15:01:28	To study this, we looked at
+15:01:30	tennis.  We looked at tennis
+15:01:31	because it's an individual
+15:01:34	sport.  Team sports are complex
+15:01:36	with the players interacting
+15:01:37	with each other.  And we wanted
+15:01:39	to have a sport that's well
+15:01:42	known.  That's how we got to
+15:01:45	tennis.  And we looked at the
+15:01:46	performance data from the ATP
+15:01:51	Website.  That's the world cup
+15:01:52	of tennis.  And looked at with
+15:01:55	Wikipedia updates from 2009 to
+15:01:59	2015
+15:02:00	Our final data set consists of
+15:02:02	the 500 male players and two
+15:02:05	data sources.  And my colleague,
+15:02:09	she's a physicists, they have a
+15:02:16	special relationship to data.
+15:02:18	They want to understand data and
+15:02:20	they want to model and predict
+15:02:21	things.  What her goal was to
+15:02:23	predict page had views based on
+15:02:27	the performance of a player.
+15:02:29	When I interested the project,
+15:02:31	my first initial idea was to
+15:02:34	visually compare this.  So how
+15:02:36	can we compare?  How can we make
+15:02:40	visualizations to compare page
+15:02:42	views and the model predictions
+15:02:43	that she came up with?
+15:02:44	And this is like the first chart
+15:02:46	that I did.  Each line
+15:02:47	represents one player.  And then
+15:02:49	we have on the Y axis the number
+15:02:52	of page views and the predicted
+15:02:54	page views.  So each player is
+15:02:56	like two points.  So we've got
+15:03:00	the page views and then the
+15:03:02	model prediction.  So the bigger
+15:03:05	this bar, the worse the
+15:03:06	prediction actually was.  And if
+15:03:09	it's red, that means it's turned
+15:03:11	around.  So like that, we had an
+15:03:13	overview of everybody and could
+15:03:14	see how -- when the model works
+15:03:17	and when it's not working.  And
+15:03:19	that's like a little interface
+15:03:23	where you can have like -- it
+15:03:31	should work.
+15:03:45	This should be running.  Okay.
+15:03:52	Let's see how it goes along.  So
+15:03:55	you can have other people and
+15:03:56	you can sort it in different
+15:03:57	directions.  I'm not sure why
+15:03:59	it's not doing it.
+15:04:01	So but one question that came up
+15:04:03	was what about time?  It's a
+15:04:06	highly aggregated view if we
+15:04:08	only have like two points for
+15:04:09	one person.  And I got back to
+15:04:13	like the difference chart from
+15:04:19	1786.  So like super modern data
+15:04:23	science and like this 200 --
+15:04:25	300-year-old chart.  And this
+15:04:27	shows you the difference between
+15:04:29	the model and the actual
+15:04:31	Wikipedia data over time for
+15:04:34	each person.
+15:04:35	And this is like a visualization
+15:04:38	that I came up with where we can
+15:04:41	compare every player in one
+15:04:43	chart.  And I hope this is
+15:04:45	working now.  Okay.  So need to
+15:04:50	get out of this and I need to
+15:04:51	show it to you.  Maybe I can go
+15:04:57	to the Website.
+15:05:11	So -- it's not showing.  Okay.
+15:05:27	Okay.  This works.  Better.
+15:05:29	Okay.  So we have for each
+15:05:31	person one of these icons and we
+15:05:36	can sort them by different
+15:05:38	things.  So we can sort them by
+15:05:40	name, which is not really
+15:05:41	helpful, but we can find like
+15:05:43	other arrangements.  Sort them
+15:05:46	by the ranking they have and see
+15:05:48	actually -- like find the
+15:05:50	patterns in this data set.  Or
+15:05:52	we can arrange them by the page
+15:05:54	views they have.  And each
+15:05:55	person is like this little icon.
+15:05:57	And we can see what creates a
+15:06:00	model and how -- what's going
+15:06:02	on.  And also like on a scale
+15:06:06	and see each person.
+15:06:09	And then for each player we have
+15:06:12	two data points now for each
+15:06:14	year, which is still very
+15:06:16	aggregated.  So what I made was
+15:06:18	like you can click this person.
+15:06:20	And you actually get this
+15:06:22	close-up view where you can see
+15:06:24	on the one side the predictive
+15:06:26	page views and then what is
+15:06:29	actually the real data.
+15:06:31	And down here the Wikipedia
+15:06:35	article.  It was helpful for the
+15:06:37	scientists, because they can
+15:06:38	read up about the players.  And
+15:06:40	then we can also search for
+15:06:42	somebody.
+15:06:45	Okay.  Maybe not.  And -- yeah.
+15:06:49	We can go through this and sort
+15:06:51	this for all kinds of things and
+15:06:53	see how they're doing.
+15:07:14	So -- maybe my -- maybe it --
+15:07:28	up.  So now even the video is
+15:07:30	working.  So we can go on.  So
+15:07:35	one question that I had was like
+15:07:37	from this, what is actually
+15:07:39	creating these models?  I mean,
+15:07:41	it's this completely black box.
+15:07:45	Just showing me numbers and
+15:07:47	didn't know what it is.  So what
+15:07:48	is making up this model that I'm
+15:07:50	talking about?  And this is a
+15:07:52	formula.  I'm not sure -- I'm a
+15:07:54	designer.  So I don't know -- I
+15:07:57	wasn't able to handle this.  But
+15:07:59	I was able to talk to my
+15:08:00	colleagues and ask her and
+15:08:03	bother her with questions.  And
+15:08:05	try to understand what's going
+15:08:07	on here.  And after a while it
+15:08:09	became quite understandable.  So
+15:08:14	what we see here, that's a rank
+15:08:15	of a player over time.  So when
+15:08:21	the player, and which ranking.
+15:08:23	That was important to come up
+15:08:24	with this prediction of page
+15:08:25	views.  And then also the number
+15:08:26	of active years.  How long did
+15:08:30	they play in tournaments?  And
+15:08:32	then the number of matches.  So
+15:08:34	how far did they get in the
+15:08:35	tournament?  If you play seven
+15:08:39	rounds during the final, and the
+15:08:41	tournament value.  It's quite
+15:08:43	different than if you play in a
+15:08:45	grand slam versus playing
+15:08:48	against your neighbor.  And the
+15:08:52	best rival in the tournament,
+15:08:54	who was the best person you
+15:08:56	played against?  So those five
+15:08:59	variables made up the model and
+15:09:01	created it.  What I had to do
+15:09:02	was take what we know about
+15:09:04	graphical perception and map it
+15:09:06	against this five dissensions.
+15:09:08	So I can show you now what I
+15:09:10	came up with.  Okay.  Cool.
+15:09:15	It's working.  So one of the
+15:09:19	first decisions I made was like
+15:09:22	the one linear time scale.  So
+15:09:25	like the wider the gaps, the
+15:09:27	more tournaments a player had in
+15:09:29	that year.  So you can see in
+15:09:31	the beginning of the career,
+15:09:32	like he played more tournaments
+15:09:35	and then it got less
+15:09:36	tournaments.  And also the
+15:09:38	height of the axis indicates the
+15:09:42	best ranking of that year.  So
+15:09:45	I'm already encoding some
+15:09:47	information within the chart.
+15:09:50	And then -- yeah.  So I'm adding
+15:09:58	in points for each tournament he
+15:10:00	played over his career.  So
+15:10:01	we've got to complete
+15:10:05	description of all the
+15:10:06	tournaments he ever played.  And
+15:10:08	on the Y axis I point at the
+15:10:12	rankings, they're very important
+15:10:13	for the model.  I'm using a log
+15:10:16	rhythmic scale, high ranks are
+15:10:19	more valuable than lower ranks.
+15:10:22	If you move from 200 to 190,
+15:10:24	it's not as important as you
+15:10:26	move from rank ten to rank one.
+15:10:29	So -- and then I'm adding in the
+15:10:32	number of matches.  And so the
+15:10:40	lengths -- if you play seven
+15:10:41	rounds, you're in the final, so
+15:10:43	it's like seven different steps
+15:10:45	that you can make.  And then I'm
+15:10:47	adding in the score points as
+15:10:52	colors.  So grand slams are the
+15:10:55	darkest colors, and then the
+15:10:57	less points you get, the lighter
+15:10:58	the colors are.
+15:11:01	And then if there was a strong
+15:11:03	opponent in that game, I added
+15:11:04	in these blue dots for when he
+15:11:09	had to play -- in the beginning
+15:11:12	of the career, this is really
+15:11:14	happening a lot.  And that
+15:11:15	became this final interface.
+15:11:17	Where we, again, had the
+15:11:19	Wikipedia article down there,
+15:11:20	and then just selections on the
+15:11:24	side.  And, yeah.  You can
+15:11:28	actually like see the data
+15:11:33	points.  So just small
+15:11:34	adjustments that I made.
+15:11:53	So the next step.  I thought
+15:11:55	about how could I make something
+15:11:56	where I have all this
+15:11:58	information of all these players
+15:11:59	in one chart and not only like
+15:12:01	in separate charts?
+15:12:03	And I turned to an idea which is
+15:12:06	actually perceptually very bad.
+15:12:11	So turning something linear into
+15:12:14	something radial.  It's much
+15:12:16	harder to read for us.  But what
+15:12:19	it's good at, it create this is
+15:12:21	unity.  It creates like this
+15:12:23	iconic symbol for each player.
+15:12:26	Which I then could use and --
+15:12:28	yeah -- plot all of them
+15:12:31	together in one chart.  And
+15:12:32	create this -- so you can see
+15:12:34	the entire career of a player
+15:12:36	within this.
+15:12:40	And, again, we can -- this is
+15:12:41	now the final tool.  So we can
+15:12:43	do like exactly the same thing
+15:12:45	as before.  We can sort them.
+15:12:48	Put them on different axis.
+15:12:50	Click on them and get a detailed
+15:12:53	view with the Wikipedia article.
+15:13:10	So this is something I haven't
+15:13:11	talked about.  This is like the
+15:13:13	in-between stage.  So all we see
+15:13:15	here is only the Wikipedia page
+15:13:17	views over time without the
+15:13:19	model.  Without the prediction.
+15:13:23	And then, yeah, we can click.
+15:13:27	Do the same thing.  That became
+15:13:29	like the final interface.
+15:13:31	That's also online so you can
+15:13:34	play around with it.
+15:13:44	So here is just a close-up of the
+15:13:51	circles and how they look in a
+15:13:52	larger space.
+15:13:54	So some findings that we came up
+15:13:55	with.  First of all there's
+15:13:57	hope.  Generally there's a trend
+15:13:59	that if you are playing well,
+15:14:02	you also get recognition of that
+15:14:05	from society.  But there are
+15:14:07	some tricks so you can cheat in
+15:14:08	some ways.  One thing is, have a
+15:14:14	very good brother.  So if your
+15:14:17	brother is first in the world,
+15:14:18	your page views will also go up.
+15:14:23	And then we found this.  Like we
+15:14:26	made this interface, and we
+15:14:27	found a lot of these plots.  And
+15:14:29	we didn't know what was going
+15:14:30	on.  And they all looked very
+15:14:33	strange.  So what's actually
+15:14:34	happening is is that the model
+15:14:36	already predicts that there
+15:14:38	should be page views.  They
+15:14:39	should have a certain number of
+15:14:41	page views.
+15:14:42	And there are no page views.
+15:14:44	And then after some time, the
+15:14:48	model and the actual page views
+15:14:51	synchronize and they go like
+15:14:54	along the same way.  And it
+15:14:55	turns out that this Wikipedia
+15:15:00	pages were not finished.  Just a
+15:15:02	name or a sentence.  They were
+15:15:03	not done.  So as soon as
+15:15:06	somebody sat down and wrote an
+15:15:07	article about that person, like
+15:15:09	the page views and the model got
+15:15:11	synchronized.  So the model is
+15:15:12	actually predicting something
+15:15:13	that's not happening at that
+15:15:15	point.
+15:15:16	So that was quite an interesting
+15:15:18	finding.  And then we found a
+15:15:19	lot of people that looked like
+15:15:21	this.  So this like one hit
+15:15:25	wonder who had like this
+15:15:31	extraordinary spike.  This was
+15:15:35	Lukas Rosol.  He defeated Rafael
+15:15:41	Nadal in 2011 in the second
+15:15:45	round.  That brought him the 15
+15:15:46	minutes of fame that then
+15:15:47	diminished again.  And then
+15:15:49	there's this.  Ryan-Sweeting.
+15:15:51	So he actually never had a
+15:15:54	really good tennis career until
+15:15:59	mid-2013.  And then his tennis
+15:16:02	career didn't take off.  But his
+15:16:06	page views went all crazy.  So
+15:16:08	what happened?
+15:16:09	He actually got married to a
+15:16:11	famous actress.  So if you are
+15:16:15	bad at tennis, like marry
+15:16:17	someone famous.  And you're
+15:16:20	sorted out.
+15:16:24	So -- yeah.  So something more
+15:16:25	like in the background, what I'm
+15:16:29	thinking about at the moment, is
+15:16:30	like seeing visualizations as
+15:16:33	this trading zone.  This word
+15:16:35	trading zone comes from a
+15:16:37	science historian at Harvard,
+15:16:42	Peter Garrison, and it's in
+15:16:44	between different groups which
+15:16:45	then connect different groups
+15:16:47	and thoughts and knowledge
+15:16:48	domains.  And what a very
+15:16:51	obvious example for with this,
+15:16:53	this connection between data and
+15:16:55	scientists so that visualization
+15:16:56	can be a bridge.  In that sense.
+15:16:59	But it can also be a bridge
+15:17:01	between scientists.  So a lot of
+15:17:03	the things happening in the lab
+15:17:06	that a biologist is working with
+15:17:11	a physicist, and they speak
+15:17:16	different languages, and they
+15:17:17	can talk about and understand
+15:17:19	each other better with the
+15:17:21	visualizations.  And in the
+15:17:22	third step, used to open up
+15:17:24	science and make it public.  I
+15:17:26	mean, it's the same data set
+15:17:28	that is used within the lab
+15:17:30	that's now open to the public
+15:17:31	through this interface and you
+15:17:33	can explore and people can play
+15:17:35	around with.
+15:17:35	And if I look at this, I will
+15:17:37	say visualizations are loopy by
+15:17:42	themselves.  So before the end
+15:17:43	of this talk, now, we have got a
+15:17:46	new project that I launched like
+15:17:48	a week ago.
+15:17:49	And we make like a little
+15:17:53	trailer for this.  And while I
+15:17:55	was cutting this video ahead of
+15:17:57	myself, because I was cutting it
+15:17:59	in 4K, and I was like, why do I
+15:18:02	need it in such a high
+15:18:04	resolution.  Well, now I know.
+15:18:06	And I'm very happy to show you.
+15:18:17	>> To look up at a starry night
+15:18:20	sky is to look up at a fast
+15:18:22	network.  A cosmic web where
+15:18:25	discreet is held together by
+15:18:27	gravity.  So little is known
+15:18:29	about the network, it's
+15:18:30	difficult to know about the
+15:18:31	architecture of the universe or
+15:18:34	how it's built.  Why are some
+15:18:36	similar and others have no
+15:18:37	relation?  Our research created
+15:18:39	three models.  By controlling
+15:18:41	different parameters between
+15:18:42	galaxies in each model, we can
+15:18:44	see the network shift from
+15:18:46	separate galaxy clusters to a
+15:18:48	fully interconnected network.
+15:18:52	In each model, they form links
+15:18:56	based on certain parameters.  In
+15:18:58	the first, we connected galaxies
+15:19:01	based on distance.  The second
+15:19:02	and most complex model connected
+15:19:05	galaxies based on size.  The
+15:19:08	third model connected galaxies
+15:19:10	to their nearest neighbor.  When
+15:19:12	we compared our models to the
+15:19:13	actual universe, we discovered
+15:19:16	something surprising.  Despite
+15:19:18	its simplicity, the third model
+15:19:21	offered the best correlations.
+15:19:23	While this research is
+15:19:24	uncovering the blueprints of the
+15:19:26	universe, these new mathematical
+15:19:28	tools can be applied to a whole
+15:19:30	range of cosmological concerns.
+15:19:33	From validating cosmic inflation
+15:19:35	to improving halo finders.
+15:19:41	>> Cool.  Thank you very much.
+15:19:52	It's an online tool.  You can
+15:19:54	check it out.
