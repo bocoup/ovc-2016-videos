@@ -1,8 +1,9 @@
+import math
 import nltk
 from nltk.collocations import BigramCollocationFinder
-from utils import tokenize_transcripts, get_files
 from collections import Counter
-import math
+from utils import tokenize_transcripts, get_files, get_filename_with_timestamps
+from match_timestamps import file_to_timestamp_dictionary
 
 # Uses tfidf and bigrams and assigns scores using the tfidf
 # score for individual tokens and the sum of the tfidf score
@@ -131,6 +132,11 @@ for i, file in enumerate(files):
     combined = sorted(combined, key=lambda termScore: termScore[1], reverse=True)
 
     print(file)
+
+    timestamped_filename = get_filename_with_timestamps(file)
+    term_timestamp_dict = file_to_timestamp_dictionary(timestamped_filename)
+
     for [term, value] in combined:
-        print('"{}",{}'.format(term, value))
+        timestamps = term_timestamp_dict[term]
+        print('"{}",{},{}'.format(term, value, timestamps))
     print('---------\n')

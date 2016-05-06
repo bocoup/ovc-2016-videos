@@ -35,6 +35,10 @@ files = [
 def get_files():
     return files
 
+def get_filename_with_timestamps(filename):
+    return filename.replace('transcripts-no-timestamp', 'transcripts-with-timestamp')
+
+
 def tokenize_transcripts(stem=False):
     dir = os.path.dirname(__file__)
 
