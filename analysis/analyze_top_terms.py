@@ -112,7 +112,7 @@ def get_tfidf_score(term, tfidf):
 
 combined_results = []
 
-# take top N tfidf terms and top N bigrams, give bigrams score as sum of tfidf terms
+# take top N tfidf terms and top N bigrams, give bigrams score as average of tfidf terms
 for i, file in enumerate(files):
     tfidf = tfidf_results[i]
     bigrams = bigram_results[i][:limit]
@@ -123,7 +123,7 @@ for i, file in enumerate(files):
         terms = bigram[0]
 
         # find tfidf score for each term
-        score = get_tfidf_score(terms[0], tfidf) + get_tfidf_score(terms[1], tfidf)
+        score = (get_tfidf_score(terms[0], tfidf) + get_tfidf_score(terms[1], tfidf)) / 2
         combined.append(("{} {}".format(terms[0], terms[1]), score))
 
 
