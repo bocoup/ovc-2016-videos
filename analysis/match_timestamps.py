@@ -45,6 +45,9 @@ def file_to_timestamp_dictionary(filename):
     # filter out empty lines
     lines = [line for line in lines if line[1]]
 
+    # print out max timestamp
+    # print(max([line[0] for line in lines]))
+
     # map tokens to timestamps
     tokens_to_timestamps = map_terms_to_timestamps(lines)
 

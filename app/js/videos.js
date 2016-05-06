@@ -52,11 +52,11 @@
           .classed('top-terms', true)
           .each(function appendTerms(d) { // do NOT use => here since it breaks d3.select(this)
             d3.select(this).selectAll('.term')
-              .data(d.tfidf, d => d.token)
+              .data(d.terms, d => d.term)
               .enter()
               .append('span')
                 .classed('term', true)
-                .text(d => d.token);
+                .text(d => d.term);
           });
 
   }
