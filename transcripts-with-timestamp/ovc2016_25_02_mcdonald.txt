@@ -96,7 +96,7 @@
 10:09:45	the thread added to the mystery
 10:09:47	of the origins.  A week later,
 10:09:49	Google research blog post,
-10:09:52	titled “Inceptionism,” and
+10:09:52	titled Ã¬Inceptionism,Ã® and
 10:09:58	confirming the puppy slug
 10:10:00	origin.  And they released code,
 10:10:03	DeepDream, that anybody could
