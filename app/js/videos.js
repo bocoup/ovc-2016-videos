@@ -8,7 +8,7 @@
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
     const xScale = d3.scale.linear().domain([0, talkData.maxTime]).range([0, innerWidth]);
-
+    const sizeScale = d3.scale.linear().domain([0, 0.1]).range([10, 30]);
     const svg = focused.append('svg')
       .attr('width', width)
       .attr('height', height)
@@ -29,8 +29,9 @@
 
     // randomize which timestamp we use to prevent clumping near the start of the talk
     termGroup.append('text')
-      .attr('x', d => xScale(d.timestamps[Math.floor(Math.random() * d.timestamps.length)]))
-      .attr('y', () => Math.round(Math.random() * (innerHeight - 20)))
+      .attr('x', (d, i) => xScale(d.timestamps[i % d.timestamps.length]))
+      .attr('y', (d, i) => (i * 20) % innerHeight)
+      .style('font-size', d => sizeScale(d.score))
       .text(d => d.term);
   }
 
