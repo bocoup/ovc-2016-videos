@@ -31,3 +31,24 @@
   background: rgba(255,255,255,0.4);
   padding: 4px;
 }
+
+
+.focused-talk {
+  padding: 10px;
+  border: 1px solid #eee;
+  background-color: rgba(240,240,240,0.4);
+  margin: 0 0 10px;
+}
+
+.focused-talk header {
+  font-size: 0.7em;
+}
+
+.focused-talk .talk-title {
+  text-transform: none;
+  font-style: normal;
+}
+
+#video-vis text {
+  dominant-baseline: hanging;
+}
