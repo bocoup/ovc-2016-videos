@@ -3,7 +3,7 @@ from nltk.collocations import TrigramCollocationFinder
 from utils import tokenize_transcripts, get_files
 
 # a list of tokens for each of the talks
-transcript_tokens = tokenize_transcripts()
+transcript_tokens = tokenize_transcripts(stem=True)
 
 # built in trigram metrics are in here
 trigram_measures = nltk.collocations.TrigramAssocMeasures()
