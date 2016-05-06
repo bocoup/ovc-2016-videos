@@ -44,4 +44,33 @@ for line in lines:
             tokens_to_timestamps[token] = [timestamp]
 
 
-print(tokens_to_timestamps)
+
+# BIGRAMS
+# - both words on one line
+# OR
+# - last word of one line + first word of next line
+# ==> if we make a "line" = line + first word of next line, it should be good
+
+## ORRR we already have it mapped to timestamp, list of tokens L
+# we can change that to timestamp, (L[0][0] + L[0][1], ..., L[0][N] + L[1][0])
+bigram_lines = []
+num_lines = len(lines)
+for i, line in enumerate(lines):
+    timestamp = line[0]
+    tokens = line[1]
+
+    bigrams = []
+    num_tokens = len(tokens)
+    for j, token in enumerate(tokens):
+        if j + 1 < num_tokens:
+            bigrams.append("{} {}".format(tokens[j], tokens[j + 1]))
+
+    if i + 1 < num_lines and num_tokens > 0:
+        next_line = lines[i + 1]
+        next_line_tokens = next_line[1]
+        if len(next_line_tokens) > 0:
+            bigrams.append("{} {}".format(tokens[num_tokens - 1], next_line_tokens[0]))
+
+    bigram_lines.append((timestamp, bigrams))
+
+print(bigram_lines)
