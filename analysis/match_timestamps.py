@@ -27,7 +27,21 @@ lines = [line.rstrip('\n').split('\t') for line in lines]
 # get the first timestamp in the document
 start_time = time_to_delta_seconds(lines[0][0], 0)
 
+# convert timestamp to delta seconds, tokenize the line as individual words
 lines = [(time_to_delta_seconds(line[0], start_time), tokenize_line(line[1])) for line in lines]
 
-for line in lines[0:50]:
-    print(line)
+
+# map words to timestamps
+tokens_to_timestamps = {}
+for line in lines:
+    timestamp = line[0]
+    tokens = line[1]
+    for token in tokens:
+        if token in tokens_to_timestamps:
+            if timestamp not in tokens_to_timestamps[token]:
+                tokens_to_timestamps[token].append(timestamp)
+        else:
+            tokens_to_timestamps[token] = [timestamp]
+
+
+print(tokens_to_timestamps)
