@@ -1,0 +1,10 @@
+.thumbnail-timeline {
+  position: relative;
+
+  .thumbnail {
+    position: absolute;
+    top: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: .2s all;
+  }
+}

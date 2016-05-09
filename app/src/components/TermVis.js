@@ -1,6 +1,7 @@
 import React from 'react';
 import d3 from 'd3';
 import cx from 'classnames';
+import ThumbnailTimeline from './ThumbnailTimeline';
 
 import './TermVis.scss';
 
@@ -36,7 +37,7 @@ const TermVis = React.createClass({
     const termHeight = 25;
     const timelineHeight = 30;
 
-    const terms = data.terms;
+    const terms = data.terms.slice(0, 15);
 
     return {
       width,
@@ -147,12 +148,17 @@ const TermVis = React.createClass({
     const { width, height, innerMargin } = visComponents;
 
     return (
-      <svg width={width} height={height} className='term-vis'>
-        <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
-          {this._renderTimeline(visComponents)}
-          {this._renderTerms(visComponents)}
-        </g>
-      </svg>
+      <div className='term-vis-container'>
+        <div className='timeline-container'>
+          <ThumbnailTimeline data={this.props.data} />
+        </div>
+        <svg width={width} height={height} className='term-vis'>
+          <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
+            {this._renderTimeline(visComponents)}
+            {this._renderTerms(visComponents)}
+          </g>
+        </svg>
+      </div>
     );
   }
 });
