@@ -29,13 +29,13 @@ const TermVis = React.createClass({
   _visComponents() {
     const { data, width, height } = this.props;
 
-    const innerMargin = { top: 10, right: 50, bottom: 30, left: 50 };
+    const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
     const innerWidth = width - innerMargin.left - innerMargin.right;
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
     const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
     const termHeight = 25;
-    const timelineHeight = 30;
+    const timelineHeight = 10;
 
     const terms = data.terms.slice(0, 15);
 
