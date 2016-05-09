@@ -32,7 +32,7 @@ const ThumbnailTimeline = React.createClass({
   getDefaultProps() {
     return {
       width: 800,
-      height: 100
+      height: 120
     };
   },
 
@@ -43,17 +43,7 @@ const ThumbnailTimeline = React.createClass({
     const innerWidth = width - innerMargin.left - innerMargin.right;
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
-
-    let lastFrame = -1000;
-    const minFramesBetween = 30;
-    const frames = data.frames.filter(frame => {
-      const result = frame - lastFrame > minFramesBetween;
-      if (result) {
-        lastFrame = frame;
-      }
-
-      return result;
-    });
+    const frames = data.frames;
 
     return {
       data,
@@ -75,8 +65,8 @@ const ThumbnailTimeline = React.createClass({
     const { data, width, height, frames } = visComponents;
     const { focusedFrame } = this.state;
 
-    const thumbnailFullWidth = 188;
-    const thumbnailHeight = 100;
+    const { thumbnailRatio } = data;
+    const thumbnailFullWidth = height * thumbnailRatio;
 
     const hasFocusedFrame = focusedFrame != null;
 
@@ -104,8 +94,9 @@ const ThumbnailTimeline = React.createClass({
           const style = {
             backgroundImage: `url(${url})`,
             left,
-            height: thumbnailHeight,
-            width: thumbnailWidth
+            height,
+            width: thumbnailWidth,
+            backgroundSize: `auto ${height}px`
           };
 
           return (
