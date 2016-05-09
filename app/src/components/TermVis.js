@@ -36,11 +36,7 @@ const TermVis = React.createClass({
     const termHeight = 25;
     const timelineHeight = 30;
 
-    // compute the terms x position
-    const terms = data.terms.map((term, i) => ({
-      x: term.timestamps[i % term.timestamps.length],
-      d: term
-    }));
+    const terms = data.terms;
 
     return {
       width,
@@ -59,22 +55,30 @@ const TermVis = React.createClass({
     this.setState({ focusedTerm: term });
   },
 
-  _renderFocused(visComponents) {
+  _getTermCoordinates(term, visComponents) {
     const { innerHeight, terms, xScale, timelineHeight } = visComponents;
+    const termIndex = visComponents.terms.indexOf(term);
+
+    return {
+      x: xScale(term.timestamps[termIndex % term.timestamps.length]),
+      y: (termIndex * ((innerHeight - timelineHeight) / terms.length))
+    };
+  },
+
+  _renderFocused(visComponents) {
+    const { xScale, timelineHeight } = visComponents;
     const { focusedTerm } = this.state;
 
     if (!focusedTerm) {
       return null;
     }
 
-    const termIndex = visComponents.terms.map(term => term.d.term).indexOf(focusedTerm.d.term);
-
-    const termX = xScale(focusedTerm.x);
-    const termY = (termIndex * ((innerHeight - timelineHeight) / terms.length));
+    const { x: termX, y: termY } = this._getTermCoordinates(focusedTerm, visComponents);
     const timelineY = -timelineHeight / 2; // counter-act the transform placed on terms and get to middle of timeline
+
     return (
       <g className='focused-group'>
-        {focusedTerm.d.timestamps.map((time, i) => {
+        {focusedTerm.timestamps.map((time, i) => {
           const timelineX = xScale(time);
           return (
             <line key={i} x1={termX} y1={termY} x2={timelineX} y2={timelineY} className='timestamp-term-line' />
@@ -85,19 +89,18 @@ const TermVis = React.createClass({
   },
 
   _renderTerms(visComponents) {
-    const { innerHeight, terms, xScale, timelineHeight, termHeight } = visComponents;
+    const { terms, timelineHeight, termHeight } = visComponents;
     const { focusedTerm } = this.state;
 
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
-        {terms.map((term, i) => {
-          const x = xScale(term.x);
-          const y = (i * ((innerHeight - timelineHeight) / terms.length));
-          const termStr = term.d.term;
-          const isFocused = focusedTerm && focusedTerm.d.term === termStr;
-          const termWidth = termStr.length * 10; // crude approximation for now
+        {terms.map((term) => {
+          const { x, y } = this._getTermCoordinates(term, visComponents);
 
+          const isFocused = focusedTerm === term;
+          const termStr = term.term;
+          const termWidth = termStr.length * 10; // crude approximation for now
 
           return (
             <g className={cx('term', { focused: isFocused })}
@@ -121,7 +124,7 @@ const TermVis = React.createClass({
 
     let timestamps;
     if (focusedTerm) {
-      timestamps = focusedTerm.d.timestamps;
+      timestamps = focusedTerm.timestamps;
     }
 
     const timestampMarkerRadius = 4;
