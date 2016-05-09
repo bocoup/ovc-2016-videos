@@ -1,20 +1,38 @@
+$thumbnail-border-color: rgba(0, 0, 0, 0.1);
+$thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
+
 .thumbnail-timeline {
   position: relative;
 
   .thumbnail {
     position: absolute;
     top: 0;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid $thumbnail-border-color;
+    border-left: 0;
     transition: .2s width, .2s left;
     background-position-x: center;
     box-shadow: inset -2px -2px 12px rgba(0,0,0,0.1);
 
+    &:first-child {
+      border-left: 1px solid $thumbnail-border-color;
+    }
+
     &:hover {
       box-shadow: none;
     }
+  }
+
+  &.has-highlight .thumbnail {
+    opacity: 0.3;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 
     &.highlighted {
-      outline: 3px solid rgb(160, 222, 236);
+      opacity: 1;
+      -webkit-filter: none;
+      filter: none;
+      box-shadow: none;
+      border-color: $thumbnail-border-color-highlight;
     }
   }
 }

@@ -77,7 +77,7 @@ const ThumbnailTimeline = React.createClass({
     }
 
     return (
-      <div className='thumbnail-timeline' style={{ width, height }}>
+      <div className={cx('thumbnail-timeline', { 'has-highlight': hasHighlightFrames })} style={{ width, height }}>
 
         {frames.map((frame, i) => {
           const isHighlighted = hasHighlightFrames && highlightFrames.indexOf(frame) !== -1;
