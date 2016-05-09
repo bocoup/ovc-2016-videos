@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import * as Util from '../util/Util';
 
 import './ThumbnailTimeline.scss';
@@ -17,7 +18,8 @@ const ThumbnailTimeline = React.createClass({
   propTypes: {
     data: React.PropTypes.object, // the talk data object. has `terms` key
     width: React.PropTypes.number,
-    height: React.PropTypes.number
+    height: React.PropTypes.number,
+    highlightFrames: React.PropTypes.array
   },
 
   getInitialState() {
@@ -58,12 +60,14 @@ const ThumbnailTimeline = React.createClass({
   render() {
     const visComponents = this._visComponents();
     const { data, width, height, frames } = visComponents;
+    const { highlightFrames } = this.props;
     const { focusedFrame } = this.state;
 
     const { thumbnailRatio } = data;
     const thumbnailFullWidth = height * thumbnailRatio;
 
     const hasFocusedFrame = focusedFrame != null;
+    const hasHighlightFrames = highlightFrames && highlightFrames.length;
 
     // the compressed width is based on the combination of number of thumbnails, overall width and if
     // we have any thumbnail expanded currently
@@ -76,10 +80,12 @@ const ThumbnailTimeline = React.createClass({
       <div className='thumbnail-timeline' style={{ width, height }}>
 
         {frames.map((frame, i) => {
+          const isHighlighted = hasHighlightFrames && highlightFrames.indexOf(frame) !== -1;
           const isFocused = focusedFrame === frame;
           const url = thumbnailUrl(data, frame);
-          let left = i * thumbnailCompressedWidth;
 
+          // compute left positioning based on if there is an expanded thumbnail or not
+          let left = i * thumbnailCompressedWidth;
           if (hasFocusedFrame && frame > focusedFrame) {
             left += (thumbnailFullWidth - thumbnailCompressedWidth);
           }
@@ -94,8 +100,9 @@ const ThumbnailTimeline = React.createClass({
             backgroundSize: `auto ${height}px`
           };
 
+
           return (
-            <div key={i} className='thumbnail' style={style}
+            <div key={i} className={cx('thumbnail', { highlighted: isHighlighted })} style={style}
               onMouseEnter={this._handleHoverThumbnail.bind(this, frame)}
               onMouseLeave={this._handleHoverThumbnail.bind(this, null)} />
           );

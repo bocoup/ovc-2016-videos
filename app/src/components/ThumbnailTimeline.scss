@@ -5,12 +5,16 @@
     position: absolute;
     top: 0;
     border: 1px solid rgba(0,0,0,0.1);
-    transition: .2s all;
+    transition: .2s width, .2s left;
     background-position-x: center;
     box-shadow: inset -2px -2px 12px rgba(0,0,0,0.1);
 
     &:hover {
       box-shadow: none;
+    }
+
+    &.highlighted {
+      outline: 3px solid rgb(160, 222, 236);
     }
   }
 }

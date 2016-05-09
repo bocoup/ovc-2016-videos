@@ -80,7 +80,8 @@ const TermVis = React.createClass({
       terms,
       termHeight,
       timelineHeight,
-      xScale
+      xScale,
+      data
     };
   },
 
@@ -93,7 +94,7 @@ const TermVis = React.createClass({
     const termIndex = visComponents.terms.indexOf(term);
 
     return {
-      x: xScale(term.timestamps[termIndex % term.timestamps.length]),
+      x: xScale(d3.mean(term.timestamps)),
       y: (termIndex * ((innerHeight - timelineHeight) / terms.length))
     };
   },
@@ -177,12 +178,18 @@ const TermVis = React.createClass({
 
   render() {
     const visComponents = this._visComponents();
-    const { width, height, innerMargin } = visComponents;
+    const { data, width, height, innerMargin } = visComponents;
+    const { focusedTerm } = this.state;
+
+    let highlightFrames;
+    if (focusedTerm) {
+      highlightFrames = timestampsToFrames(focusedTerm.timestamps, data.frames);
+    }
 
     return (
       <div className='term-vis-container'>
         <div className='timeline-container'>
-          <ThumbnailTimeline data={this.props.data} />
+          <ThumbnailTimeline data={this.props.data} highlightFrames={highlightFrames} />
         </div>
         <svg width={width} height={height} className='term-vis'>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
