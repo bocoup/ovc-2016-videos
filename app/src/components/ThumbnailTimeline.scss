@@ -11,7 +11,11 @@ $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.1);
     border-left: 0;
     transition: .2s width, .2s left;
     background-position-x: center;
-    box-shadow: inset -2px -2px 12px rgba(0,0,0,0.1);
+    box-shadow: inset -2px 0px 4px rgba(0,0,0,0.1);
+
+    &:last-child {
+      box-shadow: none;
+    }
 
     &:first-child {
       border-left: 1px solid $thumbnail-border-color;
