@@ -16,7 +16,7 @@ body {
   position: relative; }
   body:after {
     content: "";
-    background-image: url("../../img/logo-graphic-texture.svg");
+    background-image: url("img/logo-graphic-texture.svg");
     opacity: 0.06;
     top: 0;
     left: 0;
@@ -135,8 +135,6 @@ fieldset {
 #main-banner {
   color: #fff;
   position: relative;
-  background-image: -webkit-linear-gradient(-405deg, rgba(91, 18, 157, 0.85), rgba(41, 227, 227, 0.85)), url("../../img/photo/nettles.jpg");
-  background-image: linear-gradient(135deg, rgba(91, 18, 157, 0.85), rgba(41, 227, 227, 0.85)), url("../../img/photo/nettles.jpg");
   background-size: 100%, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: 0, 50% 50%;
@@ -496,8 +494,6 @@ fieldset {
     Call for Speakers
 ======================== */
 #call-for-speakers {
-  background-image: -webkit-linear-gradient(-495deg, rgba(41, 227, 227, 0.85), rgba(91, 18, 157, 0.85)), url("../../img/photo/cfp-background.jpg");
-  background-image: linear-gradient(225deg, rgba(41, 227, 227, 0.85), rgba(91, 18, 157, 0.85)), url("../../img/photo/cfp-background.jpg");
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
   color: #fff; }
@@ -603,7 +599,6 @@ fieldset {
 
 .gallery {
   height: 98px;
-  background-image: url("../../img/photo/code.jpg");
   background-size: 100%, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: 0, 50% 50%; }
@@ -894,8 +889,6 @@ Animation Open States
       display: none; }
 
 #cfp-diversity {
-  background-image: -webkit-linear-gradient(-495deg, rgba(41, 227, 227, 0.65), rgba(91, 18, 157, 0.65)), url("../../img/photo/cfp-background.jpg");
-  background-image: linear-gradient(225deg, rgba(41, 227, 227, 0.65), rgba(91, 18, 157, 0.65)), url("../../img/photo/cfp-background.jpg");
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
   color: #fff; }

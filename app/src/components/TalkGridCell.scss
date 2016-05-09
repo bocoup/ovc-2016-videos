@@ -1,0 +1,20 @@
+.talk-grid-cell {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #eee;
+  padding: 10px;
+  overflow: hidden;
+
+
+  .talk-title {
+    font-style: normal;
+    font-size: 1.2em;
+    margin: 0 0 0.3em;
+    text-transform: none;
+  }
+
+  .talk-speakers {
+    font-size: 0.9em;
+    margin: 0 0 0.3em;
+  }
+}
