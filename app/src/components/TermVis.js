@@ -178,7 +178,7 @@ const TermVis = React.createClass({
 
   render() {
     const visComponents = this._visComponents();
-    const { data, width, height, innerMargin } = visComponents;
+    const { data, width, height, innerMargin, innerWidth } = visComponents;
     const { focusedTerm } = this.state;
 
     let highlightFrames;
@@ -189,7 +189,7 @@ const TermVis = React.createClass({
     return (
       <div className='term-vis-container'>
         <div className='timeline-container'>
-          <ThumbnailTimeline data={this.props.data} highlightFrames={highlightFrames} />
+          <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames} />
         </div>
         <svg width={width} height={height} className='term-vis'>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
