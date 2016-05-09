@@ -6,6 +6,38 @@ import ThumbnailTimeline from './ThumbnailTimeline';
 import './TermVis.scss';
 
 /**
+ * takes an array of timestamps and an array of frames and
+ * maps the timestamps to the frame that represents that time
+ */
+function timestampsToFrames(timestamps, frames) {
+  let frameIndex = 0;
+
+  const timestampFrames = timestamps.map(time => {
+    while (frames[frameIndex]) {
+      const frameStart = frames[frameIndex];
+      const frameEnd = frames[frameIndex + 1];
+
+      // at the end of the frames
+      if (frameEnd === undefined) {
+        return frameStart;
+
+      // between this frame and the next
+      } else if (frameStart <= time && time < frameEnd) {
+        return frameStart;
+
+      // time is > frameEnd, so increment frames
+      } else {
+        frameIndex += 1;
+      }
+    }
+
+    return null;
+  });
+
+  return timestampFrames;
+}
+
+/**
  * Renders the visualization of top terms/bigrams in the talk
  */
 const TermVis = React.createClass({
