@@ -1,0 +1,31 @@
+.term-vis {
+  .timeline-bg {
+    fill: rgb(192, 196, 224);
+    opacity: 0.3;
+  }
+
+
+  .timestamp-marker {
+    fill: #A0CCE0;
+    stroke: #81B3FF;
+  }
+
+  .timestamp-term-line {
+    stroke: rgba(0, 0, 0, 0.3);
+    stroke-dasharray: 4,4;
+  }
+
+  .term rect {
+    fill: rgb(192, 224, 224);
+    opacity: 0.4;
+  }
+
+  .term text {
+    cursor: default;
+  }
+
+  .focused.term rect {
+    opacity: 1;
+  }
+
+}
