@@ -1,18 +1,13 @@
 import React from 'react';
+import * as Util from '../util/Util';
 
 import './ThumbnailTimeline.scss';
 
 // allows webpack to find the thumbnails
 const thumbnailContext = require.context('../img/talks');
 
-
-// add leading zeros to a string
-function leadingZeroFormat(x, length) {
-  return ('00000000' + x).slice(-length);
-}
-
 function thumbnailUrl(talk, frame) {
-  return thumbnailContext(`./${talk.id}/ovc2016_${talk.day}_${leadingZeroFormat(talk.talk, 2)}_${talk.id}-${frame}.png`);
+  return thumbnailContext(`./${talk.id}/ovc2016_${talk.day}_${Util.leadingZeroFormat(talk.talk, 2)}_${talk.id}-${frame}.png`);
 }
 
 /**
