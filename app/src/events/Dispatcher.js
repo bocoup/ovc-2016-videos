@@ -2,7 +2,8 @@ import d3 from 'd3';
 
 const Dispatcher = {
   events: {
-    navigateVideo: 'navigateVideo'
+    navigateVideo: 'navigateVideo',
+    stopVideo: 'stopVideo'
   },
 
   listeners: [],
@@ -19,13 +20,10 @@ const Dispatcher = {
   },
 
   trigger(event, ...args) {
-    console.log('triggered event', event, args);
     this.listeners.forEach(listener => {
       listener.onDispatch(event, ...args);
     })
   }
 };
-
-console.log('Dispatcher =', Dispatcher);
 
 export default Dispatcher;

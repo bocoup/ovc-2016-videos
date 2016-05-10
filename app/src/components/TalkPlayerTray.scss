@@ -1,0 +1,17 @@
+$tray-height: 400px;
+.talk-player-tray {
+  position: fixed;
+  bottom: -$tray-height - 10;
+  left: 0;
+  right: 0;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid #fe2b75;
+  height: $tray-height;
+  transition: .2s bottom;
+
+  &.open {
+    bottom: 0;
+  }
+}

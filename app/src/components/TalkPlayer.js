@@ -26,8 +26,11 @@ const TalkPlayer = React.createClass({
       const timestamp = args[1];
 
       if (this.video) {
-        this.video.seekTo(timestamp);
+        this.video.seekTo(timestamp, true);
+        this.video.playVideo();
       }
+    } else if (event === Dispatcher.events.stopVideo) {
+      this.video.stopVideo();
     }
   },
 

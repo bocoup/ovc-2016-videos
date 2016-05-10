@@ -203,7 +203,6 @@ const TermVis = React.createClass({
   },
 
   _handleClickThumbnail(talk, frame) {
-    console.log('Dispatcher in termvis', Dispatcher);
     Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
   },
 
