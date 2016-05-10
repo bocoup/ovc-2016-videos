@@ -51,26 +51,99 @@ const TermVis = React.createClass({
   },
 
   getInitialState() {
-    return {
-      useGoo: true
-    };
+    return {};
   },
 
   getDefaultProps() {
     return {
-      width: 800,
+      width: 1000,
       height: 600
     };
   },
 
-  componentWillMount() {
+  componentDidMount() {
+    // store the bounding boxes to fix the widths of text. sometimes it doesn't set it right,
+    // I think possibly due to the loading of the web font, which maybe won't be an issue
+    // when it is loaded in the page after selecting one as opposed to immediately on
+    // page load.
     setTimeout(() => {
-      this.setState({ useGoo: false });
-    }, 2000);
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
+    }, 0);
+  },
+
+  _readTermTextBoundingBoxes() {
+    const svg = d3.select(ReactDOM.findDOMNode(this.refs.svg));
+    const textElems = svg.selectAll('.term text')[0];
+    return textElems.map(elem => elem.getBBox());
+  },
+
+  // NOTE: boundingBoxes is around the text element.
+  _computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes) {
+
+    // compute x values and width
+    const layout = terms.map((term, i) => {
+      const boundingBox = boundingBoxes && boundingBoxes[i];
+      let width;
+
+      // use bounding box if we have already calculated it
+      if (boundingBox) {
+        width = Math.ceil(boundingBox.width) + 2 * termPadding;
+      } else {
+        const termStr = term.term;
+        width = termStr.length * 3 + 2 * termPadding; // crude approximation for now
+      }
+
+      return {
+        term: term.term,
+        x: xScale(d3.mean(term.timestamps)) - (width / 2),
+        y: 0,
+        width,
+        height: termHeight
+      };
+    });
+
+    if (!boundingBoxes) {
+      return layout;
+    }
+
+    function collides(box1, box2) {
+      // within vertical region
+      if (box2.y >= box1.y && box2.y <= (box1.y + box1.height)) {
+
+        // within horizontally (more complex due to variable width)
+        const leftEdgeInside = box2.x >= box1.x && box2.x <= (box1.x + box1.width);
+        const rightEdgeInside = (box2.x + box2.width) >= box1.x && (box2.x + box2.width) <= (box1.x + box1.width);
+        const leftEdgeLeft = box2.x < box1.x;
+        const rightEdgeRight = (box2.x + box2.width) > (box1.x + box1.width);
+
+        if (leftEdgeInside || rightEdgeInside || (leftEdgeLeft && rightEdgeRight)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    layout.map((termBox, i) => {
+      // check all the terms that came before it to check if they collide
+      // we only need to check them once since we are moving each term down,
+      // so our modifications will keep the lack of collisions with previous terms
+      for (let j = 0; j < i; j++) {
+        const otherTermBox = layout[j];
+
+        // we only will adjust y position to avoid collisions, since x encodes time
+        if (collides(termBox, otherTermBox)) {
+          termBox.y = otherTermBox.y + otherTermBox.height + termMargin;
+        }
+      }
+    });
+
+    return layout;
   },
 
   _visComponents() {
     const { data, width, height } = this.props;
+    const { boundingBoxes } = this.state;
 
     const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
     const innerWidth = width - innerMargin.left - innerMargin.right;
@@ -78,8 +151,15 @@ const TermVis = React.createClass({
 
     const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
     const timelineHeight = 10;
+    const termPadding = 5;
+    const termHeight = 15 + 2 * termPadding;
+    const termMargin = 20;
 
     const terms = data.terms.slice(0, 15);
+
+
+    // generate the layout using the boundingBoxes
+    const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
 
     return {
       width,
@@ -88,9 +168,12 @@ const TermVis = React.createClass({
       innerWidth,
       innerHeight,
       terms,
+      termHeight,
+      termPadding,
       timelineHeight,
       xScale,
-      data
+      data,
+      layout
     };
   },
 
@@ -98,14 +181,11 @@ const TermVis = React.createClass({
     this.setState({ focusedTerm: term });
   },
 
-  _getTermCoordinates(term, visComponents) {
-    const { innerHeight, terms, xScale, timelineHeight } = visComponents;
-    const termIndex = visComponents.terms.indexOf(term);
-
-    return {
-      x: xScale(d3.mean(term.timestamps)),
-      y: (termIndex * ((innerHeight - timelineHeight) / terms.length))
-    };
+  _getTermLayout(term, visComponents) {
+    const { layout, terms } = visComponents;
+    const termIndex = terms.indexOf(term);
+    const termLayout = layout[termIndex];
+    return termLayout;
   },
 
   _renderFocused(visComponents) {
@@ -116,7 +196,7 @@ const TermVis = React.createClass({
       return null;
     }
 
-    const { x: termX, y: termY } = this._getTermCoordinates(focusedTerm, visComponents);
+    const { x: termX, y: termY, width: termWidth } = this._getTermLayout(focusedTerm, visComponents);
     const timelineY = -timelineHeight / 2; // counter-act the transform placed on terms and get to middle of timeline
 
     return (
@@ -124,36 +204,43 @@ const TermVis = React.createClass({
         {focusedTerm.timestamps.map((time, i) => {
           const timelineX = xScale(time);
           return (
-            <line key={i} x1={termX} y1={termY} x2={timelineX} y2={timelineY} className='timestamp-term-line' />
+            <line key={i} x1={termX + termWidth / 2} y1={termY} x2={timelineX} y2={timelineY} className='timestamp-term-line' />
           );
         })}
       </g>
     );
   },
 
+  _renderTerm(visComponents, term, termIndex) {
+    const { termHeight: height, termPadding: padding } = visComponents;
+    const { focusedTerm } = this.state;
+    const { x, y, width } = this._getTermLayout(term, visComponents);
+
+    const focused = focusedTerm === term;
+    const termStr = term.term;
+
+    return (
+      <g key={termIndex} className={cx('term', { focused })}
+          transform={`translate(${x} ${y})`}
+          onMouseEnter={this._handleHoverTerm.bind(this, term)}
+          onMouseLeave={this._handleHoverTerm.bind(this, null)}>
+        <rect x={0} y={0} width={width} height={height} />
+        <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
+      </g>
+    );
+  },
+
   _renderTerms(visComponents) {
     const { terms, timelineHeight } = visComponents;
-    const { focusedTerm, useGoo } = this.state;
 
-    let gooStyle;
-    if (useGoo) {
-      gooStyle = { filter: 'url(#goo)' };
-    }
+    // const gooStyle = { filter: 'url(#goo)' };
+    const gooStyle = {}; // temporarily disable goo
 
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
         <ReactTransitionGroup component='g' style={gooStyle}>
-          {terms.map((term) => {
-            const { x, y } = this._getTermCoordinates(term, visComponents);
-            const isFocused = focusedTerm === term;
-            const termStr = term.term;
-
-            return (
-              <Term key={termStr} term={term} focused={isFocused}
-                x={x} y={y} onHover={this._handleHoverTerm} />
-            );
-          })}
+          {terms.map((term, i) => this._renderTerm(visComponents, term, i))}
         </ReactTransitionGroup>
       </g>
     );
