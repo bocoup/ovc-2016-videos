@@ -89,9 +89,9 @@ const TermVis = React.createClass({
 
 
     const timelineHeight = 10;
-    const termPadding = 4;
+    const termPadding = 8;
     const termHeight = 15 + 2 * termPadding;
-    const termMargin = 20;
+    const termMargin = 4;
 
 
     const terms = data.terms.slice(0, 25);
