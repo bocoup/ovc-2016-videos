@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
@@ -124,17 +125,24 @@ const TermVis = React.createClass({
 
   _renderTerms(visComponents) {
     const { terms, timelineHeight, termHeight } = visComponents;
-    const { focusedTerm } = this.state;
-
+    const { focusedTerm, boundingBoxes } = this.state;
+    const termPadding = 5;
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
-        {terms.map((term) => {
+        {terms.map((term, i) => {
           const { x, y } = this._getTermCoordinates(term, visComponents);
 
           const isFocused = focusedTerm === term;
           const termStr = term.term;
-          const termWidth = termStr.length * 10; // crude approximation for now
+          let termWidth;
+
+          // use bounding box if we have already calculated it
+          if (boundingBoxes && boundingBoxes[i]) {
+            termWidth = Math.ceil(boundingBoxes[i].width) + 2 * termPadding;
+          } else {
+            termWidth = termStr.length * 10 + 2 * termPadding; // crude approximation for now
+          }
 
           return (
             <g className={cx('term', { focused: isFocused })}
@@ -143,7 +151,7 @@ const TermVis = React.createClass({
                 onMouseEnter={this._handleHoverTerm.bind(this, term)}
                 onMouseLeave={this._handleHoverTerm.bind(this, null)}>
               <rect x={-termWidth / 2} y={0} width={termWidth} height={termHeight} />
-              <text x={4} y={5} textAnchor='middle'>{termStr}</text>
+              <text x={0} y={termPadding} textAnchor='middle'>{termStr}</text>
             </g>
           );
         })}
@@ -176,6 +184,26 @@ const TermVis = React.createClass({
     );
   },
 
+  _readTermBoundingBoxes() {
+    const svg = ReactDOM.findDOMNode(this.refs.svg);
+    const terms = d3.select(svg).selectAll('.term text');
+
+    const boundingBoxes = terms[0].map((textElem) => {
+      console.log(textElem.innerHTML, textElem.getBBox().width);
+      return textElem.getBBox();
+    });
+
+    return boundingBoxes;
+  },
+
+  // compute the widths for the text terms
+  componentDidMount() {
+    setTimeout(() => {
+      const boundingBoxes = this._readTermBoundingBoxes();
+      this.setState({ boundingBoxes });
+    }, 0);
+  },
+
   render() {
     const visComponents = this._visComponents();
     const { data, width, height, innerMargin, innerWidth } = visComponents;
@@ -191,7 +219,7 @@ const TermVis = React.createClass({
         <div className='timeline-container'>
           <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames} />
         </div>
-        <svg width={width} height={height} className='term-vis'>
+        <svg width={width} height={height} className='term-vis' ref='svg'>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTerms(visComponents)}
