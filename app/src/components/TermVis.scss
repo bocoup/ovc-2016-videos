@@ -21,6 +21,11 @@
   .timestamp-marker {
     fill: #A0CCE0;
     stroke: #81B3FF;
+    cursor: pointer;
+    &:hover {
+      fill: #FFBAD2;
+      stroke: #fe2b75;
+    }
   }
 
   .timestamp-term-line {
@@ -38,6 +43,7 @@
 
     rect {
       fill: rgb(192, 224, 224);
+      cursor: pointer;
     }
 
     text {

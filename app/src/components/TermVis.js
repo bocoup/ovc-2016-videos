@@ -199,6 +199,7 @@ const TermVis = React.createClass({
   },
 
   _handleHoverTerm(term) {
+    term = term == null ? this.state.toggledTerm : term;
     this.setState({ focusedTerm: term });
   },
 
@@ -206,8 +207,25 @@ const TermVis = React.createClass({
     Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
   },
 
+  _handleClickTimestamp(timestamp) {
+    const { data } = this.props;
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, data, timestamp);
+  },
+
   _handleHoverThumbnail(frame) {
     this.setState({ focusedFrame: frame });
+  },
+
+  _handleClickTerm(term) {
+    if (term === 'clear') { // if clicking the background of the svg
+      this.setState({ focusedTerm: null, toggledTerm: null });
+    } else {
+      if (this.state.toggledTerm === term) {
+        term = null;
+      }
+
+      this.setState({ toggledTerm: term });
+    }
   },
 
   _getTermLayout(term, visComponents) {
@@ -245,9 +263,10 @@ const TermVis = React.createClass({
   // the rect
   _renderTermRect(visComponents, term, termIndex) {
     const { data, termHeight: height, scoreScale } = visComponents;
-    const { focusedTerm, encodeScore, focusedFrame } = this.state;
+    const { toggledTerm, focusedTerm, encodeScore, focusedFrame } = this.state;
     const { x, y, width } = this._getTermLayout(term, visComponents);
 
+    const toggled = toggledTerm === term;
     const focused = focusedTerm === term;
 
     // check if a thumbnail is focused and if we should highlight this term
@@ -259,7 +278,9 @@ const TermVis = React.createClass({
 
 
     let rectFill;
-    if (focused) {
+    if (toggled) {
+      rectFill = { fill: '#FFC6E6' };
+    } else if (focused) {
       rectFill = { fill: '#C4E3F1' };
     } else if (isInFocusedFrame) {
       rectFill = { fill: '#E2DEF7' };
@@ -271,7 +292,8 @@ const TermVis = React.createClass({
       <g key={termIndex} className={cx('term', { focused })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
-          onMouseLeave={this._handleHoverTerm.bind(this, null)}>
+          onMouseLeave={this._handleHoverTerm.bind(this, null)}
+          onClick={this._handleClickTerm.bind(this, term)}>
         <rect x={0} y={0} width={width} height={height} style={rectFill} />
       </g>
     );
@@ -296,13 +318,19 @@ const TermVis = React.createClass({
   },
 
   _renderTerms(visComponents) {
-    const { terms, timelineHeight } = visComponents;
+    const { terms, timelineHeight, innerMargin, width, innerHeight } = visComponents;
 
     const gooStyle = { filter: 'url(#goo)' };
     // const gooStyle = {}; // temporarily disable goo
 
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
+        <rect className='detoggle-click-space'
+          x={-innerMargin.left} y={0}
+          width={width} height={innerHeight + innerMargin.bottom}
+          style={{ opacity: 0 }}
+          onClick={this._handleClickTerm.bind(this, 'clear')}
+         />
         {this._renderFocused(visComponents)}
         <ReactCSSTransitionGroup component='g' transitionName='terms' transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={6000} transitionLeaveTimeout={0} style={gooStyle}>
           {terms.map((term, i) => this._renderTermRect(visComponents, term, i))}
@@ -341,7 +369,7 @@ const TermVis = React.createClass({
         {timestamps && timestamps.map((time, i) => {
           return (
             <circle key={i} cx={xScale(time)} cy={timelineHeight / 2} r={timestampMarkerRadius}
-              className='timestamp-marker' />
+              className='timestamp-marker' onClick={this._handleClickTimestamp.bind(this, time)} />
           );
         })}
       </g>
