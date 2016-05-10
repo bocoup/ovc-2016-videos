@@ -1,0 +1,14 @@
+.term {
+  rect {
+    fill: rgb(192, 224, 224);
+    opacity: 0.4;
+  }
+
+  text {
+    cursor: default;
+  }
+
+  &.focused rect {
+    opacity: 1;
+  }
+}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
+import Term from './Term';
 
 import './TermVis.scss';
 
@@ -125,40 +126,24 @@ const TermVis = React.createClass({
 
   _renderTerms(visComponents) {
     const { terms, timelineHeight, termHeight } = visComponents;
-    const { focusedTerm, boundingBoxes } = this.state;
-    const termPadding = 5;
+    const { focusedTerm } = this.state;
+
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
-        {terms.map((term, i) => {
+        {terms.map((term) => {
           const { x, y } = this._getTermCoordinates(term, visComponents);
-
           const isFocused = focusedTerm === term;
           const termStr = term.term;
-          let termWidth;
-
-          // use bounding box if we have already calculated it
-          if (boundingBoxes && boundingBoxes[i]) {
-            termWidth = Math.ceil(boundingBoxes[i].width) + 2 * termPadding;
-          } else {
-            termWidth = termStr.length * 10 + 2 * termPadding; // crude approximation for now
-          }
 
           return (
-            <g className={cx('term', { focused: isFocused })}
-                key={termStr}
-                transform={`translate(${x} ${y})`}
-                onMouseEnter={this._handleHoverTerm.bind(this, term)}
-                onMouseLeave={this._handleHoverTerm.bind(this, null)}>
-              <rect x={-termWidth / 2} y={0} width={termWidth} height={termHeight} />
-              <text x={0} y={termPadding} textAnchor='middle'>{termStr}</text>
-            </g>
+            <Term key={termStr} term={term} focused={isFocused}
+              x={x} y={y} height={termHeight} onHover={this._handleHoverTerm} />
           );
         })}
       </g>
     );
   },
-
 
   _renderTimeline(visComponents) {
     const { innerWidth, timelineHeight, xScale } = visComponents;
@@ -182,26 +167,6 @@ const TermVis = React.createClass({
         })}
       </g>
     );
-  },
-
-  _readTermBoundingBoxes() {
-    const svg = ReactDOM.findDOMNode(this.refs.svg);
-    const terms = d3.select(svg).selectAll('.term text');
-
-    const boundingBoxes = terms[0].map((textElem) => {
-      console.log(textElem.innerHTML, textElem.getBBox().width);
-      return textElem.getBBox();
-    });
-
-    return boundingBoxes;
-  },
-
-  // compute the widths for the text terms
-  componentDidMount() {
-    setTimeout(() => {
-      const boundingBoxes = this._readTermBoundingBoxes();
-      this.setState({ boundingBoxes });
-    }, 0);
   },
 
   render() {
