@@ -28,10 +28,12 @@
   .term {
     transition: 1s transform;
 
-    rect {
+    &.terms-appear rect {
       transition: 1s fill;
       transition-delay: 300ms;
+    }
 
+    rect {
       fill: rgb(192, 224, 224);
     }
 
@@ -43,7 +45,7 @@
     }
 
     &.focused rect {
-      fill: rgb(212, 244, 244);
+      fill: rgb(166, 230, 245);
     }
   }
 

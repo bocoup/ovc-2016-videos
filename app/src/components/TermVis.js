@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactTransitionGroup from 'react-addons-transition-group';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
@@ -70,6 +70,46 @@ const TermVis = React.createClass({
       this.setState({ boundingBoxes: this._readTermTextBoundingBoxes(), encodeScore: true, showText: true });
     }, 0);
   },
+
+  _visComponents() {
+    const { data, width, height } = this.props;
+    const { boundingBoxes } = this.state;
+
+    const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
+    const innerWidth = width - innerMargin.left - innerMargin.right;
+    const innerHeight = height - innerMargin.top - innerMargin.bottom;
+
+    const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
+    const timelineHeight = 10;
+    const termPadding = 8;
+    const termHeight = 15 + 2 * termPadding;
+    const termMargin = 20;
+
+
+    const terms = data.terms.slice(0, 20);
+    const scoreExtent = d3.extent(terms.map(term => term.score));
+    const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
+
+    // generate the layout using the boundingBoxes
+    const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
+
+    return {
+      width,
+      height,
+      innerMargin,
+      innerWidth,
+      innerHeight,
+      terms,
+      termHeight,
+      termPadding,
+      timelineHeight,
+      xScale,
+      data,
+      layout,
+      scoreScale
+    };
+  },
+
 
   _readTermTextBoundingBoxes() {
     const svg = d3.select(ReactDOM.findDOMNode(this.refs.svg));
@@ -141,45 +181,6 @@ const TermVis = React.createClass({
     return layout;
   },
 
-  _visComponents() {
-    const { data, width, height } = this.props;
-    const { boundingBoxes } = this.state;
-
-    const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
-    const innerWidth = width - innerMargin.left - innerMargin.right;
-    const innerHeight = height - innerMargin.top - innerMargin.bottom;
-
-    const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
-    const timelineHeight = 10;
-    const termPadding = 5;
-    const termHeight = 15 + 2 * termPadding;
-    const termMargin = 20;
-
-
-    const terms = data.terms.slice(0, 20);
-    const scoreExtent = d3.extent(terms.map(term => term.score));
-    const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
-
-    // generate the layout using the boundingBoxes
-    const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
-
-    return {
-      width,
-      height,
-      innerMargin,
-      innerWidth,
-      innerHeight,
-      terms,
-      termHeight,
-      termPadding,
-      timelineHeight,
-      xScale,
-      data,
-      layout,
-      scoreScale
-    };
-  },
-
   _handleHoverTerm(term) {
     this.setState({ focusedTerm: term });
   },
@@ -225,7 +226,9 @@ const TermVis = React.createClass({
     const focused = focusedTerm === term;
 
     let rectFill;
-    if (encodeScore) {
+    if (focused) {
+      rectFill = { fill: 'rgb(166, 230, 245)' };
+    } else if (encodeScore) {
       rectFill = { fill: scoreScale(term.score) };
     }
 
@@ -266,9 +269,9 @@ const TermVis = React.createClass({
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
-        <ReactTransitionGroup component='g' style={gooStyle}>
+        <ReactCSSTransitionGroup component='g' transitionName='terms' transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={6000} transitionLeaveTimeout={0} style={gooStyle}>
           {terms.map((term, i) => this._renderTermRect(visComponents, term, i))}
-        </ReactTransitionGroup>
+        </ReactCSSTransitionGroup>
         {terms.map((term, i) => this._renderTermText(visComponents, term, i))}
       </g>
     );
