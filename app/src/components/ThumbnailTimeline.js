@@ -19,7 +19,8 @@ const ThumbnailTimeline = React.createClass({
     data: React.PropTypes.object, // the talk data object. has `terms` key
     width: React.PropTypes.number,
     height: React.PropTypes.number,
-    highlightFrames: React.PropTypes.array
+    highlightFrames: React.PropTypes.array,
+    onHoverThumbnail: React.PropTypes.func
   },
 
   getInitialState() {
@@ -54,7 +55,12 @@ const ThumbnailTimeline = React.createClass({
   },
 
   _handleHoverThumbnail(frame) {
+    const { onHoverThumbnail } = this.props;
     this.setState({ focusedFrame: frame });
+
+    if (onHoverThumbnail) {
+      onHoverThumbnail(frame);
+    }
   },
 
   render() {

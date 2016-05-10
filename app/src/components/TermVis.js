@@ -201,6 +201,10 @@ const TermVis = React.createClass({
     this.setState({ focusedTerm: term });
   },
 
+  _handleHoverThumbnail(frame) {
+    this.setState({ focusedFrame: frame });
+  },
+
   _getTermLayout(term, visComponents) {
     const { layout, terms } = visComponents;
     const termIndex = terms.indexOf(term);
@@ -235,15 +239,25 @@ const TermVis = React.createClass({
   // otherwise the goo blurs text+rect and we get a darker goo blob than
   // the rect
   _renderTermRect(visComponents, term, termIndex) {
-    const { termHeight: height, scoreScale } = visComponents;
-    const { focusedTerm, encodeScore } = this.state;
+    const { data, termHeight: height, scoreScale } = visComponents;
+    const { focusedTerm, encodeScore, focusedFrame } = this.state;
     const { x, y, width } = this._getTermLayout(term, visComponents);
 
     const focused = focusedTerm === term;
 
+    // check if a thumbnail is focused and if we should highlight this term
+    let isInFocusedFrame = false;
+    if (focusedFrame != null) {
+      const termFrames = timestampsToFrames(term.timestamps, data.frames);
+      isInFocusedFrame = termFrames.indexOf(focusedFrame) !== -1;
+    }
+
+
     let rectFill;
     if (focused) {
       rectFill = { fill: '#C4E3F1' };
+    } else if (isInFocusedFrame) {
+      rectFill = { fill: '#E2DEF7' };
     } else if (encodeScore) {
       rectFill = { fill: scoreScale(term.score) };
     }
@@ -342,7 +356,8 @@ const TermVis = React.createClass({
     return (
       <div className='term-vis-container'>
         <div className='timeline-container'>
-          <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames} />
+          <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames}
+            onHoverThumbnail={this._handleHoverThumbnail} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
           <defs>
