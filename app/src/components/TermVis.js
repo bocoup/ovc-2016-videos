@@ -46,8 +46,7 @@ function timestampsToFrames(timestamps, frames) {
 const TermVis = React.createClass({
   propTypes: {
     data: React.PropTypes.object, // the talk data object. has `terms` key
-    width: React.PropTypes.number,
-    height: React.PropTypes.number
+    width: React.PropTypes.number
   },
 
   getInitialState() {
@@ -56,8 +55,7 @@ const TermVis = React.createClass({
 
   getDefaultProps() {
     return {
-      width: 1000,
-      height: 600
+      width: 1000
     };
   },
 
@@ -72,12 +70,13 @@ const TermVis = React.createClass({
   },
 
   _visComponents() {
-    const { data, width, height } = this.props;
+    const { data, width } = this.props;
     const { boundingBoxes } = this.state;
 
+    // start with height 400
+    let height = 400;
     const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
     const innerWidth = width - innerMargin.left - innerMargin.right;
-    const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
     // there's an issue using the max time to set the xScale since each chunk in the
     // compressed thumbnails will be K pixels wide. All chunks represent T time, except
@@ -91,7 +90,7 @@ const TermVis = React.createClass({
 
 
     const timelineHeight = 10;
-    const termPadding = 8;
+    const termPadding = 4;
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 20;
 
@@ -102,6 +101,14 @@ const TermVis = React.createClass({
 
     // generate the layout using the boundingBoxes
     const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
+
+    // update height based on layout
+    const maxLayoutY = d3.max(layout.map(d => d.y + d.height));
+    if (maxLayoutY > 100) { // < 100 then just keep the default, probably hasn't been computed yet
+      height = maxLayoutY + innerMargin.top + innerMargin.bottom;
+    }
+    const innerHeight = height - innerMargin.top - innerMargin.bottom;
+
 
     return {
       width,
