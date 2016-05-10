@@ -466,14 +466,14 @@ balance correctness.  With
 Markov chains, you have the
 tradeoff between copying source
 material exactly and producing
-incorrect output.  But recounter
+incorrect output.  But recurrent
 nets find the middle ground,
 capturing the deeper structure
 to the data.  What if you
 combine the nets?  Let's try
 this.
 You combine a ConvNet through a
-recounter net.  Is it cropped at
+recurrent net.  Is it cropped at
 the top?  I think it's cropped.
 Yeah.  Try again.  If you
 combine the ConvNet with a

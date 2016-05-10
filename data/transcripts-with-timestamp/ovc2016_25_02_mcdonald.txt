@@ -466,14 +466,14 @@
 10:24:14	Markov chains, you have the
 10:24:17	tradeoff between copying source
 10:24:19	material exactly and producing
-10:24:20	incorrect output.  But recounter
+10:24:20	incorrect output.  But recurrent
 10:24:23	nets find the middle ground,
 10:24:25	capturing the deeper structure
 10:24:26	to the data.  What if you
 10:24:30	combine the nets?  Let's try
 10:24:33	this.
 10:24:37	You combine a ConvNet through a
-10:24:41	recounter net.  Is it cropped at
+10:24:41	recurrent net.  Is it cropped at
 10:24:44	the top?  I think it's cropped.
 10:24:49	Yeah.  Try again.  If you
 10:24:53	combine the ConvNet with a
