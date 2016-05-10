@@ -96,7 +96,7 @@ const TermVis = React.createClass({
       return {
         term: term.term,
         x: xScale(d3.mean(term.timestamps)) - (width / 2),
-        y: 0,
+        y: 30,
         width,
         height: termHeight
       };
@@ -155,7 +155,7 @@ const TermVis = React.createClass({
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 20;
 
-    const terms = data.terms.slice(0, 15);
+    const terms = data.terms.slice(0, 20);
 
 
     // generate the layout using the boundingBoxes
@@ -221,7 +221,7 @@ const TermVis = React.createClass({
 
     return (
       <g key={termIndex} className={cx('term', { focused })}
-          transform={`translate(${x} ${y})`}
+          style={{ transform: `translate(${x}px, ${y}px)` }}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
           onMouseLeave={this._handleHoverTerm.bind(this, null)}>
         <rect x={0} y={0} width={width} height={height} />
@@ -233,8 +233,8 @@ const TermVis = React.createClass({
   _renderTerms(visComponents) {
     const { terms, timelineHeight } = visComponents;
 
-    // const gooStyle = { filter: 'url(#goo)' };
-    const gooStyle = {}; // temporarily disable goo
+    const gooStyle = { filter: 'url(#goo)' };
+    // const gooStyle = {}; // temporarily disable goo
 
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>

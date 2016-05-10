@@ -24,4 +24,21 @@
     stroke: rgba(0, 0, 0, 0.15);
     stroke-dasharray: 2,1;
   }
+
+  .term {
+    transition: 1s transform;
+
+    rect {
+      fill: rgb(192, 224, 224);
+    }
+
+    text {
+      cursor: default;
+    }
+
+    &.focused rect {
+      fill: rgb(212, 244, 244);
+    }
+  }
+
 }
