@@ -67,7 +67,7 @@ const TermVis = React.createClass({
     // when it is loaded in the page after selecting one as opposed to immediately on
     // page load.
     setTimeout(() => {
-      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes(), encodeScore: true, showText: true });
     }, 0);
   },
 
@@ -155,8 +155,10 @@ const TermVis = React.createClass({
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 20;
 
-    const terms = data.terms.slice(0, 20);
 
+    const terms = data.terms.slice(0, 20);
+    const scoreExtent = d3.extent(terms.map(term => term.score));
+    const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
 
     // generate the layout using the boundingBoxes
     const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
@@ -173,7 +175,8 @@ const TermVis = React.createClass({
       timelineHeight,
       xScale,
       data,
-      layout
+      layout,
+      scoreScale
     };
   },
 
@@ -211,21 +214,45 @@ const TermVis = React.createClass({
     );
   },
 
-  _renderTerm(visComponents, term, termIndex) {
-    const { termHeight: height, termPadding: padding } = visComponents;
-    const { focusedTerm } = this.state;
+  // rect must be separate from text to get proper rendering with goo
+  // otherwise the goo blurs text+rect and we get a darker goo blob than
+  // the rect
+  _renderTermRect(visComponents, term, termIndex) {
+    const { termHeight: height, scoreScale } = visComponents;
+    const { focusedTerm, encodeScore } = this.state;
     const { x, y, width } = this._getTermLayout(term, visComponents);
 
     const focused = focusedTerm === term;
-    const termStr = term.term;
+
+    let rectFill;
+    if (encodeScore) {
+      rectFill = { fill: scoreScale(term.score) };
+    }
 
     return (
       <g key={termIndex} className={cx('term', { focused })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
           onMouseLeave={this._handleHoverTerm.bind(this, null)}>
-        <rect x={0} y={0} width={width} height={height} />
-        <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
+        <rect x={0} y={0} width={width} height={height} style={rectFill} />
+      </g>
+    );
+  },
+
+  _renderTermText(visComponents, term, termIndex) {
+    const { termPadding: padding } = visComponents;
+    const { focusedTerm, showText } = this.state;
+    const { x, y, width } = this._getTermLayout(term, visComponents);
+
+    const focused = focusedTerm === term;
+    const termStr = term.term;
+
+    const textOpacity = showText ? 1 : 0;
+
+    return (
+      <g key={termIndex} className={cx('term', { focused })}
+          style={{ transform: `translate(${x}px, ${y}px)` }}>
+        <text x={width / 2} y={padding} textAnchor='middle' style={{ opacity: textOpacity }}>{termStr}</text>
       </g>
     );
   },
@@ -240,8 +267,9 @@ const TermVis = React.createClass({
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
         <ReactTransitionGroup component='g' style={gooStyle}>
-          {terms.map((term, i) => this._renderTerm(visComponents, term, i))}
+          {terms.map((term, i) => this._renderTermRect(visComponents, term, i))}
         </ReactTransitionGroup>
+        {terms.map((term, i) => this._renderTermText(visComponents, term, i))}
       </g>
     );
   },

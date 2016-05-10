@@ -29,11 +29,17 @@
     transition: 1s transform;
 
     rect {
+      transition: 1s fill;
+      transition-delay: 300ms;
+
       fill: rgb(192, 224, 224);
     }
 
     text {
+      transition: 1s opacity;
+      transition-delay: 300ms;
       cursor: default;
+      pointer-events: none;
     }
 
     &.focused rect {
