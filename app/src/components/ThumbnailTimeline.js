@@ -20,7 +20,8 @@ const ThumbnailTimeline = React.createClass({
     width: React.PropTypes.number,
     height: React.PropTypes.number,
     highlightFrames: React.PropTypes.array,
-    onHoverThumbnail: React.PropTypes.func
+    onHoverThumbnail: React.PropTypes.func,
+    onClickThumbnail: React.PropTypes.func
   },
 
   getInitialState() {
@@ -52,6 +53,14 @@ const ThumbnailTimeline = React.createClass({
       innerHeight,
       frames
     };
+  },
+
+  _handleClickThumbnail(frame) {
+    const { onClickThumbnail, data } = this.props;
+
+    if (onClickThumbnail) {
+      onClickThumbnail(data, frame);
+    }
   },
 
   _handleHoverThumbnail(frame) {
@@ -110,7 +119,8 @@ const ThumbnailTimeline = React.createClass({
           return (
             <div key={i} className={cx('thumbnail', { highlighted: isHighlighted })} style={style}
               onMouseEnter={this._handleHoverThumbnail.bind(this, frame)}
-              onMouseLeave={this._handleHoverThumbnail.bind(this, null)} />
+              onMouseLeave={this._handleHoverThumbnail.bind(this, null)}
+              onClick={this._handleClickThumbnail.bind(this, frame)} />
           );
         })}
       </div>

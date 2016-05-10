@@ -1,7 +1,9 @@
 import React from 'react';
 import d3 from 'd3';
+import Dispatcher from '../events/Dispatcher';
 
 import TalkGrid from './TalkGrid';
+import TalkPlayer from './TalkPlayer';
 import TalkPane from './TalkPane';
 
 import './Main.scss';
@@ -17,6 +19,7 @@ const Main = React.createClass({
     return (
       <div>
         <TalkPane data={ovcData[0]} />
+        <TalkPlayer data={ovcData[0]} width={640} height={360} />
         <TalkGrid data={ovcData} />
       </div>
     );

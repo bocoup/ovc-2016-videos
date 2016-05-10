@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
+import Dispatcher from '../events/Dispatcher';
 
 import './TermVis.scss';
 
@@ -201,6 +202,11 @@ const TermVis = React.createClass({
     this.setState({ focusedTerm: term });
   },
 
+  _handleClickThumbnail(talk, frame) {
+    console.log('Dispatcher in termvis', Dispatcher);
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
+  },
+
   _handleHoverThumbnail(frame) {
     this.setState({ focusedFrame: frame });
   },
@@ -357,7 +363,7 @@ const TermVis = React.createClass({
       <div className='term-vis-container'>
         <div className='timeline-container'>
           <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames}
-            onHoverThumbnail={this._handleHoverThumbnail} />
+            onHoverThumbnail={this._handleHoverThumbnail} onClickThumbnail={this._handleClickThumbnail} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
           <defs>
