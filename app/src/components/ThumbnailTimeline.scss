@@ -1,5 +1,5 @@
 $thumbnail-border-color: rgba(0, 0, 0, 0.1);
-$thumbnail-border-color-highlight: rgba(0, 0, 0, 0.1);
+$thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
 
 .thumbnail-timeline {
   position: relative;
@@ -22,7 +22,7 @@ $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.1);
     }
 
     &:hover {
-      box-shadow: none;
+      // box-shadow: none;
     }
   }
 
@@ -30,6 +30,18 @@ $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.1);
     opacity: 0.2;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+
+    &+.thumbnail {
+      border-left: 0;
+    }
+
+    &+.highlighted {
+      border-left: 1px solid $thumbnail-border-color-highlight;
+    }
+
+    &.highlighted+.thumbnail.highlighted {
+      border-left: 0;
+    }
 
     &.highlighted {
       opacity: 1;
