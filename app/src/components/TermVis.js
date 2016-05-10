@@ -227,7 +227,7 @@ const TermVis = React.createClass({
 
     let rectFill;
     if (focused) {
-      rectFill = { fill: 'rgb(166, 230, 245)' };
+      rectFill = { fill: '#C4E3F1' };
     } else if (encodeScore) {
       rectFill = { fill: scoreScale(term.score) };
     }
