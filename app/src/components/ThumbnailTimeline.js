@@ -64,7 +64,7 @@ const ThumbnailTimeline = React.createClass({
     const { focusedFrame } = this.state;
 
     const { thumbnailRatio } = data;
-    const thumbnailFullWidth = height * thumbnailRatio;
+    const thumbnailFullWidth = Math.floor(height * thumbnailRatio) - 4; // many thumbnails seem to have this weird black line at the end
 
     const hasFocusedFrame = focusedFrame != null;
     const hasHighlightFrames = highlightFrames && highlightFrames.length;
