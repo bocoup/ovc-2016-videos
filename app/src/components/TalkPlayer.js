@@ -54,11 +54,6 @@ const TalkPlayer = React.createClass({
     });
   },
 
-  // TODO: review if we need this for anything
-  _handleVideoEvent({ target, data }) {
-    console.log('YT Event', target, data);
-  },
-
   render() {
     const { data } = this.props;
 
