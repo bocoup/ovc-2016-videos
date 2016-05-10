@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactTransitionGroup from 'react-addons-transition-group';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
@@ -50,7 +51,9 @@ const TermVis = React.createClass({
   },
 
   getInitialState() {
-    return {};
+    return {
+      useGoo: true
+    };
   },
 
   getDefaultProps() {
@@ -58,6 +61,12 @@ const TermVis = React.createClass({
       width: 800,
       height: 600
     };
+  },
+
+  componentWillMount() {
+    setTimeout(() => {
+      this.setState({ useGoo: false });
+    }, 2000);
   },
 
   _visComponents() {
@@ -68,7 +77,6 @@ const TermVis = React.createClass({
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
     const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
-    const termHeight = 25;
     const timelineHeight = 10;
 
     const terms = data.terms.slice(0, 15);
@@ -80,7 +88,6 @@ const TermVis = React.createClass({
       innerWidth,
       innerHeight,
       terms,
-      termHeight,
       timelineHeight,
       xScale,
       data
@@ -125,22 +132,29 @@ const TermVis = React.createClass({
   },
 
   _renderTerms(visComponents) {
-    const { terms, timelineHeight, termHeight } = visComponents;
-    const { focusedTerm } = this.state;
+    const { terms, timelineHeight } = visComponents;
+    const { focusedTerm, useGoo } = this.state;
+
+    let gooStyle;
+    if (useGoo) {
+      gooStyle = { filter: 'url(#goo)' };
+    }
 
     return (
       <g className='terms' transform={`translate(0 ${timelineHeight})`}>
         {this._renderFocused(visComponents)}
-        {terms.map((term) => {
-          const { x, y } = this._getTermCoordinates(term, visComponents);
-          const isFocused = focusedTerm === term;
-          const termStr = term.term;
+        <ReactTransitionGroup component='g' style={gooStyle}>
+          {terms.map((term) => {
+            const { x, y } = this._getTermCoordinates(term, visComponents);
+            const isFocused = focusedTerm === term;
+            const termStr = term.term;
 
-          return (
-            <Term key={termStr} term={term} focused={isFocused}
-              x={x} y={y} height={termHeight} onHover={this._handleHoverTerm} />
-          );
-        })}
+            return (
+              <Term key={termStr} term={term} focused={isFocused}
+                x={x} y={y} onHover={this._handleHoverTerm} />
+            );
+          })}
+        </ReactTransitionGroup>
       </g>
     );
   },
@@ -185,6 +199,13 @@ const TermVis = React.createClass({
           <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+          </defs>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTerms(visComponents)}

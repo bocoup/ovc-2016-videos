@@ -1,7 +1,6 @@
 .term {
   rect {
     fill: rgb(192, 224, 224);
-    opacity: 0.4;
   }
 
   text {
@@ -9,6 +8,6 @@
   }
 
   &.focused rect {
-    opacity: 1;
+    fill: rgb(212, 244, 244);
   }
 }
