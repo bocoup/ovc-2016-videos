@@ -79,14 +79,24 @@ const TermVis = React.createClass({
     const innerWidth = width - innerMargin.left - innerMargin.right;
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
-    const xScale = d3.scale.linear().domain([0, data.maxTime]).range([0, innerWidth]);
+    // there's an issue using the max time to set the xScale since each chunk in the
+    // compressed thumbnails will be K pixels wide. All chunks represent T time, except
+    // the last chunk which is shorter than the rest. So instead, we set the scale
+    // to match to the number of frames and have it end K pixels short of the width
+    // (i.e., it ends at the beginning of the last thumbnail). Since the scale
+    // is not clamped, it works for the timestamps that follow after it as well.
+    const maxFrame = d3.max(data.frames);
+    const thumbnailCompressedWidth = innerWidth / data.frames.length;
+    const xScale = d3.scale.linear().domain([0, maxFrame]).range([0, innerWidth - thumbnailCompressedWidth]);
+
+
     const timelineHeight = 10;
     const termPadding = 8;
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 20;
 
 
-    const terms = data.terms.slice(0, 20);
+    const terms = data.terms.slice(0, 25);
     const scoreExtent = d3.extent(terms.map(term => term.score));
     const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
 
@@ -278,19 +288,31 @@ const TermVis = React.createClass({
   },
 
   _renderTimeline(visComponents) {
-    const { innerWidth, timelineHeight, xScale } = visComponents;
+    const { innerWidth, timelineHeight } = visComponents;
+
+    return (
+      <g className='timeline'>
+        <rect x={0} y={0} width={innerWidth} height={timelineHeight} className='timeline-bg' />
+      </g>
+    );
+  },
+
+  // separate from the timeline rect so that the circles appear above the lines
+  _renderTimelineMarkers(visComponents) {
+    const { timelineHeight, xScale } = visComponents;
     const { focusedTerm } = this.state;
 
     let timestamps;
     if (focusedTerm) {
       timestamps = focusedTerm.timestamps;
+    } else {
+      return null;
     }
 
     const timestampMarkerRadius = 4;
 
     return (
-      <g className='timeline'>
-        <rect x={0} y={0} width={innerWidth} height={timelineHeight} className='timeline-bg' />
+      <g className='timeline-markers'>
         {timestamps && timestamps.map((time, i) => {
           return (
             <circle key={i} cx={xScale(time)} cy={timelineHeight / 2} r={timestampMarkerRadius}
@@ -327,6 +349,7 @@ const TermVis = React.createClass({
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTerms(visComponents)}
+            {this._renderTimelineMarkers(visComponents)}
           </g>
         </svg>
       </div>
