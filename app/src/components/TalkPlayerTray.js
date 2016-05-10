@@ -50,13 +50,18 @@ const TalkPlayerTray = React.createClass({
     const { data, videoWidth, videoHeight } = this.props;
     const { open } = this.state;
 
+    if (!data) {
+      return null;
+    }
+
     return (
       <div className={cx('talk-player-tray', { open })}>
         <div className='tray-controls'>
-        <button onClick={this._handleToggle}>{open ? 'Close' : 'Open'}</button>
+          <i onClick={this._handleToggle} className={cx('close-control', 'fa', { 'fa-chevron-down': open, 'fa-chevron-up': !open })} />
         </div>
-
-        <TalkPlayer width={videoWidth} height={videoHeight} data={data} />
+        <div className='player-container'>
+          <TalkPlayer width={videoWidth} height={videoHeight} data={data} />
+        </div>
       </div>
     );
   }
