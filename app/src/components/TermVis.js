@@ -204,6 +204,7 @@ const TermVis = React.createClass({
   },
 
   _handleClickThumbnail(talk, frame) {
+    this.setState({ focusedTerm: null, toggledTerm: null });
     Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
   },
 
