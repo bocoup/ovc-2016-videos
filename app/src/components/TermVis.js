@@ -230,7 +230,21 @@ const TermVis = React.createClass({
   },
 
   _handleClickThumbnail(talk, frame) {
-    this.setState({ focusedTerm: null, toggledTerm: null });
+    const { data } = this.props;
+    let { toggledTerm, focusedTerm } = this.state;
+
+    // if we have a toggled term, check if we are clicking a thumbnail that is highlighted or not
+    if (toggledTerm) {
+      const highlightFrames = timestampsToFrames(toggledTerm.timestamps, data.frames);
+      if (highlightFrames.indexOf(frame) === -1) {
+        toggledTerm = null;
+        focusedTerm = null;
+      }
+    } else {
+      focusedTerm = null;
+    }
+
+    this.setState({ focusedTerm, toggledTerm });
     Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
   },
 
