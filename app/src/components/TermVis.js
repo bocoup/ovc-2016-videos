@@ -192,14 +192,16 @@ const TermVis = React.createClass({
 
     layout.map((termBox, i) => {
       // check all the terms that came before it to check if they collide
-      // we only need to check them once since we are moving each term down,
-      // so our modifications will keep the lack of collisions with previous terms
+      // we need to restart the check loop each time there is a collision since
+      // by moving the box we may have collided with boxes that we have already checked.
       for (let j = 0; j < i; j++) {
         const otherTermBox = layout[j];
 
         // we only will adjust y position to avoid collisions, since x encodes time
         if (collides(termBox, otherTermBox)) {
           termBox.y = otherTermBox.y + otherTermBox.height + termMargin;
+          // recheck all boxes to ensure no new collisions as a result of changing position
+          j = 0;
         }
       }
     });
