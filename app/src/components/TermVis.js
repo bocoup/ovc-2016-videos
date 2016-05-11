@@ -125,7 +125,10 @@ const TermVis = React.createClass({
 
     const terms = data.terms.slice(0, maxNumTerms);
     const scoreExtent = d3.extent(terms.map(term => term.score));
-    const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
+
+    const highScoreColor = '#46cce0';
+    const lowScoreColor = '#fff';
+    const scoreScale = d3.scale.linear().domain(scoreExtent).range([lowScoreColor, highScoreColor]);
 
     // generate the layout using the boundingBoxes
     const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
@@ -332,25 +335,20 @@ const TermVis = React.createClass({
     }
 
 
-    let rectFill;
-    if (toggled) {
-      rectFill = { fill: '#FFC6E6' };
-    } else if (focused) {
-      rectFill = { fill: '#C4E3F1' };
-    } else if (isInFocusedFrame) {
-      rectFill = { fill: '#E2DEF7' };
-    } else if (encodeScore) {
-      rectFill = { fill: scoreScale(term.score) };
+    let rectStyle;
+    // otherwise read from the CSS
+    if (!toggled && !focused && !isInFocusedFrame && encodeScore) {
+      rectStyle = { fill: scoreScale(term.score) };
     }
     const termStr = term.term;
 
     return (
-      <g key={termStr} className={cx('term', { focused })}
+      <g key={termStr} className={cx('term', { focused, toggled, 'in-frame': isInFocusedFrame })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
           onMouseLeave={this._handleHoverTerm.bind(this, null)}
           onClick={this._handleClickTerm.bind(this, term)}>
-        <rect x={0} y={0} width={width} height={height} style={rectFill} />
+        <rect x={0} y={0} width={width} height={height} style={rectStyle} />
         <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
       </g>
     );

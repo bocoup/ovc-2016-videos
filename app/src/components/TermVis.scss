@@ -1,5 +1,14 @@
 $transition-time: 300ms;
 $transition-enter-delay-time: 500ms;
+$focused-term-line-color: rgba(254, 43, 117, 0.4);
+$focused-term-rect-color: rgb(254, 43, 117);
+$focused-term-text-color: #fff;
+$toggled-term-rect-color: #4c3e8b;
+$toggled-term-text-color: #fff;
+$in-frame-term-rect-color: #3968BF;
+$in-frame-term-text-color: #fff;
+$timestamp-marker-fill: lighten($focused-term-rect-color, 15%);
+
 
 .term-vis-container {
   position: relative;
@@ -9,21 +18,22 @@ $transition-enter-delay-time: 500ms;
   }
 }
 
-
 .term-vis {
   font-size: 14px;
-  background-color: rgba(200,200,200,0.2);
+  background-color: rgba(155, 182, 189, 0.10);
+  border-radius: 0 0 5px 5px;
 
   .timeline-bg {
-    fill: rgb(192, 196, 224);
-    opacity: 0.3;
+    fill: #000;
+    opacity: 0.05;
   }
 
 
   .timestamp-marker {
-    fill: #A0CCE0;
-    stroke: #81B3FF;
+    fill: $timestamp-marker-fill;
+    stroke: darken($timestamp-marker-fill, 10%);
     cursor: pointer;
+
     &:hover {
       fill: #FFBAD2;
       stroke: #fe2b75;
@@ -31,8 +41,7 @@ $transition-enter-delay-time: 500ms;
   }
 
   .timestamp-term-line {
-    stroke: rgba(0, 0, 0, 0.15);
-    stroke-dasharray: 2,1;
+    stroke: $focused-term-line-color;
   }
 
   .terms.updating-terms .term rect {
@@ -57,18 +66,44 @@ $transition-enter-delay-time: 500ms;
 
     rect {
       fill: rgb(192, 224, 224);
+      stroke: rgba(0,0,0,0.1);
+      stroke-width: 1px;
       cursor: pointer;
     }
 
     text {
-      transition-delay: 300ms;
       cursor: default;
       pointer-events: none;
     }
 
-    &.focused rect {
-      fill: #C4E3F1;
+    &.focused {
+      rect {
+        fill: $focused-term-rect-color;
+      }
+
+      text {
+        fill: $focused-term-text-color;
+      }
+    }
+
+    &.toggled {
+      rect {
+        fill: $toggled-term-rect-color;
+      }
+
+      text {
+        fill: $toggled-term-text-color;
+      }
+    }
+
+    &.in-frame {
+      rect {
+        fill: $in-frame-term-rect-color;
+      }
+
+      text {
+        fill: $in-frame-term-text-color;
+      }
     }
   }
-
 }

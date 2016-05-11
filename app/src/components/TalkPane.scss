@@ -1,11 +1,24 @@
 .talk-pane {
   padding: 10px;
   border: 1px solid #eee;
-  background-color: rgba(240,240,240,0.4);
+  background-color: rgba(255, 255, 255,0.8);
   margin: 0 0 10px;
 
   header {
-    font-size: 0.7em;
+    font-size: 0.4em;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+
+  .talk-title {
+    font-size: 4.5em;
+    line-height: 1em;
+  }
+
+  .talk-speakers {
+    margin: 0;
+    line-height: 2em;
+    float: right;
   }
 
   .talk-title {

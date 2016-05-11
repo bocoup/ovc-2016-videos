@@ -41,8 +41,8 @@ const TalkPane = React.createClass({
     return (
       <div className='talk-pane'>
         <header>
-          <h1 className='talk-title'>{data.title}</h1>
           <h2 className='talk-speakers'>{data.speakers}</h2>
+          <h1 className='talk-title'>{data.title}</h1>
         </header>
 
         <AutoWidth><TermVis data={data} /></AutoWidth>
