@@ -44,7 +44,7 @@ function timestampsToFrames(timestamps, frames) {
 const transitionUpdateTime = 300;
 const transitionLeaveTime = 300;
 const transitionEnterTime = transitionLeaveTime + 200 + 300; // delay until after all have left then a bit
-
+const videoDelay = 10; // number of seconds to navigate the video back from the set timestamp/frame
 /**
  * Renders the visualization of top terms/bigrams in the talk
  */
@@ -258,12 +258,12 @@ const TermVis = React.createClass({
     }
 
     this.setState({ focusedTerm, toggledTerm });
-    Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, frame);
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, Math.max(frame - videoDelay, 0));
   },
 
   _handleClickTimestamp(timestamp) {
     const { data } = this.props;
-    Dispatcher.trigger(Dispatcher.events.navigateVideo, data, timestamp);
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, data, Math.max(timestamp - videoDelay, 0));
   },
 
   _handleHoverThumbnail(frame) {
