@@ -340,11 +340,11 @@ the second Avenger's movie, I
 was wondering how they were
 connected, how often they
 appeared in a movie.  And I
-thought the cord would work for
-this.  The thick the cord, the
+thought the chord would work for
+this.  The thick the chord, the
 more movies they have appeared
 in together.  In a default case,
-the cord is given one color.
+the chord is given one color.
 But that doesn't really make a
 lot of sense because the data is
 symmetrical, and Thor and
@@ -359,7 +359,7 @@ focus on Black Widow here, and I
 want to create a gradient along
 these directional arrows.  Sort
 of mimic the idea of it running
-across the cord.  So I get
+across the chord.  So I get
 something that looks a bit like
 this.  But we start out similar
 to the planets case.  So here we
@@ -392,7 +392,7 @@ with the color of the Avenger
 the source, 0%, and one that's
 100%, and the color of the
 Avenger at the other side.  And
-we get this result.  These cords
+we get this result.  These chords
 are a representation of both of
 the Avengers.  But you can use
 gradients for a smooth color

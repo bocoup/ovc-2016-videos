@@ -340,11 +340,11 @@
 14:15:08	was wondering how they were
 14:15:12	connected, how often they
 14:15:15	appeared in a movie.  And I
-14:15:16	thought the cord would work for
-14:15:21	this.  The thick the cord, the
+14:15:16	thought the chord would work for
+14:15:21	this.  The thick the chord, the
 14:15:23	more movies they have appeared
 14:15:25	in together.  In a default case,
-14:15:27	the cord is given one color.
+14:15:27	the chord is given one color.
 14:15:29	But that doesn't really make a
 14:15:30	lot of sense because the data is
 14:15:31	symmetrical, and Thor and
@@ -359,7 +359,7 @@
 14:15:54	want to create a gradient along
 14:15:56	these directional arrows.  Sort
 14:15:58	of mimic the idea of it running
-14:16:02	across the cord.  So I get
+14:16:02	across the chord.  So I get
 14:16:05	something that looks a bit like
 14:16:06	this.  But we start out similar
 14:16:09	to the planets case.  So here we
@@ -392,7 +392,7 @@
 14:17:11	the source, 0%, and one that's
 14:17:15	100%, and the color of the
 14:17:17	Avenger at the other side.  And
-14:17:19	we get this result.  These cords
+14:17:19	we get this result.  These chords
 14:17:21	are a representation of both of
 14:17:25	the Avengers.  But you can use
 14:17:30	gradients for a smooth color
