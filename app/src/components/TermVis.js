@@ -69,6 +69,15 @@ const TermVis = React.createClass({
     }, 0);
   },
 
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+
+    // if the data changed, recompute the bounding boxes
+    if (data !== prevProps.data) {
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
+    }
+  },
+
   _visComponents() {
     const { data, width } = this.props;
     const { boundingBoxes } = this.state;
