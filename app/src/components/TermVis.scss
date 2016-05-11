@@ -1,3 +1,6 @@
+$transition-time: 300ms;
+$transition-enter-delay-time: 500ms;
+
 .term-vis-container {
   position: relative;
 
@@ -33,15 +36,23 @@
   }
 
   .terms.updating-terms .term rect {
-    transition: 1s fill;
+    transition: $transition-time fill;
   }
 
   .term {
-    transition: 1s transform;
+    transition: $transition-time transform, $transition-time opacity;
 
-    &.terms-appear rect {
-      transition: 1s fill;
-      transition-delay: 300ms;
+    &.term-enter {
+      opacity: 0.01;
+    }
+
+    &.term-enter-active {
+      opacity: 1;
+      transition-delay: $transition-time;
+    }
+
+    &.term-leave {
+      opacity: 0.01;
     }
 
     rect {
@@ -50,7 +61,6 @@
     }
 
     text {
-      transition: 1s opacity;
       transition-delay: 300ms;
       cursor: default;
       pointer-events: none;
