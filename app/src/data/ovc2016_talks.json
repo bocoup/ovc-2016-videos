@@ -1,6 +1,7 @@
 [
   {
     "id": "wattenberg_viegas",
+    "shortId": "W&V",
     "day": 25,
     "talk": 1,
     "keynote": true,
@@ -14,6 +15,7 @@
   },
   {
     "id": "mcdonald",
+    "shortId": "McD",
     "day": 25,
     "talk": 2,
     "time": "10:00 - 10:30",
@@ -26,6 +28,7 @@
   },
   {
     "id": "kosaka",
+    "shortId": "Kos",
     "day": 25,
     "talk": 3,
     "time": "11:00 - 11:30",
@@ -38,6 +41,7 @@
   },
   {
     "id": "case",
+    "shortId": "Cas",
     "day": 25,
     "talk": 4,
     "time": "11:30 - 12:00",
@@ -50,6 +54,7 @@
   },
   {
     "id": "mcnamara",
+    "shortId": "McN",
     "day": 25,
     "talk": 5,
     "time": "12:00 - 12:30",
@@ -62,6 +67,7 @@
   },
   {
     "id": "bremer",
+    "shortId": "Bre",
     "day": 25,
     "talk": 6,
     "time": "2:00 - 2:30",
@@ -74,6 +80,7 @@
   },
   {
     "id": "vivo",
+    "shortId": "Viv",
     "day": 25,
     "talk": 7,
     "time": "2:30 - 3:15",
@@ -86,6 +93,7 @@
   },
   {
     "id": "armstrong",
+    "shortId": "Arm",
     "day": 25,
     "talk": 8,
     "time": "4:00 - 4:30",
@@ -98,6 +106,7 @@
   },
   {
     "id": "wu",
+    "shortId": "Wu",
     "day": 25,
     "talk": 9,
     "time": "4:30 - 5:00",
@@ -110,6 +119,7 @@
   },
   {
     "id": "chu",
+    "shortId": "Chu",
     "day": 25,
     "talk": 10,
     "time": "5:00 - 5:45",
@@ -122,6 +132,7 @@
   },
   {
     "id": "chalabi",
+    "shortId": "Cha",
     "day": 26,
     "talk": 1,
     "keynote": true,
@@ -135,6 +146,7 @@
   },
   {
     "id": "yanofsky",
+    "shortId": "Yan",
     "day": 26,
     "talk": 2,
     "time": "10:00 - 10:30",
@@ -147,6 +159,7 @@
   },
   {
     "id": "elliott",
+    "shortId": "Ell",
     "day": 26,
     "talk": 3,
     "time": "11:00 - 11:30",
@@ -159,6 +172,7 @@
   },
   {
     "id": "binx",
+    "shortId": "Bin",
     "day": 26,
     "talk": 4,
     "time": "11:30 - 12:00",
@@ -171,6 +185,7 @@
   },
   {
     "id": "satyanarayan",
+    "shortId": "Sat",
     "day": 26,
     "talk": 5,
     "time": "12:00 - 12:30",
@@ -183,6 +198,7 @@
   },
   {
     "id": "pearce",
+    "shortId": "Pea",
     "day": 26,
     "talk": 6,
     "time": "2:00 - 2:30",
@@ -195,6 +211,7 @@
   },
   {
     "id": "hullman",
+    "shortId": "Hul",
     "day": 26,
     "talk": 7,
     "time": "2:30 - 3:00",
@@ -207,6 +224,7 @@
   },
   {
     "id": "albrecht",
+    "shortId": "Alb",
     "day": 26,
     "talk": 8,
     "time": "3:00 - 3:30",
@@ -219,6 +237,7 @@
   },
   {
     "id": "waigl",
+    "shortId": "Wai",
     "day": 26,
     "talk": 9,
     "time": "4:00 - 4:45",
@@ -231,6 +250,7 @@
   },
   {
     "id": "collins",
+    "shortId": "Col",
     "day": 26,
     "talk": 10,
     "time": "4:45 - 5:15",
@@ -243,6 +263,7 @@
   },
   {
     "id": "becker",
+    "shortId": "Bec",
     "day": 26,
     "talk": 11,
     "time": "5:15 - 5:45",

@@ -1,5 +1,5 @@
 .talk-pane {
-  padding: 10px;
+  padding: 10px 10px 6px;
   border: 1px solid #eee;
   background-color: rgba(255, 255, 255,0.8);
   margin: 0 0 10px;
@@ -25,5 +25,41 @@
   .talk-title {
     text-transform: none;
     font-style: normal;
+  }
+
+  .talk-quick-select{
+    font-size: 0.7em;
+    margin-top: 4px;
+
+    .help-text {
+      display: inline-block;
+      padding: 4px;
+      color: #666;
+    }
+  }
+
+  .talk-quick-select-items {
+    display: inline-block;
+  }
+
+  .talk-quick-select-item {
+    display: inline-block;
+    margin: 0 4px 4px;
+    padding: 4px;
+    background: #eee;
+    cursor: pointer;
+
+    &.day-25 {
+      background: #E8E5F7;
+    }
+
+    &.day-26 {
+      background: #ECF1FB;
+    }
+
+    &:hover {
+      background: rgb(254, 43, 117);
+      color: #fff;
+    }
   }
 }

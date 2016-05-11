@@ -1,11 +1,14 @@
 import React from 'react';
+import cx from 'classnames';
 
 import './TalkPane.scss';
 import AutoWidth from './AutoWidth';
 import TermVis from './TermVis';
 const TalkPane = React.createClass({
   propTypes: {
-    data: React.PropTypes.object
+    selectedTalk: React.PropTypes.object,
+    allTalks: React.PropTypes.array,
+    onTalkSelect: React.PropTypes.func
   },
 
   componentWillMount() {
@@ -31,21 +34,52 @@ const TalkPane = React.createClass({
     }, debounceDelay);
   },
 
-  render() {
-    const { data } = this.props;
+  _handleTalkSelect(talk) {
+    const { onTalkSelect } = this.props;
 
-    if (!data) {
+    if (onTalkSelect) {
+      onTalkSelect(talk);
+    }
+  },
+
+  _renderQuickSelect() {
+    const { allTalks } = this.props;
+
+    return (
+      <div className='talk-quick-select'>
+        <span className='help-text'>Select a Talk:</span>
+        <div className='talk-quick-select-items'>
+          {allTalks.map((talk, i) => {
+            const { shortId, day } = talk;
+            return (
+              <div key={i}
+                className={cx('talk-quick-select-item', `day-${day}`)}
+                onClick={this._handleTalkSelect.bind(this, talk)}>
+                {shortId}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  },
+
+  render() {
+    const { selectedTalk } = this.props;
+
+    if (!selectedTalk) {
       return null;
     }
 
     return (
       <div className='talk-pane'>
         <header>
-          <h2 className='talk-speakers'>{data.speakers}</h2>
-          <h1 className='talk-title'>{data.title}</h1>
+          <h2 className='talk-speakers'>{selectedTalk.speakers}</h2>
+          <h1 className='talk-title'>{selectedTalk.title}</h1>
         </header>
 
-        <AutoWidth><TermVis data={data} /></AutoWidth>
+        <AutoWidth><TermVis data={selectedTalk} /></AutoWidth>
+        {this._renderQuickSelect()}
       </div>
     );
   }

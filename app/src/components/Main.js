@@ -39,7 +39,7 @@ const Main = React.createClass({
 
     return (
       <div>
-        <TalkPane data={selectedTalk} />
+        <TalkPane selectedTalk={selectedTalk} allTalks={ovcData} onTalkSelect={this._handleSelectTalk} />
         <TalkGrid data={ovcData} onSelectTalk={this._handleSelectTalk} />
         <TalkPlayerTray data={selectedTalk} width={640} height={360} />
       </div>
