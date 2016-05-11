@@ -1,5 +1,6 @@
 $thumbnail-border-color: rgba(0, 0, 0, 0.1);
 $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
+$highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
 
 .thumbnail-timeline {
   position: relative;
@@ -9,7 +10,7 @@ $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
     top: 0;
     border: 1px solid $thumbnail-border-color;
     border-left: 0;
-    transition: .2s width, .2s left;
+    transition: .2s width, .2s left, .1s opacity;
     background-position-x: center;
     box-shadow: inset -2px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -50,7 +51,7 @@ $thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
       filter: none;
       box-shadow: none;
       border-color: $thumbnail-border-color-highlight;
-      border-bottom: 5px solid #78C7B5;
+      border-bottom: 5px solid $highlighted-thumbnail-border-bottom-color;
     }
   }
 }
