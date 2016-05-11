@@ -22,7 +22,6 @@ $timestamp-marker-fill: lighten($focused-term-rect-color, 15%);
   font-size: 14px;
   background-color: rgba(155, 182, 189, 0.10);
   border-radius: 0 0 5px 5px;
-  transition: $transition-time height;
 
   .timeline-bg {
     fill: #000;
