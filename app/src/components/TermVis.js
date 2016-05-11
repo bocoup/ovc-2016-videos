@@ -366,7 +366,6 @@ const TermVis = React.createClass({
           width={width} height={innerHeight + innerMargin.bottom}
           style={{ opacity: 0 }}
           onClick={this._handleClickTerm.bind(this, 'clear')} />
-        {this._renderFocused(visComponents)}
         <TimeoutTransitionGroup
             component='g'
             transitionName='term'
@@ -374,6 +373,7 @@ const TermVis = React.createClass({
             leaveTimeout={transitionLeaveTime}>
           {terms.map((term, i) => this._renderTerm(visComponents, term, i))}
         </TimeoutTransitionGroup>
+        {this._renderFocused(visComponents)}
       </g>
     );
   },
