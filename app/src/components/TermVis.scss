@@ -32,6 +32,10 @@
     stroke-dasharray: 2,1;
   }
 
+  .terms.updating-terms .term rect {
+    transition: 1s fill;
+  }
+
   .term {
     transition: 1s transform;
 

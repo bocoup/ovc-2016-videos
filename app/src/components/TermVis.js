@@ -69,6 +69,19 @@ const TermVis = React.createClass({
     }, 0);
   },
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.data !== nextProps.data) {
+      if (this.updatingDataTimer) {
+        clearTimeout(this.updatingDataTimer);
+      }
+      this.setState({ updatingData: true });
+      this.updatingDataTimer = setTimeout(() => {
+        this.updatingDataTimer = null;
+        this.setState({ updatingData: false });
+      }, 1000);
+    }
+  },
+
   componentDidUpdate(prevProps) {
     const { data } = this.props;
 
@@ -102,9 +115,9 @@ const TermVis = React.createClass({
     const termPadding = 8;
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 4;
+    const numTerms = 25;
 
-
-    const terms = data.terms.slice(0, 25);
+    const terms = data.terms.slice(0, numTerms);
     const scoreExtent = d3.extent(terms.map(term => term.score));
     const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
 
@@ -331,20 +344,26 @@ const TermVis = React.createClass({
 
   _renderTerms(visComponents) {
     const { terms, timelineHeight, innerMargin, width, innerHeight } = visComponents;
+    const { updatingData } = this.state;
 
     const gooStyle = { filter: 'url(#goo)' };
     // const gooStyle = {}; // temporarily disable goo
 
     return (
-      <g className='terms' transform={`translate(0 ${timelineHeight})`}>
+      <g transform={`translate(0 ${timelineHeight})`}
+        className={cx('terms', { 'updating-terms': updatingData })}>
         <rect className='detoggle-click-space'
           x={-innerMargin.left} y={0}
           width={width} height={innerHeight + innerMargin.bottom}
           style={{ opacity: 0 }}
-          onClick={this._handleClickTerm.bind(this, 'clear')}
-         />
+          onClick={this._handleClickTerm.bind(this, 'clear')} />
         {this._renderFocused(visComponents)}
-        <ReactCSSTransitionGroup component='g' transitionName='terms' transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={6000} transitionLeaveTimeout={0} style={gooStyle}>
+        <ReactCSSTransitionGroup component='g' transitionName='terms'
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}
+          style={gooStyle}>
           {terms.map((term, i) => this._renderTermRect(visComponents, term, i))}
         </ReactCSSTransitionGroup>
         {terms.map((term, i) => this._renderTermText(visComponents, term, i))}
