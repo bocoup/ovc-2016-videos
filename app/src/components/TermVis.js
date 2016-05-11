@@ -116,9 +116,9 @@ const TermVis = React.createClass({
     const termPadding = 8;
     const termHeight = 15 + 2 * termPadding;
     const termMargin = 4;
-    const numTerms = 25;
+    const maxNumTerms = 100;
 
-    const terms = data.terms.slice(0, numTerms);
+    const terms = data.terms.slice(0, maxNumTerms);
     const scoreExtent = d3.extent(terms.map(term => term.score));
     const scoreScale = d3.scale.linear().domain(scoreExtent).range(['#fff', '#8ADAC8']);
 
