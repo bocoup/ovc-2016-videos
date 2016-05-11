@@ -2,9 +2,39 @@
   display: inline-block;
   vertical-align: top;
   border: 1px solid #eee;
-  padding: 10px;
+  padding: 0 0 30px;
   overflow: hidden;
+  width: 240px;
+  margin: 0 10px 10px 0;
+  position: relative;
 
+  &:hover {
+    border-color: rgba(39, 58, 58, 0.12);
+    background: rgba(231, 255, 255, 0.6);
+  }
+
+  .talk-grid-cell-main {
+    padding: 10px 10px 0;
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .talk-terms {
+    margin-top: 10px;
+    margin-bottom: px;
+  }
+
+  .talk-term {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0 4px 4px 0;
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.05);
+  }
 
   .talk-title {
     font-style: normal;
@@ -16,5 +46,32 @@
   .talk-speakers {
     font-size: 0.9em;
     margin: 0 0 0.3em;
+  }
+
+  .talk-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    background: rgba(235,235,235,0.5);
+    line-height: 30px;
+    padding-top: 2px;
+
+    .fa-desktop {
+      font-size: 1.15em;
+    }
+
+    a {
+      color: #464646;
+      display: inline-block;
+      margin: 0 10px;
+
+      &:hover {
+        color: #fe2b75;
+        border-bottom: none;
+      }
+    }
+
   }
 }

@@ -8,6 +8,7 @@
     "speakers": "Martin Wattenberg and Fernanda Viégas",
     "title": "Seeing Machines Think",
     "youtubeId": "ugkfmHBW74Q",
+    "slidesUrl": "",
     "maxTime": 2396,
     "thumbnailRatio": 1.843
   },
@@ -19,6 +20,7 @@
     "speakers": "Kyle McDonald",
     "title": "A Return to Machine Learning",
     "youtubeId": "POrPIABj2MI",
+    "slidesUrl": "",
     "maxTime": 2012,
     "thumbnailRatio": 1.843
   },
@@ -30,6 +32,7 @@
     "speakers": "Mariko Kosaka",
     "title": "Drawing on <canvas> - how computers read pixels",
     "youtubeId": "-6REd8lLsPM",
+    "slidesUrl": "http://kosamari.com/presentation/openvis-2016/#0",
     "maxTime": 1707,
     "thumbnailRatio": 1.843
   },
@@ -41,6 +44,7 @@
     "speakers": "Nicky Case",
     "title": "How To Simulate The Universe, In 134 Easy Steps",
     "youtubeId": "uc5rfTkLzlY",
+    "slidesUrl": "http://ncase.me/OVC2016/",
     "maxTime": 1840,
     "thumbnailRatio": 1.843
   },
@@ -52,6 +56,7 @@
     "speakers": "Amelia McNamara",
     "title": "Do you know Nothing when you see it?",
     "youtubeId": "hps9r7JZQP8",
+    "slidesUrl": "http://www.science.smith.edu/~amcnamara/blog/conferences/2016/04/25/OpenVisConf.html",
     "maxTime": 1244,
     "thumbnailRatio": 1.373
   },
@@ -63,6 +68,7 @@
     "speakers": "Nadieh Bremer",
     "title": "SVG Beyond Mere Shapes",
     "youtubeId": "AwlA3SaChHE",
+    "slidesUrl": "http://nbremer.github.io/openvis2016/slides/",
     "maxTime": 1707,
     "thumbnailRatio": 1.843
   },
@@ -74,6 +80,7 @@
     "speakers": "Patricio Gonzalez Vivo",
     "title": "Enhancing your maps and visualizations with WebGL GLSL Shaders",
     "youtubeId": "5AGx0_2xI6Y",
+    "slidesUrl": "",
     "maxTime": 2028,
     "thumbnailRatio": 1.843
   },
@@ -85,6 +92,7 @@
     "speakers": "Zan Armstrong",
     "title": "Everything is Seasonal",
     "youtubeId": "IiF4-g001EQ",
+    "slidesUrl": "",
     "maxTime": 1707,
     "thumbnailRatio": 1.843
   },
@@ -96,6 +104,7 @@
     "speakers": "Shirley Wu",
     "title": "Building Data Visualizations for Product",
     "youtubeId": "fnp9g29lF8c",
+    "slidesUrl": "http://slides.com/shirleywu/building-data-visualizations-for-product#/",
     "maxTime": 1922,
     "thumbnailRatio": 1.843
   },
@@ -107,6 +116,7 @@
     "speakers": "Tony Hang Shing Chu",
     "title": "Animation, Pacing, and Exposition",
     "youtubeId": "Z4tB6qyxHJA",
+    "slidesUrl": "https://docs.google.com/presentation/d/1GOSyl4-iklcO0kIBFy-31zylaLC1R3uTwxX89bWt5D0/edit",
     "maxTime": 1615,
     "thumbnailRatio": 1.843
   },
@@ -119,6 +129,7 @@
     "speakers": "Mona Chalabi",
     "title": "Informing Without Alienating",
     "youtubeId": "5C8AvYVt4_0",
+    "slidesUrl": "",
     "maxTime": 1641,
     "thumbnailRatio": 1.843
   },
@@ -130,6 +141,7 @@
     "speakers": "David Yanofsky",
     "title": "The Charting Monster that Spawned from the Jaws of Defeat",
     "youtubeId": "K1-a9vGBPmY",
+    "slidesUrl": "",
     "maxTime": 1703,
     "thumbnailRatio": 1.843
   },
@@ -141,6 +153,7 @@
     "speakers": "Kennedy Elliott",
     "title": "Everything we know about how humans interpret graphics",
     "youtubeId": "s0J6EDvlN30",
+    "slidesUrl": "",
     "maxTime": 1365,
     "thumbnailRatio": 1.373
   },
@@ -152,6 +165,7 @@
     "speakers": "Rachel Binx",
     "title": "Designing for Realtime Spacecraft Operations",
     "youtubeId": "HuYKhSHcRSQ",
+    "slidesUrl": "https://speakerdeck.com/binx/designing-for-spacecraft-operations",
     "maxTime": 1548,
     "thumbnailRatio": 1.843
   },
@@ -163,6 +177,7 @@
     "speakers": "Arvind Satyanarayan",
     "title": "Reactive Building Blocks: Interactive Visualizations with Vega",
     "youtubeId": "Y8Fp9z-9DWc",
+    "slidesUrl": "http://arvindsatya.com/talks/ReactiveVega-OpenVisConf2016.pdf",
     "maxTime": 1914,
     "thumbnailRatio": 1.843
   },
@@ -174,6 +189,7 @@
     "speakers": "Adam Pearce",
     "title": "Tiny Tools",
     "youtubeId": "_5ky0AYq_Dg",
+    "slidesUrl": "",
     "maxTime": 1423,
     "thumbnailRatio": 1.843
   },
@@ -185,6 +201,7 @@
     "speakers": "Jessica Hullman",
     "title": "The Visual Uncertainty Experience",
     "youtubeId": "pTVAn4oLvbc",
+    "slidesUrl": "",
     "maxTime": 1780,
     "thumbnailRatio": 1.373
   },
@@ -196,6 +213,7 @@
     "speakers": "Kim Albrecht",
     "title": "Untangling Tennis",
     "youtubeId": "Ufjm_LD_d0o",
+    "slidesUrl": "",
     "maxTime": 1281,
     "thumbnailRatio": 1.843
   },
@@ -207,6 +225,7 @@
     "speakers": "Christine Waigl",
     "title": "Our Planet Seen from Space",
     "youtubeId": "XW9kPCOfEbQ",
+    "slidesUrl": "",
     "maxTime": 1962,
     "thumbnailRatio": 1.843
   },
@@ -218,6 +237,7 @@
     "speakers": "Christopher Collins",
     "title": "Finding What to Read: Visual Text Analytics Tools and Techniques to Guide Investigation",
     "youtubeId": "YkhPs9lLk4s",
+    "slidesUrl": "",
     "maxTime": 2214,
     "thumbnailRatio": 1.843
   },
@@ -229,6 +249,7 @@
     "speakers": "Ana Asnes Becker",
     "title": "Designing Virtual Reality Data Visualizations",
     "youtubeId": "EEN_sNXMyko",
+    "slidesUrl": "http://www.anabeckerdesign.com/vr_talk.pdf",
     "maxTime": 1198,
     "thumbnailRatio": 1.843
   }
