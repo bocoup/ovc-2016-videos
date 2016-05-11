@@ -109,6 +109,7 @@ const TermVis = React.createClass({
     const maxFrame = d3.max(data.frames);
     const thumbnailCompressedWidth = innerWidth / data.frames.length;
     const xScale = d3.scale.linear().domain([0, maxFrame]).range([0, innerWidth - thumbnailCompressedWidth]);
+    const xTimelineScale = d3.scale.linear().domain([0, maxFrame]).range([-innerMargin.left, width - thumbnailCompressedWidth - innerMargin.left]);
 
 
     const timelineHeight = 10;
@@ -143,6 +144,7 @@ const TermVis = React.createClass({
       termPadding,
       timelineHeight,
       xScale,
+      xTimelineScale,
       data,
       layout,
       scoreScale
@@ -261,7 +263,7 @@ const TermVis = React.createClass({
   },
 
   _renderFocused(visComponents) {
-    const { xScale, timelineHeight } = visComponents;
+    const { xTimelineScale, timelineHeight } = visComponents;
     const { focusedTerm } = this.state;
 
     if (!focusedTerm) {
@@ -274,7 +276,7 @@ const TermVis = React.createClass({
     return (
       <g className='focused-group'>
         {focusedTerm.timestamps.map((time, i) => {
-          const timelineX = xScale(time);
+          const timelineX = xTimelineScale(time);
           return (
             <line key={i} x1={termX + termWidth / 2} y1={termY} x2={timelineX} y2={timelineY} className='timestamp-term-line' />
           );
@@ -383,7 +385,7 @@ const TermVis = React.createClass({
 
   // separate from the timeline rect so that the circles appear above the lines
   _renderTimelineMarkers(visComponents) {
-    const { timelineHeight, xScale } = visComponents;
+    const { timelineHeight, xTimelineScale } = visComponents;
     const { focusedTerm } = this.state;
 
     let timestamps;
@@ -399,7 +401,7 @@ const TermVis = React.createClass({
       <g className='timeline-markers'>
         {timestamps && timestamps.map((time, i) => {
           return (
-            <circle key={i} cx={xScale(time)} cy={timelineHeight / 2} r={timestampMarkerRadius}
+            <circle key={i} cx={xTimelineScale(time)} cy={timelineHeight / 2} r={timestampMarkerRadius}
               className='timestamp-marker' onClick={this._handleClickTimestamp.bind(this, time)} />
           );
         })}
