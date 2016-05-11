@@ -10,6 +10,10 @@ const TalkPane = React.createClass({
   render() {
     const { data } = this.props;
 
+    if (!data) {
+      return null;
+    }
+
     return (
       <div className='talk-pane'>
         <header>

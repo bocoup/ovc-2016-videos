@@ -8,7 +8,8 @@ import './ThumbnailTimeline.scss';
 const thumbnailContext = require.context('../img/talks');
 
 function thumbnailUrl(talk, frame) {
-  return thumbnailContext(`./${talk.id}/ovc2016_${talk.day}_${Util.leadingZeroFormat(talk.talk, 2)}_${talk.id}-${frame}.png`);
+  const fileId = `ovc2016_${talk.day}_${Util.leadingZeroFormat(talk.talk, 2)}_${talk.id}`;
+  return thumbnailContext(`./${fileId}/${fileId}-${frame}.png`);
 }
 
 /**
@@ -78,7 +79,7 @@ const ThumbnailTimeline = React.createClass({
     const { highlightFrames } = this.props;
     const { focusedFrame } = this.state;
 
-    const { thumbnailRatio } = data;
+    const { thumbnailRatio = 1.5 } = data;
     const thumbnailFullWidth = Math.floor(height * thumbnailRatio) - 4; // many thumbnails seem to have this weird black line at the end
 
     const hasFocusedFrame = focusedFrame != null;
