@@ -353,11 +353,11 @@ const TermVis = React.createClass({
   },
 
   _renderTimeline(visComponents) {
-    const { innerWidth, timelineHeight } = visComponents;
+    const { width, innerMargin, timelineHeight } = visComponents;
 
     return (
       <g className='timeline'>
-        <rect x={0} y={0} width={innerWidth} height={timelineHeight} className='timeline-bg' />
+        <rect x={-innerMargin.left} y={0} width={width} height={timelineHeight} className='timeline-bg' />
       </g>
     );
   },
@@ -401,7 +401,7 @@ const TermVis = React.createClass({
     return (
       <div className='term-vis-container'>
         <div className='timeline-container'>
-          <ThumbnailTimeline data={this.props.data} width={innerWidth} highlightFrames={highlightFrames}
+          <ThumbnailTimeline data={this.props.data} width={width} highlightFrames={highlightFrames}
             onHoverThumbnail={this._handleHoverThumbnail} onClickThumbnail={this._handleClickThumbnail} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
