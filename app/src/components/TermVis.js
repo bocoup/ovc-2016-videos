@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import TimeoutTransitionGroup from '../util/TimeoutTransitionGroup';
 import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
@@ -40,6 +41,10 @@ function timestampsToFrames(timestamps, frames) {
   return timestampFrames;
 }
 
+const transitionUpdateTime = 300;
+const transitionLeaveTime = 300;
+const transitionEnterTime = transitionLeaveTime + 200 + 300; // delay until after all have left then a bit
+
 /**
  * Renders the visualization of top terms/bigrams in the talk
  */
@@ -65,7 +70,7 @@ const TermVis = React.createClass({
     // when it is loaded in the page after selecting one as opposed to immediately on
     // page load.
     setTimeout(() => {
-      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes(), encodeScore: true, showText: true });
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes(), encodeScore: true });
     }, 0);
   },
 
@@ -74,11 +79,11 @@ const TermVis = React.createClass({
       if (this.updatingDataTimer) {
         clearTimeout(this.updatingDataTimer);
       }
-      this.setState({ updatingData: true });
+      this.setState({ updatingData: true, focusedTerm: null, toggledTerm: null });
       this.updatingDataTimer = setTimeout(() => {
         this.updatingDataTimer = null;
         this.setState({ updatingData: false });
-      }, 1000);
+      }, transitionUpdateTime);
     }
   },
 
@@ -87,7 +92,7 @@ const TermVis = React.createClass({
 
     // if the data changed, recompute the bounding boxes
     if (data !== prevProps.data) {
-      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() }, () => { console.log('finished CDU'); });
     }
   },
 
@@ -155,15 +160,20 @@ const TermVis = React.createClass({
   _readTermTextBoundingBoxes() {
     const svg = d3.select(ReactDOM.findDOMNode(this.refs.svg));
     const textElems = svg.selectAll('.term text')[0];
-    return textElems.map(elem => elem.getBBox());
+
+    // can't rely on the index matching the terms since during update there are terms from both talks
+    return textElems.reduce((boxes, elem) => {
+      const termStr = elem.innerHTML;
+      boxes[termStr] = elem.getBBox();
+      return boxes;
+    }, {});
   },
 
   // NOTE: boundingBoxes is around the text element.
   _computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes) {
-
     // compute x values and width
     const layout = terms.map((term, i) => {
-      const boundingBox = boundingBoxes && boundingBoxes[i];
+      const boundingBox = boundingBoxes && boundingBoxes[term.term];
       let width;
 
       // use bounding box if we have already calculated it
@@ -284,7 +294,14 @@ const TermVis = React.createClass({
       return null;
     }
 
-    const { x: termX, y: termY, width: termWidth } = this._getTermLayout(focusedTerm, visComponents);
+    console.log('focusedTerm =', focusedTerm, visComponents.terms);
+
+    const termLayout = this._getTermLayout(focusedTerm, visComponents);
+    if (!termLayout) {
+      return null;
+    }
+
+    const { x: termX, y: termY, width: termWidth } = termLayout;
     const timelineY = -timelineHeight / 2; // counter-act the transform placed on terms and get to middle of timeline
 
     return (
@@ -299,11 +316,8 @@ const TermVis = React.createClass({
     );
   },
 
-  // rect must be separate from text to get proper rendering with goo
-  // otherwise the goo blurs text+rect and we get a darker goo blob than
-  // the rect
-  _renderTermRect(visComponents, term, termIndex) {
-    const { data, termHeight: height, scoreScale } = visComponents;
+  _renderTerm(visComponents, term, termIndex) {
+    const { data, termHeight: height, scoreScale, termPadding: padding } = visComponents;
     const { toggledTerm, focusedTerm, encodeScore, focusedFrame } = this.state;
     const { x, y, width } = this._getTermLayout(term, visComponents);
 
@@ -328,32 +342,16 @@ const TermVis = React.createClass({
     } else if (encodeScore) {
       rectFill = { fill: scoreScale(term.score) };
     }
+    const termStr = term.term;
 
     return (
-      <g key={termIndex} className={cx('term', { focused })}
+      <g key={termStr} className={cx('term', { focused })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
           onMouseLeave={this._handleHoverTerm.bind(this, null)}
           onClick={this._handleClickTerm.bind(this, term)}>
         <rect x={0} y={0} width={width} height={height} style={rectFill} />
-      </g>
-    );
-  },
-
-  _renderTermText(visComponents, term, termIndex) {
-    const { termPadding: padding } = visComponents;
-    const { focusedTerm, showText } = this.state;
-    const { x, y, width } = this._getTermLayout(term, visComponents);
-
-    const focused = focusedTerm === term;
-    const termStr = term.term;
-
-    const textOpacity = showText ? 1 : 0;
-
-    return (
-      <g key={termIndex} className={cx('term', { focused })}
-          style={{ transform: `translate(${x}px, ${y}px)` }}>
-        <text x={width / 2} y={padding} textAnchor='middle' style={{ opacity: textOpacity }}>{termStr}</text>
+        <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
       </g>
     );
   },
@@ -361,9 +359,6 @@ const TermVis = React.createClass({
   _renderTerms(visComponents) {
     const { terms, timelineHeight, innerMargin, width, innerHeight } = visComponents;
     const { updatingData } = this.state;
-
-    const gooStyle = { filter: 'url(#goo)' };
-    // const gooStyle = {}; // temporarily disable goo
 
     return (
       <g transform={`translate(0 ${timelineHeight})`}
@@ -374,15 +369,13 @@ const TermVis = React.createClass({
           style={{ opacity: 0 }}
           onClick={this._handleClickTerm.bind(this, 'clear')} />
         {this._renderFocused(visComponents)}
-        <ReactCSSTransitionGroup component='g' transitionName='terms'
-          transitionAppear={true}
-          transitionAppearTimeout={1000}
-          transitionEnterTimeout={0}
-          transitionLeaveTimeout={0}
-          style={gooStyle}>
-          {terms.map((term, i) => this._renderTermRect(visComponents, term, i))}
-        </ReactCSSTransitionGroup>
-        {terms.map((term, i) => this._renderTermText(visComponents, term, i))}
+        <TimeoutTransitionGroup
+            component='g'
+            transitionName='term'
+            enterTimeout={transitionEnterTime}
+            leaveTimeout={transitionLeaveTime}>
+          {terms.map((term, i) => this._renderTerm(visComponents, term, i))}
+        </TimeoutTransitionGroup>
       </g>
     );
   },
@@ -440,13 +433,6 @@ const TermVis = React.createClass({
             onHoverThumbnail={this._handleHoverThumbnail} onClickThumbnail={this._handleClickThumbnail} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
-          <defs>
-            <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-              <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
-            </filter>
-          </defs>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTerms(visComponents)}
