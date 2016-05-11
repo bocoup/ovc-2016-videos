@@ -56,6 +56,12 @@ const ThumbnailTimeline = React.createClass({
     };
   },
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.data !== nextProps.data) {
+      this.setState({ focusedFrame: null });
+    }
+  },
+
   _handleClickThumbnail(frame) {
     const { onClickThumbnail, data } = this.props;
 
