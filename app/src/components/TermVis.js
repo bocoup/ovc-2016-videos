@@ -384,9 +384,9 @@ const TermVis = React.createClass({
     const { focusedTerm } = this.state;
     const timeWidth = 35;
 
-    let timesToShow = [0, data.maxTime];
+    // add timestamps from focused term without overlap
+    const timesToShow = [0, data.maxTime];
     if (focusedTerm) {
-      // timesToShow = timesToShow.concat(focusedTerm.timestamps);
       focusedTerm.timestamps.forEach(time => {
         // if it doesn't overlap, add it in
         let overlap = false;
