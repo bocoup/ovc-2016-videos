@@ -514,7 +514,7 @@
       { "term": "segment",  "score": 0.023855925908372877, "timestamps": [444, 450, 467, 471] },
       { "term": "effect", "score": 0.021205267474109224, "timestamps": [304, 311, 481, 862, 918, 961, 1169, 1315] },
       { "term": "distort",  "score": 0.02102387912521962, "timestamps": [198, 253, 602, 764, 1216, 1357] },
-      { "term": "Cleveland & McGill", "score": 0.021014458239314377, "timestamps": [157, 185] },
+      { "term": "Cleveland and McGill", "score": 0.021014458239314377, "timestamps": [157, 185] },
       { "term": "research", "score": 0.020131055023774224, "timestamps": [52, 499, 1058, 1101, 1191, 1217, 1258] },
       { "term": "segment judgment", "score": 0.019879938256977397, "timestamps": [444, 450] },
       { "term": "accuracy",  "score": 0.0196994919817459, "timestamps": [77, 368, 432, 649, 681, 833, 1083, 1095] },
