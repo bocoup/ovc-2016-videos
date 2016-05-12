@@ -19,10 +19,10 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader'),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|png)$/,
         loader: 'file-loader'
       },
       {
