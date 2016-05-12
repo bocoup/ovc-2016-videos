@@ -9,5 +9,5 @@ export function timeFormat(time) {
   const seconds = time % 60;
   const minutes = Math.floor(time / 60);
 
-  return `${leadingZeroFormat(minutes, 2)}:${leadingZeroFormat(seconds, 2)}`;
+  return `${minutes}:${leadingZeroFormat(seconds, 2)}`;
 }
