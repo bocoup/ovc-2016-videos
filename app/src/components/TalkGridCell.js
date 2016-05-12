@@ -22,8 +22,8 @@ const TalkGridCell = React.createClass({
       return null;
     }
 
-    const totalNumTerms = 5;
-    const numTop = 2;
+    const totalNumTerms = 6;
+    const numTop = 3;
     const topTerms = data.terms.slice(0, numTop);
 
     // add in a few random terms
@@ -32,6 +32,9 @@ const TalkGridCell = React.createClass({
 
     const hasSlides = (data.slidesUrl && data.slidesUrl) !== '';
 
+    const scoreExtent = d3.extent(data.terms.map(term => term.score));
+    const scoreScale = d3.scale.linear().domain([scoreExtent[0], scoreExtent[1] * 0.9]).range([0.5, 1]);
+
     return (
       <div className={`talk-grid-cell day-${data.day}`} onClick={this._handleSelectTalk}>
         <div className='talk-grid-cell-main'>
@@ -39,7 +42,7 @@ const TalkGridCell = React.createClass({
           <h2 className='talk-speakers'>{data.speakers}</h2>
           <div className='talk-terms'>
             {terms.map((term, i) => {
-              return <div key={i} className='talk-term'>{term.term}</div>;
+              return <div key={i} className='talk-term' style={{ opacity: scoreScale(term.score) }}>{term.term}</div>;
             })}
           </div>
         </div>
