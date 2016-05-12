@@ -20,6 +20,16 @@ window.ovcData = ovcData;
 ovcData.forEach((talk, i) => {
   talk.terms = ovcTermsData[i].terms;
   talk.frames = ovcFramesData[i];
+
+  // apply the transcript delay to the timestamps here
+  // this is because the timestamps on terms is associated
+  // with 0:00 being the start of the transcript, not the
+  // start of the video
+  talk.terms.forEach(term => {
+    term.timestamps.forEach((timestamp, i) => {
+      term.timestamps[i] = timestamp + talk.transcriptDelay;
+    });
+  });
 });
 
 console.log('ovcData =', ovcData);

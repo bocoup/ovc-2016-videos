@@ -11,6 +11,7 @@
     "youtubeId": "ugkfmHBW74Q",
     "slidesUrl": "",
     "maxTime": 2402,
+    "transcriptDelay": -3,
     "thumbnailRatio": 1.843
   },
   {
@@ -24,6 +25,7 @@
     "youtubeId": "POrPIABj2MI",
     "slidesUrl": "",
     "maxTime": 2031,
+    "transcriptDelay": 11,
     "thumbnailRatio": 1.843
   },
   {
@@ -37,6 +39,7 @@
     "youtubeId": "-6REd8lLsPM",
     "slidesUrl": "http://kosamari.com/presentation/openvis-2016/#0",
     "maxTime": 1721,
+    "transcriptDelay": 3,
     "thumbnailRatio": 1.843
   },
   {
@@ -50,6 +53,7 @@
     "youtubeId": "uc5rfTkLzlY",
     "slidesUrl": "http://ncase.me/OVC2016/",
     "maxTime": 1856,
+    "transcriptDelay": 5,
     "thumbnailRatio": 1.843
   },
   {
@@ -63,6 +67,7 @@
     "youtubeId": "hps9r7JZQP8",
     "slidesUrl": "http://www.science.smith.edu/~amcnamara/blog/conferences/2016/04/25/OpenVisConf.html",
     "maxTime": 1379,
+    "transcriptDelay": 10,
     "thumbnailRatio": 1.373
   },
   {
@@ -76,6 +81,7 @@
     "youtubeId": "AwlA3SaChHE",
     "slidesUrl": "http://nbremer.github.io/openvis2016/slides/",
     "maxTime": 1711,
+    "transcriptDelay": -2,
     "thumbnailRatio": 1.843
   },
   {
@@ -89,6 +95,7 @@
     "youtubeId": "5AGx0_2xI6Y",
     "slidesUrl": "http://patriciogonzalezvivo.github.io/openVis16/",
     "maxTime": 2049,
+    "transcriptDelay": 4,
     "thumbnailRatio": 1.843
   },
   {
@@ -102,6 +109,7 @@
     "youtubeId": "IiF4-g001EQ",
     "slidesUrl": "http://slides.com/zanarmstrong/everything-is-seasonal",
     "maxTime": 1729,
+    "transcriptDelay": 7,
     "thumbnailRatio": 1.843
   },
   {
@@ -115,6 +123,7 @@
     "youtubeId": "fnp9g29lF8c",
     "slidesUrl": "http://slides.com/shirleywu/building-data-visualizations-for-product#/",
     "maxTime": 1907,
+    "transcriptDelay": -27,
     "thumbnailRatio": 1.843
   },
   {
@@ -128,6 +137,7 @@
     "youtubeId": "Z4tB6qyxHJA",
     "slidesUrl": "https://docs.google.com/presentation/d/1GOSyl4-iklcO0kIBFy-31zylaLC1R3uTwxX89bWt5D0/edit",
     "maxTime": 1725,
+    "transcriptDelay": -69,
     "thumbnailRatio": 1.843
   },
   {
@@ -142,6 +152,7 @@
     "youtubeId": "5C8AvYVt4_0",
     "slidesUrl": "http://prezi.com/lif0u6yjmlpc/?utm_campaign=share&utm_medium=copy&rc=ex0share",
     "maxTime": 2478,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -155,6 +166,7 @@
     "youtubeId": "K1-a9vGBPmY",
     "slidesUrl": "",
     "maxTime": 2120,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -168,6 +180,7 @@
     "youtubeId": "s0J6EDvlN30",
     "slidesUrl": "https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.yblt9atje",
     "maxTime": 1387,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.373
   },
   {
@@ -181,6 +194,7 @@
     "youtubeId": "HuYKhSHcRSQ",
     "slidesUrl": "https://speakerdeck.com/binx/designing-for-spacecraft-operations",
     "maxTime": 1908,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -194,6 +208,7 @@
     "youtubeId": "Y8Fp9z-9DWc",
     "slidesUrl": "http://arvindsatya.com/talks/ReactiveVega-OpenVisConf2016.pdf",
     "maxTime": 1922,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -207,6 +222,7 @@
     "youtubeId": "_5ky0AYq_Dg",
     "slidesUrl": "http://1wheel.github.io/talks/tiny-tools/#/",
     "maxTime": 1438,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -220,6 +236,7 @@
     "youtubeId": "pTVAn4oLvbc",
     "slidesUrl": "https://t.co/EWBSw0DEUy",
     "maxTime": 1860,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.373
   },
   {
@@ -233,6 +250,7 @@
     "youtubeId": "Ufjm_LD_d0o",
     "slidesUrl": "",
     "maxTime": 1288,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -246,6 +264,7 @@
     "youtubeId": "XW9kPCOfEbQ",
     "slidesUrl": "",
     "maxTime": 2352,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -259,6 +278,7 @@
     "youtubeId": "YkhPs9lLk4s",
     "slidesUrl": "https://www.dropbox.com/s/e96peoaasq16zpd/openvis%202016%20talk.pdf?dl=0",
     "maxTime": 2190,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   },
   {
@@ -272,6 +292,7 @@
     "youtubeId": "EEN_sNXMyko",
     "slidesUrl": "http://www.anabeckerdesign.com/vr_talk.pdf",
     "maxTime": 1618,
+    "transcriptDelay": 0,
     "thumbnailRatio": 1.843
   }
 ]

@@ -44,7 +44,7 @@ function timestampsToFrames(timestamps, frames) {
 const transitionUpdateTime = 300;
 const transitionLeaveTime = 300;
 const transitionEnterTime = transitionLeaveTime + 200 + 300; // delay until after all have left then a bit
-const videoDelay = 10; // number of seconds to navigate the video back from the set timestamp/frame
+const videoDelay = 3; // number of seconds to navigate the video back from the set timestamp/frame
 /**
  * Renders the visualization of top terms/bigrams in the talk
  */
