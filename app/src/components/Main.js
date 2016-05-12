@@ -29,6 +29,11 @@ ovcData.forEach((talk, i) => {
     term.timestamps.forEach((timestamp, i) => {
       term.timestamps[i] = timestamp + talk.transcriptDelay;
     });
+
+    // filter timestamps that start before talking in the video
+    // (since transcriptDelay can be negative when there are words
+    // in the transcript that aren't in the video)
+    term.timestamps = term.timestamps.filter(timestamp => timestamp >= 5);
   });
 });
 
