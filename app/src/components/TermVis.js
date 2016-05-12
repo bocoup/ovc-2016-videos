@@ -384,18 +384,39 @@ const TermVis = React.createClass({
     const { focusedTerm } = this.state;
     const timeWidth = 35;
 
+    // gets the starting and ending edges for the text and the text anchor.
+    function getStartEndAnchor(time) {
+      let x = xTimelineScale(time);
+      let xStart, xEnd, textAnchor;
+      if (x < timeWidth) {
+        textAnchor = 'start';
+        xStart = x;
+        xEnd = x + timeWidth;
+      } else if (x + timeWidth > xTimelineScale.range()[1]) {
+        textAnchor = 'end';
+        xStart = x - timeWidth;
+        xEnd = x;
+      } else {
+        textAnchor = 'middle';
+        xStart = Math.floor(x - timeWidth / 2);
+        xEnd = Math.ceil(x + timeWidth / 2);
+      }
+
+      return { textAnchor, xStart, xEnd };
+    }
+
     // add timestamps from focused term without overlap
     const timesToShow = [0, data.maxTime];
     if (focusedTerm) {
       focusedTerm.timestamps.forEach(time => {
         // if it doesn't overlap, add it in
         let overlap = false;
-        const xStart = xTimelineScale(time) - timeWidth;
-        const xEnd = xTimelineScale(time) + timeWidth;
+        const { xStart, xEnd } = getStartEndAnchor(time);
+
         timesToShow.forEach(shownTime => {
           // be generous with adding/subtracting width since text anchor changes
-          const shownXStart = xTimelineScale(shownTime) - timeWidth;
-          const shownXEnd = xTimelineScale(shownTime) + timeWidth;
+          const { xStart: shownXStart, xEnd: shownXEnd } = getStartEndAnchor(shownTime);
+
           if ((shownXStart <= xStart && shownXEnd >= xStart) || (shownXStart <= xEnd && shownXEnd >= xEnd)) {
             overlap = true;
           }
@@ -413,12 +434,7 @@ const TermVis = React.createClass({
         {timesToShow.map((time, i) => {
           const x = xTimelineScale(time);
           const y = timelineHeight;
-          let textAnchor = 'middle';
-          if (x < timeWidth) {
-            textAnchor = 'start';
-          } else if (x + timeWidth > xTimelineScale.range()[1]) {
-            textAnchor = 'end';
-          }
+          const { textAnchor } = getStartEndAnchor(time);
 
           return (
             <g className='time-group' key={i} transform={`translate(${x} ${y})`}>
