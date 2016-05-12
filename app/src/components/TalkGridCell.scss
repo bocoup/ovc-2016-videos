@@ -4,23 +4,38 @@
   border: 1px solid #eee;
   padding: 0 0 30px;
   overflow: hidden;
-  width: 240px;
+  width: 355px;
   margin: 0 10px 10px 0;
   position: relative;
 
   &:hover {
+    .talk-grid-cell-main {
+      background-color: transparent;
+    }
+    .talk-links {
+      background-color: transparent;
+
+    }
+  }
+
+  &:hover,&.day-25:hover,&.day-26:hover {
     border-color: rgba(39, 58, 58, 0.12);
     background: rgba(231, 255, 255, 0.6);
   }
 
+  &.day-25 {
+    background: #E8E5F7;
+  }
+
+  &.day-26   {
+    background: #ECF1FB;
+  }
+
   .talk-grid-cell-main {
     padding: 10px 10px 0;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
+    height: 160px;
     cursor: pointer;
-
-    &:hover {
-      background-color: transparent;
-    }
   }
 
   .talk-terms {
@@ -54,7 +69,7 @@
     right: 0;
     bottom: 0;
     height: 30px;
-    background: rgba(235,235,235,0.5);
+    background: rgba(255,255,255,0.5);
     line-height: 30px;
     padding-top: 2px;
 

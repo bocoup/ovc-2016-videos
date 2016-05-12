@@ -33,7 +33,7 @@ const TalkGridCell = React.createClass({
     const hasSlides = (data.slidesUrl && data.slidesUrl) !== '';
 
     return (
-      <div className='talk-grid-cell' onClick={this._handleSelectTalk}>
+      <div className={`talk-grid-cell day-${data.day}`} onClick={this._handleSelectTalk}>
         <div className='talk-grid-cell-main'>
           <h1 className='talk-title'>{data.title}</h1>
           <h2 className='talk-speakers'>{data.speakers}</h2>
