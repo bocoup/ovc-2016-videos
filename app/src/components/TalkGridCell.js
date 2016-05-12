@@ -17,7 +17,7 @@ const TalkGridCell = React.createClass({
 
   getInitialState() {
     return {
-      terms: this._selectTerms()
+      terms: this._selectTerms(true)
     };
   },
 
