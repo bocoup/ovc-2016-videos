@@ -7,7 +7,6 @@ import './TalkPlayer.scss';
 
 const TalkPlayer = React.createClass({
   propTypes: {
-    data: React.PropTypes.object,
     width: React.PropTypes.number,
     height: React.PropTypes.number
   },
@@ -21,13 +20,23 @@ const TalkPlayer = React.createClass({
   },
 
   onDispatch(event, ...args) {
+    if (!this.video) {
+      return;
+    }
+
     if (event === Dispatcher.events.navigateVideo) {
       const talk = args[0];
       const timestamp = args[1];
 
-      if (this.video) {
+      // seek if we already have it
+      const currentVideoId = this.video.getVideoData()['video_id'];
+      if (currentVideoId === talk.youtubeId) {
         this.video.seekTo(timestamp, true);
         this.video.playVideo();
+
+      // otherwise load the video at that point
+      } else {
+        this.video.loadVideoById({ videoId: talk.youtubeId, startSeconds: timestamp, autoplay: true });
       }
     } else if (event === Dispatcher.events.stopVideo) {
       this.video.stopVideo();
@@ -35,12 +44,9 @@ const TalkPlayer = React.createClass({
   },
 
   componentDidMount() {
-    const { data, width, height } = this.props;
+    const { width, height } = this.props;
 
-    const { youtubeId } = data; // TODO - read from data
-    // const youtubeId = '0oUP7uHAsNA';
-
-    youTube(youtubeId, {
+    youTube(null, {
       elementId: 'youtube-video',
       selector: true,
       autoplay: false,
@@ -49,14 +55,10 @@ const TalkPlayer = React.createClass({
       controls: true
     }, (_, video) => {
       this.video = video;
-      video.addEventListener('onStateChange', this._handleVideoEvent, false);
-      // video.loadVideoById(videoId);
     });
   },
 
   render() {
-    const { data } = this.props;
-
     return (
       <div className='talk-player'>
         <div id='youtube-video' ref='youtube-video'/>
