@@ -72,6 +72,12 @@ const TermVis = React.createClass({
     setTimeout(() => {
       this.setState({ boundingBoxes: this._readTermTextBoundingBoxes(), encodeScore: true });
     }, 0);
+
+    // try again to set the bounding boxes in case we haven't downloaded the font initially
+    setTimeout(() => this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() }), 100);
+    setTimeout(() => this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() }), 500);
+    setTimeout(() => this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() }), 3000);
+
   },
 
   componentWillReceiveProps(nextProps) {
@@ -89,7 +95,6 @@ const TermVis = React.createClass({
 
   componentDidUpdate(prevProps) {
     const { data } = this.props;
-
     // if the data changed, recompute the bounding boxes
     if (data !== prevProps.data) {
       this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
@@ -162,6 +167,11 @@ const TermVis = React.createClass({
 
   _readTermTextBoundingBoxes() {
     const svg = d3.select(ReactDOM.findDOMNode(this.refs.svg));
+
+    if (!svg) {
+      return null;
+    }
+
     const textElems = svg.selectAll('.term text')[0];
 
     // can't rely on the index matching the terms since during update there are terms from both talks
