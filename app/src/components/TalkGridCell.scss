@@ -43,7 +43,24 @@
     margin-bottom: px;
   }
 
+  .talk-term-container {
+    vertical-align: top;
+    display: inline-block;
+    transition: 1000ms opacity;
+  }
+  .talk-term-enter {
+    overflow: hidden;
+    opacity: 0.01;
+  }
+  .talk-term-enter-active {
+    opacity: 1;
+  }
+  .talk-term-leave {
+    opacity: 0;
+  }
+
   .talk-term {
+    vertical-align: top;
     display: inline-block;
     font-size: 0.8em;
     margin: 0 4px 4px 0;
