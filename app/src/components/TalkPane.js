@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Dispatcher from '../events/Dispatcher';
 import './TalkPane.scss';
 import AutoWidth from './AutoWidth';
 import TermVis from './TermVis';
@@ -42,6 +43,13 @@ const TalkPane = React.createClass({
     }
   },
 
+  _handleTitleClick(evt) {
+    const { selectedTalk } = this.props;
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, selectedTalk, 0);
+
+    evt.preventDefault();
+  },
+
   _renderQuickSelect() {
     const { allTalks } = this.props;
 
@@ -77,7 +85,12 @@ const TalkPane = React.createClass({
       <div>
         <header>
           <h2 className='talk-speakers'>{selectedTalk.speakers}</h2>
-          <h1 className='talk-title'>{selectedTalk.title}</h1>
+          <h1 className='talk-title'>
+            <a onClick={this._handleTitleClick}
+              href={`https://www.youtube.com/watch?v=${selectedTalk.youtubeId}`}>
+              {selectedTalk.title}
+            </a>
+          </h1>
         </header>
         <AutoWidth><TermVis data={selectedTalk} /></AutoWidth>
       </div>
