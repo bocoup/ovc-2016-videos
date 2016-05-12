@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import TimeoutTransitionGroup from '../vendor/TimeoutTransitionGroup';
 import d3 from 'd3';
 import cx from 'classnames';
