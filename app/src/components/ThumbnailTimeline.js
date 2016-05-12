@@ -112,22 +112,26 @@ const ThumbnailTimeline = React.createClass({
             left += (thumbnailFullWidth - thumbnailCompressedWidth);
           }
 
-          const thumbnailWidth = isFocused ? thumbnailFullWidth : thumbnailCompressedWidth;
+          const thumbnailVisibleWidth = isFocused ? thumbnailFullWidth : thumbnailCompressedWidth;
+          const thumbnailWidth = thumbnailFullWidth;
 
           const style = {
             backgroundImage: `url(${url})`,
             left,
             height,
-            width: thumbnailWidth,
-            backgroundSize: `auto ${height}px`
+            width: thumbnailFullWidth,
+            backgroundSize: `auto ${height}px`,
+            backgroundPositionX: -thumbnailFullWidth/2 + thumbnailVisibleWidth/2
           };
 
 
           return (
-            <div key={i} className={cx('thumbnail', { highlighted: isHighlighted })} style={style}
+            <div key={i} className={cx('thumbnail', `thumbnail-${i}`, { highlighted: isHighlighted, 'not-highlighted': !isHighlighted })} style={style}
               onMouseEnter={this._handleHoverThumbnail.bind(this, frame)}
               onMouseLeave={this._handleHoverThumbnail.bind(this, null)}
-              onClick={this._handleClickThumbnail.bind(this, frame)} />
+              onClick={this._handleClickThumbnail.bind(this, frame)}>
+              {(hasHighlightFrames && !isHighlighted) ? <div className={cx('thumbnail-overlay')} /> : null}
+            </div>
           );
         })}
       </div>

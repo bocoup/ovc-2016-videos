@@ -1,26 +1,30 @@
 $thumbnail-border-color: rgba(0, 0, 0, 0.1);
-$thumbnail-border-color-highlight: rgba(0, 0, 0, 0.2);
+$thumbnail-border-color-highlight: #bbb; //rgba(0, 0, 0, 0.2);
 $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
 
 .thumbnail-timeline {
   position: relative;
+  overflow: hidden;
+  border-right: 1px solid $thumbnail-border-color;
+  border-left: 1px solid $thumbnail-border-color;
 
   .thumbnail {
     position: absolute;
     top: 0;
     border: 1px solid $thumbnail-border-color;
-    border-left: 0;
-    transition: .2s width, .2s left, .1s opacity;
+    border-right: 0;
+    transition: .2s width, .2s left, .1s opacity, .2s background-position-x;
     background-position-x: center;
-    box-shadow: inset -2px 0px 4px rgba(0,0,0,0.1);
+    box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
 
     &:last-child {
-      box-shadow: none;
+      border-right: 0;
     }
 
     &:first-child {
-      border-left: 1px solid $thumbnail-border-color;
+      border-left: 0;
+      box-shadow: none;
     }
 
     &:hover {
@@ -28,13 +32,27 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     }
   }
 
+  .thumbnail-overlay {
+    position: absolute;
+    left: 0px;
+    right: -1.5px; // needs 0.5px added to fix some off-by-one errors on the further right thumbs
+    top: -2px;
+    bottom: -1px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  // fix off by one on first thumbnail error
+  .thumbnail-0 .thumbnail-overlay {
+    left: -1px;
+  }
+
   &.has-highlight .thumbnail {
-    opacity: 0.2;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 
     &+.thumbnail {
-      border-left: 0;
+      border-right: 0;
+      border-left: 1px rgba(255, 255, 255, 0.7);
     }
 
     &+.highlighted {
@@ -42,7 +60,11 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     }
 
     &.highlighted+.thumbnail.highlighted {
-      border-left: 0;
+      border-left: 1px solid $thumbnail-border-color-highlight;
+    }
+    &.highlighted+.thumbnail.not-highlighted {
+      border-left: 1px solid $thumbnail-border-color-highlight;
+      box-shadow: none;
     }
 
     &.highlighted {
