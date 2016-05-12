@@ -1,7 +1,7 @@
 $tray-height: 400px;
 .talk-player-tray {
   position: fixed;
-  bottom: -$tray-height + 40;
+  bottom: -$tray-height;//  add this to make it visible when closed + 40;
   left: 0;
   right: 0;
   background: #fff;
