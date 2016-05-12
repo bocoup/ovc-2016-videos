@@ -250,7 +250,7 @@
       { "term": "education", "score": 0.017066859478130244, "timestamps": [1099, 1107, 1144, 1149, 1156] },
       { "term": "direction", "score": 0.01631308206249503, "timestamps": [284, 364, 379, 432, 617, 746, 798, 862, 1383] },
       { "term": "country", "score": 0.015570159386917953, "timestamps": [91, 1045, 1553, 1557] },
-      { "term": "accididents", "score": 0.015176658084872136, "timestamps": [201, 214, 216, 226] },
+      { "term": "accidents", "score": 0.015176658084872136, "timestamps": [201, 214, 216, 226] },
       { "term": "fun",  "score": 0.015145301353291821, "timestamps": [134, 1094, 1207, 1401, 1519, 1528, 1567, 1573] },
       { "term": "legend", "score": 0.015145301353291821, "timestamps": [176, 232, 237, 469] },
       { "term": "circular", "score": 0.015138514682040524, "timestamps": [1115, 1117, 1131] },
