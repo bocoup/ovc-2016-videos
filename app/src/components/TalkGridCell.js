@@ -1,6 +1,7 @@
 import React from 'react';
 import d3 from 'd3';
 import './TalkGridCell.scss';
+import Dispatcher from '../events/Dispatcher';
 import TimeoutTransitionGroup from '../vendor/TimeoutTransitionGroup';
 
 function timerDelay() {
@@ -66,6 +67,19 @@ const TalkGridCell = React.createClass({
     return terms;
   },
 
+  _handleClickPlayVideo(evt) {
+    const { data } = this.props;
+    Dispatcher.trigger(Dispatcher.events.navigateVideo, data, 0);
+
+    evt.preventDefault();
+    evt.stopPropagation();
+  },
+
+  _handleClickSlides(evt) {
+    evt.stopPropagation();
+  },
+
+
   render() {
     const { data } = this.props;
 
@@ -98,8 +112,8 @@ const TalkGridCell = React.createClass({
           <div className='talk-time'>
             {`April ${data.day}, ${data.time}`}
           </div>
-          <a href={`https://www.youtube.com/watch?v=${data.youtubeId}`}><i className='fa fa-lg fa-youtube-play' title='Play Video' /></a>
-          {hasSlides ? <a href={`${data.slidesUrl}`}><i className='fa fa-lg fa-desktop' title='View Slides' /></a> : null}
+          <a onClick={this._handleClickPlayVideo} dhref={`https://www.youtube.com/watch?v=${data.youtubeId}`}><i className='fa fa-lg fa-youtube-play' title='Play Video' /></a>
+          {hasSlides ? <a onClick={this._handleClickSlides} href={`${data.slidesUrl}`}><i className='fa fa-lg fa-desktop' title='View Slides' /></a> : null}
         </div>
       </div>
     );
