@@ -85,10 +85,12 @@ const TalkPane = React.createClass({
   },
 
   render() {
+    const { selectedTalk } = this.props;
+
     return (
-      <div className='talk-pane'>
-        {this._renderTalk()}
+      <div className={cx('talk-pane', { 'has-talk': !!selectedTalk })}>
         {this._renderQuickSelect()}
+        {this._renderTalk()}
       </div>
     );
   }

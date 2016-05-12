@@ -29,13 +29,20 @@
 
   .talk-quick-select{
     font-size: 0.7em;
-    margin-top: 4px;
 
     .help-text {
       display: inline-block;
       vertical-align: top;
       padding: 4px;
       color: #666;
+    }
+  }
+
+  &.has-talk {
+    .talk-quick-select {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
     }
   }
 
