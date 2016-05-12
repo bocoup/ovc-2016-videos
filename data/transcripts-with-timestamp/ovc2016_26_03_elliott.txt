@@ -113,7 +113,7 @@
 11:09:24	maps.  When participants
 11:09:25	encountered the smarts, they
 11:09:28	remembered them closer to the
-11:09:30	imagery 45 degree line.  When
+11:09:30	imaginary 45 degree line.  When
 11:09:34	presented as a map, no
 11:09:36	distortion.  When text appeared
 11:09:38	next to the chart, calling the
@@ -122,7 +122,7 @@
 11:09:45	was not.  This mean that
 11:09:47	annotations are powerful.  Of in
 11:09:49	a second study, a systemic bias
-11:09:51	toward an imagery 45 degree line
+11:09:51	toward an imaginary 45 degree line
 11:09:54	in line charts.  When the
 11:09:55	diagonal line was there, they
 11:09:58	continually thought it was
@@ -130,7 +130,7 @@
 11:10:01	was.  Meaning they overestimated
 11:10:03	the larger angles and
 11:10:05	underestimated the smaller
-11:10:07	angles.  Thus it's an imagery
+11:10:07	angles.  Thus it's an imaginary
 11:10:10	reference point for line charts,
 11:10:12	but not in other contexts.  And
 11:10:14	the works suggest that many
@@ -257,14 +257,14 @@
 11:14:49	efficiently, but bar charts had
 11:14:52	similar success to line charts.
 11:14:54	They hypothesized that people
-11:14:56	draw imagery lines across the
+11:14:56	draw imaginary lines across the
 11:14:58	bars to create that slope.  So
 11:15:00	he created a new terrible graph
 11:15:03	called a tier bar chart, and
 11:15:05	tested them again.  They found
 11:15:07	that, yes, any chart allowing
 11:15:09	the reader to see a real or
-11:15:10	imagery trend line was the best
+11:15:10	imaginary trend line was the best
 11:15:13	at communication.  For
 11:15:14	proportions, if charts had no
 11:15:15	scales, pie charts were best.

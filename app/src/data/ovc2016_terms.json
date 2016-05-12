@@ -521,7 +521,7 @@
       { "term": "prefer", "score": 0.018679518434946113, "timestamps": [394, 395, 881, 1236] },
       { "term": "tree map", "score": 0.01867562501861732, "timestamps": [840, 843, 866, 881, 911] },
       { "term": "stack",  "score": 0.01751989927101635, "timestamps": [929, 931, 933, 935, 1018] },
-      { "term": "imagery",  "score": 0.01751989927101635, "timestamps": [247, 268, 284, 573, 587] },
+      { "term": "imaginary",  "score": 0.01751989927101635, "timestamps": [247, 268, 284, 573, 587] },
       { "term": "3D", "score": 0.017237055484027663, "timestamps": [679, 694, 706, 717, 721, 738, 899] },
       { "term": "beam tree",  "score": 0.016933809098447973, "timestamps": [899, 910] },
       { "term": "multiple segments",  "score": 0.01653206545638887, "timestamps": [467, 471] },

@@ -113,7 +113,7 @@ told them they were charts or
 maps.  When participants
 encountered the smarts, they
 remembered them closer to the
-imagery 45 degree line.  When
+imaginary 45 degree line.  When
 presented as a map, no
 distortion.  When text appeared
 next to the chart, calling the
@@ -122,7 +122,7 @@ more symmetrical even though it
 was not.  This mean that
 annotations are powerful.  Of in
 a second study, a systemic bias
-toward an imagery 45 degree line
+toward an imaginary 45 degree line
 in line charts.  When the
 diagonal line was there, they
 continually thought it was
@@ -130,7 +130,7 @@ closer to 45 degrees than it
 was.  Meaning they overestimated
 the larger angles and
 underestimated the smaller
-angles.  Thus it's an imagery
+angles.  Thus it's an imaginary
 reference point for line charts,
 but not in other contexts.  And
 the works suggest that many
@@ -257,14 +257,14 @@ communicating change
 efficiently, but bar charts had
 similar success to line charts.
 They hypothesized that people
-draw imagery lines across the
+draw imaginary lines across the
 bars to create that slope.  So
 he created a new terrible graph
 called a tier bar chart, and
 tested them again.  They found
 that, yes, any chart allowing
 the reader to see a real or
-imagery trend line was the best
+imaginary trend line was the best
 at communication.  For
 proportions, if charts had no
 scales, pie charts were best.
