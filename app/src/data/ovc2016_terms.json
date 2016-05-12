@@ -488,7 +488,6 @@
       { "term": "text", "score": 0.014219289923191485, "timestamps": [33, 38, 809, 1180, 1239, 1348, 1421] },
       { "term": "wild", "score": 0.012526756275179735, "timestamps": [1584, 1623, 1647] },
       { "term": "waste", "score": 0.012526756275179735, "timestamps": [774, 1415, 1451] },
-      { "term": "text message",  "score": 0.011639998566343557, "timestamps": [33, 38] },
       { "term": "website", "score": 0.011359458950713861, "timestamps": [661, 1210, 1241, 1244, 1246] },
       { "term": "organization",  "score": 0.011359458950713861, "timestamps": [1122, 1126, 1201, 1367, 1393] },
       { "term": "story",  "score": 0.011039647371977773, "timestamps": [909, 938, 945, 947, 1236, 1239] },
