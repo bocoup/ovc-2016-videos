@@ -152,7 +152,7 @@
     "youtubeId": "5C8AvYVt4_0",
     "slidesUrl": "http://prezi.com/lif0u6yjmlpc/?utm_campaign=share&utm_medium=copy&rc=ex0share",
     "maxTime": 2478,
-    "transcriptDelay": 0,
+    "transcriptDelay": 7,
     "thumbnailRatio": 1.843
   },
   {
@@ -166,7 +166,7 @@
     "youtubeId": "K1-a9vGBPmY",
     "slidesUrl": "",
     "maxTime": 2120,
-    "transcriptDelay": 0,
+    "transcriptDelay": -70,
     "thumbnailRatio": 1.843
   },
   {
@@ -180,7 +180,7 @@
     "youtubeId": "s0J6EDvlN30",
     "slidesUrl": "https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.yblt9atje",
     "maxTime": 1387,
-    "transcriptDelay": 0,
+    "transcriptDelay": 7,
     "thumbnailRatio": 1.373
   },
   {
@@ -194,7 +194,7 @@
     "youtubeId": "HuYKhSHcRSQ",
     "slidesUrl": "https://speakerdeck.com/binx/designing-for-spacecraft-operations",
     "maxTime": 1908,
-    "transcriptDelay": 0,
+    "transcriptDelay": 8,
     "thumbnailRatio": 1.843
   },
   {
@@ -208,7 +208,7 @@
     "youtubeId": "Y8Fp9z-9DWc",
     "slidesUrl": "http://arvindsatya.com/talks/ReactiveVega-OpenVisConf2016.pdf",
     "maxTime": 1922,
-    "transcriptDelay": 0,
+    "transcriptDelay": 4,
     "thumbnailRatio": 1.843
   },
   {
@@ -222,7 +222,7 @@
     "youtubeId": "_5ky0AYq_Dg",
     "slidesUrl": "http://1wheel.github.io/talks/tiny-tools/#/",
     "maxTime": 1438,
-    "transcriptDelay": 0,
+    "transcriptDelay": 5,
     "thumbnailRatio": 1.843
   },
   {
@@ -236,7 +236,7 @@
     "youtubeId": "pTVAn4oLvbc",
     "slidesUrl": "https://t.co/EWBSw0DEUy",
     "maxTime": 1860,
-    "transcriptDelay": 0,
+    "transcriptDelay": 5,
     "thumbnailRatio": 1.373
   },
   {
@@ -250,7 +250,7 @@
     "youtubeId": "Ufjm_LD_d0o",
     "slidesUrl": "",
     "maxTime": 1288,
-    "transcriptDelay": 0,
+    "transcriptDelay": 10,
     "thumbnailRatio": 1.843
   },
   {
@@ -264,7 +264,7 @@
     "youtubeId": "XW9kPCOfEbQ",
     "slidesUrl": "",
     "maxTime": 2352,
-    "transcriptDelay": 0,
+    "transcriptDelay": 6,
     "thumbnailRatio": 1.843
   },
   {
@@ -278,7 +278,7 @@
     "youtubeId": "YkhPs9lLk4s",
     "slidesUrl": "https://www.dropbox.com/s/e96peoaasq16zpd/openvis%202016%20talk.pdf?dl=0",
     "maxTime": 2190,
-    "transcriptDelay": 0,
+    "transcriptDelay": -37,
     "thumbnailRatio": 1.843
   },
   {
@@ -292,7 +292,7 @@
     "youtubeId": "EEN_sNXMyko",
     "slidesUrl": "http://www.anabeckerdesign.com/vr_talk.pdf",
     "maxTime": 1618,
-    "transcriptDelay": 0,
+    "transcriptDelay": 10,
     "thumbnailRatio": 1.843
   }
 ]
