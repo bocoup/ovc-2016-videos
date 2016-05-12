@@ -490,7 +490,7 @@
       { "term": "waste", "score": 0.012526756275179735, "timestamps": [774, 1415, 1451] },
       { "term": "text message",  "score": 0.011639998566343557, "timestamps": [33, 38] },
       { "term": "website", "score": 0.011359458950713861, "timestamps": [661, 1210, 1241, 1244, 1246] },
-      { "term": "organ",  "score": 0.011359458950713861, "timestamps": [1122, 1126, 1201, 1367, 1393] },
+      { "term": "organization",  "score": 0.011359458950713861, "timestamps": [1122, 1126, 1201, 1367, 1393] },
       { "term": "story",  "score": 0.011039647371977773, "timestamps": [909, 938, 945, 947, 1236, 1239] },
       { "term": "sand", "score": 0.011039647371977773, "timestamps": [158, 1553, 1555] },
       { "term": "color",  "score": 0.010464022740225848, "timestamps": [969, 982, 1024, 1030, 1061, 1074] },
