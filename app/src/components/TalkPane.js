@@ -45,20 +45,22 @@ const TalkPane = React.createClass({
   _renderQuickSelect() {
     const { allTalks } = this.props;
 
+    function renderTalk(talk, i) {
+      return (
+        <div key={i}
+          className={cx('talk-quick-select-item', `day-${talk.day}`)}
+          onClick={this._handleTalkSelect.bind(this, talk)}>
+          {talk.shortId}
+        </div>
+      );
+    }
+
     return (
       <div className='talk-quick-select'>
         <span className='help-text'>Select a Talk:</span>
         <div className='talk-quick-select-items'>
-          {allTalks.map((talk, i) => {
-            const { shortId, day } = talk;
-            return (
-              <div key={i}
-                className={cx('talk-quick-select-item', `day-${day}`)}
-                onClick={this._handleTalkSelect.bind(this, talk)}>
-                {shortId}
-              </div>
-            );
-          })}
+          <div className='talks-day-group'>{allTalks.filter(talk => talk.day === 25).map(renderTalk.bind(this))}</div>
+          <div className='talk-day-group'>{allTalks.filter(talk => talk.day === 26).map(renderTalk.bind(this))}</div>
         </div>
       </div>
     );
