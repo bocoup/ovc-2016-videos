@@ -66,7 +66,7 @@ const TalkPane = React.createClass({
     );
   },
 
-  render() {
+  _renderTalk() {
     const { selectedTalk } = this.props;
 
     if (!selectedTalk) {
@@ -74,13 +74,20 @@ const TalkPane = React.createClass({
     }
 
     return (
-      <div className='talk-pane'>
+      <div>
         <header>
           <h2 className='talk-speakers'>{selectedTalk.speakers}</h2>
           <h1 className='talk-title'>{selectedTalk.title}</h1>
         </header>
-
         <AutoWidth><TermVis data={selectedTalk} /></AutoWidth>
+      </div>
+    );
+  },
+
+  render() {
+    return (
+      <div className='talk-pane'>
+        {this._renderTalk()}
         {this._renderQuickSelect()}
       </div>
     );
