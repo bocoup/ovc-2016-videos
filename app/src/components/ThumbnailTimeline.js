@@ -121,7 +121,7 @@ const ThumbnailTimeline = React.createClass({
             height,
             width: thumbnailFullWidth,
             backgroundSize: `auto ${height}px`,
-            backgroundPositionX: -thumbnailFullWidth/2 + thumbnailVisibleWidth/2
+            backgroundPosition: `${-thumbnailFullWidth / 2 + thumbnailVisibleWidth / 2}px 0`
           };
 
 

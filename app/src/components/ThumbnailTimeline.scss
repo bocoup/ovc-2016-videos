@@ -14,7 +14,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     border: 1px solid $thumbnail-border-color;
     border-right: 0;
     transition: .2s width, .2s left, .1s opacity, .2s background-position-x;
-    background-position-x: center;
+    background-position: center center;
     box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
 
