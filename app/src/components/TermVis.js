@@ -6,6 +6,7 @@ import d3 from 'd3';
 import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
 import Dispatcher from '../events/Dispatcher';
+import * as Util from '../util/Util';
 
 import './TermVis.scss';
 
@@ -379,11 +380,52 @@ const TermVis = React.createClass({
   },
 
   _renderTimeline(visComponents) {
-    const { width, innerMargin, timelineHeight } = visComponents;
+    const { data, width, innerMargin, xTimelineScale, timelineHeight } = visComponents;
+    const { focusedTerm } = this.state;
+    const timeWidth = 35;
+
+    let timesToShow = [0, data.maxTime];
+    if (focusedTerm) {
+      // timesToShow = timesToShow.concat(focusedTerm.timestamps);
+      focusedTerm.timestamps.forEach(time => {
+        // if it doesn't overlap, add it in
+        let overlap = false;
+        const xStart = xTimelineScale(time) - timeWidth;
+        const xEnd = xTimelineScale(time) + timeWidth;
+        timesToShow.forEach(shownTime => {
+          // be generous with adding/subtracting width since text anchor changes
+          const shownXStart = xTimelineScale(shownTime) - timeWidth;
+          const shownXEnd = xTimelineScale(shownTime) + timeWidth;
+          if ((shownXStart <= xStart && shownXEnd >= xStart) || (shownXStart <= xEnd && shownXEnd >= xEnd)) {
+            overlap = true;
+          }
+        });
+
+        if (!overlap) {
+          timesToShow.push(time);
+        }
+      });
+    }
 
     return (
       <g className='timeline'>
         <rect x={-innerMargin.left} y={0} width={width} height={timelineHeight} className='timeline-bg' />
+        {timesToShow.map((time, i) => {
+          const x = xTimelineScale(time);
+          const y = timelineHeight;
+          let textAnchor = 'middle';
+          if (x < timeWidth) {
+            textAnchor = 'start';
+          } else if (x + timeWidth > xTimelineScale.range()[1]) {
+            textAnchor = 'end';
+          }
+
+          return (
+            <g className='time-group' key={i} transform={`translate(${x} ${y})`}>
+              <text x={0} y={0} textAnchor={textAnchor}>{Util.timeFormat(time)}</text>
+            </g>
+          );
+        })}
       </g>
     );
   },
