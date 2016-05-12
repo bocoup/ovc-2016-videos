@@ -10,7 +10,7 @@
     "title": "Seeing Machines Think",
     "youtubeId": "ugkfmHBW74Q",
     "slidesUrl": "",
-    "maxTime": 2396,
+    "maxTime": 2402,
     "thumbnailRatio": 1.843
   },
   {
@@ -23,7 +23,7 @@
     "title": "A Return to Machine Learning",
     "youtubeId": "POrPIABj2MI",
     "slidesUrl": "",
-    "maxTime": 2012,
+    "maxTime": 2031,
     "thumbnailRatio": 1.843
   },
   {
@@ -36,7 +36,7 @@
     "title": "Drawing on <canvas> - how computers read pixels",
     "youtubeId": "-6REd8lLsPM",
     "slidesUrl": "http://kosamari.com/presentation/openvis-2016/#0",
-    "maxTime": 1707,
+    "maxTime": 1721,
     "thumbnailRatio": 1.843
   },
   {
@@ -49,7 +49,7 @@
     "title": "How To Simulate The Universe, In 134 Easy Steps",
     "youtubeId": "uc5rfTkLzlY",
     "slidesUrl": "http://ncase.me/OVC2016/",
-    "maxTime": 1840,
+    "maxTime": 1856,
     "thumbnailRatio": 1.843
   },
   {
@@ -62,7 +62,7 @@
     "title": "Do you know Nothing when you see it?",
     "youtubeId": "hps9r7JZQP8",
     "slidesUrl": "http://www.science.smith.edu/~amcnamara/blog/conferences/2016/04/25/OpenVisConf.html",
-    "maxTime": 1244,
+    "maxTime": 1379,
     "thumbnailRatio": 1.373
   },
   {
@@ -75,7 +75,7 @@
     "title": "SVG Beyond Mere Shapes",
     "youtubeId": "AwlA3SaChHE",
     "slidesUrl": "http://nbremer.github.io/openvis2016/slides/",
-    "maxTime": 1707,
+    "maxTime": 1711,
     "thumbnailRatio": 1.843
   },
   {
@@ -88,7 +88,7 @@
     "title": "Enhancing your maps and visualizations with WebGL GLSL Shaders",
     "youtubeId": "5AGx0_2xI6Y",
     "slidesUrl": "http://patriciogonzalezvivo.github.io/openVis16/",
-    "maxTime": 2028,
+    "maxTime": 2049,
     "thumbnailRatio": 1.843
   },
   {
@@ -101,7 +101,7 @@
     "title": "Everything is Seasonal",
     "youtubeId": "IiF4-g001EQ",
     "slidesUrl": "http://slides.com/zanarmstrong/everything-is-seasonal",
-    "maxTime": 1707,
+    "maxTime": 1729,
     "thumbnailRatio": 1.843
   },
   {
@@ -114,7 +114,7 @@
     "title": "Building Data Visualizations for Product",
     "youtubeId": "fnp9g29lF8c",
     "slidesUrl": "http://slides.com/shirleywu/building-data-visualizations-for-product#/",
-    "maxTime": 1922,
+    "maxTime": 1907,
     "thumbnailRatio": 1.843
   },
   {
@@ -127,7 +127,7 @@
     "title": "Animation, Pacing, and Exposition",
     "youtubeId": "Z4tB6qyxHJA",
     "slidesUrl": "https://docs.google.com/presentation/d/1GOSyl4-iklcO0kIBFy-31zylaLC1R3uTwxX89bWt5D0/edit",
-    "maxTime": 1615,
+    "maxTime": 1725,
     "thumbnailRatio": 1.843
   },
   {
@@ -141,7 +141,7 @@
     "title": "Informing Without Alienating",
     "youtubeId": "5C8AvYVt4_0",
     "slidesUrl": "http://prezi.com/lif0u6yjmlpc/?utm_campaign=share&utm_medium=copy&rc=ex0share",
-    "maxTime": 1641,
+    "maxTime": 2478,
     "thumbnailRatio": 1.843
   },
   {
@@ -154,7 +154,7 @@
     "title": "The Charting Monster that Spawned from the Jaws of Defeat",
     "youtubeId": "K1-a9vGBPmY",
     "slidesUrl": "",
-    "maxTime": 1703,
+    "maxTime": 2120,
     "thumbnailRatio": 1.843
   },
   {
@@ -167,7 +167,7 @@
     "title": "Everything we know about how humans interpret graphics",
     "youtubeId": "s0J6EDvlN30",
     "slidesUrl": "https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.yblt9atje",
-    "maxTime": 1365,
+    "maxTime": 1387,
     "thumbnailRatio": 1.373
   },
   {
@@ -180,7 +180,7 @@
     "title": "Designing for Realtime Spacecraft Operations",
     "youtubeId": "HuYKhSHcRSQ",
     "slidesUrl": "https://speakerdeck.com/binx/designing-for-spacecraft-operations",
-    "maxTime": 1548,
+    "maxTime": 1908,
     "thumbnailRatio": 1.843
   },
   {
@@ -193,7 +193,7 @@
     "title": "Reactive Building Blocks: Interactive Visualizations with Vega",
     "youtubeId": "Y8Fp9z-9DWc",
     "slidesUrl": "http://arvindsatya.com/talks/ReactiveVega-OpenVisConf2016.pdf",
-    "maxTime": 1914,
+    "maxTime": 1922,
     "thumbnailRatio": 1.843
   },
   {
@@ -206,7 +206,7 @@
     "title": "Tiny Tools",
     "youtubeId": "_5ky0AYq_Dg",
     "slidesUrl": "http://1wheel.github.io/talks/tiny-tools/#/",
-    "maxTime": 1423,
+    "maxTime": 1438,
     "thumbnailRatio": 1.843
   },
   {
@@ -219,7 +219,7 @@
     "title": "The Visual Uncertainty Experience",
     "youtubeId": "pTVAn4oLvbc",
     "slidesUrl": "https://t.co/EWBSw0DEUy",
-    "maxTime": 1780,
+    "maxTime": 1860,
     "thumbnailRatio": 1.373
   },
   {
@@ -232,7 +232,7 @@
     "title": "Untangling Tennis",
     "youtubeId": "Ufjm_LD_d0o",
     "slidesUrl": "",
-    "maxTime": 1281,
+    "maxTime": 1288,
     "thumbnailRatio": 1.843
   },
   {
@@ -245,7 +245,7 @@
     "title": "Our Planet Seen from Space",
     "youtubeId": "XW9kPCOfEbQ",
     "slidesUrl": "",
-    "maxTime": 1962,
+    "maxTime": 2352,
     "thumbnailRatio": 1.843
   },
   {
@@ -258,7 +258,7 @@
     "title": "Finding What to Read: Visual Text Analytics Tools and Techniques to Guide Investigation",
     "youtubeId": "YkhPs9lLk4s",
     "slidesUrl": "https://www.dropbox.com/s/e96peoaasq16zpd/openvis%202016%20talk.pdf?dl=0",
-    "maxTime": 2214,
+    "maxTime": 2190,
     "thumbnailRatio": 1.843
   },
   {
@@ -271,7 +271,7 @@
     "title": "Designing Virtual Reality Data Visualizations",
     "youtubeId": "EEN_sNXMyko",
     "slidesUrl": "http://www.anabeckerdesign.com/vr_talk.pdf",
-    "maxTime": 1198,
+    "maxTime": 1618,
     "thumbnailRatio": 1.843
   }
 ]
