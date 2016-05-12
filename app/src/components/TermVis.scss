@@ -60,9 +60,10 @@ $timestamp-marker-fill: lighten($focused-term-rect-color, 15%);
     pointer-events: none;
   }
 
-  .terms.updating-terms .term rect {
-    transition: $transition-time fill;
-  }
+  // trying to remove for performance-- not really noticeable anyway
+  // .terms.updating-terms .term rect {
+  //   transition: $transition-time fill;
+  // }
 
   .term {
     transition: $transition-time transform, $transition-time opacity;

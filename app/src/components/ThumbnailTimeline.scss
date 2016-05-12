@@ -38,7 +38,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     right: -1.5px; // needs 0.5px added to fix some off-by-one errors on the further right thumbs
     top: -2px;
     bottom: -1px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   // fix off by one on first thumbnail error
@@ -47,9 +47,6 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
   }
 
   &.has-highlight .thumbnail {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-
     &+.thumbnail {
       border-right: 0;
       border-left: 1px rgba(255, 255, 255, 0.7);
