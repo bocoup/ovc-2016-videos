@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import d3 from 'd3';
+import Scroll from '../vendor/Scroll';
 
 import TalkGrid from './TalkGrid';
 import TalkPlayerTray from './TalkPlayerTray';
@@ -22,6 +24,8 @@ ovcData.forEach((talk, i) => {
 
 console.log('ovcData =', ovcData);
 
+const bodyScroll = new Scroll(document.body);
+
 const Main = React.createClass({
 
   getInitialState() {
@@ -32,6 +36,13 @@ const Main = React.createClass({
     this.setState({
       selectedTalk: talk
     });
+
+    // scroll to the talk if we are beneath it
+    const talkPane = ReactDOM.findDOMNode(this.refs.talkPane);
+    const talkPaneTop = talkPane.getBoundingClientRect().top + window.pageYOffset;
+    if (document.body.scrollTop > talkPaneTop) {
+      bodyScroll.toElement(talkPane);
+    }
   },
 
   render() {
@@ -39,7 +50,7 @@ const Main = React.createClass({
 
     return (
       <div>
-        <TalkPane selectedTalk={selectedTalk} allTalks={ovcData} onTalkSelect={this._handleSelectTalk} />
+        <TalkPane ref='talkPane' selectedTalk={selectedTalk} allTalks={ovcData} onTalkSelect={this._handleSelectTalk} />
         <TalkGrid data={ovcData} onSelectTalk={this._handleSelectTalk} />
         <TalkPlayerTray data={selectedTalk} width={640} height={360} />
       </div>
