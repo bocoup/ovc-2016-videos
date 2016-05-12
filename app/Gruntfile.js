@@ -6,6 +6,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['webpack-dev-server']);
-  grunt.registerTask('build', ['build-env', 'webpack:build']);
+  grunt.registerTask('build', ['build-env', 'webpack:build', 'compress']);
   grunt.registerTask('deploy', ['clean', 'build']);
 };

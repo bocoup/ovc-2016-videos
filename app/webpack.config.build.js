@@ -8,7 +8,7 @@ module.exports = {
   entry: './src',
   output: {
     path: 'dist',
-    filename: '[hash].js',
+    filename: 'videos-2016.js',
   },
   module: {
     loaders: [
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.(svg|png)$/,
-        loader: 'file-loader'
+        loader: 'file-loader?name=img/video-thumbs/[name].[ext]'
       },
       {
         test: /\.json$/,
@@ -38,7 +38,7 @@ module.exports = {
     new DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
-    new ExtractTextPlugin('[contenthash].css'),
+    new ExtractTextPlugin('videos-2016.css'),
     new HtmlPlugin({
       template: './src/index.html',
       filename: 'index.html',
