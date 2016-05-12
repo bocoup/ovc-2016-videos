@@ -43,7 +43,10 @@ const TalkGridCell = React.createClass({
             })}
           </div>
         </div>
-        <div className='talk-links'>
+        <div className='talk-grid-cell-bottom'>
+          <div className='talk-time'>
+            {`April ${data.day}, ${data.time}`}
+          </div>
           <a href={`https://www.youtube.com/watch?v=${data.youtubeId}`}><i className='fa fa-lg fa-youtube-play' title='Play Video' /></a>
           {hasSlides ? <a href={`${data.slidesUrl}`}><i className='fa fa-lg fa-desktop' title='View Slides' /></a> : null}
         </div>
