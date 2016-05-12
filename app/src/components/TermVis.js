@@ -93,7 +93,7 @@ const TermVis = React.createClass({
 
     // if the data changed, recompute the bounding boxes
     if (data !== prevProps.data) {
-      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() }, () => { console.log('finished CDU'); });
+      this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
     }
   },
 
@@ -297,8 +297,6 @@ const TermVis = React.createClass({
     if (!focusedTerm) {
       return null;
     }
-
-    console.log('focusedTerm =', focusedTerm, visComponents.terms);
 
     const termLayout = this._getTermLayout(focusedTerm, visComponents);
     if (!termLayout) {
