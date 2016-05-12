@@ -28,10 +28,18 @@ $timestamp-marker-fill: lighten($focused-term-rect-color, 15%);
     opacity: 0.05;
   }
 
-  .time-group {
+  .time-group text {
     font-family: sans-serif;
     font-size: 11px;
-    opacity: 0.3;
+    fill: rgba(0,0,0,0.2);
+  }
+
+  .time-group.focused text {
+    fill: $focused-term-rect-color;
+  }
+
+  .time-group rect {
+    fill: #f5f8f9;
   }
 
 

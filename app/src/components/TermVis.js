@@ -266,6 +266,10 @@ const TermVis = React.createClass({
     Dispatcher.trigger(Dispatcher.events.navigateVideo, data, Math.max(timestamp - videoDelay, 0));
   },
 
+  _handleHoverTimestamp(timestamp) {
+    this.setState({ focusedTimestamp: timestamp });
+  },
+
   _handleHoverThumbnail(frame) {
     this.setState({ focusedFrame: frame });
   },
@@ -446,7 +450,7 @@ const TermVis = React.createClass({
   // separate from the timeline rect so that the circles appear above the lines
   _renderTimelineMarkers(visComponents) {
     const { timelineHeight, xTimelineScale } = visComponents;
-    const { focusedTerm } = this.state;
+    const { focusedTerm, focusedTimestamp } = this.state;
 
     let timestamps;
     if (focusedTerm) {
@@ -456,13 +460,34 @@ const TermVis = React.createClass({
     }
 
     const timestampMarkerRadius = 4;
+    const timeWidth = 35;
+    const timeHeight = 12;
 
     return (
       <g className='timeline-markers'>
         {timestamps && timestamps.map((time, i) => {
+          const cx = xTimelineScale(time);
+          const cy = timelineHeight / 2;
+
+          let focusedTimestampTime;
+          if (focusedTimestamp === time) {
+            focusedTimestampTime = (
+              <g className='time-group focused' transform={`translate(0 ${timelineHeight + 15})`}>
+                <rect x={-timeWidth / 2} y={0} width={timeWidth} height={timeHeight} />
+                <text x={0} y={0} textAnchor={'middle'}>{Util.timeFormat(time)}</text>
+              </g>
+            );
+          }
+
           return (
-            <circle key={i} cx={xTimelineScale(time)} cy={timelineHeight / 2} r={timestampMarkerRadius}
-              className='timestamp-marker' onClick={this._handleClickTimestamp.bind(this, time)} />
+            <g key={i} transform={`translate(${cx} 0)`}>
+              <circle key={i} cx={0} cy={cy} r={timestampMarkerRadius}
+                className='timestamp-marker'
+                onMouseEnter={this._handleHoverTimestamp.bind(this, time)}
+                onMouseLeave={this._handleHoverTimestamp.bind(this, null)}
+                onClick={this._handleClickTimestamp.bind(this, time)} />
+              {focusedTimestampTime}
+            </g>
           );
         })}
       </g>
