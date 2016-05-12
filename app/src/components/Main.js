@@ -44,7 +44,9 @@ const bodyScroll = new Scroll(document.body);
 const Main = React.createClass({
 
   getInitialState() {
-    return {};
+    return {
+      selectedTalk: ovcData[Math.floor(Math.random() * ovcData.length)]
+    };
   },
 
   _handleSelectTalk(talk) {
