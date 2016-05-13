@@ -21,7 +21,7 @@ const ThumbnailTimeline = React.createClass({
     width: React.PropTypes.number,
     height: React.PropTypes.number,
     highlightFrames: React.PropTypes.array,
-    focusedFrame: React.PropTypes.object,
+    focusedFrame: React.PropTypes.number,
     onChangeFocusedFrame: React.PropTypes.func,
     onClickThumbnail: React.PropTypes.func
   },
