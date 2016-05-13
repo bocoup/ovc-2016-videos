@@ -56,8 +56,10 @@ const Main = React.createClass({
 
     // scroll to the talk if we are beneath it
     const talkPane = ReactDOM.findDOMNode(this.refs.talkPane);
-    const talkPaneTop = talkPane.getBoundingClientRect().top + window.pageYOffset;
-    if (document.body.scrollTop > talkPaneTop) {
+    const scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    const talkPaneTop = talkPane.getBoundingClientRect().top + scrollTop;
+
+    if (scrollTop > talkPaneTop) {
       bodyScroll.toElement(talkPane);
     }
   },
