@@ -1,4 +1,7 @@
-// assumes window[GoogleAnalyticsObject] exists.
+// assumes window[GoogleAnalyticsObject] exists and is configured elsewhere
+if (!window.GoogleAnalyticsObject) {
+  window.GoogleAnalyticsObject = 'ga';
+}
 
 function GoogleAnalytics() {}
 
