@@ -359,6 +359,9 @@ const TermVis = React.createClass({
     return (
       <g key={termStr} className={cx('term', { focused, toggled, 'in-frame': isInFocusedFrame })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
+          onMouseEnter={this._handleHoverTerm.bind(this, term)}
+          onMouseLeave={this._handleHoverTerm.bind(this, null)}
+          onClick={this._handleClickTerm.bind(this, term)}>
           onTouchEnd={this._handleClickTerm.bind(this, term)}>
         <rect x={0} y={0} width={width} height={height} style={rectStyle} />
         <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
