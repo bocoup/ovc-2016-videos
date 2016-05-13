@@ -37,8 +37,6 @@ ovcData.forEach((talk, i) => {
   });
 });
 
-console.log('ovcData =', ovcData);
-
 const bodyScroll = new Scroll(document.body);
 
 const Main = React.createClass({
