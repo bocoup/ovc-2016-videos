@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Analytics from '../analytics/GoogleAnalytics';
 import Dispatcher from '../events/Dispatcher';
 import './TalkPane.scss';
 import AutoWidth from './AutoWidth';
@@ -9,7 +10,8 @@ const TalkPane = React.createClass({
   propTypes: {
     selectedTalk: React.PropTypes.object,
     allTalks: React.PropTypes.array,
-    onTalkSelect: React.PropTypes.func
+    onTalkSelect: React.PropTypes.func,
+    touched: React.PropTypes.bool
   },
 
   componentWillMount() {
@@ -38,6 +40,8 @@ const TalkPane = React.createClass({
   _handleTalkSelect(talk) {
     const { onTalkSelect } = this.props;
 
+    Analytics.trackEvent('quick-select-talk', talk.id);
+
     if (onTalkSelect) {
       onTalkSelect(talk);
     }
@@ -46,7 +50,6 @@ const TalkPane = React.createClass({
   _handleTitleClick(evt) {
     const { selectedTalk } = this.props;
     Dispatcher.trigger(Dispatcher.events.navigateVideo, selectedTalk, 0);
-
     evt.preventDefault();
   },
 

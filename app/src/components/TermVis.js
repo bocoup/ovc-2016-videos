@@ -6,6 +6,7 @@ import cx from 'classnames';
 import ThumbnailTimeline from './ThumbnailTimeline';
 import Dispatcher from '../events/Dispatcher';
 import * as Util from '../util/Util';
+import Analytics from '../analytics/GoogleAnalytics';
 
 import './TermVis.scss';
 
@@ -257,12 +258,11 @@ const TermVis = React.createClass({
   },
 
   _handleClickThumbnail(talk, frame) {
-    const { data } = this.props;
     let { toggledTerm, focusedTerm } = this.state;
 
     // if we have a toggled term, check if we are clicking a thumbnail that is highlighted or not
     if (toggledTerm) {
-      const highlightFrames = timestampsToFrames(toggledTerm.timestamps, data.frames);
+      const highlightFrames = timestampsToFrames(toggledTerm.timestamps, talk.frames);
       if (highlightFrames.indexOf(frame) === -1) {
         toggledTerm = null;
         focusedTerm = null;
@@ -271,12 +271,17 @@ const TermVis = React.createClass({
       focusedTerm = null;
     }
 
+    Analytics.trackEvent('click-thumbnail', talk.id, frame);
+
     this.setState({ focusedTerm, toggledTerm });
     Dispatcher.trigger(Dispatcher.events.navigateVideo, talk, Math.max(frame - videoDelay, 0));
   },
 
   _handleClickTimestamp(timestamp) {
     const { data } = this.props;
+
+    Analytics.trackEvent('click-timestamp', data.id, timestamp);
+
     Dispatcher.trigger(Dispatcher.events.navigateVideo, data, Math.max(timestamp - videoDelay, 0));
   },
 
@@ -299,6 +304,11 @@ const TermVis = React.createClass({
 
     this.setState({ focusedTerm: term, toggledTerm: term });
     evt.preventDefault(); // prevent click when touching which would invert the toggle
+
+    // track overall term clicking
+    Analytics.trackEvent('click-term', term.term);
+    // track talk-specific term clicking
+    Analytics.trackEvent('click-talk-term', `${this.props.data.id}: ${term.term}`);
   },
 
   _getTermLayout(term, visComponents) {

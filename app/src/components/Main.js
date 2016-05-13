@@ -6,6 +6,7 @@ import Scroll from '../vendor/Scroll';
 import TalkGrid from './TalkGrid';
 import TalkPlayerTray from './TalkPlayerTray';
 import TalkPane from './TalkPane';
+import Analytics from '../analytics/GoogleAnalytics';
 
 import './Main.scss';
 import ovcData from '../data/ovc2016_talks.json';
@@ -52,6 +53,8 @@ const Main = React.createClass({
     this.setState({
       selectedTalk: talk
     });
+
+    Analytics.trackEvent('select-talk', talk.id);
 
     // scroll to the talk if we are beneath it
     const talkPane = ReactDOM.findDOMNode(this.refs.talkPane);
