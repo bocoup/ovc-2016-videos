@@ -108,7 +108,7 @@ const TermVis = React.createClass({
 
     // start with height 400
     let height = 400;
-    const innerMargin = { top: 120, right: touched ? 80 : 50, bottom: 30, left: touched ? 80 : 50 };
+    const innerMargin = { top: 120, right: touched ? 80 : 50, bottom: 20, left: touched ? 80 : 50 };
     const innerWidth = width - innerMargin.left - innerMargin.right;
 
     // there's an issue using the max time to set the xScale since each chunk in the
@@ -163,7 +163,8 @@ const TermVis = React.createClass({
       data,
       layout,
       scoreScale,
-      termTextSize
+      termTextSize,
+      termsTopMargin
     };
   },
 
@@ -390,7 +391,7 @@ const TermVis = React.createClass({
     return (
       <div className={cx('terms', { 'updating-terms': updatingData })}>
         <div className='detoggle-click-space'
-          style={{ marginLeft: -innerMargin.left, width: width, height: innerHeight + innerMargin.bottom }}
+          style={{ marginLeft: -innerMargin.left, width: width, height: innerHeight }}
           onClick={this._handleClear}
           onTouchEnd={this._handleClear} />
         <TimeoutTransitionGroup
@@ -522,7 +523,7 @@ const TermVis = React.createClass({
   render() {
     const { touched } = this.props;
     const visComponents = this._visComponents();
-    const { data, width, height, innerMargin, timelineHeight } = visComponents;
+    const { data, width, height, innerMargin, timelineHeight, termsTopMargin } = visComponents;
     const { focusedTerm, focusedFrame } = this.state;
 
     let highlightFrames;
@@ -530,31 +531,34 @@ const TermVis = React.createClass({
       highlightFrames = timestampsToFrames(focusedTerm.timestamps, data.frames);
     }
 
+    // switching from rect/text to div has made it so we need multiple SVG layers
+    // the marker layer needs to be separate from the lines layer since it needs
+    // mouse events and the line layer needs to have no mouse events so you can
+    // hover over the div boxes. Yet the line layer needs to be above the boxes.
     return (
       <div className='term-vis-container' style={{ width, height }}>
-        <div ref='termsDiv' className={cx('term-vis terms-container', { touched })} style={{ marginTop: innerMargin.top + timelineHeight, marginLeft: innerMargin.left }}>
+        <div ref='termsDiv' className={cx('terms-container', { touched })}
+            style={{ marginTop: innerMargin.top + timelineHeight, marginLeft: innerMargin.left }}>
           {this._renderTermDivs(visComponents)}
         </div>
-        <svg
-          width={width} height={height}
-          className={cx('term-vis', { touched }, 'no-mouse')}>
+        <svg width={width} height={height}
+            className={cx('term-vis', 'term-vis-line-layer', { touched })}>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTermLines(visComponents)}
           </g>
         </svg>
-        <svg
-          width={width} height={innerMargin.top + timelineHeight}
-          className={cx('term-vis', { touched })}>
+        <svg width={width} height={innerMargin.top + timelineHeight + termsTopMargin}
+            className={cx('term-vis', 'term-vis-marker-layer', { touched })}>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimelineMarkers(visComponents)}
           </g>
         </svg>
         <div className='timeline-container'>
           <ThumbnailTimeline data={this.props.data} width={width} highlightFrames={highlightFrames}
-            focusedFrame={focusedFrame}
-            onChangeFocusedFrame={this._handleChangeFocusedFrame}
-            onClickThumbnail={this._handleClickThumbnail} />
+              focusedFrame={focusedFrame}
+              onChangeFocusedFrame={this._handleChangeFocusedFrame}
+              onClickThumbnail={this._handleClickThumbnail} />
         </div>
       </div>
     );
