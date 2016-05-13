@@ -123,7 +123,7 @@ const TermVis = React.createClass({
     const xTimelineScale = d3.scale.linear().domain([0, maxFrame]).range([-innerMargin.left, width - thumbnailCompressedWidth - innerMargin.left]);
 
 
-    const timelineHeight = touched ? 35 : 10;
+    const timelineHeight = touched ? 35 : 16;
     const termPadding = touched ? 12 : 8;
     const termHeight = 15 + 2 * termPadding;
     const termMargin = touched ? 16 : 4;
@@ -473,7 +473,7 @@ const TermVis = React.createClass({
       return null;
     }
 
-    const timestampMarkerRadius = Math.round(timelineHeight / 2) - 2;
+    const timestampMarkerRadius = Math.round(0.6 * timelineHeight / 2);
     const timeWidth = 35;
     const timeHeight = 12;
 
