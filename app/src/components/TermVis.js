@@ -169,18 +169,18 @@ const TermVis = React.createClass({
 
 
   _readTermTextBoundingBoxes() {
-    const svg = d3.select(ReactDOM.findDOMNode(this.refs.svg));
+    const termsDiv = d3.select(ReactDOM.findDOMNode(this.refs.termsDiv));
 
-    if (!svg) {
+    if (!termsDiv) {
       return null;
     }
 
-    const textElems = svg.selectAll('.term text')[0];
+    const textElems = termsDiv.selectAll('.term')[0];
 
     // can't rely on the index matching the terms since during update there are terms from both talks
     return textElems.reduce((boxes, elem) => {
       const termStr = elem.innerHTML;
-      boxes[termStr] = elem.getBBox();
+      boxes[termStr] = elem.getBoundingClientRect();
       return boxes;
     }, {});
   },
@@ -291,12 +291,13 @@ const TermVis = React.createClass({
     this.setState({ focusedTerm: null, toggledTerm: null, focusedFrame: null });
   },
 
-  _handleClickTerm(term) {
+  _handleClickTerm(term, evt) {
     if (this.state.toggledTerm === term) {
       term = null;
     }
 
     this.setState({ focusedTerm: term, toggledTerm: term });
+    evt.preventDefault(); // prevent click when touching which would invert the toggle
   },
 
   _getTermLayout(term, visComponents) {
@@ -334,10 +335,22 @@ const TermVis = React.createClass({
     );
   },
 
-  _renderTerm(visComponents, term, termIndex) {
-    const { data, termHeight: height, scoreScale, termPadding: padding, termTextSize } = visComponents;
+  _renderTermLines(visComponents) {
+    const { timelineHeight } = visComponents;
+    const { updatingData } = this.state;
+
+    return (
+      <g transform={`translate(0 ${timelineHeight})`}
+        className={cx('terms', { 'updating-terms': updatingData })}>
+        {this._renderFocused(visComponents)}
+      </g>
+    );
+  },
+
+  _renderTermDiv(visComponents, term) {
+    const { data, scoreScale } = visComponents;
     const { toggledTerm, focusedTerm, encodeScore, focusedFrame } = this.state;
-    const { x, y, width } = this._getTermLayout(term, visComponents);
+    const { x, y } = this._getTermLayout(term, visComponents);
 
     const toggled = toggledTerm === term;
     const focused = focusedTerm === term;
@@ -357,41 +370,37 @@ const TermVis = React.createClass({
     }
     const termStr = term.term;
 
+
     return (
-      <g key={termStr} className={cx('term', { focused, toggled, 'in-frame': isInFocusedFrame })}
-          style={{ transform: `translate(${x}px, ${y}px)` }}
+      <div key={termStr} className={cx('term', { focused, toggled, 'in-frame': isInFocusedFrame })}
           onMouseEnter={this._handleHoverTerm.bind(this, term)}
           onMouseLeave={this._handleHoverTerm.bind(this, null)}
-          onClick={this._handleClickTerm.bind(this, term)}>
-          onTouchEnd={this._handleClickTerm.bind(this, term)}>
-        <rect x={0} y={0} width={width} height={height} style={rectStyle} />
-        <text x={width / 2} y={padding} textAnchor='middle' dy={Math.ceil(termTextSize * 0.8)}>{termStr}</text>
-      </g>
+          onClick={this._handleClickTerm.bind(this, term)}
+          onTouchEnd={this._handleClickTerm.bind(this, term)}
+          style={{ transform: `translate(${x}px, ${y}px)`, backgroundColor: rectStyle && rectStyle.fill }}>
+        {termStr}
+      </div>
     );
   },
 
-  _renderTerms(visComponents) {
-    const { terms, timelineHeight, innerMargin, width, innerHeight } = visComponents;
+  _renderTermDivs(visComponents) {
+    const { terms, innerMargin, width, innerHeight } = visComponents;
     const { updatingData } = this.state;
 
     return (
-      <g transform={`translate(0 ${timelineHeight})`}
-        className={cx('terms', { 'updating-terms': updatingData })}>
-        <rect className='detoggle-click-space'
-          x={-innerMargin.left} y={0}
-          width={width} height={innerHeight + innerMargin.bottom}
-          style={{ opacity: 0 }}
+      <div className={cx('terms', { 'updating-terms': updatingData })}>
+        <div className='detoggle-click-space'
+          style={{ marginLeft: -innerMargin.left, width: width, height: innerHeight + innerMargin.bottom }}
           onClick={this._handleClear}
           onTouchEnd={this._handleClear} />
         <TimeoutTransitionGroup
-            component='g'
+            component='div'
             transitionName='term'
             enterTimeout={transitionEnterTime}
             leaveTimeout={transitionLeaveTime}>
-          {terms.map((term, i) => this._renderTerm(visComponents, term, i))}
+          {terms.map((term, i) => this._renderTermDiv(visComponents, term, i))}
         </TimeoutTransitionGroup>
-        {this._renderFocused(visComponents)}
-      </g>
+      </div>
     );
   },
 
@@ -489,7 +498,7 @@ const TermVis = React.createClass({
             focusedTimestampTime = (
               <g className='time-group focused' transform={`translate(0 ${timelineHeight + 15})`}>
                 <rect x={-timeWidth / 2} y={0} width={timeWidth} height={timeHeight} />
-                <text x={0} y={0} textAnchor={'middle'}>{Util.timeFormat(time)}</text>
+                <text x={0} y={0} textAnchor={'middle'} dy={10}>{Util.timeFormat(time)}</text>
               </g>
             );
           }
@@ -513,7 +522,7 @@ const TermVis = React.createClass({
   render() {
     const { touched } = this.props;
     const visComponents = this._visComponents();
-    const { data, width, height, innerMargin } = visComponents;
+    const { data, width, height, innerMargin, timelineHeight } = visComponents;
     const { focusedTerm, focusedFrame } = this.state;
 
     let highlightFrames;
@@ -522,22 +531,31 @@ const TermVis = React.createClass({
     }
 
     return (
-      <div className='term-vis-container'>
+      <div className='term-vis-container' style={{ width, height }}>
+        <div ref='termsDiv' className={cx('term-vis terms-container', { touched })} style={{ marginTop: innerMargin.top + timelineHeight, marginLeft: innerMargin.left }}>
+          {this._renderTermDivs(visComponents)}
+        </div>
+        <svg
+          width={width} height={height}
+          className={cx('term-vis', { touched }, 'no-mouse')}>
+          <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
+            {this._renderTimeline(visComponents)}
+            {this._renderTermLines(visComponents)}
+          </g>
+        </svg>
+        <svg
+          width={width} height={innerMargin.top + timelineHeight}
+          className={cx('term-vis', { touched })}>
+          <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
+            {this._renderTimelineMarkers(visComponents)}
+          </g>
+        </svg>
         <div className='timeline-container'>
           <ThumbnailTimeline data={this.props.data} width={width} highlightFrames={highlightFrames}
             focusedFrame={focusedFrame}
             onChangeFocusedFrame={this._handleChangeFocusedFrame}
             onClickThumbnail={this._handleClickThumbnail} />
         </div>
-        <svg ref='svg'
-          width={width} height={height}
-          className={cx('term-vis', { touched })}>
-          <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
-            {this._renderTimeline(visComponents)}
-            {this._renderTerms(visComponents)}
-            {this._renderTimelineMarkers(visComponents)}
-          </g>
-        </svg>
       </div>
     );
   }
