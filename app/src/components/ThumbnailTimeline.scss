@@ -1,7 +1,8 @@
 $thumbnail-border-color: rgba(0, 0, 0, 0.1);
-$thumbnail-border-color-highlight: #bbb; //rgba(0, 0, 0, 0.2);
+$thumbnail-border-color-highlight: #888;
 $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
-
+$thumbnail-overlay-color: rgba(255, 255, 255, 0.8);
+$overlay-transition-time: .1s;
 .thumbnail-timeline {
   position: relative;
   overflow: hidden;
@@ -13,7 +14,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     top: 0;
     border: 1px solid $thumbnail-border-color;
     border-right: 0;
-    transition: .2s left, .2s background-position;
+    transition: .2s left, .2s background-position, $overlay-transition-time border-color;
     background-position: center center;
     box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -58,9 +59,9 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     right: -1.5px; // needs 0.5px added to fix some off-by-one errors on the further right thumbs
     top: -2px;
     bottom: -1px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: $thumbnail-overlay-color;
     opacity: 0;
-    transition: .1s opacity;
+    transition: $overlay-transition-time opacity;
     &.show-overlay {
       opacity: 1;
     }
@@ -74,7 +75,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
   &.has-highlight .thumbnail {
     &+.thumbnail {
       border-right: 0;
-      border-left: 1px rgba(255, 255, 255, 0.7);
+      border-color: $thumbnail-overlay-color;
     }
 
     &+.highlighted {
