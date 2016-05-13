@@ -21,7 +21,8 @@ const ThumbnailTimeline = React.createClass({
     width: React.PropTypes.number,
     height: React.PropTypes.number,
     highlightFrames: React.PropTypes.array,
-    onHoverThumbnail: React.PropTypes.func,
+    focusedFrame: React.PropTypes.object,
+    onChangeFocusedFrame: React.PropTypes.func,
     onClickThumbnail: React.PropTypes.func
   },
 
@@ -57,12 +58,14 @@ const ThumbnailTimeline = React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.data !== nextProps.data) {
-      this.setState({ focusedFrame: null });
+    const { onChangeFocusedFrame } = this.props;
+    if (this.props.data !== nextProps.data && onChangeFocusedFrame) {
+      onChangeFocusedFrame(null);
     }
   },
 
   _handleClickThumbnail(frame) {
+    console.log('handling click');
     const { onClickThumbnail, data } = this.props;
 
     if (onClickThumbnail) {
@@ -70,20 +73,38 @@ const ThumbnailTimeline = React.createClass({
     }
   },
 
-  _handleHoverThumbnail(frame) {
-    const { onHoverThumbnail } = this.props;
-    this.setState({ focusedFrame: frame });
+  _handleTouchStartThumbnail(frame, evt) {
+    this._handleHoverThumbnail(frame);
+    evt.preventDefault(); // prevents click from firing
+  },
 
-    if (onHoverThumbnail) {
-      onHoverThumbnail(frame);
+  _handleTouchEndThumbnail(frame) {
+    const { touchedFrame } = this.state;
+
+    if (frame === touchedFrame) {
+      this._handleClickThumbnail(frame);
+    } else {
+      this.setState({ touchedFrame: frame });
     }
+  },
+
+  _handleHoverThumbnail(frame) {
+    const { onChangeFocusedFrame } = this.props;
+
+    if (onChangeFocusedFrame) {
+      onChangeFocusedFrame(frame);
+    }
+  },
+
+  _handleTouchMove(evt) {
+    console.log('touch move', evt.targetTouches, evt.touches);
   },
 
   render() {
     const visComponents = this._visComponents();
     const { data, width, height, frames } = visComponents;
-    const { highlightFrames } = this.props;
-    const { focusedFrame } = this.state;
+    const { highlightFrames, focusedFrame } = this.props;
+    const { touchedFrame } = this.state;
 
     const { thumbnailRatio = 1.5 } = data;
     const thumbnailFullWidth = Math.floor(height * thumbnailRatio) - 4; // many thumbnails seem to have this weird black line at the end
@@ -99,7 +120,10 @@ const ThumbnailTimeline = React.createClass({
     }
 
     return (
-      <div className={cx('thumbnail-timeline', { 'has-highlight': hasHighlightFrames })} style={{ width, height }}>
+      <div className={cx('thumbnail-timeline', { 'has-highlight': hasHighlightFrames })}
+        onTouchMove={this._handleTouchMove}
+
+        style={{ width, height }}>
 
         {frames.map((frame, i) => {
           const isHighlighted = hasHighlightFrames && highlightFrames.indexOf(frame) !== -1;
@@ -124,13 +148,17 @@ const ThumbnailTimeline = React.createClass({
             backgroundPosition: `${-thumbnailFullWidth / 2 + thumbnailVisibleWidth / 2}px 0`
           };
 
+          const isTouchedFrame = touchedFrame === frame;
 
           return (
             <div key={i} className={cx('thumbnail', `thumbnail-${i}`, { highlighted: isHighlighted, 'not-highlighted': !isHighlighted })} style={style}
               onMouseEnter={this._handleHoverThumbnail.bind(this, frame)}
               onMouseLeave={this._handleHoverThumbnail.bind(this, null)}
-              onClick={this._handleClickThumbnail.bind(this, frame)}>
+              onClick={this._handleClickThumbnail.bind(this, frame)}
+              onTouchStart={this._handleTouchStartThumbnail.bind(this, frame)}
+              onTouchEnd={this._handleTouchEndThumbnail.bind(this, frame)}>
               {(hasHighlightFrames && !isHighlighted) ? <div className={cx('thumbnail-overlay')} /> : null}
+              {(isTouchedFrame ? <div className='play-container'><div className='play-triangle'/><i className='fa fa-youtube-play'/></div> : null)}
             </div>
           );
         })}

@@ -280,20 +280,20 @@ const TermVis = React.createClass({
     this.setState({ focusedTimestamp: timestamp });
   },
 
-  _handleHoverThumbnail(frame) {
+  _handleChangeFocusedFrame(frame) {
     this.setState({ focusedFrame: frame });
   },
 
-  _handleClickTerm(term) {
-    if (term === 'clear') { // if clicking the background of the svg
-      this.setState({ focusedTerm: null, toggledTerm: null });
-    } else {
-      if (this.state.toggledTerm === term) {
-        term = null;
-      }
+  _handleClear() {
+    this.setState({ focusedTerm: null, toggledTerm: null, focusedFrame: null });
+  },
 
-      this.setState({ toggledTerm: term });
+  _handleClickTerm(term) {
+    if (this.state.toggledTerm === term) {
+      term = null;
     }
+
+    this.setState({ focusedTerm: term, toggledTerm: term });
   },
 
   _getTermLayout(term, visComponents) {
@@ -357,9 +357,7 @@ const TermVis = React.createClass({
     return (
       <g key={termStr} className={cx('term', { focused, toggled, 'in-frame': isInFocusedFrame })}
           style={{ transform: `translate(${x}px, ${y}px)` }}
-          onMouseEnter={this._handleHoverTerm.bind(this, term)}
-          onMouseLeave={this._handleHoverTerm.bind(this, null)}
-          onClick={this._handleClickTerm.bind(this, term)}>
+          onTouchEnd={this._handleClickTerm.bind(this, term)}>
         <rect x={0} y={0} width={width} height={height} style={rectStyle} />
         <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
       </g>
@@ -377,7 +375,8 @@ const TermVis = React.createClass({
           x={-innerMargin.left} y={0}
           width={width} height={innerHeight + innerMargin.bottom}
           style={{ opacity: 0 }}
-          onClick={this._handleClickTerm.bind(this, 'clear')} />
+          onClick={this._handleClear}
+          onTouchEnd={this._handleClear} />
         <TimeoutTransitionGroup
             component='g'
             transitionName='term'
@@ -495,7 +494,8 @@ const TermVis = React.createClass({
                 className='timestamp-marker'
                 onMouseEnter={this._handleHoverTimestamp.bind(this, time)}
                 onMouseLeave={this._handleHoverTimestamp.bind(this, null)}
-                onClick={this._handleClickTimestamp.bind(this, time)} />
+                onClick={this._handleClickTimestamp.bind(this, time)}
+                onTouchEnd={this._handleClickTimestamp.bind(this, time)} />
               {focusedTimestampTime}
             </g>
           );
@@ -507,7 +507,7 @@ const TermVis = React.createClass({
   render() {
     const visComponents = this._visComponents();
     const { data, width, height, innerMargin, innerWidth } = visComponents;
-    const { focusedTerm } = this.state;
+    const { focusedTerm, focusedFrame } = this.state;
 
     let highlightFrames;
     if (focusedTerm) {
@@ -518,7 +518,9 @@ const TermVis = React.createClass({
       <div className='term-vis-container'>
         <div className='timeline-container'>
           <ThumbnailTimeline data={this.props.data} width={width} highlightFrames={highlightFrames}
-            onHoverThumbnail={this._handleHoverThumbnail} onClickThumbnail={this._handleClickThumbnail} />
+            focusedFrame={focusedFrame}
+            onChangeFocusedFrame={this._handleChangeFocusedFrame}
+            onClickThumbnail={this._handleClickThumbnail} />
         </div>
         <svg width={width} height={height} className='term-vis' ref='svg'>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>

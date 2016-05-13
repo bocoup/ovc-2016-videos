@@ -17,6 +17,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     background-position: center center;
     box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
+    text-align: center;
 
     &:last-child {
       border-right: 0;
@@ -29,6 +30,25 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
 
     &:hover {
       // box-shadow: none;
+    }
+
+    .play-container {
+      text-align: center;
+      margin: auto;
+      width: 40px;
+    }
+
+    .play-triangle {
+      background: #fff;
+      width: 30px;
+      height: 25px;
+      position: absolute;
+      margin: 7px 4px 0;
+    }
+
+    .fa-youtube-play {
+      font-size: 40px;
+      color: rgb(254, 43, 117);
     }
   }
 
