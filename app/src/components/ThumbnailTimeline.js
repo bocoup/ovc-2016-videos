@@ -150,7 +150,7 @@ const ThumbnailTimeline = React.createClass({
               onClick={this._handleClickThumbnail.bind(this, frame)}
               onTouchStart={this._handleTouchStartThumbnail.bind(this, frame)}
               onTouchEnd={this._handleTouchEndThumbnail.bind(this, frame)}>
-              {(hasHighlightFrames && !isHighlighted) ? <div className={cx('thumbnail-overlay')} /> : null}
+              <div className={cx('thumbnail-overlay', { 'show-overlay': (hasHighlightFrames && !isHighlighted) })} />
               {(isTouchedFrame ? <div className='play-container'><div className='play-triangle'/><i className='fa fa-youtube-play'/></div> : null)}
             </div>
           );

@@ -13,7 +13,7 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     top: 0;
     border: 1px solid $thumbnail-border-color;
     border-right: 0;
-    transition: .2s width, .2s left, .1s opacity, .2s background-position-x;
+    transition: .2s left, .2s background-position;
     background-position: center center;
     box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -59,6 +59,11 @@ $highlighted-thumbnail-border-bottom-color: rgb(254, 43, 117);
     top: -2px;
     bottom: -1px;
     background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: .1s opacity;
+    &.show-overlay {
+      opacity: 1;
+    }
   }
 
   // fix off by one on first thumbnail error
