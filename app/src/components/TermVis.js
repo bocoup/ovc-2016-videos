@@ -122,7 +122,7 @@ const TermVis = React.createClass({
     const xScale = d3.scale.linear().domain([0, maxFrame]).range([0, innerWidth - thumbnailCompressedWidth]);
     const xTimelineScale = d3.scale.linear().domain([0, maxFrame]).range([-innerMargin.left, width - thumbnailCompressedWidth - innerMargin.left]);
 
-
+    const termTextSize = touched ? 20 : 14; // matches css-- needed since we can't use dominant-baseline: hanging for IE
     const timelineHeight = touched ? 35 : 16;
     const termPadding = touched ? 12 : 8;
     const termHeight = 15 + 2 * termPadding;
@@ -162,7 +162,8 @@ const TermVis = React.createClass({
       xTimelineScale,
       data,
       layout,
-      scoreScale
+      scoreScale,
+      termTextSize
     };
   },
 
@@ -334,7 +335,7 @@ const TermVis = React.createClass({
   },
 
   _renderTerm(visComponents, term, termIndex) {
-    const { data, termHeight: height, scoreScale, termPadding: padding } = visComponents;
+    const { data, termHeight: height, scoreScale, termPadding: padding, termTextSize } = visComponents;
     const { toggledTerm, focusedTerm, encodeScore, focusedFrame } = this.state;
     const { x, y, width } = this._getTermLayout(term, visComponents);
 
@@ -364,7 +365,7 @@ const TermVis = React.createClass({
           onClick={this._handleClickTerm.bind(this, term)}>
           onTouchEnd={this._handleClickTerm.bind(this, term)}>
         <rect x={0} y={0} width={width} height={height} style={rectStyle} />
-        <text x={width / 2} y={padding} textAnchor='middle'>{termStr}</text>
+        <text x={width / 2} y={padding} textAnchor='middle' dy={Math.ceil(termTextSize * 0.8)}>{termStr}</text>
       </g>
     );
   },
@@ -453,7 +454,7 @@ const TermVis = React.createClass({
 
           return (
             <g className='time-group' key={i} transform={`translate(${x} ${y})`}>
-              <text x={0} y={0} textAnchor={textAnchor}>{Util.timeFormat(time)}</text>
+              <text x={0} y={0} textAnchor={textAnchor} dy={10}>{Util.timeFormat(time)}</text>
             </g>
           );
         })}
