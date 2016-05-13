@@ -65,7 +65,6 @@ const ThumbnailTimeline = React.createClass({
   },
 
   _handleClickThumbnail(frame) {
-    console.log('handling click');
     const { onClickThumbnail, data } = this.props;
 
     if (onClickThumbnail) {
@@ -96,10 +95,6 @@ const ThumbnailTimeline = React.createClass({
     }
   },
 
-  _handleTouchMove(evt) {
-    console.log('touch move', evt.targetTouches, evt.touches);
-  },
-
   render() {
     const visComponents = this._visComponents();
     const { data, width, height, frames } = visComponents;
@@ -121,9 +116,7 @@ const ThumbnailTimeline = React.createClass({
 
     return (
       <div className={cx('thumbnail-timeline', { 'has-highlight': hasHighlightFrames })}
-        onTouchMove={this._handleTouchMove}
-
-        style={{ width, height }}>
+       style={{ width, height }}>
 
         {frames.map((frame, i) => {
           const isHighlighted = hasHighlightFrames && highlightFrames.indexOf(frame) !== -1;
