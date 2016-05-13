@@ -23,6 +23,10 @@ $timestamp-marker-fill: lighten($focused-term-rect-color, 15%);
   background-color: rgba(155, 182, 189, 0.10);
   border-radius: 0 0 5px 5px;
 
+  &.touched {
+    font-size: 20px;
+  }
+
   .timeline-bg {
     fill: #000;
     opacity: 0.05;

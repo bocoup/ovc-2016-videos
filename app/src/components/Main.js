@@ -45,7 +45,8 @@ const Main = React.createClass({
 
   getInitialState() {
     return {
-      selectedTalk: ovcData[Math.floor(Math.random() * ovcData.length)]
+      selectedTalk: ovcData[Math.floor(Math.random() * ovcData.length)],
+      touched: false
     };
   },
 
@@ -64,12 +65,20 @@ const Main = React.createClass({
     }
   },
 
+  // if we received a touch event, make things bigger to make touching easier
+  _handleTouched() {
+    if (!this.state.touched) {
+      this.setState({ touched: true });
+    }
+  },
+
   render() {
-    const { selectedTalk } = this.state;
+    const { selectedTalk, touched } = this.state;
 
     return (
-      <div>
-        <TalkPane ref='talkPane' selectedTalk={selectedTalk} allTalks={ovcData} onTalkSelect={this._handleSelectTalk} />
+      <div onTouchStart={this._handleTouched}>
+        <TalkPane ref='talkPane' selectedTalk={selectedTalk} allTalks={ovcData}
+          touched={touched} onTalkSelect={this._handleSelectTalk} />
         <TalkGrid data={ovcData} onSelectTalk={this._handleSelectTalk} />
         <TalkPlayerTray data={selectedTalk} width={640} height={360} />
       </div>

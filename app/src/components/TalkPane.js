@@ -51,7 +51,7 @@ const TalkPane = React.createClass({
   },
 
   _renderQuickSelect() {
-    const { allTalks } = this.props;
+    const { allTalks, touched } = this.props;
 
     function renderTalk(talk, i) {
       return (
@@ -64,7 +64,7 @@ const TalkPane = React.createClass({
     }
 
     return (
-      <div className='talk-quick-select'>
+      <div className={cx('talk-quick-select', { touched })}>
         <span className='help-text'>Select a Talk:</span>
         <div className='talk-quick-select-items'>
           <div className='talks-day-group'>{allTalks.filter(talk => talk.day === 25).map(renderTalk.bind(this))}</div>
@@ -75,7 +75,7 @@ const TalkPane = React.createClass({
   },
 
   _renderTalk() {
-    const { selectedTalk } = this.props;
+    const { selectedTalk, touched } = this.props;
 
     if (!selectedTalk) {
       return null;
@@ -92,7 +92,7 @@ const TalkPane = React.createClass({
             </a>
           </h1>
         </header>
-        <AutoWidth><TermVis data={selectedTalk} /></AutoWidth>
+        <AutoWidth><TermVis data={selectedTalk} touched={touched} /></AutoWidth>
       </div>
     );
   },

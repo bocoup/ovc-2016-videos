@@ -51,7 +51,8 @@ const videoDelay = 3; // number of seconds to navigate the video back from the s
 const TermVis = React.createClass({
   propTypes: {
     data: React.PropTypes.object, // the talk data object. has `terms` key
-    width: React.PropTypes.number
+    width: React.PropTypes.number,
+    touched: React.PropTypes.bool
   },
 
   getInitialState() {
@@ -94,20 +95,20 @@ const TermVis = React.createClass({
   },
 
   componentDidUpdate(prevProps) {
-    const { data } = this.props;
+    const { data, touched } = this.props;
     // if the data changed, recompute the bounding boxes
-    if (data !== prevProps.data) {
+    if (data !== prevProps.data || touched !== prevProps.touched) {
       this.setState({ boundingBoxes: this._readTermTextBoundingBoxes() });
     }
   },
 
   _visComponents() {
-    const { data, width } = this.props;
+    const { data, width, touched } = this.props;
     const { boundingBoxes } = this.state;
 
     // start with height 400
     let height = 400;
-    const innerMargin = { top: 120, right: 50, bottom: 30, left: 50 };
+    const innerMargin = { top: 120, right: touched ? 80 : 50, bottom: 30, left: touched ? 80 : 50 };
     const innerWidth = width - innerMargin.left - innerMargin.right;
 
     // there's an issue using the max time to set the xScale since each chunk in the
@@ -122,11 +123,12 @@ const TermVis = React.createClass({
     const xTimelineScale = d3.scale.linear().domain([0, maxFrame]).range([-innerMargin.left, width - thumbnailCompressedWidth - innerMargin.left]);
 
 
-    const timelineHeight = 10;
-    const termPadding = 8;
+    const timelineHeight = touched ? 35 : 10;
+    const termPadding = touched ? 12 : 8;
     const termHeight = 15 + 2 * termPadding;
-    const termMargin = 4;
+    const termMargin = touched ? 16 : 4;
     const maxNumTerms = 100;
+    const termsTopMargin = touched ? 60 : 30;
 
     const terms = data.terms.slice(0, maxNumTerms);
     const scoreExtent = d3.extent(terms.map(term => term.score));
@@ -136,12 +138,12 @@ const TermVis = React.createClass({
     const scoreScale = d3.scale.linear().domain(scoreExtent).range([lowScoreColor, highScoreColor]);
 
     // generate the layout using the boundingBoxes
-    const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes);
+    const layout = this._computeLayout(terms, xScale, termPadding, termHeight, termMargin, termsTopMargin, boundingBoxes);
 
     // update height based on layout
     const maxLayoutY = d3.max(layout.map(d => d.y + d.height));
     if (maxLayoutY > 100) { // < 100 then just keep the default, probably hasn't been computed yet
-      height = maxLayoutY + innerMargin.top + innerMargin.bottom;
+      height = maxLayoutY + innerMargin.top + innerMargin.bottom + termMargin;
     }
     const innerHeight = height - innerMargin.top - innerMargin.bottom;
 
@@ -183,7 +185,7 @@ const TermVis = React.createClass({
   },
 
   // NOTE: boundingBoxes is around the text element.
-  _computeLayout(terms, xScale, termPadding, termHeight, termMargin, boundingBoxes) {
+  _computeLayout(terms, xScale, termPadding, termHeight, termMargin, topMargin, boundingBoxes) {
     // compute x values and width
     const layout = terms.map((term, i) => {
       const boundingBox = boundingBoxes && boundingBoxes[term.term];
@@ -200,7 +202,7 @@ const TermVis = React.createClass({
       return {
         term: term.term,
         x: xScale(d3.mean(term.timestamps)) - (width / 2),
-        y: 30,
+        y: topMargin,
         width,
         height: termHeight
       };
@@ -468,7 +470,7 @@ const TermVis = React.createClass({
       return null;
     }
 
-    const timestampMarkerRadius = 4;
+    const timestampMarkerRadius = Math.round(timelineHeight / 2) - 2;
     const timeWidth = 35;
     const timeHeight = 12;
 
@@ -505,8 +507,9 @@ const TermVis = React.createClass({
   },
 
   render() {
+    const { touched } = this.props;
     const visComponents = this._visComponents();
-    const { data, width, height, innerMargin, innerWidth } = visComponents;
+    const { data, width, height, innerMargin } = visComponents;
     const { focusedTerm, focusedFrame } = this.state;
 
     let highlightFrames;
@@ -522,7 +525,9 @@ const TermVis = React.createClass({
             onChangeFocusedFrame={this._handleChangeFocusedFrame}
             onClickThumbnail={this._handleClickThumbnail} />
         </div>
-        <svg width={width} height={height} className='term-vis' ref='svg'>
+        <svg ref='svg'
+          width={width} height={height}
+          className={cx('term-vis', { touched })}>
           <g className='vis-inner' transform={`translate(${innerMargin.left} ${innerMargin.top})`}>
             {this._renderTimeline(visComponents)}
             {this._renderTerms(visComponents)}
