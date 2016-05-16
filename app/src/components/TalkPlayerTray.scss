@@ -10,6 +10,7 @@ $tray-height: 400px;
   border-top: 2px solid #fe2b75;
   height: $tray-height;
   transition: .2s bottom;
+  z-index: 9000;
 
   &.open {
     bottom: 0;
