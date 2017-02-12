@@ -1,5 +1,5 @@
 # ovc-2016-videos
-Code for visualizing videos from [OpenVis Conf 2016](http://openvisconf.com).
+Code for visualizing videos from [OpenVis Conf 2016](https://openvisconf.com/2016/#videos).
 
 ## Analysis
 
